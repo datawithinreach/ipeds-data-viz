@@ -4,6 +4,4 @@ A data visualization platform inspired by [Our World in Data](https://ourworldin
 
 ## Project Overview
 
-This project addresses the challenge of processing complex institutional data derived from the **Integrated Postsecondary Education Data System (IPEDS)** and rendering it through a highly interactive, accessible frontend, focusing on Boston College data and statistics. 
-
-
+This project addresses the challenge of processing complex institutional data derived from the **Integrated Postsecondary Education Data System (IPEDS)** and rendering it through a highly interactive, accessible frontend, focusing on Boston College data and statistics.
