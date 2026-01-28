@@ -22,12 +22,12 @@ npm install -g pnpm@latest
 
 ## Tech Stack Versions
 
-| Package | Version |
-|---------|---------|
-| Next.js | 16.1.4 |
-| React | 19.2.3 |
-| TypeScript | 5.x |
-| Tailwind CSS | 4.x |
+| Package      | Version |
+| ------------ | ------- |
+| Next.js      | 16.1.4  |
+| React        | 19.2.3  |
+| TypeScript   | 5.x     |
+| Tailwind CSS | 4.x     |
 
 ## Installation
 
