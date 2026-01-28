@@ -51,3 +51,16 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+
+## Code Quality
+
+This project uses ESLint and Prettier to maintain consistent code style.
+
+```bash
+pnpm lint          # Check for linting errors
+pnpm lint:fix      # Auto-fix linting errors
+pnpm format        # Auto-format all files (based on .prettierrc)
+```
+
+**Note**: If run into git commit or git push errors, run these commands.
+Enable **Format on Save** in your editor with the Prettier extension to auto-format as you work.
