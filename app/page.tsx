@@ -30,6 +30,10 @@ export default function Home() {
     },
   });
 
+  console.group('DEBUG');
+  console.log('Data', messages);
+  console.groupEnd();
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-8 p-8">
       <h1 className="text-4xl font-bold">Hello World</h1>
