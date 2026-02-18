@@ -14,6 +14,16 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.20",
+    "@visx/axis": "^3.12.0",
+    "@visx/curve": "^3.12.0",
+    "@visx/gradient": "^3.12.0",
+    "@visx/grid": "^3.12.0",
+    "@visx/group": "^3.12.0",
+    "@visx/responsive": "^3.12.0",
+    "@visx/scale": "^3.12.0",
+    "@visx/shape": "^3.12.0",
+    "@visx/text": "^3.12.0",
+    "@visx/tooltip": "^3.12.0",
     "next": "16.1.4",
     "react": "19.2.3",
     "react-dom": "19.2.3"
