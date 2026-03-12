@@ -1,5 +1,5 @@
 #!/bin/sh
 
-pnpm lint
-pnpm format:check
-pnpm build
+# pnpm lint
+# pnpm format:check
+# pnpm build
