@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { type StoryCardType } from '../StoryCardData';
+import { type StoryCardType } from './StoryCardData';
 
 export function StoryCard({
   date,

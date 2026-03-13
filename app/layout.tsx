@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Poppins, Red_Hat_Mono } from 'next/font/google';
 import { QueryProvider } from '@/components/QueryProvider';
 import './globals.css';
+import { Footer } from '@/components/layout/Footer';
+import { Navbar } from '@/components/layout/Navbar';
 
 const redHatMono = Red_Hat_Mono({
   variable: '--font-red-hat-mono',
@@ -28,9 +30,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${redHatMono.variable} font-[family-name:var(--font-poppins)] antialiased`}
+        className={`${poppins.variable} ${redHatMono.variable} font-[family-name:var(--font-poppins)] flex min-h-screen flex-col antialiased`}
       >
-        <QueryProvider>{children}</QueryProvider>
+        <Navbar />
+        <main className="flex-1">
+          <QueryProvider>{children}</QueryProvider>
+        </main>
+        <Footer />
       </body>
     </html>
   );

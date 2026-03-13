@@ -27,3 +27,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-poppins), sans-serif;
 }
+
+button {
+  cursor: pointer;
+}

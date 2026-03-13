@@ -28,6 +28,7 @@ export function Navbar() {
         </div>
         <div className="flex items-center gap-8">
           <Link href="/">Home</Link>
+          <Link href="/data-explorer">Data Explorer</Link>
           <Link href="/about">About</Link>
         </div>
       </section>
