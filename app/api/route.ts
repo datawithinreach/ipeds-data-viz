@@ -1,5 +1,13 @@
 import { NextResponse } from 'next/server';
-import type { Message, ApiResponse } from '@/types';
+
+type Message = {
+  id: string;
+  text: string;
+};
+
+type ApiResponse<T> = {
+  data: T;
+};
 
 const messages: Message[] = [{ id: '1', text: 'Hello World!' }];
 
