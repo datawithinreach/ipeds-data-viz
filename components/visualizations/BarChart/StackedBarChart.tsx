@@ -11,21 +11,23 @@ import { useTooltip, TooltipWithBounds, defaultStyles } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
 import type { ReactNode } from 'react';
 
-export type BarDatum = {
+export type StackedSegment = {
+  key: string;
   label: string;
-  value: number;
-  color?: string;
-  meta?: Record<string, unknown>;
+  color: string;
 };
 
+export type StackedBarDatum = Record<string, unknown> & { label: string };
+
 type Props = {
-  data: BarDatum[];
-  formatValue?: (v: number) => string;
+  data: StackedBarDatum[];
+  segments: StackedSegment[];
+  xDomain?: [number, number];
   formatTick?: (v: number) => string;
-  defaultColor?: string;
   barSize?: number;
   height?: number;
-  renderTooltip?: (datum: BarDatum) => ReactNode;
+  renderTooltip?: (datum: StackedBarDatum) => ReactNode;
+  legend?: boolean;
 };
 
 const MARGIN = { top: 8, right: 40, bottom: 32, left: 120 };
@@ -33,19 +35,38 @@ const PRIMARY = '#501315';
 const AXIS_COLOR = '#501315';
 const GRID_COLOR = '#50131520';
 
-export function BarChart({
+export function StackedBarChart({
   data,
-  formatValue,
+  segments,
+  xDomain,
   formatTick,
-  defaultColor = PRIMARY,
   barSize = 20,
   height = 500,
   renderTooltip,
+  legend = false,
 }: Props) {
   const { parentRef, width } = useParentSize();
 
   const innerWidth = width - MARGIN.left - MARGIN.right;
   const innerHeight = height - MARGIN.top - MARGIN.bottom;
+
+  const computedDomain = useMemo<[number, number]>(() => {
+    if (xDomain) return xDomain;
+    const totals = data.map((d) =>
+      segments.reduce((sum, s) => sum + ((d[s.key] as number) ?? 0), 0),
+    );
+    return [0, Math.max(...totals) * 1.05];
+  }, [data, segments, xDomain]);
+
+  const xScale = useMemo(
+    () =>
+      scaleLinear({
+        domain: computedDomain,
+        range: [0, innerWidth],
+        nice: !xDomain,
+      }),
+    [computedDomain, innerWidth, xDomain],
+  );
 
   const yScale = useMemo(
     () =>
@@ -57,23 +78,28 @@ export function BarChart({
     [data, innerHeight],
   );
 
-  const xScale = useMemo(
-    () =>
-      scaleLinear({
-        domain: [0, Math.max(...data.map((d) => d.value)) * 1.05],
-        range: [0, innerWidth],
-        nice: true,
-      }),
-    [data, innerWidth],
-  );
-
   const { showTooltip, hideTooltip, tooltipData, tooltipLeft, tooltipTop, tooltipOpen } =
-    useTooltip<BarDatum>();
+    useTooltip<StackedBarDatum>();
 
   return (
     <div ref={parentRef} className="relative w-full">
       {width > 10 && (
         <>
+          {legend && (
+            <div className="mb-3 flex items-center gap-4 text-xs">
+              {segments
+                .filter((s) => s.color !== 'transparent')
+                .map((s) => (
+                  <span key={s.key} className="flex items-center gap-1.5">
+                    <span
+                      className="inline-block h-3 w-3 rounded-sm"
+                      style={{ background: s.color }}
+                    />
+                    {s.label}
+                  </span>
+                ))}
+            </div>
+          )}
           <svg width={width} height={height}>
             <Group left={MARGIN.left} top={MARGIN.top}>
               <GridColumns
@@ -83,18 +109,12 @@ export function BarChart({
                 strokeDasharray="3 3"
               />
               {data.map((d) => {
-                const barWidth = xScale(d.value);
                 const barY = yScale(d.label) ?? 0;
                 const bh = yScale.bandwidth();
+                let cumulative = 0;
                 return (
-                  <Bar
+                  <Group
                     key={d.label}
-                    x={0}
-                    y={barY + (bh - barSize) / 2}
-                    width={barWidth}
-                    height={barSize}
-                    fill={d.color ?? defaultColor}
-                    rx={4}
                     onMouseMove={(e) => {
                       const point = localPoint(e) ?? { x: 0, y: 0 };
                       showTooltip({
@@ -104,7 +124,29 @@ export function BarChart({
                       });
                     }}
                     onMouseLeave={hideTooltip}
-                  />
+                  >
+                    {segments.map((seg) => {
+                      const segValue = (d[seg.key] as number) ?? 0;
+                      const x = xScale(cumulative);
+                      const segWidth = xScale(cumulative + segValue) - xScale(cumulative);
+                      cumulative += segValue;
+
+                      if (seg.color === 'transparent' || segWidth <= 0) return null;
+
+                      const isLast = seg === segments[segments.length - 1];
+                      return (
+                        <Bar
+                          key={seg.key}
+                          x={x}
+                          y={barY + (bh - barSize) / 2}
+                          width={segWidth}
+                          height={barSize}
+                          fill={seg.color}
+                          rx={isLast ? 4 : 0}
+                        />
+                      );
+                    })}
+                  </Group>
                 );
               })}
               <AxisLeft
@@ -143,7 +185,17 @@ export function BarChart({
               ) : (
                 <>
                   <p className="font-semibold">{tooltipData.label}</p>
-                  <p>{formatValue ? formatValue(tooltipData.value) : tooltipData.value}</p>
+                  {segments
+                    .filter((s) => s.color !== 'transparent')
+                    .map((s) => (
+                      <p key={s.key} className="flex items-center gap-1.5">
+                        <span
+                          className="inline-block h-2 w-2 rounded-full"
+                          style={{ background: s.color }}
+                        />
+                        {s.label}: {(tooltipData[s.key] as number)?.toLocaleString()}
+                      </p>
+                    ))}
                 </>
               )}
             </TooltipWithBounds>
