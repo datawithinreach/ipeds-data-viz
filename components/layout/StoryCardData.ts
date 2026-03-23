@@ -15,7 +15,7 @@ export type StoryCardType = {
 
 function createStoryCard(meta: ArticleMeta): StoryCardType {
   return {
-    date: formatArticleDate(meta.date || meta.publishedAt),
+    date: formatArticleDate(meta.publishDate),
     title: meta.title,
     subtitle: meta.description,
     imageUrl: meta.imageUrl ?? '/images/landing/story1.png',
@@ -28,7 +28,7 @@ function createStoryCard(meta: ArticleMeta): StoryCardType {
 export const StoryCardData: StoryCardType[] = [...articleRegistry]
   .sort(
     (a, b) =>
-      toSortableTimestamp(b.ArticleMeta.publishedAt ?? '') -
-      toSortableTimestamp(a.ArticleMeta.publishedAt ?? ''),
+      toSortableTimestamp(b.ArticleMeta.publishDate ?? '') -
+      toSortableTimestamp(a.ArticleMeta.publishDate ?? ''),
   )
   .map((entry) => createStoryCard(entry.ArticleMeta));

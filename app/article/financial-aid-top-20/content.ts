@@ -9,10 +9,9 @@ export const ArticleMeta: ArticleMetaType = {
   title: "The Real Cost of America's Top 20 Universities",
   description:
     'How financial aid reshapes the price of elite higher education — and why sticker price is the wrong number to look at.',
-  date: '03-20-2026',
+  publishDate: '03-20-2026',
   source:
     'Source: IPEDS (Integrated Postsecondary Education Data System), National Center for Education Statistics, U.S. Department of Education. Data for academic years 2020–21 through 2023–24.',
-  publishedAt: '03-20-2026',
   imageUrl: '/images/landing/story1.png',
   cardDescription: 'where has tuition increased the most?',
   tags: ['financial aid', 'tuition', 'cost of college'],

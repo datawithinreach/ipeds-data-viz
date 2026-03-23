@@ -65,7 +65,7 @@ Select a template on the terminal and input a URL-friendly slug. This should cre
 Edit **only** the generated `app/article/<slug>/content.ts` file for article-specific updates.
 
 Replace placeholders in:
-- `ArticleMeta` (`title`, `description`, `publishedAt`, `source`, `tags`, `href`, `imageUrl`, `cardDescription`)
+- `ArticleMeta` (`title`, `description`, `publishDate`, `source`, `tags`, `href`, `imageUrl`, `cardDescription`)
 - Section text
 - Chart data and chart options
 - Banner or callout values

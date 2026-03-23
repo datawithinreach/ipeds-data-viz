@@ -9,10 +9,9 @@ export const ArticleMeta: ArticleMetaType = {
   title: 'Getting In: The Numbers Behind Elite Admissions',
   description:
     "Acceptance rates at America's top 20 universities — drawn directly from IPEDS 2024 admissions data.",
-  date: '03-15-2026',
+  publishDate: '03-15-2026',
   source:
     'Source: IPEDS (Integrated Postsecondary Education Data System), National Center for Education Statistics, U.S. Department of Education. Admissions data from ADM2024 survey component for academic year 2024–2025.',
-  publishedAt: '03-15-2026',
   imageUrl: '/images/landing/story2.png',
   cardDescription: 'acceptance rates at the top 20',
   tags: ['admissions', 'acceptance rates', 'selectivity'],

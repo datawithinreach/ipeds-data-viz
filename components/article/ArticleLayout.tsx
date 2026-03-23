@@ -9,11 +9,11 @@ export function ArticleLayout({
   category = 'Data Analysis',
   title,
   description,
-  date,
+  publishDate,
   source,
   children,
 }: Props) {
-  const formattedDate = formatArticleDate(date);
+  const formattedDate = formatArticleDate(publishDate);
 
   return (
     <>

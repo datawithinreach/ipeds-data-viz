@@ -8,10 +8,9 @@ import type { ArticleMeta as ArticleMetaType } from '@/components/article';
 export const ArticleMeta: ArticleMetaType = {
   title: 'Your Article Title',
   description: 'A short summary of what this article covers.',
-  date: '03-01-2025',
+  publishDate: '03-01-2025',
   source:
     'Source: Replace with your data source attribution (e.g. IPEDS, National Center for Education Statistics).',
-  publishedAt: '03-01-2025',
   imageUrl: '/images/landing/story1.png',
   cardDescription: 'A short card teaser for the landing page.',
   tags: ['tag-1', 'tag-2'],
