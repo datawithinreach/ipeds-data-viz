@@ -13,8 +13,8 @@ export const ArticleMeta: ArticleMetaType = {
   source:
     'Source: IPEDS (Integrated Postsecondary Education Data System), National Center for Education Statistics, U.S. Department of Education. Admissions data from ADM2024 survey component for academic year 2024–2025.',
   imageUrl: '/images/landing/story2.png',
-  cardDescription: 'acceptance rates at the top 20',
   tags: ['admissions', 'acceptance rates', 'selectivity'],
+  category: 'Admissions',
   href: '/article/admissions-top-20',
 };
 

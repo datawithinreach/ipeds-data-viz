@@ -19,7 +19,7 @@ function createStoryCard(meta: ArticleMeta): StoryCardType {
     title: meta.title,
     subtitle: meta.description,
     imageUrl: meta.imageUrl ?? '/images/landing/story1.png',
-    description: meta.cardDescription ?? meta.description,
+    description: meta.description,
     tags: meta.tags ?? [],
     href: meta.href ?? '#',
   };

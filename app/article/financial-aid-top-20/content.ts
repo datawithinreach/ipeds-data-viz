@@ -13,8 +13,8 @@ export const ArticleMeta: ArticleMetaType = {
   source:
     'Source: IPEDS (Integrated Postsecondary Education Data System), National Center for Education Statistics, U.S. Department of Education. Data for academic years 2020–21 through 2023–24.',
   imageUrl: '/images/landing/story1.png',
-  cardDescription: 'where has tuition increased the most?',
   tags: ['financial aid', 'tuition', 'cost of college'],
+  category: 'Financial',
   href: '/article/financial-aid-top-20',
 };
 

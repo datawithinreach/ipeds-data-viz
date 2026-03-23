@@ -1,14 +1,10 @@
-export type ArticleConfig = {
+export type ArticleMeta = {
   title: string;
   description: string;
   publishDate: string;
-  category?: string;
+  category: string;
   source: string;
-};
-
-export type ArticleMeta = ArticleConfig & {
   imageUrl?: string;
-  cardDescription?: string;
   tags: string[];
-  href?: string;
+  href: string;
 };
