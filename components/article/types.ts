@@ -10,6 +10,6 @@ export type ArticleMeta = ArticleConfig & {
   publishedAt?: string;
   imageUrl?: string;
   cardDescription?: string;
-  tags?: string[];
+  tags: string[];
   href?: string;
 };

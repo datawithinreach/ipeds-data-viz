@@ -16,6 +16,18 @@
     align-items: center;
     gap: 0.375rem;
     font-size: 0.75rem;
+    border: 1px solid rgba($primary, 0.22);
+    border-radius: 999px;
+    padding: 0.2rem 0.5rem;
+    background: rgba($background, 0.8);
+    color: $primary;
+    cursor: pointer;
+    transition: opacity 120ms ease, background-color 120ms ease;
+
+    &[data-active='false'] {
+      opacity: 0.45;
+      background: transparent;
+    }
   }
 
   &__legendSwatch {

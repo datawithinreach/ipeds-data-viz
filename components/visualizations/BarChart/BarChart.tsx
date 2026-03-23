@@ -130,11 +130,12 @@ export function BarChart({
                         fill={d.color ?? defaultColor}
                         rx={4}
                         onMouseMove={(e) => {
-                          const point = localPoint(e) ?? { x: 0, y: 0 };
+                          const svg = e.currentTarget.ownerSVGElement;
+                          const point = svg ? localPoint(svg, e) : localPoint(e);
                           showTooltip({
                             tooltipData: d,
-                            tooltipLeft: point.x + MARGIN.left,
-                            tooltipTop: point.y + MARGIN.top,
+                            tooltipLeft: point?.x ?? 0,
+                            tooltipTop: point?.y ?? 0,
                           });
                         }}
                         onMouseLeave={hideTooltip}
@@ -196,11 +197,12 @@ export function BarChart({
                         fill={d.color ?? defaultColor}
                         rx={4}
                         onMouseMove={(e) => {
-                          const point = localPoint(e) ?? { x: 0, y: 0 };
+                          const svg = e.currentTarget.ownerSVGElement;
+                          const point = svg ? localPoint(svg, e) : localPoint(e);
                           showTooltip({
                             tooltipData: d,
-                            tooltipLeft: point.x + MARGIN.left,
-                            tooltipTop: point.y + MARGIN.top,
+                            tooltipLeft: point?.x ?? 0,
+                            tooltipTop: point?.y ?? 0,
                           });
                         }}
                         onMouseLeave={hideTooltip}

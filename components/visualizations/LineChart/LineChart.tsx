@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { scaleLinear, scalePoint } from '@visx/scale';
 import { Group } from '@visx/group';
 import { LinePath } from '@visx/shape';
@@ -24,6 +24,7 @@ type Props = {
   formatTick?: (v: number) => string;
   height?: number;
   showLegend?: boolean;
+  enableSeriesSelection?: boolean;
 };
 
 const MARGIN = { top: 16, right: 24, bottom: 36, left: 56 };
@@ -31,7 +32,12 @@ const PRIMARY = '#501315';
 const AXIS_COLOR = '#501315';
 const GRID_COLOR = '#50131515';
 
-type TooltipDatum = { seriesLabel: string; x: string; y: number; color: string };
+type TooltipDatum = {
+  seriesLabel: string;
+  x: string;
+  y: number;
+  color: string;
+};
 
 export function LineChart({
   series,
@@ -39,20 +45,30 @@ export function LineChart({
   formatTick,
   height = 360,
   showLegend = true,
+  enableSeriesSelection = false,
 }: Props) {
   const { parentRef, width } = useParentSize();
+  const [selectedKeys, setSelectedKeys] = useState<string[]>(() =>
+    series.map((item) => item.key)
+  );
+
+  const visibleSeries = useMemo(() => {
+    if (!enableSeriesSelection) return series;
+    const selected = series.filter((item) => selectedKeys.includes(item.key));
+    return selected.length > 0 ? selected : series;
+  }, [enableSeriesSelection, selectedKeys, series]);
 
   const innerWidth = width - MARGIN.left - MARGIN.right;
   const innerHeight = height - MARGIN.top - MARGIN.bottom;
 
   const allXValues = useMemo(
-    () => [...new Set(series.flatMap((s) => s.data.map((d) => d.x)))],
-    [series],
+    () => [...new Set(visibleSeries.flatMap((s) => s.data.map((d) => d.x)))],
+    [visibleSeries]
   );
 
   const allYValues = useMemo(
-    () => series.flatMap((s) => s.data.map((d) => d.y)),
-    [series],
+    () => visibleSeries.flatMap((s) => s.data.map((d) => d.y)),
+    [visibleSeries]
   );
 
   const xScale = useMemo(
@@ -62,7 +78,7 @@ export function LineChart({
         range: [0, innerWidth],
         padding: 0.1,
       }),
-    [allXValues, innerWidth],
+    [allXValues, innerWidth]
   );
 
   const yMin = Math.min(...allYValues);
@@ -76,11 +92,17 @@ export function LineChart({
         range: [innerHeight, 0],
         nice: true,
       }),
-    [yMin, yMax, yPad, innerHeight],
+    [yMin, yMax, yPad, innerHeight]
   );
 
-  const { showTooltip, hideTooltip, tooltipData, tooltipLeft, tooltipTop, tooltipOpen } =
-    useTooltip<TooltipDatum>();
+  const {
+    showTooltip,
+    hideTooltip,
+    tooltipData,
+    tooltipLeft,
+    tooltipTop,
+    tooltipOpen,
+  } = useTooltip<TooltipDatum>();
 
   return (
     <div ref={parentRef} className="lineChart">
@@ -89,13 +111,31 @@ export function LineChart({
           {showLegend && series.length > 1 && (
             <div className="lineChart__legend">
               {series.map((s) => (
-                <span key={s.key} className="lineChart__legendItem">
+                <button
+                  key={s.key}
+                  type="button"
+                  className="lineChart__legendItem"
+                  data-active={
+                    !enableSeriesSelection || selectedKeys.includes(s.key)
+                  }
+                  onClick={() => {
+                    if (!enableSeriesSelection) return;
+                    setSelectedKeys((previous) => {
+                      if (previous.includes(s.key)) {
+                        // Keep at least one active line visible.
+                        if (previous.length === 1) return previous;
+                        return previous.filter((key) => key !== s.key);
+                      }
+                      return [...previous, s.key];
+                    });
+                  }}
+                >
                   <span
                     className="lineChart__legendSwatch"
                     style={{ background: s.color }}
                   />
                   {s.label ?? s.key}
-                </span>
+                </button>
               ))}
             </div>
           )}
@@ -107,7 +147,7 @@ export function LineChart({
                 stroke={GRID_COLOR}
                 strokeDasharray="3 3"
               />
-              {series.map((s) => (
+              {visibleSeries.map((s) => (
                 <LinePath
                   key={s.key}
                   data={s.data}
@@ -119,7 +159,7 @@ export function LineChart({
                   strokeLinecap="round"
                 />
               ))}
-              {series.map((s) =>
+              {visibleSeries.map((s) =>
                 s.data.map((d) => (
                   <circle
                     key={`${s.key}-${d.x}`}
@@ -128,7 +168,13 @@ export function LineChart({
                     r={4}
                     fill={s.color}
                     onMouseMove={(e) => {
-                      const point = localPoint(e) ?? { x: 0, y: 0 };
+                      const container = e.currentTarget.closest('.lineChart');
+                      const svg = e.currentTarget.ownerSVGElement;
+                      const point = container
+                        ? localPoint(container, e)
+                        : svg
+                          ? localPoint(svg, e)
+                          : localPoint(e);
                       showTooltip({
                         tooltipData: {
                           seriesLabel: s.label ?? s.key,
@@ -136,27 +182,38 @@ export function LineChart({
                           y: d.y,
                           color: s.color,
                         },
-                        tooltipLeft: point.x + MARGIN.left,
-                        tooltipTop: point.y + MARGIN.top,
+                        tooltipLeft: point?.x ?? 0,
+                        tooltipTop: point?.y ?? 0,
                       });
                     }}
                     onMouseLeave={hideTooltip}
                   />
-                )),
+                ))
               )}
               <AxisLeft
                 scale={yScale}
                 hideTicks
                 hideAxisLine
-                tickFormat={formatTick ? (v) => formatTick(Number(v)) : (v) => String(v)}
-                tickLabelProps={{ fill: AXIS_COLOR, fontSize: 11, textAnchor: 'end', dx: -4 }}
+                tickFormat={
+                  formatTick ? (v) => formatTick(Number(v)) : (v) => String(v)
+                }
+                tickLabelProps={{
+                  fill: AXIS_COLOR,
+                  fontSize: 11,
+                  textAnchor: 'end',
+                  dx: -4,
+                }}
               />
               <AxisBottom
                 scale={xScale}
                 top={innerHeight}
                 hideTicks
                 hideAxisLine
-                tickLabelProps={{ fill: AXIS_COLOR, fontSize: 12, textAnchor: 'middle' }}
+                tickLabelProps={{
+                  fill: AXIS_COLOR,
+                  fontSize: 12,
+                  textAnchor: 'middle',
+                }}
               />
             </Group>
           </svg>
@@ -175,7 +232,9 @@ export function LineChart({
                 boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
               }}
             >
-              <p className="lineChart__tooltipLabel">{tooltipData.seriesLabel}</p>
+              <p className="lineChart__tooltipLabel">
+                {tooltipData.seriesLabel}
+              </p>
               <p className="lineChart__tooltipX">{tooltipData.x}</p>
               <p>{formatValue ? formatValue(tooltipData.y) : tooltipData.y}</p>
             </TooltipWithBounds>

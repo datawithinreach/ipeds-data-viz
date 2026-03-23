@@ -18,7 +18,7 @@ function createStoryCard(meta: ArticleMeta): StoryCardType {
     date: formatArticleDate(meta.date || meta.publishedAt),
     title: meta.title,
     subtitle: meta.description,
-    imageUrl: meta.imageUrl ?? '/images/landing/story.png',
+    imageUrl: meta.imageUrl ?? '/images/landing/story1.png',
     description: meta.cardDescription ?? meta.description,
     tags: meta.tags ?? [],
     href: meta.href ?? '#',

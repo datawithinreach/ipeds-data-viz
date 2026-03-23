@@ -7,7 +7,9 @@ import { chartPalette } from '@/styles/palette';
 import { ArticleMeta, sections, banner, seriesData, chartOptions } from './content';
 
 const coloredSeries: LineSeries[] = seriesData.map((s, i) => ({
-  ...s,
+  key: s.label,
+  label: s.label,
+  data: s.data,
   color: chartPalette[i % chartPalette.length],
 }));
 
@@ -20,6 +22,7 @@ export default function Page() {
           formatValue={chartOptions.formatValue}
           formatTick={chartOptions.formatTick}
           height={chartOptions.height}
+          enableSeriesSelection
         />
       </div>
 
