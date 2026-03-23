@@ -47,7 +47,7 @@ export default function Page() {
         </section>
       ))}
 
-      <Banner value={banner.value} label={banner.label} />
+      {banner && <Banner value={banner.value} label={banner.label} />}
 
       <div className="article__chart">
         {legendItems.length > 0 && <Legend items={legendItems} />}

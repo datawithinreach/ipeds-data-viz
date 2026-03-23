@@ -37,10 +37,10 @@ export const sections = [
 
 // ===============================================================
 // BANNER
-// A highlighted statistic displayed prominently above the chart.
+// Optional. Set to null to hide the banner.
 // ===============================================================
 
-export const banner = {
+export const banner: { value: string; label: string } | null = {
   value: '84%',
   label: 'Highlight a key statistic from your dataset here.',
 };

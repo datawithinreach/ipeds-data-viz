@@ -40,10 +40,10 @@ export const sections = [
 
 /* ================================================================
    BANNER
-   A highlighted statistic displayed prominently.
+   Optional. Set to null to hide the banner.
    ================================================================ */
 
-export const banner = {
+export const banner: { value: string; label: string; accent?: 'primary' | 'navbar' } | null = {
   value: '+26%',
   label: 'Describe the highlighted trend or change over time here.',
   accent: 'navbar' as const,

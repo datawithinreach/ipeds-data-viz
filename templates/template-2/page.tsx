@@ -31,11 +31,13 @@ export default function Page() {
           ))}
         </div>
 
-        <Banner
-          value={banner.value}
-          label={banner.label}
-          accent={banner.accent}
-        />
+        {banner && (
+          <Banner
+            value={banner.value}
+            label={banner.label}
+            accent={banner.accent}
+          />
+        )}
       </section>
 
       <SectionDivider />
