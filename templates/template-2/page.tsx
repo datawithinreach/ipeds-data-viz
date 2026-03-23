@@ -14,6 +14,15 @@ const coloredSeries: LineSeries[] = seriesData.map((s, i) => ({
 export default function Page() {
   return (
     <ArticleLayout {...ArticleMeta}>
+      <div className="article__chart article__chart--contained">
+        <LineChart
+          series={coloredSeries}
+          formatValue={chartOptions.formatValue}
+          formatTick={chartOptions.formatTick}
+          height={chartOptions.height}
+        />
+      </div>
+
       <section>
         <h2 className="article__heading">{sections[0].heading}</h2>
         <div className="article__body">
@@ -27,15 +36,6 @@ export default function Page() {
           label={banner.label}
           accent={banner.accent}
         />
-
-        <div className="article__chart">
-          <LineChart
-            series={coloredSeries}
-            formatValue={chartOptions.formatValue}
-            formatTick={chartOptions.formatTick}
-            height={chartOptions.height}
-          />
-        </div>
       </section>
 
       <SectionDivider />

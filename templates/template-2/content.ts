@@ -27,7 +27,7 @@ export const sections = [
   {
     heading: 'Section Heading',
     paragraphs: [
-      'Replace this paragraph with your trend analysis. Describe the patterns visible over time, note inflection points, and give the reader context for interpreting the line chart below.',
+      'Replace this paragraph with your trend analysis. Describe the patterns visible over time, note inflection points, and give the reader context for interpreting the line chart above.',
     ],
   },
   {

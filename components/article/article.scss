@@ -69,6 +69,12 @@
     margin: 2rem 0;
   }
 
+  &__chart--contained {
+    max-width: 52rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &__callout {
     margin-top: 1.5rem;
     max-width: 42rem;

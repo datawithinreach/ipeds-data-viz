@@ -29,7 +29,7 @@ export const sections = [
     heading: 'Four Years of Rising Costs',
     paragraphs: [
       'The listed price of attending a top-ranked university in the United States has never been higher. In 2023–24, the average sticker price at a private top-20 school reached nearly $87,000 — a figure that provokes sticker shock in even the most prepared families.',
-      'Between 2020–21 and 2023–24, tuition has risen across the board — but not uniformly. Johns Hopkins saw the steepest four-year increase at 27.2%, while UCLA posted the most modest at just 3.4%. The chart below tracks five representative schools over that period.',
+      'Between 2020–21 and 2023–24, tuition has risen across the board — but not uniformly. Johns Hopkins saw the steepest four-year increase at 27.2%, while UCLA posted the most modest at just 3.4%. The chart above tracks five representative schools over that period.',
     ],
   },
   {
