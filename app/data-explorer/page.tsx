@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
+import './page.scss';
 
 const TOPICS = [{ value: 'admissions', label: 'Admissions' }];
 const YEARS = [{ value: '2024', label: '2024–2025' }];
@@ -40,19 +41,19 @@ export default function DataExplorerPage() {
   }
 
   return (
-    <div className="text-primary mx-32 my-12 flex flex-col gap-4">
-      <div className="flex flex-col gap-2">
-        <h1 className="font-(family-name:--font-red-hat-mono) text-[48px] leading-none font-medium">
+    <div className="dataExplorer">
+      <div className="dataExplorer__header">
+        <h1 className="dataExplorer__title">
           DATA EXPLORER
         </h1>
-        <p className="font-medium">Search university data by topic</p>
+        <p className="dataExplorer__subtitle">Search university data by topic</p>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="dataExplorer__controls">
         <select
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
-          className="border-primary bg-button text-primary rounded-full border px-4 py-2 font-medium"
+          className="dataExplorer__select"
         >
           {TOPICS.map((t) => (
             <option key={t.value} value={t.value}>
@@ -64,7 +65,7 @@ export default function DataExplorerPage() {
         <select
           value={year}
           onChange={(e) => setYear(e.target.value)}
-          className="border-primary bg-button text-primary rounded-full border px-4 py-2 font-medium"
+          className="dataExplorer__select"
         >
           {YEARS.map((y) => (
             <option key={y.value} value={y.value}>
@@ -73,9 +74,9 @@ export default function DataExplorerPage() {
           ))}
         </select>
       </div>
-      <div className="grid w-full grid-cols-[1fr_auto_1fr] items-center">
+      <div className="dataExplorer__searchRow">
         <div />
-        <div className="border-primary flex items-center gap-2 justify-self-center rounded-full border bg-[#EFE7D2]/40 px-4 py-2">
+        <div className="dataExplorer__searchBar">
           <Image src="/icons/search.png" alt="Search" width={18} height={18} />
           <input
             type="text"
@@ -83,13 +84,13 @@ export default function DataExplorerPage() {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
             placeholder="Search by university name..."
-            className="text-primary placeholder:text-primary/60 w-72 bg-transparent outline-none"
+            className="dataExplorer__searchInput"
           />
         </div>
-        <div className="ml-4 justify-self-start">
+        <div className="dataExplorer__searchAction">
           <button
             onClick={handleSearch}
-            className="bg-button border-primary text-primary rounded-full border px-6 py-2 font-medium transition-opacity hover:opacity-80"
+            className="dataExplorer__searchBtn"
           >
             Search
           </button>
@@ -98,45 +99,43 @@ export default function DataExplorerPage() {
 
       <div>
         {isFetching && (
-          <p className="text-primary/60 font-medium">Loading...</p>
+          <p className="dataExplorer__loading">Loading...</p>
         )}
 
         {error && (
-          <p className="text-primary font-medium">{(error as Error).message}</p>
+          <p className="dataExplorer__error">{(error as Error).message}</p>
         )}
 
         {data && !isFetching && (
-          <div className="flex flex-col gap-4">
-            <h2 className="text-[24px] font-semibold">{data.college}</h2>
-            <p className="text-primary/60 text-sm">Unit ID: {data.unit_id}</p>
-            <div className="border-primary overflow-hidden rounded-xl border">
-              <table className="w-full text-sm">
+          <div className="dataExplorer__results">
+            <h2 className="dataExplorer__collegeName">{data.college}</h2>
+            <p className="dataExplorer__unitId">Unit ID: {data.unit_id}</p>
+            <div className="dataExplorer__tableWrapper">
+              <table className="dataExplorer__table">
                 <thead>
-                  <tr className="bg-navbar">
-                    <th className="px-4 py-3 text-left font-semibold">
+                  <tr className="dataExplorer__tableHead">
+                    <th className="dataExplorer__th">
                       Variable
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold">
+                    <th className="dataExplorer__th">
                       Description
                     </th>
-                    <th className="px-4 py-3 text-right font-semibold">
+                    <th className="dataExplorer__th dataExplorer__th--right">
                       Value
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {Object.entries(data.admissions).map(([key, entry], i) => (
+                  {Object.entries(data.admissions).map(([key, entry]) => (
                     <tr
                       key={key}
-                      className={
-                        i % 2 === 0 ? 'bg-white/40' : 'bg-[#EFE7D2]/20'
-                      }
+                      className="dataExplorer__row"
                     >
-                      <td className="px-4 py-2 font-mono text-xs">{key}</td>
-                      <td className="px-4 py-2">
+                      <td className="dataExplorer__td dataExplorer__td--code">{key}</td>
+                      <td className="dataExplorer__td">
                         {entry.description ?? 'N/A'}
                       </td>
-                      <td className="px-4 py-2 text-right font-medium">
+                      <td className="dataExplorer__td dataExplorer__td--right">
                         {entry.value ?? 'N/A'}
                       </td>
                     </tr>
