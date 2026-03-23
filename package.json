@@ -11,6 +11,7 @@
   },
   "scripts": {
     "generate:article-registry": "node scripts/generate-article-registry.mjs",
+    "create:article": "bash scripts/create-article.sh",
     "predev": "pnpm run generate:article-registry",
     "dev": "next dev",
     "prebuild": "pnpm run generate:article-registry",
