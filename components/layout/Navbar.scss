@@ -1,0 +1,26 @@
+@use '../../styles/variables' as *;
+
+.navbar {
+  background-color: $navbar;
+  color: $primary;
+  padding: 1rem 8rem;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}

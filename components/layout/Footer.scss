@@ -1,0 +1,7 @@
+@use '../../styles/variables' as *;
+
+.footer {
+  background-color: $navbar;
+  color: $primary;
+  padding: 1.5rem 0;
+}

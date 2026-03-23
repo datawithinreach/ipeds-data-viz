@@ -1,5 +1,5 @@
-// TODO: temporary placeholder
+import './Footer.scss';
 
 export function Footer() {
-  return <footer className="bg-navbar text-primary py-6"></footer>;
+  return <footer className="footer"></footer>;
 }

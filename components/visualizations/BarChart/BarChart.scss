@@ -1,0 +1,10 @@
+@use '../../../styles/variables' as *;
+
+.barChart {
+  position: relative;
+  width: 100%;
+
+  &__tooltipLabel {
+    font-weight: 600;
+  }
+}

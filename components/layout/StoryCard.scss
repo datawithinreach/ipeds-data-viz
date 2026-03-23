@@ -1,0 +1,36 @@
+@use '../../styles/variables' as *;
+
+.storyCard {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 300px;
+  font-size: 16px;
+
+  &__date {
+    text-align: right;
+    font-weight: 500;
+  }
+
+  &__imageWrapper {
+    position: relative;
+    height: 350px;
+    width: 100%;
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+    @include line-clamp(2);
+  }
+
+  &__description {
+    text-align: left;
+    @include line-clamp(2);
+  }
+}

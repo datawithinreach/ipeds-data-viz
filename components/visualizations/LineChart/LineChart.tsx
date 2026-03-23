@@ -9,6 +9,7 @@ import { GridRows } from '@visx/grid';
 import { useParentSize } from '@visx/responsive';
 import { useTooltip, TooltipWithBounds, defaultStyles } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
+import './LineChart.scss';
 
 export type LineSeries = {
   key: string;
@@ -82,15 +83,15 @@ export function LineChart({
     useTooltip<TooltipDatum>();
 
   return (
-    <div ref={parentRef} className="relative w-full">
+    <div ref={parentRef} className="lineChart">
       {width > 10 && (
         <>
           {showLegend && series.length > 1 && (
-            <div className="mb-3 flex flex-wrap gap-3">
+            <div className="lineChart__legend">
               {series.map((s) => (
-                <span key={s.key} className="flex items-center gap-1.5 text-xs">
+                <span key={s.key} className="lineChart__legendItem">
                   <span
-                    className="inline-block h-2.5 w-2.5 rounded-full"
+                    className="lineChart__legendSwatch"
                     style={{ background: s.color }}
                   />
                   {s.label ?? s.key}
@@ -174,8 +175,8 @@ export function LineChart({
                 boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
               }}
             >
-              <p className="font-semibold">{tooltipData.seriesLabel}</p>
-              <p className="text-primary/70">{tooltipData.x}</p>
+              <p className="lineChart__tooltipLabel">{tooltipData.seriesLabel}</p>
+              <p className="lineChart__tooltipX">{tooltipData.x}</p>
               <p>{formatValue ? formatValue(tooltipData.y) : tooltipData.y}</p>
             </TooltipWithBounds>
           )}

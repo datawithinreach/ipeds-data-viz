@@ -5,15 +5,17 @@ import { scaleBand, scaleLinear } from '@visx/scale';
 import { Group } from '@visx/group';
 import { Bar } from '@visx/shape';
 import { AxisBottom, AxisLeft } from '@visx/axis';
-import { GridColumns } from '@visx/grid';
+import { GridColumns, GridRows } from '@visx/grid';
 import { useParentSize } from '@visx/responsive';
 import { useTooltip, TooltipWithBounds, defaultStyles } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
 import type { ReactNode } from 'react';
+import './BarChart.scss';
 
 export type BarDatum = {
   label: string;
   value: number;
+  group?: string;
   color?: string;
   meta?: Record<string, unknown>;
 };
@@ -25,6 +27,7 @@ type Props = {
   defaultColor?: string;
   barSize?: number;
   height?: number;
+  orientation?: 'horizontal' | 'vertical';
   renderTooltip?: (datum: BarDatum) => ReactNode;
 };
 
@@ -40,87 +43,200 @@ export function BarChart({
   defaultColor = PRIMARY,
   barSize = 20,
   height = 500,
+  orientation = 'horizontal',
   renderTooltip,
 }: Props) {
   const { parentRef, width } = useParentSize();
 
   const innerWidth = width - MARGIN.left - MARGIN.right;
   const innerHeight = height - MARGIN.top - MARGIN.bottom;
+  const maxValue = data.length > 0 ? Math.max(...data.map((d) => d.value)) : 0;
 
-  const yScale = useMemo(
+  const horizontalBandScale = useMemo(
     () =>
       scaleBand({
         domain: data.map((d) => d.label),
         range: [0, innerHeight],
         padding: 0.35,
       }),
-    [data, innerHeight],
+    [data, innerHeight]
   );
 
-  const xScale = useMemo(
+  const horizontalLinearScale = useMemo(
     () =>
       scaleLinear({
-        domain: [0, Math.max(...data.map((d) => d.value)) * 1.05],
+        domain: [0, maxValue * 1.05],
         range: [0, innerWidth],
         nice: true,
       }),
-    [data, innerWidth],
+    [innerWidth, maxValue]
   );
 
-  const { showTooltip, hideTooltip, tooltipData, tooltipLeft, tooltipTop, tooltipOpen } =
-    useTooltip<BarDatum>();
+  const verticalBandScale = useMemo(
+    () =>
+      scaleBand({
+        domain: data.map((d) => d.label),
+        range: [0, innerWidth],
+        padding: 0.35,
+      }),
+    [data, innerWidth]
+  );
+
+  const verticalLinearScale = useMemo(
+    () =>
+      scaleLinear({
+        domain: [0, maxValue * 1.05],
+        range: [innerHeight, 0],
+        nice: true,
+      }),
+    [innerHeight, maxValue]
+  );
+
+  const {
+    showTooltip,
+    hideTooltip,
+    tooltipData,
+    tooltipLeft,
+    tooltipTop,
+    tooltipOpen,
+  } = useTooltip<BarDatum>();
 
   return (
-    <div ref={parentRef} className="relative w-full">
+    <div ref={parentRef} className="barChart">
       {width > 10 && (
         <>
           <svg width={width} height={height}>
             <Group left={MARGIN.left} top={MARGIN.top}>
-              <GridColumns
-                scale={xScale}
-                height={innerHeight}
-                stroke={GRID_COLOR}
-                strokeDasharray="3 3"
-              />
-              {data.map((d) => {
-                const barWidth = xScale(d.value);
-                const barY = yScale(d.label) ?? 0;
-                const bh = yScale.bandwidth();
-                return (
-                  <Bar
-                    key={d.label}
-                    x={0}
-                    y={barY + (bh - barSize) / 2}
-                    width={barWidth}
-                    height={barSize}
-                    fill={d.color ?? defaultColor}
-                    rx={4}
-                    onMouseMove={(e) => {
-                      const point = localPoint(e) ?? { x: 0, y: 0 };
-                      showTooltip({
-                        tooltipData: d,
-                        tooltipLeft: point.x + MARGIN.left,
-                        tooltipTop: point.y + MARGIN.top,
-                      });
-                    }}
-                    onMouseLeave={hideTooltip}
+              {orientation === 'horizontal' ? (
+                <>
+                  <GridColumns
+                    scale={horizontalLinearScale}
+                    height={innerHeight}
+                    stroke={GRID_COLOR}
+                    strokeDasharray="3 3"
                   />
-                );
-              })}
-              <AxisLeft
-                scale={yScale}
-                hideTicks
-                hideAxisLine
-                tickLabelProps={{ fill: AXIS_COLOR, fontSize: 12, textAnchor: 'end', dy: '0.33em' }}
-              />
-              <AxisBottom
-                scale={xScale}
-                top={innerHeight}
-                hideTicks
-                hideAxisLine
-                tickFormat={formatTick ? (v) => formatTick(Number(v)) : (v) => String(v)}
-                tickLabelProps={{ fill: AXIS_COLOR, fontSize: 11, textAnchor: 'middle' }}
-              />
+                  {data.map((d) => {
+                    const barWidth = horizontalLinearScale(d.value);
+                    const barY = horizontalBandScale(d.label) ?? 0;
+                    const bandHeight = horizontalBandScale.bandwidth();
+                    const clampedBarSize = Math.min(barSize, bandHeight);
+                    return (
+                      <Bar
+                        key={d.label}
+                        x={0}
+                        y={barY + (bandHeight - clampedBarSize) / 2}
+                        width={barWidth}
+                        height={clampedBarSize}
+                        fill={d.color ?? defaultColor}
+                        rx={4}
+                        onMouseMove={(e) => {
+                          const point = localPoint(e) ?? { x: 0, y: 0 };
+                          showTooltip({
+                            tooltipData: d,
+                            tooltipLeft: point.x + MARGIN.left,
+                            tooltipTop: point.y + MARGIN.top,
+                          });
+                        }}
+                        onMouseLeave={hideTooltip}
+                      />
+                    );
+                  })}
+                  <AxisLeft
+                    scale={horizontalBandScale}
+                    hideTicks
+                    hideAxisLine
+                    numTicks={data.length}
+                    tickLabelProps={{
+                      fill: AXIS_COLOR,
+                      fontSize: 12,
+                      textAnchor: 'end',
+                      dy: '0.33em',
+                    }}
+                  />
+                  <AxisBottom
+                    scale={horizontalLinearScale}
+                    top={innerHeight}
+                    hideTicks
+                    hideAxisLine
+                    tickFormat={
+                      formatTick
+                        ? (v) => formatTick(Number(v))
+                        : (v) => String(v)
+                    }
+                    tickLabelProps={{
+                      fill: AXIS_COLOR,
+                      fontSize: 11,
+                      textAnchor: 'middle',
+                    }}
+                  />
+                </>
+              ) : (
+                <>
+                  <GridRows
+                    scale={verticalLinearScale}
+                    width={innerWidth}
+                    stroke={GRID_COLOR}
+                    strokeDasharray="3 3"
+                  />
+                  {data.map((d) => {
+                    const barX = verticalBandScale(d.label) ?? 0;
+                    const bandWidth = verticalBandScale.bandwidth();
+                    const clampedBarSize = Math.min(barSize, bandWidth);
+                    const centeredBarX =
+                      barX + (bandWidth - clampedBarSize) / 2;
+                    const barY = verticalLinearScale(d.value);
+                    const barHeight = innerHeight - barY;
+                    return (
+                      <Bar
+                        key={d.label}
+                        x={centeredBarX}
+                        y={barY}
+                        width={clampedBarSize}
+                        height={barHeight}
+                        fill={d.color ?? defaultColor}
+                        rx={4}
+                        onMouseMove={(e) => {
+                          const point = localPoint(e) ?? { x: 0, y: 0 };
+                          showTooltip({
+                            tooltipData: d,
+                            tooltipLeft: point.x + MARGIN.left,
+                            tooltipTop: point.y + MARGIN.top,
+                          });
+                        }}
+                        onMouseLeave={hideTooltip}
+                      />
+                    );
+                  })}
+                  <AxisLeft
+                    scale={verticalLinearScale}
+                    hideTicks
+                    hideAxisLine
+                    tickFormat={
+                      formatTick
+                        ? (v) => formatTick(Number(v))
+                        : (v) => String(v)
+                    }
+                    tickLabelProps={{
+                      fill: AXIS_COLOR,
+                      fontSize: 11,
+                      textAnchor: 'end',
+                      dy: '0.33em',
+                    }}
+                  />
+                  <AxisBottom
+                    scale={verticalBandScale}
+                    top={innerHeight}
+                    hideTicks
+                    hideAxisLine
+                    numTicks={data.length}
+                    tickLabelProps={{
+                      fill: AXIS_COLOR,
+                      fontSize: 11,
+                      textAnchor: 'middle',
+                    }}
+                  />
+                </>
+              )}
             </Group>
           </svg>
           {tooltipOpen && tooltipData && (
@@ -142,8 +258,12 @@ export function BarChart({
                 renderTooltip(tooltipData)
               ) : (
                 <>
-                  <p className="font-semibold">{tooltipData.label}</p>
-                  <p>{formatValue ? formatValue(tooltipData.value) : tooltipData.value}</p>
+                  <p className="barChart__tooltipLabel">{tooltipData.label}</p>
+                  <p>
+                    {formatValue
+                      ? formatValue(tooltipData.value)
+                      : tooltipData.value}
+                  </p>
                 </>
               )}
             </TooltipWithBounds>

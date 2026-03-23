@@ -10,6 +10,7 @@ import { useParentSize } from '@visx/responsive';
 import { useTooltip, TooltipWithBounds, defaultStyles } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
 import type { ReactNode } from 'react';
+import './StackedBarChart.scss';
 
 export type StackedSegment = {
   key: string;
@@ -82,17 +83,17 @@ export function StackedBarChart({
     useTooltip<StackedBarDatum>();
 
   return (
-    <div ref={parentRef} className="relative w-full">
+    <div ref={parentRef} className="stackedBarChart">
       {width > 10 && (
         <>
           {legend && (
-            <div className="mb-3 flex items-center gap-4 text-xs">
+            <div className="stackedBarChart__legend">
               {segments
                 .filter((s) => s.color !== 'transparent')
                 .map((s) => (
-                  <span key={s.key} className="flex items-center gap-1.5">
+                  <span key={s.key} className="stackedBarChart__legendItem">
                     <span
-                      className="inline-block h-3 w-3 rounded-sm"
+                      className="stackedBarChart__legendSwatch"
                       style={{ background: s.color }}
                     />
                     {s.label}
@@ -153,6 +154,7 @@ export function StackedBarChart({
                 scale={yScale}
                 hideTicks
                 hideAxisLine
+                numTicks={data.length}
                 tickLabelProps={{ fill: AXIS_COLOR, fontSize: 12, textAnchor: 'end', dy: '0.33em' }}
               />
               <AxisBottom
@@ -184,13 +186,13 @@ export function StackedBarChart({
                 renderTooltip(tooltipData)
               ) : (
                 <>
-                  <p className="font-semibold">{tooltipData.label}</p>
+                  <p className="stackedBarChart__tooltipLabel">{tooltipData.label}</p>
                   {segments
                     .filter((s) => s.color !== 'transparent')
                     .map((s) => (
-                      <p key={s.key} className="flex items-center gap-1.5">
+                      <p key={s.key} className="stackedBarChart__tooltipSegment">
                         <span
-                          className="inline-block h-2 w-2 rounded-full"
+                          className="stackedBarChart__tooltipSwatch"
                           style={{ background: s.color }}
                         />
                         {s.label}: {(tooltipData[s.key] as number)?.toLocaleString()}

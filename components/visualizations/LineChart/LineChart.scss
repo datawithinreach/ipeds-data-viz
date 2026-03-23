@@ -1,0 +1,35 @@
+@use '../../../styles/variables' as *;
+
+.lineChart {
+  position: relative;
+  width: 100%;
+
+  &__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__legendItem {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+  }
+
+  &__legendSwatch {
+    display: inline-block;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+  }
+
+  &__tooltipLabel {
+    font-weight: 600;
+  }
+
+  &__tooltipX {
+    color: rgba($primary, 0.7);
+  }
+}

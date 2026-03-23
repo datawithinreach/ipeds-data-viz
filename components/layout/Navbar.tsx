@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import './Navbar.scss';
 
 export function Navbar() {
   return (
-    <nav className="bg-navbar text-primary px-32 py-4">
-      <section className="flex items-center justify-between font-medium">
-        <div className="flex items-center gap-2">
+    <nav className="navbar">
+      <section className="navbar__content">
+        <div className="navbar__logo">
           <svg width="28" height="16" viewBox="0 0 28 16" fill="none">
             <line
               x1="2"
@@ -26,7 +27,7 @@ export function Navbar() {
             />
           </svg>
         </div>
-        <div className="flex items-center gap-8">
+        <div className="navbar__links">
           <Link href="/">Home</Link>
           <Link href="/data-explorer">Data Explorer</Link>
           <Link href="/about">About</Link>

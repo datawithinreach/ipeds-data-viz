@@ -1,0 +1,33 @@
+@use '../../../styles/variables' as *;
+
+.banner {
+  margin: 2rem 0;
+  border-left: 4px solid;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+
+  &--primary {
+    border-left-color: $primary;
+  }
+
+  &--navbar {
+    border-left-color: $navbar;
+  }
+
+  &--button {
+    border-left-color: $button;
+  }
+
+  &__value {
+    font-family: $font-mono;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: $primary;
+  }
+
+  &__label {
+    margin-top: 0.25rem;
+    max-width: 36rem;
+    font-size: 0.875rem;
+    color: rgba($primary, 0.7);
+  }
+}
