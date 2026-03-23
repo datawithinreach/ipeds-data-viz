@@ -2,8 +2,18 @@
   "name": "ipeds-data-viz",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.28.1",
+  "engines": {
+    "node": ">=20.9.0",
+    "pnpm": ">=9.0.0",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
+  },
   "scripts": {
+    "generate:article-registry": "node scripts/generate-article-registry.mjs",
+    "predev": "pnpm run generate:article-registry",
     "dev": "next dev",
+    "prebuild": "pnpm run generate:article-registry",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -14,12 +24,20 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.20",
+    "@visx/axis": "^3.12.0",
+    "@visx/event": "^3.12.0",
+    "@visx/grid": "^3.12.0",
+    "@visx/group": "^3.12.0",
+    "@visx/responsive": "^3.12.0",
+    "@visx/scale": "^3.12.0",
+    "@visx/shape": "^3.12.0",
+    "@visx/tooltip": "^3.12.0",
+    "dayjs": "^1.11.20",
     "next": "16.1.4",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -27,8 +45,7 @@
     "eslint-config-next": "16.1.4",
     "husky": "^9.1.7",
     "prettier": "^3.8.1",
-    "prettier-plugin-tailwindcss": "^0.7.2",
-    "tailwindcss": "^4",
+    "sass": "^1.98.0",
     "typescript": "^5"
   }
 }
