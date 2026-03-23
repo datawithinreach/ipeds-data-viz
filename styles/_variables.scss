@@ -1,0 +1,20 @@
+// Colors
+$background: #fffcf7;
+$foreground: #171717;
+$primary: #501315;
+$navbar: #c1c4e3;
+$button: #fae3b1;
+$button-secondary: #fabdc2cc;
+$blue-accent: #3b82f6;
+
+// Fonts
+$font-poppins: var(--font-poppins), sans-serif;
+$font-mono: var(--font-red-hat-mono), monospace;
+
+// Mixins
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
