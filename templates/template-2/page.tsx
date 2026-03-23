@@ -1,11 +1,19 @@
 'use client';
 
-import { SectionDivider } from '@/components/article';
-import { formatArticleDate } from '@/components/article/dateFormat';
-import { LineChart, Banner } from '@/components/visualizations';
-import type { LineSeries } from '@/components/visualizations';
+import { SectionDivider, formatArticleDate } from '@/components/article';
+import {
+  LineChart,
+  Banner,
+  type LineSeries,
+} from '@/components/visualizations';
 import { chartPalette } from '@/styles/palette';
-import { ArticleMeta, sections, banner, seriesData, chartOptions } from './content';
+import {
+  ArticleMeta,
+  sections,
+  banner,
+  seriesData,
+  chartOptions,
+} from './content';
 import '@/components/article/article.scss';
 
 const coloredSeries: LineSeries[] = seriesData.map((s, i) => ({
@@ -25,7 +33,9 @@ export default function Page() {
 
       <article className="article">
         <header className="article__header">
-          <p className="article__category">{ArticleMeta.category ?? 'Data Analysis'}</p>
+          <p className="article__category">
+            {ArticleMeta.category ?? 'Data Analysis'}
+          </p>
           <h1 className="article__title">{ArticleMeta.title}</h1>
           <p className="article__description">{ArticleMeta.description}</p>
           <div className="article__meta">
@@ -33,43 +43,43 @@ export default function Page() {
           </div>
         </header>
 
-      <div className="article__chart article__chart--contained">
-        <LineChart
-          series={coloredSeries}
-          formatValue={chartOptions.formatValue}
-          formatTick={chartOptions.formatTick}
-          height={chartOptions.height}
-          enableSeriesSelection
-        />
-      </div>
-
-      <section>
-        <h2 className="article__heading">{sections[0].heading}</h2>
-        <div className="article__body">
-          {sections[0].paragraphs.map((text, i) => (
-            <p key={i}>{text}</p>
-          ))}
-        </div>
-
-        {banner && (
-          <Banner
-            value={banner.value}
-            label={banner.label}
-            accent={banner.accent}
+        <div className="article__chart article__chart--contained">
+          <LineChart
+            series={coloredSeries}
+            formatValue={chartOptions.formatValue}
+            formatTick={chartOptions.formatTick}
+            height={chartOptions.height}
+            enableSeriesSelection
           />
-        )}
-      </section>
-
-      <SectionDivider />
-
-      <section>
-        <h2 className="article__heading">{sections[1].heading}</h2>
-        <div className="article__body">
-          {sections[1].paragraphs.map((text, i) => (
-            <p key={i}>{text}</p>
-          ))}
         </div>
-      </section>
+
+        <section>
+          <h2 className="article__heading">{sections[0].heading}</h2>
+          <div className="article__body">
+            {sections[0].paragraphs.map((text, i) => (
+              <p key={i}>{text}</p>
+            ))}
+          </div>
+
+          {banner && (
+            <Banner
+              value={banner.value}
+              label={banner.label}
+              accent={banner.accent}
+            />
+          )}
+        </section>
+
+        <SectionDivider />
+
+        <section>
+          <h2 className="article__heading">{sections[1].heading}</h2>
+          <div className="article__body">
+            {sections[1].paragraphs.map((text, i) => (
+              <p key={i}>{text}</p>
+            ))}
+          </div>
+        </section>
 
         <div className="article__source">
           <p>{ArticleMeta.source}</p>

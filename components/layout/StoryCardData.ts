@@ -1,6 +1,6 @@
 import 'server-only';
 import { articleRegistry } from '@/app/article/registry';
-import { formatArticleDate, toSortableTimestamp } from '@/components/article/dateFormat';
+import { formatArticleDate, toSortableTimestamp } from '@/components/article/utils/dateFormat';
 import type { ArticleMeta } from '@/components/article';
 
 export type StoryCardType = {
