@@ -44,14 +44,6 @@ pnpm install
 
 ### 3) Scaffold a new article from a template
 
-First, start the application locally.
-
-```bash
-pnpm run dev
-```
-
-This runs the site on localhost:3000 and automatically refreshes the page as you save changes. Then run the command below to scaffold a new article from a template.
-
 ```bash
 pnpm run create:article
 ```
@@ -59,6 +51,8 @@ pnpm run create:article
 This script will ask you to choose from an existing template. You can find the available [templates here](./templates.md). 
 
 Select a template on the terminal and input a URL-friendly slug. This should create `app/article/<slug>/content.ts` and `app/article/<slug>/page.tsx`
+
+Start the application locally running `pnpm run dev`. This should start the application on `localhost:3000`. Navigate to `http://localhost:3000/article/<your-slug>`. You can see new changes appear on save.
 
 ### 4) Write your article content
 
@@ -88,11 +82,11 @@ Notes:
 
 ### 5) Regenerate the article registry
 
-After content is finalized, run:
+After your article, navigate back to the home page (`http://localhost:3000`). If you see your story appear on the landing page, move to step 6. If not, run the following steps. 
 
-```bash
-pnpm run generate:article-registry
-```
+- Stop the current instance of the application.
+- Run `pnpm run generate:article-registry`.
+- Run `pnpm run dev` to reboot the application.
 
 This updates `app/article/registry.ts` so the new article appears on the landing page. You should see it as the first entry.
 Do not manually edit `app/article/registry.ts`; it is auto-generated.
@@ -109,6 +103,8 @@ Check that:
 Push your branch and open a PR:
 
 ```bash
+git add -A
+git commit -m "<your-commit-message>"
 git push -u origin <your-branch-name> 
 ```
 
