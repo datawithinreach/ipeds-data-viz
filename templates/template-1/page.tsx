@@ -67,6 +67,8 @@ export default function Page() {
         {banner && <Banner value={banner.value} label={banner.label} />}
 
         <div className="article__chart">
+          <h3 className="article__chartTitle">{chartOptions.title}</h3>
+          <p className="article__chartSubtitle">{chartOptions.subtitle}</p>
           {legendItems.length > 0 && <Legend items={legendItems} />}
           <BarChart
             data={coloredData}

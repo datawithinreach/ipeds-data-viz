@@ -64,7 +64,18 @@ export const chartData: ChartDatum[] = [
 // Adjust chart orientation, height, bar thickness, and axis formatting.
 // ===============================================================
 
-export const chartOptions = {
+type ChartOptions = {
+  title: string;
+  subtitle: string;
+  orientation: 'horizontal' | 'vertical';
+  height: number;
+  barSize: number;
+  formatTick: (v: number) => string;
+};
+
+export const chartOptions: ChartOptions = {
+  title: 'Chart Title',
+  subtitle: 'Chart subtitle with a little extra context',
   orientation: 'horizontal',
   height: 360,
   barSize: 20,

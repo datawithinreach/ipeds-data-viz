@@ -75,6 +75,23 @@
     margin-right: auto;
   }
 
+  &__chartTitle {
+    font-family: $font-mono;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba($primary, 0.8);
+  }
+
+  &__chartSubtitle {
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: rgba($primary, 0.5);
+    line-height: 1.4;
+  }
+
   &__callout {
     margin-top: 1.5rem;
     max-width: 42rem;

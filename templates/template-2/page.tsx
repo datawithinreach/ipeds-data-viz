@@ -44,6 +44,8 @@ export default function Page() {
         </header>
 
         <div className="article__chart article__chart--contained">
+          <h3 className="article__chartTitle">{chartOptions.title}</h3>
+          <p className="article__chartSubtitle">{chartOptions.subtitle}</p>
           <LineChart
             series={coloredSeries}
             formatValue={chartOptions.formatValue}

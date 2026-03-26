@@ -85,7 +85,17 @@ export const seriesData = [
    Adjust height and axis / tooltip formatting.
    ================================================================ */
 
-export const chartOptions = {
+type ChartOptions = {
+  title: string;
+  subtitle: string;
+  height: number;
+  formatTick: (v: number) => string;
+  formatValue: (v: number) => string;
+};
+
+export const chartOptions: ChartOptions = {
+  title: 'Trend over time',
+  subtitle: 'Values shown as percentages across selected years',
   height: 380,
   formatTick: (v: number) => `${v}%`,
   formatValue: (v: number) => `${v}%`,

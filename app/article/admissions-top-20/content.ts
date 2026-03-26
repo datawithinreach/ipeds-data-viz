@@ -81,7 +81,18 @@ export const chartData = [
 // Adjust height, bar thickness, and axis formatting.
 // ================================================================
 
-export const chartOptions = {
+type ChartOptions = {
+  title: string;
+  subtitle: string;
+  orientation: 'horizontal' | 'vertical';
+  height: number;
+  barSize: number;
+  formatTick: (v: number) => string;
+};
+
+export const chartOptions: ChartOptions = {
+  title: 'Acceptance rates (2024)',
+  subtitle: 'Percent admitted for selected U.S. News top-20 universities',
   orientation: 'horizontal' as const,
   height: 720,
   barSize: 22,

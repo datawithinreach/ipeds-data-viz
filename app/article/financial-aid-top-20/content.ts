@@ -273,7 +273,17 @@ export const seriesData = [
 // Adjust height and axis / tooltip formatting.
 // ================================================================
 
-export const chartOptions = {
+type ChartOptions = {
+  title: string;
+  subtitle: string;
+  height: number;
+  formatTick: (v: number) => string;
+  formatValue: (v: number) => string;
+};
+
+export const chartOptions: ChartOptions = {
+  title: 'Average Net Price Over Time',
+  subtitle: 'Annual net cost after financial aid (selected top schools)',
   height: 380,
   formatTick: (v: number) => `$${(v / 1000).toFixed(0)}K`,
   formatValue: (v: number) => `$${v.toLocaleString()}`,
