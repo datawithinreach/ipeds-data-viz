@@ -56,7 +56,7 @@ export default function Page() {
         </header>
 
         {sections.map((section, i) => (
-          <section key={i}>
+          <section key={i} className="article__section">
             <h2 className="article__heading">{section.heading}</h2>
             <div className="article__body">
               {section.paragraphs.map((text, j) => (
