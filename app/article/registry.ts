@@ -5,9 +5,11 @@
 import { ArticleMeta as ArticleMeta0 } from './admission-massachusetts-private/content';
 import { ArticleMeta as ArticleMeta1 } from './admissions-top-20/content';
 import { ArticleMeta as ArticleMeta2 } from './financial-aid-top-20/content';
+import { ArticleMeta as ArticleMeta3 } from './uc-2024-cost-of-attendance/content';
 
 export const articleRegistry = [
   { slug: 'admission-massachusetts-private', ArticleMeta: ArticleMeta0 },
   { slug: 'admissions-top-20', ArticleMeta: ArticleMeta1 },
   { slug: 'financial-aid-top-20', ArticleMeta: ArticleMeta2 },
+  { slug: 'uc-2024-cost-of-attendance', ArticleMeta: ArticleMeta3 },
 ];
