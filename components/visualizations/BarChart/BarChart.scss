@@ -4,6 +4,12 @@
   position: relative;
   width: 100%;
 
+  // Visx Axis tick labels can extend beyond the default SVG bounds.
+  // Allow them to render so y-axis labels aren't clipped.
+  svg {
+    overflow: visible;
+  }
+
   &__tooltipLabel {
     font-weight: 600;
   }
