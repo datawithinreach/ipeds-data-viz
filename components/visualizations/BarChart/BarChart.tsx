@@ -9,7 +9,9 @@ import { GridColumns, GridRows } from '@visx/grid';
 import { useParentSize } from '@visx/responsive';
 import { useTooltip, TooltipWithBounds, defaultStyles } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
-import type { ReactNode } from 'react';
+import { Text } from '@visx/text';
+import { Legend } from '@/components/article';
+import { chartPalette } from '@/styles/palette';
 import './BarChart.scss';
 
 export type BarDatum = {
@@ -20,36 +22,90 @@ export type BarDatum = {
   meta?: Record<string, unknown>;
 };
 
+type LegendItem = { label: string; color: string };
+
 type Props = {
   data: BarDatum[];
-  formatValue?: (v: number) => string;
-  formatTick?: (v: number) => string;
+  title?: string;
+  subtitle?: string;
   defaultColor?: string;
   barSize?: number;
+  /** Pixel height of the SVG chart area. */
   height?: number;
+  /** Optional fixed width for the chart container (responsive up to this size). */
+  width?: number;
   orientation?: 'horizontal' | 'vertical';
-  renderTooltip?: (datum: BarDatum) => ReactNode;
+  /** Applies `article__chart--contained` max-width when true. */
+  contained?: boolean;
 };
 
-const MARGIN = { top: 8, right: 40, bottom: 32, left: 120 };
 const PRIMARY = '#501315';
 const AXIS_COLOR = '#501315';
 const GRID_COLOR = '#50131520';
 
+function formatTickValue(v: number): string {
+  return Number(v).toLocaleString(undefined, { maximumFractionDigits: 2 });
+}
+
 export function BarChart({
   data,
-  formatValue,
-  formatTick,
+  title,
+  subtitle,
   defaultColor = PRIMARY,
   barSize = 20,
   height = 500,
+  width: widthProp,
   orientation = 'horizontal',
-  renderTooltip,
+  contained = false,
 }: Props) {
   const { parentRef, width } = useParentSize();
 
-  const innerWidth = width - MARGIN.left - MARGIN.right;
-  const innerHeight = height - MARGIN.top - MARGIN.bottom;
+  const groupDomain = useMemo(() => {
+    const groups = data
+      .map((d) => d.group)
+      .filter((g): g is string => typeof g === 'string' && g.length > 0);
+    return [...new Set(groups)];
+  }, [data]);
+
+  const groupColorByLabel = useMemo(() => {
+    const map = new Map<string, string>();
+    groupDomain.forEach((g, i) => {
+      map.set(g, chartPalette[i % chartPalette.length]);
+    });
+    return map;
+  }, [groupDomain]);
+
+  const derivedLegendItems: LegendItem[] | null = useMemo(() => {
+    if (groupDomain.length === 0) return null;
+    return groupDomain.map((g) => ({
+      label: g,
+      color: groupColorByLabel.get(g) ?? PRIMARY,
+    }));
+  }, [groupDomain, groupColorByLabel]);
+
+  const barFill = (d: BarDatum): string => {
+    if (
+      d.group != null &&
+      typeof d.group === 'string' &&
+      d.group.length > 0
+    ) {
+      return groupColorByLabel.get(d.group) ?? d.color ?? defaultColor;
+    }
+    return d.color ?? defaultColor;
+  };
+
+  const margin = useMemo(
+    () =>
+      orientation === 'horizontal'
+        ? { top: 8, right: 40, bottom: 32, left: 132 }
+        : { top: 8, right: 40, bottom: 76, left: 56 },
+    [orientation],
+  );
+
+  const leftCategoryLabelWidth = Math.max(56, margin.left - 20);
+
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
   const maxValue = data.length > 0 ? Math.max(...data.map((d) => d.value)) : 0;
 
   const horizontalBandScale = useMemo(
@@ -101,12 +157,39 @@ export function BarChart({
     tooltipOpen,
   } = useTooltip<BarDatum>();
 
+  const containerStyle =
+    widthProp != null
+      ? ({ width: widthProp, maxWidth: '100%' } as const)
+      : undefined;
+
+  const rootClassName = [
+    'barChart',
+    contained ? 'article__chart article__chart--contained' : 'article__chart',
+  ].join(' ');
+
   return (
-    <div ref={parentRef} className="barChart">
+    <div
+      ref={parentRef}
+      className={rootClassName}
+      style={containerStyle}
+    >
+      {(title ?? subtitle) && (
+        <>
+          {title ? (
+            <h3 className="article__chartTitle">{title}</h3>
+          ) : null}
+          {subtitle ? (
+            <p className="article__chartSubtitle">{subtitle}</p>
+          ) : null}
+        </>
+      )}
+      {derivedLegendItems && derivedLegendItems.length > 0 ? (
+        <Legend items={derivedLegendItems} />
+      ) : null}
       {width > 10 && (
         <>
           <svg width={width} height={height}>
-            <Group left={MARGIN.left} top={MARGIN.top}>
+            <Group left={margin.left} top={margin.top}>
               {orientation === 'horizontal' ? (
                 <>
                   <GridColumns
@@ -127,7 +210,7 @@ export function BarChart({
                         y={barY + (bandHeight - clampedBarSize) / 2}
                         width={barWidth}
                         height={clampedBarSize}
-                        fill={d.color ?? defaultColor}
+                        fill={barFill(d)}
                         rx={4}
                         onMouseMove={(e) => {
                           const svg = e.currentTarget.ownerSVGElement;
@@ -147,23 +230,37 @@ export function BarChart({
                     hideTicks
                     hideAxisLine
                     numTicks={data.length}
-                    tickLabelProps={{
-                      fill: AXIS_COLOR,
-                      fontSize: 12,
-                      textAnchor: 'end',
-                      dy: '0.33em',
-                    }}
+                    tickLabelProps={{ fill: AXIS_COLOR, fontSize: 12 }}
+                    tickComponent={({
+                      formattedValue,
+                      x,
+                      y,
+                      dx,
+                      dy,
+                    }) => (
+                      <Text
+                        className="barChart__axisTickLabel"
+                        x={x}
+                        y={y}
+                        dx={dx}
+                        dy={dy}
+                        width={leftCategoryLabelWidth}
+                        textAnchor="end"
+                        verticalAnchor="middle"
+                        fill={AXIS_COLOR}
+                        fontSize={12}
+                        lineHeight="1.15em"
+                      >
+                        {formattedValue ?? ''}
+                      </Text>
+                    )}
                   />
                   <AxisBottom
                     scale={horizontalLinearScale}
                     top={innerHeight}
                     hideTicks
                     hideAxisLine
-                    tickFormat={
-                      formatTick
-                        ? (v) => formatTick(Number(v))
-                        : (v) => String(v)
-                    }
+                    tickFormat={(v) => formatTickValue(Number(v))}
                     tickLabelProps={{
                       fill: AXIS_COLOR,
                       fontSize: 11,
@@ -194,7 +291,7 @@ export function BarChart({
                         y={barY}
                         width={clampedBarSize}
                         height={barHeight}
-                        fill={d.color ?? defaultColor}
+                        fill={barFill(d)}
                         rx={4}
                         onMouseMove={(e) => {
                           const svg = e.currentTarget.ownerSVGElement;
@@ -213,11 +310,7 @@ export function BarChart({
                     scale={verticalLinearScale}
                     hideTicks
                     hideAxisLine
-                    tickFormat={
-                      formatTick
-                        ? (v) => formatTick(Number(v))
-                        : (v) => String(v)
-                    }
+                    tickFormat={(v) => formatTickValue(Number(v))}
                     tickLabelProps={{
                       fill: AXIS_COLOR,
                       fontSize: 11,
@@ -231,10 +324,35 @@ export function BarChart({
                     hideTicks
                     hideAxisLine
                     numTicks={data.length}
-                    tickLabelProps={{
-                      fill: AXIS_COLOR,
-                      fontSize: 11,
-                      textAnchor: 'middle',
+                    tickLabelProps={{ fill: AXIS_COLOR, fontSize: 11 }}
+                    tickComponent={({
+                      formattedValue,
+                      x,
+                      y,
+                      dx,
+                      dy,
+                    }) => {
+                      const labelWidth = Math.max(
+                        24,
+                        verticalBandScale.bandwidth() - 6,
+                      );
+                      return (
+                        <Text
+                          className="barChart__axisTickLabel"
+                          x={x}
+                          y={y}
+                          dx={dx}
+                          dy={dy}
+                          width={labelWidth}
+                          textAnchor="middle"
+                          verticalAnchor="start"
+                          fill={AXIS_COLOR}
+                          fontSize={11}
+                          lineHeight="1.15em"
+                        >
+                          {formattedValue ?? ''}
+                        </Text>
+                      );
                     }}
                   />
                 </>
@@ -256,18 +374,8 @@ export function BarChart({
                 boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
               }}
             >
-              {renderTooltip ? (
-                renderTooltip(tooltipData)
-              ) : (
-                <>
-                  <p className="barChart__tooltipLabel">{tooltipData.label}</p>
-                  <p>
-                    {formatValue
-                      ? formatValue(tooltipData.value)
-                      : tooltipData.value}
-                  </p>
-                </>
-              )}
+              <p className="barChart__tooltipLabel">{tooltipData.label}</p>
+              <p>{formatTickValue(tooltipData.value)}</p>
             </TooltipWithBounds>
           )}
         </>

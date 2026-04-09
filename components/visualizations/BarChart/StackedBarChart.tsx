@@ -9,7 +9,6 @@ import { GridColumns } from '@visx/grid';
 import { useParentSize } from '@visx/responsive';
 import { useTooltip, TooltipWithBounds, defaultStyles } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
-import type { ReactNode } from 'react';
 import './StackedBarChart.scss';
 
 export type StackedSegment = {
@@ -24,10 +23,8 @@ type Props = {
   data: StackedBarDatum[];
   segments: StackedSegment[];
   xDomain?: [number, number];
-  formatTick?: (v: number) => string;
   barSize?: number;
   height?: number;
-  renderTooltip?: (datum: StackedBarDatum) => ReactNode;
   legend?: boolean;
 };
 
@@ -36,14 +33,16 @@ const PRIMARY = '#501315';
 const AXIS_COLOR = '#501315';
 const GRID_COLOR = '#50131520';
 
+function formatTickValue(v: number): string {
+  return Number(v).toLocaleString(undefined, { maximumFractionDigits: 2 });
+}
+
 export function StackedBarChart({
   data,
   segments,
   xDomain,
-  formatTick,
   barSize = 20,
   height = 500,
-  renderTooltip,
   legend = false,
 }: Props) {
   const { parentRef, width } = useParentSize();
@@ -162,7 +161,7 @@ export function StackedBarChart({
                 top={innerHeight}
                 hideTicks
                 hideAxisLine
-                tickFormat={formatTick ? (v) => formatTick(Number(v)) : (v) => String(v)}
+                tickFormat={(v) => formatTickValue(Number(v))}
                 tickLabelProps={{ fill: AXIS_COLOR, fontSize: 11, textAnchor: 'middle' }}
               />
             </Group>
@@ -182,24 +181,18 @@ export function StackedBarChart({
                 boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
               }}
             >
-              {renderTooltip ? (
-                renderTooltip(tooltipData)
-              ) : (
-                <>
-                  <p className="stackedBarChart__tooltipLabel">{tooltipData.label}</p>
-                  {segments
-                    .filter((s) => s.color !== 'transparent')
-                    .map((s) => (
-                      <p key={s.key} className="stackedBarChart__tooltipSegment">
-                        <span
-                          className="stackedBarChart__tooltipSwatch"
-                          style={{ background: s.color }}
-                        />
-                        {s.label}: {(tooltipData[s.key] as number)?.toLocaleString()}
-                      </p>
-                    ))}
-                </>
-              )}
+              <p className="stackedBarChart__tooltipLabel">{tooltipData.label}</p>
+              {segments
+                .filter((s) => s.color !== 'transparent')
+                .map((s) => (
+                  <p key={s.key} className="stackedBarChart__tooltipSegment">
+                    <span
+                      className="stackedBarChart__tooltipSwatch"
+                      style={{ background: s.color }}
+                    />
+                    {s.label}: {(tooltipData[s.key] as number)?.toLocaleString()}
+                  </p>
+                ))}
             </TooltipWithBounds>
           )}
         </>

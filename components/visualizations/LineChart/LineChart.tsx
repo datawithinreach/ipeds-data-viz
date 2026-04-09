@@ -9,22 +9,25 @@ import { GridRows } from '@visx/grid';
 import { useParentSize } from '@visx/responsive';
 import { useTooltip, TooltipWithBounds, defaultStyles } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
+import { chartPalette } from '@/styles/palette';
 import './LineChart.scss';
 
 export type LineSeries = {
-  key: string;
+  key?: string;
   label?: string;
-  color: string;
+  color?: string;
   data: { x: string; y: number }[];
 };
 
 type Props = {
   series: LineSeries[];
-  formatValue?: (v: number) => string;
-  formatTick?: (v: number) => string;
+  title?: string;
+  subtitle?: string;
   height?: number;
+  width?: number;
   showLegend?: boolean;
   enableSeriesSelection?: boolean;
+  contained?: boolean;
 };
 
 const MARGIN = { top: 16, right: 24, bottom: 36, left: 56 };
@@ -39,24 +42,50 @@ type TooltipDatum = {
   color: string;
 };
 
+function formatTickValue(v: number): string {
+  return Number(v).toLocaleString(undefined, { maximumFractionDigits: 2 });
+}
+
 export function LineChart({
   series,
-  formatValue,
-  formatTick,
+  title,
+  subtitle,
   height = 360,
+  width: widthProp,
   showLegend = true,
   enableSeriesSelection = false,
+  contained = false,
 }: Props) {
   const { parentRef, width } = useParentSize();
-  const [selectedKeys, setSelectedKeys] = useState<string[]>(() =>
-    series.map((item) => item.key)
+
+  const resolvedSeries = useMemo(
+    () =>
+      series.map((s, i) => {
+        const key = s.key ?? s.label ?? `series-${i}`;
+        return {
+          key,
+          label: s.label ?? s.key ?? `Series ${i + 1}`,
+          data: s.data,
+          color: s.color ?? chartPalette[i % chartPalette.length],
+        };
+      }),
+    [series]
   );
 
+  const [selectedKeys, setSelectedKeys] = useState<string[] | undefined>(
+    undefined
+  );
+
+  const selectionKeys =
+    selectedKeys ?? resolvedSeries.map((item) => item.key);
+
   const visibleSeries = useMemo(() => {
-    if (!enableSeriesSelection) return series;
-    const selected = series.filter((item) => selectedKeys.includes(item.key));
-    return selected.length > 0 ? selected : series;
-  }, [enableSeriesSelection, selectedKeys, series]);
+    if (!enableSeriesSelection) return resolvedSeries;
+    const selected = resolvedSeries.filter((item) =>
+      selectionKeys.includes(item.key)
+    );
+    return selected.length > 0 ? selected : resolvedSeries;
+  }, [enableSeriesSelection, selectionKeys, resolvedSeries]);
 
   const innerWidth = width - MARGIN.left - MARGIN.right;
   const innerHeight = height - MARGIN.top - MARGIN.bottom;
@@ -104,29 +133,54 @@ export function LineChart({
     tooltipOpen,
   } = useTooltip<TooltipDatum>();
 
+  const containerStyle =
+    widthProp != null
+      ? ({ width: widthProp, maxWidth: '100%' } as const)
+      : undefined;
+
+  const rootClassName = [
+    'lineChart',
+    'article__chart',
+    contained ? 'article__chart--contained' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <div ref={parentRef} className="lineChart">
+    <div ref={parentRef} className={rootClassName} style={containerStyle}>
+      {(title ?? subtitle) && (
+        <>
+          {title ? (
+            <h3 className="article__chartTitle">{title}</h3>
+          ) : null}
+          {subtitle ? (
+            <p className="article__chartSubtitle">{subtitle}</p>
+          ) : null}
+        </>
+      )}
       {width > 10 && (
         <>
-          {showLegend && series.length > 1 && (
+          {showLegend && resolvedSeries.length > 1 && (
             <div className="lineChart__legend">
-              {series.map((s) => (
+              {resolvedSeries.map((s) => (
                 <button
                   key={s.key}
                   type="button"
                   className="lineChart__legendItem"
                   data-active={
-                    !enableSeriesSelection || selectedKeys.includes(s.key)
+                    !enableSeriesSelection || selectionKeys.includes(s.key)
                   }
                   onClick={() => {
                     if (!enableSeriesSelection) return;
                     setSelectedKeys((previous) => {
-                      if (previous.includes(s.key)) {
+                      const base =
+                        previous ?? resolvedSeries.map((item) => item.key);
+                      if (base.includes(s.key)) {
                         // Keep at least one active line visible.
-                        if (previous.length === 1) return previous;
-                        return previous.filter((key) => key !== s.key);
+                        if (base.length === 1) return base;
+                        return base.filter((key) => key !== s.key);
                       }
-                      return [...previous, s.key];
+                      return [...base, s.key];
                     });
                   }}
                 >
@@ -194,9 +248,7 @@ export function LineChart({
                 scale={yScale}
                 hideTicks
                 hideAxisLine
-                tickFormat={
-                  formatTick ? (v) => formatTick(Number(v)) : (v) => String(v)
-                }
+                tickFormat={(v) => formatTickValue(Number(v))}
                 tickLabelProps={{
                   fill: AXIS_COLOR,
                   fontSize: 11,
@@ -236,7 +288,7 @@ export function LineChart({
                 {tooltipData.seriesLabel}
               </p>
               <p className="lineChart__tooltipX">{tooltipData.x}</p>
-              <p>{formatValue ? formatValue(tooltipData.y) : tooltipData.y}</p>
+              <p>{formatTickValue(tooltipData.y)}</p>
             </TooltipWithBounds>
           )}
         </>

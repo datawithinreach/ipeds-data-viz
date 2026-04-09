@@ -13,4 +13,9 @@
   &__tooltipLabel {
     font-weight: 600;
   }
+
+  // Wrapped axis labels (@visx/text); allow breaking long tokens within the fixed width.
+  &__axisTickLabel text {
+    word-break: break-word;
+  }
 }
