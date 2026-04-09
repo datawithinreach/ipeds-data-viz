@@ -123,20 +123,20 @@ done
 src_dir="${TEMPLATES_DIR}/${selected_template}"
 dest_dir="${ARTICLES_DIR}/${slug}"
 
-if [[ ! -f "${src_dir}/content.ts" || ! -f "${src_dir}/page.tsx" ]]; then
-  error "Error: ${selected_template} is missing content.ts or page.tsx."
+if [[ ! -f "${src_dir}/article.mdx" || ! -f "${src_dir}/page.tsx" ]]; then
+  error "Error: ${selected_template} is missing article.mdx or page.tsx."
   exit 1
 fi
 
 mkdir -p "${dest_dir}"
-cp "${src_dir}/content.ts" "${dest_dir}/content.ts"
+cp "${src_dir}/article.mdx" "${dest_dir}/article.mdx"
 cp "${src_dir}/page.tsx" "${dest_dir}/page.tsx"
 
-perl -0pi -e "s|href: '/article/your-article-slug'|href: '/article/${slug}'|g" "${dest_dir}/content.ts"
+perl -0pi -e "s|href: '/article/your-article-slug'|href: '/article/${slug}'|g" "${dest_dir}/article.mdx"
 
 section_title "Done"
 success "Created files:"
-printf '  %sapp/article/%s/content.ts%s\n' "${BOLD}" "${slug}" "${RESET}"
+printf '  %sapp/article/%s/article.mdx%s\n' "${BOLD}" "${slug}" "${RESET}"
 printf '  %sapp/article/%s/page.tsx%s\n' "${BOLD}" "${slug}" "${RESET}"
 
 echo
@@ -145,6 +145,6 @@ info "Public URL:    /article/${slug}"
 
 section_title "Next steps"
 printf '  %s1.%s Run %spnpm run dev%s (if not running) and open %shttp://localhost:3000/article/%s%s\n' "${BOLD}" "${RESET}" "${BOLD}" "${RESET}" "${BOLD}" "${slug}" "${RESET}"
-printf '  %s2.%s Only edit content.ts (title, description, dates, tags, data, source).\n' "${BOLD}" "${RESET}"
+printf '  %s2.%s Edit article.mdx (title, description, dates, tags, data, prose, source).\n' "${BOLD}" "${RESET}"
 printf '  %s3.%s After content is ready, run: %spnpm generate:article-registry%s\n' "${BOLD}" "${RESET}" "${BOLD}" "${RESET}"
 printf '  %s4.%s Confirm the story appears correctly on the home page.\n' "${BOLD}" "${RESET}"
