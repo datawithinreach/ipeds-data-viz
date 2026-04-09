@@ -64,6 +64,73 @@
     }
   }
 
+  &__mdx {
+    .article__heading:first-child {
+      margin-top: 0;
+    }
+
+    p + p {
+      margin-top: 1rem;
+    }
+
+    .article__heading + p {
+      margin-top: 0.75rem;
+    }
+  }
+
+  &__mdxSubheading {
+    font-family: $font-mono;
+    margin: 1.5rem 0 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  &__mdxList,
+  &__mdxOrderedList {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    max-width: 42rem;
+  }
+
+  &__mdxList li + li,
+  &__mdxOrderedList li + li {
+    margin-top: 0.35rem;
+  }
+
+  &__mdxLink {
+    color: rgba($primary, 0.85);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &__mdxCode {
+    font-family: $font-mono;
+    font-size: 0.875em;
+    padding: 0.125rem 0.35rem;
+    border-radius: 0.25rem;
+    background: rgba($primary, 0.06);
+  }
+
+  &__mdxPre {
+    margin: 1rem 0;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    border-radius: 0.5rem;
+    border: 1px solid rgba($primary, 0.12);
+    background: rgba($button, 0.15);
+    font-size: 0.875rem;
+    line-height: 1.5;
+
+    .article__mdxCode {
+      padding: 0;
+      background: transparent;
+    }
+  }
+
   &__divider {
     margin: 3.5rem 0;
     border-top: 1px solid rgba($primary, 0.1);

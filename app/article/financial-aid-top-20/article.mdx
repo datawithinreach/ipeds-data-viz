@@ -1,11 +1,4 @@
-import type { ArticleMeta as ArticleMetaType } from '@/components/article';
-
-// ================================================================
-// ARTICLE METADATA
-//   Shown in the page header, <title>, and <meta description>.
-// ================================================================
-
-export const ArticleMeta: ArticleMetaType = {
+export const ArticleMeta = {
   title: "The Real Cost of America's Top 20 Universities",
   description:
     'How financial aid reshapes the price of elite higher education — and why sticker price is the wrong number to look at.',
@@ -17,46 +10,6 @@ export const ArticleMeta: ArticleMetaType = {
   category: 'Financial',
   href: '/article/financial-aid-top-20',
 };
-
-// ================================================================
-// SECTION CONTENT
-// Each section has a heading and one or more paragraphs.
-// ===============================================================
-
-export const sections = [
-  {
-    heading: 'Four Years of Rising Costs',
-    paragraphs: [
-      'The listed price of attending a top-ranked university in the United States has never been higher. In 2023–24, the average sticker price at a private top-20 school reached nearly $87,000 — a figure that provokes sticker shock in even the most prepared families.',
-      'Between 2020–21 and 2023–24, tuition has risen across the board — but not uniformly. Johns Hopkins saw the steepest four-year increase at 27.2%, while UCLA posted the most modest at just 3.4%. The chart above tracks five representative schools over that period.',
-    ],
-  },
-  {
-    heading: 'The Bottom Line',
-    paragraphs: [
-      "Sticker price is a poor predictor of actual cost at America\u2019s top universities. Schools with the highest listed prices often provide the most generous aid packages, while the apparent bargain of a public university can vanish for out-of-state students.",
-      "For families evaluating top schools, the numbers suggest looking beyond the listed price. The net cost after aid \u2014 and each school\u2019s commitment to meeting demonstrated financial need \u2014 may matter far more than the number on the brochure.",
-    ],
-  },
-];
-
-// ================================================================
-// BANNER
-// A highlighted statistic displayed prominently.
-// ================================================================
-
-export const banner = {
-  value: '+27.2%',
-  label:
-    'Johns Hopkins saw the steepest four-year increase, jumping from $67,667 to $86,065.',
-  accent: 'navbar' as const,
-};
-
-// ================================================================
-// CHART DATA
-// Each series is one line. Colors are assigned automatically
-// from the global palette in the order listed.
-// ================================================================
 
 export const seriesData = [
   {
@@ -268,23 +221,31 @@ export const seriesData = [
   },
 ];
 
-// ================================================================
-// CHART OPTIONS
-// Adjust height and axis / tooltip formatting.
-// ================================================================
+<LineChart
+  series={seriesData}
+  title="Average Net Price Over Time"
+  subtitle="Annual net cost after financial aid (selected top schools)"
+  height={380}
+  enableSeriesSelection
+  contained
+/>
 
-type ChartOptions = {
-  title: string;
-  subtitle: string;
-  height: number;
-  formatTick: (v: number) => string;
-  formatValue: (v: number) => string;
-};
+## Four years of rising costs
 
-export const chartOptions: ChartOptions = {
-  title: 'Average Net Price Over Time',
-  subtitle: 'Annual net cost after financial aid (selected top schools)',
-  height: 380,
-  formatTick: (v: number) => `$${(v / 1000).toFixed(0)}K`,
-  formatValue: (v: number) => `$${v.toLocaleString()}`,
-};
+The listed price of attending a top-ranked university in the United States has never been higher. In 2023–24, the average sticker price at a private top-20 school reached nearly $87,000 — a figure that provokes sticker shock in even the most prepared families.
+
+Between 2020–21 and 2023–24, tuition has risen across the board — but not uniformly. Johns Hopkins saw the steepest four-year increase at 27.2%, while UCLA posted the most modest at just 3.4%. The chart above tracks five representative schools over that period.
+
+<Banner
+  value="+27.2%"
+  label="Johns Hopkins saw the steepest four-year increase, jumping from $67,667 to $86,065."
+  accent="navbar"
+/>
+
+<SectionDivider />
+
+## The bottom line
+
+Sticker price is a poor predictor of actual cost at America's top universities. Schools with the highest listed prices often provide the most generous aid packages, while the apparent bargain of a public university can vanish for out-of-state students.
+
+For families evaluating top schools, the numbers suggest looking beyond the listed price. The net cost after aid — and each school's commitment to meeting demonstrated financial need — may matter far more than the number on the brochure.
