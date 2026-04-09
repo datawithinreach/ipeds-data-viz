@@ -1,0 +1,63 @@
+export const ArticleMeta = {
+  title: 'Your Article Title',
+  description: 'A short summary of what this article covers.',
+  publishDate: '03-01-2025',
+  source:
+    'Source: Replace with your data source attribution (e.g. IPEDS, National Center for Education Statistics).',
+  imageUrl: '/images/landing/story1.png',
+  tags: ['tag-1', 'tag-2'],
+  category: 'Data Analysis',
+  href: '/article/your-article-slug',
+};
+
+export const seriesData = [
+  {
+    label: 'Series A',
+    data: [
+      { x: '2018', y: 62 },
+      { x: '2019', y: 65 },
+      { x: '2020', y: 59 },
+      { x: '2021', y: 71 },
+      { x: '2022', y: 74 },
+      { x: '2023', y: 78 },
+    ],
+  },
+  {
+    label: 'Series B',
+    data: [
+      { x: '2018', y: 45 },
+      { x: '2019', y: 48 },
+      { x: '2020', y: 44 },
+      { x: '2021', y: 52 },
+      { x: '2022', y: 55 },
+      { x: '2023', y: 60 },
+    ],
+  },
+];
+
+---
+
+<LineChart
+  series={seriesData}
+  title="Trend over time"
+  subtitle="Values shown as percentages across selected years"
+  height={380}
+  enableSeriesSelection
+  contained
+/>
+
+## Section heading
+
+Replace this paragraph with your trend analysis. Describe the patterns visible over time, note inflection points, and give the reader context for interpreting the line chart above.
+
+<Banner
+  value="+26%"
+  label="Describe the highlighted trend or change over time here."
+  accent="navbar"
+/>
+
+<SectionDivider />
+
+## Another section
+
+Add more sections as needed. Each section can have its own chart, banner, or callout — configure them in this file with markdown for copy and JSX only for visualizations.
