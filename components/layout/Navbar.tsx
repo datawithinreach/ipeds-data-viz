@@ -12,7 +12,7 @@ export function Navbar() {
               y1="2"
               x2="26"
               y2="14"
-              stroke="#501315"
+              stroke="currentColor"
               strokeWidth="2.5"
               strokeLinecap="round"
             />
@@ -21,7 +21,7 @@ export function Navbar() {
               y1="2"
               x2="2"
               y2="14"
-              stroke="#501315"
+              stroke="currentColor"
               strokeWidth="2.5"
               strokeLinecap="round"
             />
@@ -29,7 +29,6 @@ export function Navbar() {
         </div>
         <div className="navbar__links">
           <Link href="/">Home</Link>
-          <Link href="/data-explorer">Data Explorer</Link>
           <Link href="/about">About</Link>
         </div>
       </section>
