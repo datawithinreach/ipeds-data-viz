@@ -5,8 +5,8 @@
   box-sizing: border-box;
   color: $primary;
   width: 100%;
-  margin: 0 auto;
-  padding: 2rem clamp(1rem, 5vw, 8rem) 3rem;
+  max-width: 68rem;
+  margin: 2rem auto 3rem;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
