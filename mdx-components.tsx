@@ -5,6 +5,7 @@ import {
   Banner,
   BarChart,
   LineChart,
+  ScatterPlot,
   StackedBarChart,
 } from '@/components/visualizations';
 
@@ -21,6 +22,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ...components,
     BarChart,
     LineChart,
+    ScatterPlot,
     StackedBarChart,
     Banner,
     SectionDivider,

@@ -7,4 +7,7 @@ export type { StackedSegment, StackedBarDatum } from './BarChart/StackedBarChart
 export { LineChart } from './LineChart/LineChart';
 export type { LineSeries } from './LineChart/LineChart';
 
+export { ScatterPlot } from './ScatterPlot/ScatterPlot';
+export type { ScatterDatum } from './ScatterPlot/ScatterPlot';
+
 export { Banner } from './Banner/Banner';

@@ -1,0 +1,14 @@
+@use '../../../styles/patterns' as *;
+
+.scatterPlot {
+  position: relative;
+  width: 100%;
+
+  &__tooltipLabel {
+    @include chart-tooltip-label;
+  }
+
+  &__tooltipMuted {
+    @include chart-tooltip-muted;
+  }
+}
