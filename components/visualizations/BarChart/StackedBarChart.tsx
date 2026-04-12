@@ -9,6 +9,7 @@ import { GridColumns } from '@visx/grid';
 import { useParentSize } from '@visx/responsive';
 import { useTooltip, TooltipWithBounds, defaultStyles } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
+import { colors } from '@/styles/palette';
 import './StackedBarChart.scss';
 
 export type StackedSegment = {
@@ -29,9 +30,9 @@ type Props = {
 };
 
 const MARGIN = { top: 8, right: 40, bottom: 32, left: 120 };
-const PRIMARY = '#501315';
-const AXIS_COLOR = '#501315';
-const GRID_COLOR = '#50131520';
+const PRIMARY = colors.primary;
+const AXIS_COLOR = colors.primary;
+const GRID_COLOR = `${colors.primary}20`;
 
 function formatTickValue(v: number): string {
   return Number(v).toLocaleString(undefined, { maximumFractionDigits: 2 });
@@ -172,8 +173,8 @@ export function StackedBarChart({
               top={tooltipTop}
               style={{
                 ...defaultStyles,
-                background: '#FFFCF7',
-                border: '1px solid #50131530',
+                background: colors.background,
+                border: `1px solid ${colors.primary}30`,
                 borderRadius: 8,
                 color: PRIMARY,
                 fontSize: 13,

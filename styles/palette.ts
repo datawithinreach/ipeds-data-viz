@@ -1,23 +1,22 @@
 /**
- * Shared color palette — mirrors _variables.scss for use in TypeScript.
- * All chart colors are assigned from this file automatically.
+ * Shared palette — mirrors `styles/_variables.scss` for TypeScript (charts, inline styles).
  */
 
-const colors = {
+export const colors = {
   primary: '#501315',
-  accent: '#3b82f6',
-  navbar: '#c1c4e3',
-  button: '#fae3b1',
-  buttonSecondary: '#fabdc2',
   background: '#fffcf7',
-  foreground: '#171717',
+  lavender: '#c1c4e3',
+  gold: '#fae3b1',
+  goldHover: '#f6d180',
+  pink: '#fcd7da',
+  pinkHover: '#fabdc2',
 } as const;
 
-/** Ordered sequence used by charts — each group / series gets the next color. */
+/** Ordered series colors — all values from the design system (no off-palette accent). */
 export const chartPalette = [
   colors.primary,
-  colors.accent,
-  colors.navbar,
-  colors.button,
-  colors.buttonSecondary,
+  colors.lavender,
+  colors.gold,
+  colors.pink,
+  colors.pinkHover,
 ] as const;

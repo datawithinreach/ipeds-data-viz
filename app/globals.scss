@@ -18,11 +18,22 @@ body {
   background: $background;
   color: $foreground;
   font-family: $font-poppins;
+  font-weight: 500;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --color-primary: #{$primary};
+  --color-bg: #{$background};
+  --color-lavender: #{$navbar};
+  --color-gold: #{$button};
+  --color-gold-hover: #{$button-secondary-hover};
+  --color-pink: #{$button-primary};
+  --color-pink-hover: #{$button-primary-hover};
 }
 
 main {
@@ -78,9 +89,3 @@ hr {
   border: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #0a0a0a;
-    color: #ededed;
-  }
-}

@@ -1,4 +1,5 @@
 @use '../../../styles/variables' as *;
+@use '../../../styles/patterns' as *;
 
 .banner {
   margin: 2rem 0;
@@ -18,16 +19,12 @@
   }
 
   &__value {
-    font-family: $font-mono;
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: $primary;
+    @include banner-stat-value;
   }
 
   &__label {
     margin-top: 0.25rem;
     max-width: 36rem;
-    font-size: 0.875rem;
-    color: rgba($primary, 0.7);
+    @include text-caption-muted;
   }
 }

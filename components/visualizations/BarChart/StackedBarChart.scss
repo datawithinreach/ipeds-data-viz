@@ -1,4 +1,4 @@
-@use '../../../styles/variables' as *;
+@use '../../../styles/patterns' as *;
 
 .stackedBarChart {
   position: relative;
@@ -13,32 +13,22 @@
   }
 
   &__legendItem {
-    display: flex;
-    align-items: center;
-    gap: 0.375rem;
+    @include chart-legend-row;
   }
 
   &__legendSwatch {
-    display: inline-block;
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 2px;
+    @include article-legend-swatch;
   }
 
   &__tooltipLabel {
-    font-weight: 600;
+    @include chart-tooltip-label;
   }
 
   &__tooltipSegment {
-    display: flex;
-    align-items: center;
-    gap: 0.375rem;
+    @include chart-legend-row;
   }
 
   &__tooltipSwatch {
-    display: inline-block;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
+    @include chart-legend-swatch-circle(0.5rem);
   }
 }

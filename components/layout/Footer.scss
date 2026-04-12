@@ -1,7 +1,6 @@
-@use '../../styles/variables' as *;
+@use '../../styles/patterns' as *;
 
 .footer {
-  background-color: $navbar;
-  color: $primary;
+  @include surface-lavender-bar;
   padding: 1.5rem 0;
 }

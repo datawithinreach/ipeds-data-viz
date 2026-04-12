@@ -8,6 +8,14 @@ import {
   StackedBarChart,
 } from '@/components/visualizations';
 
+/**
+ * Markdown typography (h2–h3, p, lists, links, code) is styled in `article.scss`
+ * under `.article__mdx` using mixins from `styles/_variables.scss`.
+ *
+ * The page shell owns the only `<h1>` (Heading 1). A Markdown `#` is rendered as
+ * `<h2>` so in-section titles match the design system Heading 2 and the outline
+ * stays one H1 per article (same as `##`).
+ */
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
@@ -16,31 +24,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     StackedBarChart,
     Banner,
     SectionDivider,
-    h2: (props: ComponentPropsWithoutRef<'h2'>) => (
-      <h2 className="article__heading" {...props} />
-    ),
-    h3: (props: ComponentPropsWithoutRef<'h3'>) => (
-      <h3 className="article__mdxSubheading" {...props} />
-    ),
-    p: (props: ComponentPropsWithoutRef<'p'>) => <p {...props} />,
-    ul: (props: ComponentPropsWithoutRef<'ul'>) => (
-      <ul className="article__mdxList" {...props} />
-    ),
-    ol: (props: ComponentPropsWithoutRef<'ol'>) => (
-      <ol className="article__mdxOrderedList" {...props} />
-    ),
-    li: (props: ComponentPropsWithoutRef<'li'>) => <li {...props} />,
-    strong: (props: ComponentPropsWithoutRef<'strong'>) => (
-      <strong {...props} />
-    ),
-    a: (props: ComponentPropsWithoutRef<'a'>) => (
-      <a className="article__mdxLink" {...props} />
-    ),
-    code: (props: ComponentPropsWithoutRef<'code'>) => (
-      <code className="article__mdxCode" {...props} />
-    ),
-    pre: (props: ComponentPropsWithoutRef<'pre'>) => (
-      <pre className="article__mdxPre" {...props} />
+    h1: (props: ComponentPropsWithoutRef<'h1'>) => (
+      <h2 {...(props as unknown as ComponentPropsWithoutRef<'h2'>)} />
     ),
   };
 }

@@ -9,7 +9,7 @@ import { GridRows } from '@visx/grid';
 import { useParentSize } from '@visx/responsive';
 import { useTooltip, TooltipWithBounds, defaultStyles } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
-import { chartPalette } from '@/styles/palette';
+import { chartPalette, colors } from '@/styles/palette';
 import './LineChart.scss';
 
 export type LineSeries = {
@@ -31,9 +31,9 @@ type Props = {
 };
 
 const MARGIN = { top: 16, right: 24, bottom: 36, left: 56 };
-const PRIMARY = '#501315';
-const AXIS_COLOR = '#501315';
-const GRID_COLOR = '#50131515';
+const PRIMARY = colors.primary;
+const AXIS_COLOR = colors.primary;
+const GRID_COLOR = `${colors.primary}15`;
 
 type TooltipDatum = {
   seriesLabel: string;
@@ -275,8 +275,8 @@ export function LineChart({
               top={tooltipTop}
               style={{
                 ...defaultStyles,
-                background: '#FFFCF7',
-                border: '1px solid #50131530',
+                background: colors.background,
+                border: `1px solid ${colors.primary}30`,
                 borderRadius: 8,
                 color: PRIMARY,
                 fontSize: 13,

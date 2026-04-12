@@ -1,17 +1,101 @@
-// Colors
-$background: #fffcf7;
-$foreground: #171717;
-$primary: #501315;
-$navbar: #c1c4e3;
-$button: #fae3b1;
-$button-secondary: #fabdc2cc;
-$blue-accent: #3b82f6;
+// Design system — Data Vis (Figma: design system v1)
 
-// Fonts
+// —— Palette ——
+$color-primary: #501315;
+$color-bg: #fffcf7;
+$color-lavender: #c1c4e3;
+$color-gold: #fae3b1;
+$color-gold-hover: #f6d180;
+$color-pink: #fcd7da;
+$color-pink-hover: #fabdc2;
+
+// —— Semantic aliases (existing names) ——
+$background: $color-bg;
+$primary: $color-primary;
+$navbar: $color-lavender;
+$button: $color-gold;
+// Primary CTA (pink); secondary CTA (gold) — see mixins below
+$button-primary: $color-pink;
+$button-primary-hover: $color-pink-hover;
+$button-secondary-hover: $color-gold-hover;
+
+// Default text is primary maroon (not neutral gray)
+$foreground: $color-primary;
+$text-subheading: rgba(80, 19, 21, 0.8);
+
+// Surfaces derived from palette (replaces ad-hoc #efe7d2 tints)
+$surface-search: rgba($color-lavender, 0.35);
+$surface-row-alt: rgba($color-gold, 0.25);
+$surface-row: rgba($color-bg, 0.85);
+
+// Legacy name: “see more” / primary pill used pink tones
+$button-secondary: $color-pink;
+
+// Charts / links: use lavender instead of off-palette blue
+$blue-accent: $color-lavender;
+
+// —— Fonts ——
 $font-poppins: var(--font-poppins), sans-serif;
 $font-mono: var(--font-red-hat-mono), monospace;
 
-// Mixins
+// —— Typography (Red Hat Mono = headings; Poppins = subheading & body) ——
+@mixin heading-1 {
+  font-family: $font-mono;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: $primary;
+}
+
+@mixin heading-2 {
+  font-family: $font-mono;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: $primary;
+}
+
+@mixin subheading-1 {
+  font-family: $font-poppins;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: $text-subheading;
+}
+
+@mixin body-1 {
+  font-family: $font-poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: $primary;
+}
+
+// —— Buttons: pill, 1px primary border ——
+@mixin btn-primary {
+  background-color: $button-primary;
+  border: 1px solid $primary;
+  color: $primary;
+  border-radius: 9999px;
+
+  &:hover {
+    background-color: $button-primary-hover;
+  }
+}
+
+@mixin btn-secondary {
+  background-color: $button;
+  border: 1px solid $primary;
+  color: $primary;
+  border-radius: 9999px;
+
+  &:hover {
+    background-color: $button-secondary-hover;
+  }
+}
+
 @mixin line-clamp($lines) {
   display: -webkit-box;
   -webkit-line-clamp: $lines;

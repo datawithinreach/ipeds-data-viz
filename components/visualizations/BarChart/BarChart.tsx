@@ -11,7 +11,7 @@ import { useTooltip, TooltipWithBounds, defaultStyles } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
 import { Text } from '@visx/text';
 import { Legend } from '@/components/article';
-import { chartPalette } from '@/styles/palette';
+import { chartPalette, colors } from '@/styles/palette';
 import './BarChart.scss';
 
 export type BarDatum = {
@@ -39,9 +39,9 @@ type Props = {
   contained?: boolean;
 };
 
-const PRIMARY = '#501315';
-const AXIS_COLOR = '#501315';
-const GRID_COLOR = '#50131520';
+const PRIMARY = colors.primary;
+const AXIS_COLOR = colors.primary;
+const GRID_COLOR = `${colors.primary}20`;
 
 function formatTickValue(v: number): string {
   return Number(v).toLocaleString(undefined, { maximumFractionDigits: 2 });
@@ -365,8 +365,8 @@ export function BarChart({
               top={tooltipTop}
               style={{
                 ...defaultStyles,
-                background: '#FFFCF7',
-                border: '1px solid #50131530',
+                background: colors.background,
+                border: `1px solid ${colors.primary}30`,
                 borderRadius: 8,
                 color: PRIMARY,
                 fontSize: 13,

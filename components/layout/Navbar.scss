@@ -1,8 +1,8 @@
 @use '../../styles/variables' as *;
+@use '../../styles/patterns' as *;
 
 .navbar {
-  background-color: $navbar;
-  color: $primary;
+  @include surface-lavender-bar;
   padding: 1rem 8rem;
 
   &__content {

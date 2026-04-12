@@ -1,4 +1,5 @@
 @use '../styles/variables' as *;
+@use '../styles/patterns' as *;
 
 .landing {
   color: $primary;
@@ -14,15 +15,11 @@
   }
 
   &__title {
-    font-family: $font-mono;
-    font-size: 58px;
-    line-height: 1;
-    font-weight: 500;
+    @include heading-1;
   }
 
   &__subtitle {
-    font-size: 24px;
-    font-weight: 500;
+    @include subheading-1;
   }
 
   &__toolbar {
@@ -38,15 +35,8 @@
   }
 
   &__searchInput {
-    border: 1px solid $primary;
-    color: $primary;
-    border-radius: 9999px;
-    background: rgba(#efe7d2, 0.4);
+    @include input-search-pill;
     padding: 0.25rem 0.75rem;
-
-    &::placeholder {
-      color: rgba($primary, 0.6);
-    }
   }
 
   &__filters {
@@ -54,16 +44,14 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    font-size: 16px;
-    font-weight: 500;
+    @include body-1;
   }
 
   &__filterBtn {
-    background-color: $button;
+    @include btn-secondary;
     width: 180px;
-    border-radius: 9999px;
-    border: 1px solid;
     padding: 0.5rem 0;
+    @include transition-bg;
   }
 
   &__grid {
@@ -80,10 +68,11 @@
   }
 
   &__moreBtn {
-    background-color: $button-secondary;
+    @include btn-primary;
     width: 200px;
-    border-radius: 9999px;
-    border: 1px solid;
     padding: 0.5rem 0;
+    font-size: 24px;
+    font-weight: 400;
+    @include transition-bg;
   }
 }
