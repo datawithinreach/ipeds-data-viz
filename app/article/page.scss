@@ -1,0 +1,175 @@
+@use '../../styles/variables' as *;
+@use '../../styles/patterns' as *;
+
+.articlesPage {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  color: $primary;
+  background: $background;
+  min-height: 50vh;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &__title {
+    @include heading-1;
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    line-height: 1.05;
+    text-align: left;
+    align-self: flex-start;
+  }
+
+  &__toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 1.25rem;
+    width: 100%;
+  }
+
+  &__search {
+    @include input-search-pill;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1 1 16rem;
+    min-width: min(100%, 14rem);
+    max-width: 28rem;
+    padding: 0.45rem 0.85rem 0.45rem 0.55rem;
+    box-shadow: 0 2px 10px primary-alpha(0.06);
+  }
+
+  &__searchSubmit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0.2rem;
+    border: none;
+    background: transparent;
+    border-radius: 9999px;
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+      background: primary-alpha(0.06);
+    }
+
+    &:focus-visible {
+      outline: 2px solid primary-alpha(0.35);
+      outline-offset: 2px;
+    }
+  }
+
+  &__searchInput {
+    flex: 1 1 auto;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+    @include body-1;
+    font-weight: 400;
+  }
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem 0.75rem;
+  }
+
+  &__apply {
+    @include btn-secondary;
+    @include transition-bg;
+    @include body-1;
+    font-size: 14px;
+    padding: 0.4rem 1rem;
+    box-shadow: 0 1px 4px primary-alpha(0.05);
+  }
+
+  &__filterIcon {
+    flex-shrink: 0;
+    opacity: 0.9;
+  }
+
+  &__pillGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__pill {
+    position: relative;
+    display: inline-flex;
+  }
+
+  &__pillSelect {
+    @include btn-secondary;
+    @include transition-bg;
+    appearance: none;
+    padding: 0.4rem 1.75rem 0.4rem 1rem;
+    @include body-1;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 1px 4px primary-alpha(0.05);
+    background-color: $button;
+
+    &:hover {
+      background-color: $button-secondary-hover;
+    }
+
+    &:focus-visible {
+      outline: 2px solid primary-alpha(0.35);
+      outline-offset: 2px;
+    }
+  }
+
+  &__pill::after {
+    content: '';
+    position: absolute;
+    right: 0.65rem;
+    top: 50%;
+    translate: 0 -50%;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid primary-alpha(0.55);
+    pointer-events: none;
+  }
+
+  &__empty {
+    @include body-1;
+    color: $text-subheading;
+    padding: 2rem 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: 48rem) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 64rem) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__cell {
+    list-style: none;
+    min-width: 0;
+
+  }
+}
