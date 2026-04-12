@@ -2,16 +2,33 @@
 @use '../styles/patterns' as *;
 
 .landing {
+  box-sizing: border-box;
   color: $primary;
-  margin: 2rem 8rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem clamp(1rem, 5vw, 8rem) 3rem;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
 
+  &--empty {
+    min-height: 40vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__emptyMsg {
+    @include body-1;
+  }
+
   &__hero {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    max-width: 64rem;
+    margin-inline: auto;
   }
 
   &__title {
@@ -22,42 +39,87 @@
     @include subheading-1;
   }
 
-  &__toolbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  &__featuredLink {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: stretch;
+    color: inherit;
+    text-decoration: none;
+
+    @media (min-width: 56rem) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
-  &__search {
+  &__featuredImageWrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: primary-alpha(0.06);
+  }
+
+  &__featuredImage {
+    object-fit: cover;
+  }
+
+  &__featuredBody {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 0.75rem;
+    min-width: 0;
   }
 
-  &__searchInput {
-    @include input-search-pill;
-    padding: 0.25rem 0.75rem;
+  &__featuredTitle {
+    @include heading-2;
   }
 
-  &__filters {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+  &__featuredDek {
+    @include subheading-1;
+  }
+
+  &__featuredExcerpt {
     @include body-1;
+    flex: 1 1 auto;
+    @include line-clamp(6);
   }
 
-  &__filterBtn {
-    @include btn-secondary;
-    width: 180px;
-    padding: 0.5rem 0;
-    @include transition-bg;
+  &__featuredAuthor {
+    @include body-1;
+    color: $text-subheading;
   }
 
-  &__grid {
+  &__featuredRead {
+    @include btn-primary;
+    align-self: flex-end;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    @include body-1;
+    pointer-events: none;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background: primary-alpha(0.15);
+    border: none;
+    margin: 0;
+  }
+
+  &__recent {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__sectionTitle {
+    @include heading-2;
+  }
+
+  &__storyGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
     width: 100%;
   }
@@ -69,10 +131,8 @@
 
   &__moreBtn {
     @include btn-primary;
-    width: 200px;
-    padding: 0.5rem 0;
-    font-size: 24px;
-    font-weight: 400;
+    padding: 0.5rem 1.25rem;
+    @include body-1;
     @include transition-bg;
   }
 }

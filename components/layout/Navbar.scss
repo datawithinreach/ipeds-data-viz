@@ -9,13 +9,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-weight: 500;
+    @include body-1;
   }
 
   &__logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    color: $primary;
+  }
+
+  &__homeIcon {
+    display: block;
   }
 
   &__links {

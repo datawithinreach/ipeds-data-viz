@@ -11,6 +11,8 @@ export type StoryCardType = {
   subtitle?: string;
   tags: string[];
   href: string;
+  author?: string;
+  category: string;
 };
 
 function createStoryCard(meta: ArticleMeta): StoryCardType {
@@ -22,6 +24,8 @@ function createStoryCard(meta: ArticleMeta): StoryCardType {
     description: meta.description,
     tags: meta.tags ?? [],
     href: meta.href ?? '#',
+    author: meta.author,
+    category: meta.category,
   };
 }
 
