@@ -1,0 +1,65 @@
+export const ArticleMeta = {
+  title: 'Your Article Title',
+  description: 'A short summary of what this article covers.',
+  publishDate: '03-01-2025',
+  source:
+    'Source: Replace with your data source attribution (e.g. IPEDS, National Center for Education Statistics).',
+  imageUrl: '/images/landing/story1.png',
+  tags: ['tag-1', 'tag-2'],
+  category: 'Data Analysis',
+  href: '/article/your-article-slug',
+  author: 'Author Name',
+};
+
+export const chartData = [
+  { label: 'Category A', value: 84 },
+  { label: 'Category B', value: 72 },
+  { label: 'Category C', value: 65 },
+  { label: 'Category D', value: 58 },
+  { label: 'Category E', value: 43 },
+  { label: 'Category F', value: 37 },
+];
+
+export const scatterData = [
+  { x: 1200, y: 62, label: 'Institution A' },
+  { x: 1850, y: 71, label: 'Institution B' },
+  { x: 2100, y: 58, label: 'Institution C' },
+  { x: 980, y: 45, label: 'Institution D' },
+  { x: 1540, y: 66, label: 'Institution E' },
+  { x: 1720, y: 52, label: 'Institution F' },
+];
+
+---
+
+## Section heading
+
+Replace this paragraph with your analysis for the bar chart. Explain the categories, units, and what the reader should notice in the ranking or magnitudes below.
+
+<Banner
+  value="84%"
+  label="Highlight a key statistic from the bar chart here."
+/>
+
+<BarChart
+  data={chartData}
+  title="Chart title"
+  subtitle="Chart subtitle with a little extra context"
+  height={360}
+  barSize={20}
+  orientation="horizontal"
+/>
+
+<SectionDivider />
+
+## Another section
+
+Use this section for the relationship between two continuous variables. Replace the copy and swap `scatterData` for your own `{ x, y, label? }[]` from IPEDS or another source.
+
+<ScatterPlot
+  data={scatterData}
+  title="Relationship between two metrics"
+  subtitle="Hover points for labels — replace axis titles and data with your measures"
+  xLabel="First metric (units)"
+  yLabel="Second metric (units)"
+  height={380}
+/>
