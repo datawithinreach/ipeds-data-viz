@@ -7,6 +7,5 @@ export type ArticleMeta = {
   imageUrl?: string;
   tags: string[];
   href: string;
-  /** Shown on the landing featured block (e.g. "By: A. B.") */
-  author?: string;
+  author: string;
 };

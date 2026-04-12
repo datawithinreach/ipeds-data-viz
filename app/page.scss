@@ -94,9 +94,17 @@
     @include btn-primary;
     align-self: flex-end;
     margin-top: 1rem;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1.25rem;
     @include body-1;
     pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  &__featuredReadIcon {
+    flex-shrink: 0;
+    object-fit: contain;
   }
 
   &__divider {

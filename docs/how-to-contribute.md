@@ -75,6 +75,7 @@ Your MDX file must export a constant named `ArticleMeta` with these required fie
 - `category`: label above the title (e.g. `Admissions`, `Financial`)
 - `tags`: string array for listing / filtering
 - `href`: canonical route path, **must be** `/article/<slug>` and match the folder name
+- `author`: byline for the landing featured block and metadata (e.g. `'Author Name'`)
 - `imageUrl` (optional): preview image path (see “Landing page story card image” below)
 
 #### Data + visuals live in the same MDX file

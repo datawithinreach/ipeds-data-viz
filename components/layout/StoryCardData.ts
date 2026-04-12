@@ -11,7 +11,7 @@ export type StoryCardType = {
   subtitle?: string;
   tags: string[];
   href: string;
-  author?: string;
+  author: string;
   category: string;
 };
 

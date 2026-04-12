@@ -47,11 +47,17 @@ export default function LandingPage() {
               <h2 className="landing__featuredTitle">{featured.title}</h2>
               <p className="landing__featuredDek">{featured.category}</p>
               <p className="landing__featuredExcerpt">{featured.description}</p>
-              {featured.author ? (
-                <p className="landing__featuredAuthor">By: {featured.author}</p>
-              ) : null}
-              <span className="landing__featuredRead" aria-hidden>
-                Read →
+              <p className="landing__featuredAuthor">By: {featured.author}</p>
+              <span className="landing__featuredRead">
+                <span className="landing__featuredReadLabel">Read</span>
+                <Image
+                  src="/icons/forwardarrow.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="landing__featuredReadIcon"
+                  aria-hidden
+                />
               </span>
             </div>
           </Link>
