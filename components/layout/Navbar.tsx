@@ -16,8 +16,9 @@ export function Navbar() {
           />
         </Link>
         <div className="navbar__links">
-          <Link href="/#recent-articles">Articles</Link>
-          <Link href="/about">About Us</Link>
+          <Link href="/">Home</Link>
+          <Link href="/data-explorer">Data Explorer</Link>
+          <Link href="/about">About</Link>
         </div>
       </section>
     </nav>

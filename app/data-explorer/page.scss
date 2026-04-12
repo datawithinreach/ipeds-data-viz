@@ -1,0 +1,165 @@
+@use '../../styles/variables' as *;
+
+.dataExplorer {
+  color: $primary;
+  margin: 3rem 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    font-family: $font-mono;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 500;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__select {
+    border: 1px solid $primary;
+    background-color: $button;
+    color: $primary;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+  }
+
+  &__searchRow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__searchBar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-self: center;
+    border: 1px solid $primary;
+    border-radius: 9999px;
+    background: rgba(#efe7d2, 0.4);
+    padding: 0.5rem 1rem;
+  }
+
+  &__searchInput {
+    color: $primary;
+    width: 18rem;
+    background: transparent;
+    outline: none;
+    border: none;
+
+    &::placeholder {
+      color: rgba($primary, 0.6);
+    }
+  }
+
+  &__searchAction {
+    margin-left: 1rem;
+    justify-self: start;
+  }
+
+  &__searchBtn {
+    background-color: $button;
+    border: 1px solid $primary;
+    color: $primary;
+    border-radius: 9999px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__loading {
+    color: rgba($primary, 0.6);
+    font-weight: 500;
+  }
+
+  &__error {
+    color: $primary;
+    font-weight: 500;
+  }
+
+  &__results {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__collegeName {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__unitId {
+    font-size: 0.875rem;
+    color: rgba($primary, 0.6);
+  }
+
+  &__tableWrapper {
+    border: 1px solid $primary;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+
+  &__table {
+    width: 100%;
+    font-size: 0.875rem;
+  }
+
+  &__tableHead {
+    background-color: $navbar;
+  }
+
+  &__th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  &__row {
+    &:nth-child(odd) {
+      background: rgba(#fff, 0.4);
+    }
+
+    &:nth-child(even) {
+      background: rgba(#efe7d2, 0.2);
+    }
+  }
+
+  &__td {
+    padding: 0.5rem 1rem;
+
+    &--code {
+      font-family: monospace;
+      font-size: 0.75rem;
+    }
+
+    &--right {
+      text-align: right;
+      font-weight: 500;
+    }
+  }
+}
