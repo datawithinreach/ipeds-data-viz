@@ -4,7 +4,7 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 dayjs.extend(customParseFormat);
 
 const INPUT_DATE_FORMAT = 'MM-DD-YYYY';
-const OUTPUT_DATE_FORMAT = 'MMMM YYYY';
+const OUTPUT_DATE_FORMAT = 'MMM YYYY';
 
 function parseDate(value?: string) {
   if (!value) return null;
@@ -15,7 +15,7 @@ function parseDate(value?: string) {
 export function formatArticleDate(value?: string): string {
   const parsed = parseDate(value);
   if (!parsed) return value ?? '';
-  return parsed.format(OUTPUT_DATE_FORMAT).toLowerCase();
+  return parsed.format(OUTPUT_DATE_FORMAT).toUpperCase();
 }
 
 export function toSortableTimestamp(value?: string): number {
