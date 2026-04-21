@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Poppins, Red_Hat_Mono } from 'next/font/google';
-import { QueryProvider } from '@/components/QueryProvider';
 import './globals.scss';
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
@@ -31,9 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} ${redHatMono.variable}`}>
         <Navbar />
-        <main>
-          <QueryProvider>{children}</QueryProvider>
-        </main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

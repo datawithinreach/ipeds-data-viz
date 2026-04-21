@@ -9,7 +9,6 @@ data stories with reusable visualization components.
 ipeds-data-viz/
 ├── app/                          # App Router pages and route segments
 │   ├── page.tsx                  # Landing page
-│   ├── data-explorer/            # Data explorer page
 │   └── article/                  # Article routes and generated registry
 ├── components/
 │   ├── article/                  # Shared article layout + content primitives
