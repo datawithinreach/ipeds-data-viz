@@ -7,6 +7,7 @@ import {
   LineChart,
   ScatterPlot,
   StackedBarChart,
+  PieChart,
 } from '@/components/visualizations';
 
 /**
@@ -25,6 +26,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ScatterPlot,
     StackedBarChart,
     Banner,
+    PieChart,
     SectionDivider,
     h1: (props: ComponentPropsWithoutRef<'h1'>) => (
       <h2 {...(props as unknown as ComponentPropsWithoutRef<'h2'>)} />

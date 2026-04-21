@@ -1,0 +1,19 @@
+@use '../../../styles/patterns' as *;
+
+.pieChart {
+  position: relative;
+  width: 100%;
+
+  &__svg {
+    display: block;
+    overflow: visible;
+  }
+
+  &__tooltipLabel {
+    @include chart-tooltip-label;
+  }
+
+  &__tooltipMuted {
+    @include chart-tooltip-muted;
+  }
+}

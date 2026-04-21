@@ -11,3 +11,6 @@ export { ScatterPlot } from './ScatterPlot/ScatterPlot';
 export type { ScatterDatum } from './ScatterPlot/ScatterPlot';
 
 export { Banner } from './Banner/Banner';
+
+export { PieChart } from './PieChart/PieChart';
+export type { PieDatum } from './PieChart/PieChart';
