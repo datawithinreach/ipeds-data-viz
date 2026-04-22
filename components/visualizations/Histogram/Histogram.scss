@@ -1,0 +1,18 @@
+@use '../../../styles/patterns' as *;
+
+.histogram {
+  position: relative;
+  width: 100%;
+
+  svg {
+    overflow: visible;
+  }
+
+  &__tooltipLabel {
+    @include chart-tooltip-label;
+  }
+
+  &__tooltipMuted {
+    @include chart-tooltip-muted;
+  }
+}

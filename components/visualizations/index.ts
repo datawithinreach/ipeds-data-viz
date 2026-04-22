@@ -14,3 +14,6 @@ export { Banner } from './Banner/Banner';
 
 export { PieChart } from './PieChart/PieChart';
 export type { PieDatum } from './PieChart/PieChart';
+
+export { Histogram } from './Histogram/Histogram';
+export type { HistogramBin } from './Histogram/Histogram';
