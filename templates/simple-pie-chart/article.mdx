@@ -1,0 +1,35 @@
+export const ArticleMeta = {
+  title: 'Your Article Title',
+  description: 'A short summary of what this article covers.',
+  publishDate: '03-01-2025',
+  source:
+    'Source: Replace with your data source attribution (e.g. IPEDS, National Center for Education Statistics).',
+  imageUrl: '/images/landing/story1.png',
+  tags: ['tag-1', 'tag-2'],
+  category: 'Data Analysis',
+  href: '/article/your-article-slug',
+  author: 'Author Name',
+};
+
+export const pieData = [
+  { label: 'Category A', value: 42 },
+  { label: 'Category B', value: 28 },
+  { label: 'Category C', value: 18 },
+  { label: 'Category D', value: 12 },
+];
+
+---
+
+## Section heading
+
+Replace this paragraph with your analysis. Explain the data, provide context, and guide the reader through the key takeaways visible in the chart below.
+
+<Banner value="42%" label="Highlight a key share or proportion from your dataset here." />
+
+<PieChart
+  data={pieData}
+  title="Chart Title"
+  subtitle="Chart subtitle with a little extra context"
+  height={360}
+  contained
+/>
