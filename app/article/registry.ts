@@ -5,19 +5,31 @@
 import type { ArticleMeta as ArticleMetaType } from '@/components/article/types';
 import * as _Article0 from './admission-massachusetts-private/article.mdx';
 import * as _Article1 from './admissions-top-20/article.mdx';
-import * as _Article2 from './example/article.mdx';
-import * as _Article3 from './financial-aid-top-20/article.mdx';
-import * as _Article4 from './uc-2024-cost-of-attendance/article.mdx';
+import * as _Article2 from './financial-aid-top-20/article.mdx';
+import * as _Article3 from './testing1/article.mdx';
+import * as _Article4 from './testing2/article.mdx';
+import * as _Article5 from './testing3/article.mdx';
+import * as _Article6 from './testing4/article.mdx';
+import * as _Article7 from './testing5/article.mdx';
+import * as _Article8 from './uc-2024-cost-of-attendance/article.mdx';
 const ArticleMeta0 = (_Article0 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 const ArticleMeta1 = (_Article1 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 const ArticleMeta2 = (_Article2 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 const ArticleMeta3 = (_Article3 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 const ArticleMeta4 = (_Article4 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
+const ArticleMeta5 = (_Article5 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
+const ArticleMeta6 = (_Article6 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
+const ArticleMeta7 = (_Article7 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
+const ArticleMeta8 = (_Article8 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 
 export const articleRegistry = [
   { slug: 'admission-massachusetts-private', ArticleMeta: ArticleMeta0 },
   { slug: 'admissions-top-20', ArticleMeta: ArticleMeta1 },
-  { slug: 'example', ArticleMeta: ArticleMeta2 },
-  { slug: 'financial-aid-top-20', ArticleMeta: ArticleMeta3 },
-  { slug: 'uc-2024-cost-of-attendance', ArticleMeta: ArticleMeta4 },
+  { slug: 'financial-aid-top-20', ArticleMeta: ArticleMeta2 },
+  { slug: 'testing1', ArticleMeta: ArticleMeta3 },
+  { slug: 'testing2', ArticleMeta: ArticleMeta4 },
+  { slug: 'testing3', ArticleMeta: ArticleMeta5 },
+  { slug: 'testing4', ArticleMeta: ArticleMeta6 },
+  { slug: 'testing5', ArticleMeta: ArticleMeta7 },
+  { slug: 'uc-2024-cost-of-attendance', ArticleMeta: ArticleMeta8 },
 ];

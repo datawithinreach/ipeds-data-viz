@@ -59,10 +59,18 @@ is_valid_slug() {
 }
 
 templates=()
-for dir in "${TEMPLATES_DIR}"/template-*; do
+for dir in "${TEMPLATES_DIR}"/*; do
   [[ -d "$dir" ]] || continue
+  [[ -f "${dir}/article.mdx" && -f "${dir}/page.tsx" ]] || continue
   templates+=("$(basename "$dir")")
 done
+if [[ ${#templates[@]} -gt 0 ]]; then
+  templates_sorted=()
+  while IFS= read -r line; do
+    [[ -n "${line}" ]] && templates_sorted+=("${line}")
+  done < <(printf '%s\n' "${templates[@]}" | LC_ALL=C sort)
+  templates=("${templates_sorted[@]}")
+fi
 
 if [[ ${#templates[@]} -eq 0 ]]; then
   error "No templates found in ${TEMPLATES_DIR}"
