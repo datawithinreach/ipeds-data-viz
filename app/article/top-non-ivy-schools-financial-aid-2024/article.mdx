@@ -1,0 +1,82 @@
+export const ArticleMeta = {
+  title: 'Financial aid outcomes at top non-Ivy schools (2023–24)',
+  description:
+    'IPEDS Student Financial Aid (SFA) metrics for a curated set of highly selective non-Ivy universities: grant-aid coverage, average grant aid, and federal loan participation in 2023–24.',
+  publishDate: '04-23-2026',
+  source:
+    'Source: IPEDS (NCES), Student Financial Aid (SFA), academic years 2020–21 through 2023–24. Charted metrics use SFA2324: Percent awarded any grant aid; Average grant aid (all sources); Percent awarded federal student loans.',
+  imageUrl: '/images/landing/story5.png',
+  tags: ['ipeds', 'financial-aid', 'grant-aid', 'student-loans', 'non-ivy'],
+  category: 'Data Analysis',
+  href: '/article/top-non-ivy-schools-financial-aid-2024',
+  author: 'Author Name',
+};
+
+export const chartData = [
+  { label: 'Johns Hopkins University', value: 69 },
+  { label: 'Vanderbilt University', value: 68 },
+  { label: 'Stanford University', value: 66 },
+  { label: 'Massachusetts Institute of Technology', value: 64 },
+  { label: 'Rice University', value: 61 },
+  { label: 'University of California-Berkeley', value: 60 },
+  { label: 'California Institute of Technology', value: 59 },
+  { label: 'University of California-Los Angeles', value: 55 },
+  { label: 'University of Michigan-Ann Arbor', value: 54 },
+  { label: 'Duke University', value: 53 },
+  { label: 'Northwestern University', value: 52 },
+  { label: 'University of North Carolina at Chapel Hill', value: 50 },
+  { label: 'University of Chicago', value: 49 },
+  { label: 'University of Virginia-Main Campus', value: 49 },
+];
+
+export const scatterData = [
+  { label: 'California Institute of Technology', x: 58526, y: 4 },
+  { label: 'Duke University', x: 56560, y: 14 },
+  { label: 'Johns Hopkins University', x: 50356, y: 9 },
+  { label: 'Massachusetts Institute of Technology', x: 58429, y: 7 },
+  { label: 'Northwestern University', x: 59150, y: 17 },
+  { label: 'Rice University', x: 54440, y: 6 },
+  { label: 'Stanford University', x: 58449, y: 6 },
+  { label: 'University of California-Berkeley', x: 25091, y: 17 },
+  { label: 'University of California-Los Angeles', x: 23418, y: 19 },
+  { label: 'University of Chicago', x: 53683, y: 5 },
+  { label: 'University of Michigan-Ann Arbor', x: 25050, y: 24 },
+  { label: 'University of North Carolina at Chapel Hill', x: 16499, y: 13 },
+  { label: 'University of Virginia-Main Campus', x: 24949, y: 20 },
+  { label: 'Vanderbilt University', x: 58699, y: 10 },
+];
+
+---
+
+## How common is grant aid in 2023–24?
+
+IPEDS’ Student Financial Aid (SFA) table reports what share of undergraduates received grant aid from any source (federal, state, local, institutional, or other). In this set of highly selective non-Ivy schools, a majority of undergraduates received some grant aid in 2023–24.
+
+<Banner
+  value="69%"
+  label="Highest grant-aid coverage in this set in 2023–24: Johns Hopkins University."
+/>
+
+<BarChart
+  data={chartData}
+  title="Percent of undergraduates receiving grant aid from any source (2023–24)"
+  subtitle="IPEDS SFA2324: Percent of undergraduate students awarded federal, state, local, institutional, or other sources of grant aid."
+  height={360}
+  barSize={20}
+  orientation="horizontal"
+/>
+
+<SectionDivider />
+
+## Average grant aid vs federal loan participation
+
+The level of grant support and the extent of federal student loan use can move independently. This plot compares each school’s average grant aid amount (among grant recipients) against the share of undergraduates receiving federal student loans in 2023–24.
+
+<ScatterPlot
+  data={scatterData}
+  title="Average grant aid vs federal loan share (2023–24)"
+  subtitle="X: Average grant aid among grant recipients (IPEDS SFA2324). Y: Percent of undergraduates receiving federal student loans (IPEDS SFA2324)."
+  xLabel="Average grant aid ($)"
+  yLabel="Federal loan recipients (%)"
+  height={380}
+/>
