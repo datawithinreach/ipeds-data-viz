@@ -69,7 +69,9 @@ export default function LandingPage() {
       <section
         id="recent-articles"
         className="landing__recent"
-        aria-labelledby={recentStories.length > 0 ? 'recent-heading' : undefined}
+        aria-labelledby={
+          recentStories.length > 0 ? 'recent-heading' : undefined
+        }
       >
         {recentStories.length > 0 ? (
           <>
@@ -77,7 +79,7 @@ export default function LandingPage() {
               Recent articles
             </h2>
             <div className="landing__storyGrid">
-              {recentStories.map((story) => (
+              {recentStories.slice(0, 9).map((story) => (
                 <StoryCard key={story.href} {...story} />
               ))}
             </div>
@@ -86,9 +88,11 @@ export default function LandingPage() {
       </section>
 
       <section className="landing__more">
-        <button type="button" className="landing__moreBtn">
-          See More Articles
-        </button>
+        <Link href="/article">
+          <button type="button" className="landing__moreBtn">
+            See More Articles
+          </button>
+        </Link>
       </section>
     </div>
   );
