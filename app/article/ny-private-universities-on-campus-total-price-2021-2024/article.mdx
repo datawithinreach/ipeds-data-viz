@@ -1,0 +1,40 @@
+export const ArticleMeta = {
+  title: 'Total on-campus price at selected New York private universities (2021–22 to 2023–24)',
+  description:
+    'A simple comparison of IPEDS total price (on-campus) across a small set of New York private universities, focusing on 2023–24.',
+  publishDate: '04-22-2026',
+  source:
+    'Source: IPEDS (NCES). Total price for students living on campus (in-state shown; identical across residency categories in this extract).',
+  imageUrl: '/images/landing/story1.png',
+  tags: ['cost-of-attendance', 'new-york', 'private-universities'],
+  category: 'Data Analysis',
+  href: '/article/ny-private-universities-on-campus-total-price-2021-2024',
+  author: 'IPEDS Data Viz',
+};
+
+export const chartData = [
+  { label: 'Columbia', value: 89587 },
+  { label: 'Fordham', value: 89575 },
+  { label: 'Cornell', value: 88140 },
+  { label: 'NYU', value: 87752 },
+  { label: 'RPI', value: 82404 },
+  { label: 'Syracuse', value: 85147 },
+  { label: 'Rochester', value: 85962 },
+].sort((a, b) => b.value - a.value);
+
+---
+
+## 2023–24 total price, on campus
+
+This chart compares the IPEDS “total price” for students living on campus (2023–24) across a small, selected set of New York private universities.
+
+<Banner value="$89,587" label="Highest 2023–24 on-campus total price in this set (Columbia)." />
+
+<BarChart
+  data={chartData}
+  title="Total price (on campus), 2023–24"
+  subtitle="USD; in-state shown (this extract reports the same value for in-district / in-state / out-of-state)"
+  height={360}
+  barSize={20}
+  orientation="horizontal"
+/>
