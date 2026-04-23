@@ -1,0 +1,114 @@
+export const ArticleMeta = {
+  title: 'Top non-Ivy acceptance rates (2021–2024)',
+  description:
+    'IPEDS acceptance rates over four admission cycles for a small set of highly selective non-Ivy universities.',
+  publishDate: '04-23-2026',
+  source:
+    'Source: IPEDS (NCES), Percent admitted — total (DRVADM2021_RV–DRVADM2024).',
+  imageUrl: '/images/landing/story1.png',
+  tags: ['ipeds', 'admissions', 'acceptance-rate', 'non-ivy'],
+  category: 'Data Analysis',
+  href: '/article/top-non-ivy-schools-acceptance-rates',
+  author: 'Author Name',
+};
+
+export const seriesData = [
+  {
+    label: 'California Institute of Technology',
+    data: [
+      { x: '2021', y: 4 },
+      { x: '2022', y: 3 },
+      { x: '2023', y: 3 },
+      { x: '2024', y: 3 },
+    ],
+  },
+  {
+    label: 'Stanford University',
+    data: [
+      { x: '2021', y: 4 },
+      { x: '2022', y: 4 },
+      { x: '2023', y: 4 },
+      { x: '2024', y: 4 },
+    ],
+  },
+  {
+    label: 'University of Chicago',
+    data: [
+      { x: '2021', y: 6 },
+      { x: '2022', y: 5 },
+      { x: '2023', y: 5 },
+      { x: '2024', y: 4 },
+    ],
+  },
+  {
+    label: 'Massachusetts Institute of Technology',
+    data: [
+      { x: '2021', y: 4 },
+      { x: '2022', y: 4 },
+      { x: '2023', y: 5 },
+      { x: '2024', y: 5 },
+    ],
+  },
+  {
+    label: 'Duke University',
+    data: [
+      { x: '2021', y: 6 },
+      { x: '2022', y: 6 },
+      { x: '2023', y: 7 },
+      { x: '2024', y: 6 },
+    ],
+  },
+  {
+    label: 'Johns Hopkins University',
+    data: [
+      { x: '2021', y: 8 },
+      { x: '2022', y: 8 },
+      { x: '2023', y: 8 },
+      { x: '2024', y: 6 },
+    ],
+  },
+  {
+    label: 'Vanderbilt University',
+    data: [
+      { x: '2021', y: 7 },
+      { x: '2022', y: 7 },
+      { x: '2023', y: 6 },
+      { x: '2024', y: 6 },
+    ],
+  },
+];
+
+export const acceptanceRate2024 = [
+  3, 6, 6, 5, 8, 8, 4, 11, 9, 4, 16, 15, 17, 6,
+];
+
+---
+
+<LineChart
+  series={seriesData}
+  title="Acceptance rate over time (Percent admitted, total)"
+  subtitle="IPEDS percent admitted (total) for selected non-Ivy universities, 2021–2024. Values are whole percentages as reported."
+  height={420}
+  enableSeriesSelection
+  contained
+/>
+
+<Histogram
+  data={acceptanceRate2024}
+  title="Distribution of acceptance rates in 2024"
+  subtitle="Histogram of IPEDS percent admitted (total) across the schools listed in this article’s CSV (DRVADM2024)."
+  xLabel="Acceptance rate (%)"
+  yLabel="Schools (count)"
+  height={360}
+  binCount={8}
+/>
+
+## What this shows
+
+IPEDS reports a “percent admitted” metric for first-year applicants. The lines above track that value across four admissions cycles (2021–2024) for a small set of highly selective, non-Ivy universities. Many of these rates are flat year-to-year—so small moves (1–2 percentage points) can still represent meaningful changes in how competitive admissions were for that cycle.
+
+<Banner
+  value="3%"
+  label="Lowest acceptance rate in this set in 2024 (Caltech)."
+  accent="navbar"
+/>

@@ -9,7 +9,8 @@ import * as _Article2 from './financial-aid-top-20/article.mdx';
 import * as _Article3 from './ny-private-universities-applicants-2022-2024/article.mdx';
 import * as _Article4 from './ny-private-universities-on-campus-total-price-2021-2024/article.mdx';
 import * as _Article5 from './sat-act-percentiles-jesuit-schools-2022-2024/article.mdx';
-import * as _Article6 from './uc-2024-cost-of-attendance/article.mdx';
+import * as _Article6 from './top-non-ivy-schools-acceptance-rates/article.mdx';
+import * as _Article7 from './uc-2024-cost-of-attendance/article.mdx';
 const ArticleMeta0 = (_Article0 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 const ArticleMeta1 = (_Article1 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 const ArticleMeta2 = (_Article2 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
@@ -17,6 +18,7 @@ const ArticleMeta3 = (_Article3 as unknown as { ArticleMeta: ArticleMetaType }).
 const ArticleMeta4 = (_Article4 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 const ArticleMeta5 = (_Article5 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 const ArticleMeta6 = (_Article6 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
+const ArticleMeta7 = (_Article7 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 
 export const articleRegistry = [
   { slug: 'acceptance-rates-jesuit-schools-2022-2024', ArticleMeta: ArticleMeta0 },
@@ -25,5 +27,6 @@ export const articleRegistry = [
   { slug: 'ny-private-universities-applicants-2022-2024', ArticleMeta: ArticleMeta3 },
   { slug: 'ny-private-universities-on-campus-total-price-2021-2024', ArticleMeta: ArticleMeta4 },
   { slug: 'sat-act-percentiles-jesuit-schools-2022-2024', ArticleMeta: ArticleMeta5 },
-  { slug: 'uc-2024-cost-of-attendance', ArticleMeta: ArticleMeta6 },
+  { slug: 'top-non-ivy-schools-acceptance-rates', ArticleMeta: ArticleMeta6 },
+  { slug: 'uc-2024-cost-of-attendance', ArticleMeta: ArticleMeta7 },
 ];
