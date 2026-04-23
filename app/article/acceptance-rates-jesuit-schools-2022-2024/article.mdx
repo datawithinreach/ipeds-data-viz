@@ -1,0 +1,98 @@
+export const ArticleMeta = {
+  title: 'Acceptance rates at five Jesuit universities (2022–2024)',
+  description:
+    'How selective were five Jesuit-affiliated universities from 2022 to 2024? Acceptance rate is calculated as admissions divided by applicants.',
+  publishDate: '04-22-2026',
+  source:
+    'Source: IPEDS (NCES), Admissions (ADM) 2022–2024. Acceptance rate computed as Admissions total ÷ Applicants total.',
+  imageUrl: '/images/landing/story1.png',
+  tags: [
+    'ipeds',
+    'admissions',
+    'acceptance-rate',
+    'jesuit',
+    'selectivity',
+    '2022',
+    '2023',
+    '2024',
+  ],
+  category: 'Data Analysis',
+  href: '/article/acceptance-rates-jesuit-schools-2022-2024',
+  author: 'Author Name',
+};
+
+export const seriesData = [
+  {
+    label: 'Boston College',
+    data: [
+      { x: '2022', y: 16.67 },
+      { x: '2023', y: 15.65 },
+      { x: '2024', y: 16.42 },
+    ],
+  },
+  {
+    label: 'College of the Holy Cross',
+    data: [
+      { x: '2022', y: 36.35 },
+      { x: '2023', y: 21.1 },
+      { x: '2024', y: 17.61 },
+    ],
+  },
+  {
+    label: 'Fordham University',
+    data: [
+      { x: '2022', y: 54.13 },
+      { x: '2023', y: 56.28 },
+      { x: '2024', y: 59.3 },
+    ],
+  },
+  {
+    label: 'Georgetown University',
+    data: [
+      { x: '2022', y: 12.23 },
+      { x: '2023', y: 13.08 },
+      { x: '2024', y: 12.91 },
+    ],
+  },
+  {
+    label: 'Santa Clara University',
+    data: [
+      { x: '2022', y: 52.12 },
+      { x: '2023', y: 43.84 },
+      { x: '2024', y: 48.0 },
+    ],
+  },
+];
+
+---
+
+<LineChart
+  series={seriesData}
+  title="Acceptance rate (Admissions ÷ Applicants), 2022–2024"
+  subtitle="Five Jesuit-affiliated universities. Toggle series to compare trends."
+  height={420}
+  enableSeriesSelection
+  contained
+/>
+
+## What changed between 2022 and 2024?
+
+Across these five schools, selectivity varies widely—and so does how it’s moving over time. Georgetown is consistently the most selective in this set (about 12–13% across all three years), while Fordham admits a majority of applicants (about 54–59%).
+
+The biggest shift is at the College of the Holy Cross, where acceptance rate fell from 36.35% in 2022 to 17.61% in 2024. That’s a drop of 18.74 percentage points over two years.
+
+<Banner
+  value="-18.74 pp"
+  label="College of the Holy Cross: acceptance rate fell from 36.35% (2022) to 17.61% (2024)."
+  accent="navbar"
+/>
+
+<SectionDivider />
+
+## A quick reading of each school
+
+- **Georgetown University**: Most selective in this group, staying near 13% each year.
+- **Boston College**: Stable in the mid-teens, dipping in 2023 then rebounding slightly in 2024.
+- **College of the Holy Cross**: Much more selective by 2024, with a steep two-year drop in acceptance rate.
+- **Santa Clara University**: Acceptance rate fell in 2023 then rose in 2024, remaining in the mid-to-high 40s.
+- **Fordham University**: Highest acceptance rate here and trending upward from 2022 to 2024.
