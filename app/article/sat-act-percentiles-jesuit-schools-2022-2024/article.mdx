@@ -1,0 +1,74 @@
+export const ArticleMeta = {
+  title: 'SAT/ACT score percentiles at five Jesuit universities (2022–2024)',
+  description:
+    'A comparison of SAT/ACT score percentiles and test-submission rates reported to IPEDS for five Jesuit-affiliated universities, with a focused look at 2024 patterns.',
+  publishDate: '04-22-2026',
+  source:
+    'Source: IPEDS (NCES), Admissions (ADM) test scores and submission counts/percentages, 2022–2024.',
+  imageUrl: '/images/landing/story1.png',
+  tags: [
+    'ipeds',
+    'admissions',
+    'test-scores',
+    'sat',
+    'act',
+    'jesuit',
+    '2022',
+    '2023',
+    '2024',
+  ],
+  category: 'Data Analysis',
+  href: '/article/sat-act-percentiles-jesuit-schools-2022-2024',
+  author: 'Author Name',
+};
+
+export const chartData = [
+  { label: 'Boston College', value: 760 },
+  { label: 'Georgetown University', value: 750 },
+  { label: 'Santa Clara University', value: 720 },
+  { label: 'Fordham University', value: 710 },
+  { label: 'College of the Holy Cross', value: 670 },
+];
+
+export const scatterData = [
+  { x: 30, y: 760, label: 'Boston College' },
+  { x: 78, y: 750, label: 'Georgetown University' },
+  { x: 24, y: 720, label: 'Santa Clara University' },
+  { x: 18, y: 710, label: 'Fordham University' },
+  { x: 30, y: 670, label: 'College of the Holy Cross' },
+];
+
+---
+
+## SAT Math median (50th percentile) — 2024
+
+The chart below compares the reported **SAT Math 50th percentile** for incoming, first-time degree/certificate-seeking students who submitted SAT scores (ADM2024). In this small set, Boston College and Georgetown report the highest medians.
+
+<Banner
+  value="760"
+  label="Highest SAT Math median (50th percentile) in this set (ADM2024): Boston College."
+/>
+
+<BarChart
+  data={chartData}
+  title="SAT Math 50th percentile (ADM2024)"
+  subtitle="Five Jesuit-affiliated universities. Values are the reported 50th percentile SAT Math score."
+  height={360}
+  barSize={20}
+  orientation="horizontal"
+/>
+
+<SectionDivider />
+
+## Submission rate vs. median score (SAT) — 2024
+
+Schools can differ both in typical scores and in **how many students submit** SAT results. The scatter plot pairs each school’s **percent submitting SAT** (x-axis) with its **SAT Math 50th percentile** (y-axis) for ADM2024.
+
+<ScatterPlot
+  data={scatterData}
+  title="SAT submission rate vs. SAT Math median (ADM2024)"
+  subtitle="X: % of first-time students submitting SAT scores. Y: SAT Math 50th percentile."
+  xLabel="% submitting SAT (ADM2024)"
+  yLabel="SAT Math 50th percentile (ADM2024)"
+  height={380}
+/>
