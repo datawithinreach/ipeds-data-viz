@@ -38,7 +38,17 @@ const AXIS_COLOR = colors.primary;
 const GRID_COLOR = `${colors.primary}15`;
 
 function formatTickValue(v: number): string {
-  return Number(v).toLocaleString(undefined, { maximumFractionDigits: 2 });
+  const n = Number(v);
+  if (!Number.isFinite(n)) return '';
+  const abs = Math.abs(n);
+  if (abs >= 10_000) {
+    return new Intl.NumberFormat(undefined, {
+      notation: 'compact',
+      compactDisplay: 'short',
+      maximumFractionDigits: abs >= 1_000_000 ? 1 : 0,
+    }).format(n);
+  }
+  return n.toLocaleString(undefined, { maximumFractionDigits: 2 });
 }
 
 function paddedLinearDomain(
@@ -75,7 +85,7 @@ export function ScatterPlot({
       top: 16,
       right: 24,
       bottom: xLabel ? 52 : 40,
-      left: yLabel ? 72 : 56,
+      left: yLabel ? 88 : 56,
     }),
     [xLabel, yLabel]
   );
@@ -210,11 +220,11 @@ export function ScatterPlot({
               ) : null}
               {yLabel ? (
                 <Text
-                  x={-40}
+                  x={-60}
                   y={innerHeight / 2}
                   textAnchor="middle"
                   verticalAnchor="middle"
-                  transform={`rotate(-90, -40, ${innerHeight / 2})`}
+                  transform={`rotate(-90, -60, ${innerHeight / 2})`}
                   fill={AXIS_COLOR}
                   fontSize={12}
                 >
