@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { withBasePath } from '@/lib/basePath';
 import './Navbar.scss';
 
 export function Navbar() {
@@ -8,7 +9,7 @@ export function Navbar() {
       <section className="navbar__content">
         <Link href="/" className="navbar__logo" aria-label="Home">
           <Image
-            src="/icons/home.png"
+            src={withBasePath('/icons/home.png')}
             alt=""
             width={22}
             height={20}

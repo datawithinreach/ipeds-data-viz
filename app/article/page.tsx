@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { StoryCard } from '@/components/layout/StoryCard';
 import { StoryCardData } from '@/components/layout/StoryCardData';
+import { withBasePath } from '@/lib/basePath';
 import './page.scss';
 
 export default function ArticlesPage() {
@@ -20,7 +21,7 @@ export default function ArticlesPage() {
               disabled
             >
               <Image
-                src="/icons/search.png"
+                src={withBasePath('/icons/search.png')}
                 alt=""
                 width={18}
                 height={18}
@@ -37,7 +38,7 @@ export default function ArticlesPage() {
 
           <div className="articlesPage__filters">
             <Image
-              src="/icons/filter.png"
+              src={withBasePath('/icons/filter.png')}
               alt=""
               width={20}
               height={20}

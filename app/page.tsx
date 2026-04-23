@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { StoryCard } from '@/components/layout/StoryCard';
 import { StoryCardData } from '@/components/layout/StoryCardData';
+import { withBasePath } from '@/lib/basePath';
 import './page.scss';
 
 export default function LandingPage() {
@@ -51,7 +52,7 @@ export default function LandingPage() {
               <span className="landing__featuredRead">
                 <span className="landing__featuredReadLabel">Read</span>
                 <Image
-                  src="/icons/forwardarrow.png"
+                  src={withBasePath('/icons/forwardarrow.png')}
                   alt=""
                   width={20}
                   height={20}

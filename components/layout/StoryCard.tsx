@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { type StoryCardType } from './StoryCardData';
+import { withBasePath } from '@/lib/basePath';
 import './StoryCard.scss';
 
 export function StoryCard({
@@ -15,7 +16,7 @@ export function StoryCard({
       <div className="storyCard__date">{date}</div>
       <div className="storyCard__imageWrapper">
         <Image
-          src={imageUrl}
+          src={withBasePath(imageUrl)}
           alt={title}
           fill
           className="storyCard__image"
