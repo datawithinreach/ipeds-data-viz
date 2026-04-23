@@ -1,0 +1,43 @@
+export const ArticleMeta = {
+  title:
+    'Who dominates the applicant pool? Selected NY private universities (2024)',
+  description:
+    'A pie-chart view of how 2024 applicants are distributed across a small, selected set of New York private universities (IPEDS ADM2024).',
+  publishDate: '04-22-2026',
+  source:
+    'Source: IPEDS (NCES). Applicants for a selected set of New York private universities.',
+  imageUrl: '/images/landing/story1.png',
+  tags: ['ipeds', 'new-york', 'admissions', 'applicants'],
+  category: 'Data Analysis',
+  href: '/article/ny-private-universities-applicants-2022-2024',
+  author: 'IPEDS Data Viz',
+};
+
+export const pieData = [
+  { label: 'NYU', value: 110807 },
+  { label: 'Cornell', value: 62993 },
+  { label: 'Columbia', value: 60115 },
+  { label: 'Syracuse', value: 44480 },
+  { label: 'Fordham', value: 43364 },
+  { label: 'Rochester', value: 21384 },
+  { label: 'RPI', value: 17175 },
+];
+
+---
+
+## Share of 2024 applicants in this selected set
+
+This pie chart shows how total applicants in 2024 are distributed across this selected set of New York private universities. It’s a composition view of the set (it does not represent all NY colleges).
+
+<Banner
+  value="30.8%"
+  label="NYU’s share of 2024 applicants within this selected set."
+/>
+
+<PieChart
+  data={pieData}
+  title="Applicants (total), 2024 — share within selected NY private universities"
+  subtitle="Counts are shown in the CSV; the pie encodes each school’s share of the total across this set (ADM2024)."
+  height={380}
+  contained
+/>
