@@ -1,0 +1,82 @@
+export const ArticleMeta = {
+  title: 'Pell Grant share at top non-Ivy schools (2023–24)',
+  description:
+    'IPEDS Student Financial Aid (SFA) metrics for a curated set of highly selective non-Ivy universities, focusing on the share of undergraduates receiving Federal Pell Grants in 2023–24.',
+  publishDate: '04-23-2026',
+  source:
+    'Source: IPEDS (NCES), Student Financial Aid (SFA), academic years 2020–21 through 2023–24. Charted metrics use SFA2324: Percent of undergraduates awarded Federal Pell grants; Average amount of grant aid (all sources).',
+  imageUrl: '/images/landing/story3.png',
+  tags: ['ipeds', 'financial-aid', 'pell-grant', 'non-ivy'],
+  category: 'Data Analysis',
+  href: '/article/top-non-ivy-schools-pell-grant-2024',
+  author: 'Author Name',
+};
+
+export const chartData = [
+  { label: 'University of California-Berkeley', value: 29 },
+  { label: 'University of California-Los Angeles', value: 28 },
+  { label: 'University of North Carolina at Chapel Hill', value: 20 },
+  { label: 'Vanderbilt University', value: 20 },
+  { label: 'Johns Hopkins University', value: 19 },
+  { label: 'Massachusetts Institute of Technology', value: 19 },
+  { label: 'Northwestern University', value: 19 },
+  { label: 'Stanford University', value: 19 },
+  { label: 'California Institute of Technology', value: 18 },
+  { label: 'University of Michigan-Ann Arbor', value: 18 },
+  { label: 'Rice University', value: 17 },
+  { label: 'University of Virginia-Main Campus', value: 16 },
+  { label: 'University of Chicago', value: 15 },
+  { label: 'Duke University', value: 14 },
+];
+
+export const scatterData = [
+  { x: 18, y: 58526, label: 'California Institute of Technology' },
+  { x: 14, y: 56560, label: 'Duke University' },
+  { x: 19, y: 50356, label: 'Johns Hopkins University' },
+  { x: 19, y: 58429, label: 'Massachusetts Institute of Technology' },
+  { x: 19, y: 59150, label: 'Northwestern University' },
+  { x: 17, y: 54440, label: 'Rice University' },
+  { x: 19, y: 58449, label: 'Stanford University' },
+  { x: 29, y: 25091, label: 'University of California-Berkeley' },
+  { x: 28, y: 23418, label: 'University of California-Los Angeles' },
+  { x: 15, y: 53683, label: 'University of Chicago' },
+  { x: 18, y: 25050, label: 'University of Michigan-Ann Arbor' },
+  { x: 20, y: 16499, label: 'University of North Carolina at Chapel Hill' },
+  { x: 16, y: 24949, label: 'University of Virginia-Main Campus' },
+  { x: 20, y: 58699, label: 'Vanderbilt University' },
+];
+
+---
+
+## Pell Grant share in 2023–24
+
+IPEDS’ Student Financial Aid (SFA) table reports the share of undergraduates receiving a Federal Pell Grant. Across this small set of highly selective, non-Ivy universities, the 2023–24 Pell share ranges from the mid-teens to just under 30%.
+
+<Banner
+  value="29%"
+  label="Highest Pell share in this set in 2023–24: University of California–Berkeley."
+/>
+
+<BarChart
+  data={chartData}
+  title="Percent of undergraduates receiving a Federal Pell Grant (2023–24)"
+  subtitle="IPEDS SFA2324: Percent of undergraduate students awarded Federal Pell grants, for the schools listed in this article’s CSV."
+  height={360}
+  barSize={20}
+  orientation="horizontal"
+/>
+
+<SectionDivider />
+
+## Pell share vs average grant aid
+
+Pell share is one indicator of the income mix of an undergraduate population, while the average grant aid amount summarizes how much grant funding (federal, state, local, institutional, and other sources) is awarded per recipient. Plotting them together shows how these two measures vary across this set in 2023–24.
+
+<ScatterPlot
+  data={scatterData}
+  title="Pell share vs average grant aid (2023–24)"
+  subtitle="X: Pell Grant recipient share (IPEDS SFA2324). Y: Average grant aid amount among grant recipients (IPEDS SFA2324)."
+  xLabel="Pell Grant recipients (%)"
+  yLabel="Average grant aid ($)"
+  height={380}
+/>
