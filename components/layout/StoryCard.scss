@@ -23,6 +23,28 @@
     object-fit: cover;
   }
 
+  &__imageOverlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  &__imageOverlayText {
+    max-width: 100%;
+    color: $background;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+    @include line-clamp(3);
+    overflow-wrap: anywhere;
+  }
+
   &__title {
     text-align: left;
     @include subheading-1;

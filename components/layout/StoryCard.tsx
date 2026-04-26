@@ -21,6 +21,9 @@ export function StoryCard({
           fill
           className="storyCard__image"
         />
+        <div className="storyCard__imageOverlay" aria-hidden="true">
+          <div className="storyCard__imageOverlayText">{title}</div>
+        </div>
       </div>
       <header className="storyCard__title">{title}</header>
       <p className="storyCard__description">{description}</p>
