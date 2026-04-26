@@ -85,11 +85,6 @@
     @include line-clamp(6);
   }
 
-  &__featuredAuthor {
-    @include body-1;
-    color: $text-subheading;
-  }
-
   &__featuredRead {
     @include btn-primary;
     align-self: flex-end;

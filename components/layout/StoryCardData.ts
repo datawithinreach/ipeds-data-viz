@@ -3,18 +3,7 @@ import { articleRegistry } from '@/app/article/registry';
 import { formatArticleDate, toSortableTimestamp } from '@/components/article/utils/dateFormat';
 import type { ArticleMeta } from '@/components/article';
 import { withBasePath } from '@/lib/basePath';
-
-export type StoryCardType = {
-  date: string;
-  imageUrl: string;
-  title: string;
-  description: string;
-  subtitle?: string;
-  tags: string[];
-  href: string;
-  author: string;
-  category: string;
-};
+import type { StoryCardType } from '@/components/layout/StoryCardTypes';
 
 function createStoryCard(meta: ArticleMeta): StoryCardType {
   return {

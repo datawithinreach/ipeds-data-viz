@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { type StoryCardType } from './StoryCardData';
+import type { StoryCardType } from './StoryCardTypes';
 import { withBasePath } from '@/lib/basePath';
 import './StoryCard.scss';
 
