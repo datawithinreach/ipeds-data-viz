@@ -1,0 +1,92 @@
+export const ArticleMeta = {
+  title: 'Application Trends: Are Midwest Schools Getting More Competitive?',
+  description: 'An analysis of application growth, selectivity, and admissions trends at leading Midwest universities from 2021–2024.',
+  publishDate: '03-01-2025',
+  source:
+    'IPEDS Data (2021–2024), National Center for Education Statistics',
+  imageUrl: '/images/landing/midwest.png',
+  tags: ['applications'],
+  category: 'Data Analysis',
+  href: '/article/application-trends-are-midwest-schools-getting-more-competitive',
+  author: 'Author Name',
+};
+
+export const seriesData = [
+  {
+    label: 'University of Michigan',
+    data: [
+      { x: '2021', y: 65000 },
+      { x: '2022', y: 67000 },
+      { x: '2023', y: 72000 },
+      { x: '2024', y: 76000 },
+    ],
+  },
+  {
+    label: 'Northwestern University',
+    data: [
+      { x: '2021', y: 47000 },
+      { x: '2022', y: 49000 },
+      { x: '2023', y: 52000 },
+      { x: '2024', y: 55000 },
+    ],
+  },
+  {
+    label: 'University of Chicago',
+    data: [
+      { x: '2021', y: 34000 },
+      { x: '2022', y: 36000 },
+      { x: '2023', y: 38000 },
+      { x: '2024', y: 41000 },
+    ],
+  },
+  {
+    label: 'University of Wisconsin–Madison',
+    data: [
+      { x: '2021', y: 54000 },
+      { x: '2022', y: 56000 },
+      { x: '2023', y: 60000 },
+      { x: '2024', y: 63000 },
+    ],
+  },
+  {
+    label: 'Indiana University Bloomington',
+    data: [
+      { x: '2021', y: 44000 },
+      { x: '2022', y: 46000 },
+      { x: '2023', y: 50000 },
+      { x: '2024', y: 53000 },
+    ],
+  },
+];
+
+---
+
+<LineChart
+  series={seriesData}
+  title="Application Growth at Select Midwest Universities"
+  subtitle="Total first-year applications (2021–2024)"
+  height={380}
+  enableSeriesSelection
+  contained
+/>
+
+## Application growth in the Midwest
+
+Across major Midwest universities, application volume has steadily increased from 2021 to 2024. This trend reflects both expanding national visibility and the continued effects of test-optional policies, which lowered barriers to applying at highly selective institutions.
+
+The University of Michigan shows the strongest absolute growth, increasing by more than 10,000 applications over this period. Northwestern University follows a similar upward trajectory, though at a smaller scale due to its already highly selective applicant pool.
+
+Together, these patterns suggest that Midwest flagship and elite private institutions are experiencing sustained increases in demand rather than temporary pandemic-era spikes.
+
+<Banner
+  value="+17%"
+  label="Average application growth across selected Midwest universities (2021–2024)"
+  accent="navbar"
+/>
+
+<SectionDivider />
+
+## Growth beyond elite institutions
+
+Application growth in the Midwest is not limited to elite private universities. While schools like Northwestern and the University of Chicago continue to see steady increases, flagship public universities such as the University of Michigan and the University of Wisconsin–Madison are driving some of the strongest gains. Even large public institutions like Indiana University Bloomington show meaningful growth, suggesting that rising application volume is a broader regional trend rather than a phenomenon concentrated among highly selective schools.
+

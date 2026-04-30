@@ -5,14 +5,15 @@
 import type { ArticleMeta as ArticleMetaType } from '@/components/article/types';
 import * as _Article0 from './acceptance-rates-jesuit-schools-2022-2024/article.mdx';
 import * as _Article1 from './admission-massachusetts-private/article.mdx';
-import * as _Article2 from './financial-aid-top-20/article.mdx';
-import * as _Article3 from './ny-private-universities-applicants-2022-2024/article.mdx';
-import * as _Article4 from './ny-private-universities-on-campus-total-price-2021-2024/article.mdx';
-import * as _Article5 from './sat-act-percentiles-jesuit-schools-2022-2024/article.mdx';
-import * as _Article6 from './top-non-ivy-schools-acceptance-rates/article.mdx';
-import * as _Article7 from './top-non-ivy-schools-financial-aid-2024/article.mdx';
-import * as _Article8 from './top-non-ivy-schools-pell-grant-2024/article.mdx';
-import * as _Article9 from './uc-2024-cost-of-attendance/article.mdx';
+import * as _Article2 from './application-trends-are-midwest-schools-getting-more-competitive/article.mdx';
+import * as _Article3 from './financial-aid-top-20/article.mdx';
+import * as _Article4 from './ny-private-universities-applicants-2022-2024/article.mdx';
+import * as _Article5 from './ny-private-universities-on-campus-total-price-2021-2024/article.mdx';
+import * as _Article6 from './sat-act-percentiles-jesuit-schools-2022-2024/article.mdx';
+import * as _Article7 from './top-non-ivy-schools-acceptance-rates/article.mdx';
+import * as _Article8 from './top-non-ivy-schools-financial-aid-2024/article.mdx';
+import * as _Article9 from './top-non-ivy-schools-pell-grant-2024/article.mdx';
+import * as _Article10 from './uc-2024-cost-of-attendance/article.mdx';
 const ArticleMeta0 = (_Article0 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 const ArticleMeta1 = (_Article1 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 const ArticleMeta2 = (_Article2 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
@@ -23,16 +24,18 @@ const ArticleMeta6 = (_Article6 as unknown as { ArticleMeta: ArticleMetaType }).
 const ArticleMeta7 = (_Article7 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 const ArticleMeta8 = (_Article8 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 const ArticleMeta9 = (_Article9 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
+const ArticleMeta10 = (_Article10 as unknown as { ArticleMeta: ArticleMetaType }).ArticleMeta;
 
 export const articleRegistry = [
   { slug: 'acceptance-rates-jesuit-schools-2022-2024', ArticleMeta: ArticleMeta0 },
   { slug: 'admission-massachusetts-private', ArticleMeta: ArticleMeta1 },
-  { slug: 'financial-aid-top-20', ArticleMeta: ArticleMeta2 },
-  { slug: 'ny-private-universities-applicants-2022-2024', ArticleMeta: ArticleMeta3 },
-  { slug: 'ny-private-universities-on-campus-total-price-2021-2024', ArticleMeta: ArticleMeta4 },
-  { slug: 'sat-act-percentiles-jesuit-schools-2022-2024', ArticleMeta: ArticleMeta5 },
-  { slug: 'top-non-ivy-schools-acceptance-rates', ArticleMeta: ArticleMeta6 },
-  { slug: 'top-non-ivy-schools-financial-aid-2024', ArticleMeta: ArticleMeta7 },
-  { slug: 'top-non-ivy-schools-pell-grant-2024', ArticleMeta: ArticleMeta8 },
-  { slug: 'uc-2024-cost-of-attendance', ArticleMeta: ArticleMeta9 },
+  { slug: 'application-trends-are-midwest-schools-getting-more-competitive', ArticleMeta: ArticleMeta2 },
+  { slug: 'financial-aid-top-20', ArticleMeta: ArticleMeta3 },
+  { slug: 'ny-private-universities-applicants-2022-2024', ArticleMeta: ArticleMeta4 },
+  { slug: 'ny-private-universities-on-campus-total-price-2021-2024', ArticleMeta: ArticleMeta5 },
+  { slug: 'sat-act-percentiles-jesuit-schools-2022-2024', ArticleMeta: ArticleMeta6 },
+  { slug: 'top-non-ivy-schools-acceptance-rates', ArticleMeta: ArticleMeta7 },
+  { slug: 'top-non-ivy-schools-financial-aid-2024', ArticleMeta: ArticleMeta8 },
+  { slug: 'top-non-ivy-schools-pell-grant-2024', ArticleMeta: ArticleMeta9 },
+  { slug: 'uc-2024-cost-of-attendance', ArticleMeta: ArticleMeta10 },
 ];
