@@ -9,3 +9,10 @@ This project addresses the challenge of processing complex institutional data de
 ## Contributing
 
 Data stories live under `app/article/<slug>/` as **MDX** (`article.mdx`) plus a small `page.tsx`. For authoring steps, required `ArticleMeta` fields, inline chart data, and registry commands, see **[`docs/how-to-contribute.md`](./docs/how-to-contribute.md)**.
+
+
+## TODO
+- Make branch rules for `main` branch
+  - Right now, this is using Github Pages and is served from the `main` branch. Add rules so that no pushes are allowed to this branch, and any new changes must be created from a PR. 
+
+
