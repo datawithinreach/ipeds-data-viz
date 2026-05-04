@@ -160,15 +160,13 @@ export const examples: ComponentExample[] = [
   height={300}
 />`,
     propDocs: [
-      { name: 'data', type: 'ScatterDatum[]', description: 'Required. Points with x/y values.' },
+      { name: 'data', type: 'ScatterDatum[]', description: 'Required. Points with label, x, y, and optional pointRadius/pointColor.' },
       { name: 'title', type: 'string', description: 'Optional chart heading.' },
       { name: 'subtitle', type: 'string', description: 'Optional supporting text under the title.' },
       { name: 'xLabel', type: 'string', description: 'Optional label under the x-axis.' },
       { name: 'yLabel', type: 'string', description: 'Optional label beside the y-axis.' },
       { name: 'height', type: 'number', description: 'Chart height in pixels.' },
       { name: 'width', type: 'number', description: 'Optional fixed container width.' },
-      { name: 'pointRadius', type: 'number', description: 'Radius of each point marker.' },
-      { name: 'pointColor', type: 'string', description: 'Fill color for points.' },
     ],
   },
   {

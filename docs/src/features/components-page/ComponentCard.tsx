@@ -1,4 +1,5 @@
 import { type ComponentType, useEffect, useRef, useState } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 import { evaluate } from '@mdx-js/mdx';
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import { mdxComponents } from './mdxComponents';
@@ -39,11 +40,20 @@ export function ComponentCard({ name, code, propDocs }: ComponentExample) {
           className="components-page__preview"
           style={minHeight ? { minHeight } : undefined}
         >
-          {Preview ? (
-            <Preview components={mdxComponents} />
-          ) : (
-            <div className="components-page__loading">Rendering preview...</div>
-          )}
+          <ErrorBoundary
+            resetKeys={[editableCode]}
+            fallbackRender={({ error }) => (
+              <pre className="components-page__error-box">
+                Render error: {error instanceof Error ? error.message : String(error)}
+              </pre>
+            )}
+          >
+            {Preview ? (
+              <Preview components={mdxComponents} />
+            ) : (
+              <div className="components-page__loading">Rendering preview...</div>
+            )}
+          </ErrorBoundary>
         </div>
         <div className="components-page__editor-pane">
           <textarea
