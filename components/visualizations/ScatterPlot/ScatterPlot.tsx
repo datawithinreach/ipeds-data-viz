@@ -13,10 +13,11 @@ import { colors } from '@/styles/palette';
 import './ScatterPlot.scss';
 
 export type ScatterDatum = {
+  label: string;
   x: number;
   y: number;
-  /** Shown in the tooltip when set. */
-  label?: string;
+  pointRadius?: number;
+  pointColor?: string;
 };
 
 type Props = {
@@ -29,8 +30,6 @@ type Props = {
   yLabel?: string;
   height?: number;
   width?: number;
-  pointRadius?: number;
-  pointColor?: string;
 };
 
 const PRIMARY = colors.primary;
@@ -75,8 +74,6 @@ export function ScatterPlot({
   yLabel,
   height = 360,
   width: widthProp,
-  pointRadius = 5,
-  pointColor = PRIMARY,
 }: Props) {
   const { parentRef, width } = useParentSize();
 
@@ -131,9 +128,7 @@ export function ScatterPlot({
     <div ref={parentRef} className={rootClassName} style={containerStyle}>
       {(title ?? subtitle) && (
         <>
-          {title ? (
-            <h3 className="article__chartTitle">{title}</h3>
-          ) : null}
+          {title ? <h3 className="article__chartTitle">{title}</h3> : null}
           {subtitle ? (
             <p className="article__chartSubtitle">{subtitle}</p>
           ) : null}
@@ -160,8 +155,8 @@ export function ScatterPlot({
                   key={`${d.x}-${d.y}-${i}`}
                   cx={xScale(d.x)}
                   cy={yScale(d.y)}
-                  r={pointRadius}
-                  fill={pointColor}
+                  r={d.pointRadius ?? 5}
+                  fill={d.pointColor ?? PRIMARY}
                   stroke={colors.background}
                   strokeWidth={1.5}
                   style={{ cursor: 'default' }}
