@@ -1,3 +1,8 @@
+---
+id: architecture
+sidebar_position: 4
+---
+
 # Architecture
 
 This project is a Next.js App Router application for publishing IPEDS-focused

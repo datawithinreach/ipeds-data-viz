@@ -16,6 +16,7 @@
     "prebuild": "pnpm run generate:article-registry",
     "build": "next build",
     "start": "next start",
+    "docs:start": "pnpm --filter docs start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "format": "prettier --write .",

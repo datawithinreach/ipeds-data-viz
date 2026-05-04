@@ -1,3 +1,8 @@
+---
+id: how-to-contribute
+sidebar_position: 1
+---
+
 # How to Contribute
 
 This guide explains the workflow for creating a new article (data story) using the **MDX** authoring format.
