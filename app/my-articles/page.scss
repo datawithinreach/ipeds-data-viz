@@ -1,0 +1,87 @@
+.myArticles {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+
+  &__title {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__hint {
+    color: #666;
+    margin-bottom: 1.2rem;
+  }
+
+  &__actions {
+    margin-bottom: 1.5rem;
+  }
+
+  &__newBtn {
+    display: inline-block;
+    background: #1e6cff;
+    color: #fff;
+    padding: 0.55rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    &:hover { background: #1551c4; }
+  }
+
+  &__section {
+    margin-bottom: 1.6rem;
+  }
+
+  &__sectionTitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #555;
+    margin-bottom: 0.6rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    gap: 1rem;
+
+    &--draft { border-left: 4px solid #f0c64b; }
+    &--rejected { border-left: 4px solid #d04040; }
+    &--pending { border-left: 4px solid #1e6cff; }
+    &--approved { border-left: 4px solid #2faa55; }
+  }
+
+  &__itemMain {
+    flex: 1;
+    p { margin: 0.2rem 0 0; color: #555; font-size: 0.9rem; }
+  }
+
+  &__reject { color: #b02a37; }
+
+  &__itemActions { display: flex; gap: 0.5rem; }
+
+  &__btn {
+    background: #f5f5f5;
+    border: 1px solid #d4d4d4;
+    color: #222;
+    padding: 0.4rem 0.85rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    &:hover { background: #ececec; }
+  }
+}

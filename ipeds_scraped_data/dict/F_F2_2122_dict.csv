@@ -1,0 +1,2263 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for the finance data file, private not-for-profit institutions and public institutions using FASB : Fiscal year 2022",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,Filename,F2122_F2
+Introduction,3,  Provisional release:,January 2024
+Introduction,4,Filename,F2122_F2_RV
+Introduction,5,  Final release:,December 2024
+Introduction,6,Overview,"This data file contains institutional finance data for institutions that use accounting standards established by the Financial Accounting Standards Board (FASB) .  All private not-for-profit institutions are included in this file. There are some public institutions that use the FASB model and are also included. Finance data includes institutional revenues by source, expenditures by functional categories,  expenditures by natural classification categories, scholarships and fellowships by source, endowments, assets and liabilities. This information provides context for understanding the cost and resources of providing postsecondary education. It is used to calculate the contribution of postsecondary education to the gross national product.  Beginning with fiscal year 2020, scholarships and fellowships data contain the amount of discounts and allowances attributed to each source.  Data on financial health measures and more detailed data on endowments were also added in fiscal year 2020. Beginning with fiscal year 2016 detailed expenditures by function and the natural classifications of fringe benefits, operations and maintenance of plant, depreciation and interest are no longer available. 
+",,,,,,,,
+Introduction,7,Note,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.   ",,,,,,,,
+Introduction,8
+Introduction,9,Contents of spreadsheet,,,,,,,,,
+Introduction,10,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,11,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,12,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable. (Provisional release),,,,,,,,
+Introduction,13,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Provisional release)",,,,,,,,
+Introduction,14,FrequenciesRV,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable. (Final/revised release),,,,,,,,
+Introduction,15,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Final/revised release)",,,,,,,,
+Introduction,16,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,60606,F2A01,N,12,Cont,XF2A01,Long-term investments
+varlist,3,65121,F2A19,N,12,Cont,XF2A19,"Property, Plant, and Equipment, net of accumulated depreciation"
+varlist,4,65126,F2A20,N,12,Cont,XF2A20,"Intangible Assets, net of accumulated amortization"
+varlist,5,60611,F2A02,N,12,Cont,XF2A02,Total assets
+varlist,6,60616,F2A03,N,12,Cont,XF2A03,Total liabilities
+varlist,7,65091,F2A03A,N,12,Cont,XF2A03A,"Debt related to Property, Plant, and Equipment"
+varlist,8,60621,F2A04,N,12,Cont,XF2A04,Total unrestricted net assets
+varlist,9,60626,F2A05,N,12,Cont,XF2A05,Total restricted net assets
+varlist,10,64825,F2A05A,N,12,Cont,XF2A05A,Permanently restricted net assets included in total restricted net assets
+varlist,11,65096,F2A05B,N,12,Cont,XF2A05B,Temporarily restricted net assets
+varlist,12,60631,F2A06,N,12,Cont,XF2A06,Total net assets
+varlist,13,60636,F2A11,N,12,Cont,XF2A11,Land  improvements - End of year
+varlist,14,60641,F2A12,N,12,Cont,XF2A12,Buildings - End of year
+varlist,15,60646,F2A13,N,12,Cont,XF2A13,"Equipment, including art and library collections - End of year"
+varlist,16,65101,F2A15,N,12,Cont,XF2A15,Construction in Progress
+varlist,17,65106,F2A16,N,12,Cont,XF2A16,"Other plant, property and equipment"
+varlist,18,65111,F2A17,N,12,Cont,XF2A17,"Total Plant, Property, and Equipment"
+varlist,19,65116,F2A18,N,12,Cont,XF2A18,Accumulated depreciation
+varlist,20,60656,F2B01,N,12,Cont,XF2B01,Total revenues and investment return
+varlist,21,60661,F2B02,N,12,Cont,XF2B02,Total expenses
+varlist,22,60666,F2B03,N,12,Cont,XF2B03,Other specific changes in net assets
+varlist,23,60671,F2B04,N,12,Cont,XF2B04,Total change in net assets
+varlist,24,60676,F2B05,N,12,Cont,XF2B05,"Net assets, beginning of the year"
+varlist,25,60681,F2B06,N,12,Cont,XF2B06,Adjustments to beginning of year net assets
+varlist,26,60686,F2B07,N,12,Cont,XF2B07,"Net assets, end of the year"
+varlist,27,60691,F2C01,N,12,Cont,XF2C01,Pell grants
+varlist,28,60696,F2C02,N,12,Cont,XF2C02,Other federal grants
+varlist,29,60701,F2C03,N,12,Cont,XF2C03,State grants
+varlist,30,60706,F2C04,N,12,Cont,XF2C04,Local grants
+varlist,31,60711,F2C05,N,12,Cont,XF2C05,Institutional grants (funded)
+varlist,32,60716,F2C06,N,12,Cont,XF2C06,Institutional grants (unfunded)
+varlist,33,60721,F2C07,N,12,Cont,XF2C07,Total student grants
+varlist,34,60726,F2C08,N,12,Cont,XF2C08,Allowances applied to tuition and fees
+varlist,35,60731,F2C09,N,12,Cont,XF2C09,Allowances applied to auxiliary enterprise revenues
+varlist,36,60733,F2C10,N,12,Cont,XF2C10,Total discounts and allowances
+varlist,37,61283,F2C12,N,12,Cont,XF2C12,"Total discounts and
+ allowances from Pell grants"
+varlist,38,61285,F2C121,N,12,Cont,XF2C121,"Discounts and
+ allowances from Pell grants applied to tuition and fees"
+varlist,39,61287,F2C122,N,12,Cont,XF2C122,Discounts and allowances from Pell grants applied to auxiliary enterprises
+varlist,40,61289,F2C13,N,12,Cont,XF2C13,Total discounts and allowances from other federal grants
+varlist,41,61291,F2C131,N,12,Cont,XF2C131,Discounts and allowances from other federal grants applied to tuition and fees
+varlist,42,61293,F2C132,N,12,Cont,XF2C132,"Discounts and allowances from other federal grants applied to auxiliary
+ enterprises"
+varlist,43,61295,F2C14,N,12,Cont,XF2C14,"Total discounts and
+ allowances from state government grants"
+varlist,44,61297,F2C141,N,12,Cont,XF2C141,"Discounts and
+ allowances from state government grants applied to tuition and fees"
+varlist,45,61299,F2C142,N,12,Cont,XF2C142,Discounts and allowances from state government grants applied to auxiliary enterprises
+varlist,46,61301,F2C15,N,12,Cont,XF2C15,Discounts and allowances from local government grants
+varlist,47,61303,F2C151,N,12,Cont,XF2C151,Discounts and allowances from local government grants applied to tuition and fees
+varlist,48,61305,F2C152,N,12,Cont,XF2C152,Discounts and allowances from local government grants applied to auxiliary enterprises
+varlist,49,61307,F2C16,N,12,Cont,XF2C16,Total discounts and allowances from endowments and gifts
+varlist,50,61309,F2C161,N,12,Cont,XF2C161,Discounts and allowances from endowments and gifts applied to tuition and fees
+varlist,51,61311,F2C162,N,12,Cont,XF2C162,Discounts and allowances from endowments and gifts applied to auxiliary enterprises
+varlist,52,61313,F2C17,N,12,Cont,XF2C17,Total discounts and allowances from other institutional sources
+varlist,53,61315,F2C171,N,12,Cont,XF2C171,Discounts and allowances from other institutional sources applied to tuition and fees
+varlist,54,61317,F2C172,N,12,Cont,XF2C172,Discounts and allowances from other institutional sources applied to auxiliary enterprises
+varlist,55,60736,F2D01,N,12,Cont,XF2D01,Tuition and fees - Total
+varlist,56,65131,F2D012,N,12,Cont,XF2D012,Tuition and fees - Unrestricted
+varlist,57,65136,F2D013,N,12,Cont,XF2D013,Tuition and fees - Temporarily restricted
+varlist,58,65141,F2D014,N,12,Cont,XF2D014,Tuition and fees - Permanently restricted
+varlist,59,60741,F2D02,N,12,Cont,XF2D02,Federal appropriations - Total
+varlist,60,65146,F2D022,N,12,Cont,XF2D022,Federal appropriations - Unrestricted
+varlist,61,65151,F2D023,N,12,Cont,XF2D023,Federal appropriations - Temporarily restricted
+varlist,62,65156,F2D024,N,12,Cont,XF2D024,Federal appropriations - Permanently restricted
+varlist,63,60746,F2D03,N,12,Cont,XF2D03,State appropriations - Total
+varlist,64,65161,F2D032,N,12,Cont,XF2D032,State appropriations - Unrestricted
+varlist,65,65166,F2D033,N,12,Cont,XF2D033,State appropriations - Temporarily restricted
+varlist,66,65171,F2D034,N,12,Cont,XF2D034,State appropriations - Permanently restricted
+varlist,67,60751,F2D04,N,12,Cont,XF2D04,Local appropriations - Total
+varlist,68,65176,F2D042,N,12,Cont,XF2D042,Local appropriations - Unrestricted
+varlist,69,65181,F2D043,N,12,Cont,XF2D043,Local appropriations -  Temporarily restricted
+varlist,70,65186,F2D044,N,12,Cont,XF2D044,Local appropriations - Permanently restricted
+varlist,71,60756,F2D05,N,12,Cont,XF2D05,Federal grants and contracts - Total
+varlist,72,65191,F2D052,N,12,Cont,XF2D052,Federal grants and contracts - Unrestricted
+varlist,73,65196,F2D053,N,12,Cont,XF2D053,Federal grants and contracts  - Temporarily restricted
+varlist,74,65201,F2D054,N,12,Cont,XF2D054,Federal grants and contracts - Pemanently restricted
+varlist,75,60761,F2D06,N,12,Cont,XF2D06,State grants and contracts - Total
+varlist,76,65206,F2D062,N,12,Cont,XF2D062,State grants and contracts - Unrestricted
+varlist,77,65211,F2D063,N,12,Cont,XF2D063,State grants and contracts - Temporarily restricted
+varlist,78,65216,F2D064,N,12,Cont,XF2D064,State grants and contracts - Permanently restricted
+varlist,79,60766,F2D07,N,12,Cont,XF2D07,Local grants and contracts - Total
+varlist,80,65221,F2D072,N,12,Cont,XF2D072,Local grants and contracts - Unrestricted
+varlist,81,65226,F2D073,N,12,Cont,XF2D073,Local grants and contracts - Temporarily restricted
+varlist,82,65231,F2D074,N,12,Cont,XF2D074,Local grants and contracts  - Permanently restricted
+varlist,83,60771,F2D08,N,12,Cont,XF2D08,"Private gifts, grants, and contracts - Total"
+varlist,84,65236,F2D082,N,12,Cont,XF2D082,"Private gifts, grants, and contracts - Unrestricted"
+varlist,85,65251,F2D083,N,12,Cont,XF2D083,"Private gifts, grants and contracts - Temporarily restricted"
+varlist,86,65266,F2D084,N,12,Cont,XF2D084,"Private gifts, grants, and contracts - Permanently restricted"
+varlist,87,65281,F2D08A,N,12,Cont,XF2D08A,Private gifts - Total
+varlist,88,65241,F2D082A,N,12,Cont,XF2D082A,Private gifts - Unrestricted
+varlist,89,65256,F2D083A,N,12,Cont,XF2D083A,Private gifts - Temporarily restricted
+varlist,90,65271,F2D084A,N,12,Cont,XF2D084A,Private gifts - Permanentlly restricted
+varlist,91,65286,F2D08B,N,12,Cont,XF2D08B,Private grants and contracts - Total
+varlist,92,65246,F2D082B,N,12,Cont,XF2D082B,Private grants and contracts - Unrestricted
+varlist,93,65261,F2D083B,N,12,Cont,XF2D083B,Private grants and contracts - Temporarily restricted
+varlist,94,65276,F2D084B,N,12,Cont,XF2D084B,"Private grants, and contracts - Permanently restricted"
+varlist,95,60776,F2D09,N,12,Cont,XF2D09,Contributions from affiliated entities - Total
+varlist,96,65291,F2D092,N,12,Cont,XF2D092,Contributions from affiliated entities - Unrestricted
+varlist,97,65296,F2D093,N,12,Cont,XF2D093,Contributions from affiliated entities - Temporarily restricted
+varlist,98,65301,F2D094,N,12,Cont,XF2D094,Contributions from affiliated entities - Permanently restricted
+varlist,99,60781,F2D10,N,12,Cont,XF2D10,Investment return - Total
+varlist,100,65306,F2D102,N,12,Cont,XF2D102,Investment return - Unrestricted
+varlist,101,65311,F2D103,N,12,Cont,XF2D103,Investment return - Temporarily restricted
+varlist,102,65316,F2D104,N,12,Cont,XF2D104,Investment return - Permanently restricted
+varlist,103,60786,F2D11,N,12,Cont,XF2D11,Sales and services of educational activities - Total
+varlist,104,65321,F2D112,N,12,Cont,XF2D112,Sales and services of educational activities - Unrestricted
+varlist,105,60791,F2D12,N,12,Cont,XF2D12,Sales and services of auxiliary enterprises - Total
+varlist,106,65326,F2D122,N,12,Cont,XF2D122,Sales and services of auxiliary enterprises - Unrestricted
+varlist,107,60796,F2D13,N,12,Cont,XF2D13,Hospital revenue - Total
+varlist,108,65331,F2D132,N,12,Cont,XF2D132,Hospital revenue - Unrestricted
+varlist,109,60801,F2D14,N,12,Cont,XF2D14,Independent operations revenue - Total
+varlist,110,65336,F2D142,N,12,Cont,XF2D142,Independent operations revenue - Unrestricted
+varlist,111,65341,F2D143,N,12,Cont,XF2D143,Independent operations revenue - Temporarily restricted
+varlist,112,65346,F2D144,N,12,Cont,XF2D144,Independent operations revenue - Permanently restricted
+varlist,113,60806,F2D15,N,12,Cont,XF2D15,Other revenue - Total
+varlist,114,65351,F2D152,N,12,Cont,XF2D152,Other revenue - Unrestricted
+varlist,115,65356,F2D153,N,12,Cont,XF2D153,Other revenue - Temporarily restricted
+varlist,116,65361,F2D154,N,12,Cont,XF2D154,Other revenue - Permanently restricted
+varlist,117,60811,F2D16,N,12,Cont,XF2D16,Total revenues and investment return - Total
+varlist,118,65366,F2D162,N,12,Cont,XF2D162,Total revenues and investment return - Unrestricted
+varlist,119,65371,F2D163,N,12,Cont,XF2D163,Total revenues and investment return - Temporarily restricted
+varlist,120,65376,F2D164,N,12,Cont,XF2D164,Total revenues and investment return - Permanently restricted
+varlist,121,65380,F2D17,N,12,Cont,XF2D17,Net assets released from restriction - Total
+varlist,122,65381,F2D172,N,12,Cont,XF2D172,Net assets released from restriction - Unrestricted
+varlist,123,65386,F2D173,N,12,Cont,XF2D173,Net assets released from restriction - Temporarily restricted
+varlist,124,65387,F2D174,N,12,Cont,XF2D174,Net assets released from restriction - Permanently restricted
+varlist,125,65390,F2D18,N,12,Cont,XF2D18,"Net total revenues, after assets released from restriction - Total"
+varlist,126,65391,F2D182,N,12,Cont,XF2D182,"Net total revenues, after assets released from restriction - Unrestricted"
+varlist,127,65396,F2D183,N,12,Cont,XF2D183,"Net total revenues, after assets released from restriction - Temporarily restricted"
+varlist,128,65401,F2D184,N,12,Cont,XF2D184,"Net total revenues, after assets released from restriction - Permanently restricted"
+varlist,129,60816,F2E011,N,12,Cont,XF2E011,Instruction-Total amount
+varlist,130,60821,F2E012,N,12,Cont,XF2E012,Instruction-Salaries and wages
+varlist,131,60851,F2E021,N,12,Cont,XF2E021,Research-Total amount
+varlist,132,60856,F2E022,N,12,Cont,XF2E022,Research-Salaries and wages
+varlist,133,60886,F2E031,N,12,Cont,XF2E031,Public service-Total amount
+varlist,134,60891,F2E032,N,12,Cont,XF2E032,Public service-Salaries and wages
+varlist,135,60921,F2E041,N,12,Cont,XF2E041,Academic support-Total amount
+varlist,136,60926,F2E042,N,12,Cont,XF2E042,Academic support-Salaries and wages
+varlist,137,60956,F2E051,N,12,Cont,XF2E051,Student service-Total amount
+varlist,138,60961,F2E052,N,12,Cont,XF2E052,Student service-Salaries and wages
+varlist,139,60991,F2E061,N,12,Cont,XF2E061,Institutional support-Total amount
+varlist,140,60996,F2E062,N,12,Cont,XF2E062,Institutional support-Salaries and wages
+varlist,141,61026,F2E071,N,12,Cont,XF2E071,Auxiliary enterprises-Total amount
+varlist,142,61031,F2E072,N,12,Cont,XF2E072,Auxiliary enterprises-Salaries and wages
+varlist,143,61061,F2E081,N,12,Cont,XF2E081,Net grant aid to students-Total amount
+varlist,144,61096,F2E091,N,12,Cont,XF2E091,Hospital services-Total amount
+varlist,145,61101,F2E092,N,12,Cont,XF2E092,Hospital services-Salaries and wages
+varlist,146,61131,F2E101,N,12,Cont,XF2E101,Independent operations-Total Amount
+varlist,147,61136,F2E102,N,12,Cont,XF2E102,Independent operations-Salaries and wages
+varlist,148,61201,F2E121,N,12,Cont,XF2E121,Other expenses-Total amount
+varlist,149,61206,F2E122,N,12,Cont,XF2E122,Other expenses-Salaries and wages
+varlist,150,61236,F2E131,N,12,Cont,XF2E131,Total expenses-Total amount
+varlist,151,61241,F2E132,N,12,Cont,XF2E132,Total expenses-Salaries and wages
+varlist,152,61246,F2E133,N,12,Cont,XF2E133,Total expenses-Benefits
+varlist,153,61251,F2E134,N,12,Cont,XF2E134,Total expenses-Operation and maintenance of plant
+varlist,154,61256,F2E135,N,12,Cont,XF2E135,Total expenses-Depreciation
+varlist,155,61261,F2E136,N,12,Cont,XF2E136,Total expenses-Interest
+varlist,156,61266,F2E137,N,12,Cont,XF2E137,Total expenses-All other natural classification
+varlist,157,61281,F2FHA,N,2,Disc,,Does this institution or any of its foundations or other affiliated organizations own endowment assets ?
+varlist,158,61271,F2H01,N,12,Cont,XF2H01,Value of endowment assets at the beginning of the fiscal year
+varlist,159,61276,F2H02,N,12,Cont,XF2H02,Value of endowment assets at the end of the fiscal year
+varlist,160,61319,F2H03,N,12,Cont,XF2H03,Change in value of endowment net assets
+varlist,161,61321,F2H03A,N,12,Cont,XF2H03A,New gifts and additions
+varlist,162,61323,F2H03B,N,12,Cont,XF2H03B,Endowment net investment return
+varlist,163,61325,F2H03C,N,12,Cont,XF2H03C,Spending distribution for current use
+varlist,164,61327,F2H03D,N,12,Cont,XF2H03D,Other changes in value of endowment net assets
+varlist,165,61329,F2I01,N,12,Cont,XF2I01,Change in unrestricted net assets
+varlist,166,61331,F2I02,N,12,Cont,XF2I02,Total unrestricted operating revenues
+varlist,167,61333,F2I03,N,12,Cont,XF2I03,Change in net assets
+varlist,168,61335,F2I04,N,12,Cont,XF2I04,Total net assets
+varlist,169,61337,F2I05,N,12,Cont,XF2I05,Expendable net assets
+varlist,170,61339,F2I06,N,12,Cont,XF2I06,Plant-related debt
+varlist,171,61341,F2I07,N,12,Cont,XF2I07,Total expenses
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,60606,F2A01,Long-term investments includes the amount for all assets held for long-term investments.
+Description,3,65121,F2A19," Property, plant, and equipment, net of accumulated depreciation - Includes end-of-year market value for categories such as land, buildings, improvements other than buildings, equipment, and library books, combined and net of accumulated depreciation (FARM para. 407)."
+Description,4,65126,F2A20,"Intangible assets, net of accumulated amortization -  Assets consisting of certain nonmaterial rights and benefits of an institution, such as patents, copyrights, trademarks and goodwill. The amount reported should be reduced by total accumulated amortization."
+Description,5,60611,F2A02,"Total assets is the sum of the following amounts: cash, cash equivalents and temporary investments; receivables (net of allowance for uncollectible accounts); inventories, prepaid expenses, and defereed charges; amounts held by trustees for construction and debt service; long-term investments; plant, property, and equipment; and other assets."
+Description,6,60616,F2A03,"Total liabilities is the sum the following amounts: accounts payable; deferred revenues and refundable advances; post-retirement and post-employment obligations; other accrued liabilities; annuity and life income obligations and other amounts held for the benefit of others; bonds, notes, and capital leases payable and other long-term debt, including current portion; government grants refundable under student loan programs; and other liabilities."
+Description,7,65091,F2A03A,"Debt related to property, plant and equipment are amounts for all long-term debt obligations including bonds payable, mortgages payable, capital leases payable, and long-term notes payable. (FARM para. 421.3, 421.7)  Includes the current portion of long-term debt if it is separately reported in institutions's general purpose financial statements."
+Description,8,60621,F2A04,"Total unrestricted net assets is the sum of unrestricted (designated and undesignated)  and unrestricted (investment in plant, property, and equipment, net of related debt) net assets. Unrestricted net assets are amounts that are available for the general purposes of the institution without restriction. Includes amounts specifically designated by the governing board, such as those designated as quasi-endowments for building additions and replacement, for debt service, and for loan programs. Also, includes the unrestricted portion of net investment in plant, property, and equipment less related debt. This amount is computed as the amount of plant, property, and equipment, net of accumulated depreciation, reduced by any bonds, mortgages, notes, capital leases, or other borrowings that are clearly attributable to the acquisition, construction, or improvement of those assets."
+Description,9,60626,F2A05,"Total restricted net assets is the sum of temporarily restricted and permanently restricted net assets. Temporarily restricted includes the amount of all net assets that are subject to temporary donor/grantor restrictions that limit availabilty for expenditure. Temporary restrictions are also those that permit the institution to expend the donated assets for a specified purpose or a future date.  Permanent restrictions are those that stipulate the resourcees must be maintained permanently, but permit the organization to expend part or all of the income derived from donated assets. Net assets that are subject to a donor’s or grantor’s restriction are restricted net assets. Include long-term but temporarily restricted net assets, such as term endowments, and net assets held subject to trust agreements if those agreements permit expenditure of the resources at a future date."
+Description,10,64825,F2A05A,Permanently restricted net assets included in total restricted net assets - Net assets of FASB institutions that must be maintained in perpetuity. Permanently restricted net assets increase when institutions receive contributions for which donor-imposed restrictions limiting the institution's use of an asset or its economic benefits neither expire with the passage of time nor can be removed by the organization's meeting certain requirements. Donor-imposed restrictions on the use of the investment income on the assets may also change the amount of such net assets. Permanent endowment funds are the most common example.
+Description,11,65096,F2A05B,Assets held by the institution upon which restrictions have been placed by donors. They restrict the institution in its use of the assets and/or the period of time for which the restriction applies.  Temporarily restricted net assets includes the amount of all net assets that are subject to temporary donor/grantor restrictions that limit availability for expenditure. Temporary restrictions are also those that permit the institution to expend the donated assets for a specified purpose or a future date.
+Description,12,60631,F2A06,Total net assets is the sum of unrestricted and restricted net assets.
+Description,13,60636,F2A11,Land and land improvements-end of year includes end of year values for land and land improvements as a reconciliation of beginning of the year values with additions to and retirements of land and land improvements to obtain end of year values.
+Description,14,60641,F2A12,Buildings-end of year includes end of year values for buildings as a reconciliation of beginning of the year values with additions to and retirements of building values to obtain end of year values. Capitalized leasehold improvements should be included in this amount if the improvements are to leased facilities.
+Description,15,60646,F2A13,"Equipment, including art and library collections-end of year includes end of year values for equipment as a reconciliation of beginning of the year values with additions to and retirements of equipment values to obtain end of year values. Capitalized leasehold improvements should be included in this amount if the improvements are to leased equipment."
+Description,16,65101,F2A15,"Construction in progress - Capital assets under construction or development that have not yet been placed into service, such as a building or parking lot. Capital assets are not subject to depreciation while in a construction in progress status."
+Description,17,65106,F2A16,"Other plant, property and equipment - all other amounts for capital assets not reported as
+-Land and land improvements 
+-Buildings 
+-Equipment, including art and library collections 
+-Construction in progress -"
+Description,18,65111,F2A17,"Total end of year values for property obtained under capital leases  from  the following categories:
+-Land and land improvements 
+-Buildings 
+-Equipment, including art and library collections 
+-Construction in progress 
+-Other plant, property and equipment"
+Description,19,65116,F2A18,"Accumulated depreciation  The total depreciation charged as expenses as of the reporting date (in the current year and in prior years) on the capital assets of the institution. FASB Statement No. 117 and GASB Statement No. 34 require that accumulated depreciation to date be recognized. 
+NOTE: When a capital asset is removed from the accounting records due to disposal or end of the asset's useful life, the depreciation accumulated through the years on the asset is also removed from the records."
+Description,20,60656,F2B01,"Total revenues and investment return is the amount reported in Part A, line A17, column 1 (Total revenues and investment return)."
+Description,21,60661,F2B02,"Total expenses is the amount reported in Part B, line B12, column 1 (Total Expenses)."
+Description,22,60666,F2B03,Other specific changes in net assets includes: actuarial gain or (loss) on split-interest agreements; gain or (loss) on sale of plant assets; other gain or (loss); discontinued operations; extraordinary gain or (loss); and cumulative effect of change(s) in accounting principle.
+Description,23,60671,F2B04,"Change in net assets is the sum of total revenues and investment return, total expenses, and other changes in net assets. This amount should agree with the total change in net assets for the year reported in general purpose financial statements."
+Description,24,60676,F2B05,"Net assets, beginning of year includes the amount of net assets, end of year from the previous year's IPEDS Finance report. In all cases except when the institution reports a change in accounting principle via retroactive adjustment, this amount is also the beginning net asset balance in your general purpose financial statements."
+Description,25,60681,F2B06,Adjustments to beginning net assets are any adjustments to these asset balances reported in general purpose financial statements.  This includes adjustments for retroactive application of changes in accounting principle and prior period adjustments.
+Description,26,60686,F2B07,"Net assets, end of the year, is the sum of changes in net assets for the current year, net assets beginning of year, and adjustments to beginning net assets.  This amount should agree with the amount reported in Part D, Statement of Financial Position, total end of year net assets and also agree with the amount reported for total net assets in the general purpose financial statements at the end of the fiscal year."
+Description,27,60691,F2C01,Pell grants includes the amount administered by the institution under the Pell grant program .Private institutions generally report Pell Grants as agency transactions.
+Description,28,60696,F2C02,"Other federal grants includes the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Private not-for-profit institutions generally report these grants as allowances when applied to the student's account and as federal grant revenues when received. Matching portions for any of these programs are not included."
+Description,29,60701,F2C03,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG).  Private not-for-profit institutions generally report these grants as allowances when disbursed and as state grant revenues when received."
+Description,30,60706,F2C04,Local grants includes the amount awarded to the institution under local student aid programs. Private not-for-profit institutions generally report these grants as allowances when disbursed and as local grant revenues when received.
+Description,31,60711,F2C05,"Institutional grants (funded) includes the amounts awarded to students from institutional resources restricted for the purpose of student aid, such as scholarships and fellowships funded by gifts or endowment return restricted for that purpose."
+Description,32,60716,F2C06,Institutional grants (unfunded) includes the amount awarded to students from unrestricted institutional resources.
+Description,33,60721,F2C07,"Total student aid includes Pell grants and other federal student grants, state and local student grants, and institutional (funded and unfunded) grants."
+Description,34,60726,F2C08,Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues.
+Description,35,60731,F2C09,Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue.
+Description,36,60733,F2C10,Total discounts and allowances is the sum of discounts and allowances applied to both tuition & fees and auxiliary enterprises.
+Description,37,61283,F2C12,"Pell grants includes the amount administered by the institution under the Pell grant program .Private institutions generally report Pell Grants as agency transactions.
+
+Total discounts and allowances is the sum of discounts and allowances applied to both tuition & fees and auxiliary enterprises."
+Description,38,61285,F2C121,"Pell grants includes the amount administered by the institution under the Pell grant program. Private institutions generally report Pell Grants as agency transactions.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,39,61287,F2C122,"Pell grants includes the amount administered by the institution under the Pell grant program. Private institutions generally report Pell Grants as agency transactions.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,40,61289,F2C13,"Other federal grants includes the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Private not-for-profit institutions generally report these grants as allowances when applied to the student's account and as federal grant revenues when received. Matching portions for any of these programs are not included.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,41,61291,F2C131,"Other federal grants includes the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Private not-for-profit institutions generally report these grants as allowances when applied to the student's account and as federal grant revenues when received. Matching portions for any of these programs are not included.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,42,61293,F2C132,"Other federal grants includes the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Private not-for-profit institutions generally report these grants as allowances when applied to the student's account and as federal grant revenues when received. Matching portions for any of these programs are not included.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,43,61295,F2C14,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG).  Private not-for-profit institutions generally report these grants as allowances when disbursed and as state grant revenues when received.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,44,61297,F2C141,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG).  Private not-for-profit institutions generally report these grants as allowances when disbursed and as state grant revenues when received.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,45,61299,F2C142,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG).  Private not-for-profit institutions generally report these grants as allowances when disbursed and as state grant revenues when received.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,46,61301,F2C15,"Local grants includes the amount awarded to the institution under local student aid programs. Private not-for-profit institutions generally report these grants as allowances when disbursed and as local grant revenues when received.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,47,61303,F2C151,"Local grants includes the amount awarded to the institution under local student aid programs. Private not-for-profit institutions generally report these grants as allowances when disbursed and as local grant revenues when received.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,48,61305,F2C152,"Local grants includes the amount awarded to the institution under local student aid programs. Private not-for-profit institutions generally report these grants as allowances when disbursed and as local grant revenues when received.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,49,61307,F2C16,"Endowments are funds whose principal is nonexpendable (true endowment) and that are intended to be invested to provide for institutional use. The funds also include funds for which the donor has stipulated that the principal may be expended after a stated period or on the occurrence of a certain event (term endowment) and funds established by the governing board to function line an endowment fund but which may be totally expended at any time at the discretion of the governing board.
+
+Gifts are received contributions as a nonexchange transaction. The contributions include bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,50,61309,F2C161,"Endowments are funds whose principal is nonexpendable (true endowment) and that are intended to be invested to provide for institutional use. The funds also include funds for which the donor has stipulated that the principal may be expended after a stated period or on the occurrence of a certain event (term endowment) and funds established by the governing board to function line an endowment fund but which may be totally expended at any time at the discretion of the governing board.
+
+Gifts are received contributions as a nonexchange transaction. The contributions include bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,51,61311,F2C162,"Endowments are funds whose principal is nonexpendable (true endowment) and that are intended to be invested to provide for institutional use. The funds also include funds for which the donor has stipulated that the principal may be expended after a stated period or on the occurrence of a certain event (term endowment) and funds established by the governing board to function line an endowment fund but which may be totally expended at any time at the discretion of the governing board.
+
+Gifts are received contributions as a nonexchange transaction. The contributions include bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,52,61313,F2C17,"Institutional grants (funded) includes the amounts awarded to students from institutional resources restricted for the purpose of student aid, such as scholarships and fellowships funded by gifts or endowment return restricted for that purpose.
+Institutional grants (unfunded) includes the amount awarded to students from unrestricted institutional resources.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,53,61315,F2C171,"Institutional grants (funded) includes the amounts awarded to students from institutional resources restricted for the purpose of student aid, such as scholarships and fellowships funded by gifts or endowment return restricted for that purpose.
+Institutional grants (unfunded) includes the amount awarded to students from unrestricted institutional resources.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,54,61317,F2C172,"Institutional grants (funded) includes the amounts awarded to students from institutional resources restricted for the purpose of student aid, such as scholarships and fellowships funded by gifts or endowment return restricted for that purpose.
+Institutional grants (unfunded) includes the amount awarded to students from unrestricted institutional resources.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,55,60736,F2D01,"The amount of tuition and educational fees, net of any allowances applied in the general purpose financial statements. Included in this amount are fees for continuing education programs, conferences, and seminars."
+Description,56,65131,F2D012,Tuition and fees - Unrestricted are revenues from tuition and fees that are not subject to limitations by a donor-imposed restriction.
+Description,57,65136,F2D013,Tuition and fees - Temporarily restricted are revenues from tuition and fees that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,58,65141,F2D014,Tuition and fees - Permanently restricted are revenues from tuition and fees that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,59,60741,F2D02,"Federal appropriations includes amounts received from the federal government through a direct appropriation of Congress, except grants and contracts. An example of a federal appropriation is a federal land grant appropriation."
+Description,60,65146,F2D022,Federal appropriations - Unrestricted are revenues from Federal appropriations that are not subject to limitations by a donor-imposed restriction.
+Description,61,65151,F2D023,Federal appropriations - Temporarily restricted are revenues from Federal appropriations that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,62,65156,F2D024,Federal appropriations - Permanently restricted are revenues from Federal appropriations that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,63,60746,F2D03,"State appropriations includes amounts received from a state government through a direct appropriation of its legislative body, except for state grants and contracts. An example of a state appropriation is an annual state appropriation for operating expenses of the institution"
+Description,64,65161,F2D032,State approprations - Unrestricted are revenues from state appropriations that are not subject to limitations by a donor-imposed restriction.
+Description,65,65166,F2D033,State appropriations - Temporarily restricted are revenues from state approprations that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,66,65171,F2D034,State appropriations - Permanently restricted are revenues from state appropriations that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,67,60751,F2D04,"Local appropriations includes amounts received from a local government (i.e., city and/or county) through a direct appropriation of its legislative body, except for local grants and contracts. An example of a local appropriation is an annual local appropriation for operating expenses of the institution."
+Description,68,65176,F2D042,Local approprations - Unrestricted are revenues from local appropriations that are not subject to limitations by a donor-imposed restriction.
+Description,69,65181,F2D043,Local appropriations -  Temporarily restricted are revenues from local appropriations that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,70,65186,F2D044,Local appropriations - Permanently restricted are revenues from local appropriations that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,71,60756,F2D05,"Federal grants and contracts includes all revenues from federal agencies that are for specific undertakings such as research projects, training projects, and similar activities, including contributions from federal agencies. Includes federal Pell and similar student aid grants when they are treated as student aid expenses when awarded to the student. If federal Pell and similar student aid grants are treated as agency transactions in general purpose financial statements they are excluded from this amount."
+Description,72,65191,F2D052,Federal grants and contracts - Unrestricted are revenues from Federal grants and contracts that are not subject to limitations by a donor-imposed restriction.
+Description,73,65196,F2D053,Federal grants and contracts  - Temporarily restricted are revenues from Federal grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,74,65201,F2D054,Federal grants and contracts - Pemanently restricted are revenues from federal grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,75,60761,F2D06,"State grants and contracts includes all revenues from state agencies that are for specific undertakings such as research projects, training projects, and similar activities, including contributions from federal agencies. Includes state grants for student aid when they are treated as student aid expenses when awarded to the student. If state grants for student aid are treated as agency transactions in general purpose financial statements they are excluded from this amount."
+Description,76,65206,F2D062,State grants and contracts - Unrestricted are revenues from State grants and contracts that are not subject to limitations by a donor-imposed restriction.
+Description,77,65211,F2D063,State grants and contracts - Temporarily restricted are revenues from state grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,78,65216,F2D064,State grants and contracts - Permanently restricted are revenues from state grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,79,60766,F2D07,"Local grants and contracts includes all revenues from local agencies that are for specific undertakings such as research projects, training projects, and similar activities, including contributions from locall agencies. Includes local grants for student aid when they are treated as student aid expenses when awarded to the student. If local grants for student aid are treated as agency transactions in general purpose financial statements they are excluded from this amount."
+Description,80,65221,F2D072,Local grants and contracts - Unrestricted are revenues from local grants and contracts that are not subject to limitations by a donor-imposed restriction.
+Description,81,65226,F2D073,Local grants and contracts - Temporarily restricted are revenues from local grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,82,65231,F2D074,Local grants and contracts - Permanently restricted are revenues from local grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,83,60771,F2D08,"Private gifts, grants and contracts includes revenues from private (non-governmental) entities including revenue from research or training projects and similar activities and all contributions (including contributed services) except those from affiliated entities, which are included in contributions from affiliated entities."
+Description,84,65236,F2D082,"Private gifts, grants and contracts - Unrestricted are revenues from Private gifts, grants and contracts that are not subject to limitations by a donor-imposed restriction."
+Description,85,65251,F2D083,"Private gifts, grants and contracts - Temporarily restricted are revenues from private gifts, grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred)."
+Description,86,65266,F2D084,"Private gifts, grants, and contracts - Permanently restricted are revenues from private gifts, grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction."
+Description,87,65281,F2D08A,"Private gifts (Revenues)  are revenues from private (non-governmental) entities including revenues received from gift or contribution nonexchange transactions (including contributed services) except those from affiliated entities. Includes bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution."
+Description,88,65241,F2D082A,Private gifts - Unrestricted are revenues from private gifts that are not subject to limitations by a donor-imposed restriction.
+Description,89,65256,F2D083A,Private gifts - Temporarily restricted are revenues from private gifts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,90,65271,F2D084A,Private gifts - Permanentlly restricted are revenues from private gifts that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,91,65286,F2D08B,"Private grants and contracts are revenues from private (non-governmental) entities that are for specific research projects, other types of programs, or for general institutional operations (if not government appropriations). Examples are research projects, training programs, and similar activities for which amounts are received or expenses are reimbursable under the terms of a grant or contract, including amounts to cover both direct and indirect expenses Private grants and contracts (Revenues)  Revenues from private (non-governmental) entities that are for specific research projects, other types of programs, or for general institutional operations (if not government appropriations). Examples are research projects, training programs, and similar activities for which amounts are received or expenses are reimbursable under the terms of a grant or contract, including amounts to cover both direct and indirect expenses"
+Description,92,65246,F2D082B,Private grants and contracts - Unrestricted are revenues from private grants and contracts that are not subject to limitations by a donor-imposed restriction.
+Description,93,65261,F2D083B,Private grants and contracts - Temporarily restricted are revenues from private grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,94,65276,F2D084B,"Private grants, and contracts - Permanently restricted are revenues from private grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction."
+Description,95,60776,F2D09,"Contributions from affiliated entities includes all revenues received from non-consolidated affiliated entities, such as fund raising foundations, booster clubs, other institutionally-related foundations, and similar organizations created to support the institution or organizational components of the institution."
+Description,96,65291,F2D092,Contributions from affiliated entities - Unrestricted are contributions from affiliated entities that are not subject to limitations by a donor-imposed restriction.
+Description,97,65296,F2D093,Contributions from affiliated entities - Temporarily restricted are contributions from affiliated entities that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,98,65301,F2D094,Contributions from affiliated entities - Permanently restricted are contributions from affiliated entities that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,99,60781,F2D10,"Investment return includes the following amounts: all investment income (i.e., interest, dividends, rents and royalties); gains and losses (realized and unrealized) from holding investments (regardless of the nature of the investment); student loan interest; and amounts distributed from irrevocable trusts held by others (collectively referred to as ""investment return"")."
+Description,100,65306,F2D102,Investment return - Unrestricted are revenues from Investment return that are not subject to limitations by a donor-imposed restriction.
+Description,101,65311,F2D103,Investment return - Temporarily restricted  are revenues from investment return that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,102,65316,F2D104,Investment return - Permanently restricted are revenues from investment return that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,103,60786,F2D11,"Sales and services of educational activities includes all revenues derived from the sales of goods and services that are incidental to the conduct of instruction, research, or public service, and revenues of activities that exist to provide instructional and laboratory experience for students and that incidentally create goods and services that may be sold. Examples include film rentals, scientific and literary publications, testing services, university presses, dairies, and patient care clinics that are not part of a hospital."
+Description,104,65321,F2D112,Sales and services of educational activities - Unrestricted are revenues from sales and services of educational activities that are not subject to limitations by a donor-imposed restriction.
+Description,105,60791,F2D12,"Sales and services of auxiliary enterprises includes the amount of revenues generated by the auxiliary enterprise operations, net of any tuition and fee allowances applied in the general purpose financial statements. Auxiliary enterprises are operations that exist to furnish a service to students, faculty, of staff, and that charge a fee that is directly related to the cost of the service.  Examples of auxiliary enterprises are residence halls, food services, student health services, intercollegiate athletics, college unions, stores and movie theaters."
+Description,106,65326,F2D122,Sales and services of auxiliary enterprises - Unrestricted are revenues from sales and services of auxiliary enterprises that are not subject to limitations by a donor-imposed restriction.
+Description,107,60796,F2D13,"Revenues from hospitals includes revenues and gains of hospitals operated as a component of a reporting institution of higher education. Independent operations includes revenues associated with operations independent of the primary missions of the institution, such as revenues associated with major federally funded research and development centers. All other revenues not reported in the above categories (tuition and fees through sales and services of auxiliary enterprises) are included here."
+Description,108,65331,F2D132,Hospital revenue - Unrestricted are Hospital revenues that are not subject to limitations by a donor-imposed restriction.
+Description,109,60801,F2D14,"Independent operations revenue includes all revenues associated with operations independent of the primary missions of the institution. This category generally includes only those revenues associated with major federally-funded research and development centers. Excludes the profit (or loss) from operations owned and managed as investments of the institution’s endowment funds, which should be reported in investment return."
+Description,110,65336,F2D142,Independent operatations revenue - Unrestricted are revenues from independent operations that are not subject to limitations by a donor-imposed restriction.
+Description,111,65341,F2D143,Independent operations revenue - Temporarily restricted are revenues from independent operations that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,112,65346,F2D144,Independent operations revenue - Permanently restricted are revenues from independent operations that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,113,60806,F2D15,"Other revenue includes all revenue not reported elsewhere. Excludes gains or other unusual or nonrecurring items that are required to be included in Part C (Summary of Changes in Net Assets), such as gains on the sale of plant assets, actuarial gains, and extraordinary gains."
+Description,114,65351,F2D152,Other revenue - Unrestricted are revenues from other sources that are not subject to limitations by a donor-imposed restriction.
+Description,115,65356,F2D153,Other revenue - Temporarily restricted are revenues from other sources that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,116,65361,F2D154,Other revenue - Permanently restricted are revenues from other sources that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,117,60811,F2D16,"Total revenues and investment return is the sum of the following amounts: tuition and fees; government appropriations, grants and contracts; private gifts, grants, and contracts; contributions from affiliated entities; investment return (income, gains, and losses); sales and services of educational activities and auxiliary enterprises; hospital revenue; independent operations revenue; and other revenue."
+Description,118,65366,F2D162,Total revenues and investment return - Unrestricted are all revenues that are not subject to limitations by a donor-imposed restriction.
+Description,119,65371,F2D163,Total revenues and investment return - Temporarily restricted are all revenues that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,120,65376,F2D164,Total revenues and investment return - Permanently restricted are all revenues that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,121,65380,F2D17,revenues resulting from the reclassification of temporarily restricted assets or permanently restricted assets
+Description,122,65381,F2D172,Net assets released from restriction - Unrestricted are revenues resulting from the reclassification of temporarily restricted assets or permanently restricted assets
+Description,123,65386,F2D173,Net assets released from restriction - Temporarily restricted are revenues resulting from the reclassification of temporarily restricted assets or permanently restricted assets
+Description,124,65387,F2D174,Net assets released from restriction - Permanently restricted
+Description,125,65390,F2D18,"Net total revenues, after assets released from restriction - Total"
+Description,126,65391,F2D182,"Total net revenues, after assets released from restriction unrestricted is total revenue and investment return - Unrestricted minus Net assets released from restriction - Unrestricted"
+Description,127,65396,F2D183,"Total net revenues, after assets released from restriction Temporarily restricted is total revenue and investment return - Temporarily restricted minus Net assets released from restriction - Temporarily restricted"
+Description,128,65401,F2D184,"Total net revenues, after assets released from restriction Permanently restricted is total revenue and investment return - Permanently restricted minus Net assets released from restriction - Permanently restricted"
+Description,129,60816,F2E011,"Instruction expenses includes all expenses of the colleges, schools, departments, and other instructional divisions of the institution and expenses for departmental research and public service that are not separately budgeted. Includes general academic instruction, occupational and vocational instruction, special session instruction, community education, preparatory and adult basic education, and remedial and tutorial instruction conducted by the teaching faculty for the institutions's students. Also, includes expenses for both credit and non-credit activities. Excludes expenses for academic administration if the primary function is administration (e.g., academic deans)."
+Description,130,60821,F2E012,Instruction-salaries and wages includes salary and wage expenses incurred in instruction.
+Description,131,60851,F2E021,Research-Total amount
+Description,132,60856,F2E022,Research-Salaries and wages
+Description,133,60886,F2E031,Public service-Total amount
+Description,134,60891,F2E032,Public service-Salaries and wages
+Description,135,60921,F2E041,Academic support-Total amount
+Description,136,60926,F2E042,Academic support-Salaries and wages
+Description,137,60956,F2E051,Student service-Total amount
+Description,138,60961,F2E052,Student service-Salaries and wages
+Description,139,60991,F2E061,Institutional support-Total amount
+Description,140,60996,F2E062,Institutional support-Salaries and wages
+Description,141,61026,F2E071,Auxiliary enterprises-Total amount
+Description,142,61031,F2E072,Auxiliary enterprises-Salaries and wages
+Description,143,61061,F2E081,Net grant aid to students-Total amount
+Description,144,61096,F2E091,Hospital services-Total amount
+Description,145,61101,F2E092,Hospital services-Salaries and wages
+Description,146,61131,F2E101,Independent operations-Total Amount
+Description,147,61136,F2E102,Independent operations-Salaries and wages
+Description,148,61201,F2E121,Other expenses-Total amount
+Description,149,61206,F2E122,Other expenses-Salaries and wages
+Description,150,61236,F2E131,Total expenses-Total amount
+Description,151,61241,F2E132,"Salaries and wages	 - Amounts paid as compensation for services to all employees - faculty, staff, part-time, full-time, regular employees, and student employees. This includes regular or periodic payment to a person for the regular or periodic performance of work or a service and payment to a person for more sporadic performance of work or a service (overtime, extra compensation, summer compensation, bonuses, sick or annual leave, etc.)."
+Description,152,61246,F2E133,"Fringe benefits	 - Cash contributions in the form of supplementary or deferred compensation other than salary. Excludes the employee's contribution. Employee fringe benefits include retirement plans, social security taxes, medical/dental plans, guaranteed disability income protection plans, tuition plans, housing plans, unemployment compensation plans, group life insurance plans, worker's compensation plans, and other benefits in-kind with cash options."
+Description,153,61251,F2E134,"Operations and maintenance - 	An expense category that includes expenses for operations established to provide service and maintenance related to campus grounds and facilities used for educational and general purposes. Specific expenses include: janitorial and utility services; repairs and ordinary or normal alterations of buildings, furniture, and equipment; care of grounds; maintenance and operation of buildings and other plant facilities; security; earthquake and disaster preparedness; safety; hazardous waste disposal; property, liability, and all other insurance relating to property; space and capital leasing; facility planning and management; and central receiving. This expense does include amounts charged to auxiliary enterprises, hospitals, and independent operations. Also includes information technology expenses related to operation and maintenance of plant activities if the institution separately budgets and expenses information technology resources (otherwise these expenses are included in institutional support).
+
+	FASB institutions are required to allocate O&M costs to other functional categories (e.g., instruction, research, etc.) while GASB institutions can allocate O&M costs OR report it as a separate functional category.  In an effort to align FASB and GASB O&M expenses, from FY 2010 to FY 2015, O&M was reported as both a functional and natural expense category in IPEDS, causing its total to be equal to zero. However, beginning with FY 2016, both FASB and GASB institutions are required to allocate O&M to all the functions and report it as a natural expense category. 
+
+Prior to fiscal year 2017 this variable would always be equal to zero. Like other natural classification categories OM was reported for all  expense functions (survey column 4) . Unlike other natural classification categories OM also appeared as a function (line 11). Institutions would report positive values of salaries and wages, benefits, depreciation, interest and other expenses on the OM (survey line 11).  However total OM line 11 column 1 was always zero and negative values were reported in the intersection of line 11 and column 4 to balance out the total of all expenses of OM distributed to the functional categories.  
+
+For a better understanding of this, please visit the IPEDS survey form archive site for finance below:
+
+http://nces.ed.gov/ipeds/InsidePages/ArchivedSurveyMaterials?section=Finance"
+Description,154,61256,F2E135,"Depreciation	 - The allocation or distribution of the cost of capital assets, less any salvage value, to expenses over the estimated useful life of the asset in a systematic and rational manner. Depreciation for the year is the amount of the allocation or distribution for the year involved."
+Description,155,61261,F2E136,Interest - The price paid (or received) for the use of money over a period of time. Interest income is one component of investment income. Interest paid by the institution is interest expense.
+Description,156,61266,F2E137,"Other Natural classication expense is the difference between the total expenses and the sum of all natural expense categories (Salaries and wages, benefits, operations and maintenance, depreciation and interest)."
+Description,157,61281,F2FHA,"Does this institution or any of its foundations or other affiliated organizations own endowment assets ?
+ENDOWMENT ASSETS - Consists of gross investments of endowment funds, term endowment funds, and funds functioning as endowment for the institution and any of its foundations and other affiliated organizations."
+Description,158,61271,F2H01,"Value of endowment assets at the beginning Value of endowment assets at the beginning of the fiscal year  
+ENDOWMENT ASSETS - Consists of gross investments of endowment funds, term endowment funds, and funds functioning as endowment for the institution and any of its foundations and other affiliated organizations."
+Description,159,61276,F2H02,"Value of endowment assets at the end of the fiscal year
+ENDOWMENT ASSETS - Consists of gross investments of endowment funds, term endowment funds, and funds functioning as endowment for the institution and any of its foundations and other affiliated organizations."
+Description,160,61319,F2H03,Change in value of endowment net assets is the value of endowment assets at the end of the fiscal year minus the value of endowment assets at the beginning of the fiscal year
+Description,161,61321,F2H03A,"New gifts and additions – Amount of new gifts and additions to permanent endowments. Include contributions, pledge payments, and reinvested income/gains."
+Description,162,61323,F2H03B,"Endowment net investment return –  Amount of net investment return from endowments, endowment net investment return. Include realized and unrealized gains (losses) and interest and dividends, net of administrative expenses."
+Description,163,61325,F2H03C,Spending distribution for current use – Amount of withdrawals from endowments to fund the institution’s operating budget and other institutional expenses.
+Description,164,61327,F2H03D,"Other changes in value of endowment assets is generated by subracting the sum of (H03a) new gifts and additions, (H03b) net investment return, (H03c) spending distribution for current use from (H03) change in value of endowment net assets.  Other changes to the value of endowment net assets may include transfers and other adjustments."
+Description,165,61329,F2I01,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Change in unrestricted net assets is the sum of the institution’s excess or deficiency of unrestricted operating revenues over unrestricted operating expenses (e.g., change in net assets without donor restriction), available from the statement of activities or other internal financial reports."
+Description,166,61331,F2I02,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Total unrestricted operating revenues is the institution’s total unrestricted operating revenues and gains, including net assets released from restriction."
+Description,167,61333,F2I03,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Change in net assets from F2B04
+
+Change in net assets is the sum of total revenues and investment return, total expenses, and other changes in net assets. This amount should agree with the total change in net assets for the year reported in general purpose financial statements."
+Description,168,61335,F2I04,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Total net assets from F2B05
+
+Net assets, beginning of year includes the amount of net assets, end of year from the previous year's IPEDS Finance report. In all cases except when the institution reports a change in accounting principle via retroactive adjustment, this amount is also the beginning net asset balance in your general purpose financial statements."
+Description,169,61337,F2I05,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Expendable net assets is the institution’s expendable net assets. Includes net assets without donor restriction and net assets with donor restriction – subject to time or purpose restriction. Excludes net investment in plant and net assets with donor restriction – subject to time or purpose restriction that will be invested in plant."
+Description,170,61339,F2I06,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Plant-related debt from F2A03a
+
+Amounts for all long-term debt obligations including bonds payable, mortgages payable, capital leases payable, and long-term notes payable. (FARM para. 420.3, 423) If the current portion of long-term debt is separately reported in the GPFS, then that amount is included."
+Description,171,61341,F2I07,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Total expenses from F2B02"
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,61281,F2FHA,1,Yes - (report endowment assets),1332,74.75
+Frequencies,2,61281,F2FHA,2,No,338,18.97
+Frequencies,3,61281,F2FHA,-2,not applicable,112,6.29
+Frequencies,4,,,,,,
+Frequencies,5,,,,,,
+Frequencies,6,,,,,,
+Frequencies,7,,,,,,
+Frequencies,8,,,,,,
+Frequencies,9,,,,,,
+Frequencies,10,,,,,,
+Frequencies,11,,,,,,
+Frequencies,12,,,,,,
+Frequencies,13,,,,,,
+Frequencies,14,,,,,,
+Frequencies,15,,,,,,
+Frequencies,16,,,,,,
+Frequencies,17,,,,,,
+Frequencies,18,,,,,,
+Frequencies,19,,,,,,
+Frequencies,20,,,,,,
+Frequencies,21,,,,,,
+Frequencies,22,,,,,,
+Frequencies,23,,,,,,
+Frequencies,24,,,,,,
+Frequencies,25,,,,,,
+Frequencies,26,,,,,,
+Frequencies,27,,,,,,
+Frequencies,28,,,,,,
+Frequencies,29,,,,,,
+Frequencies,30,,,,,,
+Frequencies,31,,,,,,
+Frequencies,32,,,,,,
+Frequencies,33,,,,,,
+Frequencies,34,,,,,,
+Frequencies,35,,,,,,
+Frequencies,36,,,,,,
+Frequencies,37,,,,,,
+Frequencies,38,,,,,,
+Frequencies,39,,,,,,
+Frequencies,40,,,,,,
+Frequencies,41,,,,,,
+Frequencies,42,,,,,,
+Frequencies,43,,,,,,
+Frequencies,44,,,,,,
+Frequencies,45,,,,,,
+Frequencies,46,,,,,,
+Frequencies,47,,,,,,
+Frequencies,48,,,,,,
+Frequencies,49,,,,,,
+Frequencies,50,,,,,,
+Frequencies,51,,,,,,
+Frequencies,52,,,,,,
+Frequencies,53,,,,,,
+Frequencies,54,,,,,,
+Frequencies,55,,,,,,
+Frequencies,56,,,,,,
+Frequencies,57,,,,,,
+Frequencies,58,,,,,,
+Frequencies,59,,,,,,
+Frequencies,60,,,,,,
+Frequencies,61,,,,,,
+Frequencies,62,,,,,,
+Frequencies,63,,,,,,
+Frequencies,64,,,,,,
+Frequencies,65,,,,,,
+Frequencies,66,,,,,,
+Frequencies,67,,,,,,
+Frequencies,68,,,,,,
+Frequencies,69,,,,,,
+Frequencies,70,,,,,,
+Frequencies,71,,,,,,
+Frequencies,72,,,,,,
+Frequencies,73,,,,,,
+Frequencies,74,,,,,,
+Frequencies,75,,,,,,
+Frequencies,76,,,,,,
+Frequencies,77,,,,,,
+Frequencies,78,,,,,,
+Frequencies,79,,,,,,
+Frequencies,80,,,,,,
+Frequencies,81,,,,,,
+Frequencies,82,,,,,,
+Frequencies,83,,,,,,
+Frequencies,84,,,,,,
+Frequencies,85,,,,,,
+Frequencies,86,,,,,,
+Frequencies,87,,,,,,
+Frequencies,88,,,,,,
+Frequencies,89,,,,,,
+Frequencies,90,,,,,,
+Frequencies,91,,,,,,
+Frequencies,92,,,,,,
+Frequencies,93,,,,,,
+Frequencies,94,,,,,,
+Frequencies,95,,,,,,
+Frequencies,96,,,,,,
+Frequencies,97,,,,,,
+Frequencies,98,,,,,,
+Frequencies,99,,,,,,
+Frequencies,100,,,,,,
+Frequencies,101,,,,,,
+Frequencies,102,,,,,,
+Frequencies,103,,,,,,
+Frequencies,104,,,,,,
+Frequencies,105,,,,,,
+Frequencies,106,,,,,,
+Frequencies,107,,,,,,
+Frequencies,108,,,,,,
+Frequencies,109,,,,,,
+Frequencies,110,,,,,,
+Frequencies,111,,,,,,
+Frequencies,112,,,,,,
+Frequencies,113,,,,,,
+Frequencies,114,,,,,,
+Frequencies,115,,,,,,
+Frequencies,116,,,,,,
+Frequencies,117,,,,,,
+Frequencies,118,,,,,,
+Frequencies,119,,,,,,
+Frequencies,120,,,,,,
+Frequencies,121,,,,,,
+Frequencies,122,,,,,,
+Frequencies,123,,,,,,
+Frequencies,124,,,,,,
+Frequencies,125,,,,,,
+Frequencies,126,,,,,,
+Frequencies,127,,,,,,
+Frequencies,128,,,,,,
+Frequencies,129,,,,,,
+Frequencies,130,,,,,,
+Frequencies,131,,,,,,
+Frequencies,132,,,,,,
+Frequencies,133,,,,,,
+Frequencies,134,,,,,,
+Frequencies,135,,,,,,
+Frequencies,136,,,,,,
+Frequencies,137,,,,,,
+Frequencies,138,,,,,,
+Frequencies,139,,,,,,
+Frequencies,140,,,,,,
+Frequencies,141,,,,,,
+Frequencies,142,,,,,,
+Frequencies,143,,,,,,
+Frequencies,144,,,,,,
+Frequencies,145,,,,,,
+Frequencies,146,,,,,,
+Frequencies,147,,,,,,
+Frequencies,148,,,,,,
+Frequencies,149,,,,,,
+Frequencies,150,,,,,,
+Frequencies,151,,,,,,
+Frequencies,152,,,,,,
+Frequencies,153,,,,,,
+Frequencies,154,,,,,,
+Frequencies,155,,,,,,
+Frequencies,156,,,,,,
+Frequencies,157,,,,,,
+Frequencies,158,,,,,,
+Frequencies,159,,,,,,
+Frequencies,160,,,,,,
+Frequencies,161,,,,,,
+Frequencies,162,,,,,,
+Frequencies,163,,,,,,
+Frequencies,164,,,,,,
+Frequencies,165,,,,,,
+Frequencies,166,,,,,,
+Frequencies,167,,,,,,
+Frequencies,168,,,,,,
+Frequencies,169,,,,,,
+Frequencies,170,,,,,,
+Frequencies,171,,,,,,
+Frequencies,172,,,,,,
+Frequencies,173,,,,,,
+Frequencies,174,,,,,,
+Frequencies,175,,,,,,
+Frequencies,176,,,,,,
+Frequencies,177,,,,,,
+Frequencies,178,,,,,,
+Frequencies,179,,,,,,
+Frequencies,180,,,,,,
+Frequencies,181,,,,,,
+Frequencies,182,,,,,,
+Frequencies,183,,,,,,
+Frequencies,184,,,,,,
+Frequencies,185,,,,,,
+Frequencies,186,,,,,,
+Frequencies,187,,,,,,
+Frequencies,188,,,,,,
+Frequencies,189,,,,,,
+Frequencies,190,,,,,,
+Frequencies,191,,,,,,
+Frequencies,192,,,,,,
+Frequencies,193,,,,,,
+Frequencies,194,,,,,,
+Frequencies,195,,,,,,
+Frequencies,196,,,,,,
+Frequencies,197,,,,,,
+Frequencies,198,,,,,,
+Frequencies,199,,,,,,
+Frequencies,200,,,,,,
+Frequencies,201,,,,,,
+Frequencies,202,,,,,,
+Frequencies,203,,,,,,
+Frequencies,204,,,,,,
+Frequencies,205,,,,,,
+Frequencies,206,,,,,,
+Frequencies,207,,,,,,
+Frequencies,208,,,,,,
+Frequencies,209,,,,,,
+Frequencies,210,,,,,,
+Frequencies,211,,,,,,
+Frequencies,212,,,,,,
+Frequencies,213,,,,,,
+Frequencies,214,,,,,,
+Frequencies,215,,,,,,
+Frequencies,216,,,,,,
+Frequencies,217,,,,,,
+Frequencies,218,,,,,,
+Frequencies,219,,,,,,
+Frequencies,220,,,,,,
+Frequencies,221,,,,,,
+Frequencies,222,,,,,,
+Frequencies,223,,,,,,
+Frequencies,224,,,,,,
+Frequencies,225,,,,,,
+Frequencies,226,,,,,,
+Frequencies,227,,,,,,
+Frequencies,228,,,,,,
+Frequencies,229,,,,,,
+Frequencies,230,,,,,,
+Frequencies,231,,,,,,
+Frequencies,232,,,,,,
+Frequencies,233,,,,,,
+Frequencies,234,,,,,,
+Frequencies,235,,,,,,
+Frequencies,236,,,,,,
+Frequencies,237,,,,,,
+Frequencies,238,,,,,,
+Frequencies,239,,,,,,
+Frequencies,240,,,,,,
+Frequencies,241,,,,,,
+Frequencies,242,,,,,,
+Frequencies,243,,,,,,
+Frequencies,244,,,,,,
+Frequencies,245,,,,,,
+Frequencies,246,,,,,,
+Frequencies,247,,,,,,
+Frequencies,248,,,,,,
+Frequencies,249,,,,,,
+Frequencies,250,,,,,,
+Frequencies,251,,,,,,
+Frequencies,252,,,,,,
+Frequencies,253,,,,,,
+Frequencies,254,,,,,,
+Frequencies,255,,,,,,
+Frequencies,256,,,,,,
+Frequencies,257,,,,,,
+Frequencies,258,,,,,,
+Frequencies,259,,,,,,
+Frequencies,260,,,,,,
+Frequencies,261,,,,,,
+Frequencies,262,,,,,,
+Frequencies,263,,,,,,
+Frequencies,264,,,,,,
+Frequencies,265,,,,,,
+Frequencies,266,,,,,,
+Frequencies,267,,,,,,
+Frequencies,268,,,,,,
+Frequencies,269,,,,,,
+Frequencies,270,,,,,,
+Frequencies,271,,,,,,
+Frequencies,272,,,,,,
+Frequencies,273,,,,,,
+Frequencies,274,,,,,,
+Frequencies,275,,,,,,
+Frequencies,276,,,,,,
+Frequencies,277,,,,,,
+Frequencies,278,,,,,,
+Frequencies,279,,,,,,
+Frequencies,280,,,,,,
+Frequencies,281,,,,,,
+Frequencies,282,,,,,,
+Frequencies,283,,,,,,
+Frequencies,284,,,,,,
+Frequencies,285,,,,,,
+Frequencies,286,,,,,,
+Frequencies,287,,,,,,
+Frequencies,288,,,,,,
+Frequencies,289,,,,,,
+Frequencies,290,,,,,,
+Frequencies,291,,,,,,
+Frequencies,292,,,,,,
+Frequencies,293,,,,,,
+Frequencies,294,,,,,,
+Frequencies,295,,,,,,
+Frequencies,296,,,,,,
+Frequencies,297,,,,,,
+Frequencies,298,,,,,,
+Frequencies,299,,,,,,
+Frequencies,300,,,,,,
+Frequencies,301,,,,,,
+Frequencies,302,,,,,,
+Frequencies,303,,,,,,
+Frequencies,304,,,,,,
+Frequencies,305,,,,,,
+Frequencies,306,,,,,,
+Frequencies,307,,,,,,
+Frequencies,308,,,,,,
+Frequencies,309,,,,,,
+Frequencies,310,,,,,,
+Frequencies,311,,,,,,
+Frequencies,312,,,,,,
+Frequencies,313,,,,,,
+Frequencies,314,,,,,,
+Frequencies,315,,,,,,
+Frequencies,316,,,,,,
+Frequencies,317,,,,,,
+Frequencies,318,,,,,,
+Frequencies,319,,,,,,
+Frequencies,320,,,,,,
+Frequencies,321,,,,,,
+Frequencies,322,,,,,,
+Frequencies,323,,,,,,
+Frequencies,324,,,,,,
+Frequencies,325,,,,,,
+Frequencies,326,,,,,,
+Frequencies,327,,,,,,
+Frequencies,328,,,,,,
+Frequencies,329,,,,,,
+Frequencies,330,,,,,,
+Frequencies,331,,,,,,
+Frequencies,332,,,,,,
+Frequencies,333,,,,,,
+Frequencies,334,,,,,,
+Frequencies,335,,,,,,
+Frequencies,336,,,,,,
+Frequencies,337,,,,,,
+Frequencies,338,,,,,,
+Frequencies,339,,,,,,
+Frequencies,340,,,,,,
+Frequencies,341,,,,,,
+Frequencies,342,,,,,,
+Frequencies,343,,,,,,
+Frequencies,344,,,,,,
+Frequencies,345,,,,,,
+Frequencies,346,,,,,,
+Frequencies,347,,,,,,
+Frequencies,348,,,,,,
+Frequencies,349,,,,,,
+Frequencies,350,,,,,,
+Frequencies,351,,,,,,
+Frequencies,352,,,,,,
+Frequencies,353,,,,,,
+Frequencies,354,,,,,,
+Frequencies,355,,,,,,
+Frequencies,356,,,,,,
+Frequencies,357,,,,,,
+Frequencies,358,,,,,,
+Frequencies,359,,,,,,
+Frequencies,360,,,,,,
+Frequencies,361,,,,,,
+Frequencies,362,,,,,,
+Frequencies,363,,,,,,
+Frequencies,364,,,,,,
+Frequencies,365,,,,,,
+Frequencies,366,,,,,,
+Frequencies,367,,,,,,
+Frequencies,368,,,,,,
+Frequencies,369,,,,,,
+Frequencies,370,,,,,,
+Frequencies,371,,,,,,
+Frequencies,372,,,,,,
+Frequencies,373,,,,,,
+Frequencies,374,,,,,,
+Frequencies,375,,,,,,
+Frequencies,376,,,,,,
+Frequencies,377,,,,,,
+Frequencies,378,,,,,,
+Frequencies,379,,,,,,
+Frequencies,380,,,,,,
+Frequencies,381,,,,,,
+Frequencies,382,,,,,,
+Frequencies,383,,,,,,
+Frequencies,384,,,,,,
+Frequencies,385,,,,,,
+Frequencies,386,,,,,,
+Frequencies,387,,,,,,
+Frequencies,388,,,,,,
+Frequencies,389,,,,,,
+Frequencies,390,,,,,,
+Frequencies,391,,,,,,
+Frequencies,392,,,,,,
+Frequencies,393,,,,,,
+Frequencies,394,,,,,,
+Frequencies,395,,,,,,
+Frequencies,396,,,,,,
+Frequencies,397,,,,,,
+Frequencies,398,,,,,,
+Frequencies,399,,,,,,
+Frequencies,400,,,,,,
+Frequencies,401,,,,,,
+Frequencies,402,,,,,,
+Frequencies,403,,,,,,
+Frequencies,404,,,,,,
+Frequencies,405,,,,,,
+Frequencies,406,,,,,,
+Frequencies,407,,,,,,
+Frequencies,408,,,,,,
+Frequencies,409,,,,,,
+Frequencies,410,,,,,,
+Frequencies,411,,,,,,
+Frequencies,412,,,,,,
+Frequencies,413,,,,,,
+Frequencies,414,,,,,,
+Frequencies,415,,,,,,
+Frequencies,416,,,,,,
+Frequencies,417,,,,,,
+Frequencies,418,,,,,,
+Frequencies,419,,,,,,
+Frequencies,420,,,,,,
+Frequencies,421,,,,,,
+Frequencies,422,,,,,,
+Frequencies,423,,,,,,
+Frequencies,424,,,,,,
+Frequencies,425,,,,,,
+Frequencies,426,,,,,,
+Frequencies,427,,,,,,
+Frequencies,428,,,,,,
+Frequencies,429,,,,,,
+Frequencies,430,,,,,,
+Frequencies,431,,,,,,
+Frequencies,432,,,,,,
+Frequencies,433,,,,,,
+Frequencies,434,,,,,,
+Frequencies,435,,,,,,
+Frequencies,436,,,,,,
+Frequencies,437,,,,,,
+Frequencies,438,,,,,,
+Frequencies,439,,,,,,
+Frequencies,440,,,,,,
+Frequencies,441,,,,,,
+Frequencies,442,,,,,,
+Frequencies,443,,,,,,
+Frequencies,444,,,,,,
+Frequencies,445,,,,,,
+Frequencies,446,,,,,,
+Frequencies,447,,,,,,
+Frequencies,448,,,,,,
+Frequencies,449,,,,,,
+Frequencies,450,,,,,,
+Frequencies,451,,,,,,
+Frequencies,452,,,,,,
+Frequencies,453,,,,,,
+Frequencies,454,,,,,,
+Frequencies,455,,,,,,
+Frequencies,456,,,,,,
+Frequencies,457,,,,,,
+Frequencies,458,,,,,,
+Frequencies,459,,,,,,
+Frequencies,460,,,,,,
+Frequencies,461,,,,,,
+Frequencies,462,,,,,,
+Frequencies,463,,,,,,
+Frequencies,464,,,,,,
+Frequencies,465,,,,,,
+Frequencies,466,,,,,,
+Frequencies,467,,,,,,
+Frequencies,468,,,,,,
+Frequencies,469,,,,,,
+Frequencies,470,,,,,,
+Frequencies,471,,,,,,
+Frequencies,472,,,,,,
+Frequencies,473,,,,,,
+Frequencies,474,,,,,,
+Frequencies,475,,,,,,
+Frequencies,476,,,,,,
+Frequencies,477,,,,,,
+Frequencies,478,,,,,,
+Frequencies,479,,,,,,
+Frequencies,480,,,,,,
+Frequencies,481,,,,,,
+Frequencies,482,,,,,,
+Frequencies,483,,,,,,
+Frequencies,484,,,,,,
+Frequencies,485,,,,,,
+Frequencies,486,,,,,,
+Frequencies,487,,,,,,
+Frequencies,488,,,,,,
+Frequencies,489,,,,,,
+Frequencies,490,,,,,,
+Frequencies,491,,,,,,
+Frequencies,492,,,,,,
+Frequencies,493,,,,,,
+Frequencies,494,,,,,,
+Frequencies,495,,,,,,
+Frequencies,496,,,,,,
+Frequencies,497,,,,,,
+Frequencies,498,,,,,,
+Frequencies,499,,,,,,
+Frequencies,500,,,,,,
+Frequencies,501,,,,,,
+Frequencies,502,,,,,,
+Frequencies,503,,,,,,
+Frequencies,504,,,,,,
+Frequencies,505,,,,,,
+Frequencies,506,,,,,,
+Frequencies,507,,,,,,
+Frequencies,508,,,,,,
+Frequencies,509,,,,,,
+Frequencies,510,,,,,,
+Frequencies,511,,,,,,
+Frequencies,512,,,,,,
+Frequencies,513,,,,,,
+Frequencies,514,,,,,,
+Frequencies,515,,,,,,
+Frequencies,516,,,,,,
+Frequencies,517,,,,,,
+Frequencies,518,,,,,,
+Frequencies,519,,,,,,
+Frequencies,520,,,,,,
+Frequencies,521,,,,,,
+Frequencies,522,,,,,,
+Frequencies,523,,,,,,
+Frequencies,524,,,,,,
+Frequencies,525,,,,,,
+Frequencies,526,,,,,,
+Frequencies,527,,,,,,
+Frequencies,528,,,,,,
+Frequencies,529,,,,,,
+Frequencies,530,,,,,,
+Frequencies,531,,,,,,
+Frequencies,532,,,,,,
+Frequencies,533,,,,,,
+Frequencies,534,,,,,,
+Frequencies,535,,,,,,
+Frequencies,536,,,,,,
+Frequencies,537,,,,,,
+Frequencies,538,,,,,,
+Frequencies,539,,,,,,
+Frequencies,540,,,,,,
+Frequencies,541,,,,,,
+Frequencies,542,,,,,,
+Frequencies,543,,,,,,
+Frequencies,544,,,,,,
+Frequencies,545,,,,,,
+Frequencies,546,,,,,,
+Frequencies,547,,,,,,
+Frequencies,548,,,,,,
+Frequencies,549,,,,,,
+Frequencies,550,,,,,,
+Frequencies,551,,,,,,
+Frequencies,552,,,,,,
+Frequencies,553,,,,,,
+Frequencies,554,,,,,,
+Frequencies,555,,,,,,
+Frequencies,556,,,,,,
+Frequencies,557,,,,,,
+Frequencies,558,,,,,,
+Frequencies,559,,,,,,
+Frequencies,560,,,,,,
+Frequencies,561,,,,,,
+Frequencies,562,,,,,,
+Frequencies,563,,,,,,
+Frequencies,564,,,,,,
+Frequencies,565,,,,,,
+Frequencies,566,,,,,,
+Frequencies,567,,,,,,
+Frequencies,568,,,,,,
+Frequencies,569,,,,,,
+Frequencies,570,,,,,,
+Frequencies,571,,,,,,
+Frequencies,572,,,,,,
+Frequencies,573,,,,,,
+Frequencies,574,,,,,,
+Frequencies,575,,,,,,
+Frequencies,576,,,,,,
+Frequencies,577,,,,,,
+Frequencies,578,,,,,,
+Frequencies,579,,,,,,
+Frequencies,580,,,,,,
+Frequencies,581,,,,,,
+Frequencies,582,,,,,,
+Frequencies,583,,,,,,
+Frequencies,584,,,,,,
+Frequencies,585,,,,,,
+Frequencies,586,,,,,,
+Frequencies,587,,,,,,
+Frequencies,588,,,,,,
+Frequencies,589,,,,,,
+Frequencies,590,,,,,,
+Frequencies,591,,,,,,
+Frequencies,592,,,,,,
+Frequencies,593,,,,,,
+Frequencies,594,,,,,,
+Frequencies,595,,,,,,
+Frequencies,596,,,,,,
+Frequencies,597,,,,,,
+Frequencies,598,,,,,,
+Frequencies,599,,,,,,
+Frequencies,600,,,,,,
+Frequencies,601,,,,,,
+Frequencies,602,,,,,,
+Frequencies,603,,,,,,
+Frequencies,604,,,,,,
+Frequencies,605,,,,,,
+Frequencies,606,,,,,,
+Frequencies,607,,,,,,
+Frequencies,608,,,,,,
+Frequencies,609,,,,,,
+Frequencies,610,,,,,,
+Frequencies,611,,,,,,
+Frequencies,612,,,,,,
+Frequencies,613,,,,,,
+Frequencies,614,,,,,,
+Frequencies,615,,,,,,
+Frequencies,616,,,,,,
+Frequencies,617,,,,,,
+Frequencies,618,,,,,,
+Frequencies,619,,,,,,
+Frequencies,620,,,,,,
+Frequencies,621,,,,,,
+Frequencies,622,,,,,,
+Frequencies,623,,,,,,
+Frequencies,624,,,,,,
+Frequencies,625,,,,,,
+Frequencies,626,,,,,,
+Frequencies,627,,,,,,
+Frequencies,628,,,,,,
+Frequencies,629,,,,,,
+Frequencies,630,,,,,,
+Frequencies,631,,,,,,
+Frequencies,632,,,,,,
+Frequencies,633,,,,,,
+Frequencies,634,,,,,,
+Frequencies,635,,,,,,
+Frequencies,636,,,,,,
+Frequencies,637,,,,,,
+Frequencies,638,,,,,,
+Frequencies,639,,,,,,
+Frequencies,640,,,,,,
+Frequencies,641,,,,,,
+Frequencies,642,,,,,,
+Frequencies,643,,,,,,
+Frequencies,644,,,,,,
+Frequencies,645,,,,,,
+Frequencies,646,,,,,,
+Frequencies,647,,,,,,
+Frequencies,648,,,,,,
+Frequencies,649,,,,,,
+Frequencies,650,,,,,,
+Frequencies,651,,,,,,
+Frequencies,652,,,,,,
+Frequencies,653,,,,,,
+Frequencies,654,,,,,,
+Frequencies,655,,,,,,
+Frequencies,656,,,,,,
+Frequencies,657,,,,,,
+Frequencies,658,,,,,,
+Frequencies,659,,,,,,
+Frequencies,660,,,,,,
+Frequencies,661,,,,,,
+Frequencies,662,,,,,,
+Frequencies,663,,,,,,
+Frequencies,664,,,,,,
+Frequencies,665,,,,,,
+Frequencies,666,,,,,,
+Frequencies,667,,,,,,
+Frequencies,668,,,,,,
+Frequencies,669,,,,,,
+Frequencies,670,,,,,,
+Frequencies,671,,,,,,
+Frequencies,672,,,,,,
+Frequencies,673,,,,,,
+Frequencies,674,,,,,,
+Frequencies,675,,,,,,
+Frequencies,676,,,,,,
+Frequencies,677,,,,,,
+Frequencies,678,,,,,,
+Frequencies,679,,,,,,
+Frequencies,680,,,,,,
+Frequencies,681,,,,,,
+Frequencies,682,,,,,,
+Frequencies,683,,,,,,
+Frequencies,684,,,,,,
+Frequencies,685,,,,,,
+Frequencies,686,,,,,,
+Frequencies,687,,,,,,
+Frequencies,688,,,,,,
+Frequencies,689,,,,,,
+Frequencies,690,,,,,,
+Frequencies,691,,,,,,
+Frequencies,692,,,,,,
+Frequencies,693,,,,,,
+Frequencies,694,,,,,,
+Frequencies,695,,,,,,
+Frequencies,696,,,,,,
+Frequencies,697,,,,,,
+Frequencies,698,,,,,,
+Frequencies,699,,,,,,
+Frequencies,700,,,,,,
+Frequencies,701,,,,,,
+Frequencies,702,,,,,,
+Frequencies,703,,,,,,
+Frequencies,704,,,,,,
+Frequencies,705,,,,,,
+Frequencies,706,,,,,,
+Frequencies,707,,,,,,
+Frequencies,708,,,,,,
+Frequencies,709,,,,,,
+Frequencies,710,,,,,,
+Frequencies,711,,,,,,
+Frequencies,712,,,,,,
+Frequencies,713,,,,,,
+Frequencies,714,,,,,,
+Frequencies,715,,,,,,
+Frequencies,716,,,,,,
+Frequencies,717,,,,,,
+Frequencies,718,,,,,,
+Frequencies,719,,,,,,
+Frequencies,720,,,,,,
+Frequencies,721,,,,,,
+Frequencies,722,,,,,,
+Frequencies,723,,,,,,
+Frequencies,724,,,,,,
+Frequencies,725,,,,,,
+Frequencies,726,,,,,,
+Frequencies,727,,,,,,
+Frequencies,728,,,,,,
+Frequencies,729,,,,,,
+Frequencies,730,,,,,,
+Frequencies,731,,,,,,
+Frequencies,732,,,,,,
+Frequencies,733,,,,,,
+Frequencies,734,,,,,,
+Frequencies,735,,,,,,
+Frequencies,736,,,,,,
+Frequencies,737,,,,,,
+Frequencies,738,,,,,,
+Frequencies,739,,,,,,
+Frequencies,740,,,,,,
+Frequencies,741,,,,,,
+Frequencies,742,,,,,,
+Frequencies,743,,,,,,
+Frequencies,744,,,,,,
+Frequencies,745,,,,,,
+Frequencies,746,,,,,,
+Frequencies,747,,,,,,
+Frequencies,748,,,,,,
+Frequencies,749,,,,,,
+Frequencies,750,,,,,,
+Frequencies,751,,,,,,
+Frequencies,752,,,,,,
+Frequencies,753,,,,,,
+Frequencies,754,,,,,,
+Frequencies,755,,,,,,
+Frequencies,756,,,,,,
+Frequencies,757,,,,,,
+Frequencies,758,,,,,,
+Frequencies,759,,,,,,
+Frequencies,760,,,,,,
+Frequencies,761,,,,,,
+Frequencies,762,,,,,,
+Frequencies,763,,,,,,
+Frequencies,764,,,,,,
+Frequencies,765,,,,,,
+Frequencies,766,,,,,,
+Frequencies,767,,,,,,
+Frequencies,768,,,,,,
+Frequencies,769,,,,,,
+Frequencies,770,,,,,,
+Frequencies,771,,,,,,
+Frequencies,772,,,,,,
+Frequencies,773,,,,,,
+Frequencies,774,,,,,,
+Frequencies,775,,,,,,
+Frequencies,776,,,,,,
+Frequencies,777,,,,,,
+Frequencies,778,,,,,,
+Frequencies,779,,,,,,
+Frequencies,780,,,,,,
+Frequencies,781,,,,,,
+Frequencies,782,,,,,,
+Frequencies,783,,,,,,
+Frequencies,784,,,,,,
+Frequencies,785,,,,,,
+Frequencies,786,,,,,,
+Frequencies,787,,,,,,
+Frequencies,788,,,,,,
+Frequencies,789,,,,,,
+Frequencies,790,,,,,,
+Frequencies,791,,,,,,
+Frequencies,792,,,,,,
+Frequencies,793,,,,,,
+Frequencies,794,,,,,,
+Frequencies,795,,,,,,
+Frequencies,796,,,,,,
+Frequencies,797,,,,,,
+Frequencies,798,,,,,,
+Frequencies,799,,,,,,
+Frequencies,800,,,,,,
+Frequencies,801,,,,,,
+Frequencies,802,,,,,,
+Frequencies,803,,,,,,
+Frequencies,804,,,,,,
+Frequencies,805,,,,,,
+Frequencies,806,,,,,,
+Frequencies,807,,,,,,
+Frequencies,808,,,,,,
+Frequencies,809,,,,,,
+Frequencies,810,,,,,,
+Frequencies,811,,,,,,
+Frequencies,812,,,,,,
+Frequencies,813,,,,,,
+Frequencies,814,,,,,,
+Frequencies,815,,,,,,
+Frequencies,816,,,,,,
+Frequencies,817,,,,,,
+Frequencies,818,,,,,,
+Frequencies,819,,,,,,
+Frequencies,820,,,,,,
+Frequencies,821,,,,,,
+Frequencies,822,,,,,,
+Frequencies,823,,,,,,
+Frequencies,824,,,,,,
+Frequencies,825,,,,,,
+Frequencies,826,,,,,,
+Frequencies,827,,,,,,
+Frequencies,828,,,,,,
+Frequencies,829,,,,,,
+Frequencies,830,,,,,,
+Frequencies,831,,,,,,
+Frequencies,832,,,,,,
+Frequencies,833,,,,,,
+Frequencies,834,,,,,,
+Frequencies,835,,,,,,
+Frequencies,836,,,,,,
+Frequencies,837,,,,,,
+Frequencies,838,,,,,,
+Frequencies,839,,,,,,
+Frequencies,840,,,,,,
+Frequencies,841,,,,,,
+Frequencies,842,,,,,,
+Frequencies,843,,,,,,
+Frequencies,844,,,,,,
+Frequencies,845,,,,,,
+Frequencies,846,,,,,,
+Frequencies,847,,,,,,
+Frequencies,848,,,,,,
+Frequencies,849,,,,,,
+Frequencies,850,,,,,,
+Frequencies,851,,,,,,
+Frequencies,852,,,,,,
+Frequencies,853,,,,,,
+Frequencies,854,,,,,,
+Frequencies,855,,,,,,
+Frequencies,856,,,,,,
+Frequencies,857,,,,,,
+Frequencies,858,,,,,,
+Frequencies,859,,,,,,
+Frequencies,860,,,,,,
+Frequencies,861,,,,,,
+Frequencies,862,,,,,,
+Frequencies,863,,,,,,
+Frequencies,864,,,,,,
+Frequencies,865,,,,,,
+Frequencies,866,,,,,,
+Frequencies,867,,,,,,
+Frequencies,868,,,,,,
+Frequencies,869,,,,,,
+Frequencies,870,,,,,,
+Frequencies,871,,,,,,
+Frequencies,872,,,,,,
+Frequencies,873,,,,,,
+Frequencies,874,,,,,,
+Frequencies,875,,,,,,
+Frequencies,876,,,,,,
+Frequencies,877,,,,,,
+Frequencies,878,,,,,,
+Frequencies,879,,,,,,
+Frequencies,880,,,,,,
+Frequencies,881,,,,,,
+Frequencies,882,,,,,,
+Frequencies,883,,,,,,
+Frequencies,884,,,,,,
+Frequencies,885,,,,,,
+Frequencies,886,,,,,,
+Frequencies,887,,,,,,
+Frequencies,888,,,,,,
+Frequencies,889,,,,,,
+Frequencies,890,,,,,,
+Frequencies,891,,,,,,
+Frequencies,892,,,,,,
+Frequencies,893,,,,,,
+Frequencies,894,,,,,,
+Frequencies,895,,,,,,
+Frequencies,896,,,,,,
+Frequencies,897,,,,,,
+Frequencies,898,,,,,,
+Frequencies,899,,,,,,
+Frequencies,900,,,,,,
+Frequencies,901,,,,,,
+Frequencies,902,,,,,,
+Frequencies,903,,,,,,
+Frequencies,904,,,,,,
+Frequencies,905,,,,,,
+Frequencies,906,,,,,,
+Frequencies,907,,,,,,
+Frequencies,908,,,,,,
+Frequencies,909,,,,,,
+Frequencies,910,,,,,,
+Frequencies,911,,,,,,
+Frequencies,912,,,,,,
+Frequencies,913,,,,,,
+Frequencies,914,,,,,,
+Frequencies,915,,,,,,
+Frequencies,916,,,,,,
+Frequencies,917,,,,,,
+Frequencies,918,,,,,,
+Frequencies,919,,,,,,
+Frequencies,920,,,,,,
+Frequencies,921,,,,,,
+Frequencies,922,,,,,,
+Frequencies,923,,,,,,
+Frequencies,924,,,,,,
+Frequencies,925,,,,,,
+Frequencies,926,,,,,,
+Frequencies,927,,,,,,
+Frequencies,928,,,,,,
+Frequencies,929,,,,,,
+Frequencies,930,,,,,,
+Frequencies,931,,,,,,
+Frequencies,932,,,,,,
+Frequencies,933,,,,,,
+Frequencies,934,,,,,,
+Frequencies,935,,,,,,
+Frequencies,936,,,,,,
+Frequencies,937,,,,,,
+Frequencies,938,,,,,,
+Frequencies,939,,,,,,
+Frequencies,940,,,,,,
+Frequencies,941,,,,,,
+Frequencies,942,,,,,,
+Frequencies,943,,,,,,
+Frequencies,944,,,,,,
+Frequencies,945,,,,,,
+Frequencies,946,,,,,,
+Frequencies,947,,,,,,
+Frequencies,948,,,,,,
+Frequencies,949,,,,,,
+Frequencies,950,,,,,,
+Frequencies,951,,,,,,
+Frequencies,952,,,,,,
+Frequencies,953,,,,,,
+Frequencies,954,,,,,,
+Frequencies,955,,,,,,
+Frequencies,956,,,,,,
+Frequencies,957,,,,,,
+Frequencies,958,,,,,,
+Frequencies,959,,,,,,
+Frequencies,960,,,,,,
+Frequencies,961,,,,,,
+Frequencies,962,,,,,,
+Frequencies,963,,,,,,
+Frequencies,964,,,,,,
+Frequencies,965,,,,,,
+Frequencies,966,,,,,,
+Frequencies,967,,,,,,
+Frequencies,968,,,,,,
+Frequencies,969,,,,,,
+Frequencies,970,,,,,,
+Frequencies,971,,,,,,
+Frequencies,972,,,,,,
+Frequencies,973,,,,,,
+Frequencies,974,,,,,,
+Frequencies,975,,,,,,
+Frequencies,976,,,,,,
+Frequencies,977,,,,,,
+Frequencies,978,,,,,,
+Frequencies,979,,,,,,
+Frequencies,980,,,,,,
+Frequencies,981,,,,,,
+Frequencies,982,,,,,,
+Frequencies,983,,,,,,
+Frequencies,984,,,,,,
+Frequencies,985,,,,,,
+Frequencies,986,,,,,,
+Frequencies,987,,,,,,
+Frequencies,988,,,,,,
+Frequencies,989,,,,,,
+Frequencies,990,,,,,,
+Frequencies,991,,,,,,
+Frequencies,992,,,,,,
+Frequencies,993,,,,,,
+Frequencies,994,,,,,,
+Frequencies,995,,,,,,
+Frequencies,996,,,,,,
+Frequencies,997,,,,,,
+Frequencies,998,,,,,,
+Frequencies,999,,,,,,
+Frequencies,1000,,,,,,
+Frequencies,1001,,,,,,
+Frequencies,1002,,,,,,
+Frequencies,1003,,,,,,
+Frequencies,1004,,,,,,
+Frequencies,1005,,,,,,
+Frequencies,1006,,,,,,
+Frequencies,1007,,,,,,
+Frequencies,1008,,,,,,
+Frequencies,1009,,,,,,
+Frequencies,1010,,,,,,
+Frequencies,1011,,,,,,
+Frequencies,1012,,,,,,
+Frequencies,1013,,,,,,
+Frequencies,1014,,,,,,
+Frequencies,1015,,,,,,
+Frequencies,1016,,,,,,
+Frequencies,1017,,,,,,
+Frequencies,1018,,,,,,
+Frequencies,1019,,,,,,
+Frequencies,1020,,,,,,
+Frequencies,1021,,,,,,
+Frequencies,1022,,,,,,
+Frequencies,1023,,,,,,
+Frequencies,1024,,,,,,
+Frequencies,1025,,,,,,
+Frequencies,1026,,,,,,
+Frequencies,1027,,,,,,
+Frequencies,1028,,,,,,
+Frequencies,1029,,,,,,
+Frequencies,1030,,,,,,
+Frequencies,1031,,,,,,
+Frequencies,1032,,,,,,
+Frequencies,1033,,,,,,
+Frequencies,1034,,,,,,
+Frequencies,1035,,,,,,
+Frequencies,1036,,,,,,
+Frequencies,1037,,,,,,
+Frequencies,1038,,,,,,
+Frequencies,1039,,,,,,
+Frequencies,1040,,,,,,
+Frequencies,1041,,,,,,
+Frequencies,1042,,,,,,
+Frequencies,1043,,,,,,
+Frequencies,1044,,,,,,
+Frequencies,1045,,,,,,
+Frequencies,1046,,,,,,
+Frequencies,1047,,,,,,
+Frequencies,1048,,,,,,
+Frequencies,1049,,,,,,
+Frequencies,1050,,,,,,
+Frequencies,1051,,,,,,
+Frequencies,1052,,,,,,
+Frequencies,1053,,,,,,
+Frequencies,1054,,,,,,
+Frequencies,1055,,,,,,
+Frequencies,1056,,,,,,
+Frequencies,1057,,,,,,
+Frequencies,1058,,,,,,
+Frequencies,1059,,,,,,
+Frequencies,1060,,,,,,
+Frequencies,1061,,,,,,
+Frequencies,1062,,,,,,
+Frequencies,1063,,,,,,
+Frequencies,1064,,,,,,
+Frequencies,1065,,,,,,
+Frequencies,1066,,,,,,
+Frequencies,1067,,,,,,
+Frequencies,1068,,,,,,
+Frequencies,1069,,,,,,
+Frequencies,1070,,,,,,
+Frequencies,1071,,,,,,
+Frequencies,1072,,,,,,
+Frequencies,1073,,,,,,
+Frequencies,1074,,,,,,
+Frequencies,1075,,,,,,
+Frequencies,1076,,,,,,
+Frequencies,1077,,,,,,
+Frequencies,1078,,,,,,
+Frequencies,1079,,,,,,
+Frequencies,1080,,,,,,
+Frequencies,1081,,,,,,
+Frequencies,1082,,,,,,
+Frequencies,1083,,,,,,
+Frequencies,1084,,,,,,
+Frequencies,1085,,,,,,
+Frequencies,1086,,,,,,
+Frequencies,1087,,,,,,
+Frequencies,1088,,,,,,
+Frequencies,1089,,,,,,
+Frequencies,1090,,,,,,
+Frequencies,1091,,,,,,
+Frequencies,1092,,,,,,
+Frequencies,1093,,,,,,
+Frequencies,1094,,,,,,
+Frequencies,1095,,,,,,
+Frequencies,1096,,,,,,
+Frequencies,1097,,,,,,
+Frequencies,1098,,,,,,
+Frequencies,1099,,,,,,
+Frequencies,1100,,,,,,
+Frequencies,1101,,,,,,
+Frequencies,1102,,,,,,
+Frequencies,1103,,,,,,
+Frequencies,1104,,,,,,
+Frequencies,1105,,,,,,
+Frequencies,1106,,,,,,
+Frequencies,1107,,,,,,
+Frequencies,1108,,,,,,
+Frequencies,1109,,,,,,
+Frequencies,1110,,,,,,
+Frequencies,1111,,,,,,
+Frequencies,1112,,,,,,
+Frequencies,1113,,,,,,
+Frequencies,1114,,,,,,
+Frequencies,1115,,,,,,
+Frequencies,1116,,,,,,
+Frequencies,1117,,,,,,
+Frequencies,1118,,,,,,
+Frequencies,1119,,,,,,
+Frequencies,1120,,,,,,
+Frequencies,1121,,,,,,
+Frequencies,1122,,,,,,
+Frequencies,1123,,,,,,
+Frequencies,1124,,,,,,
+Frequencies,1125,,,,,,
+Frequencies,1126,,,,,,
+Frequencies,1127,,,,,,
+Frequencies,1128,,,,,,
+Frequencies,1129,,,,,,
+Frequencies,1130,,,,,,
+Frequencies,1131,,,,,,
+Frequencies,1132,,,,,,
+Frequencies,1133,,,,,,
+Frequencies,1134,,,,,,
+Frequencies,1135,,,,,,
+Frequencies,1136,,,,,,
+Frequencies,1137,,,,,,
+Frequencies,1138,,,,,,
+Frequencies,1139,,,,,,
+Frequencies,1140,,,,,,
+Frequencies,1141,,,,,,
+Frequencies,1142,,,,,,
+Frequencies,1143,,,,,,
+Frequencies,1144,,,,,,
+Frequencies,1145,,,,,,
+Frequencies,1146,,,,,,
+Frequencies,1147,,,,,,
+Frequencies,1148,,,,,,
+Frequencies,1149,,,,,,
+Frequencies,1150,,,,,,
+Frequencies,1151,,,,,,
+Frequencies,1152,,,,,,
+Frequencies,1153,,,,,,
+Frequencies,1154,,,,,,
+Frequencies,1155,,,,,,
+Frequencies,1156,,,,,,
+Frequencies,1157,,,,,,
+Frequencies,1158,,,,,,
+Frequencies,1159,,,,,,
+Frequencies,1160,,,,,,
+Frequencies,1161,,,,,,
+Frequencies,1162,,,,,,
+Frequencies,1163,,,,,,
+Frequencies,1164,,,,,,
+Frequencies,1165,,,,,,
+Frequencies,1166,,,,,,
+Frequencies,1167,,,,,,
+Frequencies,1168,,,,,,
+Frequencies,1169,,,,,,
+Frequencies,1170,,,,,,
+Frequencies,1171,,,,,,
+Frequencies,1172,,,,,,
+Frequencies,1173,,,,,,
+Frequencies,1174,,,,,,
+Frequencies,1175,,,,,,
+Frequencies,1176,,,,,,
+Frequencies,1177,,,,,,
+Frequencies,1178,,,,,,
+Frequencies,1179,,,,,,
+Frequencies,1180,,,,,,
+Frequencies,1181,,,,,,
+Frequencies,1182,,,,,,
+Frequencies,1183,,,,,,
+Frequencies,1184,,,,,,
+Frequencies,1185,,,,,,
+Frequencies,1186,,,,,,
+Frequencies,1187,,,,,,
+Frequencies,1188,,,,,,
+Frequencies,1189,,,,,,
+Frequencies,1190,,,,,,
+Frequencies,1191,,,,,,
+Frequencies,1192,,,,,,
+Frequencies,1193,,,,,,
+Frequencies,1194,,,,,,
+Frequencies,1195,,,,,,
+Frequencies,1196,,,,,,
+Frequencies,1197,,,,,,
+Frequencies,1198,,,,,,
+Frequencies,1199,,,,,,
+Frequencies,1200,,,,,,
+Frequencies,1201,,,,,,
+Frequencies,1202,,,,,,
+Frequencies,1203,,,,,,
+Frequencies,1204,,,,,,
+Frequencies,1205,,,,,,
+Frequencies,1206,,,,,,
+Frequencies,1207,,,,,,
+Frequencies,1208,,,,,,
+Frequencies,1209,,,,,,
+Frequencies,1210,,,,,,
+Frequencies,1211,,,,,,
+Frequencies,1212,,,,,,
+Frequencies,1213,,,,,,
+Frequencies,1214,,,,,,
+Frequencies,1215,,,,,,
+Frequencies,1216,,,,,,
+Frequencies,1217,,,,,,
+Frequencies,1218,,,,,,
+Frequencies,1219,,,,,,
+Frequencies,1220,,,,,,
+Frequencies,1221,,,,,,
+Frequencies,1222,,,,,,
+Frequencies,1223,,,,,,
+Frequencies,1224,,,,,,
+Frequencies,1225,,,,,,
+Frequencies,1226,,,,,,
+Frequencies,1227,,,,,,
+Frequencies,1228,,,,,,
+Frequencies,1229,,,,,,
+Frequencies,1230,,,,,,
+Frequencies,1231,,,,,,
+Frequencies,1232,,,,,,
+Frequencies,1233,,,,,,
+Frequencies,1234,,,,,,
+Frequencies,1235,,,,,,
+Frequencies,1236,,,,,,
+Frequencies,1237,,,,,,
+Frequencies,1238,,,,,,
+Frequencies,1239,,,,,,
+Frequencies,1240,,,,,,
+Frequencies,1241,,,,,,
+Frequencies,1242,,,,,,
+Frequencies,1243,,,,,,
+Frequencies,1244,,,,,,
+Frequencies,1245,,,,,,
+Frequencies,1246,,,,,,
+Frequencies,1247,,,,,,
+Frequencies,1248,,,,,,
+Frequencies,1249,,,,,,
+Frequencies,1250,,,,,,
+Frequencies,1251,,,,,,
+Frequencies,1252,,,,,,
+Frequencies,1253,,,,,,
+Frequencies,1254,,,,,,
+Frequencies,1255,,,,,,
+Frequencies,1256,,,,,,
+Frequencies,1257,,,,,,
+Frequencies,1258,,,,,,
+Frequencies,1259,,,,,,
+Frequencies,1260,,,,,,
+Frequencies,1261,,,,,,
+Frequencies,1262,,,,,,
+Frequencies,1263,,,,,,
+Frequencies,1264,,,,,,
+Frequencies,1265,,,,,,
+Frequencies,1266,,,,,,
+Frequencies,1267,,,,,,
+Frequencies,1268,,,,,,
+Frequencies,1269,,,,,,
+Frequencies,1270,,,,,,
+Frequencies,1271,,,,,,
+Frequencies,1272,,,,,,
+Frequencies,1273,,,,,,
+Frequencies,1274,,,,,,
+Frequencies,1275,,,,,,
+Frequencies,1276,,,,,,
+Frequencies,1277,,,,,,
+Frequencies,1278,,,,,,
+Frequencies,1279,,,,,,
+Frequencies,1280,,,,,,
+Frequencies,1281,,,,,,
+Frequencies,1282,,,,,,
+Frequencies,1283,,,,,,
+Frequencies,1284,,,,,,
+Frequencies,1285,,,,,,
+Frequencies,1286,,,,,,
+Frequencies,1287,,,,,,
+Frequencies,1288,,,,,,
+Frequencies,1289,,,,,,
+Frequencies,1290,,,,,,
+Frequencies,1291,,,,,,
+Frequencies,1292,,,,,,
+Frequencies,1293,,,,,,
+Frequencies,1294,,,,,,
+Frequencies,1295,,,,,,
+Frequencies,1296,,,,,,
+Frequencies,1297,,,,,,
+Frequencies,1298,,,,,,
+Frequencies,1299,,,,,,
+Frequencies,1300,,,,,,
+Frequencies,1301,,,,,,
+Frequencies,1302,,,,,,
+Frequencies,1303,,,,,,
+Frequencies,1304,,,,,,
+Frequencies,1305,,,,,,
+Frequencies,1306,,,,,,
+Frequencies,1307,,,,,,
+Frequencies,1308,,,,,,
+Frequencies,1309,,,,,,
+Frequencies,1310,,,,,,
+Frequencies,1311,,,,,,
+Frequencies,1312,,,,,,
+Frequencies,1313,,,,,,
+Frequencies,1314,,,,,,
+Frequencies,1315,,,,,,
+Frequencies,1316,,,,,,
+Frequencies,1317,,,,,,
+Frequencies,1318,,,,,,
+Frequencies,1319,,,,,,
+Frequencies,1320,,,,,,
+Frequencies,1321,,,,,,
+Frequencies,1322,,,,,,
+Frequencies,1323,,,,,,
+Frequencies,1324,,,,,,
+Frequencies,1325,,,,,,
+Frequencies,1326,,,,,,
+Frequencies,1327,,,,,,
+Frequencies,1328,,,,,,
+Frequencies,1329,,,,,,
+Frequencies,1330,,,,,,
+Frequencies,1331,,,,,,
+Frequencies,1332,,,,,,
+Frequencies,1333,,,,,,
+Frequencies,1334,,,,,,
+Frequencies,1335,,,,,,
+Frequencies,1336,,,,,,
+Frequencies,1337,,,,,,
+Frequencies,1338,,,,,,
+Frequencies,1339,,,,,,
+Frequencies,1340,,,,,,
+Frequencies,1341,,,,,,
+Frequencies,1342,,,,,,
+Frequencies,1343,,,,,,
+Frequencies,1344,,,,,,
+Frequencies,1345,,,,,,
+Frequencies,1346,,,,,,
+Frequencies,1347,,,,,,
+Frequencies,1348,,,,,,
+Frequencies,1349,,,,,,
+Frequencies,1350,,,,,,
+Frequencies,1351,,,,,,
+Frequencies,1352,,,,,,
+Frequencies,1353,,,,,,
+Frequencies,1354,,,,,,
+Frequencies,1355,,,,,,
+Frequencies,1356,,,,,,
+Frequencies,1357,,,,,,
+Frequencies,1358,,,,,,
+Frequencies,1359,,,,,,
+Frequencies,1360,,,,,,
+Frequencies,1361,,,,,,
+Frequencies,1362,,,,,,
+Frequencies,1363,,,,,,
+Frequencies,1364,,,,,,
+Frequencies,1365,,,,,,
+Frequencies,1366,,,,,,
+Frequencies,1367,,,,,,
+Frequencies,1368,,,,,,
+Frequencies,1369,,,,,,
+Frequencies,1370,,,,,,
+Frequencies,1371,,,,,,
+Frequencies,1372,,,,,,
+Frequencies,1373,,,,,,
+Frequencies,1374,,,,,,
+Frequencies,1375,,,,,,
+Frequencies,1376,,,,,,
+Frequencies,1377,,,,,,
+Frequencies,1378,,,,,,
+Frequencies,1379,,,,,,
+Frequencies,1380,,,,,,
+Frequencies,1381,,,,,,
+Frequencies,1382,,,,,,
+Frequencies,1383,,,,,,
+Frequencies,1384,,,,,,
+Frequencies,1385,,,,,,
+Frequencies,1386,,,,,,
+Frequencies,1387,,,,,,
+Frequencies,1388,,,,,,
+Frequencies,1389,,,,,,
+Frequencies,1390,,,,,,
+Frequencies,1391,,,,,,
+Frequencies,1392,,,,,,
+Frequencies,1393,,,,,,
+Frequencies,1394,,,,,,
+Frequencies,1395,,,,,,
+Frequencies,1396,,,,,,
+Frequencies,1397,,,,,,
+Frequencies,1398,,,,,,
+Frequencies,1399,,,,,,
+Frequencies,1400,,,,,,
+Frequencies,1401,,,,,,
+Frequencies,1402,,,,,,
+Frequencies,1403,,,,,,
+Frequencies,1404,,,,,,
+Frequencies,1405,,,,,,
+Frequencies,1406,,,,,,
+Frequencies,1407,,,,,,
+Frequencies,1408,,,,,,
+Frequencies,1409,,,,,,
+Frequencies,1410,,,,,,
+Frequencies,1411,,,,,,
+Frequencies,1412,,,,,,
+Frequencies,1413,,,,,,
+Frequencies,1414,,,,,,
+Frequencies,1415,,,,,,
+Frequencies,1416,,,,,,
+Frequencies,1417,,,,,,
+Frequencies,1418,,,,,,
+Frequencies,1419,,,,,,
+Frequencies,1420,,,,,,
+Frequencies,1421,,,,,,
+Frequencies,1422,,,,,,
+Frequencies,1423,,,,,,
+Frequencies,1424,,,,,,
+Frequencies,1425,,,,,,
+Frequencies,1426,,,,,,
+Frequencies,1427,,,,,,
+Frequencies,1428,,,,,,
+Frequencies,1429,,,,,,
+Frequencies,1430,,,,,,
+Frequencies,1431,,,,,,
+Frequencies,1432,,,,,,
+Frequencies,1433,,,,,,
+Frequencies,1434,,,,,,
+Frequencies,1435,,,,,,
+Frequencies,1436,,,,,,
+Frequencies,1437,,,,,,
+Frequencies,1438,,,,,,
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,60606,F2A01,1598,704889816226,441107519.54067582,0,59747629000,Long-term investments
+Statistics,2,65121,F2A19,1598,277795817331,173839685.43867335,0,9391124000,"Property, Plant, and Equipment, net of accumulated depreciation"
+Statistics,3,65126,F2A20,1598,1971767632,1233897.1414267835,0,316527039,"Intangible Assets, net of accumulated amortization"
+Statistics,4,60611,F2A02,1598,1143156124507,715366786.29974973,37105,72781329000,Total assets
+Statistics,5,60616,F2A03,1598,284227355563,177864427.76157698,0,11707217000,Total liabilities
+Statistics,6,65091,F2A03A,1598,153540839398,96083128.534418017,0,6244740000,"Debt related to Property, Plant, and Equipment"
+Statistics,7,60621,F2A04,1598,394802923086,247060652.74468085,-103629000,27378445000,Total unrestricted net assets
+Statistics,8,60626,F2A05,1598,464125845858,290441705.79349184,0,45668867000,Total restricted net assets
+Statistics,9,64825,F2A05A,1598,186049263518,116426322.6020025,0,11523698000,Permanently restricted net assets included in total restricted net assets
+Statistics,10,65096,F2A05B,1598,278076582340,174015383.19148937,-1874555,34145169000,Temporarily restricted net assets
+Statistics,11,60631,F2A06,1598,858928768944,537502358.53817272,-57934626,61246694000,Total net assets
+Statistics,12,60636,F2A11,1598,26798843484,16770239.97747184,0,1024986000,Land  improvements - End of year
+Statistics,13,60641,F2A12,1598,372593109798,233162146.30663329,0,13255569000,Buildings - End of year
+Statistics,14,60646,F2A13,1598,84292992624,52749056.710888609,0,3641617000,"Equipment, including art and library collections - End of year"
+Statistics,15,65101,F2A15,1598,21242126999,13292945.556320401,0,1276879000,Construction in Progress
+Statistics,16,65106,F2A16,1598,4014176535,2512000.3347934918,0,1207284000,"Other plant, property and equipment"
+Statistics,17,65111,F2A17,1598,508941249440,318486388.88610762,0,16667222000,"Total Plant, Property, and Equipment"
+Statistics,18,65116,F2A18,1598,231146018261,144647070.25093868,0,7276098000,Accumulated depreciation
+Statistics,19,60656,F2B01,1598,236573159375,148043278.70775971,-310343929,13840727000,Total revenues and investment return
+Statistics,20,60661,F2B02,1598,262767607889,164435299.05444306,221530,12768635000,Total expenses
+Statistics,21,60666,F2B03,1598,5948527291,3722482.6602002503,-640202000,1813795262,Other specific changes in net assets
+Statistics,22,60671,F2B04,1598,-20245921223,-12669537.686483104,-3215838000,1926117000,Total change in net assets
+Statistics,23,60676,F2B05,1598,879413472553,550321321.99812269,-29215804,63375074000,"Net assets, beginning of the year"
+Statistics,24,60681,F2B06,1598,-238782386,-149425.77346683355,-63217292,69292806,Adjustments to beginning of year net assets
+Statistics,25,60686,F2B07,1598,858928768944,537502358.53817272,-57934626,61246694000,"Net assets, end of the year"
+Statistics,26,60691,F2C01,1780,4757348295,2672667.5814606743,0,195906669,Pell grants
+Statistics,27,60696,F2C02,1780,3815911969,2143770.7691011238,0,87046255,Other federal grants
+Statistics,28,60701,F2C03,1780,2011648371,1130139.5342696628,0,23812975,State grants
+Statistics,29,60706,F2C04,1780,59173945,33243.789325842699,0,11861197,Local grants
+Statistics,30,60711,F2C05,1780,7571591042,4253702.8325842693,0,398622000,Institutional grants (funded)
+Statistics,31,60716,F2C06,1780,41647295783,23397357.181460675,0,774377000,Institutional grants (unfunded)
+Statistics,32,60721,F2C07,1780,59862969405,33630881.688202247,0,954675833,Total student grants
+Statistics,33,60726,F2C08,1780,47937904851,26931407.21966292,0,852272000,Allowances applied to tuition and fees
+Statistics,34,60731,F2C09,1780,918167601,515824.49494382023,0,78073000,Allowances applied to auxiliary enterprise revenues
+Statistics,35,60733,F2C10,1780,48856076007,27447233.711797751,0,922973000,Total discounts and allowances
+Statistics,36,61283,F2C12,1780,1188286583,667576.73202247196,0,40465860,"Total discounts and
+ allowances from Pell grants"
+Statistics,37,61285,F2C121,1780,1173882193,659484.37808988767,0,39353354,"Discounts and
+ allowances from Pell grants applied to tuition and fees"
+Statistics,38,61287,F2C122,1780,14837668,8335.7685393258434,0,6541000,Discounts and allowances from Pell grants applied to auxiliary enterprises
+Statistics,39,61289,F2C13,1780,1477989435,830331.14325842692,0,93169339,Total discounts and allowances from other federal grants
+Statistics,40,61291,F2C131,1780,1452607840,816071.82022471912,0,93169339,Discounts and allowances from other federal grants applied to tuition and fees
+Statistics,41,61293,F2C132,1780,25410810,14275.73595505618,0,8582801,"Discounts and allowances from other federal grants applied to auxiliary
+ enterprises"
+Statistics,42,61295,F2C14,1780,768641576,431821.11011235957,0,21797000,"Total discounts and
+ allowances from state government grants"
+Statistics,43,61297,F2C141,1780,766109642,430398.67528089887,0,21797000,"Discounts and
+ allowances from state government grants applied to tuition and fees"
+Statistics,44,61299,F2C142,1780,2725458,1531.1561797752809,0,915976,Discounts and allowances from state government grants applied to auxiliary enterprises
+Statistics,45,61301,F2C15,1780,17496170,9829.3089887640454,0,4514045,Discounts and allowances from local government grants
+Statistics,46,61303,F2C151,1780,17140722,9629.6191011235951,0,4514045,Discounts and allowances from local government grants applied to tuition and fees
+Statistics,47,61305,F2C152,1780,355385,199.65449438202248,0,311185,Discounts and allowances from local government grants applied to auxiliary enterprises
+Statistics,48,61307,F2C16,1780,8051388153,4523251.7713483144,0,472224000,Total discounts and allowances from endowments and gifts
+Statistics,49,61309,F2C161,1780,7885482155,4430046.1544943824,0,472224000,Discounts and allowances from endowments and gifts applied to tuition and fees
+Statistics,50,61311,F2C162,1780,165953214,93232.14269662922,0,42866000,Discounts and allowances from endowments and gifts applied to auxiliary enterprises
+Statistics,51,61313,F2C17,1780,37352274090,20984423.646067414,0,803582344,Total discounts and allowances from other institutional sources
+Statistics,52,61315,F2C171,1780,36642682299,20585776.572471909,0,743198763,Discounts and allowances from other institutional sources applied to tuition and fees
+Statistics,53,61317,F2C172,1780,708885066,398250.03707865166,0,60383581,Discounts and allowances from other institutional sources applied to auxiliary enterprises
+Statistics,54,60736,F2D01,1782,86038661801,48282077.329405166,0,2452219000,Tuition and fees - Total
+Statistics,55,65131,F2D012,1782,86038651951,48282071.801907972,0,2452219000,Tuition and fees - Unrestricted
+Statistics,56,65136,F2D013,1782,9850,5.5274971941638604,0,9850,Tuition and fees - Temporarily restricted
+Statistics,57,65141,F2D014,1782,0,0,0,0,Tuition and fees - Permanently restricted
+Statistics,58,60741,F2D02,1782,659836466,370278.60044893378,0,244018000,Federal appropriations - Total
+Statistics,59,65146,F2D022,1782,643438391,361076.53815937147,0,240613000,Federal appropriations - Unrestricted
+Statistics,60,65151,F2D023,1782,16398075,9202.0622895622892,0,7249990,Federal appropriations - Temporarily restricted
+Statistics,61,65156,F2D024,1782,0,0,0,0,Federal appropriations - Permanently restricted
+Statistics,62,60746,F2D03,1782,1515944007,850698.09595959599,0,373298800,State appropriations - Total
+Statistics,63,65161,F2D032,1782,1447055798,812040.29068462399,0,373298800,State appropriations - Unrestricted
+Statistics,64,65166,F2D033,1782,68888209,38657.805274971943,0,50000000,State appropriations - Temporarily restricted
+Statistics,65,65171,F2D034,1782,0,0,0,0,State appropriations - Permanently restricted
+Statistics,66,60751,F2D04,1782,5427923,3045.972502805836,0,2000000,Local appropriations - Total
+Statistics,67,65176,F2D042,1782,5074411,2847.5931537598203,0,2000000,Local appropriations - Unrestricted
+Statistics,68,65181,F2D043,1782,353512,198.3793490460157,0,353512,Local appropriations -  Temporarily restricted
+Statistics,69,65186,F2D044,1782,0,0,0,0,Local appropriations - Permanently restricted
+Statistics,70,60756,F2D05,1782,32073042555,17998340.378787879,0,3619404000,Federal grants and contracts - Total
+Statistics,71,65191,F2D052,1782,30704479457,17230347.618967451,0,3619404000,Federal grants and contracts - Unrestricted
+Statistics,72,65196,F2D053,1782,1335099481,749214.0746352413,0,53861383,Federal grants and contracts  - Temporarily restricted
+Statistics,73,65201,F2D054,1782,33463617,18778.685185185186,0,19678844,Federal grants and contracts - Pemanently restricted
+Statistics,74,60761,F2D06,1782,1497704101,840462.45847362513,0,114728000,State grants and contracts - Total
+Statistics,75,65206,F2D062,1782,1322006059,741866.47530864202,0,114728000,State grants and contracts - Unrestricted
+Statistics,76,65211,F2D063,1782,173533176,97381.131313131307,0,28406272,State grants and contracts - Temporarily restricted
+Statistics,77,65216,F2D064,1782,2164866,1214.851851851852,0,1000000,State grants and contracts - Permanently restricted
+Statistics,78,60766,F2D07,1782,592846944,332686.27609427611,0,211361860,Local grants and contracts - Total
+Statistics,79,65221,F2D072,1782,582467202,326861.50505050505,0,211361860,Local grants and contracts - Unrestricted
+Statistics,80,65226,F2D073,1782,10379742,5824.7710437710439,0,3118000,Local grants and contracts - Temporarily restricted
+Statistics,81,65231,F2D074,1782,0,0,0,0,Local grants and contracts  - Permanently restricted
+Statistics,82,60771,F2D08,1782,36044964895,20227253.027497195,-331464,2102773000,"Private gifts, grants, and contracts - Total"
+Statistics,83,65236,F2D082,1782,14951710264,8390409.8002244662,-133060,1070639250,"Private gifts, grants, and contracts - Unrestricted"
+Statistics,84,65251,F2D083,1782,12820762198,7194591.5813692482,-23465000,1001219000,"Private gifts, grants and contracts - Temporarily restricted"
+Statistics,85,65266,F2D084,1782,8272492433,4642251.6459034793,-3031000,621517000,"Private gifts, grants, and contracts - Permanently restricted"
+Statistics,86,65281,F2D08A,1782,27346966184,15346221.203142537,-331464,1749863000,Private gifts - Total
+Statistics,87,65241,F2D082A,1782,7581679124,4254589.8563411897,-3022709,421437000,Private gifts - Unrestricted
+Statistics,88,65256,F2D083A,1782,11572370835,6494035.2609427609,-23465000,1001219000,Private gifts - Temporarily restricted
+Statistics,89,65271,F2D084A,1782,8192916226,4597596.0864197528,-3031000,621517000,Private gifts - Permanentlly restricted
+Statistics,90,65286,F2D08B,1782,8697998710,4881031.8237934904,0,1067035100,Private grants and contracts - Total
+Statistics,91,65246,F2D082B,1782,7370031140,4135819.943883277,-6779,1067035100,Private grants and contracts - Unrestricted
+Statistics,92,65261,F2D083B,1782,1248391363,700556.32042648713,0,251654401,Private grants and contracts - Temporarily restricted
+Statistics,93,65276,F2D084B,1782,79576207,44655.559483726152,0,33651973,"Private grants, and contracts - Permanently restricted"
+Statistics,94,60776,F2D09,1782,2918108140,1637546.6554433221,0,795337701,Contributions from affiliated entities - Total
+Statistics,95,65291,F2D092,1782,2770549062,1554741.3367003368,0,795337701,Contributions from affiliated entities - Unrestricted
+Statistics,96,65296,F2D093,1782,134082300,75242.592592592599,0,107897000,Contributions from affiliated entities - Temporarily restricted
+Statistics,97,65301,F2D094,1782,13476778,7562.7261503928166,0,5000000,Contributions from affiliated entities - Permanently restricted
+Statistics,98,60781,F2D10,1782,-27412217135,-15382837.898428733,-2056207000,917467652,Investment return - Total
+Statistics,99,65306,F2D102,1782,-2092395360,-1174183.7037037036,-658361000,1292420000,Investment return - Unrestricted
+Statistics,100,65311,F2D103,1782,-23463134902,-13166742.369248036,-2122692000,196728819,Investment return - Temporarily restricted
+Statistics,101,65316,F2D104,1782,-1856686873,-1041911.8254769922,-469376464,81140000,Investment return - Permanently restricted
+Statistics,102,60786,F2D11,1782,11698929967,6565056.0982042644,0,2537903000,Sales and services of educational activities - Total
+Statistics,103,65321,F2D112,1782,11698929967,6565056.0982042644,0,2537903000,Sales and services of educational activities - Unrestricted
+Statistics,104,60791,F2D12,1670,18946551775,11345240.583832335,0,465197000,Sales and services of auxiliary enterprises - Total
+Statistics,105,65326,F2D122,1670,18946551775,11345240.583832335,0,465197000,Sales and services of auxiliary enterprises - Unrestricted
+Statistics,106,60796,F2D13,1587,45383510169,28597044.844990548,0,8094673000,Hospital revenue - Total
+Statistics,107,65331,F2D132,1587,45383510169,28597044.844990548,0,8094673000,Hospital revenue - Unrestricted
+Statistics,108,60801,F2D14,1587,7923898301,4993004.6005040957,0,2450465000,Independent operations revenue - Total
+Statistics,109,65336,F2D142,1587,7906422499,4981992.7529930687,0,2450465000,Independent operations revenue - Unrestricted
+Statistics,110,65341,F2D143,1587,15449298,9734.9073724007558,0,4613000,Independent operations revenue - Temporarily restricted
+Statistics,111,65346,F2D144,1587,2026504,1276.9401386263389,0,1981715,Independent operations revenue - Permanently restricted
+Statistics,112,60806,F2D15,1782,19766530781,11092329.282267116,-1116000,4348758502,Other revenue - Total
+Statistics,113,65351,F2D152,1782,18108075987,10161658.803030303,-1619890000,4345799502,Other revenue - Unrestricted
+Statistics,114,65356,F2D153,1782,1411914958,792320.40291806962,-254957000,2080553000,Other revenue - Temporarily restricted
+Statistics,115,65361,F2D154,1782,246539836,138350.076318743,-218678000,254958000,Other revenue - Permanently restricted
+Statistics,116,60811,F2D16,1782,237653740690,133363490.84736252,-310343929,13840727000,Total revenues and investment return - Total
+Statistics,117,65366,F2D162,1782,238416527632,133791541.88103254,-188959000,13254713000,Total revenues and investment return - Unrestricted
+Statistics,118,65371,F2D163,1782,-7476264103,-4195434.4012345681,-1181972000,649869409,Total revenues and investment return - Temporarily restricted
+Statistics,119,65376,F2D164,1782,6713477161,3767383.3675645343,-234340577,511113000,Total revenues and investment return - Permanently restricted
+Statistics,120,65380,F2D17,1782,0,0,0,0,Net assets released from restriction - Total
+Statistics,121,65381,F2D172,1782,15399622051,8641763.2160493825,-191169000,2275354000,Net assets released from restriction - Unrestricted
+Statistics,122,65386,F2D173,1782,-15243923592,-8554390.3434343431,-2275354000,191169000,Net assets released from restriction - Temporarily restricted
+Statistics,123,65387,F2D174,1782,-155698459,-87372.872615039276,-100079000,14183810,Net assets released from restriction - Permanently restricted
+Statistics,124,65390,F2D18,1782,237653740690,133363490.84736252,-310343929,13840727000,"Net total revenues, after assets released from restriction - Total"
+Statistics,125,65391,F2D182,1782,253816149683,142433305.09708193,-155032000,13818895000,"Net total revenues, after assets released from restriction - Unrestricted"
+Statistics,126,65396,F2D183,1782,-22720187695,-12749824.744668912,-2305644000,185915094,"Net total revenues, after assets released from restriction - Temporarily restricted"
+Statistics,127,65401,F2D184,1782,6557778702,3680010.494949495,-229809797,511113000,"Net total revenues, after assets released from restriction - Permanently restricted"
+Statistics,128,60816,F2E011,1782,71725483216,40249990.581369251,0,3192301000,Instruction-Total amount
+Statistics,129,60821,F2E012,1782,40407369577,22675291.569584735,0,1761101000,Instruction-Salaries and wages
+Statistics,130,60851,F2E021,1782,29276031881,16428749.652637485,0,3700838000,Research-Total amount
+Statistics,131,60856,F2E022,1782,12283551947,6893126.7940516276,0,1821261000,Research-Salaries and wages
+Statistics,132,60886,F2E031,1782,3788244785,2125838.8243546579,0,986364117,Public service-Total amount
+Statistics,133,60891,F2E032,1782,1829121727,1026443.1689113355,0,799900744,Public service-Salaries and wages
+Statistics,134,60921,F2E041,1782,22364693384,12550332.987654321,0,1741815926,Academic support-Total amount
+Statistics,135,60926,F2E042,1782,10833899231,6079629.1980920313,0,926453653,Academic support-Salaries and wages
+Statistics,136,60956,F2E051,1782,21921519999,12301638.607744107,0,477014437,Student service-Total amount
+Statistics,137,60961,F2E052,1782,8228845371,4617758.3451178456,0,125525288,Student service-Salaries and wages
+Statistics,138,60991,F2E061,1782,31985933717,17949457.753647588,0,973760000,Institutional support-Total amount
+Statistics,139,60996,F2E062,1782,13017326915,7304897.2586980918,0,396817000,Institutional support-Salaries and wages
+Statistics,140,61026,F2E071,1670,19230146208,11515057.609580839,0,611857000,Auxiliary enterprises-Total amount
+Statistics,141,61031,F2E072,1670,3064714713,1835158.5107784432,0,204978000,Auxiliary enterprises-Salaries and wages
+Statistics,142,61061,F2E081,1782,1629036708,914162.01346801349,0,171312000,Net grant aid to students-Total amount
+Statistics,143,61096,F2E091,1587,45783789303,28849268.621928167,0,8276192000,Hospital services-Total amount
+Statistics,144,61101,F2E092,1587,20945314659,13198055.8657845,0,3283696000,Hospital services-Salaries and wages
+Statistics,145,61131,F2E101,1587,8612992301,5427216.3207309386,0,2450464960,Independent operations-Total Amount
+Statistics,146,61136,F2E102,1587,2062524488,1299637.3585381221,0,895295672,Independent operations-Salaries and wages
+Statistics,147,61201,F2E121,1782,7220777285,4052063.5718294051,-1446548,3303311000,Other expenses-Total amount
+Statistics,148,61206,F2E122,1782,3726072655,2090949.8625140293,0,2391648000,Other expenses-Salaries and wages
+Statistics,149,61236,F2E131,1782,263538648788,147889252.96745229,6432,12768635000,Total expenses-Total amount
+Statistics,150,61241,F2E132,1782,116398741284,65319158.969696969,0,5647912000,Total expenses-Salaries and wages
+Statistics,151,61246,F2E133,1782,30991788436,17391576.00224467,0,1456173000,Total expenses-Benefits
+Statistics,152,61251,F2E134,1782,15776516619,8853264.0959595963,0,519798000,Total expenses-Operation and maintenance of plant
+Statistics,153,61256,F2E135,1782,15982332892,8968761.4433221091,0,623457000,Total expenses-Depreciation
+Statistics,154,61261,F2E136,1782,5476018305,3072962.0117845116,0,241172000,Total expenses-Interest
+Statistics,155,61266,F2E137,1782,78913256422,44283533.345679015,0,4730386000,Total expenses-All other natural classification
+Statistics,156,61271,F2H01,1332,646461607414,485331537.0975976,146,53165753000,Value of endowment assets at the beginning of the fiscal year
+Statistics,157,61276,F2H02,1332,611286825008,458924042.7987988,1,50877680000,Value of endowment assets at the end of the fiscal year
+Statistics,158,61319,F2H03,1332,-35173492515,-26406525.912162162,-2793230000,954394000,Change in value of endowment net assets
+Statistics,159,61321,F2H03A,1332,12503466655,9386986.9782282282,0,751745000,New gifts and additions
+Statistics,160,61323,F2H03B,1332,-27098155516,-20343960.597597599,-2223139000,504505000,Endowment net investment return
+Statistics,161,61325,F2H03C,1332,-24022116444,-18034621.954954956,-2118855000,16002256,Spending distribution for current use
+Statistics,162,61327,F2H03D,1332,3443312790,2585069.6621621624,-581083000,1183372000,Other changes in value of endowment net assets
+Statistics,163,61329,F2I01,1598,3132993201,1960571.4649561953,-1430139000,1904285000,Change in unrestricted net assets
+Statistics,164,61331,F2I02,1598,269065515020,168376417.40926158,-7295498,14426955000,Total unrestricted operating revenues
+Statistics,165,61333,F2I03,1598,-20245921223,-12669537.686483104,-3215838000,1926117000,Change in net assets
+Statistics,166,61335,F2I04,1598,879413472553,550321321.99812269,-29215804,63375074000,Total net assets
+Statistics,167,61337,F2I05,1598,497426240545,311280500.96683353,-63212619,44162775000,Expendable net assets
+Statistics,168,61339,F2I06,1598,153286865283,95924196.046933666,0,6244740000,Plant-related debt
+Statistics,169,61341,F2I07,1598,262767607889,164435299.05444306,221530,12768635000,Total expenses
+Statistics,170,,,,,,,
+FrequenciesRV,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+FrequenciesRV,1,61281,F2FHA,1,Yes - (report endowment assets),1331,74.69
+FrequenciesRV,2,61281,F2FHA,2,No,339,19.02
+FrequenciesRV,3,61281,F2FHA,-2,not applicable,112,6.29
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,60606,F2A01,1598,704965804784,441155071.82978725,0,59747629000,Long-term investments
+StatisticsRV,2,65121,F2A19,1598,277802219238,173843691.63829789,0,9391124000,"Property, Plant, and Equipment, net of accumulated depreciation"
+StatisticsRV,3,65126,F2A20,1598,1973218645,1234805.1595744682,0,316527039,"Intangible Assets, net of accumulated amortization"
+StatisticsRV,4,60611,F2A02,1598,1143151636690,715363977.90362954,37105,72781329000,Total assets
+StatisticsRV,5,60616,F2A03,1598,284220853119,177860358.6476846,0,11707217000,Total liabilities
+StatisticsRV,6,65091,F2A03A,1598,153818103199,96256635.29349187,0,6244740000,"Debt related to Property, Plant, and Equipment"
+StatisticsRV,7,60621,F2A04,1598,394819262438,247070877.62077597,-103629000,27378445000,Total unrestricted net assets
+StatisticsRV,8,60626,F2A05,1598,464111521133,290432741.63516897,0,45668867000,Total restricted net assets
+StatisticsRV,9,64825,F2A05A,1598,186121117947,116471287.82665832,0,11523698000,Permanently restricted net assets included in total restricted net assets
+StatisticsRV,10,65096,F2A05B,1598,277990403186,173961453.80851063,-1874555,34145169000,Temporarily restricted net assets
+StatisticsRV,11,60631,F2A06,1598,858930783571,537503619.25594497,-57934626,61246694000,Total net assets
+StatisticsRV,12,60636,F2A11,1598,26781973941,16759683.31727159,0,1024986000,Land  improvements - End of year
+StatisticsRV,13,60641,F2A12,1598,372640447613,233191769.46996245,0,13255569000,Buildings - End of year
+StatisticsRV,14,60646,F2A13,1598,84294593857,52750058.734042555,0,3641617000,"Equipment, including art and library collections - End of year"
+StatisticsRV,15,65101,F2A15,1598,21223830940,13281496.207759699,0,1276879000,Construction in Progress
+StatisticsRV,16,65106,F2A16,1598,4014498380,2512201.7396745933,0,1207284000,"Other plant, property and equipment"
+StatisticsRV,17,65111,F2A17,1598,508955344731,318495209.4687109,0,16667222000,"Total Plant, Property, and Equipment"
+StatisticsRV,18,65116,F2A18,1598,231153711645,144651884.63391739,0,7276098000,Accumulated depreciation
+StatisticsRV,19,60656,F2B01,1598,236548014400,148027543.4292866,-310343929,13840727000,Total revenues and investment return
+StatisticsRV,20,60661,F2B02,1598,262770618571,164437183.08573216,221530,12768635000,Total expenses
+StatisticsRV,21,60666,F2B03,1598,5968331981,3734876.0832290361,-640202000,1813795262,Other specific changes in net assets
+StatisticsRV,22,60671,F2B04,1598,-20254272190,-12674763.57321652,-3215838000,1926117000,Total change in net assets
+StatisticsRV,23,60676,F2B05,1598,879428425552,550330679.3191489,-29215804,63375074000,"Net assets, beginning of the year"
+StatisticsRV,24,60681,F2B06,1598,-243369791,-152296.48998748435,-63217292,69292806,Adjustments to beginning of year net assets
+StatisticsRV,25,60686,F2B07,1598,858930783571,537503619.25594497,-57934626,61246694000,"Net assets, end of the year"
+StatisticsRV,26,60691,F2C01,1780,4755499080,2671628.6966292136,0,195906669,Pell grants
+StatisticsRV,27,60696,F2C02,1780,3812994571,2142131.781460674,0,87046255,Other federal grants
+StatisticsRV,28,60701,F2C03,1780,2028025883,1139340.3837078651,0,23812975,State grants
+StatisticsRV,29,60706,F2C04,1780,59363766,33350.430337078651,0,11861197,Local grants
+StatisticsRV,30,60711,F2C05,1780,7572176903,4254031.9679775285,0,398622000,Institutional grants (funded)
+StatisticsRV,31,60716,F2C06,1780,41649408552,23398544.130337078,0,774377000,Institutional grants (unfunded)
+StatisticsRV,32,60721,F2C07,1780,59877468755,33639027.390449435,0,965653206,Total student grants
+StatisticsRV,33,60726,F2C08,1780,47938309222,26931634.394382022,0,852272000,Allowances applied to tuition and fees
+StatisticsRV,34,60731,F2C09,1780,916748780,515027.40449438203,0,78073000,Allowances applied to auxiliary enterprise revenues
+StatisticsRV,35,60733,F2C10,1780,48855061557,27446663.796067417,0,922973000,Total discounts and allowances
+StatisticsRV,36,61283,F2C12,1780,1189367358,668183.90898876404,0,40465860,"Total discounts and
+ allowances from Pell grants"
+StatisticsRV,37,61285,F2C121,1780,1175657933,660481.98483146064,0,39353354,"Discounts and
+ allowances from Pell grants applied to tuition and fees"
+StatisticsRV,38,61287,F2C122,1780,14142703,7945.3387640449437,0,6541000,Discounts and allowances from Pell grants applied to auxiliary enterprises
+StatisticsRV,39,61289,F2C13,1780,1474285827,828250.46460674156,0,93169339,Total discounts and allowances from other federal grants
+StatisticsRV,40,61291,F2C131,1780,1449528296,814341.7393258427,0,93169339,Discounts and allowances from other federal grants applied to tuition and fees
+StatisticsRV,41,61293,F2C132,1780,24786746,13925.138202247192,0,8582801,"Discounts and allowances from other federal grants applied to auxiliary
+ enterprises"
+StatisticsRV,42,61295,F2C14,1780,778327449,437262.61179775279,0,21797000,"Total discounts and
+ allowances from state government grants"
+StatisticsRV,43,61297,F2C141,1780,775146230,435475.41011235956,0,21797000,"Discounts and
+ allowances from state government grants applied to tuition and fees"
+StatisticsRV,44,61299,F2C142,1780,3374743,1895.9230337078652,0,915976,Discounts and allowances from state government grants applied to auxiliary enterprises
+StatisticsRV,45,61301,F2C15,1780,17496170,9829.3089887640454,0,4514045,Discounts and allowances from local government grants
+StatisticsRV,46,61303,F2C151,1780,17140722,9629.6191011235951,0,4514045,Discounts and allowances from local government grants applied to tuition and fees
+StatisticsRV,47,61305,F2C152,1780,355385,199.65449438202248,0,311185,Discounts and allowances from local government grants applied to auxiliary enterprises
+StatisticsRV,48,61307,F2C16,1780,8048054730,4521379.061797753,0,472224000,Total discounts and allowances from endowments and gifts
+StatisticsRV,49,61309,F2C161,1780,7883131732,4428725.6921348311,0,472224000,Discounts and allowances from endowments and gifts applied to tuition and fees
+StatisticsRV,50,61311,F2C162,1780,164970214,92679.895505617984,0,42866000,Discounts and allowances from endowments and gifts applied to auxiliary enterprises
+StatisticsRV,51,61313,F2C17,1780,37347530023,20981758.439887639,0,791922971,Total discounts and allowances from other institutional sources
+StatisticsRV,52,61315,F2C171,1780,36637704309,20582979.948876403,0,732288467,Discounts and allowances from other institutional sources applied to tuition and fees
+StatisticsRV,53,61317,F2C172,1780,709118989,398381.45449438202,0,59634504,Discounts and allowances from other institutional sources applied to auxiliary enterprises
+StatisticsRV,54,60736,F2D01,1782,86029456378,48276911.547699213,0,2452219000,Tuition and fees - Total
+StatisticsRV,55,65131,F2D012,1782,86029446528,48276906.020202018,0,2452219000,Tuition and fees - Unrestricted
+StatisticsRV,56,65136,F2D013,1782,9850,5.5274971941638604,0,9850,Tuition and fees - Temporarily restricted
+StatisticsRV,57,65141,F2D014,1782,0,0,0,0,Tuition and fees - Permanently restricted
+StatisticsRV,58,60741,F2D02,1782,659836466,370278.60044893378,0,244018000,Federal appropriations - Total
+StatisticsRV,59,65146,F2D022,1782,643438391,361076.53815937147,0,240613000,Federal appropriations - Unrestricted
+StatisticsRV,60,65151,F2D023,1782,16398075,9202.0622895622892,0,7249990,Federal appropriations - Temporarily restricted
+StatisticsRV,61,65156,F2D024,1782,0,0,0,0,Federal appropriations - Permanently restricted
+StatisticsRV,62,60746,F2D03,1782,1515942007,850696.97362514026,0,373298800,State appropriations - Total
+StatisticsRV,63,65161,F2D032,1782,1447055798,812040.29068462399,0,373298800,State appropriations - Unrestricted
+StatisticsRV,64,65166,F2D033,1782,68886209,38656.682940516272,0,50000000,State appropriations - Temporarily restricted
+StatisticsRV,65,65171,F2D034,1782,0,0,0,0,State appropriations - Permanently restricted
+StatisticsRV,66,60751,F2D04,1782,5447673,3057.0555555555557,0,2000000,Local appropriations - Total
+StatisticsRV,67,65176,F2D042,1782,5094161,2858.67620650954,0,2000000,Local appropriations - Unrestricted
+StatisticsRV,68,65181,F2D043,1782,353512,198.3793490460157,0,353512,Local appropriations -  Temporarily restricted
+StatisticsRV,69,65186,F2D044,1782,0,0,0,0,Local appropriations - Permanently restricted
+StatisticsRV,70,60756,F2D05,1782,32073204978,17998431.525252525,0,3619404000,Federal grants and contracts - Total
+StatisticsRV,71,65191,F2D052,1782,30704641880,17230438.765432097,0,3619404000,Federal grants and contracts - Unrestricted
+StatisticsRV,72,65196,F2D053,1782,1335099481,749214.0746352413,0,53861383,Federal grants and contracts  - Temporarily restricted
+StatisticsRV,73,65201,F2D054,1782,33463617,18778.685185185186,0,19678844,Federal grants and contracts - Pemanently restricted
+StatisticsRV,74,60761,F2D06,1782,1503317209,843612.35072951741,0,114728000,State grants and contracts - Total
+StatisticsRV,75,65206,F2D062,1782,1327619167,745016.36756453419,0,114728000,State grants and contracts - Unrestricted
+StatisticsRV,76,65211,F2D063,1782,173533176,97381.131313131307,0,28406272,State grants and contracts - Temporarily restricted
+StatisticsRV,77,65216,F2D064,1782,2164866,1214.851851851852,0,1000000,State grants and contracts - Permanently restricted
+StatisticsRV,78,60766,F2D07,1782,592849944,332687.95959595958,0,211361860,Local grants and contracts - Total
+StatisticsRV,79,65221,F2D072,1782,582467202,326861.50505050505,0,211361860,Local grants and contracts - Unrestricted
+StatisticsRV,80,65226,F2D073,1782,10382742,5826.454545454545,0,3118000,Local grants and contracts - Temporarily restricted
+StatisticsRV,81,65231,F2D074,1782,0,0,0,0,Local grants and contracts  - Permanently restricted
+StatisticsRV,82,60771,F2D08,1782,36031278457,20219572.647025812,-331464,2102773000,"Private gifts, grants, and contracts - Total"
+StatisticsRV,83,65236,F2D082,1782,14943043051,8385546.0443322109,-133060,1070639250,"Private gifts, grants, and contracts - Unrestricted"
+StatisticsRV,84,65251,F2D083,1782,12816133008,7191993.8316498315,-23465000,1001219000,"Private gifts, grants and contracts - Temporarily restricted"
+StatisticsRV,85,65266,F2D084,1782,8272102398,4642032.7710437709,-3031000,621517000,"Private gifts, grants, and contracts - Permanently restricted"
+StatisticsRV,86,65281,F2D08A,1782,27346841508,15346151.239057239,-331464,1749863000,Private gifts - Total
+StatisticsRV,87,65241,F2D082A,1782,7576811448,4251858.2760942765,-3022709,421437000,Private gifts - Unrestricted
+StatisticsRV,88,65256,F2D083A,1782,11577203870,6496747.4017957356,-23465000,1001219000,Private gifts - Temporarily restricted
+StatisticsRV,89,65271,F2D084A,1782,8192826191,4597545.5617283955,-3031000,621517000,Private gifts - Permanentlly restricted
+StatisticsRV,90,65286,F2D08B,1782,8684436948,4873421.4074074076,0,1067035100,Private grants and contracts - Total
+StatisticsRV,91,65246,F2D082B,1782,7366231603,4133687.7682379349,-6779,1067035100,Private grants and contracts - Unrestricted
+StatisticsRV,92,65261,F2D083B,1782,1238929138,695246.4298540965,0,251654401,Private grants and contracts - Temporarily restricted
+StatisticsRV,93,65276,F2D084B,1782,79276207,44487.209315375985,0,33651973,"Private grants, and contracts - Permanently restricted"
+StatisticsRV,94,60776,F2D09,1782,2918926232,1638005.7418630752,0,795337701,Contributions from affiliated entities - Total
+StatisticsRV,95,65291,F2D092,1782,2771367154,1555200.4231200898,0,795337701,Contributions from affiliated entities - Unrestricted
+StatisticsRV,96,65296,F2D093,1782,134082300,75242.592592592599,0,107897000,Contributions from affiliated entities - Temporarily restricted
+StatisticsRV,97,65301,F2D094,1782,13476778,7562.7261503928166,0,5000000,Contributions from affiliated entities - Permanently restricted
+StatisticsRV,98,60781,F2D10,1782,-27398529871,-15375157.054433221,-2056207000,917467652,Investment return - Total
+StatisticsRV,99,65306,F2D102,1782,-2090931259,-1173362.0982042649,-658361000,1292420000,Investment return - Unrestricted
+StatisticsRV,100,65311,F2D103,1782,-23450926079,-13159891.177890012,-2122692000,196728819,Investment return - Temporarily restricted
+StatisticsRV,101,65316,F2D104,1782,-1856672533,-1041903.778338945,-469376464,81140000,Investment return - Permanently restricted
+StatisticsRV,102,60786,F2D11,1782,11695004678,6562853.3546576882,0,2537903000,Sales and services of educational activities - Total
+StatisticsRV,103,65321,F2D112,1782,11695004678,6562853.3546576882,0,2537903000,Sales and services of educational activities - Unrestricted
+StatisticsRV,104,60791,F2D12,1670,18946952320,11345480.431137724,0,465197000,Sales and services of auxiliary enterprises - Total
+StatisticsRV,105,65326,F2D122,1670,18946952320,11345480.431137724,0,465197000,Sales and services of auxiliary enterprises - Unrestricted
+StatisticsRV,106,60796,F2D13,1587,45383510169,28597044.844990548,0,8094673000,Hospital revenue - Total
+StatisticsRV,107,65331,F2D132,1587,45383510169,28597044.844990548,0,8094673000,Hospital revenue - Unrestricted
+StatisticsRV,108,60801,F2D14,1587,7923898301,4993004.6005040957,0,2450465000,Independent operations revenue - Total
+StatisticsRV,109,65336,F2D142,1587,7906422499,4981992.7529930687,0,2450465000,Independent operations revenue - Unrestricted
+StatisticsRV,110,65341,F2D143,1587,15449298,9734.9073724007558,0,4613000,Independent operations revenue - Temporarily restricted
+StatisticsRV,111,65346,F2D144,1587,2026504,1276.9401386263389,0,1981715,Independent operations revenue - Permanently restricted
+StatisticsRV,112,60806,F2D15,1782,19747500774,11081650.265993265,-1116000,4348758502,Other revenue - Total
+StatisticsRV,113,65351,F2D152,1782,18101395709,10157910.049943883,-1619890000,4345799502,Other revenue - Unrestricted
+StatisticsRV,114,65356,F2D153,1782,1399265229,785221.7895622896,-254957000,2080553000,Other revenue - Temporarily restricted
+StatisticsRV,115,65361,F2D154,1782,246839836,138518.42648709315,-218678000,254958000,Other revenue - Permanently restricted
+StatisticsRV,116,60811,F2D16,1782,237628595715,133349380.31144781,-310343929,13840727000,Total revenues and investment return - Total
+StatisticsRV,117,65366,F2D162,1782,238396527448,133780318.4332211,-188959000,13254713000,Total revenues and investment return - Unrestricted
+StatisticsRV,118,65371,F2D163,1782,-7481333199,-4198279.0117845116,-1181972000,649869409,Total revenues and investment return - Temporarily restricted
+StatisticsRV,119,65376,F2D164,1782,6713401466,3767340.8900112235,-234340577,511113000,Total revenues and investment return - Permanently restricted
+StatisticsRV,120,65380,F2D17,1782,0,0,0,0,Net assets released from restriction - Total
+StatisticsRV,121,65381,F2D172,1782,15571594699,8738268.6301907972,-191169000,2275354000,Net assets released from restriction - Unrestricted
+StatisticsRV,122,65386,F2D173,1782,-15415896240,-8650895.7575757578,-2275354000,191169000,Net assets released from restriction - Temporarily restricted
+StatisticsRV,123,65387,F2D174,1782,-155698459,-87372.872615039276,-100079000,14183810,Net assets released from restriction - Permanently restricted
+StatisticsRV,124,65390,F2D18,1782,237628595715,133349380.31144781,-310343929,13840727000,"Net total revenues, after assets released from restriction - Total"
+StatisticsRV,125,65391,F2D182,1782,253968122147,142518587.06341189,-155032000,13818895000,"Net total revenues, after assets released from restriction - Unrestricted"
+StatisticsRV,126,65396,F2D183,1782,-22897229439,-12849174.769360268,-2305644000,185915094,"Net total revenues, after assets released from restriction - Temporarily restricted"
+StatisticsRV,127,65401,F2D184,1782,6557703007,3679968.0173961842,-229809797,511113000,"Net total revenues, after assets released from restriction - Permanently restricted"
+StatisticsRV,128,60816,F2E011,1782,71735005705,40255334.290123455,0,3192301000,Instruction-Total amount
+StatisticsRV,129,60821,F2E012,1782,40418500746,22681538.016835015,0,1761101000,Instruction-Salaries and wages
+StatisticsRV,130,60851,F2E021,1782,29276367528,16428938.006734006,0,3700838000,Research-Total amount
+StatisticsRV,131,60856,F2E022,1782,12281947762,6892226.5780022442,0,1821261000,Research-Salaries and wages
+StatisticsRV,132,60886,F2E031,1782,3789119917,2126329.9197530863,0,986364117,Public service-Total amount
+StatisticsRV,133,60891,F2E032,1782,1829386637,1026591.8277216611,0,799900744,Public service-Salaries and wages
+StatisticsRV,134,60921,F2E041,1782,22350398819,12542311.34624018,0,1741815926,Academic support-Total amount
+StatisticsRV,135,60926,F2E042,1782,10777365454,6047904.2951739617,0,926453653,Academic support-Salaries and wages
+StatisticsRV,136,60956,F2E051,1782,22033951972,12364731.746352414,0,477014437,Student service-Total amount
+StatisticsRV,137,60961,F2E052,1782,8256375782,4633207.5095398426,0,125525288,Student service-Salaries and wages
+StatisticsRV,138,60991,F2E061,1782,31992420450,17953097.895622894,0,973760000,Institutional support-Total amount
+StatisticsRV,139,60996,F2E062,1782,13043753605,7319727.0510662179,0,396817000,Institutional support-Salaries and wages
+StatisticsRV,140,61026,F2E071,1670,19120725655,11449536.320359282,0,611857000,Auxiliary enterprises-Total amount
+StatisticsRV,141,61031,F2E072,1670,2995692299,1793827.7239520957,0,204978000,Auxiliary enterprises-Salaries and wages
+StatisticsRV,142,61061,F2E081,1782,1629462169,914400.76823793491,0,171312000,Net grant aid to students-Total amount
+StatisticsRV,143,61096,F2E091,1587,45783789303,28849268.621928167,0,8276192000,Hospital services-Total amount
+StatisticsRV,144,61101,F2E092,1587,20945314659,13198055.8657845,0,3283696000,Hospital services-Salaries and wages
+StatisticsRV,145,61131,F2E101,1587,8612992301,5427216.3207309386,0,2450464960,Independent operations-Total Amount
+StatisticsRV,146,61136,F2E102,1587,2062524488,1299637.3585381221,0,895295672,Independent operations-Salaries and wages
+StatisticsRV,147,61201,F2E121,1782,7217425650,4050182.7441077442,-1446548,3303311000,Other expenses-Total amount
+StatisticsRV,148,61206,F2E122,1782,3726072655,2090949.8625140293,0,2391648000,Other expenses-Salaries and wages
+StatisticsRV,149,61236,F2E131,1782,263541659470,147890942.46352413,6432,12768635000,Total expenses-Total amount
+StatisticsRV,150,61241,F2E132,1782,116336934088,65284474.796857461,0,5647912000,Total expenses-Salaries and wages
+StatisticsRV,151,61246,F2E133,1782,30990879496,17391065.934904601,0,1456173000,Total expenses-Benefits
+StatisticsRV,152,61251,F2E134,1782,15776620794,8853322.555555556,0,519798000,Total expenses-Operation and maintenance of plant
+StatisticsRV,153,61256,F2E135,1782,15981780284,8968451.337822672,0,623457000,Total expenses-Depreciation
+StatisticsRV,154,61261,F2E136,1782,5475441883,3072638.5426487094,0,241172000,Total expenses-Interest
+StatisticsRV,155,61266,F2E137,1782,78980008095,44320992.196969695,0,4730386000,Total expenses-All other natural classification
+StatisticsRV,156,61271,F2H01,1331,646359325640,485619328.05409467,146,53165753000,Value of endowment assets at the beginning of the fiscal year
+StatisticsRV,157,61276,F2H02,1331,611245459242,459237760.51239669,1,50877680000,Value of endowment assets at the end of the fiscal year
+StatisticsRV,158,61319,F2H03,1331,-35112576507,-26380598.427498121,-2793230000,954394000,Change in value of endowment net assets
+StatisticsRV,159,61321,F2H03A,1331,12503667326,9394190.3275732528,0,751745000,New gifts and additions
+StatisticsRV,160,61323,F2H03B,1331,-27104937288,-20364340.56198347,-2223139000,504505000,Endowment net investment return
+StatisticsRV,161,61325,F2H03C,1331,-24020471062,-18046935.433508638,-2118855000,16002256,Spending distribution for current use
+StatisticsRV,162,61327,F2H03D,1331,3509164517,2636487.2404207364,-581083000,1183372000,Other changes in value of endowment net assets
+StatisticsRV,163,61329,F2I01,1598,3148263931,1970127.6163954944,-1430139000,1904285000,Change in unrestricted net assets
+StatisticsRV,164,61331,F2I02,1598,269342452650,168549720.0563204,-6821035,14426955000,Total unrestricted operating revenues
+StatisticsRV,165,61333,F2I03,1598,-20254272190,-12674763.57321652,-3215838000,1926117000,Change in net assets
+StatisticsRV,166,61335,F2I04,1598,879428425552,550330679.3191489,-29215804,63375074000,Total net assets
+StatisticsRV,167,61337,F2I05,1598,499267687283,312432845.60888612,-63212619,44162775000,Expendable net assets
+StatisticsRV,168,61339,F2I06,1598,153324451300,95947716.708385482,0,6244740000,Plant-related debt
+StatisticsRV,169,61341,F2I07,1598,262770618571,164437183.08573216,221530,12768635000,Total expenses
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

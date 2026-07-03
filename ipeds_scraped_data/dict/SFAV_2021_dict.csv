@@ -1,0 +1,810 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File Documentation for the  Military, Service members and Veteran's Benefit Data File, 2020-21",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,,,,,,,,,,
+Introduction,3,Filename,SFAV2021
+Introduction,4,  Provisional release:,October 2022
+Introduction,5,Filename,SFAV2021_RV
+Introduction,6,  Final/revised release:,November 2023
+Introduction,7,Overview,"This file contains the number of students, who received either or both Post-9/11 GI Benefits or the Department of Defense Tuition Assistance through the institution. Eligible dependents receiving such benefits are included. Students who received both benefits, are counted in both programs. Total dollar amounts received by students are included. Data reported for the Post-9/11 GI Bill benefit are for the academic year July 1, 2020 to June 30, 2021.  Data reported for the Department of Defense Tuition Assistance are for the academic year October 1, 2020 to September 30, 2021. Data are provided for undergraduate and graduate students.",,,,,,,,
+Introduction,8,,,,,,,,,,
+Introduction,9,Note:,"Provisional release data have undergone all NCES data quality control procedures. Data are imputed for nonresponding institutions. These data are used for First Look (Provisional Data) Web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. The final release data can be used when the most up to date data are required; however, these data may not match First Look Web tables based on provisional data. ",,,,,,,,
+Introduction,10,Contents of spreadsheet,,,,,,,,,
+Introduction,11,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,12,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,13,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (provisional release)",,,,,,,,
+Introduction,14,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file.(final/revised release)",,,,,,,,
+Introduction,15,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,72001,UGPO9_N,N,6,Cont,XUGPO9_N,Number receiving Post-9/11 GI Bill Benefits - undergraduate students
+varlist,3,72006,UGPO9_T,N,10,Cont,XUGPO9_T,Total amount of Post-9/11 GI Bill Benefits awarded - undergraduate students
+varlist,4,72011,UGPO9_A,N,6,Cont,XUGPO9_A,Average amount of Post-9/11 GI Bill Benefits awarded - undergraduate students
+varlist,5,72016,GPO9_N,N,6,Cont,XGPO9_N,Number receiving Post-9/11 GI Bill Benefits - graduate students
+varlist,6,72021,GPO9_T,N,10,Cont,XGPO9_T,Total amount of Post-9/11 GI Bill Benefits awarded - graduate students
+varlist,7,72026,GPO9_A,N,6,Cont,XGPO9_A,Average amount of Post-9/11 GI Bill Benefits awarded - graduate students
+varlist,8,72031,PO9_N,N,6,Cont,XPO9_N,Number receiving Post-9/11 GI Bill Benefits - all students
+varlist,9,72036,PO9_T,N,10,Cont,XPO9_T,Total amount of Post-9/11 GI Bill Benefits awarded - all students
+varlist,10,72041,PO9_A,N,6,Cont,XPO9_A,Average amount of Post-9/11 GI Bill Benefits awarded - all students
+varlist,11,72046,UGDOD_N,N,6,Cont,XUGDOD_N,Number receiving Department of Defense Tuition Assistance Program benefits - undergraduate students
+varlist,12,72051,UGDOD_T,N,10,Cont,XUGDOD_T,Total amount of Department of Defense Tuition Assistance Program benefits  awarded - undergraduate students
+varlist,13,72056,UGDOD_A,N,6,Cont,XUGDOD_A,Average amount of Department of Defense Tuition Assistance Program benefits awarded- undergraduate students
+varlist,14,72061,GDOD_N,N,6,Cont,XGDOD_N,Number receiving Department of Defense Tuition Assistance Program benefits - graduate students
+varlist,15,72066,GDOD_T,N,10,Cont,XGDOD_T,Total amount of Department of Defense Tuition Assistance Program benefits awarded - graduate students
+varlist,16,72071,GDOD_A,N,6,Cont,XGDOD_A,Average amount of Department of Defense Tuition Assistance Program benefits awarded - graduate students
+varlist,17,72076,DOD_N,N,6,Cont,XDOD_N,Number receiving Department of Defense Tuition Assistance Program benefits - all students
+varlist,18,72081,DOD_T,N,10,Cont,XDOD_T,Total amount of Department of Defense Tuition Assistance Program benefits awarded - all students
+varlist,19,72086,DOD_A,N,6,Cont,XDOD_A,Average amount of Department of Defense Tuition Assistance Program benefits awarded - all students
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,72001,UGPO9_N,"Military Servicemembers and Veteran's Benefits - Number of undergraduate students receiving Post-9/11 GI Bill Benefits   
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,3,72006,UGPO9_T,"Military Servicemembers and Veteran's Benefits - Total amount of Post-9/11 GI Bill Benefits awarded through the institution to undergraduate students  
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,4,72011,UGPO9_A,"Military Servicemembers and Veteran's Benefits - Average amount of Post-9/11 GI Bill Benefits awarded through the institution to undergraduate students
+ 
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,5,72016,GPO9_N,"Military Servicemembers and Veteran's Benefits - Number of graduate students receiving Post-9/11 GI Bill Benefits   
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,6,72021,GPO9_T,"Military Servicemembers and Veteran's Benefits - Total amount of Post-9/11 GI Bill Benefits awarded through the institution to graduate students 
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,7,72026,GPO9_A,"Military Servicemembers and Veteran's Benefits - Average amount of Post-9/11 GI Bill Benefits awarded through the institution to graduate students 
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,8,72031,PO9_N,"Military Servicemembers and Veteran's Benefits - Number of all students receiving Post-9/11 GI Bill Benefits   
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,9,72036,PO9_T,"Military Servicemembers and Veteran's Benefits - Total amount of Post-9/11 GI Bill Benefits awarded through the institution to all students  
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,10,72041,PO9_A,"Military Servicemembers and Veteran's Benefits - Average amount of Post-9/11 GI Bill Benefits awarded through the institution to all students  
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,11,72046,UGDOD_N,"Military Servicemembers and Veteran's Benefits - Number of undergraduate students receiving Department of Defense Tuition Assistance Program benefits 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,12,72051,UGDOD_T,"Military Servicemembers and Veteran's Benefits - Total amount of Department of Defense Tuition Assistance Program benefits awarded through the institution to undergraduate students 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,13,72056,UGDOD_A,"Military Servicemembers and Veteran's Benefits - Average amount of Department of Defense Tuition Assistance Program benefits awarded through the institution to undergraduate students 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,14,72061,GDOD_N,"Military Servicemembers and Veteran's Benefits - Number of graduate students receiving Department of Defense Tuition Assistance Program benefits 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,15,72066,GDOD_T,"Military Servicemembers and Veteran's Benefits - Total amount of Department of Defense Tuition Assistance Program benefits awarded through the institution to graduate students 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,16,72071,GDOD_A,"Military Servicemembers and Veteran's Benefits - Average amount of Department of Defense Tuition Assistance Program benefits awarded through the institution to graduate students 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,17,72076,DOD_N,"Military Servicemembers and Veteran's Benefits - Number of all students receiving Department of Defense Tuition Assistance Program benefits 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,18,72081,DOD_T,"Military Servicemembers and Veteran's Benefits - Total amount of Department of Defense Tuition Assistance Program benefits awarded through the institution to all students 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,19,72086,DOD_A,"Military Servicemembers and Veteran's Benefits - Average amount of Department of Defense Tuition Assistance Program benefits awarded through the institution to all students 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,72001,UGPO9_N,5779,401533,69.481398165772632,0,12053,Number receiving Post-9/11 GI Bill Benefits - undergraduate students
+Statistics,2,72006,UGPO9_T,5779,3126451367,541002.13998961763,0,53795938,Total amount of Post-9/11 GI Bill Benefits awarded - undergraduate students
+Statistics,3,72011,UGPO9_A,4282,44112359,10301.812003736572,50,54687,Average amount of Post-9/11 GI Bill Benefits awarded - undergraduate students
+Statistics,4,72016,GPO9_N,1997,82873,41.498748122183272,0,4043,Number receiving Post-9/11 GI Bill Benefits - graduate students
+Statistics,5,72021,GPO9_T,1997,870759494,436033.79769654479,0,20128420,Total amount of Post-9/11 GI Bill Benefits awarded - graduate students
+Statistics,6,72026,GPO9_A,1567,17399935,11103.978940650926,169,59466,Average amount of Post-9/11 GI Bill Benefits awarded - graduate students
+Statistics,7,72031,PO9_N,5974,484406,81.085704720455311,0,15546,Number receiving Post-9/11 GI Bill Benefits - all students
+Statistics,8,72036,PO9_T,5974,3997210861,669101.24891195178,0,70755593,Total amount of Post-9/11 GI Bill Benefits awarded - all students
+Statistics,9,72041,PO9_A,4507,46682452,10357.766141557577,50,59466,Average amount of Post-9/11 GI Bill Benefits awarded - all students
+Statistics,10,72046,UGDOD_N,5779,191640,33.161446617061777,0,43467,Number receiving Department of Defense Tuition Assistance Program benefits - undergraduate students
+Statistics,11,72051,UGDOD_T,5779,382664830,66216.444021457006,0,85446135,Total amount of Department of Defense Tuition Assistance Program benefits  awarded - undergraduate students
+Statistics,12,72056,UGDOD_A,1329,2879345,2166.5500376222726,9,4500,Average amount of Department of Defense Tuition Assistance Program benefits awarded- undergraduate students
+Statistics,13,72061,GDOD_N,1997,32319,16.183775663495243,0,7206,Number receiving Department of Defense Tuition Assistance Program benefits - graduate students
+Statistics,14,72066,GDOD_T,1997,71691918,35899.808713069608,0,14496287,Total amount of Department of Defense Tuition Assistance Program benefits awarded - graduate students
+Statistics,15,72071,GDOD_A,609,1436616,2358.9753694581282,180,5667,Average amount of Department of Defense Tuition Assistance Program benefits awarded - graduate students
+Statistics,16,72076,DOD_N,5974,223959,37.488952125878811,0,50673,Number receiving Department of Defense Tuition Assistance Program benefits - all students
+Statistics,17,72081,DOD_T,5974,454356748,76055.699363910273,0,99942422,Total amount of Department of Defense Tuition Assistance Program benefits awarded - all students
+Statistics,18,72086,DOD_A,1414,3067059,2169.0657708628005,9,4500,Average amount of Department of Defense Tuition Assistance Program benefits awarded - all students
+Statistics,19,,,,,,
+Statistics,20,,,,,,
+Statistics,21,,,,,,
+Statistics,22,,,,,,
+Statistics,23,,,,,,
+Statistics,24,,,,,,
+Statistics,25,,,,,,
+Statistics,26,,,,,,
+Statistics,27,,,,,,
+Statistics,28,,,,,,
+Statistics,29,,,,,,
+Statistics,30,,,,,,
+Statistics,31,,,,,,
+Statistics,32,,,,,,
+Statistics,33,,,,,,
+Statistics,34,,,,,,
+Statistics,35,,,,,,
+Statistics,36,,,,,,
+Statistics,37,,,,,,
+Statistics,38,,,,,,
+Statistics,39,,,,,,
+Statistics,40,,,,,,
+Statistics,41,,,,,,
+Statistics,42,,,,,,
+Statistics,43,,,,,,
+Statistics,44,,,,,,
+Statistics,45,,,,,,
+Statistics,46,,,,,,
+Statistics,47,,,,,,
+Statistics,48,,,,,,
+Statistics,49,,,,,,
+Statistics,50,,,,,,
+Statistics,51,,,,,,
+Statistics,52,,,,,,
+Statistics,53,,,,,,
+Statistics,54,,,,,,
+Statistics,55,,,,,,
+Statistics,56,,,,,,
+Statistics,57,,,,,,
+Statistics,58,,,,,,
+Statistics,59,,,,,,
+Statistics,60,,,,,,
+Statistics,61,,,,,,
+Statistics,62,,,,,,
+Statistics,63,,,,,,
+Statistics,64,,,,,,
+Statistics,65,,,,,,
+Statistics,66,,,,,,
+Statistics,67,,,,,,
+Statistics,68,,,,,,
+Statistics,69,,,,,,
+Statistics,70,,,,,,
+Statistics,71,,,,,,
+Statistics,72,,,,,,
+Statistics,73,,,,,,
+Statistics,74,,,,,,
+Statistics,75,,,,,,
+Statistics,76,,,,,,
+Statistics,77,,,,,,
+Statistics,78,,,,,,
+Statistics,79,,,,,,
+Statistics,80,,,,,,
+Statistics,81,,,,,,
+Statistics,82,,,,,,
+Statistics,83,,,,,,
+Statistics,84,,,,,,
+Statistics,85,,,,,,
+Statistics,86,,,,,,
+Statistics,87,,,,,,
+Statistics,88,,,,,,
+Statistics,89,,,,,,
+Statistics,90,,,,,,
+Statistics,91,,,,,,
+Statistics,92,,,,,,
+Statistics,93,,,,,,
+Statistics,94,,,,,,
+Statistics,95,,,,,,
+Statistics,96,,,,,,
+Statistics,97,,,,,,
+Statistics,98,,,,,,
+Statistics,99,,,,,,
+Statistics,100,,,,,,
+Statistics,101,,,,,,
+Statistics,102,,,,,,
+Statistics,103,,,,,,
+Statistics,104,,,,,,
+Statistics,105,,,,,,
+Statistics,106,,,,,,
+Statistics,107,,,,,,
+Statistics,108,,,,,,
+Statistics,109,,,,,,
+Statistics,110,,,,,,
+Statistics,111,,,,,,
+Statistics,112,,,,,,
+Statistics,113,,,,,,
+Statistics,114,,,,,,
+Statistics,115,,,,,,
+Statistics,116,,,,,,
+Statistics,117,,,,,,
+Statistics,118,,,,,,
+Statistics,119,,,,,,
+Statistics,120,,,,,,
+Statistics,121,,,,,,
+Statistics,122,,,,,,
+Statistics,123,,,,,,
+Statistics,124,,,,,,
+Statistics,125,,,,,,
+Statistics,126,,,,,,
+Statistics,127,,,,,,
+Statistics,128,,,,,,
+Statistics,129,,,,,,
+Statistics,130,,,,,,
+Statistics,131,,,,,,
+Statistics,132,,,,,,
+Statistics,133,,,,,,
+Statistics,134,,,,,,
+Statistics,135,,,,,,
+Statistics,136,,,,,,
+Statistics,137,,,,,,
+Statistics,138,,,,,,
+Statistics,139,,,,,,
+Statistics,140,,,,,,
+Statistics,141,,,,,,
+Statistics,142,,,,,,
+Statistics,143,,,,,,
+Statistics,144,,,,,,
+Statistics,145,,,,,,
+Statistics,146,,,,,,
+Statistics,147,,,,,,
+Statistics,148,,,,,,
+Statistics,149,,,,,,
+Statistics,150,,,,,,
+Statistics,151,,,,,,
+Statistics,152,,,,,,
+Statistics,153,,,,,,
+Statistics,154,,,,,,
+Statistics,155,,,,,,
+Statistics,156,,,,,,
+Statistics,157,,,,,,
+Statistics,158,,,,,,
+Statistics,159,,,,,,
+Statistics,160,,,,,,
+Statistics,161,,,,,,
+Statistics,162,,,,,,
+Statistics,163,,,,,,
+Statistics,164,,,,,,
+Statistics,165,,,,,,
+Statistics,166,,,,,,
+Statistics,167,,,,,,
+Statistics,168,,,,,,
+Statistics,169,,,,,,
+Statistics,170,,,,,,
+Statistics,171,,,,,,
+Statistics,172,,,,,,
+Statistics,173,,,,,,
+Statistics,174,,,,,,
+Statistics,175,,,,,,
+Statistics,176,,,,,,
+Statistics,177,,,,,,
+Statistics,178,,,,,,
+Statistics,179,,,,,,
+Statistics,180,,,,,,
+Statistics,181,,,,,,
+Statistics,182,,,,,,
+Statistics,183,,,,,,
+Statistics,184,,,,,,
+Statistics,185,,,,,,
+Statistics,186,,,,,,
+Statistics,187,,,,,,
+Statistics,188,,,,,,
+Statistics,189,,,,,,
+Statistics,190,,,,,,
+Statistics,191,,,,,,
+Statistics,192,,,,,,
+Statistics,193,,,,,,
+Statistics,194,,,,,,
+Statistics,195,,,,,,
+Statistics,196,,,,,,
+Statistics,197,,,,,,
+Statistics,198,,,,,,
+Statistics,199,,,,,,
+Statistics,200,,,,,,
+Statistics,201,,,,,,
+Statistics,202,,,,,,
+Statistics,203,,,,,,
+Statistics,204,,,,,,
+Statistics,205,,,,,,
+Statistics,206,,,,,,
+Statistics,207,,,,,,
+Statistics,208,,,,,,
+Statistics,209,,,,,,
+Statistics,210,,,,,,
+Statistics,211,,,,,,
+Statistics,212,,,,,,
+Statistics,213,,,,,,
+Statistics,214,,,,,,
+Statistics,215,,,,,,
+Statistics,216,,,,,,
+Statistics,217,,,,,,
+Statistics,218,,,,,,
+Statistics,219,,,,,,
+Statistics,220,,,,,,
+Statistics,221,,,,,,
+Statistics,222,,,,,,
+Statistics,223,,,,,,
+Statistics,224,,,,,,
+Statistics,225,,,,,,
+Statistics,226,,,,,,
+Statistics,227,,,,,,
+Statistics,228,,,,,,
+Statistics,229,,,,,,
+Statistics,230,,,,,,
+Statistics,231,,,,,,
+Statistics,232,,,,,,
+Statistics,233,,,,,,
+Statistics,234,,,,,,
+Statistics,235,,,,,,
+Statistics,236,,,,,,
+Statistics,237,,,,,,
+Statistics,238,,,,,,
+Statistics,239,,,,,,
+Statistics,240,,,,,,
+Statistics,241,,,,,,
+Statistics,242,,,,,,
+Statistics,243,,,,,,
+Statistics,244,,,,,,
+Statistics,245,,,,,,
+Statistics,246,,,,,,
+Statistics,247,,,,,,
+Statistics,248,,,,,,
+Statistics,249,,,,,,
+Statistics,250,,,,,,
+Statistics,251,,,,,,
+Statistics,252,,,,,,
+Statistics,253,,,,,,
+Statistics,254,,,,,,
+Statistics,255,,,,,,
+Statistics,256,,,,,,
+Statistics,257,,,,,,
+Statistics,258,,,,,,
+Statistics,259,,,,,,
+Statistics,260,,,,,,
+Statistics,261,,,,,,
+Statistics,262,,,,,,
+Statistics,263,,,,,,
+Statistics,264,,,,,,
+Statistics,265,,,,,,
+Statistics,266,,,,,,
+Statistics,267,,,,,,
+Statistics,268,,,,,,
+Statistics,269,,,,,,
+Statistics,270,,,,,,
+Statistics,271,,,,,,
+Statistics,272,,,,,,
+Statistics,273,,,,,,
+Statistics,274,,,,,,
+Statistics,275,,,,,,
+Statistics,276,,,,,,
+Statistics,277,,,,,,
+Statistics,278,,,,,,
+Statistics,279,,,,,,
+Statistics,280,,,,,,
+Statistics,281,,,,,,
+Statistics,282,,,,,,
+Statistics,283,,,,,,
+Statistics,284,,,,,,
+Statistics,285,,,,,,
+Statistics,286,,,,,,
+Statistics,287,,,,,,
+Statistics,288,,,,,,
+Statistics,289,,,,,,
+Statistics,290,,,,,,
+Statistics,291,,,,,,
+Statistics,292,,,,,,
+Statistics,293,,,,,,
+Statistics,294,,,,,,
+Statistics,295,,,,,,
+Statistics,296,,,,,,
+Statistics,297,,,,,,
+Statistics,298,,,,,,
+Statistics,299,,,,,,
+Statistics,300,,,,,,
+Statistics,301,,,,,,
+Statistics,302,,,,,,
+Statistics,303,,,,,,
+Statistics,304,,,,,,
+Statistics,305,,,,,,
+Statistics,306,,,,,,
+Statistics,307,,,,,,
+Statistics,308,,,,,,
+Statistics,309,,,,,,
+Statistics,310,,,,,,
+Statistics,311,,,,,,
+Statistics,312,,,,,,
+Statistics,313,,,,,,
+Statistics,314,,,,,,
+Statistics,315,,,,,,
+Statistics,316,,,,,,
+Statistics,317,,,,,,
+Statistics,318,,,,,,
+Statistics,319,,,,,,
+Statistics,320,,,,,,
+Statistics,321,,,,,,
+Statistics,322,,,,,,
+Statistics,323,,,,,,
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,72001,UGPO9_N,5779,401944,69.552517736632637,0,12053,Number receiving Post-9/11 GI Bill Benefits - undergraduate students
+StatisticsRV,2,72006,UGPO9_T,5779,3126384983,540990.65288112126,0,53795938,Total amount of Post-9/11 GI Bill Benefits awarded - undergraduate students
+StatisticsRV,3,72011,UGPO9_A,4288,44194271,10306.499766791045,50,54687,Average amount of Post-9/11 GI Bill Benefits awarded - undergraduate students
+StatisticsRV,4,72016,GPO9_N,1997,82922,41.523284927391089,0,4043,Number receiving Post-9/11 GI Bill Benefits - graduate students
+StatisticsRV,5,72021,GPO9_T,1997,870766246,436037.17876815225,0,20128420,Total amount of Post-9/11 GI Bill Benefits awarded - graduate students
+StatisticsRV,6,72026,GPO9_A,1574,17408810,11060.235069885641,169,59466,Average amount of Post-9/11 GI Bill Benefits awarded - graduate students
+StatisticsRV,7,72031,PO9_N,5974,484866,81.162705055239371,0,15546,Number receiving Post-9/11 GI Bill Benefits - all students
+StatisticsRV,8,72036,PO9_T,5974,3997151229,669091.2669902913,0,70755593,Total amount of Post-9/11 GI Bill Benefits awarded - all students
+StatisticsRV,9,72041,PO9_A,4513,46756001,10360.292709949035,50,59466,Average amount of Post-9/11 GI Bill Benefits awarded - all students
+StatisticsRV,10,72046,UGDOD_N,5779,191855,33.198650285516528,0,43467,Number receiving Department of Defense Tuition Assistance Program benefits - undergraduate students
+StatisticsRV,11,72051,UGDOD_T,5779,382771758,66234.946876622256,0,85446135,Total amount of Department of Defense Tuition Assistance Program benefits  awarded - undergraduate students
+StatisticsRV,12,72056,UGDOD_A,1334,2885922,2163.3598200899551,9,4500,Average amount of Department of Defense Tuition Assistance Program benefits awarded- undergraduate students
+StatisticsRV,13,72061,GDOD_N,1997,32320,16.184276414621934,0,7206,Number receiving Department of Defense Tuition Assistance Program benefits - graduate students
+StatisticsRV,14,72066,GDOD_T,1997,71533373,35820.417125688531,0,14496287,Total amount of Department of Defense Tuition Assistance Program benefits awarded - graduate students
+StatisticsRV,15,72071,GDOD_A,612,1437256,2348.4575163398695,180,5667,Average amount of Department of Defense Tuition Assistance Program benefits awarded - graduate students
+StatisticsRV,16,72076,DOD_N,5974,224175,37.525108804820889,0,50673,Number receiving Department of Defense Tuition Assistance Program benefits - all students
+StatisticsRV,17,72081,DOD_T,5974,454305131,76047.059089387345,0,99942422,Total amount of Department of Defense Tuition Assistance Program benefits awarded - all students
+StatisticsRV,18,72086,DOD_A,1419,3071272,2164.3918252290346,9,4500,Average amount of Department of Defense Tuition Assistance Program benefits awarded - all students
+StatisticsRV,19,,,,,,
+StatisticsRV,20,,,,,,
+StatisticsRV,21,,,,,,
+StatisticsRV,22,,,,,,
+StatisticsRV,23,,,,,,
+StatisticsRV,24,,,,,,
+StatisticsRV,25,,,,,,
+StatisticsRV,26,,,,,,
+StatisticsRV,27,,,,,,
+StatisticsRV,28,,,,,,
+StatisticsRV,29,,,,,,
+StatisticsRV,30,,,,,,
+StatisticsRV,31,,,,,,
+StatisticsRV,32,,,,,,
+StatisticsRV,33,,,,,,
+StatisticsRV,34,,,,,,
+StatisticsRV,35,,,,,,
+StatisticsRV,36,,,,,,
+StatisticsRV,37,,,,,,
+StatisticsRV,38,,,,,,
+StatisticsRV,39,,,,,,
+StatisticsRV,40,,,,,,
+StatisticsRV,41,,,,,,
+StatisticsRV,42,,,,,,
+StatisticsRV,43,,,,,,
+StatisticsRV,44,,,,,,
+StatisticsRV,45,,,,,,
+StatisticsRV,46,,,,,,
+StatisticsRV,47,,,,,,
+StatisticsRV,48,,,,,,
+StatisticsRV,49,,,,,,
+StatisticsRV,50,,,,,,
+StatisticsRV,51,,,,,,
+StatisticsRV,52,,,,,,
+StatisticsRV,53,,,,,,
+StatisticsRV,54,,,,,,
+StatisticsRV,55,,,,,,
+StatisticsRV,56,,,,,,
+StatisticsRV,57,,,,,,
+StatisticsRV,58,,,,,,
+StatisticsRV,59,,,,,,
+StatisticsRV,60,,,,,,
+StatisticsRV,61,,,,,,
+StatisticsRV,62,,,,,,
+StatisticsRV,63,,,,,,
+StatisticsRV,64,,,,,,
+StatisticsRV,65,,,,,,
+StatisticsRV,66,,,,,,
+StatisticsRV,67,,,,,,
+StatisticsRV,68,,,,,,
+StatisticsRV,69,,,,,,
+StatisticsRV,70,,,,,,
+StatisticsRV,71,,,,,,
+StatisticsRV,72,,,,,,
+StatisticsRV,73,,,,,,
+StatisticsRV,74,,,,,,
+StatisticsRV,75,,,,,,
+StatisticsRV,76,,,,,,
+StatisticsRV,77,,,,,,
+StatisticsRV,78,,,,,,
+StatisticsRV,79,,,,,,
+StatisticsRV,80,,,,,,
+StatisticsRV,81,,,,,,
+StatisticsRV,82,,,,,,
+StatisticsRV,83,,,,,,
+StatisticsRV,84,,,,,,
+StatisticsRV,85,,,,,,
+StatisticsRV,86,,,,,,
+StatisticsRV,87,,,,,,
+StatisticsRV,88,,,,,,
+StatisticsRV,89,,,,,,
+StatisticsRV,90,,,,,,
+StatisticsRV,91,,,,,,
+StatisticsRV,92,,,,,,
+StatisticsRV,93,,,,,,
+StatisticsRV,94,,,,,,
+StatisticsRV,95,,,,,,
+StatisticsRV,96,,,,,,
+StatisticsRV,97,,,,,,
+StatisticsRV,98,,,,,,
+StatisticsRV,99,,,,,,
+StatisticsRV,100,,,,,,
+StatisticsRV,101,,,,,,
+StatisticsRV,102,,,,,,
+StatisticsRV,103,,,,,,
+StatisticsRV,104,,,,,,
+StatisticsRV,105,,,,,,
+StatisticsRV,106,,,,,,
+StatisticsRV,107,,,,,,
+StatisticsRV,108,,,,,,
+StatisticsRV,109,,,,,,
+StatisticsRV,110,,,,,,
+StatisticsRV,111,,,,,,
+StatisticsRV,112,,,,,,
+StatisticsRV,113,,,,,,
+StatisticsRV,114,,,,,,
+StatisticsRV,115,,,,,,
+StatisticsRV,116,,,,,,
+StatisticsRV,117,,,,,,
+StatisticsRV,118,,,,,,
+StatisticsRV,119,,,,,,
+StatisticsRV,120,,,,,,
+StatisticsRV,121,,,,,,
+StatisticsRV,122,,,,,,
+StatisticsRV,123,,,,,,
+StatisticsRV,124,,,,,,
+StatisticsRV,125,,,,,,
+StatisticsRV,126,,,,,,
+StatisticsRV,127,,,,,,
+StatisticsRV,128,,,,,,
+StatisticsRV,129,,,,,,
+StatisticsRV,130,,,,,,
+StatisticsRV,131,,,,,,
+StatisticsRV,132,,,,,,
+StatisticsRV,133,,,,,,
+StatisticsRV,134,,,,,,
+StatisticsRV,135,,,,,,
+StatisticsRV,136,,,,,,
+StatisticsRV,137,,,,,,
+StatisticsRV,138,,,,,,
+StatisticsRV,139,,,,,,
+StatisticsRV,140,,,,,,
+StatisticsRV,141,,,,,,
+StatisticsRV,142,,,,,,
+StatisticsRV,143,,,,,,
+StatisticsRV,144,,,,,,
+StatisticsRV,145,,,,,,
+StatisticsRV,146,,,,,,
+StatisticsRV,147,,,,,,
+StatisticsRV,148,,,,,,
+StatisticsRV,149,,,,,,
+StatisticsRV,150,,,,,,
+StatisticsRV,151,,,,,,
+StatisticsRV,152,,,,,,
+StatisticsRV,153,,,,,,
+StatisticsRV,154,,,,,,
+StatisticsRV,155,,,,,,
+StatisticsRV,156,,,,,,
+StatisticsRV,157,,,,,,
+StatisticsRV,158,,,,,,
+StatisticsRV,159,,,,,,
+StatisticsRV,160,,,,,,
+StatisticsRV,161,,,,,,
+StatisticsRV,162,,,,,,
+StatisticsRV,163,,,,,,
+StatisticsRV,164,,,,,,
+StatisticsRV,165,,,,,,
+StatisticsRV,166,,,,,,
+StatisticsRV,167,,,,,,
+StatisticsRV,168,,,,,,
+StatisticsRV,169,,,,,,
+StatisticsRV,170,,,,,,
+StatisticsRV,171,,,,,,
+StatisticsRV,172,,,,,,
+StatisticsRV,173,,,,,,
+StatisticsRV,174,,,,,,
+StatisticsRV,175,,,,,,
+StatisticsRV,176,,,,,,
+StatisticsRV,177,,,,,,
+StatisticsRV,178,,,,,,
+StatisticsRV,179,,,,,,
+StatisticsRV,180,,,,,,
+StatisticsRV,181,,,,,,
+StatisticsRV,182,,,,,,
+StatisticsRV,183,,,,,,
+StatisticsRV,184,,,,,,
+StatisticsRV,185,,,,,,
+StatisticsRV,186,,,,,,
+StatisticsRV,187,,,,,,
+StatisticsRV,188,,,,,,
+StatisticsRV,189,,,,,,
+StatisticsRV,190,,,,,,
+StatisticsRV,191,,,,,,
+StatisticsRV,192,,,,,,
+StatisticsRV,193,,,,,,
+StatisticsRV,194,,,,,,
+StatisticsRV,195,,,,,,
+StatisticsRV,196,,,,,,
+StatisticsRV,197,,,,,,
+StatisticsRV,198,,,,,,
+StatisticsRV,199,,,,,,
+StatisticsRV,200,,,,,,
+StatisticsRV,201,,,,,,
+StatisticsRV,202,,,,,,
+StatisticsRV,203,,,,,,
+StatisticsRV,204,,,,,,
+StatisticsRV,205,,,,,,
+StatisticsRV,206,,,,,,
+StatisticsRV,207,,,,,,
+StatisticsRV,208,,,,,,
+StatisticsRV,209,,,,,,
+StatisticsRV,210,,,,,,
+StatisticsRV,211,,,,,,
+StatisticsRV,212,,,,,,
+StatisticsRV,213,,,,,,
+StatisticsRV,214,,,,,,
+StatisticsRV,215,,,,,,
+StatisticsRV,216,,,,,,
+StatisticsRV,217,,,,,,
+StatisticsRV,218,,,,,,
+StatisticsRV,219,,,,,,
+StatisticsRV,220,,,,,,
+StatisticsRV,221,,,,,,
+StatisticsRV,222,,,,,,
+StatisticsRV,223,,,,,,
+StatisticsRV,224,,,,,,
+StatisticsRV,225,,,,,,
+StatisticsRV,226,,,,,,
+StatisticsRV,227,,,,,,
+StatisticsRV,228,,,,,,
+StatisticsRV,229,,,,,,
+StatisticsRV,230,,,,,,
+StatisticsRV,231,,,,,,
+StatisticsRV,232,,,,,,
+StatisticsRV,233,,,,,,
+StatisticsRV,234,,,,,,
+StatisticsRV,235,,,,,,
+StatisticsRV,236,,,,,,
+StatisticsRV,237,,,,,,
+StatisticsRV,238,,,,,,
+StatisticsRV,239,,,,,,
+StatisticsRV,240,,,,,,
+StatisticsRV,241,,,,,,
+StatisticsRV,242,,,,,,
+StatisticsRV,243,,,,,,
+StatisticsRV,244,,,,,,
+StatisticsRV,245,,,,,,
+StatisticsRV,246,,,,,,
+StatisticsRV,247,,,,,,
+StatisticsRV,248,,,,,,
+StatisticsRV,249,,,,,,
+StatisticsRV,250,,,,,,
+StatisticsRV,251,,,,,,
+StatisticsRV,252,,,,,,
+StatisticsRV,253,,,,,,
+StatisticsRV,254,,,,,,
+StatisticsRV,255,,,,,,
+StatisticsRV,256,,,,,,
+StatisticsRV,257,,,,,,
+StatisticsRV,258,,,,,,
+StatisticsRV,259,,,,,,
+StatisticsRV,260,,,,,,
+StatisticsRV,261,,,,,,
+StatisticsRV,262,,,,,,
+StatisticsRV,263,,,,,,
+StatisticsRV,264,,,,,,
+StatisticsRV,265,,,,,,
+StatisticsRV,266,,,,,,
+StatisticsRV,267,,,,,,
+StatisticsRV,268,,,,,,
+StatisticsRV,269,,,,,,
+StatisticsRV,270,,,,,,
+StatisticsRV,271,,,,,,
+StatisticsRV,272,,,,,,
+StatisticsRV,273,,,,,,
+StatisticsRV,274,,,,,,
+StatisticsRV,275,,,,,,
+StatisticsRV,276,,,,,,
+StatisticsRV,277,,,,,,
+StatisticsRV,278,,,,,,
+StatisticsRV,279,,,,,,
+StatisticsRV,280,,,,,,
+StatisticsRV,281,,,,,,
+StatisticsRV,282,,,,,,
+StatisticsRV,283,,,,,,
+StatisticsRV,284,,,,,,
+StatisticsRV,285,,,,,,
+StatisticsRV,286,,,,,,
+StatisticsRV,287,,,,,,
+StatisticsRV,288,,,,,,
+StatisticsRV,289,,,,,,
+StatisticsRV,290,,,,,,
+StatisticsRV,291,,,,,,
+StatisticsRV,292,,,,,,
+StatisticsRV,293,,,,,,
+StatisticsRV,294,,,,,,
+StatisticsRV,295,,,,,,
+StatisticsRV,296,,,,,,
+StatisticsRV,297,,,,,,
+StatisticsRV,298,,,,,,
+StatisticsRV,299,,,,,,
+StatisticsRV,300,,,,,,
+StatisticsRV,301,,,,,,
+StatisticsRV,302,,,,,,
+StatisticsRV,303,,,,,,
+StatisticsRV,304,,,,,,
+StatisticsRV,305,,,,,,
+StatisticsRV,306,,,,,,
+StatisticsRV,307,,,,,,
+StatisticsRV,308,,,,,,
+StatisticsRV,309,,,,,,
+StatisticsRV,310,,,,,,
+StatisticsRV,311,,,,,,
+StatisticsRV,312,,,,,,
+StatisticsRV,313,,,,,,
+StatisticsRV,314,,,,,,
+StatisticsRV,315,,,,,,
+StatisticsRV,316,,,,,,
+StatisticsRV,317,,,,,,
+StatisticsRV,318,,,,,,
+StatisticsRV,319,,,,,,
+StatisticsRV,320,,,,,,
+StatisticsRV,321,,,,,,
+StatisticsRV,322,,,,,,
+StatisticsRV,323,,,,,,
+Imputation values,0,Code values for item imputation variables Xvarname
+Imputation values,1,CodeValue,ValueLabel
+Imputation values,2,A,Not applicable
+Imputation values,3,B,Institution left item blank
+Imputation values,4,C,Analyst corrected reported value
+Imputation values,5,D,Do not know
+Imputation values,6,G,Data generated from other data values
+Imputation values,7,H,Value not derived - data not usable
+Imputation values,8,J,Logical imputation
+Imputation values,9,K,Ratio adjustment 
+Imputation values,10,L,Imputed using the Group Median procedure
+Imputation values,11,N,Imputed using Nearest Neighbor procedure
+Imputation values,12,P,Imputed using Carry Forward procedure
+Imputation values,13,R,Reported
+Imputation values,14,Z,Implied zero;

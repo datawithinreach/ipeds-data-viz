@@ -1,0 +1,924 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File Documentation for the Admissions Data File, 2023-24",,,,,,,,,
+Introduction,1,(Provisional release),,,,,,,,,
+Introduction,2,Filename,ADM2023,,,,,,,,
+Introduction,3,Overview,"This file contains information about the undergraduate selection process for entering first-time, degree/certificate-seeking students. This includes information about admission considerations,  applicants, applicants that were admitted, and admitted students who enrolled. SAT and ACT test scores are included for institutions, that require or consider test scores for admission. These data are applicable for institutions that do not have an open admissions policy for entering first-time students.  Beginning in  2022-23, new admissions considerations were added and the 50th percentile (median) for test scores are available for the first time.  Additional gender variables were added for students that do not fit the binary gender categories provided (men/women).  For more information go to the various worksheets in this workbook.  The possible values for the admission consideration variables have also changed from previous versions.  See frequencies for complete listing.  Writing scores for both SAT and ACT have been discontinued since 2016-17.
+",,,,,,,,
+Introduction,4,Note,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.  							",,,,,,,,
+Introduction,5,Contents of spreadsheet,,,,,,,,,
+Introduction,6,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,7,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,8,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.,,,,,,,,
+Introduction,9,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. ",,,,,,,,
+Introduction,10,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,10521,ADMCON1,N,2,Disc,,Secondary school GPA
+varlist,3,10526,ADMCON2,N,2,Disc,,Secondary school rank
+varlist,4,10531,ADMCON3,N,2,Disc,,Secondary school record
+varlist,5,10536,ADMCON4,N,2,Disc,,Completion of college-preparatory program
+varlist,6,10541,ADMCON5,N,2,Disc,,Recommendations
+varlist,7,10546,ADMCON6,N,2,Disc,,Formal demonstration of competencies
+varlist,8,10551,ADMCON7,N,2,Disc,,Admission test scores
+varlist,9,10556,ADMCON8,N,2,Disc,,English Proficiency Test
+varlist,10,10559,ADMCON9,N,2,Disc,,"Other Test (Wonderlic, WISC-III, etc.)"
+varlist,11,10548,ADMCON10,N,2,Disc,,Work experience
+varlist,12,10549,ADMCON11,N,2,Disc,,Personal statement or essay
+varlist,13,10550,ADMCON12,N,2,Disc,,Legacy status
+varlist,14,11016,APPLCN,N,6,Cont,XAPPLCN,Applicants total
+varlist,15,10566,APPLCNM,N,6,Cont,XAPPLCNM,Applicants men
+varlist,16,10571,APPLCNW,N,6,Cont,XAPPLCNW,Applicants women
+varlist,17,10573,APPLCNAN,N,6,Cont,XAPPLCNAN,Applicants another gender
+varlist,18,10574,APPLCNUN,N,6,Cont,XAPPLCNUN,Applicants gender unknown
+varlist,19,11021,ADMSSN,N,6,Cont,XADMSSN,Admissions total
+varlist,20,10576,ADMSSNM,N,6,Cont,XADMSSNM,Admissions men
+varlist,21,10581,ADMSSNW,N,6,Cont,XADMSSNW,Admissions women
+varlist,22,10584,ADMSSNAN,N,6,Cont,XADMSSNAN,Admissions another gender
+varlist,23,10585,ADMSSNUN,N,6,Cont,XADMSSNUN,Admissions gender unknown
+varlist,24,11011,ENRLT,N,6,Cont,XENRLT,Enrolled total
+varlist,25,11001,ENRLM,N,6,Cont,XENRLM,Enrolled  men
+varlist,26,11006,ENRLW,N,6,Cont,XENRLW,Enrolled  women
+varlist,27,11009,ENRLAN,N,6,Cont,XENRLAN,Enrolled another gender
+varlist,28,11010,ENRLUN,N,6,Cont,XENRLUN,Enrolled gender unknown
+varlist,29,11026,ENRLFT,N,6,Cont,XENRLFT,Enrolled full time total
+varlist,30,10586,ENRLFTM,N,6,Cont,XENRLFTM,Enrolled full time men
+varlist,31,10591,ENRLFTW,N,6,Cont,XENRLFTW,Enrolled full time women
+varlist,32,10594,ENRLFTAN,N,6,Cont,XENRLFTAN,Enrolled full time another gender
+varlist,33,10595,ENRLFTUN,N,6,Cont,XENRLFTUN,Enrolled full time gender unknown
+varlist,34,11031,ENRLPT,N,6,Cont,XENRLPT,Enrolled part time total
+varlist,35,10596,ENRLPTM,N,6,Cont,XENRLPTM,Enrolled part time men
+varlist,36,10601,ENRLPTW,N,6,Cont,XENRLPTW,Enrolled part time women
+varlist,37,10604,ENRLPTAN,N,6,Cont,XENRLPTAN,Enrolled part time another gender
+varlist,38,10605,ENRLPTUN,N,6,Cont,XENRLPTUN,Enrolled part time gender unknown
+varlist,39,10611,SATNUM,N,6,Cont,XSATNUM,Number of first-time degree/certificate-seeking students submitting SAT scores
+varlist,40,10616,SATPCT,N,3,Cont,XSATPCT,Percent of first-time degree/certificate-seeking students submitting SAT scores
+varlist,41,10621,ACTNUM,N,6,Cont,XACTNUM,Number of first-time degree/certificate-seeking students submitting ACT scores
+varlist,42,10626,ACTPCT,N,3,Cont,XACTPCT,Percent of first-time degree/certificate-seeking students submitting ACT scores
+varlist,43,10631,SATVR25,N,3,Cont,XSATVR25,SAT Evidence-Based Reading and Writing 25th percentile score
+varlist,44,10633,SATVR50,N,3,Cont,XSATVR50,SAT Evidence-Based Reading and Writing 50th percentile score
+varlist,45,10636,SATVR75,N,3,Cont,XSATVR75,SAT Evidence-Based Reading and Writing 75th percentile score
+varlist,46,10641,SATMT25,N,3,Cont,XSATMT25,SAT Math 25th percentile score
+varlist,47,10642,SATMT50,N,3,Cont,XSATMT50,SAT Math 50th percentile score
+varlist,48,10646,SATMT75,N,3,Cont,XSATMT75,SAT Math 75th percentile score
+varlist,49,10651,ACTCM25,N,3,Cont,XACTCM25,ACT Composite 25th percentile score
+varlist,50,10653,ACTCM50,N,3,Cont,XACTCM50,ACT Composite 50th percentile score
+varlist,51,10656,ACTCM75,N,3,Cont,XACTCM75,ACT Composite 75th percentile score
+varlist,52,10661,ACTEN25,N,3,Cont,XACTEN25,ACT English 25th percentile score
+varlist,53,10663,ACTEN50,N,3,Cont,XACTEN50,ACT English 50th percentile score
+varlist,54,10666,ACTEN75,N,3,Cont,XACTEN75,ACT English 75th percentile score
+varlist,55,10671,ACTMT25,N,3,Cont,XACTMT25,ACT Math 25th percentile score
+varlist,56,10673,ACTMT50,N,3,Cont,XACTMT50,ACT Math 50th percentile score
+varlist,57,10676,ACTMT75,N,3,Cont,XACTMT75,ACT Math 75th percentile score
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,10521,ADMCON1,"Please select the option that best describes how your institution uses any of the following data in its undergraduate selection process. 
+
+Admissions considerations - This question refers to the admission policy for entering first-time undergraduate students. Indicate the types of considerations that are used as part of the selection process for entering first-time degree/certificate-seeking students. For each, select one of the following options:
+ Required to be considered for admission,
+ Not required for admission, but considered if submitted, 
+ Not considered for admission, even if submitted
+
+This is applicable to institutions that do not have an open admission policy for entering first-time undergraduate students. 
+
+Secondary school GPA"
+Description,3,10526,ADMCON2,"Please select the option that best describes how your institution uses any of the following data in its undergraduate selection process. 
+
+Admissions considerations - This question refers to the admission policy for entering first-time undergraduate students. Indicate the types of considerations that are used as part of the selection process for entering first-time degree/certificate-seeking students. For each, select one of the following options:
+ Required to be considered for admission,
+ Not required for admission, but considered if submitted, 
+ Not considered for admission, even if submitted
+
+This is applicable to institutions that do not have an open admission policy for entering first-time undergraduate students. 
+
+Secondary school rank"
+Description,4,10531,ADMCON3,"Please select the option that best describes how your institution uses any of the following data in its undergraduate selection process. 
+
+Admissions considerations - This question refers to the admission policy for entering first-time undergraduate students. Indicate the types of considerations that are used as part of the selection process for entering first-time degree/certificate-seeking students. For each, select one of the following options:
+ Required to be considered for admission,
+ Not required for admission, but considered if submitted, 
+ Not considered for admission, even if submitted
+
+This is applicable to institutions that do not have an open admission policy for entering first-time undergraduate students. 
+
+Secondary school record"
+Description,5,10536,ADMCON4,"Please select the option that best describes how your institution uses any of the following data in its undergraduate selection process. 
+
+Admissions considerations - This question refers to the admission policy for entering first-time undergraduate students. Indicate the types of considerations that are used as part of the selection process for entering first-time degree/certificate-seeking students. For each, select one of the following options:
+ Required to be considered for admission,
+ Not required for admission, but considered if submitted, 
+ Not considered for admission, even if submitted
+
+This is applicable to institutions that do not have an open admission policy for entering first-time undergraduate students. 
+
+Completion of college-preparatory program"
+Description,6,10541,ADMCON5,"Please select the option that best describes how your institution uses any of the following data in its undergraduate selection process. 
+
+Admissions considerations - This question refers to the admission policy for entering first-time undergraduate students. Indicate the types of considerations that are used as part of the selection process for entering first-time degree/certificate-seeking students. For each, select one of the following options:
+ Required to be considered for admission,
+ Not required for admission, but considered if submitted, 
+ Not considered for admission, even if submitted
+
+This is applicable to institutions that do not have an open admission policy for entering first-time undergraduate students. 
+
+Recommendations"
+Description,7,10546,ADMCON6,"Please select the option that best describes how your institution uses any of the following data in its undergraduate selection process. 
+
+Admissions considerations - This question refers to the admission policy for entering first-time undergraduate students. Indicate the types of considerations that are used as part of the selection process for entering first-time degree/certificate-seeking students. For each, select one of the following options:
+ Required to be considered for admission,
+ Not required for admission, but considered if submitted, 
+ Not considered for admission, even if submitted
+
+This is applicable to institutions that do not have an open admission policy for entering first-time undergraduate students. 
+
+Formal demonstration of competencies (e.g., portfolios, certificates of mastery, assessment instruments)"
+Description,8,10551,ADMCON7,"Please select the option that best describes how your institution uses any of the following data in its undergraduate selection process. 
+
+Admissions considerations - This question refers to the admission policy for entering first-time undergraduate students. Indicate the types of considerations that are used as part of the selection process for entering first-time degree/certificate-seeking students. For each, select one of the following options:
+ Required to be considered for admission,
+ Not required for admission, but considered if submitted (test optional institutions) 
+ Not considered for admission, even if submitted (test blind institutions) 
+
+This is applicable to institutions that do not have an open admission policy for entering first-time undergraduate students. 
+
+Admission test scores (SAT,ACT, etc,)
+
+ADMISSIONS TEST SCORES - Scores on standardized admissions tests or special admissions tests 
+
+SAT (SCHOLASTIC APTITUDE TEST) - An examination administered by the Educational Testing Service and used to predict the facility with which an individual will progress in learning college-level academic subjects. 
+
+ACT (AMERICAN COLLEGE TESTING PROGRAM) - The ACT assessment program measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness."
+Description,9,10556,ADMCON8,"Please select the option that best describes how your institution uses any of the following data in its undergraduate selection process.
+
+ Admissions considerations - This question refers to the admission policy for entering first-time undergraduate students. Indicate the types of considerations that are used as part of the selection process for entering first-time degree/certificate-seeking students. For each, select one of the following options:
+ Required to be considered for admission,
+ Not required for admission, but considered if submitted (test optional institutions) 
+ Not considered for admission, even if submitted (test blind institutions) 
+
+This is applicable to institutions that do not have an open admission policy for entering first-time undergraduate students. 
+
+English Proficiency Test (for applicable students)"
+Description,10,10559,ADMCON9,"Please select the option that best describes how your institution uses any of the following data in its undergraduate selection process. 
+
+Admissions considerations - This question refers to the admission policy for entering first-time undergraduate students. Indicate the types of considerations that are used as part of the selection process for entering first-time degree/certificate-seeking students. For each, select one of the following options:
+ Required to be considered for admission,
+ Not required for admission, but considered if submitted (test optional institutions) 
+ Not considered for admission, even if submitted (test blind institutions) 
+
+This is applicable to institutions that do not have an open admission policy for entering first-time undergraduate students. 
+
+Other Test (Wonderlic, WISC-III, etc.)"
+Description,11,10548,ADMCON10,"Please select the option that best describes how your institution uses any of the following data in its undergraduate selection process. 
+
+Admissions considerations - This question refers to the admission policy for entering first-time undergraduate students. Indicate the types of considerations that are used as part of the selection process for entering first-time degree/certificate-seeking students. For each, select one of the following options:
+ Required to be considered for admission,
+ Not required for admission, but considered if submitted, 
+ Not considered for admission, even if submitted
+
+This is applicable to institutions that do not have an open admission policy for entering first-time undergraduate students. 
+ (e.g., portfolios, certificates of mastery, assessment instruments) 
+
+Work experience"
+Description,12,10549,ADMCON11,"Please select the option that best describes how your institution uses any of the following data in its undergraduate selection process. 
+
+Admissions considerations - This question refers to the admission policy for entering first-time undergraduate students. Indicate the types of considerations that are used as part of the selection process for entering first-time degree/certificate-seeking students. For each, select one of the following options:
+ Required to be considered for admission,
+ Not required for admission, but considered if submitted, 
+ Not considered for admission, even if submitted
+
+This is applicable to institutions that do not have an open admission policy for entering first-time undergraduate students.
+
+Personal statement or essay"
+Description,13,10550,ADMCON12,"Please select the option that best describes how your institution uses any of the following data in its undergraduate selection process. 
+
+Admissions considerations - This question refers to the admission policy for entering first-time undergraduate students. Indicate the types of considerations that are used as part of the selection process for entering first-time degree/certificate-seeking students. For each, select one of the following options:
+ Not required for admission, but considered if submitted, 
+ Not considered for admission, even if submitted
+
+This is applicable to institutions that do not have an open admission policy for entering first-time undergraduate students. 
+
+Legacy status
+ Required to be considered for admission is not applicable for this consideration"
+Description,14,11016,APPLCN,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Total number of applicants
+
+APPLICANT - An individual who has fulfilled the institution’s requirements to be considered for admission (including payment or waiving of the application fee, if any) and who has been notified of one of the following actions: admission, nonadmission, placement on waiting list, or application withdrawn (by applicant or institution). 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,15,10566,APPLCNM,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of applicants men
+
+APPLICANT - An individual who has fulfilled the institution’s requirements to be considered for admission (including payment or waiving of the application fee, if any) and who has been notified of one of the following actions: admission, nonadmission, placement on waiting list, or application withdrawn (by applicant or institution). 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,16,10571,APPLCNW,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of applicants women
+
+APPLICANT - An individual who has fulfilled the institution’s requirements to be considered for admission (including payment or waiving of the application fee, if any) and who has been notified of one of the following actions: admission, nonadmission, placement on waiting list, or application withdrawn (by applicant or institution). 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,17,10573,APPLCNAN,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of applicants another gender 
+
+Another gender (i.e., gender information is known but does not fall into either of the mutually exclusive binary categories provided [Men/Women]). This variable is left missing or blank for institutions who indicated that they were not able to report another gender for this data collection. For institutions who indicated that they were able to report another gender for this data collection, but no students identified as another gender this variable/cell is zero.
+
+APPLICANT - An individual who has fulfilled the institution’s requirements to be considered for admission (including payment or waiving of the application fee, if any) and who has been notified of one of the following actions: admission, nonadmission, placement on waiting list, or application withdrawn (by applicant or institution). 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,18,10574,APPLCNUN,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of applicants gender unknown
+ 
+APPLICANT - An individual who has fulfilled the institution’s requirements to be considered for admission (including payment or waiving of the application fee, if any) and who has been notified of one of the following actions: admission, nonadmission, placement on waiting list, or application withdrawn (by applicant or institution). 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,19,11021,ADMSSN,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Total number of admissions
+
+ADMISSIONS - Applicants that have been granted an official offer to enroll in a college or university. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,20,10576,ADMSSNM,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of admissions men
+
+ADMISSIONS - Applicants that have been granted an official offer to enroll in a college or university. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,21,10581,ADMSSNW,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of admissions women
+
+ADMISSIONS - Applicants that have been granted an official offer to enroll in a college or university. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,22,10584,ADMSSNAN,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of admissions another gender
+
+Another gender (i.e., gender information is known but does not fall into either of the mutually exclusive binary categories provided [Men/Women]). This variable is left missing or blank for institutions who indicated that they were not able to report another gender for this data collection. For institutions who indicated that they were able to report another gender for this data collection, but no students identified as another gender this variable/cell is zero.
+
+ADMISSIONS - Applicants that have been granted an official offer to enroll in a college or university. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,23,10585,ADMSSNUN,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of admissions gender unknown
+
+ADMISSIONS - Applicants that have been granted an official offer to enroll in a college or university. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,24,11011,ENRLT,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Total number of enrolled 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,25,11001,ENRLM,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of enrolled men
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,26,11006,ENRLW,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of enrolled women
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,27,11009,ENRLAN,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of enrolled another gender
+
+Another gender (i.e., gender information is known but does not fall into either of the mutually exclusive binary categories provided [Men/Women]). This variable is left missing or blank for institutions who indicated that they were not able to report another gender for this data collection. For institutions who indicated that they were able to report another gender for this data collection, but no students identified as another gender this variable/cell is zero.
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,28,11010,ENRLUN,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of enrolled gender unknown
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy."
+Description,29,11026,ENRLFT,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Total number of full time enrolled
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs. 
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy. 
+
+FULL-TIME STUDENT Undergraduate - A student enrolled for 12 or more semester credits, or 12 or more quarter credits, or 24 or more clock hours a week each term"
+Description,30,10586,ENRLFTM,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of full time enrolled men
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS - Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs.
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy. 
+
+FULL-TIME STUDENT Undergraduate - A student enrolled for 12 or more semester credits, or 12 or more quarter credits, or 24 or more clock hours a week each term"
+Description,31,10591,ENRLFTW,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of full time enrolled women
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS - Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs.
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy. 
+
+FULL-TIME STUDENT Undergraduate - A student enrolled for 12 or more semester credits, or 12 or more quarter credits, or 24 or more clock hours a week each term"
+Description,32,10594,ENRLFTAN,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of full time enrolled another gender
+
+Another gender (i.e., gender information is known but does not fall into either of the mutually exclusive binary categories provided [Men/Women]). This variable is left missing or blank for institutions who indicated that they were not able to report another gender for this data collection. For institutions who indicated that they were able to report another gender for this data collection, but no students identified as another gender this variable/cell is zero.
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS - Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs.
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy. 
+
+FULL-TIME STUDENT Undergraduate - A student enrolled for 12 or more semester credits, or 12 or more quarter credits, or 24 or more clock hours a week each term"
+Description,33,10595,ENRLFTUN,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of full time enrolled gender unknown
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS - Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs.
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy. 
+
+FULL-TIME STUDENT Undergraduate - A student enrolled for 12 or more semester credits, or 12 or more quarter credits, or 24 or more clock hours a week each term"
+Description,34,11031,ENRLPT,"Total number of first-time degree/certificate-seeking undergraduate enrolled part time.
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS - Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs.
+
+PART-TIME STUDENT Undergraduate - A student enrolled for either 11 semester credits or less, or 11 quarter credits or less, or less than 24 clock hours a week each term."
+Description,35,10596,ENRLPTM,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of part time enrolled men
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS - Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs.
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy. 
+
+PART-TIME STUDENT Undergraduate - A student enrolled for either 11 semester credits or less, or 11 quarter credits or less, or less than 24 clock hours a week each term."
+Description,36,10601,ENRLPTW,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of part time enrolled women
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS - Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs.
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy. 
+
+PART-TIME STUDENT Undergraduate - A student enrolled for either 11 semester credits or less, or 11 quarter credits or less, or less than 24 clock hours a week each term."
+Description,37,10604,ENRLPTAN,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of part time enrolled another gender
+
+Another gender (i.e., gender information is known but does not fall into either of the mutually exclusive binary categories provided [Men/Women]). This variable is left missing or blank for institutions who indicated that they were not able to report another gender for this data collection. For institutions who indicated that they were able to report another gender for this data collection, but no students identified as another gender this variable/cell is zero.
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS - Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs.
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy. 
+
+PART-TIME STUDENT Undergraduate - A student enrolled for either 11 semester credits or less, or 11 quarter credits or less, or less than 24 clock hours a week each term."
+Description,38,10605,ENRLPTUN,"Please provide the number of first-time, degree/certificate-seeking undergraduate students who applied, were admitted, and enrolled (full or part time) at your institution for the most recent fall period available. Include early decision, early action, and students who began studies during the summer prior to that fall. 
+This is applicable to institutions that have no open admission policy for entering first-time undergraduate students
+
+Number of part time enrolled gender unknown
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS - Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs.
+
+EARLY DECISION 
+A plan that allows students to apply and be notified of an admission decision (and financial aid offer, if applicable) well in advance of the regular notification date. Applicants agree to accept an offer of admission and, if admitted, to withdraw their applications from other colleges. There are three possible decision applications: admitted, denied, or not admitted but forwarded for consideration with the regular applicant pool, without prejudice. 
+
+EARLY ACTION 
+An admission plan that allows students to apply and be notified of an admission decision well in advance of the regular notification dates. If admitted, the candidate is not committed to enroll (unlike early decision). Students may reply to the offer under the college's regular reply policy. 
+
+PART-TIME STUDENT Undergraduate - A student enrolled for either 11 semester credits or less, or 11 quarter credits or less, or less than 24 clock hours a week each term."
+Description,39,10611,SATNUM,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th, and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+Number submitting SAT scores 
+
+SAT (SCHOLASTIC APTITUDE TEST) - An examination administered by the Educational Testing Service and used to predict the facility with which an individual will progress in learning college-level academic subjects. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,40,10616,SATPCT,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+Percent submitting SAT scores 
+
+SAT (SCHOLASTIC APTITUDE TEST) - An examination administered by the Educational Testing Service and used to predict the facility with which an individual will progress in learning college-level academic subjects. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,41,10621,ACTNUM,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+Number submitting ACT scores 
+
+ACT (AMERICAN COLLEGE TESTING PROGRAM) - The ACT assessment program measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness. 
+
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,42,10626,ACTPCT,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+
+Percent submitting ACT scores
+
+ACT (AMERICAN COLLEGE TESTING PROGRAM) - The ACT assessment program measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness. 
+
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,43,10631,SATVR25,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+SAT Evidence-Based Reading and Writing 25th percentile score 
+
+SAT (SCHOLASTIC APTITUDE TEST) - An examination administered by the Educational Testing Service and used to predict the facility with which an individual will progress in learning college-level academic subjects. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,44,10633,SATVR50,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+SAT Evidence-Based Reading and Writing 50th percentile score 
+
+SAT (SCHOLASTIC APTITUDE TEST) - An examination administered by the Educational Testing Service and used to predict the facility with which an individual will progress in learning college-level academic subjects. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,45,10636,SATVR75,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+SAT I Evidence-Based Reading and Writing 75th percentile score 
+
+SAT (SCHOLASTIC APTITUDE TEST) - An examination administered by the Educational Testing Service and used to predict the facility with which an individual will progress in learning college-level academic subjects. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,46,10641,SATMT25,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+SAT I Math 25th percentile score 
+
+SAT (SCHOLASTIC APTITUDE TEST) - An examination administered by the Educational Testing Service and used to predict the facility with which an individual will progress in learning college-level academic subjects. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,47,10642,SATMT50,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+SAT I Math 50th percentile score 
+
+SAT (SCHOLASTIC APTITUDE TEST) - An examination administered by the Educational Testing Service and used to predict the facility with which an individual will progress in learning college-level academic subjects. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,48,10646,SATMT75,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+SAT I Math 75th percentile score 
+
+SAT (SCHOLASTIC APTITUDE TEST) - An examination administered by the Educational Testing Service and used to predict the facility with which an individual will progress in learning college-level academic subjects. 
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,49,10651,ACTCM25,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+ACT Composite 25th percentile score 
+
+ACT (AMERICAN COLLEGE TESTING PROGRAM) - The ACT assessment program measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness. 
+
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,50,10653,ACTCM50,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+ACT Composite 50th percentile score 
+
+ACT (AMERICAN COLLEGE TESTING PROGRAM) - The ACT assessment program measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness. 
+
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,51,10656,ACTCM75,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+ACT Composite 75th percentile score 
+
+ACT (AMERICAN COLLEGE TESTING PROGRAM) - The ACT assessment program measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness. 
+
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,52,10661,ACTEN25,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+ACT English 25th percentile score 
+
+ACT (AMERICAN COLLEGE TESTING PROGRAM) - The ACT assessment program measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness. 
+
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,53,10663,ACTEN50,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+ACT English 50th percentile score 
+
+ACT (AMERICAN COLLEGE TESTING PROGRAM) - The ACT assessment program measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness. 
+
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,54,10666,ACTEN75,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+ACT English 75th percentile score 
+
+ACT (AMERICAN COLLEGE TESTING PROGRAM) - The ACT assessment program measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness. 
+
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,55,10671,ACTMT25,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+ACT Math 25th percentile score 
+
+ACT (AMERICAN COLLEGE TESTING PROGRAM) - The ACT assessment program measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness. 
+
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,56,10673,ACTMT50,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+ACT Math 50th percentile score 
+
+ACT (AMERICAN COLLEGE TESTING PROGRAM) - The ACT assessment program measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness. 
+
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Description,57,10676,ACTMT75,"If test scores are required for admission for first-time, degree/certificate-seeking undergraduate students, please provide the following information: the number and percentage of students submitting SAT/ACT scores and the 25th, 50th and 75th percentile scores for each test. Provide data for the most recent group of students for which data are available; include new students admitted the summer prior to that fall. 
+(This is applicable to institutions that have no open admission policy for entering first-time undergraduate students ). 
+
+ACT Math 75th percentile score 
+
+ACT (AMERICAN COLLEGE TESTING PROGRAM) - The ACT assessment program measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness. 
+
+
+FIRST-TIME STUDENT (UNDERGRADUATE) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs. Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+DEGREE/CERTIFICATE-SEEKING STUDENTS 
+Students enrolled in courses for credit who are recognized by the institution as seeking a degree or formal award. At the undergraduate level, this is intended to include students enrolled in vocational or occupational programs."
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,10521,ADMCON1,1,Required to be considered for admission,1555,78.849999999999994
+Frequencies,2,10521,ADMCON1,5,"Not required for admission, but considered if submitted",258,13.08
+Frequencies,3,10521,ADMCON1,3,"Not considered for admission, even if submitted",159,8.06
+Frequencies,4,10526,ADMCON2,1,Required to be considered for admission,104,5.27
+Frequencies,5,10526,ADMCON2,5,"Not required for admission, but considered if submitted",839,42.55
+Frequencies,6,10526,ADMCON2,3,"Not considered for admission, even if submitted",1029,52.18
+Frequencies,7,10531,ADMCON3,1,Required to be considered for admission,1710,86.71
+Frequencies,8,10531,ADMCON3,5,"Not required for admission, but considered if submitted",169,8.57
+Frequencies,9,10531,ADMCON3,3,"Not considered for admission, even if submitted",93,4.72
+Frequencies,10,10536,ADMCON4,1,Required to be considered for admission,642,32.56
+Frequencies,11,10536,ADMCON4,5,"Not required for admission, but considered if submitted",669,33.92
+Frequencies,12,10536,ADMCON4,3,"Not considered for admission, even if submitted",661,33.520000000000003
+Frequencies,13,10541,ADMCON5,1,Required to be considered for admission,631,32
+Frequencies,14,10541,ADMCON5,5,"Not required for admission, but considered if submitted",670,33.979999999999997
+Frequencies,15,10541,ADMCON5,3,"Not considered for admission, even if submitted",671,34.03
+Frequencies,16,10546,ADMCON6,1,Required to be considered for admission,161,8.16
+Frequencies,17,10546,ADMCON6,5,"Not required for admission, but considered if submitted",503,25.51
+Frequencies,18,10546,ADMCON6,3,"Not considered for admission, even if submitted",1308,66.33
+Frequencies,19,10551,ADMCON7,1,Required to be considered for admission,100,5.07
+Frequencies,20,10551,ADMCON7,5,"Not required for admission, but considered if submitted (Test Optional)",1100,55.78
+Frequencies,21,10551,ADMCON7,3,"Not considered for admission, even if submitted (Test Blind)",772,39.15
+Frequencies,22,10556,ADMCON8,1,Required to be considered for admission,1390,70.489999999999995
+Frequencies,23,10556,ADMCON8,5,"Not required for admission, but considered if submitted (Test Optional)",202,10.24
+Frequencies,24,10556,ADMCON8,3,"Not considered for admission, even if submitted (Test Blind)",380,19.27
+Frequencies,25,10559,ADMCON9,1,Required to be considered for admission,232,11.76
+Frequencies,26,10559,ADMCON9,5,"Not required for admission, but considered if submitted (Test Optional)",142,7.2
+Frequencies,27,10559,ADMCON9,3,"Not considered for admission, even if submitted (Test Blind)",1598,81.03
+Frequencies,28,10548,ADMCON10,1,Required to be considered for admission,24,1.22
+Frequencies,29,10548,ADMCON10,5,"Not required for admission, but considered if submitted",868,44.02
+Frequencies,30,10548,ADMCON10,3,"Not considered for admission, even if submitted",1080,54.77
+Frequencies,31,10549,ADMCON11,1,Required to be considered for admission,647,32.81
+Frequencies,32,10549,ADMCON11,5,"Not required for admission, but considered if submitted",740,37.53
+Frequencies,33,10549,ADMCON11,3,"Not considered for admission, even if submitted",585,29.67
+Frequencies,34,10550,ADMCON12,5,"Not required for admission, but considered if submitted",547,27.74
+Frequencies,35,10550,ADMCON12,3,"Not considered for admission, even if submitted",1425,72.260000000000005
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,11016,APPLCN,1972,13968682,7083.5101419878292,0,145903,Applicants total
+Statistics,2,10566,APPLCNM,1972,6008658,3046.9868154158216,0,67384,Applicants men
+Statistics,3,10571,APPLCNW,1972,7899125,4005.6414807302231,0,78519,Applicants women
+Statistics,4,10573,APPLCNAN,473,23215,49.080338266384778,0,1357,Applicants another gender
+Statistics,5,10574,APPLCNUN,1533,26021,16.973907371167645,0,2285,Applicants gender unknown
+Statistics,6,11021,ADMSSN,1949,8150243,4181.7562852744995,0,62084,Admissions total
+Statistics,7,10576,ADMSSNM,1885,3339090,1771.4005305039789,0,30814,Admissions men
+Statistics,8,10581,ADMSSNW,1862,4782122,2568.2717508055853,0,31269,Admissions women
+Statistics,9,10584,ADMSSNAN,150,10058,67.053333333333327,0,629,Admissions another gender
+Statistics,10,10585,ADMSSNUN,1533,11908,7.7677756033920415,0,1416,Admissions gender unknown
+Statistics,11,11011,ENRLT,1946,1692448,869.70606372045222,0,15345,Enrolled total
+Statistics,12,11001,ENRLM,1874,744766,397.42049092849521,0,7175,Enrolled  men
+Statistics,13,11006,ENRLW,1857,942939,507.77544426494347,0,9722,Enrolled  women
+Statistics,14,11009,ENRLAN,141,2294,16.269503546099291,0,166,Enrolled another gender
+Statistics,15,11010,ENRLUN,1533,1435,0.9360730593607306,0,358,Enrolled gender unknown
+Statistics,16,11026,ENRLFT,1933,1624294,840.29694774961195,0,13987,Enrolled full time total
+Statistics,17,10586,ENRLFTM,1851,715541,386.569962182604,0,7122,Enrolled full time men
+Statistics,18,10591,ENRLFTW,1842,904166,490.86102062975027,0,6864,Enrolled full time women
+Statistics,19,10594,ENRLFTAN,96,2251,23.447916666666668,5,158,Enrolled full time another gender
+Statistics,20,10595,ENRLFTUN,1527,1362,0.89194499017681728,0,347,Enrolled full time gender unknown
+Statistics,21,11031,ENRLPT,1490,68154,45.740939597315439,0,11923,Enrolled part time total
+Statistics,22,10596,ENRLPTM,1446,29225,20.210926694329185,0,4417,Enrolled part time men
+Statistics,23,10601,ENRLPTW,1479,38773,26.215686274509803,0,7506,Enrolled part time women
+Statistics,24,10604,ENRLPTAN,70,43,0.61428571428571432,0,35,Enrolled part time another gender
+Statistics,25,10605,ENRLPTUN,1150,73,6.347826086956522E-2,0,11,Enrolled part time gender unknown
+Statistics,26,10611,SATNUM,1166,370952,318.14065180102915,0,11070,Number of first-time degree/certificate-seeking students submitting SAT scores
+Statistics,27,10616,SATPCT,1166,25453,21.829331046312177,0,100,Percent of first-time degree/certificate-seeking students submitting SAT scores
+Statistics,28,10621,ACTNUM,1161,317610,273.5658914728682,0,5236,Number of first-time degree/certificate-seeking students submitting ACT scores
+Statistics,29,10626,ACTPCT,1161,26201,22.567614125753661,0,100,Percent of first-time degree/certificate-seeking students submitting ACT scores
+Statistics,30,10631,SATVR25,994,538770,542.02213279678074,300,750,SAT Evidence-Based Reading and Writing 25th percentile score
+Statistics,31,10633,SATVR50,994,588642,592.19517102615691,405,760,SAT Evidence-Based Reading and Writing 50th percentile score
+Statistics,32,10636,SATVR75,994,637713,641.56237424547282,420,780,SAT Evidence-Based Reading and Writing 75th percentile score
+Statistics,33,10641,SATMT25,994,527108,530.2897384305835,320,780,SAT Math 25th percentile score
+Statistics,34,10642,SATMT50,994,578682,582.17505030181087,385,790,SAT Math 50th percentile score
+Statistics,35,10646,SATMT75,994,629696,633.49698189134813,428,800,SAT Math 75th percentile score
+Statistics,36,10651,ACTCM25,972,21301,21.914609053497941,1,34,ACT Composite 25th percentile score
+Statistics,37,10653,ACTCM50,972,23972,24.662551440329217,5,35,ACT Composite 50th percentile score
+Statistics,38,10656,ACTCM75,972,26699,27.468106995884774,14,36,ACT Composite 75th percentile score
+Statistics,39,10661,ACTEN25,916,19071,20.819868995633186,1,35,ACT English 25th percentile score
+Statistics,40,10663,ACTEN50,916,22232,24.270742358078603,2,35,ACT English 50th percentile score
+Statistics,41,10666,ACTEN75,916,25420,27.751091703056769,9,36,ACT English 75th percentile score
+Statistics,42,10671,ACTMT25,918,18437,20.083877995642702,1,34,ACT Math 25th percentile score
+Statistics,43,10673,ACTMT50,918,21196,23.089324618736384,5,35,ACT Math 50th percentile score
+Statistics,44,10676,ACTMT75,918,24090,26.241830065359476,7,36,ACT Math 75th percentile score
+Imputation values,0,Code values for item imputation variables Xvarname,
+Imputation values,1,CodeValue,ValueLabel
+Imputation values,2,A,Not applicable
+Imputation values,3,B,Institution left item blank
+Imputation values,4,C,Analyst corrected reported value
+Imputation values,5,D,Do not know
+Imputation values,6,G,Data generated from other data values
+Imputation values,7,H,Value not derived - data not usable
+Imputation values,8,J,Logical imputation
+Imputation values,9,K,Ratio adjustment 
+Imputation values,10,L,Imputed using the Group Median procedure
+Imputation values,11,N,Imputed using Nearest Neighbor procedure
+Imputation values,12,P,Imputed using Carry Forward procedure
+Imputation values,13,R,Reported
+Imputation values,14,Z,Implied zero;

@@ -1,0 +1,501 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File Documentation for the 12-month Unduplicated Head Count Data File, 2019-20 ",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2
+Introduction,3,Filename,EFFY2020
+Introduction,4,  Provisional release:,July 2021
+Introduction,5,Filename,EFFY2020_RV
+Introduction,6,  Final/revised release:,August 2022
+Introduction,7,,
+Introduction,8,Overview,"This file contains the unduplicated head count of students enrolled over the 12-month period (July 1, 2019 - June 30, 2020) for both undergraduate and graduate levels. Beginning with the 2019-20 data collected in 2020-21, undergraduate level headcounts are available by attendance status (full- and part-time) for both degree/certificate-seeking and nondegree/certificate-seeking students. Degree/certificate-seeking headcounts are further disaggregated by first-time, transfer-ins, and continuing student categories.  These enrollment data are particularly valuable for institutions that use non-traditional calendar systems and offer short-term programs. Because this enrollment measure encompasses an entire year, it provides a more complete picture of the number of students these schools serve.  Each record is uniquely defined by the variables IPEDS ID (UNITID), and the level and degree/certificate-seeking status of student (EFFYALEV). Each record will contain the total head count for men and women, and the total headcount for men and women for all nine race/ethnicity categories. 
+",,,,,,,,
+Introduction,9,Note:,"Provisional release data have undergone all NCES data quality control procedures. Data are imputed for nonresponding institutions. These data are used for First Look (Provisional Data) Web Tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. The final release data can be used when the most up to date data are required; however, these data may not match First Look Web Tables based on provisional data. ",,,,,,,,
+Introduction,10,Contents of spreadsheet,,,,,,,,,
+Introduction,11,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,12,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,13,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.(provisional release),,,,,,,,
+Introduction,14,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file.(provisional release)",,,,,,,,
+Introduction,15,FrequenciesRV,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable. (final/revised release),,,,,,,,
+Introduction,16,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (final/revised release)",,,,,,,,
+Introduction,17,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,20662,EFFYALEV,N,2,Disc,,Level and degree/certificate-seeking status of student
+varlist,3,20661,EFFYLEV,N,2,Disc,,Undergraduate or graduate level of student
+varlist,4,22023,LSTUDY,N,3,Disc,,Original level of study on survey form
+varlist,5,20781,EFYTOTLT,N,6,Cont,XEYTOTLT,Grand total
+varlist,6,20736,EFYTOTLM,N,6,Cont,XEYTOTLM,Grand total men
+varlist,7,20741,EFYTOTLW,N,6,Cont,XEYTOTLW,Grand total women
+varlist,8,24176,EFYAIANT,N,6,Cont,XEFYAIAT,American Indian or Alaska Native total
+varlist,9,24111,EFYAIANM,N,6,Cont,XEFYAIAM,American Indian or Alaska Native men
+varlist,10,24116,EFYAIANW,N,6,Cont,XEFYAIAW,American Indian or Alaska Native women
+varlist,11,24181,EFYASIAT,N,6,Cont,XEFYASIT,Asian total
+varlist,12,24121,EFYASIAM,N,6,Cont,XEFYASIM,Asian men
+varlist,13,24126,EFYASIAW,N,6,Cont,XEFYASIW,Asian women
+varlist,14,24186,EFYBKAAT,N,6,Cont,XEFYBKAT,Black or African American total
+varlist,15,24131,EFYBKAAM,N,6,Cont,XEFYBKAM,Black or African American men
+varlist,16,24136,EFYBKAAW,N,6,Cont,XEFYBKAW,Black or African American women
+varlist,17,24171,EFYHISPT,N,6,Cont,XEFYHIST,Hispanic or Latino total
+varlist,18,24101,EFYHISPM,N,6,Cont,XEFYHISM,Hispanic or Latino men
+varlist,19,24106,EFYHISPW,N,6,Cont,XEFYHISW,Hispanic or Latino women
+varlist,20,24191,EFYNHPIT,N,6,Cont,XEFYNHPT,Native Hawaiian or Other Pacific Islander total
+varlist,21,24141,EFYNHPIM,N,6,Cont,XEFYNHPM,Native Hawaiian or Other Pacific Islander men
+varlist,22,24146,EFYNHPIW,N,6,Cont,XEFYNHPW,Native Hawaiian or Other Pacific Islander women
+varlist,23,24196,EFYWHITT,N,6,Cont,XEFYWHIT,White total
+varlist,24,24151,EFYWHITM,N,6,Cont,XEFYWHIM,White men
+varlist,25,24156,EFYWHITW,N,6,Cont,XEFYWHIW,White women
+varlist,26,24201,EFY2MORT,N,6,Cont,XEFY2MOT,Two or more races total
+varlist,27,24161,EFY2MORM,N,6,Cont,XEFY2MOM,Two or more races men
+varlist,28,24166,EFY2MORW,N,6,Cont,XEFY2MOW,Two or more races women
+varlist,29,20776,EFYUNKNT,N,6,Cont,XEYUNKNT,Race/ethnicity unknown total
+varlist,30,20726,EFYUNKNM,N,6,Cont,XEYUNKNM,Race/ethnicity unknown men
+varlist,31,20731,EFYUNKNW,N,6,Cont,XEYUNKNW,Race/ethnicity unknown women
+varlist,32,20746,EFYNRALT,N,6,Cont,XEYNRALT,Nonresident alien total
+varlist,33,20666,EFYNRALM,N,6,Cont,XEYNRALM,Nonresident alien men
+varlist,34,20671,EFYNRALW,N,6,Cont,XEYNRALW,Nonresident alien women
+varlist,35,,,,,,,
+varlist,36,,,,,,,
+varlist,37,,,,,,,
+varlist,38,,,,,,,
+varlist,39,,,,,,,
+varlist,40,,,,,,,
+varlist,41,,,,,,,
+varlist,42,,,,,,,
+varlist,43,,,,,,,
+varlist,44,,,,,,,
+varlist,45,,,,,,,
+varlist,46,,,,,,,
+varlist,47,,,,,,,
+varlist,48,,,,,,,
+varlist,49,,,,,,,
+varlist,50,,,,,,,
+varlist,51,,,,,,,
+varlist,52,,,,,,,
+varlist,53,,,,,,,
+varlist,54,,,,,,,
+varlist,55,,,,,,,
+varlist,56,,,,,,,
+varlist,57,,,,,,,
+varlist,58,,,,,,,
+varlist,59,,,,,,,
+varlist,60,,,,,,,
+varlist,61,,,,,,,
+varlist,62,,,,,,,
+varlist,63,,,,,,,
+varlist,64,,,,,,,
+varlist,65,,,,,,,
+varlist,66,,,,,,,
+varlist,67,,,,,,,
+varlist,68,,,,,,,
+varlist,69,,,,,,,
+varlist,70,,,,,,,
+varlist,71,,,,,,,
+varlist,72,,,,,,,
+varlist,73,,,,,,,
+varlist,74,,,,,,,
+varlist,75,,,,,,,
+varlist,76,,,,,,,
+varlist,77,,,,,,,
+varlist,78,,,,,,,
+varlist,79,,,,,,,
+varlist,80,,,,,,,
+varlist,81,,,,,,,
+varlist,82,,,,,,,
+varlist,83,,,,,,,
+varlist,84,,,,,,,
+varlist,85,,,,,,,
+varlist,86,,,,,,,
+varlist,87,,,,,,,
+varlist,88,,,,,,,
+varlist,89,,,,,,,
+varlist,90,,,,,,,
+varlist,91,,,,,,,
+varlist,92,,,,,,,
+varlist,93,,,,,,,
+varlist,94,,,,,,,
+varlist,95,,,,,,,
+varlist,96,,,,,,,
+varlist,97,,,,,,,
+varlist,98,,,,,,,
+varlist,99,,,,,,,
+varlist,100,,,,,,,
+varlist,101,,,,,,,
+varlist,102,,,,,,,
+varlist,103,,,,,,,
+varlist,104,,,,,,,
+varlist,105,,,,,,,
+varlist,106,,,,,,,
+varlist,107,,,,,,,
+varlist,108,,,,,,,
+varlist,109,,,,,,,
+varlist,110,,,,,,,
+varlist,111,,,,,,,
+varlist,112,,,,,,,
+varlist,113,,,,,,,
+varlist,114,,,,,,,
+varlist,115,,,,,,,
+varlist,116,,,,,,,
+varlist,117,,,,,,,
+varlist,118,,,,,,,
+varlist,119,,,,,,,
+varlist,120,,,,,,,
+varlist,121,,,,,,,
+varlist,122,,,,,,,
+varlist,123,,,,,,,
+varlist,124,,,,,,,
+varlist,125,,,,,,,
+varlist,126,,,,,,,
+varlist,127,,,,,,,
+varlist,128,,,,,,,
+varlist,129,,,,,,,
+varlist,130,,,,,,,
+varlist,131,,,,,,,
+varlist,132,,,,,,,
+varlist,133,,,,,,,
+varlist,134,,,,,,,
+varlist,135,,,,,,,
+varlist,136,,,,,,,
+varlist,137,,,,,,,
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,20662,EFFYALEV,"Level,  full- and part-time status, degree-seeking/non degree-seeking status  and year of study of student  - This variable identifies the level of enrollment (unduplicated headcount) data for the institution.  Enrollment counts are available by level of student (undergraduate or graduate).  Undergraduate enrollments are disaggregated by degree-seeking and non-degree seeking status. Degree-seeking enrollments are further broken out by first-time, first year students, transfer-ins and continuing students.  Undergraduate categories are available by full- and part-time status.
+
+Undergraduate  A student enrolled in a 4- or 5-year bachelor's degree program, an associate's degree program, or a vocational or technical program below the baccalaureate.  
+
+Degree/certificate-seeking students  Students enrolled in courses for credit and recognized by the institution as seeking a degree, certificate, or other formal award. High school students also enrolled in postsecondary courses for credit are not considered degree/certificate-seeking.  
+
+First-time student (undergraduate)  A student who has no prior postsecondary experience (except as noted below) attending any institution for the first time at the undergraduate level. This includes students enrolled in academic or occupational programs. It also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school).  
+
+Transfer-in student (undergraduate)  A student entering the reporting institution for the first time but known to have previously attended a postsecondary institution at the same level. The student may transfer with or without credit.  
+
+Graduate student  A student who holds a bachelor's degree or above and is taking courses at the postbaccalaureate level. These students may or may not be enrolled in graduate programs.  
+
+Full-time student  Undergraduate: A student enrolled for 12 or more semester credits , or 12 or more quarter credits, or 24 or more clock hours a week each term. Graduate: A student enrolled for 9 or more semester credits, or 9 or more quarter credits, or a student involved in thesis or dissertation preparation that is considered full time by the institution. Doctor's degree - Professional practice - as defined by the institution.  
+
+Part-time student  Undergraduate: A student enrolled for either less than 12 semester or quarter credits, or less than 24 clock hours a week each term. Graduate: A student enrolled for less than 9 semester or quarter credits"
+Description,3,20661,EFFYLEV,"Level of study 
+
+1 - Total students enrolled for credit
+2 - Undergraduate students - A student enrolled in a 4- or 5-year bachelor's degree program, an associate's degree program, or a vocational or technical program below the baccalaureate. Students who have already earned a bachelor's degree but are taking undergraduate courses FOR CREDIT are included as undergraduates. 
+4- Graduate student -  A student who holds a bachelor's degree or above and is taking courses at the postbaccalaureate level. These students may or may not be enrolled in graduate programs."
+Description,4,22023,LSTUDY,"Original level of study on survey form
+1 - Undergraduate students - A student enrolled in a 4- or 5-year bachelor's degree program, an associate's degree program, or a vocational or technical program below the baccalaureate. Students who have already earned a bachelor's degree but are taking undergraduate courses FOR CREDIT are included as undergraduates. 
+3- Graduate student -  A student who holds a bachelor's degree or above and is taking courses at the postbaccalaureate level. These students may or may not be enrolled in graduate programs."
+Description,5,20781,EFYTOTLT,"Grand total men and women enrolled for credit during the 12-month reporting period.
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award."
+Description,6,20736,EFYTOTLM,"12-month unduplicated headcount by race/ethnicity and gender
+Grand total men enrolled for credit during the 12-month reporting period.
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award."
+Description,7,20741,EFYTOTLW,"12-month unduplicated headcount by race/ethnicity and gender
+Grand total women enrolled for credit during the 12-month reporting period.
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award."
+Description,8,24176,EFYAIANT,"EFYAIANT
+American Indian or Alaska Native men and women enrolled for credit during the 12-month period.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,9,24111,EFYAIANM,"American Indian or Alaska Native men enrolled for credit during the 12-month period.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,10,24116,EFYAIANW,"American Indian or Alaska Native women enrolled for credit during the 12-month period.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,11,24181,EFYASIAT,"Asian men and women enrolled for credit during the 12-month period.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,12,24121,EFYASIAM,"Asian men enrolled for credit during the 12-month period.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,13,24126,EFYASIAW,"Asian women enrolled for credit during the 12-month period.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,14,24186,EFYBKAAT,"Black or African American men and women enrolled for credit during the 12-month period.
+
+Black or African American - A person having origins in any of the black racial groups of Africa."
+Description,15,24131,EFYBKAAM,"Black or African American men enrolled for credit during the 12-month period.
+
+Black or African American - A person having origins in any of the black racial groups of Africa."
+Description,16,24136,EFYBKAAW,"Black or African American women enrolled for credit during the 12-month period.
+
+Black or African American - A person having origins in any of the black racial groups of Africa."
+Description,17,24171,EFYHISPT,"Hispanic or Latino men and women enrolled for credit during the 12-month period.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,18,24101,EFYHISPM,"Hispanic or Latino men enrolled for credit during the 12-month period.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,19,24106,EFYHISPW,"Hispanic or Latino women enrolled for credit during the 12-month period.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,20,24191,EFYNHPIT,"Native Hawaiian or Other Pacific Islanders men and women enrolled for credit during the 12-month period.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,21,24141,EFYNHPIM,"Native Hawaiian or Other Pacific Islanders men enrolled for credit during the 12-month period.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,22,24146,EFYNHPIW,"Native Hawaiian or Other Pacific Islanders women enrolled for credit during the 12-month period.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,23,24196,EFYWHITT,"White men and women enrolled for credit during the 12-month period.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,24,24151,EFYWHITM,"White men enrolled for credit during the 12-month period.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,25,24156,EFYWHITW,"White women enrolled for credit during the 12-month period.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,26,24201,EFY2MORT,"Men and women of two or more races enrolled for credit during the 12-month period.  
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,27,24161,EFY2MORM,"Men of two or more races enrolled for credit during the 12-month period.  
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,28,24166,EFY2MORW,"Women of two or more races enrolled for credit during the 12-month period.  
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,29,20776,EFYUNKNT,"Race/ethnicity unknown men and women enrolled for credit during the 12-month period.
+Race/ethnicity unknown - This category is used ONLY if the student did not select a racial/ethnic designation, AND the postsecondary institution finds it impossible to place the student in one of the aforementioned racial/ethnic categories during established enrollment procedures or in any post-enrollment identification or verification process."
+Description,30,20726,EFYUNKNM,"12-month unduplicated headcount by race/ethnicity and gender
+Race/ethnicity unknown men enrolled for credit during the 12-month period.
+Race/ethnicity unknown - This category is used ONLY if the student did not select a racial/ethnic designation, AND the postsecondary institution finds it impossible to place the student in one of the aforementioned racial/ethnic categories during established enrollment procedures or in any post-enrollment identification or verification process."
+Description,31,20731,EFYUNKNW,"12-month unduplicated headcount by race/ethnicity and gender
+Race/ethnicity unknown women enrolled for credit during the 12-month period.
+Race/ethnicity unknown - This category is used ONLY if the student did not select a racial/ethnic designation, AND the postsecondary institution finds it impossible to place the student in one of the aforementioned racial/ethnic categories during established enrollment procedures or in any post-enrollment identification or verification process."
+Description,32,20746,EFYNRALT,"Nonresident Alien men and women enrolled for credit during the 12-month reporting period
+
+NONRESIDENT ALIEN - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.
+NOTE - Nonresident aliens are included here, rather than in any of the five racial/ethnic categories described below. Resident aliens and other eligible (for financial aid purposes) non-citizens who are not citizens or nationals of the United States and who have been admitted as legal immigrants for the purpose of obtaining permanent resident alien status (and who hold either an alien registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian) are to be reported in the appropriate racial/ethnic categories along with United States citizens."
+Description,33,20666,EFYNRALM,"12-month unduplicated headcount by race/ethnicity and gender
+Nonresident alien men enrolled for credit during the 12-month reporting period.
+NONRESIDENT ALIEN - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.
+NOTE - Nonresident aliens are included here, rather than in any of the five racial/ethnic categories described below. Resident aliens and other eligible (for financial aid purposes) non-citizens who are not citizens or nationals of the United States and who have been admitted as legal immigrants for the purpose of obtaining permanent resident alien status (and who hold either an alien registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian) are to be reported in the appropriate racial/ethnic categories along with United States citizens."
+Description,34,20671,EFYNRALW,"12-month unduplicated headcount by race/ethnicity and gender
+Nonresident alien women enrolled for credit during the 12-month reporting period.
+NONRESIDENT ALIEN - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.
+NOTE - Nonresident aliens are included here, rather than in any of the five racial/ethnic categories described below. Resident aliens and other eligible (for financial aid purposes) non-citizens who are not citizens or nationals of the United States and who have been admitted as legal immigrants for the purpose of obtaining permanent resident alien status (and who hold either an alien registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian) are to be reported in the appropriate racial/ethnic categories along with United States citizens."
+Description,35,,,
+Description,36,,,
+Description,37,,,
+Description,38,,,
+Description,39,,,
+Description,40,,,
+Description,41,,,
+Description,42,,,
+Description,43,,,
+Description,44,,,
+Description,45,,,
+Description,46,,,
+Description,47,,,
+Description,48,,,
+Description,49,,,
+Description,50,,,
+Description,51,,,
+Description,52,,,
+Description,53,,,
+Description,54,,,
+Description,55,,,
+Description,56,,,
+Description,57,,,
+Description,58,,,
+Description,59,,,
+Description,60,,,
+Description,61,,,
+Description,62,,,
+Description,63,,,
+Description,64,,,
+Description,65,,,
+Description,66,,,
+Description,67,,,
+Description,68,,,
+Description,69,,,
+Description,70,,,
+Description,71,,,
+Description,72,,,
+Description,73,,,
+Description,74,,,
+Description,75,,,
+Description,76,,,
+Description,77,,,
+Description,78,,,
+Description,79,,,
+Description,80
+Description,81
+Description,82
+Description,83
+Description,84
+Description,85
+Description,86
+Description,87
+Description,88
+Description,89
+Description,90
+Description,91
+Description,92
+Description,93
+Description,94
+Description,95
+Description,96
+Description,97
+Description,98
+Description,99
+Description,100
+Description,101
+Description,102
+Description,103
+Description,104
+Description,105
+Description,106
+Description,107
+Description,108
+Description,109
+Description,110
+Description,111
+Description,112
+Description,113
+Description,114
+Description,115
+Description,116
+Description,117
+Description,118
+Description,119
+Description,120
+Description,121
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,20662,EFFYALEV,1,All students total,6169,5
+Frequencies,2,20662,EFFYALEV,2,"All students, Undergraduate total",5881,5
+Frequencies,3,20662,EFFYALEV,3,"All students, Undergraduate, Degree/certificate-seeking total",5878,5
+Frequencies,4,20662,EFFYALEV,4,"All students, Undergraduate, Degree/certificate-seeking, First-time",5669,5
+Frequencies,5,20662,EFFYALEV,5,"All students, Undergraduate, Other degree/certificate-seeking",5686,5
+Frequencies,6,20662,EFFYALEV,19,"All students, Undergraduate, Other degree/certificatee-seeking, Transfer-ins",3571,3
+Frequencies,7,20662,EFFYALEV,20,"All students, Undergraduate, Other degree/certificatee-seeking, Continuing",5665,5
+Frequencies,8,20662,EFFYALEV,11,"All students, Undergraduate, Non-degree/certificate-seeking",2895,2
+Frequencies,9,20662,EFFYALEV,12,"All students, Graduate",2049,1
+Frequencies,10,20662,EFFYALEV,22,"Full-time students, Undergraduate total",5828,5
+Frequencies,11,20662,EFFYALEV,23,"Full-time students, Undergraduate, Degree/certificate-seeking total",5824,5
+Frequencies,12,20662,EFFYALEV,24,"Full-time students, Undergraduate, Degree/certificate-seeking, First-time",5586,5
+Frequencies,13,20662,EFFYALEV,25,"Full-time students, Undergraduate, Degree/certificate-seeking, Other degree/certificate-seeking",5628,5
+Frequencies,14,20662,EFFYALEV,39,"Full-time students, Undergraduate, Other degree/certificatee-seeking, Transfer-ins",3549,3
+Frequencies,15,20662,EFFYALEV,40,"Full-time students, Undergraduate, Other degree/certificatee-seeking, Continuing",5607,5
+Frequencies,16,20662,EFFYALEV,31,"Full-time students, Undergraduate, Non-degree/certificate-seeking",2404,2
+Frequencies,17,20662,EFFYALEV,42,"Part-time students, Undergraduate total",4212,4
+Frequencies,18,20662,EFFYALEV,43,"Part-time students, Undergraduate, Degree/certificate-seeking total",4176,4
+Frequencies,19,20662,EFFYALEV,44,"Part-time students, Undergraduate, Degree/certificate-seeking, First-time",3576,3
+Frequencies,20,20662,EFFYALEV,45,"Part-time students, Undergraduate, Degree/certificate-seeking, Other degree/certificate-seeking",4089,3
+Frequencies,21,20662,EFFYALEV,59,"Part-time students, Undergraduate, Other degree/certificatee-seeking, Transfer-ins",2904,2
+Frequencies,22,20662,EFFYALEV,60,"Part-time students, Undergraduate, Other degree/certificatee-seeking, Continuing",4064,3
+Frequencies,23,20662,EFFYALEV,51,"Part-time students, Undergraduate, Non-degree/certificate-seeking",2794,2
+Frequencies,24,20661,EFFYLEV,1,All students total,6169,5.9
+Frequencies,25,20661,EFFYLEV,2,Undergraduate,5881,5.6
+Frequencies,26,20661,EFFYLEV,4,Graduate,2049,1.9
+Frequencies,27,20661,EFFYLEV,-2,"Not applicable, undergraduate detail",89605,86.4
+Frequencies,28,22023,LSTUDY,1,Undergraduate,95486,92.08
+Frequencies,29,22023,LSTUDY,3,Graduate,2049,1.98
+Frequencies,30,22023,LSTUDY,999,Generated total,6169,5.95
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,20781,EFYTOTLT,103704,188577853,1818.4241012882821,1,190404,Grand total
+Statistics,2,20736,EFYTOTLM,103704,80135256,772.7306179125203,0,72347,Grand total men
+Statistics,3,20741,EFYTOTLW,103704,108442597,1045.6934833757618,0,124719,Grand total women
+Statistics,4,24176,EFYAIANT,103704,1297470,12.511282110622542,0,3205,American Indian or Alaska Native total
+Statistics,5,24111,EFYAIANM,103704,495166,4.7748013577104063,0,1196,American Indian or Alaska Native men
+Statistics,6,24116,EFYAIANW,103704,802304,7.7364807529121347,0,2009,American Indian or Alaska Native women
+Statistics,7,24181,EFYASIAT,103704,11820633,113.98434968757232,0,13692,Asian total
+Statistics,8,24121,EFYASIAM,103704,5440905,52.465719740800743,0,6618,Asian men
+Statistics,9,24126,EFYASIAW,103704,6379728,61.518629946771583,0,7074,Asian women
+Statistics,10,24186,EFYBKAAT,103704,24362441,234.92286700609426,0,32364,Black or African American total
+Statistics,11,24131,EFYBKAAM,103704,8826044,85.108038262747826,0,12176,Black or African American men
+Statistics,12,24136,EFYBKAAW,103704,15536397,149.81482874334645,0,24855,Black or African American women
+Statistics,13,24171,EFYHISPT,103704,38996744,376.03895703155132,0,57953,Hispanic or Latino total
+Statistics,14,24101,EFYHISPM,103704,15899255,153.31380660340972,0,24922,Hispanic or Latino men
+Statistics,15,24106,EFYHISPW,103704,23097489,222.72515042814163,0,33031,Hispanic or Latino women
+Statistics,16,24191,EFYNHPIT,103704,593332,5.7213993674303785,0,2445,Native Hawaiian or Other Pacific Islander total
+Statistics,17,24141,EFYNHPIM,103704,255922,2.467812234822186,0,1043,Native Hawaiian or Other Pacific Islander men
+Statistics,18,24146,EFYNHPIW,103704,337410,3.2535871326081924,0,1402,Native Hawaiian or Other Pacific Islander women
+Statistics,19,24196,EFYWHITT,103704,88881392,857.06811694823728,0,122530,White total
+Statistics,20,24151,EFYWHITM,103704,38769980,373.85231042197023,0,54525,White men
+Statistics,21,24156,EFYWHITW,103704,50111412,483.21580652626704,0,81057,White women
+Statistics,22,24201,EFY2MORT,103704,7100570,68.4695865154671,0,7353,Two or more races total
+Statistics,23,24161,EFY2MORM,103704,2936642,28.317538378461776,0,3169,Two or more races men
+Statistics,24,24166,EFY2MORW,103704,4163928,40.152048137005323,0,4184,Two or more races women
+Statistics,25,20776,EFYUNKNT,103704,9079432,87.551415567384097,0,55326,Race/ethnicity unknown total
+Statistics,26,20726,EFYUNKNM,103704,4076013,39.304298773432073,0,33888,Race/ethnicity unknown men
+Statistics,27,20731,EFYUNKNW,103704,5003419,48.247116793952017,0,36989,Race/ethnicity unknown women
+Statistics,28,20746,EFYNRALT,103704,6445839,62.156127053922702,0,17066,Nonresident alien total
+Statistics,29,20666,EFYNRALM,103704,3435329,33.126292139165315,0,8103,Nonresident alien men
+Statistics,30,20671,EFYNRALW,103704,3010510,29.029834914757387,0,9110,Nonresident alien women
+FrequenciesRV,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+FrequenciesRV,1,20662,EFFYALEV,1,All students total,6169,5
+FrequenciesRV,2,20662,EFFYALEV,2,"All students, Undergraduate total",5881,5
+FrequenciesRV,3,20662,EFFYALEV,3,"All students, Undergraduate, Degree/certificate-seeking total",5878,5
+FrequenciesRV,4,20662,EFFYALEV,4,"All students, Undergraduate, Degree/certificate-seeking, First-time",5670,5
+FrequenciesRV,5,20662,EFFYALEV,5,"All students, Undergraduate, Other degree/certificate-seeking",5689,5
+FrequenciesRV,6,20662,EFFYALEV,19,"All students, Undergraduate, Other degree/certificatee-seeking, Transfer-ins",3573,3
+FrequenciesRV,7,20662,EFFYALEV,20,"All students, Undergraduate, Other degree/certificatee-seeking, Continuing",5668,5
+FrequenciesRV,8,20662,EFFYALEV,11,"All students, Undergraduate, Non-degree/certificate-seeking",2893,2
+FrequenciesRV,9,20662,EFFYALEV,12,"All students, Graduate",2049,1
+FrequenciesRV,10,20662,EFFYALEV,22,"Full-time students, Undergraduate total",5828,5
+FrequenciesRV,11,20662,EFFYALEV,23,"Full-time students, Undergraduate, Degree/certificate-seeking total",5824,5
+FrequenciesRV,12,20662,EFFYALEV,24,"Full-time students, Undergraduate, Degree/certificate-seeking, First-time",5587,5
+FrequenciesRV,13,20662,EFFYALEV,25,"Full-time students, Undergraduate, Degree/certificate-seeking, Other degree/certificate-seeking",5631,5
+FrequenciesRV,14,20662,EFFYALEV,39,"Full-time students, Undergraduate, Other degree/certificatee-seeking, Transfer-ins",3552,3
+FrequenciesRV,15,20662,EFFYALEV,40,"Full-time students, Undergraduate, Other degree/certificatee-seeking, Continuing",5610,5
+FrequenciesRV,16,20662,EFFYALEV,31,"Full-time students, Undergraduate, Non-degree/certificate-seeking",2403,2
+FrequenciesRV,17,20662,EFFYALEV,42,"Part-time students, Undergraduate total",4212,4
+FrequenciesRV,18,20662,EFFYALEV,43,"Part-time students, Undergraduate, Degree/certificate-seeking total",4176,4
+FrequenciesRV,19,20662,EFFYALEV,44,"Part-time students, Undergraduate, Degree/certificate-seeking, First-time",3579,3
+FrequenciesRV,20,20662,EFFYALEV,45,"Part-time students, Undergraduate, Degree/certificate-seeking, Other degree/certificate-seeking",4090,3
+FrequenciesRV,21,20662,EFFYALEV,59,"Part-time students, Undergraduate, Other degree/certificatee-seeking, Transfer-ins",2903,2
+FrequenciesRV,22,20662,EFFYALEV,60,"Part-time students, Undergraduate, Other degree/certificatee-seeking, Continuing",4065,3
+FrequenciesRV,23,20662,EFFYALEV,51,"Part-time students, Undergraduate, Non-degree/certificate-seeking",2793,2
+FrequenciesRV,24,20661,EFFYLEV,1,All students total,6169,5.9
+FrequenciesRV,25,20661,EFFYLEV,2,Undergraduate,5881,5.6
+FrequenciesRV,26,20661,EFFYLEV,4,Graduate,2049,1.9
+FrequenciesRV,27,20661,EFFYLEV,-2,"Not applicable, undergraduate detail",89624,86.4
+FrequenciesRV,28,22023,LSTUDY,1,Undergraduate,95505,92.08
+FrequenciesRV,29,22023,LSTUDY,3,Graduate,2049,1.98
+FrequenciesRV,30,22023,LSTUDY,999,Generated total,6169,5.95
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,20781,EFYTOTLT,103723,188554637,1817.8671750720669,1,190404,Grand total
+StatisticsRV,2,20736,EFYTOTLM,103723,80101744,772.26597765201541,0,72347,Grand total men
+StatisticsRV,3,20741,EFYTOTLW,103723,108452893,1045.6011974200514,0,124719,Grand total women
+StatisticsRV,4,24176,EFYAIANT,103723,1299883,12.532254176990639,0,3205,American Indian or Alaska Native total
+StatisticsRV,5,24111,EFYAIANM,103723,495956,4.7815431485784252,0,1196,American Indian or Alaska Native men
+StatisticsRV,6,24116,EFYAIANW,103723,803927,7.7507110284122129,0,2009,American Indian or Alaska Native women
+StatisticsRV,7,24181,EFYASIAT,103723,11814524,113.90457275628356,0,13692,Asian total
+StatisticsRV,8,24121,EFYASIAM,103723,5438028,52.428371720833375,0,6618,Asian men
+StatisticsRV,9,24126,EFYASIAW,103723,6376496,61.476201035450188,0,7074,Asian women
+StatisticsRV,10,24186,EFYBKAAT,103723,24398915,235.23148192782699,0,32364,Black or African American total
+StatisticsRV,11,24131,EFYBKAAM,103723,8825667,85.088813474349948,0,12176,Black or African American men
+StatisticsRV,12,24136,EFYBKAAW,103723,15573248,150.14266845347706,0,24855,Black or African American women
+StatisticsRV,13,24171,EFYHISPT,103723,38992209,375.92635191808955,0,57953,Hispanic or Latino total
+StatisticsRV,14,24101,EFYHISPM,103723,15896774,153.26180307164273,0,24922,Hispanic or Latino men
+StatisticsRV,15,24106,EFYHISPW,103723,23095435,222.66454884644679,0,33031,Hispanic or Latino women
+StatisticsRV,16,24191,EFYNHPIT,103723,593808,5.7249404664346386,0,2445,Native Hawaiian or Other Pacific Islander total
+StatisticsRV,17,24141,EFYNHPIM,103723,255733,2.4655380195327941,0,1043,Native Hawaiian or Other Pacific Islander men
+StatisticsRV,18,24146,EFYNHPIW,103723,338075,3.2594024469018446,0,1402,Native Hawaiian or Other Pacific Islander women
+StatisticsRV,19,24196,EFYWHITT,103723,88855735,856.66375827926299,0,122530,White total
+StatisticsRV,20,24151,EFYWHITM,103723,38750784,373.59875823105773,0,54525,White men
+StatisticsRV,21,24156,EFYWHITW,103723,50104951,483.06500004820532,0,81057,White women
+StatisticsRV,22,24201,EFY2MORT,103723,7098742,68.439420379279426,0,7353,Two or more races total
+StatisticsRV,23,24161,EFY2MORM,103723,2936519,28.311165315310973,0,3169,Two or more races men
+StatisticsRV,24,24166,EFY2MORW,103723,4162223,40.128255063968453,0,4184,Two or more races women
+StatisticsRV,25,20776,EFYUNKNT,103723,9063461,87.381400460842826,0,55326,Race/ethnicity unknown total
+StatisticsRV,26,20726,EFYUNKNM,103723,4071878,39.257233207678141,0,33888,Race/ethnicity unknown men
+StatisticsRV,27,20731,EFYUNKNW,103723,4991583,48.124167253164678,0,36989,Race/ethnicity unknown women
+StatisticsRV,28,20746,EFYNRALT,103723,6437360,62.062994707056291,0,17066,Nonresident alien total
+StatisticsRV,29,20666,EFYNRALM,103723,3430405,33.072751463031345,0,8103,Nonresident alien men
+StatisticsRV,30,20671,EFYNRALW,103723,3006955,28.990243244024953,0,9110,Nonresident alien women
+Imputation values,0,Code values for item imputation variables Xvarname
+Imputation values,1,CodeValue,ValueLabel
+Imputation values,2,A,Not applicable
+Imputation values,3,B,Institution left item blank
+Imputation values,4,C,Analyst corrected reported value
+Imputation values,5,D,Do not know
+Imputation values,6,G,Data generated from other data values
+Imputation values,7,H,Value not derived - data not usable
+Imputation values,8,J,Logical imputation
+Imputation values,9,K,Ratio adjustment 
+Imputation values,10,L,Imputed using the Group Median procedure
+Imputation values,11,N,Imputed using Nearest Neighbor procedure
+Imputation values,12,P,Imputed using Carry Forward procedure
+Imputation values,13,R,Reported
+Imputation values,14,Z,Implied zero;

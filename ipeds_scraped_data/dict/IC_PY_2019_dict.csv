@@ -1,0 +1,1494 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File Documentation for the Institutional Characteristics Data File, 2019-20",,,,,,,,,
+Introduction,1,Student Charges by Program,,,,,,,,,
+Introduction,2,(Provisional release),,,,,,,,,
+Introduction,3,Filename,IC2019_PY
+Introduction,4,,"This file contains data on student charges by program.  Institutions that measure programs in clock hours or have primarily occupational programs measured in credit hours report student charges data by the full length PROGRAM.  This file contains the number of programs offered and  the price of attendance for entering students that are made available to the public on College Navigator; Price of attendance includes amounts for published tuition and required fees, books and supplies, room and board and other expenses for the largest program.  Estimates for books and supplies, room and board and other expenses are those from the Cost of Attendance report used by the financial aid office in determining financial need. In addition to the price of attendance for the largest program, tuition and fees and books and supplies are also included for up to an additional five programs.",,,,,,,,
+Introduction,5,Note,"Provisional release data have undergone all NCES data quality control procedures. Data are imputed for nonresponding institutions. These data are used for First Look (Provisional Data) publications. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. The final release data can be used when the most up to date data are required; however, these data may not match tables from the First Look reports based on provisional data. ",,,,,,,,
+Introduction,6,Contents of spreadsheet,,,,,,,,,
+Introduction,7,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,8,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,9,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.,,,,,,,,
+Introduction,10,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. ",,,,,,,,
+Introduction,11,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,11246,PRGMOFR,N,3,Cont,,Number of programs offered
+varlist,3,11256,CIPCODE1,A,7,Disc,,CIP code of largest program
+varlist,4,11368,CIPTUIT1,N,5,Cont,XCIPTUI1,"Tuition and fees 2019-20 (institutions with no full-time, first-time, undergraduate students)"
+varlist,5,11369,CIPSUPP1,N,5,Cont,XCIPSUP1,"Books and supplies 2019-20 (institutions with no full-time, first-time, undergraduate students)"
+varlist,6,11261,CIPLGTH1,N,4,Cont,XCIPLGT1,Total length of largest program
+varlist,7,11262,PRGMSR1,N,3,Disc,,Largest program measured in credit or contact hours
+varlist,8,11263,MTHCMP1,N,3,Cont,XMTHCMP1,Average number of months to complete largest program
+varlist,9,11471,WKCMP1,N,4,Cont,XWKCMP1,"Total length of program in weeks, as completed by a student attending full-time"
+varlist,10,11476,LNAYHR1,N,4,Cont,XLNAYHR1,Total length of academic year (as used to calculate your Pell budget) in contact or credit hours
+varlist,11,11481,LNAYWK1,N,4,Cont,XLNAYWK1,Total length of academic year (as used to calculate your Pell budget) in weeks
+varlist,12,11265,CHG1PY0,N,5,Cont,Xchg1py0,Published tuition and fees 2016-17
+varlist,13,11266,CHG1PY1,N,5,Cont,Xchg1py1,Published tuition and fees 2017-18
+varlist,14,11271,CHG1PY2,N,5,Cont,Xchg1py2,Published tuition and fees 2018-19
+varlist,15,15031,CHG1PY3,N,5,Cont,Xchg1py3,Published tuition and fees 2019-20
+varlist,16,11280,CHG4PY0,N,5,Cont,Xchg4py0,Books and supplies 2016-17
+varlist,17,11281,CHG4PY1,N,5,Cont,Xchg4py1,Books and supplies 2017-18
+varlist,18,11286,CHG4PY2,N,5,Cont,Xchg4py2,Books and supplies 2018-19
+varlist,19,15035,CHG4PY3,N,5,Cont,Xchg4py3,Books and supplies 2019-20
+varlist,20,11294,CHG5PY0,N,5,Cont,xchg5py0,"On campus, room and board 2016-17"
+varlist,21,11296,CHG5PY1,N,5,Cont,Xchg5py1,"On campus, room and board 2017-18"
+varlist,22,11301,CHG5PY2,N,5,Cont,Xchg5py2,"On campus, room and board 2018-19"
+varlist,23,11306,CHG5PY3,N,5,Cont,Xchg5py3,"On campus, room and board 2019-20"
+varlist,24,11309,CHG6PY0,N,5,Cont,xchg6py0,"On campus, other expenses 2016-17"
+varlist,25,11311,CHG6PY1,N,5,Cont,Xchg6py1,"On campus, other expenses 2017-18"
+varlist,26,11316,CHG6PY2,N,5,Cont,Xchg6py2,"On campus, other expenses 2018-19"
+varlist,27,11321,CHG6PY3,N,5,Cont,Xchg6py3,"On campus, other expenses 2019-20"
+varlist,28,11324,CHG7PY0,N,5,Cont,xchg7py0,"Off campus (not with family), room and board 2016-17"
+varlist,29,11326,CHG7PY1,N,5,Cont,Xchg7py1,"Off campus (not with family), room and board 2017-18"
+varlist,30,11331,CHG7PY2,N,5,Cont,Xchg7py2,"Off campus (not with family), room and board 2018-19"
+varlist,31,11336,CHG7PY3,N,5,Cont,Xchg7py3,"Off campus (not with family), room and board 2019-20"
+varlist,32,11339,CHG8PY0,N,5,Cont,xchg8py0,"Off campus (not with family), other expenses 2016-17"
+varlist,33,11341,CHG8PY1,N,5,Cont,Xchg8py1,"Off campus (not with family), other expenses 2017-18"
+varlist,34,11346,CHG8PY2,N,5,Cont,Xchg8py2,"Off campus (not with family), other expenses 2018-19"
+varlist,35,11351,CHG8PY3,N,5,Cont,Xchg8py3,"Off campus (not with family), other expenses 2019-20"
+varlist,36,11354,CHG9PY0,N,5,Cont,Xchg9py0,"Off campus (with family), other expenses 2016-17"
+varlist,37,11356,CHG9PY1,N,5,Cont,Xchg9py1,"Off campus (with family), other expenses 2017-18"
+varlist,38,11361,CHG9PY2,N,5,Cont,Xchg9py2,"Off campus (with family), other expenses 2018-19"
+varlist,39,11366,CHG9PY3,N,5,Cont,Xchg9py3,"Off campus (with family), other expenses 2019-20"
+varlist,40,11371,CIPCODE2,A,7,Disc,,CIP code of 2nd largest program
+varlist,41,11376,CIPTUIT2,N,5,Cont,XCIPTUI2,Tuition and fees of 2nd largest program
+varlist,42,11381,CIPSUPP2,N,5,Cont,XCIPSUP2,Cost of books and supplies of 2nd largest program
+varlist,43,11386,CIPLGTH2,N,4,Cont,XCIPLGT2,Length of 2nd largest program
+varlist,44,11388,PRGMSR2,N,3,Disc,,2nd largest program measured in credit or contact hours
+varlist,45,11389,MTHCMP2,N,4,Cont,XMTHCMP2,Number of months to complete 2nd largest program
+varlist,46,11391,CIPCODE3,A,7,Disc,,CIP code of 3rd largest program
+varlist,47,11396,CIPTUIT3,N,5,Cont,XCIPTUI3,Tuition and fees of 3rd largest program
+varlist,48,11401,CIPSUPP3,N,5,Cont,XCIPSUP3,Cost of books and supplies of 3rd largest program
+varlist,49,11406,CIPLGTH3,N,4,Cont,XCIPLGT3,Length of 3rd largest program
+varlist,50,11408,PRGMSR3,N,3,Disc,,3rd largest program measured in credit or contact hours
+varlist,51,11409,MTHCMP3,N,4,Cont,XMTHCMP3,Number of months to complete 3rd largest program
+varlist,52,11411,CIPCODE4,A,7,Disc,,CIP code of 4th largest program
+varlist,53,11416,CIPTUIT4,N,5,Cont,XCIPTUI4,Tuition and fees of 4th largest program
+varlist,54,11421,CIPSUPP4,N,5,Cont,XCIPSUP4,Cost of books and supplies of 4th largest program
+varlist,55,11426,CIPLGTH4,N,4,Cont,XCIPLGT4,Length of 4th largest program
+varlist,56,11428,PRGMSR4,N,3,Disc,,4th largest program measured in credit or contact hours
+varlist,57,11429,MTHCMP4,N,4,Cont,XMTHCMP4,Number of months to complete 4th largest program
+varlist,58,11431,CIPCODE5,A,7,Disc,,CIP code of 5th largest program
+varlist,59,11436,CIPTUIT5,N,5,Cont,XCIPTUI5,Tuition and fees of 5th largest program
+varlist,60,11441,CIPSUPP5,N,5,Cont,XCIPSUP5,Cost of books and supplies of 5th largest program
+varlist,61,11446,CIPLGTH5,N,4,Cont,XCIPLGT5,Length of 5th largest program
+varlist,62,11448,PRGMSR5,N,3,Disc,,5th largest program measured in credit or contact hours
+varlist,63,11449,MTHCMP5,N,4,Cont,XMTHCMP5,Number of months to complete 5th largest program
+varlist,64,11451,CIPCODE6,A,7,Disc,,CIP code of 6th largest program
+varlist,65,11456,CIPTUIT6,N,5,Cont,XCIPTUI6,Tuition and fees of 6th largest program
+varlist,66,11461,CIPSUPP6,N,5,Cont,XCIPSUP6,Cost of books and supplies of 6th largest program
+varlist,67,11466,CIPLGTH6,N,4,Cont,XCIPLGT6,Length of 6th largest program
+varlist,68,11468,PRGMSR6,N,3,Disc,,6th largest program measured in credit or contact hours
+varlist,69,11469,MTHCMP6,N,4,Cont,XMTHCMP6,Number of months to complete 6th largest program
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,11246,PRGMOFR,"How many programs (measured in contact or clock hours) are offered at your institution? 
+
+PROGRAM - A combination of courses and related activities organized for the attainment of broad educational objectives as described by the institution. 
+CONTACT HOUR - A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour"
+Description,3,11256,CIPCODE1,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+CIP code of the largest program
+
+CIP CODE - A six-digit code in the form xx.xxxx that identifies instructional program specialties within educational institutions"
+Description,4,11368,CIPTUIT1,"Tuition and fees 2019-20 (institutions with no full-time, first-time, undergraduate students)"
+Description,5,11369,CIPSUPP1,"Books and supplies 2019-20 (institutions with no full-time, first-time, undergraduate students)"
+Description,6,11261,CIPLGTH1,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Total length of largest program in contact hours 
+
+CONTACT HOUR - A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour."
+Description,7,11262,PRGMSR1,"Indicate if program length for the entire program is measured in contact or credit hour (If measured in clock hour then select contact hour). 
+
+Contact hour  A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour.  
+
+Credit hour  A unit of measure representing the equivalent of an hour (50 minutes) of instruction per week over the entire term. It is applied toward the total number of credit hours needed for completing the requirements of a degree, diploma, certificate, or other formal award."
+Description,8,11263,MTHCMP1,Average number of months it takes a full-time student to complete this program
+Description,9,11471,WKCMP1,"Total length of program in weeks, as completed by a student attending full-time
+
+Program  - A combination of courses and related activities organized for the attainment of broad educational objectives as described by the institution."
+Description,10,11476,LNAYHR1,"Total length of academic year (as used to calculate your Pell budget) in contact or credit hours
+
+The academic year length reported in hours should be the same calculation used for required reporting the Pell budget. This number will be used to calculate academic year costs for the institution and will impact the net price calculation."
+Description,11,11481,LNAYWK1,"Total length of academic year (as used to calculate your Pell budget) in weeks
+
+The academic year length reported in hours should be the same calculation used for required reporting the Pell budget. This number will be used to calculate academic year costs for the institution and will impact the net price calculation."
+Description,12,11265,CHG1PY0,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Tuition and fees of the largest program, 2016-17
+
+TUITION AND REQUIRED FEES - Tuition is the amount of money charged to students for instructional services. Tuition may be charged per term, per course, or per credit.
+Required fees is the fixed sum charged to students for items not covered by tuition and required of such a large proportion of all students that the student who does NOT pay the charge is an exception.
+FIRST-TIME FIRST-YEAR STUDENT - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in the fall term who attended college for the first time in the prior summer term. Also includes students who entered with advanced standing (college credits earned before graduation from high school).
+FIRST-YEAR STUDENT A student who has completed less than the equivalent of 1 full year of undergraduate work; that is, less than 30 semester hours (in a 120-hour degree program) or less than 900 contact hours."
+Description,13,11266,CHG1PY1,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Tuition and fees of the largest program, 2017-18
+
+TUITION AND REQUIRED FEES - Tuition is the amount of money charged to students for instructional services. Tuition may be charged per term, per course, or per credit.
+Required fees is the fixed sum charged to students for items not covered by tuition and required of such a large proportion of all students that the student who does NOT pay the charge is an exception.
+FIRST-TIME FIRST-YEAR STUDENT - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in the fall term who attended college for the first time in the prior summer term. Also includes students who entered with advanced standing (college credits earned before graduation from high school).
+FIRST-YEAR STUDENT A student who has completed less than the equivalent of 1 full year of undergraduate work; that is, less than 30 semester hours (in a 120-hour degree program) or less than 900 contact hours."
+Description,14,11271,CHG1PY2,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Tuition and fees of the largest program, 2018-19
+
+TUITION AND REQUIRED FEES - Tuition is the amount of money charged to students for instructional services. Tuition may be charged per term, per course, or per credit.
+Required fees is the fixed sum charged to students for items not covered by tuition and required of such a large proportion of all students that the student who does NOT pay the charge is an exception.
+FIRST-TIME FIRST-YEAR STUDENT - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in the fall term who attended college for the first time in the prior summer term. Also includes students who entered with advanced standing (college credits earned before graduation from high school).
+FIRST-YEAR STUDENT A student who has completed less than the equivalent of 1 full year of undergraduate work; that is, less than 30 semester hours (in a 120-hour degree program) or less than 900 contact hours."
+Description,15,15031,CHG1PY3,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Tuition and fees of the largest program, 2019-20 
+
+TUITION AND REQUIRED FEES - Tuition is the amount of money charged to students for instructional services. Tuition may be charged per term, per course, or per credit.
+Required fees is the fixed sum charged to students for items not covered by tuition and required of such a large proportion of all students that the student who does NOT pay the charge is an exception.
+FIRST-TIME FIRST-YEAR STUDENT - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in the fall term who attended college for the first time in the prior summer term. Also includes students who entered with advanced standing (college credits earned before graduation from high school).
+FIRST-YEAR STUDENT A student who has completed less than the equivalent of 1 full year of undergraduate work; that is, less than 30 semester hours (in a 120-hour degree program) or less than 900 contact hours."
+Description,16,11280,CHG4PY0,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Books and supplies for 2016-17
+
+BOOKS AND SUPPLIES - The average cost of books and supplies for a typical student for an entire academic year (or program). Do not include unusual costs for special groups of students (e.g., engineering or art majors), unless they constitute the majority of students at your institution."
+Description,17,11281,CHG4PY1,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Books and supplies for 2017-18
+
+BOOKS AND SUPPLIES - The average cost of books and supplies for a typical student for an entire academic year (or program). Do not include unusual costs for special groups of students (e.g., engineering or art majors), unless they constitute the majority of students at your institution."
+Description,18,11286,CHG4PY2,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Books and supplies for 2018-19 
+
+BOOKS AND SUPPLIES - The average cost of books and supplies for a typical student for an entire academic year (or program). Do not include unusual costs for special groups of students (e.g., engineering or art majors), unless they constitute the majority of students at your institution."
+Description,19,15035,CHG4PY3,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Books and supplies for 2019-20 
+
+BOOKS AND SUPPLIES - The average cost of books and supplies for a typical student for an entire academic year (or program). Do not include unusual costs for special groups of students (e.g., engineering or art majors), unless they constitute the majority of students at your institution."
+Description,20,11294,CHG5PY0,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+On campus room and board charges for 2016-17
+
+ROOM CHARGES - The charges for an academic year for rooming accommodations for a typical student sharing a room with one other student. 
+BOARD CHARGES - The charge for an academic year for meals, for a specified number of meals per week."
+Description,21,11296,CHG5PY1,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+On campus room and board charges for 2017-18
+
+ROOM CHARGES - The charges for an academic year for rooming accommodations for a typical student sharing a room with one other student. 
+BOARD CHARGES - The charge for an academic year for meals, for a specified number of meals per week."
+Description,22,11301,CHG5PY2,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+On campus room and board charges for 2018-19
+
+ROOM CHARGES - The charges for an academic year for rooming accommodations for a typical student sharing a room with one other student. 
+BOARD CHARGES - The charge for an academic year for meals, for a specified number of meals per week."
+Description,23,11306,CHG5PY3,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+On campus room and board charges for 2019-20
+
+ROOM CHARGES - The charges for an academic year for rooming accommodations for a typical student sharing a room with one other student. 
+BOARD CHARGES - The charge for an academic year for meals, for a specified number of meals per week."
+Description,24,11309,CHG6PY0,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+On campus other expenses for 2016-17
+
+OTHER EXPENSES - The amount of money (estimated by the financial aid office) needed by a student to cover expenses such as laundry, transportation, entertainment, and furnishings. (For the purpose of this survey room and board and tuition and fees are not included.)"
+Description,25,11311,CHG6PY1,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+On campus other expenses for 2017-18
+
+OTHER EXPENSES - The amount of money (estimated by the financial aid office) needed by a student to cover expenses such as laundry, transportation, entertainment, and furnishings. (For the purpose of this survey room and board and tuition and fees are not included.)"
+Description,26,11316,CHG6PY2,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+On campus other expenses for 2018-19
+
+OTHER EXPENSES - The amount of money (estimated by the financial aid office) needed by a student to cover expenses such as laundry, transportation, entertainment, and furnishings. (For the purpose of this survey room and board and tuition and fees are not included.)"
+Description,27,11321,CHG6PY3,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+On campus other expenses for 2019-20
+
+OTHER EXPENSES - The amount of money (estimated by the financial aid office) needed by a student to cover expenses such as laundry, transportation, entertainment, and furnishings. (For the purpose of this survey room and board and tuition and fees are not included.)"
+Description,28,11324,CHG7PY0,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Off campus (not-with-family) room and board charges for 2016-17
+
+ROOM CHARGES - The charges for an academic year for rooming accommodations for a typical student sharing a room with one other student. 
+BOARD CHARGES - The charge for an academic year for meals, for a specified number of meals per week."
+Description,29,11326,CHG7PY1,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Off campus (not-with-family) room and board charges for 2017-18
+
+ROOM CHARGES - The charges for an academic year for rooming accommodations for a typical student sharing a room with one other student. 
+BOARD CHARGES - The charge for an academic year for meals, for a specified number of meals per week."
+Description,30,11331,CHG7PY2,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Off campus (not-with-family) room and board charges for 2018-19
+
+ROOM CHARGES - The charges for an academic year for rooming accommodations for a typical student sharing a room with one other student. 
+BOARD CHARGES - The charge for an academic year for meals, for a specified number of meals per week."
+Description,31,11336,CHG7PY3,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Off campus (not-with-family) room and board charges for 2019-20
+
+ROOM CHARGES - The charges for an academic year for rooming accommodations for a typical student sharing a room with one other student. 
+BOARD CHARGES - The charge for an academic year for meals, for a specified number of meals per week."
+Description,32,11339,CHG8PY0,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Off campus (not with family) other expenses for 2016-17
+
+OTHER EXPENSES - The amount of money (estimated by the financial aid office) needed by a student to cover expenses such as laundry, transportation, entertainment, and furnishings. (For the purpose of this survey room and board and tuition and fees are not included.)"
+Description,33,11341,CHG8PY1,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Off campus (not with family) other expenses for 2017-18
+
+OTHER EXPENSES - The amount of money (estimated by the financial aid office) needed by a student to cover expenses such as laundry, transportation, entertainment, and furnishings. (For the purpose of this survey room and board and tuition and fees are not included.)"
+Description,34,11346,CHG8PY2,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Off campus (not with family) other expenses for 2018-19
+
+OTHER EXPENSES - The amount of money (estimated by the financial aid office) needed by a student to cover expenses such as laundry, transportation, entertainment, and furnishings. (For the purpose of this survey room and board and tuition and fees are not included.)"
+Description,35,11351,CHG8PY3,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Off campus (not with family) other expenses for 2019-20
+
+OTHER EXPENSES - The amount of money (estimated by the financial aid office) needed by a student to cover expenses such as laundry, transportation, entertainment, and furnishings. (For the purpose of this survey room and board and tuition and fees are not included.)"
+Description,36,11354,CHG9PY0,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Off campus (with family) other expenses for 2016-17
+
+OTHER EXPENSES - The amount of money (estimated by the financial aid office) needed by a student to cover expenses such as laundry, transportation, entertainment, and furnishings. (For the purpose of this survey room and board and tuition and fees are not included.)"
+Description,37,11356,CHG9PY1,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Off campus (with family) other expenses for 2017-18
+
+OTHER EXPENSES - The amount of money (estimated by the financial aid office) needed by a student to cover expenses such as laundry, transportation, entertainment, and furnishings. (For the purpose of this survey room and board and tuition and fees are not included.)"
+Description,38,11361,CHG9PY2,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Off campus (with family) other expenses for 2018-19
+
+OTHER EXPENSES - The amount of money (estimated by the financial aid office) needed by a student to cover expenses such as laundry, transportation, entertainment, and furnishings. (For the purpose of this survey room and board and tuition and fees are not included.)"
+Description,39,11366,CHG9PY3,"Price of attendance for entering students in the largest program:(Books and supplies, room and board, and other expenses are those amounts used by your financial aid office for determining eligibility for student financial assistance) These data are published at the IPEDS College Navigator Web site
+
+Off campus (with family) other expenses for 2019-20
+
+OTHER EXPENSES - The amount of money (estimated by the financial aid office) needed by a student to cover expenses such as laundry, transportation, entertainment, and furnishings. (For the purpose of this survey room and board and tuition and fees are not included.)"
+Description,40,11371,CIPCODE2,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+CIP code of the 2nd largest program
+
+CIP CODE - A six-digit code in the form xx.xxxx that identifies instructional program specialties within educational institutions."
+Description,41,11376,CIPTUIT2,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Tuition and fees of the 2nd largest program
+
+TUITION AND REQUIRED FEES - Tuition is the amount of money charged to students for instructional services. Tuition may be charged per term, per course, or per credit.
+Required fees is the fixed sum charged to students for items not covered by tuition and required of such a large proportion of all students that the student who does NOT pay the charge is an exception."
+Description,42,11381,CIPSUPP2,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Cost of books and supplies for the 2nd largest program
+
+BOOKS AND SUPPLIES - The average cost of books and supplies for a typical student for an entire academic year (or program). Do not include unusual costs for special groups of students (e.g., engineering or art majors), unless they constitute the majority of students at your institution."
+Description,43,11386,CIPLGTH2,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Total length of program in contact hours of 2nd largest program 
+
+CONTACT HOUR - A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour."
+Description,44,11388,PRGMSR2,"Indicate if program length for the entire program is measured in contact or credit hour (If measured in clock hour then select contact hour). 
+
+Contact hour  A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour.  
+
+Credit hour  A unit of measure representing the equivalent of an hour (50 minutes) of instruction per week over the entire term. It is applied toward the total number of credit hours needed for completing the requirements of a degree, diploma, certificate, or other formal award."
+Description,45,11389,MTHCMP2,Average number of months it takes a full-time student to complete this program
+Description,46,11391,CIPCODE3,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+CIP code of the 3rd largest program
+
+CIP CODE - A six-digit code in the form xx.xxxx that identifies instructional program specialties within educational institutions."
+Description,47,11396,CIPTUIT3,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Tuition and fees of the 3rd largest program
+
+TUITION AND REQUIRED FEES - Tuition is the amount of money charged to students for instructional services. Tuition may be charged per term, per course, or per credit.
+Required fees is the fixed sum charged to students for items not covered by tuition and required of such a large proportion of all students that the student who does NOT pay the charge is an exception."
+Description,48,11401,CIPSUPP3,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Cost of books and supplies for the 3rd largest program
+
+BOOKS AND SUPPLIES - The average cost of books and supplies for a typical student for an entire academic year (or program). Do not include unusual costs for special groups of students (e.g., engineering or art majors), unless they constitute the majority of students at your institution."
+Description,49,11406,CIPLGTH3,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Total length of program in contact hours of 3rd largest program 
+
+CONTACT HOUR - A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour."
+Description,50,11408,PRGMSR3,"Indicate if program length for the entire program is measured in contact or credit hour (If measured in clock hour then select contact hour). 
+
+Contact hour  A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour.  
+
+Credit hour  A unit of measure representing the equivalent of an hour (50 minutes) of instruction per week over the entire term. It is applied toward the total number of credit hours needed for completing the requirements of a degree, diploma, certificate, or other formal award."
+Description,51,11409,MTHCMP3,Average number of months it takes a full-time student to complete this program
+Description,52,11411,CIPCODE4,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+CIP code of the 4th largest program
+
+CIP CODE - A six-digit code in the form xx.xxxx that identifies instructional program specialties within educational institutions."
+Description,53,11416,CIPTUIT4,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Tuition and fees of the 4th largest program
+
+TUITION AND REQUIRED FEES - Tuition is the amount of money charged to students for instructional services. Tuition may be charged per term, per course, or per credit.
+Required fees is the fixed sum charged to students for items not covered by tuition and required of such a large proportion of all students that the student who does NOT pay the charge is an exception."
+Description,54,11421,CIPSUPP4,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Cost of books and supplies for the 4th largest program
+
+BOOKS AND SUPPLIES - The average cost of books and supplies for a typical student for an entire academic year (or program). Do not include unusual costs for special groups of students (e.g., engineering or art majors), unless they constitute the majority of students at your institution."
+Description,55,11426,CIPLGTH4,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Total length of program in contact hours of 4th largest program 
+
+CONTACT HOUR - A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour."
+Description,56,11428,PRGMSR4,"Indicate if program length for the entire program is measured in contact or credit hour (If measured in clock hour then select contact hour). 
+
+Contact hour  A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour.  
+
+Credit hour  A unit of measure representing the equivalent of an hour (50 minutes) of instruction per week over the entire term. It is applied toward the total number of credit hours needed for completing the requirements of a degree, diploma, certificate, or other formal award."
+Description,57,11429,MTHCMP4,Average number of months it takes a full-time student to complete this program
+Description,58,11431,CIPCODE5,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+CIP code of the 5th largest program
+
+CIP CODE - A six-digit code in the form xx.xxxx that identifies instructional program specialties within educational institutions."
+Description,59,11436,CIPTUIT5,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Tuition and fees of the 5th largest program
+
+TUITION AND REQUIRED FEES - Tuition is the amount of money charged to students for instructional services. Tuition may be charged per term, per course, or per credit.
+Required fees is the fixed sum charged to students for items not covered by tuition and required of such a large proportion of all students that the student who does NOT pay the charge is an exception."
+Description,60,11441,CIPSUPP5,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Cost of books and supplies for the 5th largest program
+
+BOOKS AND SUPPLIES - The average cost of books and supplies for a typical student for an entire academic year (or program). Do not include unusual costs for special groups of students (e.g., engineering or art majors), unless they constitute the majority of students at your institution."
+Description,61,11446,CIPLGTH5,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Total length of program in contact hours of 5th largest program 
+
+CONTACT HOUR - A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour."
+Description,62,11448,PRGMSR5,"Indicate if program length for the entire program is measured in contact or credit hour (If measured in clock hour then select contact hour). 
+
+Contact hour  A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour.  
+
+Credit hour  A unit of measure representing the equivalent of an hour (50 minutes) of instruction per week over the entire term. It is applied toward the total number of credit hours needed for completing the requirements of a degree, diploma, certificate, or other formal award."
+Description,63,11449,MTHCMP5,Average number of months it takes a full-time student to complete this program
+Description,64,11451,CIPCODE6,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+CIP code of the 6th largest program
+
+CIP CODE - A six-digit code in the form xx.xxxx that identifies instructional program specialties within educational institutions."
+Description,65,11456,CIPTUIT6,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Tuition and fees of the 6th largest program
+
+TUITION AND REQUIRED FEES - Tuition is the amount of money charged to students for instructional services. Tuition may be charged per term, per course, or per credit.
+Required fees is the fixed sum charged to students for items not covered by tuition and required of such a large proportion of all students that the student who does NOT pay the charge is an exception."
+Description,66,11461,CIPSUPP6,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Cost of books and supplies for the 6th largest program
+
+BOOKS AND SUPPLIES - The average cost of books and supplies for a typical student for an entire academic year (or program). Do not include unusual costs for special groups of students (e.g., engineering or art majors), unless they constitute the majority of students at your institution."
+Description,67,11466,CIPLGTH6,"Please list the five next largest programs and provide the requested information for each program. Report the tuition and fees and the cost of books and supplies for the TOTAL LENGTH OF THE PROGRAM. Also report the length of the entire program in terms of contact hours. 
+
+Total length of program in contact hours of 6th largest program 
+
+CONTACT HOUR - A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour."
+Description,68,11468,PRGMSR6,"Indicate if program length for the entire program is measured in contact or credit hour (If measured in clock hour then select contact hour). 
+
+Contact hour  A unit of measure that represents an hour of scheduled instruction given to students. Also referred to as clock hour.  
+
+Credit hour  A unit of measure representing the equivalent of an hour (50 minutes) of instruction per week over the entire term. It is applied toward the total number of credit hours needed for completing the requirements of a degree, diploma, certificate, or other formal award."
+Description,69,11469,MTHCMP6,Average number of months it takes a full-time student to complete this program
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,11256,CIPCODE1,01.0307,Horse Husbandry/Equine Science and Management,1,0.04
+Frequencies,2,11256,CIPCODE1,01.0504,Dog/Pet/Animal Grooming.,2,0.09
+Frequencies,3,11256,CIPCODE1,01.0601,"Applied Horticulture/Horticulture Operations, General",1,0.04
+Frequencies,4,11256,CIPCODE1,01.1103,Horticultural Science,1,0.04
+Frequencies,5,11256,CIPCODE1,09.0701,Radio and Television.,10,0.44
+Frequencies,6,11256,CIPCODE1,09.0702,Digital Communication and Media/Multimedia.,1,0.04
+Frequencies,7,11256,CIPCODE1,09.0799,"Radio, Television, and Digital Communication, Other.",1,0.04
+Frequencies,8,11256,CIPCODE1,10.0203,Recording Arts Technology/Technician.,10,0.44
+Frequencies,9,11256,CIPCODE1,10.0299,"Audiovisual Communications Technologies/Technicians, Other.",1,0.04
+Frequencies,10,11256,CIPCODE1,10.0304,"Animation, Interactive Technology, Video Graphics and Special Effects.",1,0.04
+Frequencies,11,11256,CIPCODE1,10.9999,"Communications Technologies/Technicians and Support Services, Other.",1,0.04
+Frequencies,12,11256,CIPCODE1,11.0101,"Computer and Information Sciences, General.",1,0.04
+Frequencies,13,11256,CIPCODE1,11.0103,Information Technology.,1,0.04
+Frequencies,14,11256,CIPCODE1,11.0201,"Computer Programming/Programmer, General.",1,0.04
+Frequencies,15,11256,CIPCODE1,11.0401,Information Science/Studies.,1,0.04
+Frequencies,16,11256,CIPCODE1,11.0601,"Data Entry/Microcomputer Applications, General.",1,0.04
+Frequencies,17,11256,CIPCODE1,11.0901,Computer Systems Networking and Telecommunications.,5,0.22
+Frequencies,18,11256,CIPCODE1,11.1001,Network and System Administration/Administrator.,2,0.09
+Frequencies,19,11256,CIPCODE1,11.1003,Computer and Information Systems Security/Information Assurance.,3,0.13
+Frequencies,20,11256,CIPCODE1,11.1006,Computer Support Specialist,2,0.09
+Frequencies,21,11256,CIPCODE1,12.0302,Funeral Direction/Service,1,0.04
+Frequencies,22,11256,CIPCODE1,12.0401,"Cosmetology/Cosmetologist, General.",943,41.27
+Frequencies,23,11256,CIPCODE1,12.0402,Barbering/Barber.,117,5.12
+Frequencies,24,11256,CIPCODE1,12.0404,Electrolysis/Electrology and Electrolysis Technician.,2,0.09
+Frequencies,25,11256,CIPCODE1,12.0406,Make-Up Artist/Specialist.,4,0.18
+Frequencies,26,11256,CIPCODE1,12.0407,Hair Styling/Stylist and Hair Design.,4,0.18
+Frequencies,27,11256,CIPCODE1,12.0408,Facial Treatment Specialist/Facialist.,3,0.13
+Frequencies,28,11256,CIPCODE1,12.0409,Aesthetician/Esthetician and Skin Care Specialist.,64,2.8
+Frequencies,29,11256,CIPCODE1,12.0410,Nail Technician/Specialist and Manicurist.,15,0.66
+Frequencies,30,11256,CIPCODE1,12.0413,"Cosmetology, Barber/Styling, and Nail Instructor.",3,0.13
+Frequencies,31,11256,CIPCODE1,12.0414,Master Aesthetician/Esthetician,12,0.53
+Frequencies,32,11256,CIPCODE1,12.0499,"Cosmetology and Related Personal Grooming Arts, Other.",14,0.61
+Frequencies,33,11256,CIPCODE1,12.0500,"Cooking and Related Culinary Arts, General.",3,0.13
+Frequencies,34,11256,CIPCODE1,12.0501,Baking and Pastry Arts/Baker/Pastry Chef.,1,0.04
+Frequencies,35,11256,CIPCODE1,12.0503,Culinary Arts/Chef Training.,12,0.53
+Frequencies,36,11256,CIPCODE1,12.0599,"Culinary Arts and Related Services, Other.",1,0.04
+Frequencies,37,11256,CIPCODE1,12.9999,"Personal and Culinary Services, Other.",1,0.04
+Frequencies,38,11256,CIPCODE1,13.1207,Montessori Teacher Education.,1,0.04
+Frequencies,39,11256,CIPCODE1,13.1210,Early Childhood Education and Teaching.,1,0.04
+Frequencies,40,11256,CIPCODE1,14.0903,Computer Software Engineering,1,0.04
+Frequencies,41,11256,CIPCODE1,14.1001,Electrical and Electronics Engineering,1,0.04
+Frequencies,42,11256,CIPCODE1,15.0403,Electromechanical Technology/Electromechanical Engineering Technology.,3,0.13
+Frequencies,43,11256,CIPCODE1,15.0501,"Heating, Ventilation, Air Conditioning and Refrigeration Engineering Technology/Technician.",7,0.31
+Frequencies,44,11256,CIPCODE1,15.0612,Industrial Technology/Technician,1,0.04
+Frequencies,45,11256,CIPCODE1,15.0799,"Quality Control and Safety Technologies/Technicians, Other",1,0.04
+Frequencies,46,11256,CIPCODE1,15.0801,Aeronautical/Aerospace Engineering Technology/Technician,1,0.04
+Frequencies,47,11256,CIPCODE1,15.1201,Computer Engineering Technology/Technician.,1,0.04
+Frequencies,48,11256,CIPCODE1,15.1202,Computer Technology/Computer Systems Technology.,1,0.04
+Frequencies,49,11256,CIPCODE1,19.0501,"Foods, Nutrition, and Wellness Studies, General",1,0.04
+Frequencies,50,11256,CIPCODE1,19.0709,Child Care Provider/Assistant.,2,0.09
+Frequencies,51,11256,CIPCODE1,19.0902,Apparel and Textile Manufacture.,1,0.04
+Frequencies,52,11256,CIPCODE1,22.0302,Legal Assistant/Paralegal.,1,0.04
+Frequencies,53,11256,CIPCODE1,23.0101,"English Language and Literature, General.",4,0.18
+Frequencies,54,11256,CIPCODE1,24.0102,General Studies.,1,0.04
+Frequencies,55,11256,CIPCODE1,31.0501,"Health and Physical Education/Fitness, General",1,0.04
+Frequencies,56,11256,CIPCODE1,31.0507,Physical Fitness Technician,4,0.18
+Frequencies,57,11256,CIPCODE1,43.0107,Criminal Justice/Police Science.,6,0.26
+Frequencies,58,11256,CIPCODE1,43.0203,Fire Science/Fire-fighting.,3,0.13
+Frequencies,59,11256,CIPCODE1,46.0000,"Construction Trades, General.",2,0.09
+Frequencies,60,11256,CIPCODE1,46.0201,Carpentry/Carpenter.,2,0.09
+Frequencies,61,11256,CIPCODE1,46.0301,"Electrical and Power Transmission Installation/Installer, General.",1,0.04
+Frequencies,62,11256,CIPCODE1,46.0302,Electrician.,30,1.31
+Frequencies,63,11256,CIPCODE1,46.0401,Building/Property Maintenance.,1,0.04
+Frequencies,64,11256,CIPCODE1,46.0415,Building Construction Technology,1,0.04
+Frequencies,65,11256,CIPCODE1,46.0503,Plumbing Technology/Plumber.,1,0.04
+Frequencies,66,11256,CIPCODE1,47.0101,"Electrical/Electronics Equipment Installation and Repair, General.",1,0.04
+Frequencies,67,11256,CIPCODE1,47.0104,Computer Installation and Repair Technology/Technician.,1,0.04
+Frequencies,68,11256,CIPCODE1,47.0201,"Heating, Air Conditioning, Ventilation and Refrigeration Maintenance Technology/Technician.",21,0.92000000000000015
+Frequencies,69,11256,CIPCODE1,47.0303,Industrial Mechanics and Maintenance Technology.,4,0.18
+Frequencies,70,11256,CIPCODE1,47.0402,Gunsmithing/Gunsmith.,2,0.09
+Frequencies,71,11256,CIPCODE1,47.0403,Locksmithing and Safe Repair.,1,0.04
+Frequencies,72,11256,CIPCODE1,47.0404,Musical Instrument Fabrication and Repair.,1,0.04
+Frequencies,73,11256,CIPCODE1,47.0604,Automobile/Automotive Mechanics Technology/Technician.,23,1.01
+Frequencies,74,11256,CIPCODE1,47.0605,Diesel Mechanics Technology/Technician.,5,0.22
+Frequencies,75,11256,CIPCODE1,47.0606,Small Engine Mechanics and Repair Technology/Technician,1,0.04
+Frequencies,76,11256,CIPCODE1,47.0607,Airframe Mechanics and Aircraft Maintenance Technology/Technician.,10,0.44
+Frequencies,77,11256,CIPCODE1,47.0608,Aircraft Powerplant Technology/Technician.,3,0.13
+Frequencies,78,11256,CIPCODE1,47.0609,Avionics Maintenance Technology/Technician.,1,0.04
+Frequencies,79,11256,CIPCODE1,47.0611,Motorcycle Maintenance and Repair Technology/Technician.,3,0.13
+Frequencies,80,11256,CIPCODE1,47.0613,Medium/Heavy Vehicle and Truck Technology/Technician,3,0.13
+Frequencies,81,11256,CIPCODE1,47.0615,Engine Machinist,1,0.04
+Frequencies,82,11256,CIPCODE1,47.0616,Marine Maintenance/Fitter and Ship Repair Technology/Technician.,1,0.04
+Frequencies,83,11256,CIPCODE1,48.0501,Machine Tool Technology/Machinist.,1,0.04
+Frequencies,84,11256,CIPCODE1,48.0508,Welding Technology/Welder.,40,1.75
+Frequencies,85,11256,CIPCODE1,48.0511,Metal Fabricator,1,0.04
+Frequencies,86,11256,CIPCODE1,48.0702,Furniture Design and Manufacturing.,1,0.04
+Frequencies,87,11256,CIPCODE1,49.0102,Airline/Commercial/Professional Pilot and Flight Crew.,2,0.09
+Frequencies,88,11256,CIPCODE1,49.0199,"Air Transportation, Other.",1,0.04
+Frequencies,89,11256,CIPCODE1,49.0205,Truck and Bus Driver/Commercial Vehicle Operator and Instructor.,23,1.01
+Frequencies,90,11256,CIPCODE1,49.0304,"Diver, Professional and Instructor.",4,0.18
+Frequencies,91,11256,CIPCODE1,50.0401,"Design and Visual Communications, General",1,0.04
+Frequencies,92,11256,CIPCODE1,50.0408,Interior Design,1,0.04
+Frequencies,93,11256,CIPCODE1,50.0410,Illustration,1,0.04
+Frequencies,94,11256,CIPCODE1,50.0602,Cinematography and Film/Video Production.,2,0.09
+Frequencies,95,11256,CIPCODE1,50.0699,"Film/Video and Photographic Arts, Other.",1,0.04
+Frequencies,96,11256,CIPCODE1,50.0702,"Fine/Studio Arts, General",1,0.04
+Frequencies,97,11256,CIPCODE1,50.0713,Metal and Jewelry Arts.,3,0.13
+Frequencies,98,11256,CIPCODE1,50.0913,Music Technology,2,0.09
+Frequencies,99,11256,CIPCODE1,51.0000,"Health Services/Allied Health/Health Sciences, General.",1,0.04
+Frequencies,100,11256,CIPCODE1,51.0601,Dental Assisting/Assistant.,13,0.56999999999999995
+Frequencies,101,11256,CIPCODE1,51.0602,Dental Hygiene/Hygienist.,2,0.09
+Frequencies,102,11256,CIPCODE1,51.0701,Health/Health Care Administration/Management.,1,0.04
+Frequencies,103,11256,CIPCODE1,51.0705,Medical Office Management/Administration.,1,0.04
+Frequencies,104,11256,CIPCODE1,51.0707,Health Information/Medical Records Technology/Technician.,2,0.09
+Frequencies,105,11256,CIPCODE1,51.0710,Medical Office Assistant/Specialist.,8,0.35
+Frequencies,106,11256,CIPCODE1,51.0711,Medical/Health Management and Clinical Assistant/Specialist.,2,0.09
+Frequencies,107,11256,CIPCODE1,51.0713,Medical Insurance Coding Specialist/Coder.,3,0.13
+Frequencies,108,11256,CIPCODE1,51.0714,Medical Insurance Specialist/Medical Biller.,5,0.22
+Frequencies,109,11256,CIPCODE1,51.0716,Medical Administrative/Executive Assistant and Medical Secretary.,5,0.22
+Frequencies,110,11256,CIPCODE1,51.0799,"Health and Medical Administrative Services, Other.",1,0.04
+Frequencies,111,11256,CIPCODE1,51.0801,Medical/Clinical Assistant.,276,12.08
+Frequencies,112,11256,CIPCODE1,51.0802,Clinical/Medical Laboratory Assistant.,2,0.09
+Frequencies,113,11256,CIPCODE1,51.0805,Pharmacy Technician/Assistant.,3,0.13
+Frequencies,114,11256,CIPCODE1,51.0806,Physical Therapy Technician/Assistant,1,0.04
+Frequencies,115,11256,CIPCODE1,51.0808,Veterinary/Animal Health Technology/Technician and Veterinary Assistant.,8,0.35
+Frequencies,116,11256,CIPCODE1,51.0810,Emergency Care Attendant (EMT Ambulance).,1,0.04
+Frequencies,117,11256,CIPCODE1,51.0812,Respiratory Therapy Technician/Assistant.,1,0.04
+Frequencies,118,11256,CIPCODE1,51.0899,"Allied Health and Medical Assisting Services, Other.",6,0.26
+Frequencies,119,11256,CIPCODE1,51.0901,Cardiovascular Technology/Technologist.,1,0.04
+Frequencies,120,11256,CIPCODE1,51.0904,Emergency Medical Technology/Technician (EMT Paramedic).,6,0.26
+Frequencies,121,11256,CIPCODE1,51.0907,Medical Radiologic Technology/Science - Radiation Therapist.,1,0.04
+Frequencies,122,11256,CIPCODE1,51.0908,Respiratory Care Therapy/Therapist.,1,0.04
+Frequencies,123,11256,CIPCODE1,51.0909,Surgical Technology/Technologist.,4,0.18
+Frequencies,124,11256,CIPCODE1,51.0910,Diagnostic Medical Sonography/Sonographer and Ultrasound Technician.,15,0.66
+Frequencies,125,11256,CIPCODE1,51.0911,Radiologic Technology/Science - Radiographer.,4,0.18
+Frequencies,126,11256,CIPCODE1,51.0920,Magnetic Resonance Imaging (MRI) Technology/Technician,2,0.09
+Frequencies,127,11256,CIPCODE1,51.1001,Blood Bank Technology Specialist,2,0.09
+Frequencies,128,11256,CIPCODE1,51.1004,Clinical/Medical Laboratory Technician.,2,0.09
+Frequencies,129,11256,CIPCODE1,51.1009,Phlebotomy Technician/Phlebotomist.,3,0.13
+Frequencies,130,11256,CIPCODE1,51.1011,Renal/Dialysis Technologist/Technician,2,0.09
+Frequencies,131,11256,CIPCODE1,51.1105,Pre-Nursing Studies.,1,0.04
+Frequencies,132,11256,CIPCODE1,51.1501,Substance Abuse/Addiction Counseling.,1,0.04
+Frequencies,133,11256,CIPCODE1,51.2008,"Clinical, Hospital, and Managed Care Pharmacy",1,0.04
+Frequencies,134,11256,CIPCODE1,51.2309,Therapeutic Recreation/Recreational Therapy,1,0.04
+Frequencies,135,11256,CIPCODE1,51.3306,Holistic Health,1,0.04
+Frequencies,136,11256,CIPCODE1,51.3501,Massage Therapy/Therapeutic Massage.,65,2.84
+Frequencies,137,11256,CIPCODE1,51.3503,Somatic Bodywork,1,0.04
+Frequencies,138,11256,CIPCODE1,51.3599,"Somatic Bodywork and Related Therapeutic Services, Other",1,0.04
+Frequencies,139,11256,CIPCODE1,51.3603,Hypnotherapy/Hypnotherapist.,1,0.04
+Frequencies,140,11256,CIPCODE1,51.3801,Registered Nursing/Registered Nurse.,33,1.44
+Frequencies,141,11256,CIPCODE1,51.3808,Nursing Science,2,0.09
+Frequencies,142,11256,CIPCODE1,51.3817,Nursing Education,2,0.09
+Frequencies,143,11256,CIPCODE1,51.3899,"Registered Nursing, Nursing Administration, Nursing Research and Clinical Nursing, Other",1,0.04
+Frequencies,144,11256,CIPCODE1,51.3901,Licensed Practical/Vocational Nurse Training.,220,9.6300000000000008
+Frequencies,145,11256,CIPCODE1,51.3902,Nursing Assistant/Aide and Patient Care Assistant/Aide.,24,1.05
+Frequencies,146,11256,CIPCODE1,51.3999,"Practical Nursing, Vocational Nursing and Nursing Assistants, Other",39,1.71
+Frequencies,147,11256,CIPCODE1,52.0101,"Business/Commerce, General.",1,0.04
+Frequencies,148,11256,CIPCODE1,52.0201,"Business Administration and Management, General.",2,0.09
+Frequencies,149,11256,CIPCODE1,52.0301,Accounting.,1,0.04
+Frequencies,150,11256,CIPCODE1,52.0302,Accounting Technology/Technician and Bookkeeping.,3,0.13
+Frequencies,151,11256,CIPCODE1,52.0401,"Administrative Assistant and Secretarial Science, General.",1,0.04
+Frequencies,152,11256,CIPCODE1,52.0407,Business/Office Automation/Technology/Data Entry.,1,0.04
+Frequencies,153,11256,CIPCODE1,52.0410,"Traffic, Customs, and Transportation Clerk/Technician",1,0.04
+Frequencies,154,11256,CIPCODE1,52.0999,"Hospitality Administration/Management, Other.",1,0.04
+Frequencies,155,11262,PRGMSR1,1,Contact hours,1847,80.83
+Frequencies,156,11262,PRGMSR1,2,Credit hours,438,19.170000000000005
+Frequencies,157,11371,CIPCODE2,01.0307,Horse Husbandry/Equine Science and Management,1,0.04
+Frequencies,158,11371,CIPCODE2,01.0504,Dog/Pet/Animal Grooming,1,0.04
+Frequencies,159,11371,CIPCODE2,09.0702,Digital Communication and Media/Multimedia.,2,0.09
+Frequencies,160,11371,CIPCODE2,09.0799,"Radio, Television, and Digital Communication, Other.",4,0.18
+Frequencies,161,11371,CIPCODE2,09.0906,Sports Communication,2,0.09
+Frequencies,162,11371,CIPCODE2,09.0907,International and Intercultural Communication,1,0.04
+Frequencies,163,11371,CIPCODE2,10.0201,Photographic and Film/Video Technology/Technician and Assistant.,2,0.09
+Frequencies,164,11371,CIPCODE2,10.0202,Radio and Television Broadcasting Technology/Technician.,1,0.04
+Frequencies,165,11371,CIPCODE2,10.0203,Recording Arts Technology/Technician,4,0.18
+Frequencies,166,11371,CIPCODE2,11.0101,"Computer and Information Sciences, General.",4,0.18
+Frequencies,167,11371,CIPCODE2,11.0103,Information Technology.,1,0.04
+Frequencies,168,11371,CIPCODE2,11.0199,"Computer and Information Sciences,  Other.",1,0.04
+Frequencies,169,11371,CIPCODE2,11.0201,"Computer Programming/Programmer, General.",1,0.04
+Frequencies,170,11371,CIPCODE2,11.0299,"Computer Programming, Other.",1,0.04
+Frequencies,171,11371,CIPCODE2,11.0301,Data Processing and Data Processing Technology/Technician.,1,0.04
+Frequencies,172,11371,CIPCODE2,11.0699,"Data Entry/Microcomputer Applications, Other.",1,0.04
+Frequencies,173,11371,CIPCODE2,11.0901,Computer Systems Networking and Telecommunications.,7,0.31
+Frequencies,174,11371,CIPCODE2,11.1001,Network and System Administration/Administrator.,5,0.22
+Frequencies,175,11371,CIPCODE2,11.1002,"System, Networking, and LAN/WAN Management/Manager.",1,0.04
+Frequencies,176,11371,CIPCODE2,11.1003,Computer and Information Systems Security/Information Assurance.,3,0.13
+Frequencies,177,11371,CIPCODE2,11.1006,Computer Support Specialist,2,0.09
+Frequencies,178,11371,CIPCODE2,11.1099,"Computer/Information Technology Services Administration and Management, Other.",1,0.04
+Frequencies,179,11371,CIPCODE2,11.9999,"Computer and Information Sciences and Support Services, Other.",2,0.09
+Frequencies,180,11371,CIPCODE2,12.0302,Funeral Direction/Service.,1,0.04
+Frequencies,181,11371,CIPCODE2,12.0401,"Cosmetology/Cosmetologist, General.",142,6.21
+Frequencies,182,11371,CIPCODE2,12.0402,Barbering/Barber.,170,7.44
+Frequencies,183,11371,CIPCODE2,12.0404,Electrolysis/Electrology and Electrolysis Technician.,2,0.09
+Frequencies,184,11371,CIPCODE2,12.0406,Make-Up Artist/Specialist.,7,0.31
+Frequencies,185,11371,CIPCODE2,12.0407,Hair Styling/Stylist and Hair Design.,26,1.1399999999999999
+Frequencies,186,11371,CIPCODE2,12.0408,Facial Treatment Specialist/Facialist.,9,0.39
+Frequencies,187,11371,CIPCODE2,12.0409,Aesthetician/Esthetician and Skin Care Specialist.,310,13.57
+Frequencies,188,11371,CIPCODE2,12.0410,Nail Technician/Specialist and Manicurist.,87,3.81
+Frequencies,189,11371,CIPCODE2,12.0412,Salon/Beauty Salon Management/Manager.,2,0.09
+Frequencies,190,11371,CIPCODE2,12.0413,"Cosmetology, Barber/Styling, and Nail Instructor.",226,9.89
+Frequencies,191,11371,CIPCODE2,12.0414,Master Aesthetician/Esthetician,10,0.44
+Frequencies,192,11371,CIPCODE2,12.0499,"Cosmetology and Related Personal Grooming Arts, Other.",16,0.7
+Frequencies,193,11371,CIPCODE2,12.0500,"Cooking and Related Culinary Arts, General.",1,0.04
+Frequencies,194,11371,CIPCODE2,12.0501,Baking and Pastry Arts/Baker/Pastry Chef.,6,0.26
+Frequencies,195,11371,CIPCODE2,12.0502,Bartending/Bartender.,1,0.04
+Frequencies,196,11371,CIPCODE2,12.0503,Culinary Arts/Chef Training.,6,0.26
+Frequencies,197,11371,CIPCODE2,12.0599,"Culinary Arts and Related Services, Other.",1,0.04
+Frequencies,198,11371,CIPCODE2,13.1207,Montessori Teacher Education.,1,0.04
+Frequencies,199,11371,CIPCODE2,13.1210,Early Childhood Education and Teaching.,1,0.04
+Frequencies,200,11371,CIPCODE2,13.1299,"Teacher Education and Professional Development, Specific Levels and Methods, Other.",1,0.04
+Frequencies,201,11371,CIPCODE2,13.1320,Trade and Industrial Teacher Education.,1,0.04
+Frequencies,202,11371,CIPCODE2,13.1399,"Teacher Education and Professional Development, Specific Subject Areas, Other.",1,0.04
+Frequencies,203,11371,CIPCODE2,14.0101,"Engineering, General",1,0.04
+Frequencies,204,11371,CIPCODE2,15.0404,Instrumentation Technology/Technician.,1,0.04
+Frequencies,205,11371,CIPCODE2,15.0405,Robotics Technology/Technician.,1,0.04
+Frequencies,206,11371,CIPCODE2,15.0499,"Electromechanical and Instrumentation and Maintenance Technologies/Technicians, Other.",1,0.04
+Frequencies,207,11371,CIPCODE2,15.0501,"Heating, Ventilation, Air Conditioning and Refrigeration Engineering Technology/Technician.",14,0.61
+Frequencies,208,11371,CIPCODE2,15.0613,Manufacturing Engineering Technology/Technician.,1,0.04
+Frequencies,209,11371,CIPCODE2,15.0614,Welding Engineering Technology/Technician,1,0.04
+Frequencies,210,11371,CIPCODE2,15.0803,Automotive Engineering Technology/Technician.,1,0.04
+Frequencies,211,11371,CIPCODE2,15.0903,Petroleum Technology/Technician,1,0.04
+Frequencies,212,11371,CIPCODE2,19.0709,Child Care Provider/Assistant.,1,0.04
+Frequencies,213,11371,CIPCODE2,22.0001,Pre-Law Studies,1,0.04
+Frequencies,214,11371,CIPCODE2,22.0302,Legal Assistant/Paralegal.,4,0.18
+Frequencies,215,11371,CIPCODE2,22.0303,Court Reporting/Court Reporter.,1,0.04
+Frequencies,216,11371,CIPCODE2,23.1301,"Writing, General",1,0.04
+Frequencies,217,11371,CIPCODE2,23.9999,"English Language and Literature/Letters, Other.",1,0.04
+Frequencies,218,11371,CIPCODE2,24.0102,General Studies,1,0.04
+Frequencies,219,11371,CIPCODE2,30.1701,Behavioral Sciences.,1,0.04
+Frequencies,220,11371,CIPCODE2,31.0507,Physical Fitness Technician,1,0.04
+Frequencies,221,11371,CIPCODE2,43.0102,Corrections.,1,0.04
+Frequencies,222,11371,CIPCODE2,43.0103,Criminal Justice/Law Enforcement Administration.,1,0.04
+Frequencies,223,11371,CIPCODE2,43.0107,Criminal Justice/Police Science.,1,0.04
+Frequencies,224,11371,CIPCODE2,43.0203,Fire Science/Fire-fighting.,5,0.22
+Frequencies,225,11371,CIPCODE2,43.9999,"Homeland Security, Law Enforcement, Firefighting and Related Protective Services, Other.",1,0.04
+Frequencies,226,11371,CIPCODE2,46.0201,Carpentry/Carpenter.,1,0.04
+Frequencies,227,11371,CIPCODE2,46.0301,"Electrical and Power Transmission Installation/Installer, General.",1,0.04
+Frequencies,228,11371,CIPCODE2,46.0302,Electrician.,19,0.82999999999999985
+Frequencies,229,11371,CIPCODE2,46.0303,Lineworker.,1,0.04
+Frequencies,230,11371,CIPCODE2,46.0399,"Electrical and Power Transmission Installers, Other.",1,0.04
+Frequencies,231,11371,CIPCODE2,46.0401,Building/Property Maintenance.,1,0.04
+Frequencies,232,11371,CIPCODE2,46.0415,Building Construction Technology,3,0.13
+Frequencies,233,11371,CIPCODE2,46.0503,Plumbing Technology/Plumber.,4,0.18
+Frequencies,234,11371,CIPCODE2,46.9999,"Construction Trades, Other.",1,0.04
+Frequencies,235,11371,CIPCODE2,47.0101,"Electrical/Electronics Equipment Installation and Repair, General.",5,0.22
+Frequencies,236,11371,CIPCODE2,47.0104,Computer Installation and Repair Technology/Technician.,1,0.04
+Frequencies,237,11371,CIPCODE2,47.0105,Industrial Electronics Technology/Technician.,1,0.04
+Frequencies,238,11371,CIPCODE2,47.0201,"Heating, Air Conditioning, Ventilation and Refrigeration Maintenance Technology/Technician.",47,2.06
+Frequencies,239,11371,CIPCODE2,47.0302,Heavy Equipment Maintenance Technology/Technician,2,0.09
+Frequencies,240,11371,CIPCODE2,47.0303,Industrial Mechanics and Maintenance Technology.,7,0.31
+Frequencies,241,11371,CIPCODE2,47.0403,Locksmithing and Safe Repair,1,0.04
+Frequencies,242,11371,CIPCODE2,47.0408,Watchmaking and Jewelrymaking.,1,0.04
+Frequencies,243,11371,CIPCODE2,47.0600,"Vehicle Maintenance and Repair Technologies, General",2,0.09
+Frequencies,244,11371,CIPCODE2,47.0603,Autobody/Collision and Repair Technology/Technician.,1,0.04
+Frequencies,245,11371,CIPCODE2,47.0604,Automobile/Automotive Mechanics Technology/Technician.,43,1.8799999999999997
+Frequencies,246,11371,CIPCODE2,47.0605,Diesel Mechanics Technology/Technician.,6,0.26
+Frequencies,247,11371,CIPCODE2,47.0607,Airframe Mechanics and Aircraft Maintenance Technology/Technician.,3,0.13
+Frequencies,248,11371,CIPCODE2,47.0608,Aircraft Powerplant Technology/Technician.,2,0.09
+Frequencies,249,11371,CIPCODE2,47.0609,Avionics Maintenance Technology/Technician.,1,0.04
+Frequencies,250,11371,CIPCODE2,47.0611,Motorcycle Maintenance and Repair Technology/Technician.,1,0.04
+Frequencies,251,11371,CIPCODE2,47.0612,Vehicle Emissions Inspection and Maintenance Technology/Technician.,1,0.04
+Frequencies,252,11371,CIPCODE2,47.0613,Medium/Heavy Vehicle and Truck Technology/Technician,2,0.09
+Frequencies,253,11371,CIPCODE2,47.0615,Engine Machinist,1,0.04
+Frequencies,254,11371,CIPCODE2,47.0616,Marine Maintenance/Fitter and Ship Repair Technology/Technician.,3,0.13
+Frequencies,255,11371,CIPCODE2,48.0303,Upholstery/Upholsterer,1,0.04
+Frequencies,256,11371,CIPCODE2,48.0501,Machine Tool Technology/Machinist.,1,0.04
+Frequencies,257,11371,CIPCODE2,48.0503,Machine Shop Technology/Assistant.,1,0.04
+Frequencies,258,11371,CIPCODE2,48.0508,Welding Technology/Welder.,44,1.93
+Frequencies,259,11371,CIPCODE2,48.0511,Metal Fabricator,2,0.09
+Frequencies,260,11371,CIPCODE2,49.0102,Airline/Commercial/Professional Pilot and Flight Crew.,2,0.09
+Frequencies,261,11371,CIPCODE2,49.0202,Construction/Heavy Equipment/Earthmoving Equipment Operation.,1,0.04
+Frequencies,262,11371,CIPCODE2,49.0205,Truck and Bus Driver/Commercial Vehicle Operator and Instructor.,17,0.74
+Frequencies,263,11371,CIPCODE2,49.0208,Railroad and Railway Transportation,1,0.04
+Frequencies,264,11371,CIPCODE2,49.0299,"Ground Transportation, Other.",1,0.04
+Frequencies,265,11371,CIPCODE2,49.0304,"Diver, Professional and Instructor.",2,0.09
+Frequencies,266,11371,CIPCODE2,50.0102,Digital Arts,1,0.04
+Frequencies,267,11371,CIPCODE2,50.0404,Industrial and Product Design,1,0.04
+Frequencies,268,11371,CIPCODE2,50.0602,Cinematography and Film/Video Production.,2,0.09
+Frequencies,269,11371,CIPCODE2,50.0699,"Film/Video and Photographic Arts, Other.",1,0.04
+Frequencies,270,11371,CIPCODE2,50.0702,"Fine/Studio Arts, General",1,0.04
+Frequencies,271,11371,CIPCODE2,50.0713,Metal and Jewelry Arts.,3,0.13
+Frequencies,272,11371,CIPCODE2,51.0000,"Health Services/Allied Health/Health Sciences, General.",1,0.04
+Frequencies,273,11371,CIPCODE2,51.0601,Dental Assisting/Assistant.,73,3.19
+Frequencies,274,11371,CIPCODE2,51.0603,Dental Laboratory Technology/Technician.,1,0.04
+Frequencies,275,11371,CIPCODE2,51.0705,Medical Office Management/Administration.,2,0.09
+Frequencies,276,11371,CIPCODE2,51.0707,Health Information/Medical Records Technology/Technician.,5,0.22
+Frequencies,277,11371,CIPCODE2,51.0710,Medical Office Assistant/Specialist.,11,0.48
+Frequencies,278,11371,CIPCODE2,51.0713,Medical Insurance Coding Specialist/Coder.,13,0.56999999999999995
+Frequencies,279,11371,CIPCODE2,51.0714,Medical Insurance Specialist/Medical Biller.,15,0.66
+Frequencies,280,11371,CIPCODE2,51.0716,Medical Administrative/Executive Assistant and Medical Secretary.,3,0.13
+Frequencies,281,11371,CIPCODE2,51.0801,Medical/Clinical Assistant.,93,4.07
+Frequencies,282,11371,CIPCODE2,51.0802,Clinical/Medical Laboratory Assistant.,1,0.04
+Frequencies,283,11371,CIPCODE2,51.0803,Occupational Therapist Assistant,3,0.13
+Frequencies,284,11371,CIPCODE2,51.0805,Pharmacy Technician/Assistant.,15,0.66
+Frequencies,285,11371,CIPCODE2,51.0806,Physical Therapy Technician/Assistant.,5,0.22
+Frequencies,286,11371,CIPCODE2,51.0808,Veterinary/Animal Health Technology/Technician and Veterinary Assistant.,22,0.96
+Frequencies,287,11371,CIPCODE2,51.0810,Emergency Care Attendant (EMT Ambulance).,1,0.04
+Frequencies,288,11371,CIPCODE2,51.0899,"Allied Health and Medical Assisting Services, Other.",4,0.18
+Frequencies,289,11371,CIPCODE2,51.0901,Cardiovascular Technology/Technologist.,3,0.13
+Frequencies,290,11371,CIPCODE2,51.0902,Electrocardiograph Technology/Technician.,1,0.04
+Frequencies,291,11371,CIPCODE2,51.0904,Emergency Medical Technology/Technician (EMT Paramedic).,4,0.18
+Frequencies,292,11371,CIPCODE2,51.0907,Medical Radiologic Technology/Science - Radiation Therapist.,2,0.09
+Frequencies,293,11371,CIPCODE2,51.0908,Respiratory Care Therapy/Therapist.,6,0.26
+Frequencies,294,11371,CIPCODE2,51.0909,Surgical Technology/Technologist.,14,0.61
+Frequencies,295,11371,CIPCODE2,51.0910,Diagnostic Medical Sonography/Sonographer and Ultrasound Technician.,9,0.39
+Frequencies,296,11371,CIPCODE2,51.0911,Radiologic Technology/Science - Radiographer.,11,0.48
+Frequencies,297,11371,CIPCODE2,51.0920,Magnetic Resonance Imaging (MRI) Technology/Technician,3,0.13
+Frequencies,298,11371,CIPCODE2,51.1001,Blood Bank Technology Specialist.,2,0.09
+Frequencies,299,11371,CIPCODE2,51.1009,Phlebotomy Technician/Phlebotomist.,8,0.35
+Frequencies,300,11371,CIPCODE2,51.1012,Sterile Processing Technology/Technician,4,0.18
+Frequencies,301,11371,CIPCODE2,51.1501,Substance Abuse/Addiction Counseling.,1,0.04
+Frequencies,302,11371,CIPCODE2,51.1504,Community Health Services/Liaison/Counseling,1,0.04
+Frequencies,303,11371,CIPCODE2,51.2399,"Rehabilitation and Therapeutic Professions, Other.",1,0.04
+Frequencies,304,11371,CIPCODE2,51.2501,"Veterinary Sciences/Veterinary Clinical Sciences, General",1,0.04
+Frequencies,305,11371,CIPCODE2,51.2602,Home Health Aide/Home Attendant.,1,0.04
+Frequencies,306,11371,CIPCODE2,51.3306,Holistic Health,2,0.09
+Frequencies,307,11371,CIPCODE2,51.3501,Massage Therapy/Therapeutic Massage.,47,2.06
+Frequencies,308,11371,CIPCODE2,51.3502,Asian Bodywork Therapy.,1,0.04
+Frequencies,309,11371,CIPCODE2,51.3602,Yoga Teacher Training/Yoga Therapy.,2,0.09
+Frequencies,310,11371,CIPCODE2,51.3801,Registered Nursing/Registered Nurse.,25,1.0900000000000001
+Frequencies,311,11371,CIPCODE2,51.3805,Family Practice Nurse/Nursing,1,0.04
+Frequencies,312,11371,CIPCODE2,51.3901,Licensed Practical/Vocational Nurse Training.,41,1.79
+Frequencies,313,11371,CIPCODE2,51.3902,Nursing Assistant/Aide and Patient Care Assistant/Aide.,34,1.49
+Frequencies,314,11371,CIPCODE2,51.3999,"Practical Nursing, Vocational Nursing and Nursing Assistants, Other",12,0.53
+Frequencies,315,11371,CIPCODE2,52.0101,"Business/Commerce, General.",1,0.04
+Frequencies,316,11371,CIPCODE2,52.0201,"Business Administration and Management, General.",10,0.44
+Frequencies,317,11371,CIPCODE2,52.0301,Accounting.,1,0.04
+Frequencies,318,11371,CIPCODE2,52.0302,Accounting Technology/Technician and Bookkeeping.,5,0.22
+Frequencies,319,11371,CIPCODE2,52.0401,"Administrative Assistant and Secretarial Science, General.",5,0.22
+Frequencies,320,11371,CIPCODE2,52.0402,Executive Assistant/Executive Secretary.,1,0.04
+Frequencies,321,11371,CIPCODE2,52.0407,Business/Office Automation/Technology/Data Entry.,5,0.22
+Frequencies,322,11371,CIPCODE2,52.0904,Hotel/Motel Administration/Management,1,0.04
+Frequencies,323,11371,CIPCODE2,52.0999,"Hospitality Administration/Management, Other.",1,0.04
+Frequencies,324,11371,CIPCODE2,52.9999,"Business, Management, Marketing, and Related Support Services, Other.",1,0.04
+Frequencies,325,11371,CIPCODE2,-2,Not applicable,384,16.809999999999999
+Frequencies,326,11388,PRGMSR2,1,Contact hours,1503,65.78
+Frequencies,327,11388,PRGMSR2,2,Credit hours,398,17.420000000000005
+Frequencies,328,11388,PRGMSR2,-2,Not applicable,384,16.809999999999999
+Frequencies,329,11391,CIPCODE3,01.0308,Agroecology and Sustainable Agriculture,1,0.04
+Frequencies,330,11391,CIPCODE3,09.0701,Radio and Television.,1,0.04
+Frequencies,331,11391,CIPCODE3,09.0702,Digital Communication and Media/Multimedia,2,0.09
+Frequencies,332,11391,CIPCODE3,09.0799,"Radio, Television, and Digital Communication, Other",2,0.09
+Frequencies,333,11391,CIPCODE3,09.0906,Sports Communication,2,0.09
+Frequencies,334,11391,CIPCODE3,10.0202,Radio and Television Broadcasting Technology/Technician.,3,0.13
+Frequencies,335,11391,CIPCODE3,10.0203,Recording Arts Technology/Technician,3,0.13
+Frequencies,336,11391,CIPCODE3,10.9999,"Communications Technologies/Technicians and Support Services, Other.",1,0.04
+Frequencies,337,11391,CIPCODE3,11.0101,"Computer and Information Sciences, General.",1,0.04
+Frequencies,338,11391,CIPCODE3,11.0103,Information Technology.,3,0.13
+Frequencies,339,11391,CIPCODE3,11.0199,"Computer and Information Sciences,  Other",1,0.04
+Frequencies,340,11391,CIPCODE3,11.0201,"Computer Programming/Programmer, General.",1,0.04
+Frequencies,341,11391,CIPCODE3,11.0801,"Web Page, Digital/Multimedia and Information Resources Design.",3,0.13
+Frequencies,342,11391,CIPCODE3,11.0901,Computer Systems Networking and Telecommunications.,9,0.39
+Frequencies,343,11391,CIPCODE3,11.1001,Network and System Administration/Administrator.,5,0.22
+Frequencies,344,11391,CIPCODE3,11.1003,Computer and Information Systems Security/Information Assurance.,3,0.13
+Frequencies,345,11391,CIPCODE3,11.1004,Web/Multimedia Management and Webmaster.,2,0.09
+Frequencies,346,11391,CIPCODE3,11.1006,Computer Support Specialist,3,0.13
+Frequencies,347,11391,CIPCODE3,11.1099,"Computer/Information Technology Services Administration and Management, Other.",1,0.04
+Frequencies,348,11391,CIPCODE3,12.0303,Mortuary Science and Embalming/Embalmer.,1,0.04
+Frequencies,349,11391,CIPCODE3,12.0401,"Cosmetology/Cosmetologist, General.",51,2.23
+Frequencies,350,11391,CIPCODE3,12.0402,Barbering/Barber.,88,3.85
+Frequencies,351,11391,CIPCODE3,12.0404,Electrolysis/Electrology and Electrolysis Technician.,1,0.04
+Frequencies,352,11391,CIPCODE3,12.0406,Make-Up Artist/Specialist.,5,0.22
+Frequencies,353,11391,CIPCODE3,12.0407,Hair Styling/Stylist and Hair Design.,19,0.82999999999999985
+Frequencies,354,11391,CIPCODE3,12.0408,Facial Treatment Specialist/Facialist.,14,0.61
+Frequencies,355,11391,CIPCODE3,12.0409,Aesthetician/Esthetician and Skin Care Specialist.,160,7
+Frequencies,356,11391,CIPCODE3,12.0410,Nail Technician/Specialist and Manicurist.,162,7.09
+Frequencies,357,11391,CIPCODE3,12.0411,Permanent Cosmetics/Makeup and Tattooing.,1,0.04
+Frequencies,358,11391,CIPCODE3,12.0413,"Cosmetology, Barber/Styling, and Nail Instructor.",172,7.53
+Frequencies,359,11391,CIPCODE3,12.0414,Master Aesthetician/Esthetician,15,0.66
+Frequencies,360,11391,CIPCODE3,12.0499,"Cosmetology and Related Personal Grooming Arts, Other.",15,0.66
+Frequencies,361,11391,CIPCODE3,12.0500,"Cooking and Related Culinary Arts, General.",2,0.09
+Frequencies,362,11391,CIPCODE3,12.0501,Baking and Pastry Arts/Baker/Pastry Chef.,5,0.22
+Frequencies,363,11391,CIPCODE3,12.0503,Culinary Arts/Chef Training.,4,0.18
+Frequencies,364,11391,CIPCODE3,12.0504,"Restaurant, Culinary, and Catering Management/Manager.",2,0.09
+Frequencies,365,11391,CIPCODE3,12.0510,Wine Steward/Sommelier,2,0.09
+Frequencies,366,11391,CIPCODE3,12.0599,"Culinary Arts and Related Services, Other.",1,0.04
+Frequencies,367,11391,CIPCODE3,12.9999,"Personal and Culinary Services, Other.",1,0.04
+Frequencies,368,11391,CIPCODE3,13.1207,Montessori Teacher Education.,1,0.04
+Frequencies,369,11391,CIPCODE3,13.1210,Early Childhood Education and Teaching.,2,0.09
+Frequencies,370,11391,CIPCODE3,13.1319,Technical Teacher Education.,1,0.04
+Frequencies,371,11391,CIPCODE3,13.1399,"Teacher Education and Professional Development, Specific Subject Areas, Other.",2,0.09
+Frequencies,372,11391,CIPCODE3,14.1801,Materials Engineering,1,0.04
+Frequencies,373,11391,CIPCODE3,15.0303,"Electrical, Electronic and Communications Engineering Technology/Technician.",1,0.04
+Frequencies,374,11391,CIPCODE3,15.0399,"Electrical and Electronic Engineering Technologies/Technicians, Other.",1,0.04
+Frequencies,375,11391,CIPCODE3,15.0501,"Heating, Ventilation, Air Conditioning and Refrigeration Engineering Technology/Technician.",14,0.61
+Frequencies,376,11391,CIPCODE3,15.0503,Energy Management and Systems Technology/Technician,1,0.04
+Frequencies,377,11391,CIPCODE3,15.0607,Plastics and Polymer Engineering Technology/Technician,2,0.09
+Frequencies,378,11391,CIPCODE3,15.0614,Welding Engineering Technology/Technician,1,0.04
+Frequencies,379,11391,CIPCODE3,15.0899,"Mechanical Engineering Related Technologies/Technicians, Other",1,0.04
+Frequencies,380,11391,CIPCODE3,15.1202,Computer Technology/Computer Systems Technology.,1,0.04
+Frequencies,381,11391,CIPCODE3,15.1302,CAD/CADD Drafting and/or Design Technology/Technician.,2,0.09
+Frequencies,382,11391,CIPCODE3,19.0709,Child Care Provider/Assistant.,2,0.09
+Frequencies,383,11391,CIPCODE3,22.0302,Legal Assistant/Paralegal.,2,0.09
+Frequencies,384,11391,CIPCODE3,23.0101,"English Language and Literature, General.",1,0.04
+Frequencies,385,11391,CIPCODE3,31.0507,Physical Fitness Technician,3,0.13
+Frequencies,386,11391,CIPCODE3,43.0102,Corrections.,2,0.09
+Frequencies,387,11391,CIPCODE3,43.0103,Criminal Justice/Law Enforcement Administration.,3,0.13
+Frequencies,388,11391,CIPCODE3,43.0104,Criminal Justice/Safety Studies.,3,0.13
+Frequencies,389,11391,CIPCODE3,43.0107,Criminal Justice/Police Science.,5,0.22
+Frequencies,390,11391,CIPCODE3,43.0109,Security and Loss Prevention Services.,1,0.04
+Frequencies,391,11391,CIPCODE3,43.0203,Fire Science/Fire-fighting.,2,0.09
+Frequencies,392,11391,CIPCODE3,46.0000,"Construction Trades, General.",1,0.04
+Frequencies,393,11391,CIPCODE3,46.0201,Carpentry/Carpenter.,2,0.09
+Frequencies,394,11391,CIPCODE3,46.0301,"Electrical and Power Transmission Installation/Installer, General.",2,0.09
+Frequencies,395,11391,CIPCODE3,46.0302,Electrician.,15,0.66
+Frequencies,396,11391,CIPCODE3,46.0401,Building/Property Maintenance.,3,0.13
+Frequencies,397,11391,CIPCODE3,46.0403,Building/Home/Construction Inspection/Inspector,1,0.04
+Frequencies,398,11391,CIPCODE3,46.0415,Building Construction Technology,2,0.09
+Frequencies,399,11391,CIPCODE3,46.0503,Plumbing Technology/Plumber.,2,0.09
+Frequencies,400,11391,CIPCODE3,46.9999,"Construction Trades, Other.",2,0.09
+Frequencies,401,11391,CIPCODE3,47.0101,"Electrical/Electronics Equipment Installation and Repair, General.",2,0.09
+Frequencies,402,11391,CIPCODE3,47.0103,Communications Systems Installation and Repair Technology.,2,0.09
+Frequencies,403,11391,CIPCODE3,47.0104,Computer Installation and Repair Technology/Technician.,1,0.04
+Frequencies,404,11391,CIPCODE3,47.0105,Industrial Electronics Technology/Technician.,3,0.13
+Frequencies,405,11391,CIPCODE3,47.0110,"Security System Installation, Repair, and Inspection Technology/Technician",1,0.04
+Frequencies,406,11391,CIPCODE3,47.0201,"Heating, Air Conditioning, Ventilation and Refrigeration Maintenance Technology/Technician.",40,1.75
+Frequencies,407,11391,CIPCODE3,47.0302,Heavy Equipment Maintenance Technology/Technician.,1,0.04
+Frequencies,408,11391,CIPCODE3,47.0303,Industrial Mechanics and Maintenance Technology.,6,0.26
+Frequencies,409,11391,CIPCODE3,47.0403,Locksmithing and Safe Repair,1,0.04
+Frequencies,410,11391,CIPCODE3,47.0408,Watchmaking and Jewelrymaking.,1,0.04
+Frequencies,411,11391,CIPCODE3,47.0603,Autobody/Collision and Repair Technology/Technician.,6,0.26
+Frequencies,412,11391,CIPCODE3,47.0604,Automobile/Automotive Mechanics Technology/Technician.,34,1.49
+Frequencies,413,11391,CIPCODE3,47.0605,Diesel Mechanics Technology/Technician.,10,0.44
+Frequencies,414,11391,CIPCODE3,47.0607,Airframe Mechanics and Aircraft Maintenance Technology/Technician.,1,0.04
+Frequencies,415,11391,CIPCODE3,47.0608,Aircraft Powerplant Technology/Technician.,1,0.04
+Frequencies,416,11391,CIPCODE3,47.0609,Avionics Maintenance Technology/Technician.,2,0.09
+Frequencies,417,11391,CIPCODE3,47.0611,Motorcycle Maintenance and Repair Technology/Technician.,1,0.04
+Frequencies,418,11391,CIPCODE3,47.0613,Medium/Heavy Vehicle and Truck Technology/Technician.,3,0.13
+Frequencies,419,11391,CIPCODE3,48.0501,Machine Tool Technology/Machinist.,3,0.13
+Frequencies,420,11391,CIPCODE3,48.0507,Tool and Die Technology/Technician,1,0.04
+Frequencies,421,11391,CIPCODE3,48.0508,Welding Technology/Welder.,33,1.44
+Frequencies,422,11391,CIPCODE3,48.0510,Computer Numerically Controlled (CNC) Machinist Technology/CNC Machinist,3,0.13
+Frequencies,423,11391,CIPCODE3,48.0511,Metal Fabricator,1,0.04
+Frequencies,424,11391,CIPCODE3,49.0102,Airline/Commercial/Professional Pilot and Flight Crew.,1,0.04
+Frequencies,425,11391,CIPCODE3,49.0202,Construction/Heavy Equipment/Earthmoving Equipment Operation.,2,0.09
+Frequencies,426,11391,CIPCODE3,49.0205,Truck and Bus Driver/Commercial Vehicle Operator and Instructor.,8,0.35
+Frequencies,427,11391,CIPCODE3,49.0304,"Diver, Professional and Instructor.",1,0.04
+Frequencies,428,11391,CIPCODE3,50.0407,Fashion/Apparel Design.,1,0.04
+Frequencies,429,11391,CIPCODE3,50.0409,Graphic Design.,2,0.09
+Frequencies,430,11391,CIPCODE3,50.0602,Cinematography and Film/Video Production,1,0.04
+Frequencies,431,11391,CIPCODE3,50.0713,Metal and Jewelry Arts.,3,0.13
+Frequencies,432,11391,CIPCODE3,50.0913,Music Technology,2,0.09
+Frequencies,433,11391,CIPCODE3,50.1099,"Arts, Entertainment, and Media Management, Other",2,0.09
+Frequencies,434,11391,CIPCODE3,51.0001,"Health and Wellness, General",1,0.04
+Frequencies,435,11391,CIPCODE3,51.0501,"Dental Clinical Sciences, General.",1,0.04
+Frequencies,436,11391,CIPCODE3,51.0601,Dental Assisting/Assistant.,63,2.76
+Frequencies,437,11391,CIPCODE3,51.0602,Dental Hygiene/Hygienist.,1,0.04
+Frequencies,438,11391,CIPCODE3,51.0701,Health/Health Care Administration/Management.,6,0.26
+Frequencies,439,11391,CIPCODE3,51.0705,Medical Office Management/Administration.,3,0.13
+Frequencies,440,11391,CIPCODE3,51.0706,Health Information/Medical Records Administration/Administrator.,2,0.09
+Frequencies,441,11391,CIPCODE3,51.0707,Health Information/Medical Records Technology/Technician.,1,0.04
+Frequencies,442,11391,CIPCODE3,51.0710,Medical Office Assistant/Specialist.,12,0.53
+Frequencies,443,11391,CIPCODE3,51.0711,Medical/Health Management and Clinical Assistant/Specialist.,1,0.04
+Frequencies,444,11391,CIPCODE3,51.0712,Medical Reception/Receptionist.,1,0.04
+Frequencies,445,11391,CIPCODE3,51.0713,Medical Insurance Coding Specialist/Coder.,27,1.1799999999999997
+Frequencies,446,11391,CIPCODE3,51.0714,Medical Insurance Specialist/Medical Biller.,36,1.58
+Frequencies,447,11391,CIPCODE3,51.0715,Health/Medical Claims Examiner.,1,0.04
+Frequencies,448,11391,CIPCODE3,51.0716,Medical Administrative/Executive Assistant and Medical Secretary.,12,0.53
+Frequencies,449,11391,CIPCODE3,51.0799,"Health and Medical Administrative Services, Other.",2,0.09
+Frequencies,450,11391,CIPCODE3,51.0801,Medical/Clinical Assistant.,45,1.97
+Frequencies,451,11391,CIPCODE3,51.0803,Occupational Therapist Assistant,1,0.04
+Frequencies,452,11391,CIPCODE3,51.0805,Pharmacy Technician/Assistant.,23,1.01
+Frequencies,453,11391,CIPCODE3,51.0806,Physical Therapy Technician/Assistant.,5,0.22
+Frequencies,454,11391,CIPCODE3,51.0808,Veterinary/Animal Health Technology/Technician and Veterinary Assistant.,9,0.39
+Frequencies,455,11391,CIPCODE3,51.0810,Emergency Care Attendant (EMT Ambulance).,1,0.04
+Frequencies,456,11391,CIPCODE3,51.0899,"Allied Health and Medical Assisting Services, Other.",9,0.39
+Frequencies,457,11391,CIPCODE3,51.0901,Cardiovascular Technology/Technologist.,2,0.09
+Frequencies,458,11391,CIPCODE3,51.0904,Emergency Medical Technology/Technician (EMT Paramedic).,8,0.35
+Frequencies,459,11391,CIPCODE3,51.0907,Medical Radiologic Technology/Science - Radiation Therapist.,2,0.09
+Frequencies,460,11391,CIPCODE3,51.0908,Respiratory Care Therapy/Therapist.,5,0.22
+Frequencies,461,11391,CIPCODE3,51.0909,Surgical Technology/Technologist.,18,0.79
+Frequencies,462,11391,CIPCODE3,51.0910,Diagnostic Medical Sonography/Sonographer and Ultrasound Technician.,8,0.35
+Frequencies,463,11391,CIPCODE3,51.0911,Radiologic Technology/Science - Radiographer.,5,0.22
+Frequencies,464,11391,CIPCODE3,51.0913,Athletic Training/Trainer.,1,0.04
+Frequencies,465,11391,CIPCODE3,51.0920,Magnetic Resonance Imaging (MRI) Technology/Technician,2,0.09
+Frequencies,466,11391,CIPCODE3,51.1004,Clinical/Medical Laboratory Technician.,1,0.04
+Frequencies,467,11391,CIPCODE3,51.1009,Phlebotomy Technician/Phlebotomist.,11,0.48
+Frequencies,468,11391,CIPCODE3,51.1011,Renal/Dialysis Technologist/Technician.,1,0.04
+Frequencies,469,11391,CIPCODE3,51.1012,Sterile Processing Technology/Technician,1,0.04
+Frequencies,470,11391,CIPCODE3,51.1501,Substance Abuse/Addiction Counseling,4,0.18
+Frequencies,471,11391,CIPCODE3,51.2399,"Rehabilitation and Therapeutic Professions, Other.",1,0.04
+Frequencies,472,11391,CIPCODE3,51.2602,Home Health Aide/Home Attendant.,2,0.09
+Frequencies,473,11391,CIPCODE3,51.2603,Medication Aide,1,0.04
+Frequencies,474,11391,CIPCODE3,51.3101,Dietetics/Dietitian,1,0.04
+Frequencies,475,11391,CIPCODE3,51.3501,Massage Therapy/Therapeutic Massage.,71,3.11
+Frequencies,476,11391,CIPCODE3,51.3503,Somatic Bodywork,1,0.04
+Frequencies,477,11391,CIPCODE3,51.3801,Registered Nursing/Registered Nurse.,14,0.61
+Frequencies,478,11391,CIPCODE3,51.3901,Licensed Practical/Vocational Nurse Training.,11,0.48
+Frequencies,479,11391,CIPCODE3,51.3902,Nursing Assistant/Aide and Patient Care Assistant/Aide.,16,0.7
+Frequencies,480,11391,CIPCODE3,51.3999,"Practical Nursing, Vocational Nursing and Nursing Assistants, Other",9,0.39
+Frequencies,481,11391,CIPCODE3,51.9999,"Health Professions and Related Clinical Sciences, Other.",1,0.04
+Frequencies,482,11391,CIPCODE3,52.0201,"Business Administration and Management, General.",9,0.39
+Frequencies,483,11391,CIPCODE3,52.0204,Office Management and Supervision.,1,0.04
+Frequencies,484,11391,CIPCODE3,52.0301,Accounting.,1,0.04
+Frequencies,485,11391,CIPCODE3,52.0302,Accounting Technology/Technician and Bookkeeping.,5,0.22
+Frequencies,486,11391,CIPCODE3,52.0305,Accounting and Business/Management.,1,0.04
+Frequencies,487,11391,CIPCODE3,52.0401,"Administrative Assistant and Secretarial Science, General.",6,0.26
+Frequencies,488,11391,CIPCODE3,52.0402,Executive Assistant/Executive Secretary.,2,0.09
+Frequencies,489,11391,CIPCODE3,52.0407,Business/Office Automation/Technology/Data Entry.,1,0.04
+Frequencies,490,11391,CIPCODE3,52.0408,General Office Occupations and Clerical Services.,6,0.26
+Frequencies,491,11391,CIPCODE3,52.0499,"Business Operations Support and Secretarial Services, Other.",1,0.04
+Frequencies,492,11391,CIPCODE3,52.1401,"Marketing/Marketing Management, General.",1,0.04
+Frequencies,493,11391,CIPCODE3,-2,Not applicable,758,33.170000000000009
+Frequencies,494,11408,PRGMSR3,1,Contact hours,1163,50.9
+Frequencies,495,11408,PRGMSR3,2,Credit hours,364,15.93
+Frequencies,496,11408,PRGMSR3,-2,Not applicable,758,33.170000000000009
+Frequencies,497,11411,CIPCODE4,09.0702,Digital Communication and Media/Multimedia.,1,0.04
+Frequencies,498,11411,CIPCODE4,09.0799,"Radio, Television, and Digital Communication, Other",1,0.04
+Frequencies,499,11411,CIPCODE4,09.0906,Sports Communication,2,0.09
+Frequencies,500,11411,CIPCODE4,09.0907,International and Intercultural Communication,1,0.04
+Frequencies,501,11411,CIPCODE4,10.0201,Photographic and Film/Video Technology/Technician and Assistant.,2,0.09
+Frequencies,502,11411,CIPCODE4,10.0202,Radio and Television Broadcasting Technology/Technician.,3,0.13
+Frequencies,503,11411,CIPCODE4,10.0203,Recording Arts Technology/Technician,2,0.09
+Frequencies,504,11411,CIPCODE4,10.0301,"Graphic Communications, General.",1,0.04
+Frequencies,505,11411,CIPCODE4,11.0101,"Computer and Information Sciences, General.",3,0.13
+Frequencies,506,11411,CIPCODE4,11.0199,"Computer and Information Sciences,  Other.",1,0.04
+Frequencies,507,11411,CIPCODE4,11.0401,Information Science/Studies.,2,0.09
+Frequencies,508,11411,CIPCODE4,11.0501,Computer Systems Analysis/Analyst.,1,0.04
+Frequencies,509,11411,CIPCODE4,11.0601,"Data Entry/Microcomputer Applications, General.",1,0.04
+Frequencies,510,11411,CIPCODE4,11.0801,"Web Page, Digital/Multimedia and Information Resources Design.",2,0.09
+Frequencies,511,11411,CIPCODE4,11.0901,Computer Systems Networking and Telecommunications.,8,0.35
+Frequencies,512,11411,CIPCODE4,11.1001,Network and System Administration/Administrator.,7,0.31
+Frequencies,513,11411,CIPCODE4,11.1002,"System, Networking, and LAN/WAN Management/Manager.",4,0.18
+Frequencies,514,11411,CIPCODE4,11.1003,Computer and Information Systems Security/Information Assurance.,3,0.13
+Frequencies,515,11411,CIPCODE4,11.1004,Web/Multimedia Management and Webmaster.,1,0.04
+Frequencies,516,11411,CIPCODE4,11.1006,Computer Support Specialist,5,0.22
+Frequencies,517,11411,CIPCODE4,11.1099,"Computer/Information Technology Services Administration and Management, Other.",1,0.04
+Frequencies,518,11411,CIPCODE4,11.9999,"Computer and Information Sciences and Support Services, Other.",2,0.09
+Frequencies,519,11411,CIPCODE4,12.0401,"Cosmetology/Cosmetologist, General.",48,2.1
+Frequencies,520,11411,CIPCODE4,12.0402,Barbering/Barber.,33,1.44
+Frequencies,521,11411,CIPCODE4,12.0404,Electrolysis/Electrology and Electrolysis Technician.,4,0.18
+Frequencies,522,11411,CIPCODE4,12.0406,Make-Up Artist/Specialist.,8,0.35
+Frequencies,523,11411,CIPCODE4,12.0407,Hair Styling/Stylist and Hair Design.,15,0.66
+Frequencies,524,11411,CIPCODE4,12.0408,Facial Treatment Specialist/Facialist.,7,0.31
+Frequencies,525,11411,CIPCODE4,12.0409,Aesthetician/Esthetician and Skin Care Specialist.,57,2.4900000000000002
+Frequencies,526,11411,CIPCODE4,12.0410,Nail Technician/Specialist and Manicurist.,139,6.08
+Frequencies,527,11411,CIPCODE4,12.0411,Permanent Cosmetics/Makeup and Tattooing.,1,0.04
+Frequencies,528,11411,CIPCODE4,12.0412,Salon/Beauty Salon Management/Manager.,5,0.22
+Frequencies,529,11411,CIPCODE4,12.0413,"Cosmetology, Barber/Styling, and Nail Instructor.",146,6.39
+Frequencies,530,11411,CIPCODE4,12.0414,Master Aesthetician/Esthetician,5,0.22
+Frequencies,531,11411,CIPCODE4,12.0499,"Cosmetology and Related Personal Grooming Arts, Other.",15,0.66
+Frequencies,532,11411,CIPCODE4,12.0500,"Cooking and Related Culinary Arts, General.",1,0.04
+Frequencies,533,11411,CIPCODE4,12.0501,Baking and Pastry Arts/Baker/Pastry Chef.,3,0.13
+Frequencies,534,11411,CIPCODE4,12.0502,Bartending/Bartender.,1,0.04
+Frequencies,535,11411,CIPCODE4,12.0503,Culinary Arts/Chef Training.,6,0.26
+Frequencies,536,11411,CIPCODE4,12.0504,"Restaurant, Culinary, and Catering Management/Manager.",1,0.04
+Frequencies,537,11411,CIPCODE4,12.0505,Food Preparation/Professional Cooking/Kitchen Assistant.,1,0.04
+Frequencies,538,11411,CIPCODE4,12.0599,"Culinary Arts and Related Services, Other.",1,0.04
+Frequencies,539,11411,CIPCODE4,12.9999,"Personal and Culinary Services, Other.",1,0.04
+Frequencies,540,11411,CIPCODE4,13.1206,"Teacher Education, Multiple Levels",1,0.04
+Frequencies,541,11411,CIPCODE4,13.1210,Early Childhood Education and Teaching.,3,0.13
+Frequencies,542,11411,CIPCODE4,13.1309,Technology Teacher Education/Industrial Arts Teacher Education.,1,0.04
+Frequencies,543,11411,CIPCODE4,13.1319,Technical Teacher Education.,1,0.04
+Frequencies,544,11411,CIPCODE4,13.1320,Trade and Industrial Teacher Education.,1,0.04
+Frequencies,545,11411,CIPCODE4,14.1001,Electrical and Electronics Engineering,1,0.04
+Frequencies,546,11411,CIPCODE4,15.0201,Civil Engineering Technology/Technician.,1,0.04
+Frequencies,547,11411,CIPCODE4,15.0303,"Electrical, Electronic and Communications Engineering Technology/Technician.",4,0.18
+Frequencies,548,11411,CIPCODE4,15.0404,Instrumentation Technology/Technician,1,0.04
+Frequencies,549,11411,CIPCODE4,15.0501,"Heating, Ventilation, Air Conditioning and Refrigeration Engineering Technology/Technician.",8,0.35
+Frequencies,550,11411,CIPCODE4,15.0613,Manufacturing Engineering Technology/Technician.,1,0.04
+Frequencies,551,11411,CIPCODE4,15.0614,Welding Engineering Technology/Technician,1,0.04
+Frequencies,552,11411,CIPCODE4,15.0803,Automotive Engineering Technology/Technician.,2,0.09
+Frequencies,553,11411,CIPCODE4,15.1202,Computer Technology/Computer Systems Technology.,1,0.04
+Frequencies,554,11411,CIPCODE4,19.0708,Child Care and Support Services Management.,1,0.04
+Frequencies,555,11411,CIPCODE4,19.0709,Child Care Provider/Assistant.,1,0.04
+Frequencies,556,11411,CIPCODE4,22.0302,Legal Assistant/Paralegal.,3,0.13
+Frequencies,557,11411,CIPCODE4,22.0303,Court Reporting/Court Reporter.,1,0.04
+Frequencies,558,11411,CIPCODE4,30.1601,Accounting and Computer Science.,1,0.04
+Frequencies,559,11411,CIPCODE4,31.0507,Physical Fitness Technician,1,0.04
+Frequencies,560,11411,CIPCODE4,31.0599,"Health and Physical Education/Fitness, Other.",1,0.04
+Frequencies,561,11411,CIPCODE4,43.0103,Criminal Justice/Law Enforcement Administration.,2,0.09
+Frequencies,562,11411,CIPCODE4,43.0104,Criminal Justice/Safety Studies.,4,0.18
+Frequencies,563,11411,CIPCODE4,43.0107,Criminal Justice/Police Science.,3,0.13
+Frequencies,564,11411,CIPCODE4,43.0109,Security and Loss Prevention Services.,3,0.13
+Frequencies,565,11411,CIPCODE4,43.0116,Cyber/Computer Forensics and Counterterrorism,1,0.04
+Frequencies,566,11411,CIPCODE4,43.0199,"Corrections and Criminal Justice, Other.",1,0.04
+Frequencies,567,11411,CIPCODE4,43.0203,Fire Science/Fire-fighting.,1,0.04
+Frequencies,568,11411,CIPCODE4,44.0000,"Human Services, General.",1,0.04
+Frequencies,569,11411,CIPCODE4,46.0101,Mason/Masonry.,1,0.04
+Frequencies,570,11411,CIPCODE4,46.0201,Carpentry/Carpenter.,4,0.18
+Frequencies,571,11411,CIPCODE4,46.0302,Electrician.,11,0.48
+Frequencies,572,11411,CIPCODE4,46.0303,Lineworker.,1,0.04
+Frequencies,573,11411,CIPCODE4,46.0415,Building Construction Technology,3,0.13
+Frequencies,574,11411,CIPCODE4,46.0503,Plumbing Technology/Plumber.,1,0.04
+Frequencies,575,11411,CIPCODE4,46.9999,"Construction Trades, Other.",2,0.09
+Frequencies,576,11411,CIPCODE4,47.0101,"Electrical/Electronics Equipment Installation and Repair, General.",3,0.13
+Frequencies,577,11411,CIPCODE4,47.0103,Communications Systems Installation and Repair Technology.,1,0.04
+Frequencies,578,11411,CIPCODE4,47.0104,Computer Installation and Repair Technology/Technician.,3,0.13
+Frequencies,579,11411,CIPCODE4,47.0201,"Heating, Air Conditioning, Ventilation and Refrigeration Maintenance Technology/Technician.",20,0.88
+Frequencies,580,11411,CIPCODE4,47.0302,Heavy Equipment Maintenance Technology/Technician.,1,0.04
+Frequencies,581,11411,CIPCODE4,47.0303,Industrial Mechanics and Maintenance Technology.,8,0.35
+Frequencies,582,11411,CIPCODE4,47.0399,"Heavy/Industrial Equipment Maintenance Technologies, Other.",1,0.04
+Frequencies,583,11411,CIPCODE4,47.0402,Gunsmithing/Gunsmith,1,0.04
+Frequencies,584,11411,CIPCODE4,47.0408,Watchmaking and Jewelrymaking.,1,0.04
+Frequencies,585,11411,CIPCODE4,47.0603,Autobody/Collision and Repair Technology/Technician.,8,0.35
+Frequencies,586,11411,CIPCODE4,47.0604,Automobile/Automotive Mechanics Technology/Technician.,31,1.36
+Frequencies,587,11411,CIPCODE4,47.0605,Diesel Mechanics Technology/Technician.,10,0.44
+Frequencies,588,11411,CIPCODE4,47.0607,Airframe Mechanics and Aircraft Maintenance Technology/Technician.,1,0.04
+Frequencies,589,11411,CIPCODE4,47.0611,Motorcycle Maintenance and Repair Technology/Technician.,1,0.04
+Frequencies,590,11411,CIPCODE4,47.0613,Medium/Heavy Vehicle and Truck Technology/Technician.,1,0.04
+Frequencies,591,11411,CIPCODE4,47.0617,High Performance and Custom Engine Technician/Mechanic,1,0.04
+Frequencies,592,11411,CIPCODE4,48.0000,"Precision Production Trades, General.",1,0.04
+Frequencies,593,11411,CIPCODE4,48.0303,Upholstery/Upholsterer,1,0.04
+Frequencies,594,11411,CIPCODE4,48.0501,Machine Tool Technology/Machinist.,2,0.09
+Frequencies,595,11411,CIPCODE4,48.0503,Machine Shop Technology/Assistant.,1,0.04
+Frequencies,596,11411,CIPCODE4,48.0508,Welding Technology/Welder.,29,1.27
+Frequencies,597,11411,CIPCODE4,48.0510,Computer Numerically Controlled (CNC) Machinist Technology/CNC Machinist,1,0.04
+Frequencies,598,11411,CIPCODE4,48.0511,Metal Fabricator,1,0.04
+Frequencies,599,11411,CIPCODE4,48.9999,"Precision Production, Other.",1,0.04
+Frequencies,600,11411,CIPCODE4,49.0102,Airline/Commercial/Professional Pilot and Flight Crew.,1,0.04
+Frequencies,601,11411,CIPCODE4,49.0202,Construction/Heavy Equipment/Earthmoving Equipment Operation.,3,0.13
+Frequencies,602,11411,CIPCODE4,49.0205,Truck and Bus Driver/Commercial Vehicle Operator and Instructor.,5,0.22
+Frequencies,603,11411,CIPCODE4,49.0304,"Diver, Professional and Instructor.",1,0.04
+Frequencies,604,11411,CIPCODE4,50.0408,Interior Design.,1,0.04
+Frequencies,605,11411,CIPCODE4,50.0713,Metal and Jewelry Arts.,3,0.13
+Frequencies,606,11411,CIPCODE4,50.0903,"Music Performance, General",1,0.04
+Frequencies,607,11411,CIPCODE4,50.1001,"Arts, Entertainment,and Media Management, General",1,0.04
+Frequencies,608,11411,CIPCODE4,50.1099,"Arts, Entertainment, and Media Management, Other",1,0.04
+Frequencies,609,11411,CIPCODE4,51.0601,Dental Assisting/Assistant.,41,1.79
+Frequencies,610,11411,CIPCODE4,51.0602,Dental Hygiene/Hygienist.,3,0.13
+Frequencies,611,11411,CIPCODE4,51.0701,Health/Health Care Administration/Management.,5,0.22
+Frequencies,612,11411,CIPCODE4,51.0705,Medical Office Management/Administration.,2,0.09
+Frequencies,613,11411,CIPCODE4,51.0706,Health Information/Medical Records Administration/Administrator.,2,0.09
+Frequencies,614,11411,CIPCODE4,51.0707,Health Information/Medical Records Technology/Technician.,6,0.26
+Frequencies,615,11411,CIPCODE4,51.0710,Medical Office Assistant/Specialist.,16,0.7
+Frequencies,616,11411,CIPCODE4,51.0713,Medical Insurance Coding Specialist/Coder.,16,0.7
+Frequencies,617,11411,CIPCODE4,51.0714,Medical Insurance Specialist/Medical Biller.,19,0.82999999999999985
+Frequencies,618,11411,CIPCODE4,51.0716,Medical Administrative/Executive Assistant and Medical Secretary.,3,0.13
+Frequencies,619,11411,CIPCODE4,51.0799,"Health and Medical Administrative Services, Other.",1,0.04
+Frequencies,620,11411,CIPCODE4,51.0801,Medical/Clinical Assistant.,37,1.6200000000000003
+Frequencies,621,11411,CIPCODE4,51.0802,Clinical/Medical Laboratory Assistant.,1,0.04
+Frequencies,622,11411,CIPCODE4,51.0803,Occupational Therapist Assistant,3,0.13
+Frequencies,623,11411,CIPCODE4,51.0805,Pharmacy Technician/Assistant.,37,1.6200000000000003
+Frequencies,624,11411,CIPCODE4,51.0806,Physical Therapy Technician/Assistant.,6,0.26
+Frequencies,625,11411,CIPCODE4,51.0808,Veterinary/Animal Health Technology/Technician and Veterinary Assistant.,10,0.44
+Frequencies,626,11411,CIPCODE4,51.0810,Emergency Care Attendant (EMT Ambulance).,3,0.13
+Frequencies,627,11411,CIPCODE4,51.0812,Respiratory Therapy Technician/Assistant.,1,0.04
+Frequencies,628,11411,CIPCODE4,51.0899,"Allied Health and Medical Assisting Services, Other.",2,0.09
+Frequencies,629,11411,CIPCODE4,51.0902,Electrocardiograph Technology/Technician.,1,0.04
+Frequencies,630,11411,CIPCODE4,51.0904,Emergency Medical Technology/Technician (EMT Paramedic).,7,0.31
+Frequencies,631,11411,CIPCODE4,51.0908,Respiratory Care Therapy/Therapist.,6,0.26
+Frequencies,632,11411,CIPCODE4,51.0909,Surgical Technology/Technologist.,17,0.74
+Frequencies,633,11411,CIPCODE4,51.0910,Diagnostic Medical Sonography/Sonographer and Ultrasound Technician.,13,0.56999999999999995
+Frequencies,634,11411,CIPCODE4,51.0911,Radiologic Technology/Science - Radiographer.,5,0.22
+Frequencies,635,11411,CIPCODE4,51.0913,Athletic Training/Trainer.,1,0.04
+Frequencies,636,11411,CIPCODE4,51.0920,Magnetic Resonance Imaging (MRI) Technology/Technician,3,0.13
+Frequencies,637,11411,CIPCODE4,51.1001,Blood Bank Technology Specialist.,3,0.13
+Frequencies,638,11411,CIPCODE4,51.1003,Hematology Technology/Technician,1,0.04
+Frequencies,639,11411,CIPCODE4,51.1005,Clinical Laboratory Science/Medical Technology/Technologist.,1,0.04
+Frequencies,640,11411,CIPCODE4,51.1009,Phlebotomy Technician/Phlebotomist.,20,0.88
+Frequencies,641,11411,CIPCODE4,51.1012,Sterile Processing Technology/Technician,4,0.18
+Frequencies,642,11411,CIPCODE4,51.2501,"Veterinary Sciences/Veterinary Clinical Sciences, General",1,0.04
+Frequencies,643,11411,CIPCODE4,51.2602,Home Health Aide/Home Attendant.,1,0.04
+Frequencies,644,11411,CIPCODE4,51.2604,Rehabilitation Aide,1,0.04
+Frequencies,645,11411,CIPCODE4,51.2699,"Health Aides/Attendants/Orderlies, Other.",1,0.04
+Frequencies,646,11411,CIPCODE4,51.3305,Ayurvedic Medicine/Ayurveda,1,0.04
+Frequencies,647,11411,CIPCODE4,51.3501,Massage Therapy/Therapeutic Massage.,29,1.27
+Frequencies,648,11411,CIPCODE4,51.3502,Asian Bodywork Therapy.,1,0.04
+Frequencies,649,11411,CIPCODE4,51.3599,"Somatic Bodywork and Related Therapeutic Services, Other",1,0.04
+Frequencies,650,11411,CIPCODE4,51.3703,Polarity Therapy.,1,0.04
+Frequencies,651,11411,CIPCODE4,51.3801,Registered Nursing/Registered Nurse.,8,0.35
+Frequencies,652,11411,CIPCODE4,51.3901,Licensed Practical/Vocational Nurse Training.,11,0.48
+Frequencies,653,11411,CIPCODE4,51.3902,Nursing Assistant/Aide and Patient Care Assistant/Aide.,14,0.61
+Frequencies,654,11411,CIPCODE4,51.3999,"Practical Nursing, Vocational Nursing and Nursing Assistants, Other",2,0.09
+Frequencies,655,11411,CIPCODE4,52.0101,"Business/Commerce, General.",2,0.09
+Frequencies,656,11411,CIPCODE4,52.0201,"Business Administration and Management, General.",4,0.18
+Frequencies,657,11411,CIPCODE4,52.0204,Office Management and Supervision.,3,0.13
+Frequencies,658,11411,CIPCODE4,52.0211,Project Management,1,0.04
+Frequencies,659,11411,CIPCODE4,52.0299,"Business Administration, Management and Operations, Other.",1,0.04
+Frequencies,660,11411,CIPCODE4,52.0301,Accounting.,2,0.09
+Frequencies,661,11411,CIPCODE4,52.0401,"Administrative Assistant and Secretarial Science, General.",11,0.48
+Frequencies,662,11411,CIPCODE4,52.0407,Business/Office Automation/Technology/Data Entry.,3,0.13
+Frequencies,663,11411,CIPCODE4,52.0408,General Office Occupations and Clerical Services.,4,0.18
+Frequencies,664,11411,CIPCODE4,52.0410,"Traffic, Customs, and Transportation Clerk/Technician",1,0.04
+Frequencies,665,11411,CIPCODE4,52.0901,"Hospitality Administration/Management, General.",1,0.04
+Frequencies,666,11411,CIPCODE4,52.0999,"Hospitality Administration/Management, Other.",1,0.04
+Frequencies,667,11411,CIPCODE4,52.1201,"Management Information Systems, General.",1,0.04
+Frequencies,668,11411,CIPCODE4,52.1803,Retailing and Retail Operations.,1,0.04
+Frequencies,669,11411,CIPCODE4,-2,Not applicable,1108,48.49
+Frequencies,670,11428,PRGMSR4,1,Contact hours,850,37.200000000000003
+Frequencies,671,11428,PRGMSR4,2,Credit hours,327,14.31
+Frequencies,672,11428,PRGMSR4,-2,Not applicable,1108,48.49
+Frequencies,673,11431,CIPCODE5,01.0608,Floriculture/Floristry Operations and Management.,1,0.04
+Frequencies,674,11431,CIPCODE5,09.0702,Digital Communication and Media/Multimedia.,3,0.13
+Frequencies,675,11431,CIPCODE5,09.0799,"Radio, Television, and Digital Communication, Other",1,0.04
+Frequencies,676,11431,CIPCODE5,09.0900,"Public Relations, Advertising, and Applied Communication",3,0.13
+Frequencies,677,11431,CIPCODE5,10.0201,Photographic and Film/Video Technology/Technician and Assistant,1,0.04
+Frequencies,678,11431,CIPCODE5,10.0202,Radio and Television Broadcasting Technology/Technician.,1,0.04
+Frequencies,679,11431,CIPCODE5,10.0203,Recording Arts Technology/Technician,1,0.04
+Frequencies,680,11431,CIPCODE5,10.0304,"Animation, Interactive Technology, Video Graphics and Special Effects.",2,0.09
+Frequencies,681,11431,CIPCODE5,10.0305,"Graphic and Printing Equipment Operator, General Production.",1,0.04
+Frequencies,682,11431,CIPCODE5,11.0101,"Computer and Information Sciences, General.",4,0.18
+Frequencies,683,11431,CIPCODE5,11.0201,"Computer Programming/Programmer, General.",1,0.04
+Frequencies,684,11431,CIPCODE5,11.0301,Data Processing and Data Processing Technology/Technician.,1,0.04
+Frequencies,685,11431,CIPCODE5,11.0401,Information Science/Studies.,1,0.04
+Frequencies,686,11431,CIPCODE5,11.0501,Computer Systems Analysis/Analyst.,1,0.04
+Frequencies,687,11431,CIPCODE5,11.0801,"Web Page, Digital/Multimedia and Information Resources Design.",1,0.04
+Frequencies,688,11431,CIPCODE5,11.0899,"Computer Software and Media Applications, Other.",1,0.04
+Frequencies,689,11431,CIPCODE5,11.0901,Computer Systems Networking and Telecommunications.,9,0.39
+Frequencies,690,11431,CIPCODE5,11.1001,Network and System Administration/Administrator.,2,0.09
+Frequencies,691,11431,CIPCODE5,11.1002,"System, Networking, and LAN/WAN Management/Manager.",1,0.04
+Frequencies,692,11431,CIPCODE5,11.1006,Computer Support Specialist,6,0.26
+Frequencies,693,11431,CIPCODE5,11.9999,"Computer and Information Sciences and Support Services, Other.",1,0.04
+Frequencies,694,11431,CIPCODE5,12.0401,"Cosmetology/Cosmetologist, General.",16,0.7
+Frequencies,695,11431,CIPCODE5,12.0402,Barbering/Barber.,22,0.96
+Frequencies,696,11431,CIPCODE5,12.0404,Electrolysis/Electrology and Electrolysis Technician.,2,0.09
+Frequencies,697,11431,CIPCODE5,12.0406,Make-Up Artist/Specialist.,6,0.26
+Frequencies,698,11431,CIPCODE5,12.0407,Hair Styling/Stylist and Hair Design.,15,0.66
+Frequencies,699,11431,CIPCODE5,12.0408,Facial Treatment Specialist/Facialist.,3,0.13
+Frequencies,700,11431,CIPCODE5,12.0409,Aesthetician/Esthetician and Skin Care Specialist.,24,1.05
+Frequencies,701,11431,CIPCODE5,12.0410,Nail Technician/Specialist and Manicurist.,61,2.67
+Frequencies,702,11431,CIPCODE5,12.0411,Permanent Cosmetics/Makeup and Tattooing,2,0.09
+Frequencies,703,11431,CIPCODE5,12.0412,Salon/Beauty Salon Management/Manager.,1,0.04
+Frequencies,704,11431,CIPCODE5,12.0413,"Cosmetology, Barber/Styling, and Nail Instructor.",61,2.67
+Frequencies,705,11431,CIPCODE5,12.0414,Master Aesthetician/Esthetician,3,0.13
+Frequencies,706,11431,CIPCODE5,12.0499,"Cosmetology and Related Personal Grooming Arts, Other.",11,0.48
+Frequencies,707,11431,CIPCODE5,12.0500,"Cooking and Related Culinary Arts, General.",3,0.13
+Frequencies,708,11431,CIPCODE5,12.0501,Baking and Pastry Arts/Baker/Pastry Chef.,4,0.18
+Frequencies,709,11431,CIPCODE5,12.0503,Culinary Arts/Chef Training.,7,0.31
+Frequencies,710,11431,CIPCODE5,12.0505,Food Preparation/Professional Cooking/Kitchen Assistant.,1,0.04
+Frequencies,711,11431,CIPCODE5,12.0599,"Culinary Arts and Related Services, Other.",1,0.04
+Frequencies,712,11431,CIPCODE5,13.1299,"Teacher Education and Professional Development, Specific Levels and Methods, Other.",1,0.04
+Frequencies,713,11431,CIPCODE5,13.1305,English/Language Arts Teacher Education,1,0.04
+Frequencies,714,11431,CIPCODE5,13.1399,"Teacher Education and Professional Development, Specific Subject Areas, Other.",2,0.09
+Frequencies,715,11431,CIPCODE5,14.1001,Electrical and Electronics Engineering,2,0.09
+Frequencies,716,11431,CIPCODE5,14.2701,Systems Engineering,1,0.04
+Frequencies,717,11431,CIPCODE5,15.0399,"Electrical and Electronic Engineering Technologies/Technicians, Other.",1,0.04
+Frequencies,718,11431,CIPCODE5,15.0401,Biomedical Technology/Technician.,1,0.04
+Frequencies,719,11431,CIPCODE5,15.0404,Instrumentation Technology/Technician.,1,0.04
+Frequencies,720,11431,CIPCODE5,15.0499,"Electromechanical and Instrumentation and Maintenance Technologies/Technicians, Other",2,0.09
+Frequencies,721,11431,CIPCODE5,15.0501,"Heating, Ventilation, Air Conditioning and Refrigeration Engineering Technology/Technician.",3,0.13
+Frequencies,722,11431,CIPCODE5,15.0506,Water Quality and Wastewater Treatment Management and Recycling Technology/Techn,1,0.04
+Frequencies,723,11431,CIPCODE5,15.0614,Welding Engineering Technology/Technician,1,0.04
+Frequencies,724,11431,CIPCODE5,15.0803,Automotive Engineering Technology/Technician.,1,0.04
+Frequencies,725,11431,CIPCODE5,15.1201,Computer Engineering Technology/Technician.,1,0.04
+Frequencies,726,11431,CIPCODE5,15.1202,Computer Technology/Computer Systems Technology.,8,0.35
+Frequencies,727,11431,CIPCODE5,15.1301,"Drafting and Design Technology/Technician, General.",1,0.04
+Frequencies,728,11431,CIPCODE5,19.0902,Apparel and Textile Manufacture.,1,0.04
+Frequencies,729,11431,CIPCODE5,22.0302,Legal Assistant/Paralegal.,1,0.04
+Frequencies,730,11431,CIPCODE5,22.0303,Court Reporting/Court Reporter.,1,0.04
+Frequencies,731,11431,CIPCODE5,23.0101,"English Language and Literature, General.",2,0.09
+Frequencies,732,11431,CIPCODE5,30.1901,Nutrition Sciences,1,0.04
+Frequencies,733,11431,CIPCODE5,31.0507,Physical Fitness Technician,2,0.09
+Frequencies,734,11431,CIPCODE5,43.0103,Criminal Justice/Law Enforcement Administration.,4,0.18
+Frequencies,735,11431,CIPCODE5,43.0104,Criminal Justice/Safety Studies.,3,0.13
+Frequencies,736,11431,CIPCODE5,43.0107,Criminal Justice/Police Science.,2,0.09
+Frequencies,737,11431,CIPCODE5,43.0203,Fire Science/Fire-fighting.,3,0.13
+Frequencies,738,11431,CIPCODE5,46.0000,"Construction Trades, General.",3,0.13
+Frequencies,739,11431,CIPCODE5,46.0101,Mason/Masonry.,1,0.04
+Frequencies,740,11431,CIPCODE5,46.0201,Carpentry/Carpenter.,1,0.04
+Frequencies,741,11431,CIPCODE5,46.0302,Electrician.,12,0.53
+Frequencies,742,11431,CIPCODE5,46.0303,Lineworker.,1,0.04
+Frequencies,743,11431,CIPCODE5,46.0399,"Electrical and Power Transmission Installers, Other.",1,0.04
+Frequencies,744,11431,CIPCODE5,46.0401,Building/Property Maintenance.,2,0.09
+Frequencies,745,11431,CIPCODE5,46.0415,Building Construction Technology,1,0.04
+Frequencies,746,11431,CIPCODE5,46.0499,"Building/Construction Finishing, Management, and Inspection, Other",1,0.04
+Frequencies,747,11431,CIPCODE5,46.0503,Plumbing Technology/Plumber.,2,0.09
+Frequencies,748,11431,CIPCODE5,47.0101,"Electrical/Electronics Equipment Installation and Repair, General.",1,0.04
+Frequencies,749,11431,CIPCODE5,47.0104,Computer Installation and Repair Technology/Technician.,4,0.18
+Frequencies,750,11431,CIPCODE5,47.0199,"Electrical/Electronics Maintenance and Repair Technology, Other.",2,0.09
+Frequencies,751,11431,CIPCODE5,47.0201,"Heating, Air Conditioning, Ventilation and Refrigeration Maintenance Technology/Technician.",17,0.74
+Frequencies,752,11431,CIPCODE5,47.0302,Heavy Equipment Maintenance Technology/Technician.,2,0.09
+Frequencies,753,11431,CIPCODE5,47.0303,Industrial Mechanics and Maintenance Technology.,3,0.13
+Frequencies,754,11431,CIPCODE5,47.0404,Musical Instrument Fabrication and Repair,1,0.04
+Frequencies,755,11431,CIPCODE5,47.0603,Autobody/Collision and Repair Technology/Technician.,10,0.44
+Frequencies,756,11431,CIPCODE5,47.0604,Automobile/Automotive Mechanics Technology/Technician.,26,1.1399999999999999
+Frequencies,757,11431,CIPCODE5,47.0605,Diesel Mechanics Technology/Technician.,5,0.22
+Frequencies,758,11431,CIPCODE5,47.0607,Airframe Mechanics and Aircraft Maintenance Technology/Technician,2,0.09
+Frequencies,759,11431,CIPCODE5,47.0611,Motorcycle Maintenance and Repair Technology/Technician.,1,0.04
+Frequencies,760,11431,CIPCODE5,47.0613,Medium/Heavy Vehicle and Truck Technology/Technician.,5,0.22
+Frequencies,761,11431,CIPCODE5,47.0615,Engine Machinist,1,0.04
+Frequencies,762,11431,CIPCODE5,48.0501,Machine Tool Technology/Machinist.,7,0.31
+Frequencies,763,11431,CIPCODE5,48.0508,Welding Technology/Welder.,28,1.23
+Frequencies,764,11431,CIPCODE5,48.0510,Computer Numerically Controlled (CNC) Machinist Technology/CNC Machinist,3,0.13
+Frequencies,765,11431,CIPCODE5,48.0511,Metal Fabricator,1,0.04
+Frequencies,766,11431,CIPCODE5,49.0205,Truck and Bus Driver/Commercial Vehicle Operator and Instructor.,9,0.39
+Frequencies,767,11431,CIPCODE5,49.0304,"Diver, Professional and Instructor.",1,0.04
+Frequencies,768,11431,CIPCODE5,50.0401,"Design and Visual Communications, General.",2,0.09
+Frequencies,769,11431,CIPCODE5,50.0402,Commercial and Advertising Art.,1,0.04
+Frequencies,770,11431,CIPCODE5,50.0406,Commercial Photography,1,0.04
+Frequencies,771,11431,CIPCODE5,50.0409,Graphic Design.,4,0.18
+Frequencies,772,11431,CIPCODE5,50.0411,Game and Interactive Media Design,1,0.04
+Frequencies,773,11431,CIPCODE5,50.0602,Cinematography and Film/Video Production,1,0.04
+Frequencies,774,11431,CIPCODE5,50.0605,Photography.,1,0.04
+Frequencies,775,11431,CIPCODE5,50.0713,Metal and Jewelry Arts.,3,0.13
+Frequencies,776,11431,CIPCODE5,51.0601,Dental Assisting/Assistant.,20,0.88
+Frequencies,777,11431,CIPCODE5,51.0602,Dental Hygiene/Hygienist.,6,0.26
+Frequencies,778,11431,CIPCODE5,51.0701,Health/Health Care Administration/Management.,4,0.18
+Frequencies,779,11431,CIPCODE5,51.0705,Medical Office Management/Administration.,5,0.22
+Frequencies,780,11431,CIPCODE5,51.0706,Health Information/Medical Records Administration/Administrator.,1,0.04
+Frequencies,781,11431,CIPCODE5,51.0707,Health Information/Medical Records Technology/Technician.,3,0.13
+Frequencies,782,11431,CIPCODE5,51.0710,Medical Office Assistant/Specialist.,9,0.39
+Frequencies,783,11431,CIPCODE5,51.0712,Medical Reception/Receptionist.,2,0.09
+Frequencies,784,11431,CIPCODE5,51.0713,Medical Insurance Coding Specialist/Coder.,24,1.05
+Frequencies,785,11431,CIPCODE5,51.0714,Medical Insurance Specialist/Medical Biller.,24,1.05
+Frequencies,786,11431,CIPCODE5,51.0716,Medical Administrative/Executive Assistant and Medical Secretary.,9,0.39
+Frequencies,787,11431,CIPCODE5,51.0799,"Health and Medical Administrative Services, Other.",1,0.04
+Frequencies,788,11431,CIPCODE5,51.0801,Medical/Clinical Assistant.,24,1.05
+Frequencies,789,11431,CIPCODE5,51.0803,Occupational Therapist Assistant,3,0.13
+Frequencies,790,11431,CIPCODE5,51.0805,Pharmacy Technician/Assistant.,26,1.1399999999999999
+Frequencies,791,11431,CIPCODE5,51.0806,Physical Therapy Technician/Assistant.,5,0.22
+Frequencies,792,11431,CIPCODE5,51.0808,Veterinary/Animal Health Technology/Technician and Veterinary Assistant.,4,0.18
+Frequencies,793,11431,CIPCODE5,51.0810,Emergency Care Attendant (EMT Ambulance).,1,0.04
+Frequencies,794,11431,CIPCODE5,51.0899,"Allied Health and Medical Assisting Services, Other.",1,0.04
+Frequencies,795,11431,CIPCODE5,51.0902,Electrocardiograph Technology/Technician.,4,0.18
+Frequencies,796,11431,CIPCODE5,51.0904,Emergency Medical Technology/Technician (EMT Paramedic).,6,0.26
+Frequencies,797,11431,CIPCODE5,51.0907,Medical Radiologic Technology/Science - Radiation Therapist.,1,0.04
+Frequencies,798,11431,CIPCODE5,51.0908,Respiratory Care Therapy/Therapist.,7,0.31
+Frequencies,799,11431,CIPCODE5,51.0909,Surgical Technology/Technologist.,8,0.35
+Frequencies,800,11431,CIPCODE5,51.0910,Diagnostic Medical Sonography/Sonographer and Ultrasound Technician.,6,0.26
+Frequencies,801,11431,CIPCODE5,51.0911,Radiologic Technology/Science - Radiographer.,5,0.22
+Frequencies,802,11431,CIPCODE5,51.1004,Clinical/Medical Laboratory Technician.,1,0.04
+Frequencies,803,11431,CIPCODE5,51.1009,Phlebotomy Technician/Phlebotomist.,6,0.26
+Frequencies,804,11431,CIPCODE5,51.1011,Renal/Dialysis Technologist/Technician.,2,0.09
+Frequencies,805,11431,CIPCODE5,51.1012,Sterile Processing Technology/Technician,2,0.09
+Frequencies,806,11431,CIPCODE5,51.1501,Substance Abuse/Addiction Counseling.,2,0.09
+Frequencies,807,11431,CIPCODE5,51.1502,Psychiatric/Mental Health Services Technician,1,0.04
+Frequencies,808,11431,CIPCODE5,51.1802,Optometric Technician/Assistant.,1,0.04
+Frequencies,809,11431,CIPCODE5,51.2211,Health Services Administration,1,0.04
+Frequencies,810,11431,CIPCODE5,51.2306,Occupational Therapy/Therapist.,1,0.04
+Frequencies,811,11431,CIPCODE5,51.2602,Home Health Aide/Home Attendant.,2,0.09
+Frequencies,812,11431,CIPCODE5,51.2603,Medication Aide.,1,0.04
+Frequencies,813,11431,CIPCODE5,51.3501,Massage Therapy/Therapeutic Massage.,41,1.79
+Frequencies,814,11431,CIPCODE5,51.3703,Polarity Therapy,2,0.09
+Frequencies,815,11431,CIPCODE5,51.3801,Registered Nursing/Registered Nurse.,2,0.09
+Frequencies,816,11431,CIPCODE5,51.3802,Nursing Administration,1,0.04
+Frequencies,817,11431,CIPCODE5,51.3808,Nursing Science,1,0.04
+Frequencies,818,11431,CIPCODE5,51.3901,Licensed Practical/Vocational Nurse Training.,8,0.35
+Frequencies,819,11431,CIPCODE5,51.3902,Nursing Assistant/Aide and Patient Care Assistant/Aide.,16,0.7
+Frequencies,820,11431,CIPCODE5,51.3999,"Practical Nursing, Vocational Nursing and Nursing Assistants, Other",2,0.09
+Frequencies,821,11431,CIPCODE5,52.0201,"Business Administration and Management, General.",6,0.26
+Frequencies,822,11431,CIPCODE5,52.0299,"Business Administration, Management and Operations, Other.",2,0.09
+Frequencies,823,11431,CIPCODE5,52.0301,Accounting.,1,0.04
+Frequencies,824,11431,CIPCODE5,52.0302,Accounting Technology/Technician and Bookkeeping.,9,0.39
+Frequencies,825,11431,CIPCODE5,52.0305,Accounting and Business/Management.,2,0.09
+Frequencies,826,11431,CIPCODE5,52.0401,"Administrative Assistant and Secretarial Science, General.",11,0.48
+Frequencies,827,11431,CIPCODE5,52.0402,Executive Assistant/Executive Secretary.,1,0.04
+Frequencies,828,11431,CIPCODE5,52.0407,Business/Office Automation/Technology/Data Entry.,1,0.04
+Frequencies,829,11431,CIPCODE5,52.0408,General Office Occupations and Clerical Services.,10,0.44
+Frequencies,830,11431,CIPCODE5,52.0499,"Business Operations Support and Secretarial Services, Other.",1,0.04
+Frequencies,831,11431,CIPCODE5,52.0901,"Hospitality Administration/Management, General.",1,0.04
+Frequencies,832,11431,CIPCODE5,52.0904,Hotel/Motel Administration/Management,1,0.04
+Frequencies,833,11431,CIPCODE5,52.1803,Retailing and Retail Operations,1,0.04
+Frequencies,834,11431,CIPCODE5,-2,Not applicable,1434,62.76
+Frequencies,835,11448,PRGMSR5,1,Contact hours,577,25.25
+Frequencies,836,11448,PRGMSR5,2,Credit hours,274,11.99
+Frequencies,837,11448,PRGMSR5,-2,Not applicable,1434,62.76
+Frequencies,838,11451,CIPCODE6,09.0702,Digital Communication and Media/Multimedia.,3,0.13
+Frequencies,839,11451,CIPCODE6,09.0906,Sports Communication,1,0.04
+Frequencies,840,11451,CIPCODE6,10.0203,Recording Arts Technology/Technician.,1,0.04
+Frequencies,841,11451,CIPCODE6,10.0304,"Animation, Interactive Technology, Video Graphics and Special Effects",2,0.09
+Frequencies,842,11451,CIPCODE6,11.0101,"Computer and Information Sciences, General.",2,0.09
+Frequencies,843,11451,CIPCODE6,11.0103,Information Technology.,2,0.09
+Frequencies,844,11451,CIPCODE6,11.0201,"Computer Programming/Programmer, General.",1,0.04
+Frequencies,845,11451,CIPCODE6,11.0801,"Web Page, Digital/Multimedia and Information Resources Design.",1,0.04
+Frequencies,846,11451,CIPCODE6,11.0899,"Computer Software and Media Applications, Other.",1,0.04
+Frequencies,847,11451,CIPCODE6,11.0901,Computer Systems Networking and Telecommunications.,6,0.26
+Frequencies,848,11451,CIPCODE6,11.1001,Network and System Administration/Administrator.,2,0.09
+Frequencies,849,11451,CIPCODE6,11.1003,Computer and Information Systems Security/Information Assurance.,1,0.04
+Frequencies,850,11451,CIPCODE6,11.1006,Computer Support Specialist,9,0.39
+Frequencies,851,11451,CIPCODE6,11.1099,"Computer/Information Technology Services Administration and Management, Other.",1,0.04
+Frequencies,852,11451,CIPCODE6,11.9999,"Computer and Information Sciences and Support Services, Other.",1,0.04
+Frequencies,853,11451,CIPCODE6,12.0399,"Funeral Service and Mortuary Science, Other",1,0.04
+Frequencies,854,11451,CIPCODE6,12.0401,"Cosmetology/Cosmetologist, General.",14,0.61
+Frequencies,855,11451,CIPCODE6,12.0402,Barbering/Barber.,14,0.61
+Frequencies,856,11451,CIPCODE6,12.0404,Electrolysis/Electrology and Electrolysis Technician.,3,0.13
+Frequencies,857,11451,CIPCODE6,12.0406,Make-Up Artist/Specialist.,4,0.18
+Frequencies,858,11451,CIPCODE6,12.0407,Hair Styling/Stylist and Hair Design.,7,0.31
+Frequencies,859,11451,CIPCODE6,12.0408,Facial Treatment Specialist/Facialist.,2,0.09
+Frequencies,860,11451,CIPCODE6,12.0409,Aesthetician/Esthetician and Skin Care Specialist.,13,0.56999999999999995
+Frequencies,861,11451,CIPCODE6,12.0410,Nail Technician/Specialist and Manicurist.,22,0.96
+Frequencies,862,11451,CIPCODE6,12.0412,Salon/Beauty Salon Management/Manager.,2,0.09
+Frequencies,863,11451,CIPCODE6,12.0413,"Cosmetology, Barber/Styling, and Nail Instructor.",32,1.4
+Frequencies,864,11451,CIPCODE6,12.0414,Master Aesthetician/Esthetician,6,0.26
+Frequencies,865,11451,CIPCODE6,12.0499,"Cosmetology and Related Personal Grooming Arts, Other.",16,0.7
+Frequencies,866,11451,CIPCODE6,12.0500,"Cooking and Related Culinary Arts, General.",2,0.09
+Frequencies,867,11451,CIPCODE6,12.0501,Baking and Pastry Arts/Baker/Pastry Chef.,3,0.13
+Frequencies,868,11451,CIPCODE6,12.0503,Culinary Arts/Chef Training.,3,0.13
+Frequencies,869,11451,CIPCODE6,12.0504,"Restaurant, Culinary, and Catering Management/Manager.",1,0.04
+Frequencies,870,11451,CIPCODE6,12.0507,"Food Service, Waiter/Waitress, and Dining Room Management/Manager",1,0.04
+Frequencies,871,11451,CIPCODE6,13.1210,Early Childhood Education and Teaching.,1,0.04
+Frequencies,872,11451,CIPCODE6,13.1399,"Teacher Education and Professional Development, Specific Subject Areas, Other.",1,0.04
+Frequencies,873,11451,CIPCODE6,14.0901,"Computer Engineering, General.",1,0.04
+Frequencies,874,11451,CIPCODE6,15.0399,"Electrical and Electronic Engineering Technologies/Technicians, Other.",1,0.04
+Frequencies,875,11451,CIPCODE6,15.0501,"Heating, Ventilation, Air Conditioning and Refrigeration Engineering Technology/Technician.",3,0.13
+Frequencies,876,11451,CIPCODE6,15.0613,Manufacturing Engineering Technology/Technician,1,0.04
+Frequencies,877,11451,CIPCODE6,15.0803,Automotive Engineering Technology/Technician.,1,0.04
+Frequencies,878,11451,CIPCODE6,15.1202,Computer Technology/Computer Systems Technology.,3,0.13
+Frequencies,879,11451,CIPCODE6,15.1203,Computer Hardware Technology/Technician,1,0.04
+Frequencies,880,11451,CIPCODE6,15.1301,"Drafting and Design Technology/Technician, General.",2,0.09
+Frequencies,881,11451,CIPCODE6,15.1302,CAD/CADD Drafting and/or Design Technology/Technician.,1,0.04
+Frequencies,882,11451,CIPCODE6,15.9999,"Engineering Technologies and Engineering-Related Fields, Other",1,0.04
+Frequencies,883,11451,CIPCODE6,19.0706,Child Development.,2,0.09
+Frequencies,884,11451,CIPCODE6,19.0709,Child Care Provider/Assistant.,2,0.09
+Frequencies,885,11451,CIPCODE6,22.0302,Legal Assistant/Paralegal.,2,0.09
+Frequencies,886,11451,CIPCODE6,31.0507,Physical Fitness Technician,1,0.04
+Frequencies,887,11451,CIPCODE6,41.0101,Biology Technician/Biotechnology Laboratory Technician,1,0.04
+Frequencies,888,11451,CIPCODE6,41.0301,Chemical Technology/Technician.,1,0.04
+Frequencies,889,11451,CIPCODE6,43.0102,Corrections,1,0.04
+Frequencies,890,11451,CIPCODE6,43.0104,Criminal Justice/Safety Studies.,3,0.13
+Frequencies,891,11451,CIPCODE6,43.0107,Criminal Justice/Police Science.,3,0.13
+Frequencies,892,11451,CIPCODE6,43.0109,Security and Loss Prevention Services.,3,0.13
+Frequencies,893,11451,CIPCODE6,43.0203,Fire Science/Fire-fighting.,6,0.26
+Frequencies,894,11451,CIPCODE6,43.9999,"Homeland Security, Law Enforcement, Firefighting and Related Protective Services, Other.",2,0.09
+Frequencies,895,11451,CIPCODE6,46.0000,"Construction Trades, General.",2,0.09
+Frequencies,896,11451,CIPCODE6,46.0201,Carpentry/Carpenter.,4,0.18
+Frequencies,897,11451,CIPCODE6,46.0301,"Electrical and Power Transmission Installation/Installer, General.",1,0.04
+Frequencies,898,11451,CIPCODE6,46.0302,Electrician.,10,0.44
+Frequencies,899,11451,CIPCODE6,46.0303,Lineworker,3,0.13
+Frequencies,900,11451,CIPCODE6,46.0401,Building/Property Maintenance.,3,0.13
+Frequencies,901,11451,CIPCODE6,46.0415,Building Construction Technology,2,0.09
+Frequencies,902,11451,CIPCODE6,46.0503,Plumbing Technology/Plumber.,2,0.09
+Frequencies,903,11451,CIPCODE6,46.0599,"Plumbing and Related Water Supply Services, Other",1,0.04
+Frequencies,904,11451,CIPCODE6,46.9999,"Construction Trades, Other.",1,0.04
+Frequencies,905,11451,CIPCODE6,47.0101,"Electrical/Electronics Equipment Installation and Repair, General.",2,0.09
+Frequencies,906,11451,CIPCODE6,47.0104,Computer Installation and Repair Technology/Technician.,3,0.13
+Frequencies,907,11451,CIPCODE6,47.0201,"Heating, Air Conditioning, Ventilation and Refrigeration Maintenance Technology/Technician.",13,0.56999999999999995
+Frequencies,908,11451,CIPCODE6,47.0303,Industrial Mechanics and Maintenance Technology.,4,0.18
+Frequencies,909,11451,CIPCODE6,47.0403,Locksmithing and Safe Repair.,1,0.04
+Frequencies,910,11451,CIPCODE6,47.0603,Autobody/Collision and Repair Technology/Technician.,3,0.13
+Frequencies,911,11451,CIPCODE6,47.0604,Automobile/Automotive Mechanics Technology/Technician.,32,1.4
+Frequencies,912,11451,CIPCODE6,47.0605,Diesel Mechanics Technology/Technician.,4,0.18
+Frequencies,913,11451,CIPCODE6,47.0607,Airframe Mechanics and Aircraft Maintenance Technology/Technician.,1,0.04
+Frequencies,914,11451,CIPCODE6,47.0608,Aircraft Powerplant Technology/Technician.,2,0.09
+Frequencies,915,11451,CIPCODE6,47.0613,Medium/Heavy Vehicle and Truck Technology/Technician.,4,0.18
+Frequencies,916,11451,CIPCODE6,47.0615,Engine Machinist.,1,0.04
+Frequencies,917,11451,CIPCODE6,47.0616,Marine Maintenance/Fitter and Ship Repair Technology/Technician.,1,0.04
+Frequencies,918,11451,CIPCODE6,48.0000,"Precision Production Trades, General.",1,0.04
+Frequencies,919,11451,CIPCODE6,48.0501,Machine Tool Technology/Machinist.,5,0.22
+Frequencies,920,11451,CIPCODE6,48.0503,Machine Shop Technology/Assistant.,4,0.18
+Frequencies,921,11451,CIPCODE6,48.0508,Welding Technology/Welder.,18,0.79
+Frequencies,922,11451,CIPCODE6,48.0510,Computer Numerically Controlled (CNC,4,0.18
+Frequencies,923,11451,CIPCODE6,48.0511,Metal Fabricator,1,0.04
+Frequencies,924,11451,CIPCODE6,49.0202,Construction/Heavy Equipment/Earthmoving Equipment Operation.,1,0.04
+Frequencies,925,11451,CIPCODE6,49.0205,Truck and Bus Driver/Commercial Vehicle Operator and Instructor.,5,0.22
+Frequencies,926,11451,CIPCODE6,49.0304,"Diver, Professional and Instructor.",1,0.04
+Frequencies,927,11451,CIPCODE6,50.0102,Digital Arts,1,0.04
+Frequencies,928,11451,CIPCODE6,50.0401,"Design and Visual Communications, General",1,0.04
+Frequencies,929,11451,CIPCODE6,50.0402,Commercial and Advertising Art.,1,0.04
+Frequencies,930,11451,CIPCODE6,50.0406,Commercial Photography,1,0.04
+Frequencies,931,11451,CIPCODE6,50.0407,Fashion/Apparel Design.,1,0.04
+Frequencies,932,11451,CIPCODE6,50.0409,Graphic Design.,1,0.04
+Frequencies,933,11451,CIPCODE6,50.0411,Game and Interactive Media Design,1,0.04
+Frequencies,934,11451,CIPCODE6,50.0713,Metal and Jewelry Arts.,3,0.13
+Frequencies,935,11451,CIPCODE6,51.0000,"Health Services/Allied Health/Health Sciences, General.",1,0.04
+Frequencies,936,11451,CIPCODE6,51.0601,Dental Assisting/Assistant.,13,0.56999999999999995
+Frequencies,937,11451,CIPCODE6,51.0602,Dental Hygiene/Hygienist,1,0.04
+Frequencies,938,11451,CIPCODE6,51.0701,Health/Health Care Administration/Management.,2,0.09
+Frequencies,939,11451,CIPCODE6,51.0705,Medical Office Management/Administration.,4,0.18
+Frequencies,940,11451,CIPCODE6,51.0706,Health Information/Medical Records Administration/Administrator.,1,0.04
+Frequencies,941,11451,CIPCODE6,51.0707,Health Information/Medical Records Technology/Technician.,2,0.09
+Frequencies,942,11451,CIPCODE6,51.0709,Medical Office Computer Specialist/Assistant.,1,0.04
+Frequencies,943,11451,CIPCODE6,51.0710,Medical Office Assistant/Specialist.,15,0.66
+Frequencies,944,11451,CIPCODE6,51.0711,Medical/Health Management and Clinical Assistant/Specialist,3,0.13
+Frequencies,945,11451,CIPCODE6,51.0712,Medical Reception/Receptionist.,3,0.13
+Frequencies,946,11451,CIPCODE6,51.0713,Medical Insurance Coding Specialist/Coder.,11,0.48
+Frequencies,947,11451,CIPCODE6,51.0714,Medical Insurance Specialist/Medical Biller.,15,0.66
+Frequencies,948,11451,CIPCODE6,51.0716,Medical Administrative/Executive Assistant and Medical Secretary.,5,0.22
+Frequencies,949,11451,CIPCODE6,51.0799,"Health and Medical Administrative Services, Other.",1,0.04
+Frequencies,950,11451,CIPCODE6,51.0801,Medical/Clinical Assistant.,12,0.53
+Frequencies,951,11451,CIPCODE6,51.0803,Occupational Therapist Assistant,5,0.22
+Frequencies,952,11451,CIPCODE6,51.0805,Pharmacy Technician/Assistant.,24,1.05
+Frequencies,953,11451,CIPCODE6,51.0806,Physical Therapy Technician/Assistant.,4,0.18
+Frequencies,954,11451,CIPCODE6,51.0808,Veterinary/Animal Health Technology/Technician and Veterinary Assistant.,8,0.35
+Frequencies,955,11451,CIPCODE6,51.0810,Emergency Care Attendant (EMT Ambulance).,1,0.04
+Frequencies,956,11451,CIPCODE6,51.0812,Respiratory Therapy Technician/Assistant.,1,0.04
+Frequencies,957,11451,CIPCODE6,51.0899,"Allied Health and Medical Assisting Services, Other.",1,0.04
+Frequencies,958,11451,CIPCODE6,51.0903,Electroneurodiagnostic/Electroencephalographic Technology/Technologist,2,0.09
+Frequencies,959,11451,CIPCODE6,51.0904,Emergency Medical Technology/Technician (EMT Paramedic).,7,0.31
+Frequencies,960,11451,CIPCODE6,51.0905,Nuclear Medical Technology/Technologist.,1,0.04
+Frequencies,961,11451,CIPCODE6,51.0908,Respiratory Care Therapy/Therapist.,4,0.18
+Frequencies,962,11451,CIPCODE6,51.0909,Surgical Technology/Technologist.,10,0.44
+Frequencies,963,11451,CIPCODE6,51.0910,Diagnostic Medical Sonography/Sonographer and Ultrasound Technician.,3,0.13
+Frequencies,964,11451,CIPCODE6,51.0911,Radiologic Technology/Science - Radiographer.,4,0.18
+Frequencies,965,11451,CIPCODE6,51.0920,Magnetic Resonance Imaging (MRI,1,0.04
+Frequencies,966,11451,CIPCODE6,51.1009,Phlebotomy Technician/Phlebotomist.,8,0.35
+Frequencies,967,11451,CIPCODE6,51.1011,Renal/Dialysis Technologist/Technician.,3,0.13
+Frequencies,968,11451,CIPCODE6,51.1502,Psychiatric/Mental Health Services Technician.,1,0.04
+Frequencies,969,11451,CIPCODE6,51.1802,Optometric Technician/Assistant.,2,0.09
+Frequencies,970,11451,CIPCODE6,51.2211,Health Services Administration,3,0.13
+Frequencies,971,11451,CIPCODE6,51.3305,Ayurvedic Medicine/Ayurveda,1,0.04
+Frequencies,972,11451,CIPCODE6,51.3306,Holistic Health,2,0.09
+Frequencies,973,11451,CIPCODE6,51.3501,Massage Therapy/Therapeutic Massage.,26,1.1399999999999999
+Frequencies,974,11451,CIPCODE6,51.3801,Registered Nursing/Registered Nurse.,4,0.18
+Frequencies,975,11451,CIPCODE6,51.3802,Nursing Administration,1,0.04
+Frequencies,976,11451,CIPCODE6,51.3817,Nursing Education,2,0.09
+Frequencies,977,11451,CIPCODE6,51.3818,Nursing Practice,1,0.04
+Frequencies,978,11451,CIPCODE6,51.3901,Licensed Practical/Vocational Nurse Training.,4,0.18
+Frequencies,979,11451,CIPCODE6,51.3902,Nursing Assistant/Aide and Patient Care Assistant/Aide.,19,0.82999999999999985
+Frequencies,980,11451,CIPCODE6,51.3999,"Practical Nursing, Vocational Nursing and Nursing Assistants, Other",1,0.04
+Frequencies,981,11451,CIPCODE6,52.0101,"Business/Commerce, General.",1,0.04
+Frequencies,982,11451,CIPCODE6,52.0201,"Business Administration and Management, General.",5,0.22
+Frequencies,983,11451,CIPCODE6,52.0203,"Logistics, Materials, and Supply Chain Management",2,0.09
+Frequencies,984,11451,CIPCODE6,52.0204,Office Management and Supervision.,2,0.09
+Frequencies,985,11451,CIPCODE6,52.0302,Accounting Technology/Technician and Bookkeeping.,3,0.13
+Frequencies,986,11451,CIPCODE6,52.0401,"Administrative Assistant and Secretarial Science, General.",10,0.44
+Frequencies,987,11451,CIPCODE6,52.0402,Executive Assistant/Executive Secretary.,2,0.09
+Frequencies,988,11451,CIPCODE6,52.0408,General Office Occupations and Clerical Services.,6,0.26
+Frequencies,989,11451,CIPCODE6,52.0803,Banking and Financial Support Services.,1,0.04
+Frequencies,990,11451,CIPCODE6,52.1001,"Human Resources Management/Personnel Administration, General.",1,0.04
+Frequencies,991,11451,CIPCODE6,-2,Not applicable,1634,71.510000000000005
+Frequencies,992,11468,PRGMSR6,1,Contact hours,428,18.73
+Frequencies,993,11468,PRGMSR6,2,Credit hours,223,9.76
+Frequencies,994,11468,PRGMSR6,-2,Not applicable,1634,71.510000000000005
+Frequencies,995,,,,,,
+Frequencies,996,,,,,,
+Frequencies,997,,,,,,
+Frequencies,998,,,,,,
+Frequencies,999,,,,,,
+Frequencies,1000,,,,,,
+Frequencies,1001,,,,,,
+Frequencies,1002,,,,,,
+Frequencies,1003,,,,,,
+Frequencies,1004,,,,,,
+Frequencies,1005,,,,,,
+Frequencies,1006,,,,,,
+Frequencies,1007,,,,,,
+Frequencies,1008,,,,,,
+Frequencies,1009,,,,,,
+Frequencies,1010,,,,,,
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,11246,PRGMOFR,2285,12126,5.306783369803064,1,229,Number of programs offered
+Statistics,2,11368,CIPTUIT1,52,835453,16066.403846153849,1150,98750,"Tuition and fees 2019-20 (institutions with no full-time, first-time, undergraduate students)"
+Statistics,3,11369,CIPSUPP1,47,45926,977.14893617021266,0,7265,"Books and supplies 2019-20 (institutions with no full-time, first-time, undergraduate students)"
+Statistics,4,11261,CIPLGTH1,2285,2409201,1054.3549234135664,18,3600,Total length of largest program
+Statistics,5,11263,MTHCMP1,2285,26118,11.430196936542671,1,59,Average number of months to complete largest program
+Statistics,6,11471,WKCMP1,2233,100422,44.971786833855802,2,234,"Total length of program in weeks, as completed by a student attending full-time"
+Statistics,7,11476,LNAYHR1,2233,1661712,744.16121809225285,24,1470,Total length of academic year (as used to calculate your Pell budget) in contact or credit hours
+Statistics,8,11481,LNAYWK1,2233,70644,31.63636363636364,7,75,Total length of academic year (as used to calculate your Pell budget) in weeks
+Statistics,9,11265,CHG1PY0,2169,32339712,14909.964038727525,299,114725,Published tuition and fees 2016-17
+Statistics,10,11266,CHG1PY1,2206,33528616,15198.828649138715,299,118250,Published tuition and fees 2017-18
+Statistics,11,11271,CHG1PY2,2227,34574580,15525.181859003142,299,119150,Published tuition and fees 2018-19
+Statistics,12,15031,CHG1PY3,2233,35451736,15876.281236005372,299,123200,Published tuition and fees 2019-20
+Statistics,13,11280,CHG4PY0,2074,3121440,1505.0337512054004,0,16800,Books and supplies 2016-17
+Statistics,14,11281,CHG4PY1,2113,3229079,1528.1964032181727,0,20632,Books and supplies 2017-18
+Statistics,15,11286,CHG4PY2,2143,3277997,1529.6299580028001,0,16800,Books and supplies 2018-19
+Statistics,16,15035,CHG4PY3,2143,3268080,1525.0023331777882,0,16800,Books and supplies 2019-20
+Statistics,17,11294,CHG5PY0,24,202400,8433.3333333333358,1800,24000,"On campus, room and board 2016-17"
+Statistics,18,11296,CHG5PY1,25,210868,8434.7199999999993,1800,24000,"On campus, room and board 2017-18"
+Statistics,19,11301,CHG5PY2,24,205367,8556.9583333333358,1800,24000,"On campus, room and board 2018-19"
+Statistics,20,11306,CHG5PY3,25,227783,9111.32,1800,24000,"On campus, room and board 2019-20"
+Statistics,21,11309,CHG6PY0,24,68519,2854.9583333333339,500,8778,"On campus, other expenses 2016-17"
+Statistics,22,11311,CHG6PY1,25,71832,2873.28,500,8974,"On campus, other expenses 2017-18"
+Statistics,23,11316,CHG6PY2,24,68927,2871.9583333333339,400,9184,"On campus, other expenses 2018-19"
+Statistics,24,11321,CHG6PY3,25,73028,2921.12,400,9324,"On campus, other expenses 2019-20"
+Statistics,25,11324,CHG7PY0,2168,24249503,11185.195110701103,260,103604,"Off campus (not with family), room and board 2016-17"
+Statistics,26,11326,CHG7PY1,2205,25019524,11346.722902494335,260,103604,"Off campus (not with family), room and board 2017-18"
+Statistics,27,11331,CHG7PY2,2227,26055797,11699.953749438704,260,63005,"Off campus (not with family), room and board 2018-19"
+Statistics,28,11336,CHG7PY3,2233,26911546,12051.744738020601,260,63005,"Off campus (not with family), room and board 2019-20"
+Statistics,29,11339,CHG8PY0,2167,11852277,5469.4402399630817,25,69903,"Off campus (not with family), other expenses 2016-17"
+Statistics,30,11341,CHG8PY1,2204,12349033,5603.0095281306722,25,35640,"Off campus (not with family), other expenses 2017-18"
+Statistics,31,11346,CHG8PY2,2227,13296884,5970.7606645711721,25,33670,"Off campus (not with family), other expenses 2018-19"
+Statistics,32,11351,CHG8PY3,2233,13979118,6260.2409314823117,25,31080,"Off campus (not with family), other expenses 2019-20"
+Statistics,33,11354,CHG9PY0,2167,10326913,4765.5343793262573,25,49572,"Off campus (with family), other expenses 2016-17"
+Statistics,34,11356,CHG9PY1,2204,10857840,4926.4246823956437,25,31264,"Off campus (with family), other expenses 2017-18"
+Statistics,35,11361,CHG9PY2,2227,11490300,5159.5419847328239,25,31264,"Off campus (with family), other expenses 2018-19"
+Statistics,36,11366,CHG9PY3,2233,12081189,5410.2951186744303,25,28800,"Off campus (with family), other expenses 2019-20"
+Statistics,37,11376,CIPTUIT2,1901,24374367,12821.865860073642,360,141187,Tuition and fees of 2nd largest program
+Statistics,38,11381,CIPSUPP2,1818,2057476,1131.7249724972501,0,13000,Cost of books and supplies of 2nd largest program
+Statistics,39,11386,CIPLGTH2,1901,1398376,735.60021041557059,3,2796,Length of 2nd largest program
+Statistics,40,11389,MTHCMP2,1901,17871,9.4008416622830087,1,59,Number of months to complete 2nd largest program
+Statistics,41,11396,CIPTUIT3,1526,18363792,12033.939711664481,420,138071,Tuition and fees of 3rd largest program
+Statistics,42,11401,CIPSUPP3,1440,1438527,998.97708333333355,0,9263,Cost of books and supplies of 3rd largest program
+Statistics,43,11406,CIPLGTH3,1527,967451,633.56319580877539,3,3024,Length of 3rd largest program
+Statistics,44,11409,MTHCMP3,1527,13841,9.0641781270464978,1,59,Number of months to complete 3rd largest program
+Statistics,45,11416,CIPTUIT4,1173,13918541,11865.763853367436,268,80145,Tuition and fees of 4th largest program
+Statistics,46,11421,CIPSUPP4,1103,1032760,936.3191296464189,0,12104,Cost of books and supplies of 4th largest program
+Statistics,47,11426,CIPLGTH4,1177,682155,579.57094307561601,4,3160,Length of 4th largest program
+Statistics,48,11429,MTHCMP4,1177,10826,9.1979609175870856,1,59,Number of months to complete 4th largest program
+Statistics,49,11436,CIPTUIT5,851,10826480,12722.068155111632,448,107170,Tuition and fees of 5th largest program
+Statistics,50,11441,CIPSUPP5,793,774223,976.32156368221899,0,6774,Cost of books and supplies of 5th largest program
+Statistics,51,11446,CIPLGTH5,851,493171,579.51938895417197,9,2960,Length of 5th largest program
+Statistics,52,11449,MTHCMP5,851,8523,10.015276145710928,1,59,Number of months to complete 5th largest program
+Statistics,53,11456,CIPTUIT6,651,8325783,12789.22119815668,470,87355,Tuition and fees of 6th largest program
+Statistics,54,11461,CIPSUPP6,599,555993,928.20200333889829,0,7444,Cost of books and supplies of 6th largest program
+Statistics,55,11466,CIPLGTH6,651,383646,589.31797235023055,18,2880,Length of 6th largest program
+Statistics,56,11469,MTHCMP6,651,6774,10.40552995391705,1,58,Number of months to complete 6th largest program
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

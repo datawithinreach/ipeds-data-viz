@@ -1,0 +1,302 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for full-time instructional staff, by faculty and tenure status, academic rank, race/ethnicity, and gender (Degree-granting institutions with 15 or more full-time staff): Fall 2023",,,,,,,,,
+Introduction,1,(Provisional release),,,,,,,,,
+Introduction,2,Filename,S2023_IS
+Introduction,3,Overview,"This file contains the number of full-time instructional staff on the payroll of the institution as of November 1,  by faculty and tenure status, academic rank, race/ethnicity and gender. This file has multiple records per institution.  Each record is uniquely defined by the variables IPEDS ID (UNITID), and the variable SISCAT which is the combination of faculty and tenure status FACSTAT (tenured, on tenure track, and not on-tenure track/no tenure system) and academic rank ARANK  (professors, associate professors, etc.) . Beginning with 2016, staff that are not on tenure track are further disaggregated by contract length (multi-year, indefinite, annual and less-than-annual).  From 2012 through 2015 the multi-year and indefinite contract lengths were combined as one category and often referred to as multi-year in past documentation. These data are applicable to degree-granting institutions with 15 or more full-time employees and related administrative offices.  
+",,,,,,,,
+Introduction,4,Note,"Prior to the IPEDS Web-based data collection in 2001, human resource data reported by race/ethnicity and gender was only available in odd-numbered years.  Beginning with 2001, human resource data reported by race/ethnicity and gender was mandatory in odd-numbered years and optional in even-numbered years.  Beginning with 2016 reporting human resource data by race/ethnicity and gender is mandatory annually.",,,,,,,,
+Introduction,5,,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.",,,,,,,,
+Introduction,6,Contents of spreadsheet,,,,,,,,,
+Introduction,7,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,8,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,9,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.,,,,,,,,
+Introduction,10,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. ",,,,,,,,
+Introduction,11,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,53001,SISCAT,N,3,Disc,,Instructional staff category
+varlist,3,53006,FACSTAT,N,3,Disc,,Faculty and tenure status
+varlist,4,53011,ARANK,N,3,Disc,,Academic rank
+varlist,5,50476,HRTOTLT,N,6,Cont,XHRTOTLT,Grand total
+varlist,6,50431,HRTOTLM,N,6,Cont,XHRTOTLM,Grand total men
+varlist,7,50436,HRTOTLW,N,6,Cont,XHRTOTLW,Grand total women
+varlist,8,52132,HRAIANT,N,6,Cont,XHRAIANT,American Indian or Alaska Native total
+varlist,9,52134,HRAIANM,N,6,Cont,XHRAIANM,American Indian or Alaska Native men
+varlist,10,52136,HRAIANW,N,6,Cont,XHRAIANW,American Indian or Alaska Native women
+varlist,11,52138,HRASIAT,N,6,Cont,XHRASIAT,Asian total
+varlist,12,52140,HRASIAM,N,6,Cont,XHRASIAM,Asian men
+varlist,13,52142,HRASIAW,N,6,Cont,XHRASIAW,Asian women
+varlist,14,52144,HRBKAAT,N,6,Cont,XHRBKAAT,Black or African American total
+varlist,15,52146,HRBKAAM,N,6,Cont,XHRBKAAM,Black or African American men
+varlist,16,52148,HRBKAAW,N,6,Cont,XHRBKAAW,Black or African American women
+varlist,17,52150,HRHISPT,N,6,Cont,XHRHISPT,Hispanic or Latino total
+varlist,18,52152,HRHISPM,N,6,Cont,XHRHISPM,Hispanic or Latino men
+varlist,19,52154,HRHISPW,N,6,Cont,XHRHISPW,Hispanic or Latino women
+varlist,20,52156,HRNHPIT,N,6,Cont,XHRNHPIT,Native Hawaiian or Other Pacific Islander total
+varlist,21,52158,HRNHPIM,N,6,Cont,XHRNHPIM,Native Hawaiian or Other Pacific Islander men
+varlist,22,52160,HRNHPIW,N,6,Cont,XHRNHPIW,Native Hawaiian or Other Pacific Islander women
+varlist,23,52162,HRWHITT,N,6,Cont,XHRWHITT,White total
+varlist,24,52164,HRWHITM,N,6,Cont,XHRWHITM,White men
+varlist,25,52166,HRWHITW,N,6,Cont,XHRWHITW,White women
+varlist,26,52168,HR2MORT,N,6,Cont,XHR2MORT,Two or more races total
+varlist,27,52170,HR2MORM,N,6,Cont,XHR2MORM,Two or more races men
+varlist,28,52172,HR2MORW,N,6,Cont,XHR2MORW,Two or more races women
+varlist,29,50471,HRUNKNT,N,6,Cont,XHRUNKNT,Race/ethnicity unknown total
+varlist,30,50421,HRUNKNM,N,6,Cont,XHRUNKNM,Race/ethnicity unknown men
+varlist,31,50426,HRUNKNW,N,6,Cont,XHRUNKNW,Race/ethnicity unknown women
+varlist,32,50441,HRNRALT,N,6,Cont,XHRNRALT,U.S. Nonresident total
+varlist,33,50361,HRNRALM,N,6,Cont,XHRNRALM,U.S. Nonresident men
+varlist,34,50366,HRNRALW,N,6,Cont,XHRNRALW,U.S. Nonresident women
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,53001,SISCAT,"Instructional staff category - defines instructional staff by faculty and tenure status by academic rank
+
+Faculty Persons identified by the institution as such and typically those whose initial assignments are made for the purpose of conducting instruction, research or public service as a principal activity (or activities). They may hold academic rank titles of professor, associate professor, assistant professor, instructor, lecturer or the equivalent of any of those academic ranks. Faculty may also include the chancellor/president, provost, vice provosts, deans, directors or the equivalent, as well as associate deans, assistant deans and executive officers of academic departments (chairpersons, heads or the equivalent) if their principal activity is instruction combined with research and/or public service. The designation as ""faculty"" is separate from the activities to which they may be currently assigned. For example, a newly appointed president of an institution may also be appointed as a faculty member. Graduate, instruction, and research assistants are not included in this category 
+
+Tenure-Status of a personnel position with respect to permanence of the position.  
+Tenure track - Personnel positions that lead to consideration for tenure.  
+Not on tenure track - Personnel positions that are considered non-tenure earning positions 
+
+Multi-year contract - a contract or employment agreement that is in effect for more than one year (e.g., more than 365 days) where subsequent years of the contract may be contingent upon other factors such as the appropriation of funds. The renewal period of a multi-year contract is not on an annual basis (e.g., a 5-year multi-year contract is renewed every 5 years NOT annually). 
+Annual contract - An annually-renewable contract or employment agreement that is in effect for a stated annual period within one year of execution, and may be equal to a period of 365 days, or a standard academic year, or the equivalent. Does not include contracts for partial year periods such as a single semester, quarter, term, block, or course.
+Less-than-annual-contract - A contract or employment agreement that is in effect for a partial year period of less than 365 days, or less than a standard academic year or the equivalent. Includes contracts for partial year periods such as a single semester, quarter, term, block, or course. 
+
+Academic rank - include Professors, Associate professors, Assistant professors, Instructors, Lecturers, and No academic rank."
+Description,3,53006,FACSTAT,"Faculty and tenure status
+
+Faculty Persons identified by the institution as such and typically those whose initial assignments are made for the purpose of conducting instruction, research or public service as a principal activity (or activities). They may hold academic rank titles of professor, associate professor, assistant professor, instructor, lecturer or the equivalent of any of those academic ranks. Faculty may also include the chancellor/president, provost, vice provosts, deans, directors or the equivalent, as well as associate deans, assistant deans and executive officers of academic departments (chairpersons, heads or the equivalent) if their principal activity is instruction combined with research and/or public service. The designation as ""faculty"" is separate from the activities to which they may be currently assigned. For example, a newly appointed president of an institution may also be appointed as a faculty member. Graduate, instruction, and research assistants are not included in this category 
+
+Tenure-Status of a personnel position with respect to permanence of the position.  
+Tenure track - Personnel positions that lead to consideration for tenure.  
+Not on tenure track - Personnel positions that are considered non-tenure earning positions 
+
+Multi-year contract - a contract or employment agreement that is in effect for more than one year (e.g., more than 365 days) where subsequent years of the contract may be contingent upon other factors such as the appropriation of funds. The renewal period of a multi-year contract is not on an annual basis (e.g., a 5-year multi-year contract is renewed every 5 years NOT annually). 
+Annual contract - An annually-renewable contract or employment agreement that is in effect for a stated annual period within one year of execution, and may be equal to a period of 365 days, or a standard academic year, or the equivalent. Does not include contracts for partial year periods such as a single semester, quarter, term, block, or course.
+Less-than-annual-contract - A contract or employment agreement that is in effect for a partial year period of less than 365 days, or less than a standard academic year or the equivalent. Includes contracts for partial year periods such as a single semester, quarter, term, block, or course."
+Description,4,53011,ARANK,"Academic rank - Assigned by the institution and includes Professors, Associate professors, Assistant professors, Instructors, Lecturers, and No academic rank."
+Description,5,50476,HRTOTLT,Grand total across all race/ethnicities and both genders.
+Description,6,50431,HRTOTLM,Grand total men
+Description,7,50436,HRTOTLW,Grand total women
+Description,8,52132,HRAIANT,"American Indian or Alaska Native men and women.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,9,52134,HRAIANM,"American Indian or Alaska Native men.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,10,52136,HRAIANW,"American Indian or Alaska Native women.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,11,52138,HRASIAT,"Asian men and women.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,12,52140,HRASIAM,"Asian men.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,13,52142,HRASIAW,"Asian women.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,14,52144,HRBKAAT,"Black or African American men and women.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,15,52146,HRBKAAM,"Black or African American men.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,16,52148,HRBKAAW,"Black or African American women.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,17,52150,HRHISPT,"Hispanic or Latino men and women.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,18,52152,HRHISPM,"Hispanic or Latino men.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,19,52154,HRHISPW,"Hispanic or Latino women.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,20,52156,HRNHPIT,"Native Hawaiian or Other Pacific Islanders men and women.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,21,52158,HRNHPIM,"Native Hawaiian or Other Pacific Islanders men.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,22,52160,HRNHPIW,"Native Hawaiian or Other Pacific Islanders women.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,23,52162,HRWHITT,"White men and women.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,24,52164,HRWHITM,"White men.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,25,52166,HRWHITW,"White women.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,26,52168,HR2MORT,"Two or more races men and women.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,27,52170,HR2MORM,"Two or more races men.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,28,52172,HR2MORW,"Two or more races women.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,29,50471,HRUNKNT,"Race/ethnicity unknown total
+
+RACE/ETHNICITY UNKNOWN -Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories.
+
+RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,30,50421,HRUNKNM,"Race/ethnicity unknown men. 
+
+RACE/ETHNICITY UNKNOWN - Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories. 
+
+RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,31,50426,HRUNKNW,"Race/ethnicity unknown women. 
+
+RACE/ETHNICITY UNKNOWN - Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories. 
+
+RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,32,50441,HRNRALT,"U.S. Nonresident total
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.
+
+Resident (and other eligible non-citizens) - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident status (and who holds either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Description,33,50361,HRNRALM,"U.S. Nonresident men.  
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.  
+
+Resident (and other eligible non-citizens) - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident status (and who holds either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Description,34,50366,HRNRALW,"U.S. Nonresident women.  
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.  
+
+Resident (and other eligible non-citizens) - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident status (and who holds either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,53001,SISCAT,1,All full-time instructional staff,3552,5.57
+Frequencies,2,53001,SISCAT,100,Full-time instructional with faculty status,3450,5.41
+Frequencies,3,53001,SISCAT,101,Full-time instructional professors,2395,3.76
+Frequencies,4,53001,SISCAT,102,Full-time instructional associate professors,2297,3.6
+Frequencies,5,53001,SISCAT,103,Full-time instructional assistant professors,2296,3.6
+Frequencies,6,53001,SISCAT,104,Full-time instructional instructors,2403,3.77
+Frequencies,7,53001,SISCAT,105,Full-time instructional lecturers,780,1.22
+Frequencies,8,53001,SISCAT,106,Full-time instructional no academic rank,769,1.21
+Frequencies,9,53001,SISCAT,200,Full-time instructional tenured total,2029,3.18
+Frequencies,10,53001,SISCAT,201,"Full-time instructional tenured, professors",1741,2.73
+Frequencies,11,53001,SISCAT,202,"Full-time instructional tenured, associate professors",1638,2.57
+Frequencies,12,53001,SISCAT,203,"Full-time instructional tenured, assistant professors",794,1.25
+Frequencies,13,53001,SISCAT,204,"Full-time instructional tenured, instructors",350,0.55000000000000004
+Frequencies,14,53001,SISCAT,205,"Full-time instructional tenured, lecturers",40,0.06
+Frequencies,15,53001,SISCAT,206,"Full-time instructional tenured, no academic rank",131,0.21
+Frequencies,16,53001,SISCAT,300,Full-time instructional on-tenure track total,1931,3.03
+Frequencies,17,53001,SISCAT,301,"Full-time instructional on-tenure track, professors",515,0.81
+Frequencies,18,53001,SISCAT,302,"Full-time instructional on-tenure track, associate professors",1225,1.92
+Frequencies,19,53001,SISCAT,303,"Full-time instructional on-tenure track, assistant professors",1577,2.4700000000000002
+Frequencies,20,53001,SISCAT,304,"Full-time instructional on-tenure track, instructors",617,0.97
+Frequencies,21,53001,SISCAT,305,"Full-time instructional on-tenure track, lecturers",67,0.11
+Frequencies,22,53001,SISCAT,306,"Full-time instructional on-tenure track, no academic rank",141,0.22
+Frequencies,23,53001,SISCAT,400,Full-time instructional not on tenure track/no tenure system system total,3228,5.0599999999999996
+Frequencies,24,53001,SISCAT,401,"Full-time instructional not on tenure/no tenure system, professors",1392,2.1800000000000002
+Frequencies,25,53001,SISCAT,402,"Full-time instructional not on tenure/no tenure system, associate professors",1456,2.2799999999999998
+Frequencies,26,53001,SISCAT,403,"Full-time instructional not on tenure/no tenure system, assistant professors",1845,2.89
+Frequencies,27,53001,SISCAT,404,"Full-time instructional not on tenure/no tenure system, instructors",2200,3.45
+Frequencies,28,53001,SISCAT,405,"Full-time instructional not on tenure/no tenure system, lecturers",777,1.22
+Frequencies,29,53001,SISCAT,406,"Full-time instructional not on tenure/no tenure system, no academic rank",716,1.1200000000000001
+Frequencies,30,53001,SISCAT,410,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, total",1590,2.4900000000000002
+Frequencies,31,53001,SISCAT,411,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, professors",714,1.1200000000000001
+Frequencies,32,53001,SISCAT,412,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, asssociate professors",704,1.1000000000000001
+Frequencies,33,53001,SISCAT,413,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, assistant professors",823,1.29
+Frequencies,34,53001,SISCAT,414,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, instructors",894,1.4
+Frequencies,35,53001,SISCAT,415,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts contract,lecturers",333,0.52
+Frequencies,36,53001,SISCAT,416,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, no academic rank",253,0.4
+Frequencies,37,53001,SISCAT,420,"Full-time instructional not on tenure track/no tenure system, annual contract, total",2307,3.62
+Frequencies,38,53001,SISCAT,421,"Full-time instructional not on tenure track/no tenure system, annual contract, professors",862,1.35
+Frequencies,39,53001,SISCAT,422,"Full-time instructional not on tenure track/no tenure system, annual contract, asssociate professors",985,1.55
+Frequencies,40,53001,SISCAT,423,"Full-time instructional not on tenure track/no tenure system, annual contract, assistant professors",1405,2.2000000000000002
+Frequencies,41,53001,SISCAT,424,"Full-time instructional not on tenure track/no tenure system, annual contract, instructors",1491,2.34
+Frequencies,42,53001,SISCAT,425,"Full-time instructional not on tenure track/no tenure system, annual contract,lecturers",628,0.99
+Frequencies,43,53001,SISCAT,426,"Full-time instructional not on tenure track/no tenure system, annual contract, no academic rank",506,0.79
+Frequencies,44,53001,SISCAT,430,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, total",640,1
+Frequencies,45,53001,SISCAT,431,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, professors",121,0.19
+Frequencies,46,53001,SISCAT,432,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, asssociate professors",104,0.16
+Frequencies,47,53001,SISCAT,433,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, assistant professors",203,0.32
+Frequencies,48,53001,SISCAT,434,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, instructors",381,0.6
+Frequencies,49,53001,SISCAT,435,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract,lecturers",174,0.27
+Frequencies,50,53001,SISCAT,436,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, no academic rank",130,0.2
+Frequencies,51,53001,SISCAT,440,"Full-time instructional not on tenure track/no tenure system, multi-year contract, total",955,1.5
+Frequencies,52,53001,SISCAT,441,"Full-time instructional not on tenure track/no tenure system, multi-year contract, professors",524,0.82
+Frequencies,53,53001,SISCAT,442,"Full-time instructional not on tenure track/no tenure system, multi-year contract, associate professors",549,0.86
+Frequencies,54,53001,SISCAT,443,"Full-time instructional not on tenure track/no tenure system, multi-year contract, assistant professors",633,0.99
+Frequencies,55,53001,SISCAT,444,"Full-time instructional not on tenure track/no tenure system, multi-year contract, instructors",447,0.7
+Frequencies,56,53001,SISCAT,445,"Full-time instructional not on tenure track/no tenure system, multi-year contract, lecturers",295,0.46
+Frequencies,57,53001,SISCAT,446,"Full-time instructional not on tenure track/no tenure system, multi-year contract, no academic rank",129,0.2
+Frequencies,58,53001,SISCAT,450,"Full-time instructional not on tenure track/no tenure system, multi-year contract, total",760,1.19
+Frequencies,59,53001,SISCAT,451,"Full-time instructional not on tenure track/no tenure system, indefinite contract, professors",231,0.36
+Frequencies,60,53001,SISCAT,452,"Full-time instructional not on tenure track/no tenure system, indefinite contract, associate professors",196,0.31
+Frequencies,61,53001,SISCAT,453,"Full-time instructional not on tenure track/no tenure system, indefinite contract, assistant professors",242,0.38
+Frequencies,62,53001,SISCAT,454,"Full-time instructional not on tenure track/no tenure system, indefinite contract, instructors",487,0.76
+Frequencies,63,53001,SISCAT,455,"Full-time instructional not on tenure track/no tenure system, indefinite contract, lecturers",73,0.11
+Frequencies,64,53001,SISCAT,456,"Full-time instructional not on tenure track/no tenure system, indefinite contract, no academic rank",141,0.22
+Frequencies,65,53001,SISCAT,500,Full-time instructional without faculty status,470,0.74
+Frequencies,66,53006,FACSTAT,0,All full-time instructional staff,3552,5.57
+Frequencies,67,53006,FACSTAT,10,"With faculty status, total",14390,22.58
+Frequencies,68,53006,FACSTAT,20,"With faculty status, tenured",6723,10.55
+Frequencies,69,53006,FACSTAT,30,"With faculty status, on tenure track",6073,9.5299999999999994
+Frequencies,70,53006,FACSTAT,40,"With faculty status not on tenure track/No tenure system, total",11614,18.22
+Frequencies,71,53006,FACSTAT,41,"With faculty status not on tenure track/No tenure system, multi-year and indefinite contract",5311,8.33
+Frequencies,72,53006,FACSTAT,44,"With faculty status not on tenure track/No tenure system, multi-year contract",3532,5.54
+Frequencies,73,53006,FACSTAT,45,"With faculty status not on tenure track/No tenure system, indefinite contract",2130,3.34
+Frequencies,74,53006,FACSTAT,42,"With faculty status not on tenure track/No tenure system, annual contract",8184,12.84
+Frequencies,75,53006,FACSTAT,43,"With faculty status not on tenure track/No tenure system, less-than-annual contract",1753,2.75
+Frequencies,76,53006,FACSTAT,50,Without faculty status,470,0.74
+Frequencies,77,53011,ARANK,0,All ranks,20912,32.81
+Frequencies,78,53011,ARANK,1,Professors,8495,13.33
+Frequencies,79,53011,ARANK,2,Associate professors,9154,14.36
+Frequencies,80,53011,ARANK,3,Assistant professors,9818,15.41
+Frequencies,81,53011,ARANK,4,Instructors,9270,14.55
+Frequencies,82,53011,ARANK,5,Lecturers,3167,4.97
+Frequencies,83,53011,ARANK,6,No academic rank,2916,4.58
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,50476,HRTOTLT,63732,4581611,71.888705830665913,1,7172,Grand total
+Statistics,2,50431,HRTOTLM,63732,2275262,35.700464444862867,0,4011,Grand total men
+Statistics,3,50436,HRTOTLW,63732,2306349,36.188241385803053,0,3232,Grand total women
+Statistics,4,52132,HRAIANT,63732,19513,0.30617272327872969,0,45,American Indian or Alaska Native total
+Statistics,5,52134,HRAIANM,63732,8985,0.14098098286575034,0,22,American Indian or Alaska Native men
+Statistics,6,52136,HRAIANW,63732,10528,0.16519174041297935,0,28,American Indian or Alaska Native women
+Statistics,7,52138,HRASIAT,63732,499204,7.8328626121885394,0,1181,Asian total
+Statistics,8,52140,HRASIAM,63732,269481,4.2283468273394842,0,617,Asian men
+Statistics,9,52142,HRASIAW,63732,229723,3.6045157848490552,0,572,Asian women
+Statistics,10,52144,HRBKAAT,63732,288984,4.5343626435699491,0,622,Black or African American total
+Statistics,11,52146,HRBKAAM,63732,116246,1.8239816732567626,0,299,Black or African American men
+Statistics,12,52148,HRBKAAW,63732,172738,2.7103809703131865,0,353,Black or African American women
+Statistics,13,52150,HRHISPT,63732,305420,4.792255068097659,0,647,Hispanic or Latino total
+Statistics,14,52152,HRHISPM,63732,145939,2.2898857716688634,0,350,Hispanic or Latino men
+Statistics,15,52154,HRHISPW,63732,159481,2.5023692964287956,0,338,Hispanic or Latino women
+Statistics,16,52156,HRNHPIT,63732,9074,0.14237745559530535,0,76,Native Hawaiian or Other Pacific Islander total
+Statistics,17,52158,HRNHPIM,63732,4578,7.1832046695537569E-2,0,66,Native Hawaiian or Other Pacific Islander men
+Statistics,18,52160,HRNHPIW,63732,4496,7.0545408899767778E-2,0,51,Native Hawaiian or Other Pacific Islander women
+Statistics,19,52162,HRWHITT,63732,3056704,47.961840205862046,0,4170,White total
+Statistics,20,52164,HRWHITM,63732,1518151,23.820859222996297,0,2314,White men
+Statistics,21,52166,HRWHITW,63732,1538553,24.140980982865749,0,2121,White women
+Statistics,22,52168,HR2MORT,63732,62592,0.98211259649783467,0,120,Two or more races total
+Statistics,23,52170,HR2MORM,63732,26957,0.42297433000690393,0,49,Two or more races men
+Statistics,24,52172,HR2MORW,63732,35635,0.55913826649093079,0,77,Two or more races women
+Statistics,25,50471,HRUNKNT,63732,181221,2.8434852193560536,0,1458,Race/ethnicity unknown total
+Statistics,26,50421,HRUNKNM,63732,91866,1.4414422895876482,0,755,Race/ethnicity unknown men
+Statistics,27,50426,HRUNKNW,63732,89355,1.4020429297684052,0,703,Race/ethnicity unknown women
+Statistics,28,50441,HRNRALT,63732,158899,2.4932373062197954,0,1090,U.S. Nonresident total
+Statistics,29,50361,HRNRALM,63732,93059,1.460161300445616,0,703,U.S. Nonresident men
+Statistics,30,50366,HRNRALW,63732,65840,1.0330760057741795,0,387,U.S. Nonresident women
+Imputation code values,0,Code values for item imputation variables Xvarname
+Imputation code values,1,CodeValue,ValueLabel
+Imputation code values,2,A,Not applicable
+Imputation code values,3,B,Institution left item blank
+Imputation code values,4,C,Analyst corrected reported value
+Imputation code values,5,D,Do not know
+Imputation code values,6,G,Data generated from other data values
+Imputation code values,7,H,Value not derived - data not usable
+Imputation code values,8,J,Logical imputation
+Imputation code values,9,K,Ratio adjustment 
+Imputation code values,10,L,Imputed using the Group Median procedure
+Imputation code values,11,N,Imputed using Nearest Neighbor procedure
+Imputation code values,12,P,Imputed using Carry Forward procedure
+Imputation code values,13,R,Reported
+Imputation code values,14,Z,Implied zero;

@@ -1,0 +1,261 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for graduation rate data, 150% of normal time to complete - cohort year 2017 (4-year) and cohort year 2020 (2-year) institutions:  2023 ",,,,,,,,,
+Introduction,1,(Provisional release),,,,,,,,,
+Introduction,2,Filename,GR2023
+Introduction,3,Overview,"This file contains the graduation rate status as of August 31, 2023 for the cohort of full-time, first-time degree/certificate-seeking undergraduates in both four year and two year institutions. Data for four year institutions include the number of bachelor degree-seeking students who were enrolled in 2017, the number of bachelor degree seeking students who completed any degree/certificate within 150 percent of normal time, the number who completed a bachelor's degree within 100, 125 or 150 percent of normal time, and the number of bachelor's degree-seeking students who transferred out.   Data for students seeking a degree/certificate other than a bachelor's degree are also included for four year institutions. Data for two year institutions include the number of full-time, first-time students who were enrolled in 2020, the number of students who completed any degree/certificate within 100 or 150 percent of normal time and the number of students who transferred out.   This file has multiple records per institution.  Records are uniquely defined by the variables IPEDS ID (UNITID), and the cohort and graduation status within the cohort (GRTYPE).  Each record will contain the above data by gender and race/ethnicity. Note: The number of students who completed a degree/certificate within 100 percent of normal time is not available by race/ethnicity and gender.
+",,,,,,,,
+Introduction,4,Note,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.",,,,,,,,
+Introduction,5,Contents of spreadsheet,,,,,,,,,
+Introduction,6,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,7,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,8,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.,,,,,,,,
+Introduction,9,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. ",,,,,,,,
+Introduction,10,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,80176,GRTYPE,N,4,Disc,,Cohort data
+varlist,3,80900,CHRTSTAT,N,2,Disc,,Graduation rate status in cohort
+varlist,4,80902,SECTION,N,1,Disc,,Section of survey form
+varlist,5,80901,COHORT,N,1,Disc,,Cohort
+varlist,6,80903,LINE,A,3,Disc,,Original line number of survey form
+varlist,7,80296,GRTOTLT,N,6,Cont,XGRTOTLT,Grand total
+varlist,8,80251,GRTOTLM,N,6,Cont,XGRTOTLM,Total men
+varlist,9,80256,GRTOTLW,N,6,Cont,XGRTOTLW,Total women
+varlist,10,81176,GRAIANT,N,6,Cont,XGRAIANT,American Indian or Alaska Native total
+varlist,11,81111,GRAIANM,N,6,Cont,XGRAIANM,American Indian or Alaska Native men
+varlist,12,81116,GRAIANW,N,6,Cont,XGRAIANW,American Indian or Alaska Native women
+varlist,13,81181,GRASIAT,N,6,Cont,XGRASIAT,Asian total
+varlist,14,81121,GRASIAM,N,6,Cont,XGRASIAM,Asian men
+varlist,15,81126,GRASIAW,N,6,Cont,XGRASIAW,Asian women
+varlist,16,81186,GRBKAAT,N,6,Cont,XGRBKAAT,Black or African American total
+varlist,17,81131,GRBKAAM,N,6,Cont,XGRBKAAM,Black or African American men
+varlist,18,81136,GRBKAAW,N,6,Cont,XGRBKAAW,Black or African American women
+varlist,19,81171,GRHISPT,N,6,Cont,XGRHISPT,Hispanic total
+varlist,20,81101,GRHISPM,N,6,Cont,XGRHISPM,Hispanic men
+varlist,21,81106,GRHISPW,N,6,Cont,XGRHISPW,Hispanic women
+varlist,22,81191,GRNHPIT,N,6,Cont,XGRNHPIT,Native Hawaiian or Other Pacific Islander total
+varlist,23,81141,GRNHPIM,N,6,Cont,XGRNHPIM,Native Hawaiian or Other Pacific Islander men
+varlist,24,81146,GRNHPIW,N,6,Cont,XGRNHPIW,Native Hawaiian or Other Pacific Islander women
+varlist,25,81196,GRWHITT,N,6,Cont,XGRWHITT,White total
+varlist,26,81151,GRWHITM,N,6,Cont,XGRWHITM,White men
+varlist,27,81156,GRWHITW,N,6,Cont,XGRWHITW,White women
+varlist,28,81201,GR2MORT,N,6,Cont,XGR2MORT,Two or more races total
+varlist,29,81161,GR2MORM,N,6,Cont,XGR2MORM,Two or more races men
+varlist,30,81166,GR2MORW,N,6,Cont,XGR2MORW,Two or more races women
+varlist,31,80291,GRUNKNT,N,6,Cont,XGRUNKNT,Race/ethnicity unknown total
+varlist,32,80241,GRUNKNM,N,6,Cont,XGRUNKNM,Race/ethnicity unknown men
+varlist,33,80246,GRUNKNW,N,6,Cont,XGRUNKNW,Race/ethnicity unknown women
+varlist,34,80261,GRNRALT,N,6,Cont,XGRNRALT,U.S. Nonresident total
+varlist,35,80181,GRNRALM,N,6,Cont,XGRNRALM,U.S. Nonresident men
+varlist,36,80186,GRNRALW,N,6,Cont,XGRNRALW,U.S. Nonresident women
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,80176,GRTYPE,"Cohort status defines the graduation status students of the cohort.
+NORMAL TIME TO COMPLETION - The amount of time necessary for a student to complete all requirements for a degree or certificate according to the institution's catalog. This is typically 4 years (8 semesters or trimesters, or 12 quarters, excluding summer terms) for a bachelor's degree in a standard term-based institution; 2 years (4 semesters or trimesters, or 6 quarters, excluding summer terms) for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs. 
+COMPLETERS WITHIN 150% (OF NORMAL TIME) - Students (within a cohort or subcohort) who completed their program within 150% of the normal time to completion. See Normal Time.
+BACHELOR'S DEGREE - An award (baccalaureate or equivalent degree, as determined by the Secretary, U.S. Department of Education) that normally requires at least 4 but NOT more than 5 years of full-time equivalent college-level work. This includes ALL bachelor's degrees conferred in a 5-year COOPERATIVE (WORK-STUDY PLAN) PROGRAM. A cooperative plan provides for alternate class attendance and employment in business, industry, or government; thus, it allows students to combine actual work experience with their college studies. Also, includes bachelor's degrees in which the normal 4 years of work are completed in 3 years
+TOTAL TRANSFER-OUT STUDENTS (NON-COMPLETERS) - Total number of students from the cohort or subcohort who transferred out at any time within 150% of normal time to completion. A transfer-out student is a student who has not completed or graduated from the program in which he or she was enrolled, but who has subsequently enrolled at another eligible institution in any program for which the reporting institution provided substantial preparation. 
+EXCLUSIONS - Students from the cohort or subcohort who left the institution for any of the following reasons: died or were totally and permanently disabled; to serve in the armed forces; to serve with a foreign aid service of the Federal Government, such as the Peace Corps; or to serve on official church missions."
+Description,3,80900,CHRTSTAT,Graduation rate status in cohort
+Description,4,80902,SECTION,Section of survey form
+Description,5,80901,COHORT,Cohort
+Description,6,80903,LINE,Original line number of survey form
+Description,7,80296,GRTOTLT,Grand total (men and women) in cohort
+Description,8,80251,GRTOTLM,Grand total men in cohort
+Description,9,80256,GRTOTLW,Grand total women in cohort
+Description,10,81176,GRAIANT,"American Indian or Alaska Native men and women in cohort.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,11,81111,GRAIANM,"American Indian or Alaska Native men in cohort.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,12,81116,GRAIANW,"American Indian or Alaska Native women in cohort
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,13,81181,GRASIAT,"Asian men and women in cohort.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,14,81121,GRASIAM,"Asian men in cohort.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,15,81126,GRASIAW,"Asian women in cohort.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,16,81186,GRBKAAT,"Black or African American women in cohort.
+
+Black or African American - A person having origins in any of the black racial groups of Africa."
+Description,17,81131,GRBKAAM,"Black or African American men in cohort.
+
+Black or African American - A person having origins in any of the black racial groups of Africa."
+Description,18,81136,GRBKAAW,"Black or African American women in cohort.
+
+Black or African American - A person having origins in any of the black racial groups of Africa."
+Description,19,81171,GRHISPT,"Hispanic or Latino men and women in cohort.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,20,81101,GRHISPM,"Hispanic or Latino men in cohort.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,21,81106,GRHISPW,"Hispanic or Latino women in cohort.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,22,81191,GRNHPIT,"Native Hawaiian or Other Pacific Islanders men and women in cohort.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,23,81141,GRNHPIM,"Native Hawaiian or Other Pacific Islanders men in cohort.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,24,81146,GRNHPIW,"Native Hawaiian or Other Pacific Islanders women in cohort.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,25,81196,GRWHITT,"White men and women in cohort.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,26,81151,GRWHITM,"White men in cohort.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,27,81156,GRWHITW,"White women in cohort.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,28,81201,GR2MORT,"Men and women of two or more races in cohort.  
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,29,81161,GR2MORM,"Men of two or more races in cohort.  
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,30,81166,GR2MORW,"Women of two or more races in cohort.  
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,31,80291,GRUNKNT,"Race/ethnicity unknown total
+Race/ethnicity unknown - This category is used ONLY if the student did not select a racial/ethnic designation, AND the postsecondary institution finds it impossible to place the student in one of the aforementioned racial/ethnic categories during established enrollment procedures or in any post-enrollment identification or verification process."
+Description,32,80241,GRUNKNM,"Race/ethnicity unknown men in cohort
+Race/ethnicity unknown - This category is used ONLY if the student did not select a racial/ethnic designation, AND the postsecondary institution finds it impossible to place the student in one of the aforementioned racial/ethnic categories during established enrollment procedures or in any post-enrollment identification or verification process."
+Description,33,80246,GRUNKNW,"Race/ethnicity unknown women in cohort
+Race/ethnicity unknown - This category is used ONLY if the student did not select a racial/ethnic designation, AND the postsecondary institution finds it impossible to place the student in one of the aforementioned racial/ethnic categories during established enrollment procedures or in any post-enrollment identification or verification process."
+Description,34,80261,GRNRALT,"U.S. Nonresident total
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.
+NOTE - U.S. Nonresidents are included here, rather than in any of the five racial/ethnic categories described below. Resident and other eligible (for financial aid purposes) non-citizens who are not citizens or nationals of the United States and who have been admitted as legal immigrants for the purpose of obtaining permanent resident status (and who hold either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian) are to be reported in the appropriate racial/ethnic categories along with United States citizens."
+Description,35,80181,GRNRALM,"U.S. Nonresident men  in cohort
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.
+NOTE - U.S. Nonresidents are included here, rather than in any of the five racial/ethnic categories described below. Resident and other eligible (for financial aid purposes) non-citizens who are not citizens or nationals of the United States and who have been admitted as legal immigrants for the purpose of obtaining permanent resident status (and who hold either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian) are to be reported in the appropriate racial/ethnic categories along with United States citizens."
+Description,36,80186,GRNRALW,"U.S. Nonresident women in cohort
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.
+NOTE - U.S. Nonresidents are included here, rather than in any of the five racial/ethnic categories described below. Resident and other eligible (for financial aid purposes) non-citizens who are not citizens or nationals of the United States and who have been admitted as legal immigrants for the purpose of obtaining permanent resident status (and who hold either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian) are to be reported in the appropriate racial/ethnic categories along with United States citizens."
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,80176,GRTYPE,1,4-year institutions revised cohort,2273,4.42
+Frequencies,2,80176,GRTYPE,40,Total exclusions 4-year schools,569,1.1100000000000001
+Frequencies,3,80176,GRTYPE,2,"4-year institutions, Adjusted cohort (revised cohort minus exclusions)",2273,4.42
+Frequencies,4,80176,GRTYPE,3,"4-year institutions, Completers within 150% of normal time",2229,4.34
+Frequencies,5,80176,GRTYPE,4,"4-year institutions, Transfer-out students",1477,2.88
+Frequencies,6,80176,GRTYPE,41,"4-year institutions, noncompleters still enrolled",1567,3.05
+Frequencies,7,80176,GRTYPE,42,"4-year institutions, No longer enrolled",2171,4.2300000000000004
+Frequencies,8,80176,GRTYPE,6,Bachelor's or equiv subcohort (4-yr institution),2004,3.9
+Frequencies,9,80176,GRTYPE,7,Bachelor's or equiv subcohort (4-yr institution) exclusions,513,1
+Frequencies,10,80176,GRTYPE,8,Bachelor's or equiv subcohort (4-yr institution) adjusted cohort (revised cohort minus exclusions),2004,3.9
+Frequencies,11,80176,GRTYPE,9,Bachelor's or equiv subcohort (4-yr institution) Completers within 150% of normal time total,1949,3.79
+Frequencies,12,80176,GRTYPE,10,Bachelor's or equiv subcohort (4-yr institution) Completers of programs of < 2 yrs (150% of normal time),105,0.2
+Frequencies,13,80176,GRTYPE,11,Bachelor's or equiv subcohort (4-yr institution) Completers of programs of 2 but <4 yrs (150% of normal time),506,0.99
+Frequencies,14,80176,GRTYPE,12,Bachelor's or equiv subcohort (4-yr institution) Completers of bachelor's or equiv degrees total (150% of normal time),1928,3.75
+Frequencies,15,80176,GRTYPE,13,Bachelor's or equiv subcohort (4-yr institution) Completers of bachelor's or equiv degrees in 4 years or less,1849,3.6
+Frequencies,16,80176,GRTYPE,14,Bachelor's or equiv subcohort (4-yr institution) Completers of bachelor's or equiv degrees in 5 years,1721,3.35
+Frequencies,17,80176,GRTYPE,15,Bachelor's or equiv subcohort (4-yr institution) Completers of bachelor's or equiv degrees in 6 years,1529,2.98
+Frequencies,18,80176,GRTYPE,16,Bachelor's or equiv subcohort (4-yr institution) Transfer-out students,1256,2.4500000000000002
+Frequencies,19,80176,GRTYPE,43,Bachelor's or equiv subcohort (4-yr institution) noncompleters still enrolled,1349,2.63
+Frequencies,20,80176,GRTYPE,44,"Bachelor's or equiv subcohort (4-yr institution), No longer enrolled",1897,3.69
+Frequencies,21,80176,GRTYPE,18,Other degree/certif-seeking subcohort (4-yr institution),939,1.83
+Frequencies,22,80176,GRTYPE,19,Other degree/certificate-seeking subcohort(4-yr institution) exclusions,88,0.17
+Frequencies,23,80176,GRTYPE,20,Other degree/certif-seeking subcohort (4-yr institution) Adjusted cohort (revised cohort minus exclusions),938,1.83
+Frequencies,24,80176,GRTYPE,21,Other degree/certif-seeking subcohort (4-yr institution) Completers within 150% of normal time total,867,1.69
+Frequencies,25,80176,GRTYPE,22,Other degree/certif-seeking subcohort (4-yr institution) Completers of programs < 2 yrs (150% of normal time),409,0.8
+Frequencies,26,80176,GRTYPE,23,Other degree/certif-seeking subcohort (4-yr institution) Completers of programs of 2 but < 4 yrs (150% of normal time),735,1.43
+Frequencies,27,80176,GRTYPE,24,Other degree/certif-seeking subcohort (4-yr institution) Completers of bachelor's or equiv degrees (150% of normal time),439,0.85
+Frequencies,28,80176,GRTYPE,25,Other degree/certif-seeking subcohort (4-yr institution) Transfer-out students,526,1.02
+Frequencies,29,80176,GRTYPE,45,Other degree/certif-seeking subcohort (4-yr institution) noncompleters still enrolled,426,0.83
+Frequencies,30,80176,GRTYPE,46,Other degree/certif-seeking subcohort (4-yr institution) No longer enrolled,831,1.62
+Frequencies,31,80176,GRTYPE,27,Degree/certif-seeking students ( 2-yr institution) revised cohort,1453,2.83
+Frequencies,32,80176,GRTYPE,28,Degree/certificate-seeking subcohort(2-yr institution) exclusions,151,0.28999999999999998
+Frequencies,33,80176,GRTYPE,29,Degree/certif-seeking students ( 2-yr institution) Adjusted cohort (revised cohort minus exclusions),1453,2.83
+Frequencies,34,80176,GRTYPE,30,Degree/certif-seeking students ( 2-yr institution) Completers within 150% of normal time total,1444,2.81
+Frequencies,35,80176,GRTYPE,31,Degree/certif-seeking students ( 2-yr institution) Completers of programs of < 2 yrs (150% of normal time),1288,2.5099999999999998
+Frequencies,36,80176,GRTYPE,32,Degree/certificate-seeking students ( 2-yr institution) Completers of programs of 2 but < 4 yrs (150% of normal time),1140,2.2200000000000002
+Frequencies,37,80176,GRTYPE,35,Degree/certif-seeking students ( 2-yr institution) Completers within 100% of normal time total,1426,2.78
+Frequencies,38,80176,GRTYPE,36,Degree/certif-seeking students ( 2-yr institution) Completers of programs of < 2 yrs (100% of normal time),1233,2.4
+Frequencies,39,80176,GRTYPE,37,Degree/certificate-seeking students ( 2-yr institution) Completers of programs of 2 but < 4 yrs (100% of normal time),1092,2.13
+Frequencies,40,80176,GRTYPE,33,Degree/certif-seeking students ( 2-yr institution) Transfer-out students,922,1.79
+Frequencies,41,80176,GRTYPE,47,Degree/certif-seeking students ( 2-yr institution) noncompleters still enrolled,1003,1.95
+Frequencies,42,80176,GRTYPE,48,Degree/certif-seeking students ( 2-yr institution) No longer enrolled,1396,2.72
+Frequencies,43,80900,CHRTSTAT,10,Revised cohort,6669,12.98
+Frequencies,44,80900,CHRTSTAT,11,Exclusions,1321,2.57
+Frequencies,45,80900,CHRTSTAT,12,Adjusted cohort (revised cohort minus exclusions),6668,12.98
+Frequencies,46,80900,CHRTSTAT,13,Completers within 150% of normal time,6489,12.63
+Frequencies,47,80900,CHRTSTAT,14,Completers of programs of less than 2 years (150% of normal time),1802,3.51
+Frequencies,48,80900,CHRTSTAT,15,Completers of programs of 2 but less than 4 years (150% of normal time),2381,4.6399999999999997
+Frequencies,49,80900,CHRTSTAT,16,Completers of bachelor's or equivalent degrees (150% of normal time),2367,4.6100000000000003
+Frequencies,50,80900,CHRTSTAT,17,Completers of bachelor's or equivalent degrees in 4 years or less,1849,3.6
+Frequencies,51,80900,CHRTSTAT,18,Completers of bachelor's or equivalent degrees in 5 years,1721,3.35
+Frequencies,52,80900,CHRTSTAT,19,Completers of bachelor's or equivalent degrees in 6 years,1529,2.98
+Frequencies,53,80900,CHRTSTAT,20,Transfer-out students,4181,8.14
+Frequencies,54,80900,CHRTSTAT,22,Completers of programs within 100% of normal time total,1426,2.78
+Frequencies,55,80900,CHRTSTAT,23,Completers of programs of < 2 yrs within 100% of normal time (not available by race or gender),1233,2.4
+Frequencies,56,80900,CHRTSTAT,24,Completers of programs of 2 but < 4 yrs within 100% of normal time (not available by race or gender),1092,2.13
+Frequencies,57,80900,CHRTSTAT,31,"Noncompleters, still enrolled",4345,8.4600000000000009
+Frequencies,58,80900,CHRTSTAT,32,"Noncompleters, no longer enrolled",6295,12.25
+Frequencies,59,80902,SECTION,1,Bachelor's/ equiv +  other degree/certificate-seeking 2017 subcohort (4-yr institution),12559,24.45
+Frequencies,60,80902,SECTION,2,Bachelor's or equiv 2017 subcohort (4-yr institution),18610,36.229999999999997
+Frequencies,61,80902,SECTION,3,Other degree/certificate-seeking 2017 subcohort (4-yr institution),6198,12.07
+Frequencies,62,80902,SECTION,4,Degree/certificate-seeking students 2020 cohort (2-yr institution),14001,27.26
+Frequencies,63,80901,COHORT,1,Bachelor's/ equiv +  other degree/certif-seeking 2017 subcohorts (4-yr institution),12559,24.45
+Frequencies,64,80901,COHORT,2,Bachelor's or equiv 2017  subcohort (4-yr institution),18610,36.229999999999997
+Frequencies,65,80901,COHORT,3,Other degree/certif-seeking 2017 subcohort (4-yr institution),6198,12.07
+Frequencies,66,80901,COHORT,4,Degree/certif-seeking students 2020 cohort ( 2-yr institution),14001,27.26
+Frequencies,67,80903,LINE,10,Revised cohort,4396,8.56
+Frequencies,68,80903,LINE,45,Exclusions,752,1.46
+Frequencies,69,80903,LINE,50,Adjusted cohort (revised cohort minus exclusions),4395,8.56
+Frequencies,70,80903,LINE,29A,Completers within 150% of normal time,4260,8.2899999999999991
+Frequencies,71,80903,LINE,11A,Completers of programs of less than 2 years (150% of normal time),1802,3.51
+Frequencies,72,80903,LINE,12A,Completers of programs of 2 but less than 4 years (150% of normal time),2381,4.6399999999999997
+Frequencies,73,80903,LINE,18A,Completers of bachelor's or equivalent degrees (150% of normal time),2367,4.6100000000000003
+Frequencies,74,80903,LINE,19,Completers of bachelor's or equivalent degrees in 4 years or less,1849,3.6
+Frequencies,75,80903,LINE,20,Completers of bachelor's or equivalent degrees in 5 years,1721,3.35
+Frequencies,76,80903,LINE,21,Completers of bachelor's or equivalent degrees in 6 years,1529,2.98
+Frequencies,77,80903,LINE,30,Transfer-out students,2704,5.26
+Frequencies,78,80903,LINE,999,Generated record not on original survey form,12559,24.45
+Frequencies,79,80903,LINE,57,Completers of programs within 100% of normal time total (not available by race or gender),1426,2.78
+Frequencies,80,80903,LINE,55,Completers of programs of less than 2 years within 100% of normal time (not available by race or gender),1233,2.4
+Frequencies,81,80903,LINE,56,Completers of programs of 2 but less than 4 years within 100% of normal time (not available by race or gender),1092,2.13
+Frequencies,82,80903,LINE,22,"Noncompleters, still enrolled",2778,5.41
+Frequencies,83,80903,LINE,23,"Noncompleters, no longer enrolled",4124,8.0299999999999994
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,80296,GRTOTLT,51368,15387227,299.548882572808,1,11263,Grand total
+Statistics,2,80251,GRTOTLM,47617,6747551,141.70466430056493,0,5612,Total men
+Statistics,3,80256,GRTOTLW,47617,8335750,175.05827750593275,0,10016,Total women
+Statistics,4,81176,GRAIANT,47617,85242,1.790158976836004,0,205,American Indian or Alaska Native total
+Statistics,5,81111,GRAIANM,47617,35653,0.74874519604342982,0,81,American Indian or Alaska Native men
+Statistics,6,81116,GRAIANW,47617,49589,1.0414137807925741,0,131,American Indian or Alaska Native women
+Statistics,7,81181,GRASIAT,47617,1007521,21.158850830585717,0,2453,Asian total
+Statistics,8,81121,GRASIAM,47617,471007,9.8915723376105174,0,1198,Asian men
+Statistics,9,81126,GRASIAW,47617,536514,11.267278492975198,0,1333,Asian women
+Statistics,10,81186,GRBKAAT,47617,1691692,35.527059663565531,0,5237,Black or African American total
+Statistics,11,81131,GRBKAAM,47617,696589,14.628998046916017,0,978,Black or African American men
+Statistics,12,81136,GRBKAAW,47617,995103,20.898061616649517,0,4972,Black or African American women
+Statistics,13,81171,GRHISPT,47617,2764663,58.060419598042714,0,6488,Hispanic total
+Statistics,14,81101,GRHISPM,47617,1168756,24.544931432051577,0,2883,Hispanic men
+Statistics,15,81106,GRHISPW,47617,1595907,33.515488165991137,0,3605,Hispanic women
+Statistics,16,81191,GRNHPIT,47617,42232,0.88691013713589684,0,569,Native Hawaiian or Other Pacific Islander total
+Statistics,17,81141,GRNHPIM,47617,18789,0.39458596719658945,0,272,Native Hawaiian or Other Pacific Islander men
+Statistics,18,81146,GRNHPIW,47617,23443,0.49232416993930739,0,297,Native Hawaiian or Other Pacific Islander women
+Statistics,19,81196,GRWHITT,47617,7866997,165.21404120377176,0,5945,White total
+Statistics,20,81151,GRWHITM,47617,3585481,75.298338828569626,0,3078,White men
+Statistics,21,81156,GRWHITW,47617,4281516,89.91570237520213,0,3832,White women
+Statistics,22,81201,GR2MORT,47617,627218,13.172144402209295,0,592,Two or more races total
+Statistics,23,81161,GR2MORM,47617,271387,5.6993720729991386,0,266,Two or more races men
+Statistics,24,81166,GR2MORW,47617,355831,7.472772329210156,0,348,Two or more races women
+Statistics,25,80291,GRUNKNT,47617,436105,9.1585988197492494,0,2040,Race/ethnicity unknown total
+Statistics,26,80241,GRUNKNM,47617,202271,4.2478736585673182,0,929,Race/ethnicity unknown men
+Statistics,27,80246,GRUNKNW,47617,233834,4.9107251611819311,0,1111,Race/ethnicity unknown women
+Statistics,28,80261,GRNRALT,47617,561631,11.794758174601508,0,1373,U.S. Nonresident total
+Statistics,29,80181,GRNRALM,47617,297618,6.2502467606107066,0,740,U.S. Nonresident men
+Statistics,30,80186,GRNRALW,47617,264013,5.5445114139908016,0,698,U.S. Nonresident women

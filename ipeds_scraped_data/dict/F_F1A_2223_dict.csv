@@ -1,0 +1,939 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,File documentation public institutions - GASB 34/35: Fiscal year 2023,,,,,,,,,
+Introduction,1,(Provisional release),,,,,,,,,
+Introduction,2,,,,,,,,,,
+Introduction,3,Filename,F2223_F1A
+Introduction,4,Overview,"This data file contains institutional finance data for public institutions that use accounting standards established by the Governmental Accounting Standards Board (GASB).  Finance data includes institutional revenues by source, expenditures by functional categories, expenditures by natural classification categories, scholarships and fellowships by source, endowments, assets and liabilities. This information provides context for understanding the cost and resources of providing postsecondary education. It is used to calculate the contribution of postsecondary education to the gross national product.  Beginning with fiscal year 2020, scholarships and fellowships data contain the amount of discounts and allowances attributed to each source.  Data on financial health measures and more detailed data on endowments were also added in fiscal year 2020.  Beginning with fiscal year 2016, detailed expenditures by function and the natural classifications of fringe benefits, operations and maintenance of plant, depreciation and interest are no longer available.
+",,,,,,,,
+Introduction,5,Note:,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.",,,,,,,,,,
+Introduction,6,,,,,,,,,,,,
+Introduction,7,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,,,
+Introduction,8,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,9,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.,,,,,,,,
+Introduction,10,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. ",,,,,,,,
+Introduction,11,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+Introduction,12,,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,61386,F1A01,N,12,Cont,XF1A01,Total current assets
+varlist,3,65001,F1A31,N,12,Cont,XF1A31,"Depreciable capital assets, net of depreciation"
+varlist,4,61401,F1A04,N,12,Cont,XF1A04,Other noncurrent assets
+varlist,5,61406,F1A05,N,12,Cont,XF1A05,Total noncurrent assets
+varlist,6,61411,F1A06,N,12,Cont,XF1A06,Total assets
+varlist,7,61473,F1A19,N,12,Cont,XF1A19,Deferred outflows of resources
+varlist,8,61416,F1A07,N,12,Cont,XF1A07,"Long-term debt, current portion"
+varlist,9,61421,F1A08,N,12,Cont,XF1A08,Other current liabilities
+varlist,10,61426,F1A09,N,12,Cont,XF1A09,Total current liabilities
+varlist,11,61431,F1A10,N,12,Cont,XF1A10,Long-term debt
+varlist,12,61436,F1A11,N,12,Cont,XF1A11,Other noncurrent liabilities
+varlist,13,61441,F1A12,N,12,Cont,XF1A12,Total noncurrent liabilities
+varlist,14,61446,F1A13,N,12,Cont,XF1A13,Total liabilities
+varlist,15,61474,F1A20,N,12,Cont,XF1A20,Deferred inflows of resources
+varlist,16,61451,F1A14,N,12,Cont,XF1A14,"Invested in capital assets, net of related debt"
+varlist,17,61456,F1A15,N,12,Cont,XF1A15,Restricted-expendable
+varlist,18,61461,F1A16,N,12,Cont,XF1A16,Restricted-nonexpendable
+varlist,19,61466,F1A17,N,12,Cont,XF1A17,Unrestricted
+varlist,20,61471,F1A18,N,12,Cont,XF1A18,Net position
+varlist,21,61491,F1A214,N,12,Cont,XF1A214,Land  improvements - Ending balance
+varlist,22,61511,F1A224,N,12,Cont,XF1A224,Infrastructure - Ending balance
+varlist,23,61531,F1A234,N,12,Cont,XF1A234,Buildings - Ending balance
+varlist,24,65006,F1A324,N,12,Cont,XF1A324,"Equipment, including art and library collections - Ending balance"
+varlist,25,61611,F1A274,N,12,Cont,XF1A274,Construction in progress - Ending balance
+varlist,26,61615,F1A27T4,N,12,Cont,XF1A27T4,"Total for plant, property and equipment - Ending balance"
+varlist,27,61631,F1A284,N,12,Cont,XF1A284,Accumulated depreciation - Ending balance
+varlist,28,65011,F1A334,N,12,Cont,XF1A334,"Intangible assets , net of accumulated amortization - Ending balance"
+varlist,29,65016,F1A344,N,12,Cont,XF1A344,Other capital assets - Ending balance (New Aligned)
+varlist,30,62281,F1D01,N,12,Cont,XF1D01,Total revenues and other additions
+varlist,31,62286,F1D02,N,12,Cont,XF1D02,Total expenses and other deductions
+varlist,32,62291,F1D03,N,12,Cont,XF1D03,Change in net position during the year
+varlist,33,62296,F1D04,N,12,Cont,XF1D04,Net position beginning of year
+varlist,34,62301,F1D05,N,12,Cont,XF1D05,Adjustments to beginning net position
+varlist,35,62306,F1D06,N,12,Cont,XF1D06,Net position end of year
+varlist,36,61636,F1B01,N,12,Cont,XF1B01,"Tuition and fees, after deducting discounts and allowances"
+varlist,37,61641,F1B02,N,12,Cont,XF1B02,Federal operating grants and contracts
+varlist,38,61646,F1B03,N,12,Cont,XF1B03,State operating grants and contracts
+varlist,39,61651,F1B04,N,12,Cont,XF1B04,Local/private operating grants and contracts
+varlist,40,65021,F1B04A,N,12,Cont,XF1B04A,Local operating grants and contracts
+varlist,41,65026,F1B04B,N,12,Cont,XF1B04B,Private operating grants and contracts
+varlist,42,61656,F1B05,N,12,Cont,XF1B05,Sales and services of auxiliary enterprises
+varlist,43,61661,F1B06,N,12,Cont,XF1B06,Sales and services of hospitals
+varlist,44,65031,F1B26,N,12,Cont,XF1B26,Sales and services of educational activities
+varlist,45,61666,F1B07,N,12,Cont,XF1B07,Independent operations
+varlist,46,61671,F1B08,N,12,Cont,XF1B08,Other sources - operating
+varlist,47,61676,F1B09,N,12,Cont,XF1B09,Total operating revenues
+varlist,48,61681,F1B10,N,12,Cont,XF1B10,Federal appropriations
+varlist,49,61686,F1B11,N,12,Cont,XF1B11,State appropriations
+varlist,50,61691,F1B12,N,12,Cont,XF1B12,"Local appropriations, education district taxes, and similar support"
+varlist,51,61696,F1B13,N,12,Cont,XF1B13,Federal nonoperating grants
+varlist,52,61701,F1B14,N,12,Cont,XF1B14,State nonoperating grants
+varlist,53,61706,F1B15,N,12,Cont,XF1B15,Local nonoperating grants
+varlist,54,61711,F1B16,N,12,Cont,XF1B16,"Gifts, including contributions from affiliated organizations"
+varlist,55,61716,F1B17,N,12,Cont,XF1B17,Investment income
+varlist,56,61821,F1B18,N,12,Cont,XF1B18,Other nonoperating revenues
+varlist,57,61826,F1B19,N,12,Cont,XF1B19,Total nonoperating revenues
+varlist,58,65033,F1B27,N,12,Cont,XF1B27,Total operating and nonoperating revenues
+varlist,59,61831,F1B20,N,12,Cont,XF1B20,Capital appropriations
+varlist,60,61836,F1B21,N,12,Cont,XF1B21,Capital grants and gifts
+varlist,61,61841,F1B22,N,12,Cont,XF1B22,Additions to permanent endowments
+varlist,62,61846,F1B23,N,12,Cont,XF1B23,Other revenues and additions
+varlist,63,61851,F1B24,N,12,Cont,XF1B24,Total other revenues and additions
+varlist,64,61856,F1B25,N,12,Cont,XF1B25,Total all revenues and other additions
+varlist,65,61861,F1C011,N,12,Cont,XF1C011,Instruction - Current year total
+varlist,66,61866,F1C012,N,12,Cont,XF1C012,Instruction - Salaries and wages
+varlist,67,61886,F1C021,N,12,Cont,XF1C021,Research - Current year total
+varlist,68,61891,F1C022,N,12,Cont,XF1C022,Research - Salaries and wages
+varlist,69,61911,F1C031,N,12,Cont,XF1C031,Public service - Current year total
+varlist,70,61916,F1C032,N,12,Cont,XF1C032,Public service - Salaries and wages
+varlist,71,61936,F1C051,N,12,Cont,XF1C051,Academic support - Current year total
+varlist,72,61941,F1C052,N,12,Cont,XF1C052,Academic support - Salaries and wages
+varlist,73,61961,F1C061,N,12,Cont,XF1C061,Student services - Current year total
+varlist,74,61966,F1C062,N,12,Cont,XF1C062,Student services - Salaries and wages
+varlist,75,61986,F1C071,N,12,Cont,XF1C071,Institutional support - Current year total
+varlist,76,61991,F1C072,N,12,Cont,XF1C072,Institutional support - Salaries and wages
+varlist,77,62046,F1C101,N,12,Cont,XF1C101,Scholarships and fellowships expenses -- Current year total
+varlist,78,62071,F1C111,N,12,Cont,XF1C111,Auxiliary enterprises -- Current year total
+varlist,79,62076,F1C112,N,12,Cont,XF1C112,Auxiliary enterprises -- Salaries and wages
+varlist,80,62096,F1C121,N,12,Cont,XF1C121,Hospital services - Current year total
+varlist,81,62101,F1C122,N,12,Cont,XF1C122,Hospital services - Salaries and wages
+varlist,82,62121,F1C131,N,12,Cont,XF1C131,Independent operations - Current year total
+varlist,83,62126,F1C132,N,12,Cont,XF1C132,Independent operations - Salaries and wages
+varlist,84,62146,F1C141,N,12,Cont,XF1C141,Other expenses  deductions - Current year total
+varlist,85,62151,F1C142,N,12,Cont,XF1C142,Other expenses  deductions - Salaries and wages
+varlist,86,62256,F1C191,N,12,Cont,XF1C191,Total expenses and deductions - Current year total
+varlist,87,62261,F1C192,N,12,Cont,XF1C192,Total expenses  expenses and deductions - Salaries and wages
+varlist,88,62266,F1C193,N,12,Cont,XF1C193,Total expenses and deductions - Employee fringe benefits
+varlist,89,62268,F1C19OM,N,12,Cont,XF1C19OM,Total expenses and deductions - Operations and maintenance of plant
+varlist,90,62271,F1C19DP,N,12,Cont,XF1C19DP,Total expenses  and deductions - Depreciation
+varlist,91,65088,F1C19IN,N,12,Cont,XF1C19IN,Total expenses deductions - Interest
+varlist,92,62276,F1C19OT,N,12,Cont,XF1C19OT,Total expenses and deductions - Other Natural Expenses and Deductions
+varlist,93,67051,F1MHP,N,2,Disc,,Pension information reported
+varlist,94,67056,F1M01,N,12,Cont,XF1M01,Pension expense
+varlist,95,67061,F1M02,N,12,Cont,XF1M02,Net pension liability
+varlist,96,67066,F1M03,N,12,Cont,XF1M03,Deferred inflows of resources related to pension
+varlist,97,67071,F1M04,N,12,Cont,XF1M04,Deferred outflows of resources related to pension
+varlist,98,67052,F1MHOP,N,2,Disc,,Postemployment benefits other than pension (OPEB)  reported
+varlist,99,67076,F1M05,N,12,Cont,XF1M05,Other postemployment benefit (OPEB) expense
+varlist,100,67081,F1M06,N,12,Cont,XF1M06,Other postemployment benefit (OPEB) net  liability
+varlist,101,67086,F1M07,N,12,Cont,XF1M07,Deferred inflows related to other postemployment benefit (OPEB)
+varlist,102,67091,F1M08,N,12,Cont,XF1M08,Deferred outflows related to other postemployment benefit (OPEB)
+varlist,103,62321,F1E01,N,12,Cont,XF1E01,Pell grants (federal)
+varlist,104,62326,F1E02,N,12,Cont,XF1E02,Other federal grants
+varlist,105,62331,F1E03,N,12,Cont,XF1E03,Grants by state government
+varlist,106,62336,F1E04,N,12,Cont,XF1E04,Grants by local government
+varlist,107,62341,F1E05,N,12,Cont,XF1E05,Institutional grants from restricted resources
+varlist,108,62346,F1E06,N,12,Cont,XF1E06,Institutional grants from unrestricted resources
+varlist,109,62351,F1E07,N,12,Cont,XF1E07,Total gross scholarships and fellowships
+varlist,110,62356,F1E08,N,12,Cont,XF1E08,Discounts and allowances applied to tuition and fees
+varlist,111,62361,F1E09,N,12,Cont,XF1E09,Discounts and allowances applied to sales & services of auxiliary enterprises
+varlist,112,62366,F1E10,N,12,Cont,XF1E10,Total discounts and allowances
+varlist,113,62371,F1E11,N,12,Cont,XF1E11,Net scholarships and fellowship expenses
+varlist,114,62378,F1E12,N,12,Cont,XF1E12,"Total
+ discounts and
+ allowances from Pell grants"
+varlist,115,62380,F1E121,N,12,Cont,XF1E121,"Discounts and
+ allowances from Pell grants applied to tuition and fees"
+varlist,116,62382,F1E122,N,12,Cont,XF1E122,Discounts and allowances from Pell grants applied to auxiliary enterprises
+varlist,117,62384,F1E13,N,12,Cont,XF1E13,Total discounts and allowances from other federal grants
+varlist,118,62386,F1E131,N,12,Cont,XF1E131,Discounts and allowances from other federal grants applied to tuition and fees
+varlist,119,62388,F1E132,N,12,Cont,XF1E132,Discounts and allowances from other federal grants applied to auxiliary enterprises
+varlist,120,62390,F1E14,N,12,Cont,XF1E14,Total discounts and allowances from state government grants
+varlist,121,62392,F1E141,N,12,Cont,XF1E141,Discounts and allowances from state government grants applied to tuition and fees
+varlist,122,62394,F1E142,N,12,Cont,XF1E142,Discounts and allowances from state government grants applied to auxiliary enterprises
+varlist,123,62396,F1E15,N,12,Cont,XF1E15,Discounts and allowances from local government grants
+varlist,124,62398,F1E151,N,12,Cont,XF1E151,Discounts and allowances from local government grants applied to tuition and fees
+varlist,125,62400,F1E152,N,12,Cont,XF1E152,"Discounts and allowances from local government grants applied to auxiliary
+ enterprises"
+varlist,126,62402,F1E16,N,12,Cont,XF1E16,Total discounts and allowances from endowments and gifts
+varlist,127,62404,F1E161,N,12,Cont,XF1E161,Discounts and allowances from endowments and gifts applied to tuition and fees
+varlist,128,62406,F1E162,N,12,Cont,XF1E162,Discounts and allowances from endowments and gifts applied to auxiliary enterprises
+varlist,129,62408,F1E17,N,12,Cont,XF1E17,"Total discounts and
+ allowances from other institutional sources"
+varlist,130,62410,F1E171,N,12,Cont,XF1E171,"Discounts and
+ allowances from other institutional sources applied to tuition and fees"
+varlist,131,62412,F1E172,N,12,Cont,XF1E172,Discounts and allowances from other institutional sources applied to auxiliary enterprises
+varlist,132,62376,F1FHA,N,2,Disc,,Does this institution or any of its foundations or other affiliated organizations own endowment assets ?
+varlist,133,62311,F1H01,N,12,Cont,XF1H01,Value of endowment assets at the beginning of the fiscal year
+varlist,134,62316,F1H02,N,12,Cont,XF1H02,Value of endowment assets at the end of the fiscal year
+varlist,135,62414,F1H03,N,12,Cont,XF1H03,Change in value of endowment net assets
+varlist,136,62416,F1H03A,N,12,Cont,XF1H03A,New gifts and additions
+varlist,137,62418,F1H03B,N,12,Cont,XF1H03B,Endowment net investment return
+varlist,138,62420,F1H03C,N,12,Cont,XF1H03C,Spending distribution for current use
+varlist,139,62422,F1H03D,N,12,Cont,XF1H03D,Other changes in value of endowment net assets
+varlist,140,62426,F1N01,N,12,Cont,XF1N01,Operating income (Loss) + net nonoperating revenues (expenses)
+varlist,141,62428,F1N02,N,12,Cont,XF1N02,Operating revenues + nonoperating revenues
+varlist,142,62430,F1N03,N,12,Cont,XF1N03,Change in net position
+varlist,143,62432,F1N04,N,12,Cont,XF1N04,Net position
+varlist,144,62434,F1N05,N,12,Cont,XF1N05,Expendable net assets
+varlist,145,62436,F1N06,N,12,Cont,XF1N06,Plant-related debt
+varlist,146,62438,F1N07,N,12,Cont,XF1N07,Total expenses
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,61386,F1A01,"Total current assets includes cash and equivalents, investments, accounts and notes receivable (net of allowance for uncollectible amounts), inventories, and all other assets classified as current assets as discussed in Chapter 2 of Accounting Research Bulletin 43. Beginning with FY2014, GASB statements 63,65 required institutions to display deferred inflows and outflows of resources on their Statement of Net Position. Thus from FY2015 to FY2016, current assets included deferred outflows of resources. Beginning with FY2017, deferred outflows of resources was collected separately from current assets."
+Description,3,65001,F1A31,"Depreciable capital assets, net of depreciation is the net amount of all depreciable capital assets after reducing the gross amount for accumulated depreciation.  Capital assets include improvements to land, easements, buildings, building improvements, vehicles, machinery, equipment, infrastructure, and all other tangible or intangible depreciable assets that are used in operations and that have initial useful lives extending beyond a single reporting 
+
+Capital assets - Tangible or intangible assets that are capitalized under an institution's capitalization policy; some of these assets are subject to depreciation and some are not. These assets consist of land and land improvements, buildings, building improvements, machinery, equipment, infrastructure, and all other assets that are used in operations and that have initial useful lives extending beyond one year. Also includes collections of works of art and historical treasure and library collections; however under certain conditions such collections may not be capitalized. Includes property acquired under capital leases and intangible assets such as patents, copyrights, trademarks, goodwill, and software. Excluded are assets that are part of endowment funds or other capital fund investments in real estate period."
+Description,4,61401,F1A04,"Other noncurrent assets those that are not reasonably expected to be realized   
+in cash or sold or consumed during the next normal operating cycle (normally    
+one year) of the institution other than depreciable capital assets included     
+above."
+Description,5,61406,F1A05,"Total noncurrent assets are those not reasonably expected to be realized in     
+cash or sold or consumed during the next normal operating cycle (normally one   
+year) of the institution."
+Description,6,61411,F1A06,Total assets is the sum of current and noncurrent assets
+Description,7,61473,F1A19,"Deferred outflows of resources - A consumption of net assets by a government that is applicable to future periods. Examples of deferred outflows of resources include changes in fair values in hedging instruments and changes in the net pension liability that are not considered pension expense (as described in GASB Statement 68, Accounting and Financial Reporting for Pensions: an amendment of GASB Statement No. 27)."
+Description,8,61416,F1A07,"Long-term debt, current portion is the amount of long-term debt that is         
+expected to require current assets to pay or liquidate during the next year"
+Description,9,61421,F1A08,"Other current liabilities are liabilities whose liquidation is reasonably       
+expected to require the use of resources classified as current assets or the    
+creation of other current liabilities within the next year and are not included 
+in the category of long term debt, current portion"
+Description,10,61426,F1A09,"Total current assets includes cash and equivalents, investments, accounts and notes receivable (net of allowance for uncollectible amounts), inventories, and all other assets classified as current assets as discussed in Chapter 2 of Accounting Research Bulletin 43. Beginning with FY2014, GASB statements 63,65 required institutions to display deferred inflows and outflows of resources on their Statement of Net Position. Thus from FY2014 to FY2015, current assets included deferred outflows of resources. Beginning with FY2017, deferred outflows of resources was collected separately from current assets."
+Description,11,61431,F1A10,"Long-term debt is Debt of the institution in the form of bonds, notes, capital  
+leases, and other forms of debt that are repayable over a period greater than   
+one year"
+Description,12,61436,F1A11,"Other noncurrent liabilities are those whose liquidation is not reasonably      
+expected to require the use of resources classified as current assets or the    
+creation of other current liabilities within the next year, other than long     
+term debt. This includes long-term accrued liabilities (such as for compensated 
+absences, claims & judgments, and post-employment/post-retirement benefits)."
+Description,13,61441,F1A12,"Total noncurrent liabilities are liabilities whose liquidation is not           
+reasonably expected to require the use of resources classified as current       
+assets or the creation of other current liabilities within the next year. This  
+includes the noncurrent portion of long-term debt and long-term accrued         
+liabilities (such as for compensated absences, claims & judgments, and post-    
+employment/post-retirement benefits)."
+Description,14,61446,F1A13,Total liabilities is the sum of current and noncurrent liabilities
+Description,15,61474,F1A20,"Deferred inflows of resources - Acquisition of net assets acquired by a government that is applicable to future reporting periods. Examples of deferred inflows are the difference in a debt refunding between reacquisition and net carrying amount of the old debt, upfront payments in service concession arrangements, and change in fair values in hedging instruments."
+Description,16,61451,F1A14,"Net assets invested in capital assets, net of related debt is represented by    
+the total of all capital assets, reduced by accumulated depreciation, and       
+reduced by the amount of outstanding bonds, mortgages, notes, or other          
+borrowings that are attributable to the acquisition, construction, or           
+improvement of those assets."
+Description,17,61456,F1A15,"Restricted-expendable net assets have constraints placed on use that are        
+either (a) externally imposed by creditors, grantors, contributors, or laws and 
+regulations of other governments or (b) imposed by law through constitutional   
+provisions or enabling legislation, and are not required to be retained         
+in perpetuity."
+Description,18,61461,F1A16,"Restricted-nonexpendable net assets have constraints placed on use that are     
+either (a) externally imposed by creditors, grantors, contributors, or laws and 
+regulations of other governments or (b) imposed by law through constitutional   
+provisions or enabling legislation, and are required to be retained             
+in perpetuity."
+Description,19,61466,F1A17,"Unrestricted net assets are net assets held by the institution upon which no    
+restrictions have been placed by the donor or other party external to the       
+institution"
+Description,20,61471,F1A18,"Net position is the excess of assets over liabilities or the residual interest in the institution's assets remaining after liabilities are deducted. The change in net position results from revenues, gains, expenses, and losses. GASB institutions classify net position into three categories: invested in capital, net of related debt; restricted (with separate displays of restricted-expendable and restricted-nonexpendable net assets); and unrestricted.  Net position beginning with the 2015-16 collection includes deferred inflows and outflows of resources, per GASB 63,65. This term is similar to the ""Net assets"" term used by FASB institutions."
+Description,21,61491,F1A214,"Ending balance of land and land improvements is the book value at the end of the fiscal year for capital assets consisting of land and improvements such as athletic fields, golf courses, lakes, etc. Land is 
+nondepreciable; some land improvements are depreciable assets and some are      
+nondepreciable"
+Description,22,61511,F1A224,"Ending balance of infrastructure is the book value at the end of the fiscal year for capital assets consisting of roads, bridges, drainage systems, water and sewer systems, and other similar assets. Infrastructure assets usually have longer useful lives than other capital assets such as buildings"
+Description,23,61531,F1A234,"Ending balance of buildings is the book value at the end of the fiscal  year for capital assets built or acquired for occupancy and use by the entity. These are structures such as classrooms, research facilities, administrative offices, storage, etc. Includes built-in fixtures and equipment that are        
+essentially part of the permanent structure. Buildings held for the production of revenue are not included here"
+Description,24,65006,F1A324,"Equipment, including art and library collections are captital assets that include moveable tangible property such as research equipment, vehicles, office equipment, library collections (capitalized amount of books, films, tapes, and other materials maintained in library collections intended for use by patrons), and capitalized art collections."
+Description,25,61611,F1A274,"Ending balance of construction in progress is the book value of assets that were under construction or development that have not yet been placed into service, such as a building or parking lot, as of the end of the fiscal year."
+Description,26,61615,F1A27T4,"Ending balance for plant, property and equipment is the book value at the end of the fiscal year of total assets for plant, property and equipment. Plant, property and equipment include: land and land improvements, infrastucture, buildings, equipment, art and library collections, property obtained under capital leases and construction in progress.
+
+Land and land improvements is the book value at the end of the fiscal year for capital assets consisting of land and improvements such as athletic fields, golf courses, lakes, etc. Land is nondepreciable; some land improvements are depreciable assets and some are nondepreciable.
+Infrastructure is the book value at the end of the  fiscal year for capital assets consisting of roads, bridges, drainage systems,  water and sewer systems, and other similar assets. Infrastructure assets usually have longer useful lives than other capital assets such as buildings.
+Buildings is the book value at the end of the fiscal year for capital assets built or acquired for occupancy and use by the entity.  These are structures such as classrooms, research facilities, administrative  offices, storage, etc. Includes built-in fixtures and equipment that are essentially part of the permanent structure. Buildings held for the production of revenue are not included here.
+Equipment, including art and library collections are captital assets that include moveable tangible property such as research equipment, vehicles, office equipment, library collections (capitalized amount of books, films, tapes, and other materials maintained in library collections intended for use by patrons), and capitalized art collections.
+Construction in progress is the book value of assets that were under construction or development that have not yet been placed into service, such as a building or parking lot, as of the end of the fiscal year."
+Description,27,61631,F1A284,"Ending balance of accumulated depreciation is total depreciation charged as     
+expenses to date (in the current year and in prior years) on the capital        
+assets of the institution"
+Description,28,65011,F1A334,"Intangible assets, net of accumulated amortization are all capital assets consisting of certain nonmaterial rights and benefits of an institution, such as patents, copyrights, trademarks and goodwill. This amount should be reduced by total accumulated amortization."
+Description,29,65016,F1A344,"Other capital assets are all other amounts for capital assets not classified as
+ - Land & land improvements
+ - Infrastructure 
+ - Buildings 
+ - Equipment
+ - Construction in progress 
+ - Accumulated depreciation 
+ - Intangible assets, net of accumulated amortization"
+Description,30,62281,F1D01,"Total revenues and other additions represents the sum of all revenues and       
+other additions to net assets, including operating and nonoperating revenues    
+and other revenues and additions."
+Description,31,62286,F1D02,"Total expenses and other deductions represents the sum of operating and non-    
+operating expenses and deductions."
+Description,32,62291,F1D03,"Change in net position during year is the net difference between total revenues 
+and other additions and total expenses and other deductions."
+Description,33,62296,F1D04,"Net position beginning of year is the value of net position as of the beginning of  
+the fiscal year"
+Description,34,62301,F1D05,"Adjustments to beginning net posiiton are unusual and infrequent adjustments that 
+are not recorded as current year revenues, expenses, gains, or losses. This     
+includes adjustments for retroactive applications of changes in accounting      
+principles and prior period adjustments. This line on the IPEDS survey is an    
+automatic balancing line."
+Description,35,62306,F1D06,"Net position end of year is the sum of net assets invested in capital assts,      
+net of related debt, restricted-expendable net assets, restricted-nonexpendable 
+net assets, and unrestricted net assets.  It can be calculated as the           
+difference between total assets and total liabilities."
+Description,36,61636,F1B01,"Tuition and fees are revenues from all tuition and fees assessed against        
+students (net of refunds and discounts & allowances) for educational purposes.  
+If tuition or fees are remitted to the state as an offset to the state          
+appropriation, the total of such tuition or fees should be deducted from the    
+total state appropriation and added to the total for tuition and fees. If an    
+all-inclusive charge is made for tuition, board, room, and other services, a    
+reasonable distribution is made between revenues for tuition and fees and       
+revenues for auxiliary enterprises. Tuition and fees excludes charges for room,board, and other services rendered by auxiliary enterprises."
+Description,37,61641,F1B02,"Federal operating grants and contracts are revenues from federal government     
+agencies that are for specific research projects or other types of programs     
+and that are classified as operating revenues.  Examples are research projects  
+and similar activities for which amounts are received or expenditures are       
+reimbursable under the terms of a grant or contract."
+Description,38,61646,F1B03,"State operating grants and contracts are revenues from state government         
+agencies that are for specific research projects or other types of programs     
+and that are classified as operating revenues.  Examples are research projects  
+and similar activities for which amounts are received or expenditures are       
+reimbursable under the terms of a grant or contract."
+Description,39,61651,F1B04,"Local/private operating grants and contracts are revenues from local            
+governmental and nongovernmental agencies and organizations that are for        
+specific research projects or other types of programs and that are classified   
+as operating revenues.  Examples are research projects and similar activities   
+for which amounts are received or expenditures are reimbursable under the terms 
+of a grant or contract."
+Description,40,65021,F1B04A,Local operating grants and contracts are revenues from local governmental agencies that are for specific research projects or other types of programs and that are classified as operating revenues. Examples are research projects and similar activities for which amounts are received or expenditures are reimbursable under the terms of a grant or contract.
+Description,41,65026,F1B04B,Private operating grants and contracts are revenues from nongovernmental agencies and organizations that are for specific research projects or other types of programs and that are classified as operating revenues. Examples are research projects and similar activities for which amounts are received or expenditures are reimbursable under the terms of a grant or contract
+Description,42,61656,F1B05,"sales and services of auxiliary enterprises, after deducting discounts and      
+allowances are revenues (net of discounts and allowances such as scholarships)  
+generated by auxiliary enterprises that exist to furnish a service to students, 
+faculty, or staff, and that charge a fee that is directly related to the        
+cost of the service.  Examples are residence halls, food services, student      
+health services, intercollegiate athletics, college unions, college stores,     
+and movie theaters."
+Description,43,61661,F1B06,"Sales and services of hospitals, after deducting patient contractual            
+allowances include operating revenues (net of patient contractual allowances)   
+for a hospital operated by the institution and clinics associated with          
+training.  It excludes clinics that are part of a student health services       
+program that should be reported elsewhere."
+Description,44,65031,F1B26,"Sales and services of educational activities (revenues)  are revenues from the sales of goods or services that are incidental to the conduct of instruction, research or public service. Examples include film rentals, sales of scientific and literary publications, testing services, university presses, dairy products, machine shop products, data processing services, cosmetology services, and sales of handcrafts prepared in classes."
+Description,45,61666,F1B07,"Independent operations include all operating revenues associated with           
+operations independent of the primary missions of the institution.  This        
+category generally includes only those revenues associated with major           
+federally funded research and development centers.  It does not include         
+net profit (or loss) from operations owned and managed as investments of the    
+institution's endowment funds."
+Description,46,61671,F1B08,"Other sources - operating includes any other operating revenues that are not    
+included in previously listed sources, namely, tuition and fees, grants and     
+contracts, sales and services of auxiliary enterprises and hospitals, and       
+independent operations."
+Description,47,61676,F1B09,"Total operating revenues is the sum of all operating revenues.  They result     
+from providing services and producing and delivering goods."
+Description,48,61681,F1B10,"Federal appropriations  are amounts received by the institution through acts of 
+a federal legislative body, except grants and contracts.  Funds reported in     
+this category are for meeting current operating expenses, not for specific      
+projects or programs.  An example is federal land-grant appropriations.         
+However land grant appropriations may be included in operating revenues if      
+accounted for by the institution as operating revenue."
+Description,49,61686,F1B11,"State appropriations are amounts received by the institution through acts of a  
+state legislative body, except grants and contracts and capital appropriations. 
+Funds reported in this category are for meeting current operating expenses,     
+not for specific projects or programs."
+Description,50,61691,F1B12,"Local appropriations, education district taxes and similar support are amounts  
+received from property or other taxes assessed directly by or for an            
+institution below the state level.  It includes any other similar general       
+support provided to the institution from governments below the state level,     
+including local government appropriations."
+Description,51,61696,F1B13,"Federal non-operating grants are amounts reported as nonoperating revenues from federal government agencies that are provided on a non-exchange basis.Pell grants are included here, however, revenues from the Federal Direct Student Loan Program are not. Capital grants and gifts are also not included here."
+Description,52,61701,F1B14,State non-operating grants are amounts reported as non-operating revenues from state governmental agencies that are provided on a non-exchange basis. This excludes capital grants and gifts.
+Description,53,61706,F1B15,Local non-operating grants are amounts reported as non-operating revenues from local governmental agencies that are provided on a non-exchange basis. This excludes capital grants and gifts.
+Description,54,61711,F1B16,"Gifts, including contributions from affiliated organizations are revenues from private donors for which no legal consideration is provided. It includes all gifts or contributions to the institution except those classified as additions to permanent endowments or capital grants and gifts."
+Description,55,61716,F1B17,"Revenues derived from the institution's investments, including investments of endowment funds. Such income may take the form of interest income, dividend income, rental income or royalty income and includes both realized and unrealized gains and losses."
+Description,56,61821,F1B18,"Other non-operating revenues are revenues generated from non-exchange           
+transactions not reported as appropriations, grants, gifts, or investment       
+income"
+Description,57,61826,F1B19,"Total non-operating revenues represents the sum of all revenues generated from  
+non-exchange transactions"
+Description,58,65033,F1B27,Total operating and nonoperating revenues
+Description,59,61831,F1B20,"Capital appropriations are amounts provided by government appropriations        
+intended primarily for acquisition or construction of capital assets for the    
+institution."
+Description,60,61836,F1B21,"Capital grants and gifts are amounts received from gifts or grants primarily    
+intended for the acquisition or construction of capital assets for the          
+institution."
+Description,61,61841,F1B22,"Additions to permanent endowments are gifts or other additions to endowments    
+that are permanently nonexpendable."
+Description,62,61846,F1B23,"Other revenues and additions are increases to net assets that are not included  
+in other categories."
+Description,63,61851,F1B24,"Total other revenues and additions represents the sum of capital grants, gifts, 
+and appropriations, additions to permanent endowments and other revenues        
+not otherwise classified."
+Description,64,61856,F1B25,"Total all revenues and other additions represents the sum of all revenues       
+and other additions to net assets.  This is the sum of amounts reported in      
+F1B09, F1B19, and F1B24."
+Description,65,61861,F1C011,"Instruction - total expenses is the sum of all operating expenses associated    
+with the colleges, schools, departments, and other instructional divisions of   
+the institution and for departmental research and public service that are not   
+separately budgeted.  This would include compensation for academic instruction, 
+occupational and vocational instruction, community education, preparatory and   
+adult basic education, and remedial and tutorial instruction conducted by the   
+teaching faculty for the institution's students."
+Description,66,61866,F1C012,"Instruction - salaries and wages are amounts paid as compensation for services  
+to all employees - faculty, staff, part time, full time, regular employees,     
+and student employees of the colleges, schools, departments, and other          
+instructional divisions of the institution and for departmental research and    
+public service that are not separately budgeted.  This would include            
+compensation for academic instruction, occupational and vocational              
+instruction, community education, preparatory and adult basic education, and    
+remedial and tutorial instruction conducted by the teaching faculty for the institution's students."
+Description,67,61886,F1C021,"Research - total expenses is the sum of all operating expenses associated       
+with activities specifically organized to produce research outcomes and         
+commissioned by an agency either external to the institution or separately      
+budgeted by an organizational unit within the institution. The category         
+includes institutes and research centers and individual and project research.   
+This function does not include nonresearch sponsored programs (e.g., training   
+programs)."
+Description,68,61891,F1C022,"Research - salaries and wages are amounts paid as compensation for services     
+to all employees - faculty, staff, part time, full time, regular employees,     
+and student employees of activities specifically organized to produce research  
+outcomes and commissioned by an agency either external to the institution or    
+separately budgeted by an organizational unit within the institution. The       
+category includes institutes and research centers and individual and project    
+research. This function does not include nonresearch sponsored programs (e.g.,  
+training programs)."
+Description,69,61911,F1C031,"Public service - total expenses is the sum of all operating expenses associated 
+with activities established primarily to provide noninstructional services      
+beneficial to individuals and groups external to the institution. Examples are  
+conferences, institutes, general advisory services, reference bureaus, and      
+similar services provided to particular sectors of the community. This function 
+includes expenses for community services, cooperative extension services, and   
+public broadcasting services."
+Description,70,61916,F1C032,"Public service - salaries and wages are amounts paid as compensation for        
+services to all employees - faculty, staff, part time, full time, regular       
+employees, and student employees of activities established primarily to provide 
+noninstructional services beneficial to individuals and groups external to the  
+institution. Examples are conferences, institutes, general advisory services,   
+reference bureaus, and similar services provided to particular sectors of the   
+community. This function includes expenses for community services, cooperative  
+extension services, and public broadcasting services."
+Description,71,61936,F1C051,"Academic support - total expenses is the sum of all operating expenses          
+associated with activities and services that support the institution's primary  
+missions of instruction, research, and public service."
+Description,72,61941,F1C052,"Academic support - salaries and wages are amounts paid as compensation for      
+services to all employees - faculty, staff, part time, full time, regular       
+employees, and student employees of activities and services that support the    
+institution's primary missions of instruction, research, and public service."
+Description,73,61961,F1C061,"Student services - total expenses is the sum of all operating expenses          
+associated with admissions, registrar activities, and activities whose primary  
+purpose is to contribute to students' emotional and physical well-being and to  
+their intellectual, cultural, and social development outside the context of the 
+formal instructional program. Examples include student activities, cultural     
+events, student newspapers, intramural athletics, student organizations,        
+supplemental instruction outside the normal academic program (remedial          
+instruction for example), career guidance, counseling, financial aid administration, and student records."
+Description,74,61966,F1C062,"Student services - salaries and wages are amounts paid as compensation for      
+services to all employees - faculty, staff, part time, full time, regular       
+employees, and student employees of admissions, registrar activities, and       
+activities whose primary purpose is to contribute to students' emotional and    
+physical well-being and to their intellectual, cultural, and social development 
+outside the context of the formal instructional program. Examples include       
+student activities, cultural events, student newspapers, intramural athletics,  
+student organizations, supplemental instruction outside the normal academic program (remedial instruction for example), career guidance, counseling, financial aid administration, and student records."
+Description,75,61986,F1C071,"Institutional support - total expenses is the sum of all operating expenses     
+associated with the day-to-day operational support of the institution. Includes 
+expenses for general administrative services, central executive-level           
+activities concerned with management and long range planning, legal and fiscal  
+operations, space management, employee personnel and records, logistical        
+services such as purchasing and printing, and public relations and development."
+Description,76,61991,F1C072,"Institutional support - salaries and wages are amounts paid as compensation for 
+services to all employees - faculty, staff, part time, full time, regular       
+employees, and student employees of the day-to-day operational support of the   
+institution. Includes expenses for general administrative services, central     
+executive-level activities concerned with management and long range planning,   
+legal and fiscal operations, space management, employee personnel and records,  
+logistical services such as purchasing and printing, and public relations and   
+development."
+Description,77,62046,F1C101,"Scholarships and fellowships - total expenses is the sum of all operating       
+expenses associated with scholarships and fellowships treated as expenses       
+because the institution incurs an incremental expense in the provision of a     
+good or service. Thus, payments, made to students or third parties in support   
+of the total cost of education are expenses if those payments are made for      
+goods and services not provided by the institution. Examples include payments   
+for services to third parties (including students) for off-campus housing or    
+for the cost of board provided by institutional contract meal plans. The amount of expense in this function is the total of all institutional scholarships reduced by the amount that is classified as discounts and allowances."
+Description,78,62071,F1C111,"Auxiliary enterprises - total expenses is the sum of all operating expenses     
+associated with essentially self-supporting operations of the institution that  
+exist to furnish a service to students, faculty, or staff, and that charge a    
+fee that is directly related to, although not necessarily equal to, the cost    
+of the service. Examples are residence halls, food services, student health     
+services, intercollegiate athletics (only if essentially self-supporting),      
+college unions, college stores, faculty and staff parking, and faculty housing."
+Description,79,62076,F1C112,"Auxiliary enterprises - salaries and wages are amounts paid as compensation for 
+services to all employees - faculty, staff, part time, full time, regular       
+employees, and student employees of essentially self-supporting operations of   
+the institution that exist to furnish a service to students, faculty, or staff, 
+and that charge a fee that is directly related to, although not necessarily     
+equal to, the cost of the service. Examples are residence halls, food services, 
+student health services, intercollegiate athletics (only if essentially self-   
+supporting), college unions, college stores, faculty and staff parking, and faculty housing."
+Description,80,62096,F1C121,"Hospital services - total expenses is the sum of all operating expenses         
+associated with a hospital operated by the postsecondary institution (but not   
+as a component unit) and reported as a part of the institution. This            
+classification includes nursing expenses, other professional services, general  
+services, administrative services, and fiscal services."
+Description,81,62101,F1C122,"Hospital services - salaries and wages are amounts paid as compensation for     
+services to all employees - faculty, staff, part time, full time, regular       
+employees, and student employees of a hospital operated by the postsecondary    
+institution (but not as a component unit) and reported as a part of the         
+institution. This classification includes nursing expenses, other professional  
+services, general services, administrative services, and fiscal services."
+Description,82,62121,F1C131,"Independent operations - Expenses associated with operations that are independent of or unrelated to the primary missions of the institution (i.e., instruction, research, public service) although they may contribute indirectly to the enhancement of these programs. This category is generally limited to expenses of a major federally funded research and development center. Also included are information technology expenses, actual or allocated costs for operation and maintenance of plant, and depreciation related to the independent operations. FASB institutions also charge or allocate interest expense to independent operations. Excluded are expenses of operations owned and managed as investments of the institution's endowment funds."
+Description,83,62126,F1C132,"Independent operations - salaries and wages are amounts paid as compensation    
+for services to all employees - faculty, staff, part time, full time, regular   
+employees, and student employees of operations that are independent of or       
+unrelated to the primary missions of the institution (i.e., instruction,        
+research, public service) although they may contribute indirectly to the        
+enhancement of these programs. This category is generally limited to expenses   
+of a major federally funded research and development center."
+Description,84,62146,F1C141,"Other expenses and deductions - total expenses is the sum of all operating      
+expenses associated with functions other than those listed previously, i.e.,    
+instruction, research, public service, academic support, student services,      
+institutional support, operations and maintenance of plant, depreciation,       
+scholarships and fellowships, auxiliary enterprises, hospitals, and independent 
+operations."
+Description,85,62151,F1C142,"Other expenses and deductions - salaries and wages are amounts paid as          
+compensation for services to all employees - faculty, staff, part time, full    
+time, regular employees, and student employees associated with functions other  
+than those listed previously, i.e., instruction, research, public service,      
+academic support, student services, institutional support, operations and       
+maintenance of plant, depreciation, scholarships and fellowships, auxiliary     
+enterprises, hospitals, and independent operations."
+Description,86,62256,F1C191,"Total expenses and deductions - total expense is the sum of operating and non-  
+operating expenses and deductions."
+Description,87,62261,F1C192,"Salaries and wages - Amounts paid as compensation for services to all employees - faculty, staff, part-time, full-time, regular employees, and student employees. This includes regular or periodic payment to a person for the regular or periodic performance of work or a service and payment to a person for more sporadic performance of work or a service (overtime, extra compensation, summer compensation, bonuses, sick or annual leave, etc.)."
+Description,88,62266,F1C193,"Fringe benefits	 - Cash contributions in the form of supplementary or deferred compensation other than salary. Excludes the employee's contribution. Employee fringe benefits include retirement plans, social security taxes, medical/dental plans, guaranteed disability income protection plans, tuition plans, housing plans, unemployment compensation plans, group life insurance plans, worker's compensation plans, and other benefits in-kind with cash options."
+Description,89,62268,F1C19OM,"Operations and maintenance - 	An expense category that includes expenses for operations established to provide service and maintenance related to campus grounds and facilities used for educational and general purposes. Specific expenses include: janitorial and utility services; repairs and ordinary or normal alterations of buildings, furniture, and equipment; care of grounds; maintenance and operation of buildings and other plant facilities; security; earthquake and disaster preparedness; safety; hazardous waste disposal; property, liability, and all other insurance relating to property; space and capital leasing; facility planning and management; and central receiving. This expense does include amounts charged to auxiliary enterprises, hospitals, and independent operations. Also includes information technology expenses related to operation and maintenance of plant activities if the institution separately budgets and expenses information technology resources (otherwise these expenses are included in institutional support).
+
+	FASB institutions are required to allocate O&M costs to other functional categories (e.g., instruction, research, etc.) while GASB institutions can allocate O&M costs OR report it as a separate functional category.  In an effort to align FASB and GASB O&M expenses, from FY 2010 to FY 2015, O&M was reported as both a functional and natural expense category in IPEDS, causing its total to be equal to zero. However, beginning with FY 2016, both FASB and GASB institutions are required to allocate O&M to all the functions and report it as a natural expense category. 
+
+Prior to fiscal year 2017 this variable would always be equal to zero. Like other natural classification categories OM was reported for all  expense functions (survey column 4) . Unlike other natural classification categories OM also appeared as a function (line 8). Institutions would report positive values of salaries and wages, benefits, depreciation, interest and other expenses on the OM (survey line 8).  However total OM line 8 column 1 was always zero and negative values were reported in the intersection of line 8 and column 4 to balance out the total of all expenses of OM distributed to the functional categories.  
+
+For a better understanding of this, please visit the IPEDS survey form archive site for finance below:
+
+http://nces.ed.gov/ipeds/InsidePages/ArchivedSurveyMaterials?section=Finance"
+Description,90,62271,F1C19DP,"Depreciation	 - The allocation or distribution of the cost of capital assets, less any salvage value, to expenses over the estimated useful life of the asset in a systematic and rational manner. Depreciation for the year is the amount of the allocation or distribution for the year involved."
+Description,91,65088,F1C19IN,Interest	 - The price paid (or received) for the use of money over a period of time. Interest income is one component of investment income. Interest paid by the institution is interest expense
+Description,92,62276,F1C19OT,"Total expenses and deductions - all other is the sum of operating and non-operating expenses not classified as salaries and wages, benefits, depreciation and interest. Prior to FY2018, this value included operation and maintenance of plant."
+Description,93,67051,F1MHP,"Did your institution recognize additional (or decreased) pension expense, additional liability (or assets), or additional deferral related to the implementation of GASB Statement 68 for one or more defined benefit pension plans (either as a single employer, agent employer or cost-sharing multiple employer)?
+
+This variable indicate whether or not the institution recognized additional (or decreased) pension expense, liability (or assets), and/or deferral related to the implementation of GASB Statement 68 for reporting Fiscal Year . 
+
+If institution fits any of the following criteria, there is no direct GASB 68 impact and institution should respond “No”:
+-If public institution does not have a defined pension benefit plan
+-If public institution is part of a higher education system and the system reflects the additional unfunded pension expense and liability (and does not allocate the expense and liability to the individual institutions)
+-If institution is a branch campus that did not have pension expense and liabilities allocated to it
+-If institution is part of a special funding situation and additional unfunded pension expense, liability, or deferral are reported elsewhere
+
+For more information about GASB Statement 68 ""Accounting and Financial Reporting for Pensions – an Amendment of GASB Statement No. 27,"" please visit http://www.gasb.org/jsp/GASB/Page/GASBSectionPage&cid=1176163527940."
+Description,94,67056,F1M01,"Includes any pension expense that is recognized in  “Statement of Revenues, Expenses, and Changes in Net Position” as a result of the implementation of GASB Statement 68. Decreases to pension expense that is recognized as a result of GASB 68, are indicated as a negative number. This may include additional (or decreased) pension expense that is related to unfunded pension liabilities of one or more defined benefit pension plan in which the institution participates."
+Description,95,67061,F1M02,"Includes any pension liability that was recognized in the “Statement of Net Position” as a result of the implementation of GASB Statement 68. This may include unfunded pension liabilities of one or more defined benefit pension plan in which the institution participates. If institution recognized additional pension asset as a result of GASB 68, the asset will be a negative value."
+Description,96,67066,F1M03,Includes deferred inflows of resources that were recognized as a result of the implementation of GASB Statement 68.
+Description,97,67071,F1M04,Includes deferred outflows of resources that were recognized as a result of the implementation of GASB Statement 68.
+Description,98,67052,F1MHOP,"Does your institution include postemployment benefits other than pension (OPEB) liabilities, expenses, and/or deferrals in its General Purpose Financial Statements? (No/Yes)
+
+This variable indicates wether institution includes liabilities, expenses, and/or deferrals for one or more defined benefit pension plans (either a single employer, agent employer or cost-sharing multiple employer) and/or one or more OPEB plans in its General Purpose Financial Statements.  
+
+Note that if  institution fits any of the following criteria, institution should respond “No”:
+
+-If institution does not have a defined pension benefit and/or OPEB plan
+-If institution is part of a higher education system and the system reflects the pension and/or OPEB expense and liability (and does not allocate the expense and liability to the individual institutions)
+-If institution is a branch campus that did not have pension or OPEB expense and liabilities allocated to it
+-If  institution is part of a special funding situation
+For more information about reporting pension and GASB Statement 68 ""Accounting and Financial Reporting for Pensions – an Amendment of GASB Statement No. 27,"" please visit the GASB website. For more information about reporting OPEB and GASB Statement 75 ""Accounting and Financial Reporting for Postemployment Benefits Other than Pension,"" visit this site.
+
+Note for institutions with jointly audited financial statements: 
+In the case where the system office absorbs all the pension and/or OPEB liabilities, expenses, and deferrals for the campuses; the system office should report “Yes” to the screening question(s) and the individual campuses will report “No”. All institutions involved should note this reporting structure in the context box below the screening questions. Parts M-1 and M-2 will only be applicable to the system office. 
+In the case where the institution shares an audited financial statement with another entity (e.g., with district, high school, hospital), the institution should report only its proportionate share of the pension and/or OPEB expense, liability, and deferrals."
+Description,99,67076,F1M05,"Includes any OPEB expense that is recognized in “Statement of Revenues, Expenses, and Changes in Net Position” as a result of the implementation of GASB Statement 75. Decreases to OPEB expense that is recognized as a result of GASB 75, are indicated as a negative number. This may include additional (or decreased) OPEB expense that is related to unfunded OPEB liabilities of one or more OPEB plan(s) in which the institution participates."
+Description,100,67081,F1M06,"Includes any OPEB liability that was recognized in the “Statement of Net Position” as a result of the implementation of GASB Statement 75. This may include unfunded liabilities of one or more OPEB plan(s) in which the institution participates. If institution recognized additional OPEB asset as a result of GASB 75, the asset will be a negative value."
+Description,101,67086,F1M07,Includes deferred inflows of resources related to any OPEB plans that were recognized as a result of the implementation of GASB Statement 75.
+Description,102,67091,F1M08,Includes deferred outflows of resources related to any OPEB plans that were recognized as a result of the implementation of GASB Statement 75.
+Description,103,62321,F1E01,"Pell grants represents the gross amount of Pell grants disbursed or otherwise   
+made available to recipients by the institution."
+Description,104,62326,F1E02,"Other federal awards are expenditures for scholarships and fellowships,         
+excluding Pell grants, that were funded from federal government agencies.  This 
+includes Supplemental Educational Opportunity Grants (SEOG), and the Leveraging Educational Assistance Partnership (LEAP) Program, but not loans or College Work Study Program."
+Description,105,62331,F1E03,"Grants by state government includes expenditures for scholarships and           
+fellowships that were funded by the state such as the state share of SSIG."
+Description,106,62336,F1E04,"Grants by local government are for scholarships and fellowships that were       
+funded by local government."
+Description,107,62341,F1E05,"Institutional grants from restricted sources are expenditures for scholarships  
+and fellowships received from private sources (e.g., businesses, foundations,   
+individuals, foreign governments) that used restricted-expendable net assets    
+of the institution."
+Description,108,62346,F1E06,"Institutional grants from unrestricted sources are expenditures for             
+scholarships and fellowships from unrestricted net assets of the institution.   
+The institutional matching portion of federal, state, or local grants is        
+reported here.  Athletic scholarships are also included here."
+Description,109,62351,F1E07,"Total gross scholarships and fellowships is the total amount of all             
+scholarships and fellowships without considering how much was ultimately        
+reported as scholarships and fellowships expenses or discounts and allowances."
+Description,110,62356,F1E08,"Discounts and allowances applied to tuition and fees are reductions to the      
+amount charged for tuition and fees by the application of scholarships and      
+fellowships.  This amount is equal to the amount of scholarships applied to     
+tuition and fees."
+Description,111,62361,F1E09,"Discounts and allowances applied to sales and services of auxiliary            
+enterprises are reductions to the amount charged for auxiliary enterprises such 
+as room and board charges by the application of scholarships and fellowships.   
+This amount is equal to the amount of scholarships and fellowships applied to   
+charges for sales and services of auxiliary enterprises."
+Description,112,62366,F1E10,"Total discounts and allowances is the sum of discounts and allowances that were recorded as an offset (reduction) to the revenues of tuition and fees and     
+auxiliary enterprises."
+Description,113,62371,F1E11,"Net scholarships and fellowship expenses after deducting discounts and allowances is    
+the amount reported as scholarships and fellowships expense by the institution."
+Description,114,62378,F1E12,"Pell grants represents the gross amount of Pell grants disbursed or otherwise   
+made available to recipients by the institution.
+
+Total discounts and allowances is the sum of discounts and allowances that were recorded as an offset (reduction) to the revenues of tuition and fees and     
+auxiliary enterprises"
+Description,115,62380,F1E121,"Pell grants represents the gross amount of Pell grants disbursed or otherwise   
+made available to recipients by the institution.
+
+Discounts and allowances applied to tuition and fees are reductions to the      
+amount charged for tuition and fees by the application of scholarships and      
+fellowships.  This amount is equal to the amount of scholarships applied to     
+tuition and fees."
+Description,116,62382,F1E122,"Pell grants represents the gross amount of Pell grants disbursed or otherwise   
+made available to recipients by the institution.
+
+Discounts and allowances applied to sales and services of auxiliary            
+enterprises are reductions to the amount charged for auxiliary enterprises such 
+as room and board charges by the application of scholarships and fellowships.   
+This amount is equal to the amount of scholarships and fellowships applied to   
+charges for sales and services of auxiliary enterprises."
+Description,117,62384,F1E13,"Other federal awards are expenditures for scholarships and fellowships,         
+excluding Pell grants, that were funded from federal government agencies.  This 
+includes Supplemental Educational Opportunity Grants (SEOG), and the Leveraging Educational Assistance Partnership (LEAP) Program, but not loans or College Work Study Program.
+
+Total discounts and allowances is the sum of discounts and allowances that were recorded as an offset (reduction) to the revenues of tuition and fees and     
+auxiliary enterprises"
+Description,118,62386,F1E131,"Other federal awards are expenditures for scholarships and fellowships,         
+excluding Pell grants, that were funded from federal government agencies.  This 
+includes Supplemental Educational Opportunity Grants (SEOG), and the Leveraging Educational Assistance Partnership (LEAP) Program, but not loans or College Work Study Program.
+
+Discounts and allowances applied to tuition and fees are reductions to the      
+amount charged for tuition and fees by the application of scholarships and      
+fellowships.  This amount is equal to the amount of scholarships applied to     
+tuition and fees."
+Description,119,62388,F1E132,"Other federal awards are expenditures for scholarships and fellowships,         
+excluding Pell grants, that were funded from federal government agencies.  This 
+includes Supplemental Educational Opportunity Grants (SEOG), and the Leveraging Educational Assistance Partnership (LEAP) Program, but not loans or College Work Study Program.
+
+Discounts and allowances applied to sales and services of auxiliary            
+enterprises are reductions to the amount charged for auxiliary enterprises such 
+as room and board charges by the application of scholarships and fellowships.   
+This amount is equal to the amount of scholarships and fellowships applied to   
+charges for sales and services of auxiliary enterprises."
+Description,120,62390,F1E14,"Grants by state government includes expenditures for scholarships and           
+fellowships that were funded by the state such as the state share of SSIG.
+
+Total discounts and allowances is the sum of discounts and allowances that were recorded as an offset (reduction) to the revenues of tuition and fees and     
+auxiliary enterprises"
+Description,121,62392,F1E141,"Grants by state government includes expenditures for scholarships and           
+fellowships that were funded by the state such as the state share of SSIG.
+
+Discounts and allowances applied to tuition and fees are reductions to the      
+amount charged for tuition and fees by the application of scholarships and      
+fellowships.  This amount is equal to the amount of scholarships applied to     
+tuition and fees."
+Description,122,62394,F1E142,"Grants by state government includes expenditures for scholarships and           
+fellowships that were funded by the state such as the state share of SSIG.
+
+Discounts and allowances applied to sales and services of auxiliary            
+enterprises are reductions to the amount charged for auxiliary enterprises such 
+as room and board charges by the application of scholarships and fellowships.   
+This amount is equal to the amount of scholarships and fellowships applied to   
+charges for sales and services of auxiliary enterprises."
+Description,123,62396,F1E15,"Grants by local government are for scholarships and fellowships that were       
+funded by local government.
+
+Total discounts and allowances is the sum of discounts and allowances that were recorded as an offset (reduction) to the revenues of tuition and fees and     
+auxiliary enterprises"
+Description,124,62398,F1E151,"Grants by local government are for scholarships and fellowships that were       
+funded by local government.
+
+Discounts and allowances applied to tuition and fees are reductions to the      
+amount charged for tuition and fees by the application of scholarships and      
+fellowships.  This amount is equal to the amount of scholarships applied to     
+tuition and fees."
+Description,125,62400,F1E152,"Grants by local government are for scholarships and fellowships that were       
+funded by local government.
+
+Discounts and allowances applied to sales and services of auxiliary            
+enterprises are reductions to the amount charged for auxiliary enterprises such 
+as room and board charges by the application of scholarships and fellowships.   
+This amount is equal to the amount of scholarships and fellowships applied to   
+charges for sales and services of auxiliary enterprises."
+Description,126,62402,F1E16,"Endowments are funds whose principal is nonexpendable (true endowment) and that are intended to be invested to provide for institutional use. The funds also include funds for which the donor has stipulated that the principal may be expended after a stated period or on the occurrence of a certain event (term endowment) and funds established by the governing board to function line an endowment fund but which may be totally expended at any time at the discretion of the governing board.
+
+Gifts are received contributions as a nonexchange transaction. The contributions include bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution.
+
+Total discounts and allowances is the sum of discounts and allowances that were recorded as an offset (reduction) to the revenues of tuition and fees and     
+auxiliary enterprises"
+Description,127,62404,F1E161,"Endowments are funds whose principal is nonexpendable (true endowment) and that are intended to be invested to provide for institutional use. The funds also include funds for which the donor has stipulated that the principal may be expended after a stated period or on the occurrence of a certain event (term endowment) and funds established by the governing board to function line an endowment fund but which may be totally expended at any time at the discretion of the governing board.
+
+Gifts are received contributions as a nonexchange transaction. The contributions include bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution.
+
+
+Discounts and allowances applied to tuition and fees are reductions to the      
+amount charged for tuition and fees by the application of scholarships and      
+fellowships.  This amount is equal to the amount of scholarships applied to     
+tuition and fees."
+Description,128,62406,F1E162,"Endowments are funds whose principal is nonexpendable (true endowment) and that are intended to be invested to provide for institutional use. The funds also include funds for which the donor has stipulated that the principal may be expended after a stated period or on the occurrence of a certain event (term endowment) and funds established by the governing board to function line an endowment fund but which may be totally expended at any time at the discretion of the governing board.
+
+Gifts are received contributions as a nonexchange transaction. The contributions include bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution.
+
+Discounts and allowances applied to sales and services of auxiliary            
+enterprises are reductions to the amount charged for auxiliary enterprises such 
+as room and board charges by the application of scholarships and fellowships.   
+This amount is equal to the amount of scholarships and fellowships applied to   
+charges for sales and services of auxiliary enterprises."
+Description,129,62408,F1E17,"Institutional grants from restricted sources are expenditures for scholarships  
+and fellowships received from private sources (e.g., businesses, foundations,   
+individuals, foreign governments) that used restricted-expendable net assets    
+of the institution.      
+Institutional grants from unrestricted sources are expenditures for             
+scholarships and fellowships from unrestricted net assets of the institution.   
+The institutional matching portion of federal, state, or local grants is        
+reported here.  Athletic scholarships are also included here.                                                                          
+
+Total discounts and allowances is the sum of discounts and allowances that were recorded as an offset (reduction) to the revenues of tuition and fees and     
+auxiliary enterprises"
+Description,130,62410,F1E171,"Institutional grants from restricted sources are expenditures for scholarships  
+and fellowships received from private sources (e.g., businesses, foundations,   
+individuals, foreign governments) that used restricted-expendable net assets    
+of the institution.      
+Institutional grants from unrestricted sources are expenditures for             
+scholarships and fellowships from unrestricted net assets of the institution.   
+The institutional matching portion of federal, state, or local grants is        
+reported here.  Athletic scholarships are also included here.                                                                          
+
+
+Discounts and allowances applied to tuition and fees are reductions to the      
+amount charged for tuition and fees by the application of scholarships and      
+fellowships.  This amount is equal to the amount of scholarships applied to     
+tuition and fees."
+Description,131,62412,F1E172,"Institutional grants from restricted sources are expenditures for scholarships  
+and fellowships received from private sources (e.g., businesses, foundations,   
+individuals, foreign governments) that used restricted-expendable net assets    
+of the institution.      
+Institutional grants from unrestricted sources are expenditures for             
+scholarships and fellowships from unrestricted net assets of the institution.   
+The institutional matching portion of federal, state, or local grants is        
+reported here.  Athletic scholarships are also included here.                                                                          
+
+
+Discounts and allowances applied to sales and services of auxiliary            
+enterprises are reductions to the amount charged for auxiliary enterprises such 
+as room and board charges by the application of scholarships and fellowships.   
+This amount is equal to the amount of scholarships and fellowships applied to   
+charges for sales and services of auxiliary enterprises."
+Description,132,62376,F1FHA,"Does this institution or any of its foundations or other affiliated organizations own endowment assets ?
+ENDOWMENT ASSETS - Consists of gross investments of endowment funds, term endowment funds, and funds functioning as endowment for the institution and any of its foundations and other affiliated organizations."
+Description,133,62311,F1H01,"Value of endowment assets at the beginning of the fiscal year  
+ENDOWMENT ASSETS -Consists of gross investments of endowment funds, term endowment funds, and funds functioning as endowment for the institution and any of its foundations and other affiliated organizations."
+Description,134,62316,F1H02,"Value of endowment assets at the end of the fiscal year  
+Consists of gross investments of endowment funds, term endowment funds, and funds functioning as endowment for the institution and any of its foundations and other affiliated organizations."
+Description,135,62414,F1H03,Change in value of endowment net assets is the value of endowment assets at the end of the fiscal year minus the value of endowment assets at the beginning of the fiscal year
+Description,136,62416,F1H03A,"New gifts and additions – Amount of new gifts and additions to permanent endowments. Include contributions, pledge payments, and reinvested income/gains."
+Description,137,62418,F1H03B,"Endowment net investment return –  Amount of net investment return from endowments, endowment net investment return. Include realized and unrealized gains (losses) and interest and dividends, net of administrative expenses."
+Description,138,62420,F1H03C,Spending distribution for current use – Amount of withdrawals from endowments to fund the institution’s operating budget and other institutional expenses.
+Description,139,62422,F1H03D,"Other changes in value of endowment assets is generated by subracting the sum of (H03a) new gifts and additions, (H03b) net investment return, (H03c) spending distribution for current use from (H03) change in value of endowment net assets.  Other changes to the value of endowment net assets may include transfers and other adjustments."
+Description,140,62426,F1N01,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Operating income (Loss) + net nonoperating revenues (expenses) is the sum of the institution’s operating income/loss, net nonoperating revenues/expenses, and the institution’s FASB component unit’s change in unrestricted net assets (if applicable). Includes nonoperating revenues and expenses from government appropriations, investment income and operating gifts, and interest on plant debt. Excludes plant and endowment gifts, capital appropriations, and investment gains/losses except for endowment payout and working capital investment gains/losses.
+
+For the FASB component unit,  includes total change in unrestricted assets from the statement of activities. Excludes the FASB component unit’s investment gains/losses except for endowment payout and working capital investment gains/losses."
+Description,141,62428,F1N02,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Operating revenues + nonoperating revenues is the sum of the institution’s operating revenues, nonoperating revenues, and the institution’s FASB component unit’s total unrestricted revenue (if applicable). Exclude investment gains/losses except for endowment payout and working capital investment gains/losses."
+Description,142,62430,F1N03,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Change in net position is the sum of the institution’s change in net position assets and the institution’s FASB component unit’s change in net assets (if applicable), regardless of whether the net asset is expendable or nonexpendable, restricted or unrestricted."
+Description,143,62432,F1N04,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Net position is the sum of the institution’s beginning of the year total net position assets and the institution’s FASB component unit’s beginning of the year’s total net assets (if applicable)."
+Description,144,62434,F1N05,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Expendable net assets is the sum of the institution’s expendable net assets and the institution’s FASB component unit’s expendable net assets (if applicable). Includes all unrestricted and expendable restricted net assets. Excludes net assets to be invested in plant. 
+
+For the FASB component unit, includes all net assets without donor restriction and net assets with donor restriction – subject to time or purpose restriction. Excludes net investment in plant and net assets with donor restriction – subject to time or purpose restriction that will be invested in plant."
+Description,145,62436,F1N06,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Plant-related debt is the sum of the institution’s plant-related debt and the institution’s FASB component unit’s plant related debt. Includes all amounts borrowed for plant purposes from third parties and includes all notes, bonds and capital leases payable, regardless if the institution owes the obligation. Includes current and long-term portions of plant related debt, debt of the institution’s affiliated foundations, partnerships, other special purpose entities, and amounts owed to a system or state-financing agency representing debt issued on the institution’s behalf."
+Description,146,62438,F1N07,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Total expenses is the sum of the institution’s total expense and the institution’s FASB component unit’s total expense. Includes all operating and nonoperating expenses. For both the institution and its FASB component unit, investment losses are excluded."
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,67051,F1MHP,1,Yes -  pension information reported,1390,72.55
+Frequencies,2,67051,F1MHP,2,No,526,27.45
+Frequencies,3,67052,F1MHOP,1,Yes - postemployment benefits other than pension (OPEB) reported,1322,69
+Frequencies,4,67052,F1MHOP,2,No,594,31
+Frequencies,5,62376,F1FHA,1,Yes - (report endowment assets),1326,69.209999999999994
+Frequencies,6,62376,F1FHA,2,No,296,15.45
+Frequencies,7,62376,F1FHA,0,Not reported - (imputed endowment assets),1,0.05
+Frequencies,8,62376,F1FHA,-2,Not applicable,293,15.29
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,61386,F1A01,1486,232784504170,156651752.46971735,0,20882219000,Total current assets
+Statistics,2,65001,F1A31,1486,460811963412,310102263.3997308,0,43803907000,"Depreciable capital assets, net of depreciation"
+Statistics,3,61401,F1A04,1486,355151237082,238998140.7012113,-43116007,70306424620,Other noncurrent assets
+Statistics,4,61406,F1A05,1486,815963200494,549100404.10094213,0,82630478085,Total noncurrent assets
+Statistics,5,61411,F1A06,1486,1048747704664,705752156.57065952,0,95376023000,Total assets
+Statistics,6,61473,F1A19,1486,69664401519,46880485.544414535,0,7694282000,Deferred outflows of resources
+Statistics,7,61416,F1A07,1486,17854458109,12015113.128532974,0,2602168000,"Long-term debt, current portion"
+Statistics,8,61421,F1A08,1486,102101290255,68708809.054508746,0,12967330000,Other current liabilities
+Statistics,9,61426,F1A09,1486,119955748364,80723922.183041722,0,15569498000,Total current liabilities
+Statistics,10,61431,F1A10,1486,237937303764,160119316.12651414,0,32853607000,Long-term debt
+Statistics,11,61436,F1A11,1486,248913738004,167505880.21803498,0,45181795000,Other noncurrent liabilities
+Statistics,12,61441,F1A12,1486,486851041768,327625196.34454912,0,78035402000,Total noncurrent liabilities
+Statistics,13,61446,F1A13,1486,606806790132,408349118.52759087,0,93604900000,Total liabilities
+Statistics,14,61474,F1A20,1486,82953775670,55823536.790040374,-99693,9494694000,Deferred inflows of resources
+Statistics,15,61451,F1A14,1486,268428916260,180638570.83445492,-4028905549,13777714000,"Invested in capital assets, net of related debt"
+Statistics,16,61456,F1A15,1486,109494153811,73683818.176985189,-108926105,18535485752,Restricted-expendable
+Statistics,17,61461,F1A16,1486,78305841856,52695721.302826382,0,37586704707,Restricted-nonexpendable
+Statistics,18,61466,F1A17,1486,-27577371546,-18558123.516823687,-26782482000,5800526000,Unrestricted
+Statistics,19,61471,F1A18,1486,428651540381,288459986.79744279,-14337791899,51442624237,Net position
+Statistics,20,61491,F1A214,1486,34460293402,23189968.641991924,0,1719374000,Land  improvements - Ending balance
+Statistics,21,61511,F1A224,1486,36367584007,24473475.105652761,0,1062556688,Infrastructure - Ending balance
+Statistics,22,61531,F1A234,1486,615657669389,414305295.6857335,0,51314710000,Buildings - Ending balance
+Statistics,23,65006,F1A324,1486,124160882992,83553757.060565278,0,13925701000,"Equipment, including art and library collections - Ending balance"
+Statistics,24,61611,F1A274,1486,46151480661,31057523.997981157,0,6272755000,Construction in progress - Ending balance
+Statistics,25,61615,F1A27T4,1486,856797910451,576580020.49192464,0,74292281000,"Total for plant, property and equipment - Ending balance"
+Statistics,26,61631,F1A284,1486,392172084057,263911227.49461642,0,35935419000,Accumulated depreciation - Ending balance
+Statistics,27,65011,F1A334,1486,8187358401,5509662.4502018839,0,644204098,"Intangible assets , net of accumulated amortization - Ending balance"
+Statistics,28,65016,F1A344,1486,6844728531,4606143.0222072676,0,804848320,Other capital assets - Ending balance (New Aligned)
+Statistics,29,62281,F1D01,1487,500058084189,336286539.4680565,3857835,55660645000,Total revenues and other additions
+Statistics,30,62286,F1D02,1487,461046305702,310051315.19973099,3404377,55957381000,Total expenses and other deductions
+Statistics,31,62291,F1D03,1487,39011778487,26235224.268325489,-296736000,2325922594,Change in net position during the year
+Statistics,32,62296,F1D04,1486,388617893108,261519443.54508749,-15553893295,49116832909,Net position beginning of year
+Statistics,33,62301,F1D05,1487,1021868786,687201.60457296565,-267651120,1259075000,Adjustments to beginning net position
+Statistics,34,62306,F1D06,1486,428651540381,288459986.79744279,-14337791899,51442624237,Net position end of year
+Statistics,35,61636,F1B01,1916,81158934911,42358525.527661793,0,1889421000,"Tuition and fees, after deducting discounts and allowances"
+Statistics,36,61641,F1B02,1916,41209965414,21508332.679540709,0,1311909648,Federal operating grants and contracts
+Statistics,37,61646,F1B03,1916,11831758686,6175239.3977035489,0,175249991,State operating grants and contracts
+Statistics,38,61651,F1B04,1916,17223569919,8989337.1184759922,0,796171000,Local/private operating grants and contracts
+Statistics,39,65021,F1B04A,1916,3118452702,1627584.9175365344,0,706407962,Local operating grants and contracts
+Statistics,40,65026,F1B04B,1916,14105117217,7361752.2009394569,0,740294557,Private operating grants and contracts
+Statistics,41,61656,F1B05,1623,30441648290,18756406.833025262,0,1093204344,Sales and services of auxiliary enterprises
+Statistics,42,61661,F1B06,773,76600935662,99095647.686934024,0,7251435000,Sales and services of hospitals
+Statistics,43,65031,F1B26,1916,15485757760,8082337.035490605,0,3075811000,Sales and services of educational activities
+Statistics,44,61666,F1B07,773,2015286520,2607097.6972833117,0,1280339000,Independent operations
+Statistics,45,61671,F1B08,1916,16368455157,8543035.050626304,-13371402,1432274000,Other sources - operating
+Statistics,46,61676,F1B09,1916,292336312319,152576363.42327768,0,10749039000,Total operating revenues
+Statistics,47,61681,F1B10,1916,2481258094,1295019.8820459291,0,725227578,Federal appropriations
+Statistics,48,61686,F1B11,1916,91602806171,47809397.792797498,0,945279000,State appropriations
+Statistics,49,61691,F1B12,1916,17545370178,9157291.3246346563,0,402808975,"Local appropriations, education district taxes, and similar support"
+Statistics,50,61696,F1B13,1916,25954916659,13546407.442066805,0,313313000,Federal nonoperating grants
+Statistics,51,61701,F1B14,1916,7504728030,3916872.6670146137,0,180687187,State nonoperating grants
+Statistics,52,61706,F1B15,1916,651819667,340198.15605427977,0,114610436,Local nonoperating grants
+Statistics,53,61711,F1B16,1916,12006046781,6266203.9566805847,-5430527,483341000,"Gifts, including contributions from affiliated organizations"
+Statistics,54,61716,F1B17,1916,18366148241,9585672.3596033398,-16233926,3858032519,Investment income
+Statistics,55,61821,F1B18,1916,7908587278,4127655.1555323591,-5996000,356197396,Other nonoperating revenues
+Statistics,56,61826,F1B19,1916,184021681099,96044718.736430064,0,3968824740,Total nonoperating revenues
+Statistics,57,65033,F1B27,1916,476357993418,248621082.15970773,0,12422086000,Total operating and nonoperating revenues
+Statistics,58,61831,F1B20,1623,9017318408,5555957.1213801606,-11393353,342643000,Capital appropriations
+Statistics,59,61836,F1B21,1623,4927843699,3036256.1300061615,-15318163,261671000,Capital grants and gifts
+Statistics,60,61841,F1B22,1623,1920748172,1183455.4356130622,0,250691731,Additions to permanent endowments
+Statistics,61,61846,F1B23,1916,12460405424,6503343.1231732778,-41995347,3443321000,Other revenues and additions
+Statistics,62,61851,F1B24,1916,28326315703,14784089.615344469,0,3472630000,Total other revenues and additions
+Statistics,63,61856,F1B25,1916,504684309121,263405171.77505219,0,12610859000,Total all revenues and other additions
+Statistics,64,61861,F1C011,1916,122923976911,64156564.149791233,0,3269404699,Instruction - Current year total
+Statistics,65,61866,F1C012,1916,72575831278,37878826.345511481,0,1902590088,Instruction - Salaries and wages
+Statistics,66,61886,F1C021,1916,48624202927,25377976.475469727,0,1557745416,Research - Current year total
+Statistics,67,61891,F1C022,1916,21256465858,11094188.861169102,0,789723859,Research - Salaries and wages
+Statistics,68,61911,F1C031,1916,20220600917,10553549.53914405,-265000,1091550000,Public service - Current year total
+Statistics,69,61916,F1C032,1916,9027116540,4711438.6951983301,-28000,667619000,Public service - Salaries and wages
+Statistics,70,61936,F1C051,1916,37103456776,19365060.947807934,0,1269378143,Academic support - Current year total
+Statistics,71,61941,F1C052,1916,17703268074,9239701.5,0,625727274,Academic support - Salaries and wages
+Statistics,72,61961,F1C061,1916,25641242007,13382694.158141963,0,345414313,Student services - Current year total
+Statistics,73,61966,F1C062,1916,11969448868,6247102.7494780794,0,129909988,Student services - Salaries and wages
+Statistics,74,61986,F1C071,1916,42468325082,22165096.598121084,0,473790000,Institutional support - Current year total
+Statistics,75,61991,F1C072,1916,19044440613,9939687.1675365344,0,235124610,Institutional support - Salaries and wages
+Statistics,76,62046,F1C101,1916,19756556327,10311355.076722339,0,290776000,Scholarships and fellowships expenses -- Current year total
+Statistics,77,62071,F1C111,1623,37396084133,23041333.415280346,0,1168556648,Auxiliary enterprises -- Current year total
+Statistics,78,62076,F1C112,1623,10578401384,6517807.3838570546,0,453182132,Auxiliary enterprises -- Salaries and wages
+Statistics,79,62096,F1C121,773,72384748105,93641330.019404918,0,7336895000,Hospital services - Current year total
+Statistics,80,62101,F1C122,773,30211422390,39083340.737386808,0,3557337000,Hospital services - Salaries and wages
+Statistics,81,62121,F1C131,773,2249080532,2909547.9068564037,0,1439810000,Independent operations - Current year total
+Statistics,82,62126,F1C132,773,361416144,467549.99223803362,0,135718459,Independent operations - Salaries and wages
+Statistics,83,62146,F1C141,1916,36257511740,18923544.749478079,-88210550,5470569852,Other expenses  deductions - Current year total
+Statistics,84,62151,F1C142,1916,1598939207,834519.41910229647,0,91667739,Other expenses  deductions - Salaries and wages
+Statistics,85,62256,F1C191,1916,465025785457,242706568.61012527,0,12424128000,Total expenses and deductions - Current year total
+Statistics,86,62261,F1C192,1916,194326750356,101423147.36743215,0,5700208000,Total expenses  expenses and deductions - Salaries and wages
+Statistics,87,62266,F1C193,1916,67240061771,35093977.959812112,-44132615,4662923048,Total expenses and deductions - Employee fringe benefits
+Statistics,88,62268,F1C19OM,1916,26402672854,13780100.654488517,0,331627000,Total expenses and deductions - Operations and maintenance of plant
+Statistics,89,62271,F1C19DP,1916,28987486199,15129168.162317328,0,665299000,Total expenses  and deductions - Depreciation
+Statistics,90,65088,F1C19IN,1916,8644862157,4511932.232254697,-10607409,361883982,Total expenses deductions - Interest
+Statistics,91,62276,F1C19OT,1916,139423952120,72768242.233820453,0,4401048688,Total expenses and deductions - Other Natural Expenses and Deductions
+Statistics,92,67056,F1M01,1390,10900960670,7842417.7482014392,-105229106,3911073000,Pension expense
+Statistics,93,67061,F1M02,1390,118975233889,85593693.445323735,-85639987,5639140669,Net pension liability
+Statistics,94,67066,F1M03,1390,14579083618,10488549.365467627,-11766501,940953319,Deferred inflows of resources related to pension
+Statistics,95,67071,F1M04,1390,40123704339,28865974.344604317,-10163380,2655183815,Deferred outflows of resources related to pension
+Statistics,96,67076,F1M05,1322,-328077784,-248167.76399394855,-1025798530,751785000,Other postemployment benefit (OPEB) expense
+Statistics,97,67081,F1M06,1322,105131913176,79524896.502269283,-94930973,11326600405,Other postemployment benefit (OPEB) net  liability
+Statistics,98,67086,F1M07,1322,51759175576,39152175.170953102,-41210082,7800989030,Deferred inflows related to other postemployment benefit (OPEB)
+Statistics,99,67091,F1M08,1322,25539005606,19318461.124054462,-9184051,3266920443,Deferred outflows related to other postemployment benefit (OPEB)
+Statistics,100,62321,F1E01,1853,18212353359,9828577.0960604418,0,198477000,Pell grants (federal)
+Statistics,101,62326,F1E02,1853,3582916548,1933576.1187263897,0,95442744,Other federal grants
+Statistics,102,62331,F1E03,1853,9823516655,5301412.1181867244,0,218966081,Grants by state government
+Statistics,103,62336,F1E04,1853,206582301,111485.32164058284,0,37094588,Grants by local government
+Statistics,104,62341,F1E05,1853,5397616911,2912907.1295196977,0,290733000,Institutional grants from restricted resources
+Statistics,105,62346,F1E06,1853,20209006779,10906101.877495952,-354448,584658000,Institutional grants from unrestricted resources
+Statistics,106,62351,F1E07,1853,57431992553,30994059.661629789,0,915941000,Total gross scholarships and fellowships
+Statistics,107,62356,F1E08,1853,34816103791,18789046.838100377,0,603404000,Discounts and allowances applied to tuition and fees
+Statistics,108,62361,F1E09,1853,2950312200,1592181.4355099839,0,63905898,Discounts and allowances applied to sales & services of auxiliary enterprises
+Statistics,109,62366,F1E10,1853,37766415991,20381228.273610361,0,625165000,Total discounts and allowances
+Statistics,110,62371,F1E11,1853,19665576562,10612831.388019428,0,290776000,Net scholarships and fellowship expenses
+Statistics,111,62378,F1E12,1853,10673485460,5760110.8796546143,0,135725000,"Total
+ discounts and
+ allowances from Pell grants"
+Statistics,112,62380,F1E121,1853,9998851218,5396034.1165677281,0,131000000,"Discounts and
+ allowances from Pell grants applied to tuition and fees"
+Statistics,113,62382,F1E122,1853,674634242,364076.76308688615,0,24391225,Discounts and allowances from Pell grants applied to auxiliary enterprises
+Statistics,114,62384,F1E13,1853,1740584855,939333.43497031846,0,112601000,Total discounts and allowances from other federal grants
+Statistics,115,62386,F1E131,1853,1610289982,869017.79924446845,0,104732431,Discounts and allowances from other federal grants applied to tuition and fees
+Statistics,116,62388,F1E132,1853,130294873,70315.635725849977,0,13715108,Discounts and allowances from other federal grants applied to auxiliary enterprises
+Statistics,117,62390,F1E14,1853,6500629191,3508164.7010253645,0,165151466,Total discounts and allowances from state government grants
+Statistics,118,62392,F1E141,1853,6160867973,3324807.3248785753,0,165151466,Discounts and allowances from state government grants applied to tuition and fees
+Statistics,119,62394,F1E142,1853,339761218,183357.376146789,0,20963906,Discounts and allowances from state government grants applied to auxiliary enterprises
+Statistics,120,62396,F1E15,1853,214296881,115648.61359956827,0,26765526,Discounts and allowances from local government grants
+Statistics,121,62398,F1E151,1853,203018103,109561.84727468969,0,26765526,Discounts and allowances from local government grants applied to tuition and fees
+Statistics,122,62400,F1E152,1853,11278778,6086.7663248785757,0,1698841,"Discounts and allowances from local government grants applied to auxiliary
+ enterprises"
+Statistics,123,62402,F1E16,1853,2681129409,1446912.7949271451,0,136697000,Total discounts and allowances from endowments and gifts
+Statistics,124,62404,F1E161,1853,2448639902,1321446.2504047491,0,136697000,Discounts and allowances from endowments and gifts applied to tuition and fees
+Statistics,125,62406,F1E162,1853,232489507,125466.54452239611,0,19107829,Discounts and allowances from endowments and gifts applied to auxiliary enterprises
+Statistics,126,62408,F1E17,1853,15956290195,8611057.8494333513,0,467562000,"Total discounts and
+ allowances from other institutional sources"
+Statistics,127,62410,F1E171,1853,14394436613,7768179.499730167,0,451287000,"Discounts and
+ allowances from other institutional sources applied to tuition and fees"
+Statistics,128,62412,F1E172,1853,1561853582,842878.34970318398,0,51292216,Discounts and allowances from other institutional sources applied to auxiliary enterprises
+Statistics,129,62311,F1H01,1328,281058689694,211640579.58885542,0,41923705191,Value of endowment assets at the beginning of the fiscal year
+Statistics,130,62316,F1H02,1328,297379691015,223930490.22213855,0,43878230672,Value of endowment assets at the end of the fiscal year
+Statistics,131,62414,F1H03,1328,16321001321,12289910.633283133,-117018432,2208324000,Change in value of endowment net assets
+Statistics,132,62416,F1H03A,1328,7935614163,5975613.0745481923,0,368933434,New gifts and additions
+Statistics,133,62418,F1H03B,1328,15023155701,11312617.244728915,-44270000,3464252538,Endowment net investment return
+Statistics,134,62420,F1H03C,1328,-8033832528,-6049572.6867469875,-461628000,0,Spending distribution for current use
+Statistics,135,62422,F1H03D,1328,1396063985,1051253.000753012,-1514126753,2208324000,Other changes in value of endowment net assets
+Statistics,136,62426,F1N01,1485,22820410620,15367279.878787879,-966514000,2418664321,Operating income (Loss) + net nonoperating revenues (expenses)
+Statistics,137,62428,F1N02,1485,483493328796,325584733.19595957,0,51427704000,Operating revenues + nonoperating revenues
+Statistics,138,62430,F1N03,1485,49931915375,33624185.437710434,-491112000,6030154000,Change in net position
+Statistics,139,62432,F1N04,1485,622239292944,419016358.88484848,-1735549901,64800572644,Net position
+Statistics,140,62434,F1N05,1485,301186831769,202819415.33265993,-502444720,29688623277,Expendable net assets
+Statistics,141,62436,F1N06,1485,224165671891,150953314.40471381,0,20642819000,Plant-related debt
+Statistics,142,62438,F1N07,1485,463608294174,312194137.4909091,0,52394218000,Total expenses
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

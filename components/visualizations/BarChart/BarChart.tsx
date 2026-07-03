@@ -30,12 +30,10 @@ type Props = {
   subtitle?: string;
   defaultColor?: string;
   barSize?: number;
-  /** Pixel height of the SVG chart area. */
+  /** Pixel height of the SVG chart area. Auto-sized when data has groups so each row stays readable. */
   height?: number;
-  /** Optional fixed width for the chart container (responsive up to this size). */
   width?: number;
   orientation?: 'horizontal' | 'vertical';
-  /** Applies `article__chart--contained` max-width when true. */
   contained?: boolean;
 };
 
@@ -53,7 +51,7 @@ export function BarChart({
   subtitle,
   defaultColor = PRIMARY,
   barSize = 20,
-  height = 500,
+  height: heightProp,
   width: widthProp,
   orientation = 'horizontal',
   contained = false,
@@ -66,6 +64,20 @@ export function BarChart({
       .filter((g): g is string => typeof g === 'string' && g.length > 0);
     return [...new Set(groups)];
   }, [data]);
+
+  const isGrouped = groupDomain.length > 0;
+
+  const labelDomain = useMemo(() => [...new Set(data.map((d) => d.label))], [data]);
+
+  // Auto-size height for horizontal grouped charts so every bar gets enough room.
+  const height = useMemo(() => {
+    if (heightProp != null) return heightProp;
+    if (orientation === 'horizontal') {
+      const perRow = isGrouped ? groupDomain.length * 22 + 20 : 36;
+      return Math.max(320, labelDomain.length * perRow + 60);
+    }
+    return 480;
+  }, [heightProp, orientation, isGrouped, groupDomain.length, labelDomain.length]);
 
   const groupColorByLabel = useMemo(() => {
     const map = new Map<string, string>();
@@ -84,11 +96,7 @@ export function BarChart({
   }, [groupDomain, groupColorByLabel]);
 
   const barFill = (d: BarDatum): string => {
-    if (
-      d.group != null &&
-      typeof d.group === 'string' &&
-      d.group.length > 0
-    ) {
+    if (d.group != null && typeof d.group === 'string' && d.group.length > 0) {
       return groupColorByLabel.get(d.group) ?? d.color ?? defaultColor;
     }
     return d.color ?? defaultColor;
@@ -97,25 +105,37 @@ export function BarChart({
   const margin = useMemo(
     () =>
       orientation === 'horizontal'
-        ? { top: 8, right: 40, bottom: 32, left: 132 }
-        : { top: 8, right: 40, bottom: 76, left: 56 },
+        ? { top: 8, right: 40, bottom: 32, left: 156 }
+        : { top: 8, right: 40, bottom: 92, left: 56 },
     [orientation],
   );
 
   const leftCategoryLabelWidth = Math.max(56, margin.left - 20);
 
-  const innerWidth = width - margin.left - margin.right;
-  const innerHeight = height - margin.top - margin.bottom;
+  const innerWidth = Math.max(0, width - margin.left - margin.right);
+  const innerHeight = Math.max(0, height - margin.top - margin.bottom);
   const maxValue = data.length > 0 ? Math.max(...data.map((d) => d.value)) : 0;
 
-  const horizontalBandScale = useMemo(
+  // Outer band (institutions) — uses unique labels so duplicates don't collide.
+  const horizontalOuterBand = useMemo(
     () =>
       scaleBand({
-        domain: data.map((d) => d.label),
+        domain: labelDomain,
         range: [0, innerHeight],
-        padding: 0.35,
+        padding: isGrouped ? 0.18 : 0.35,
       }),
-    [data, innerHeight]
+    [labelDomain, innerHeight, isGrouped],
+  );
+
+  // Inner band (groups within an institution).
+  const horizontalInnerBand = useMemo(
+    () =>
+      scaleBand({
+        domain: isGrouped ? groupDomain : ['_'],
+        range: [0, horizontalOuterBand.bandwidth()],
+        padding: isGrouped ? 0.18 : 0,
+      }),
+    [groupDomain, horizontalOuterBand, isGrouped],
   );
 
   const horizontalLinearScale = useMemo(
@@ -125,17 +145,27 @@ export function BarChart({
         range: [0, innerWidth],
         nice: true,
       }),
-    [innerWidth, maxValue]
+    [innerWidth, maxValue],
   );
 
-  const verticalBandScale = useMemo(
+  const verticalOuterBand = useMemo(
     () =>
       scaleBand({
-        domain: data.map((d) => d.label),
+        domain: labelDomain,
         range: [0, innerWidth],
-        padding: 0.35,
+        padding: isGrouped ? 0.18 : 0.35,
       }),
-    [data, innerWidth]
+    [labelDomain, innerWidth, isGrouped],
+  );
+
+  const verticalInnerBand = useMemo(
+    () =>
+      scaleBand({
+        domain: isGrouped ? groupDomain : ['_'],
+        range: [0, verticalOuterBand.bandwidth()],
+        padding: isGrouped ? 0.18 : 0,
+      }),
+    [groupDomain, verticalOuterBand, isGrouped],
   );
 
   const verticalLinearScale = useMemo(
@@ -145,22 +175,14 @@ export function BarChart({
         range: [innerHeight, 0],
         nice: true,
       }),
-    [innerHeight, maxValue]
+    [innerHeight, maxValue],
   );
 
-  const {
-    showTooltip,
-    hideTooltip,
-    tooltipData,
-    tooltipLeft,
-    tooltipTop,
-    tooltipOpen,
-  } = useTooltip<BarDatum>();
+  const { showTooltip, hideTooltip, tooltipData, tooltipLeft, tooltipTop, tooltipOpen } =
+    useTooltip<BarDatum>();
 
   const containerStyle =
-    widthProp != null
-      ? ({ width: widthProp, maxWidth: '100%' } as const)
-      : undefined;
+    widthProp != null ? ({ width: widthProp, maxWidth: '100%' } as const) : undefined;
 
   const rootClassName = [
     'barChart',
@@ -168,19 +190,11 @@ export function BarChart({
   ].join(' ');
 
   return (
-    <div
-      ref={parentRef}
-      className={rootClassName}
-      style={containerStyle}
-    >
+    <div ref={parentRef} className={rootClassName} style={containerStyle}>
       {(title ?? subtitle) && (
         <>
-          {title ? (
-            <h3 className="article__chartTitle">{title}</h3>
-          ) : null}
-          {subtitle ? (
-            <p className="article__chartSubtitle">{subtitle}</p>
-          ) : null}
+          {title ? <h3 className="article__chartTitle">{title}</h3> : null}
+          {subtitle ? <p className="article__chartSubtitle">{subtitle}</p> : null}
         </>
       )}
       {derivedLegendItems && derivedLegendItems.length > 0 ? (
@@ -198,16 +212,20 @@ export function BarChart({
                     stroke={GRID_COLOR}
                     strokeDasharray="3 3"
                   />
-                  {data.map((d) => {
-                    const barWidth = horizontalLinearScale(d.value);
-                    const barY = horizontalBandScale(d.label) ?? 0;
-                    const bandHeight = horizontalBandScale.bandwidth();
+                  {data.map((d, i) => {
+                    const outerY = horizontalOuterBand(d.label);
+                    if (outerY == null) return null;
+                    const innerKey = isGrouped ? (d.group as string) : '_';
+                    const innerY = horizontalInnerBand(innerKey);
+                    if (innerY == null) return null;
+                    const bandHeight = horizontalInnerBand.bandwidth();
                     const clampedBarSize = Math.min(barSize, bandHeight);
+                    const barWidth = horizontalLinearScale(d.value);
                     return (
                       <Bar
-                        key={d.label}
+                        key={`${d.label}__${innerKey}__${i}`}
                         x={0}
-                        y={barY + (bandHeight - clampedBarSize) / 2}
+                        y={outerY + innerY + (bandHeight - clampedBarSize) / 2}
                         width={barWidth}
                         height={clampedBarSize}
                         fill={barFill(d)}
@@ -226,18 +244,12 @@ export function BarChart({
                     );
                   })}
                   <AxisLeft
-                    scale={horizontalBandScale}
+                    scale={horizontalOuterBand}
                     hideTicks
                     hideAxisLine
-                    numTicks={data.length}
+                    numTicks={labelDomain.length}
                     tickLabelProps={{ fill: AXIS_COLOR, fontSize: 12 }}
-                    tickComponent={({
-                      formattedValue,
-                      x,
-                      y,
-                      dx,
-                      dy,
-                    }) => (
+                    tickComponent={({ formattedValue, x, y, dx, dy }) => (
                       <Text
                         className="barChart__axisTickLabel"
                         x={x}
@@ -276,18 +288,21 @@ export function BarChart({
                     stroke={GRID_COLOR}
                     strokeDasharray="3 3"
                   />
-                  {data.map((d) => {
-                    const barX = verticalBandScale(d.label) ?? 0;
-                    const bandWidth = verticalBandScale.bandwidth();
+                  {data.map((d, i) => {
+                    const outerX = verticalOuterBand(d.label);
+                    if (outerX == null) return null;
+                    const innerKey = isGrouped ? (d.group as string) : '_';
+                    const innerX = verticalInnerBand(innerKey);
+                    if (innerX == null) return null;
+                    const bandWidth = verticalInnerBand.bandwidth();
                     const clampedBarSize = Math.min(barSize, bandWidth);
-                    const centeredBarX =
-                      barX + (bandWidth - clampedBarSize) / 2;
+                    const barX = outerX + innerX + (bandWidth - clampedBarSize) / 2;
                     const barY = verticalLinearScale(d.value);
                     const barHeight = innerHeight - barY;
                     return (
                       <Bar
-                        key={d.label}
-                        x={centeredBarX}
+                        key={`${d.label}__${innerKey}__${i}`}
+                        x={barX}
                         y={barY}
                         width={clampedBarSize}
                         height={barHeight}
@@ -319,23 +334,14 @@ export function BarChart({
                     }}
                   />
                   <AxisBottom
-                    scale={verticalBandScale}
+                    scale={verticalOuterBand}
                     top={innerHeight}
                     hideTicks
                     hideAxisLine
-                    numTicks={data.length}
+                    numTicks={labelDomain.length}
                     tickLabelProps={{ fill: AXIS_COLOR, fontSize: 11 }}
-                    tickComponent={({
-                      formattedValue,
-                      x,
-                      y,
-                      dx,
-                      dy,
-                    }) => {
-                      const labelWidth = Math.max(
-                        24,
-                        verticalBandScale.bandwidth() - 6,
-                      );
+                    tickComponent={({ formattedValue, x, y, dx, dy }) => {
+                      const labelWidth = Math.max(24, verticalOuterBand.bandwidth() - 6);
                       return (
                         <Text
                           className="barChart__axisTickLabel"
@@ -374,7 +380,10 @@ export function BarChart({
                 boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
               }}
             >
-              <p className="barChart__tooltipLabel">{tooltipData.label}</p>
+              <p className="barChart__tooltipLabel">
+                {tooltipData.label}
+                {tooltipData.group ? ` · ${tooltipData.group}` : ''}
+              </p>
               <p>{formatTickValue(tooltipData.value)}</p>
             </TooltipWithBounds>
           )}

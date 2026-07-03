@@ -1,0 +1,275 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File Documentation for the Completers Data File, 2021-22",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,,,,,,,,,,
+Introduction,3,Filename,C2022_B
+Introduction,4,  Provisional release:,September 2023
+Introduction,5,Filename,C2022_B_RV
+Introduction,6,  Final/revised release:,August 2024
+Introduction,7,,
+Introduction,8,Overview,"This file contains the number of students who completed any degree or certificate by race/ethnicity and gender. Data covers all awards granted between July 1, 2021 and June 30, 2022. This file contains one record per institution. Each record is uniquely defined by the variables IPEDS ID (UNITID).  Each record will contain the total number of students,  men and women, and the total number of students for men and women for all nine race/ethnicity categories. Beginning with 2021-22, variables containing information on students that do not fit the IPEDS binary gender (men/women) categories are available. ",,,,,,,,
+Introduction,9,Note:,"Provisional release data have undergone all NCES data quality control procedures. Data are imputed for nonresponding institutions. These data are used for First Look (Provisional Data) Web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. The final release data can be used when the most up to date data are required; however, these data may not match First Look Web tables based on provisional data. ",,,,,,,,
+Introduction,10
+Introduction,11,Contents of spreadsheet,,,,,,,,,
+Introduction,12,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont.) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,13,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,14,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file.  (Provisional release)",,,,,,,,
+Introduction,15,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file.  (Final/revised release)",,,,,,,,
+Introduction,16,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+Introduction,17
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,33100,CSTOTLT,N,6,Cont,XCSTOTLT,Grand total
+varlist,3,33101,CSTOTLM,N,6,Cont,XCSTOTLM,Grand total men
+varlist,4,33102,CSTOTLW,N,6,Cont,XCSTOTLW,Grand total women
+varlist,5,33110,CSAIANT,N,6,Cont,XCSAIANT,American Indian or Alaska Native total
+varlist,6,33111,CSAIANM,N,6,Cont,XCSAIANM,American Indian or Alaska Native men
+varlist,7,33112,CSAIANW,N,6,Cont,XCSAIANW,American Indian or Alaska Native women
+varlist,8,33120,CSASIAT,N,6,Cont,XCSASIAT,Asian total
+varlist,9,33121,CSASIAM,N,6,Cont,XCSASIAM,Asian men
+varlist,10,33122,CSASIAW,N,6,Cont,XCSASIAW,Asian women
+varlist,11,33130,CSBKAAT,N,6,Cont,XCSBKAAT,Black or African American total
+varlist,12,33131,CSBKAAM,N,6,Cont,XCSBKAAM,Black or African American men
+varlist,13,33132,CSBKAAW,N,6,Cont,XCSBKAAW,Black or African American women
+varlist,14,33140,CSHISPT,N,6,Cont,XCSHISPT,Hispanic or Latino total
+varlist,15,33141,CSHISPM,N,6,Cont,XCSHISPM,Hispanic or Latino men
+varlist,16,33142,CSHISPW,N,6,Cont,XCSHISPW,Hispanic or Latino women
+varlist,17,33150,CSNHPIT,N,6,Cont,XCSNHPIT,Native Hawaiian or Other Pacific Islander total
+varlist,18,33151,CSNHPIM,N,6,Cont,XCSNHPIM,Native Hawaiian or Other Pacific Islander men
+varlist,19,33152,CSNHPIW,N,6,Cont,XCSNHPIW,Native Hawaiian or Other Pacific Islander women
+varlist,20,33160,CSWHITT,N,6,Cont,XCSWHITT,White total
+varlist,21,33161,CSWHITM,N,6,Cont,XCSWHITM,White men
+varlist,22,33162,CSWHITW,N,6,Cont,XCSWHITW,White women
+varlist,23,33170,CS2MORT,N,6,Cont,XCS2MORT,Two or more races total
+varlist,24,33171,CS2MORM,N,6,Cont,XCS2MORM,Two or more races men
+varlist,25,33172,CS2MORW,N,6,Cont,XCS2MORW,Two or more races women
+varlist,26,33180,CSUNKNT,N,6,Cont,XCSUNKNT,Race/ethnicity unknown total
+varlist,27,33181,CSUNKNM,N,6,Cont,XCSUNKNM,Race/ethnicity unknown men
+varlist,28,33182,CSUNKNW,N,6,Cont,XCSUNKNW,Race/ethnicity unknown women
+varlist,29,33190,CSNRALT,N,6,Cont,XCSNRALT,U.S. Nonresident total
+varlist,30,33191,CSNRALM,N,6,Cont,XCSNRALM,U.S. Nonresident men
+varlist,31,33192,CSNRALW,N,6,Cont,XCSNRALW,U.S. Nonresident women
+varlist,32,35010,CSGUUGUN,N,6,Cont,XCSGUUGU,Undergraduate gender unknown
+varlist,33,35015,CSGUUGAG,N,6,Cont,XCSGUUGA,Undergraduate another gender
+varlist,34,35020,CSGUUGTT,N,6,Cont,XCSGUUGT,Undergraduate gender unknown and another gender
+varlist,35,35025,CSGUGUN,N,6,Cont,XCSGUGUN,Graduate gender unknown
+varlist,36,35030,CSGUGAG,N,6,Cont,XCSGUGAG,Graduate another gender
+varlist,37,35035,CSGUGTOT,N,6,Cont,XCSGUGTT,Graduate gender unknown and another gender
+varlist,38,35040,CSGUTOTUN,N,6,Cont,XCSGUTTUN,Total gender unknown
+varlist,39,35045,CSGUTOTAG,N,6,Cont,XCSGUTTAG,Total another gender
+varlist,40,35050,CSGUTOT,N,6,Cont,XCSGUTOT,Total of gender unknown and  another gender
+varlist,41,35055,CSGUKN,N,6,Cont,XCSGUKN,Total gender reported as one of the mutually exclusive binary categories (Men/Women)
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,33100,CSTOTLT,"Number of students receiving awards/degrees conferred between July 1, 2021 and June 30, 2022 to all recipients, across all race/ethnicities and both genders"
+Description,3,33101,CSTOTLM,"Number of men receiving awards/degrees  conferred between July 1, 2021 and June 30, 2022"
+Description,4,33102,CSTOTLW,"Number of women receiving awards/degrees  conferred between July 1, 2021 and June 30, 2022"
+Description,5,33110,CSAIANT,"Number of American Indian or Alaska Native men and women receiving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,6,33111,CSAIANM,"Number of American Indian or Alaska Native men receiving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,7,33112,CSAIANW,"Number of American Indian or Alaska Native women receiving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,8,33120,CSASIAT,"Number of Asian men and women receving awards/degrees conferred between July 1, 2021 and June 30, 2022.
+
+ Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,9,33121,CSASIAM,"Number of Asian men receving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,10,33122,CSASIAW,"Number of Asian women receving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,11,33130,CSBKAAT,"Number of Black or African American men and women receving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,12,33131,CSBKAAM,"Number of Black or African American men receving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,13,33132,CSBKAAW,"Number of Black or African American women receving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,14,33140,CSHISPT,"Number of Hispanic or Latino men and women receiving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,15,33141,CSHISPM,"Number of Hispanic or Latino men receiving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,16,33142,CSHISPW,"Number of Hispanic or Latino women receiving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,17,33150,CSNHPIT,"Number of Native Hawaiian or Other Pacific Islanders men and women receivng awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,18,33151,CSNHPIM,"Number of Native Hawaiian or Other Pacific Islanders men receivng awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,19,33152,CSNHPIW,"Number of Native Hawaiian or Other Pacific Islanders women receivng awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,20,33160,CSWHITT,"Number of White men and women receiving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,21,33161,CSWHITM,"Number of White men receiving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,22,33162,CSWHITW,"Number of White women receiving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,23,33170,CS2MORT,"Number of  men and women of two or more races receiving awards/degrees conferred between July 1, 2021 and June 30, 2022. Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,24,33171,CS2MORM,"Number of  men of two or more races receiving awards/degrees conferred between July 1, 2021 and June 30, 2022.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,25,33172,CS2MORW,"Number of women of two or more races receiving awards/degrees conferred between July 1, 2021 and June 30, 2022. 
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,26,33180,CSUNKNT,"Number of race/ethnicity unknown men and women receiving awards/degrees conferred between July 1, 2021 and June 30, 2022.
+                                                        
+Race/ethnicity unknown - Category used to classify students or employees whose race/ethnicity is not known, and institutions are unable to place them in one of the specified racial/ethnic categories."
+Description,27,33181,CSUNKNM,"Number of race/ethnicity unknown men receiving awards/degrees conferred between July 1, 2021 and June 30, 2022.
+                                                        
+Race/ethnicity unknown - Category used to classify students or employees whose race/ethnicity is not known, and institutions are unable to place them in one of the specified racial/ethnic categories."
+Description,28,33182,CSUNKNW,"Number of race/ethnicity unknown women receiving awards/degrees conferred between July 1, 2021 and June 30, 2022.
+                                                        
+Race/ethnicity unknown - Category used to classify students or employees whose race/ethnicity is not known, and institutions are unable to place them in one of the specified racial/ethnic categories."
+Description,29,33190,CSNRALT,"Number of U.S. Nonresident men and women receiving awards/degrees  conferred between July 1, 2021 and June 30, 2022. 
+
+U.S. Nonresident  - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely."
+Description,30,33191,CSNRALM,"Number of U.S. Nonresident men receiving awards/degrees  conferred between July 1, 2021 and June 30, 2022. 
+
+U.S. Nonresident  - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely."
+Description,31,33192,CSNRALW,"Number of U.S. Nonresident women receiving awards/degrees  conferred between July 1, 2021 June 30, 2022. 
+
+U.S. Nonresident  - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely."
+Description,32,35010,CSGUUGUN,"Number of gender unknown students receiving undergraduate awards/degrees conferred between July 1, 2021 and June 30, 2022.
+
+The ‘gender unknown’ category is the number of students for whom the institution does not know a gender."
+Description,33,35015,CSGUUGAG,"Number of students identified as another gender receiving undergraduate awards/degrees conferred between July 1, 2021 and June 30, 2022.
+
+Another gender (i.e., gender information is known but does not fall into either of the mutually exclusive binary categories provided [Men/Women]).
+
+This variable is left missing or blank for institutions who indicated that they were not able to report another gender for this data collection.  For institutions who indicated that they were able to report another gender for this data collection, but no students identified as another gender this variable/cell is zero"
+Description,34,35020,CSGUUGTT,"Number of  gender unknown and students identified as another gender receiving undergraduate awards/degrees conferred between July 1, 2021 and June 30, 2022.
+
+Gender unknown and another gender - The number of students the institution allocated to a binary gender category (Men/Women) because their gender was unknown or identified as another gender than the provided categories."
+Description,35,35025,CSGUGUN,"Number of gender unknown students receiving graduate awards/degrees conferred between July 1, 2021 and June 30, 2022.
+
+The gender unknown’ category is the number of  students for whom the institution does not know a gender."
+Description,36,35030,CSGUGAG,"Number of students identified as another gender receiving graduate awards/degrees conferred between July 1, 2021 and June 30, 2022.
+
+Another gender (i.e., gender information is known but does not fall into either of the mutually exclusive binary categories provided [Men/Women]).
+
+This variable is left missing or blank for institutions who indicated that they were not able to report another gender for this data collection.  For institutions who indicated that they were able to report another gender for this data collection, but no students identified as another gender this variable/cell is zero"
+Description,37,35035,CSGUGTOT,"Number of  gender unknown and students identified as another gender receiving graduate awards/degrees conferred between July 1, 2021 and June 30, 2022.
+
+Gender unknown and another gender - The number of students the institution allocated to a binary gender category (Men/Women) because their gender was unknown or identified as another gender than the provided categories."
+Description,38,35040,CSGUTOTUN,"Number of gender unknown students receiving awards/degrees conferred between July 1, 2021 and June 30, 2022.
+
+The gender unknown’ category is the number of  students for whom the institution does not know a gender."
+Description,39,35045,CSGUTOTAG,"Number of students identified as another gender receiving awards/degrees conferred between July 1, 2021 and June 30, 2022.
+
+Another gender (i.e., gender information is known but does not fall into either of the mutually exclusive binary categories provided [Men/Women]).
+
+This variable is left missing or blank for institutions who indicated that they were not able to report another gender for this data collection.  For institutions who indicated that they were able to report another gender for this data collection, but no students identified as another gender this variable/cell is zero"
+Description,40,35050,CSGUTOT,"Number of  gender unknown and students identified as another gender receiving awards/degrees conferred between July 1, 2021 and June 30, 2022.
+
+Gender unknown and another gender - The number of students the institution allocated to a binary gender category (Men/Women) because their gender was unknown or identified as another gender than the provided categories."
+Description,41,35055,CSGUKN,"Number of  students for whom gender is known and falls into one of the mutually exclusive binary categories [Men/Women] receiving awards/degrees conferred between July 1, 2021 and June 30, 2022."
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,33100,CSTOTLT,6005,4819751,802.62298084929228,1,43908,Grand total
+Statistics,2,33101,CSTOTLM,6005,1908528,317.82314737718571,0,13718,Grand total men
+Statistics,3,33102,CSTOTLW,6005,2911223,484.79983347210657,0,30190,Grand total women
+Statistics,4,33110,CSAIANT,6005,28304,4.7134054954204831,0,566,American Indian or Alaska Native total
+Statistics,5,33111,CSAIANM,6005,10228,1.7032472939217318,0,328,American Indian or Alaska Native men
+Statistics,6,33112,CSAIANW,6005,18076,3.0101582014987511,0,373,American Indian or Alaska Native women
+Statistics,7,33120,CSASIAT,6005,323761,53.91523730224813,0,3856,Asian total
+Statistics,8,33121,CSASIAM,6005,137652,22.922897585345545,0,1873,Asian men
+Statistics,9,33122,CSASIAW,6005,186109,30.992339716902581,0,2002,Asian women
+Statistics,10,33130,CSBKAAT,6005,550195,91.622814321398835,0,5504,Black or African American total
+Statistics,11,33131,CSBKAAM,6005,179629,29.913238967527061,0,1935,Black or African American men
+Statistics,12,33132,CSBKAAW,6005,370566,61.70957535387177,0,4442,Black or African American women
+Statistics,13,33140,CSHISPT,6005,859793,143.17951706910907,0,10626,Hispanic or Latino total
+Statistics,14,33141,CSHISPM,6005,317070,52.80099916736053,0,4402,Hispanic or Latino men
+Statistics,15,33142,CSHISPW,6005,542723,90.378517901748538,0,6510,Hispanic or Latino women
+Statistics,16,33150,CSNHPIT,6005,12453,2.0737718567860117,0,355,Native Hawaiian or Other Pacific Islander total
+Statistics,17,33151,CSNHPIM,6005,4886,0.8136552872606162,0,131,Native Hawaiian or Other Pacific Islander men
+Statistics,18,33152,CSNHPIW,6005,7567,1.2601165695253955,0,224,Native Hawaiian or Other Pacific Islander women
+Statistics,19,33160,CSWHITT,6005,2413282,401.87876769358866,0,28400,White total
+Statistics,20,33161,CSWHITM,6005,974616,162.30074937552041,0,8630,White men
+Statistics,21,33162,CSWHITW,6005,1438666,239.57801831806827,0,19770,White women
+Statistics,22,33170,CS2MORT,6005,166494,27.725895087427144,0,1074,Two or more races total
+Statistics,23,33171,CS2MORM,6005,64518,10.744046627810159,0,423,Two or more races men
+Statistics,24,33172,CS2MORW,6005,101976,16.981848459616987,0,683,Two or more races women
+Statistics,25,33180,CSUNKNT,6005,206759,34.43114071606994,0,8040,Race/ethnicity unknown total
+Statistics,26,33181,CSUNKNM,6005,84493,14.070441298917569,0,2706,Race/ethnicity unknown men
+Statistics,27,33182,CSUNKNW,6005,122266,20.360699417152372,0,5334,Race/ethnicity unknown women
+Statistics,28,33190,CSNRALT,6005,258710,43.082431307243965,0,5606,U.S. Nonresident total
+Statistics,29,33191,CSNRALM,6005,135436,22.553871773522065,0,2659,U.S. Nonresident men
+Statistics,30,33192,CSNRALW,6005,123274,20.5285595337219,0,3020,U.S. Nonresident women
+Statistics,31,35010,CSGUUGUN,6005,46439,7.7333888426311406,0,4257,Undergraduate gender unknown
+Statistics,32,35015,CSGUUGAG,895,2032,2.2703910614525138,0,118,Undergraduate another gender
+Statistics,33,35020,CSGUUGTT,6005,48471,8.0717735220649462,0,4257,Undergraduate gender unknown and another gender
+Statistics,34,35025,CSGUGUN,6005,14042,2.3383846794338052,0,2811,Graduate gender unknown
+Statistics,35,35030,CSGUGAG,406,492,1.2118226600985222,0,33,Graduate another gender
+Statistics,36,35035,CSGUGTOT,6005,14534,2.4203164029975022,0,2811,Graduate gender unknown and another gender
+Statistics,37,35040,CSGUTOTUN,6005,60481,10.071773522064946,0,7068,Total gender unknown
+Statistics,38,35045,CSGUTOTAG,985,2524,2.5624365482233502,0,127,Total another gender
+Statistics,39,35050,CSGUTOT,6005,63005,10.492089925062448,0,7068,Total of gender unknown and  another gender
+Statistics,40,35055,CSGUKN,6005,4756746,792.13089092422979,0,43908,Total gender reported as one of the mutually exclusive binary categories (Men/Women)
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,33100,CSTOTLT,6005,4819782,802.62814321398832,1,43908,Grand total
+StatisticsRV,2,33101,CSTOTLM,6005,1908552,317.82714404662784,0,13718,Grand total men
+StatisticsRV,3,33102,CSTOTLW,6005,2911230,484.80099916736054,0,30190,Grand total women
+StatisticsRV,4,33110,CSAIANT,6005,28306,4.7137385512073271,0,566,American Indian or Alaska Native total
+StatisticsRV,5,33111,CSAIANM,6005,10227,1.7030807660283098,0,328,American Indian or Alaska Native men
+StatisticsRV,6,33112,CSAIANW,6005,18079,3.0106577851790175,0,373,American Indian or Alaska Native women
+StatisticsRV,7,33120,CSASIAT,6005,323784,53.919067443796834,0,3856,Asian total
+StatisticsRV,8,33121,CSASIAM,6005,137665,22.925062447960034,0,1873,Asian men
+StatisticsRV,9,33122,CSASIAW,6005,186119,30.994004995836804,0,2003,Asian women
+StatisticsRV,10,33130,CSBKAAT,6005,550276,91.636303080766027,0,5504,Black or African American total
+StatisticsRV,11,33131,CSBKAAM,6005,179644,29.915736885928393,0,1935,Black or African American men
+StatisticsRV,12,33132,CSBKAAW,6005,370632,61.720566194837637,0,4442,Black or African American women
+StatisticsRV,13,33140,CSHISPT,6005,859806,143.18168193172357,0,10626,Hispanic or Latino total
+StatisticsRV,14,33141,CSHISPM,6005,317081,52.802830974188176,0,4402,Hispanic or Latino men
+StatisticsRV,15,33142,CSHISPW,6005,542725,90.378850957535391,0,6510,Hispanic or Latino women
+StatisticsRV,16,33150,CSNHPIT,6005,12451,2.0734388009991673,0,355,Native Hawaiian or Other Pacific Islander total
+StatisticsRV,17,33151,CSNHPIM,6005,4884,0.81332223147377181,0,131,Native Hawaiian or Other Pacific Islander men
+StatisticsRV,18,33152,CSNHPIW,6005,7567,1.2601165695253955,0,224,Native Hawaiian or Other Pacific Islander women
+StatisticsRV,19,33160,CSWHITT,6005,2413360,401.89175686927558,0,28400,White total
+StatisticsRV,20,33161,CSWHITM,6005,974700,162.31473771856787,0,8630,White men
+StatisticsRV,21,33162,CSWHITW,6005,1438660,239.57701915070774,0,19770,White women
+StatisticsRV,22,33170,CS2MORT,6005,166483,27.724063280599502,0,1074,Two or more races total
+StatisticsRV,23,33171,CS2MORM,6005,64510,10.742714404662781,0,423,Two or more races men
+StatisticsRV,24,33172,CS2MORW,6005,101973,16.981348875936721,0,683,Two or more races women
+StatisticsRV,25,33180,CSUNKNT,6005,206596,34.40399666944213,0,8040,Race/ethnicity unknown total
+StatisticsRV,26,33181,CSUNKNM,6005,84405,14.055786844296419,0,2706,Race/ethnicity unknown men
+StatisticsRV,27,33182,CSUNKNW,6005,122191,20.348209825145712,0,5334,Race/ethnicity unknown women
+StatisticsRV,28,33190,CSNRALT,6005,258720,43.084096586178184,0,5606,U.S. Nonresident total
+StatisticsRV,29,33191,CSNRALM,6005,135436,22.553871773522065,0,2659,U.S. Nonresident men
+StatisticsRV,30,33192,CSNRALW,6005,123284,20.530224812656119,0,3020,U.S. Nonresident women
+StatisticsRV,31,35010,CSGUUGUN,6005,46437,7.7330557868442966,0,4257,Undergraduate gender unknown
+StatisticsRV,32,35015,CSGUUGAG,893,1877,2.1019036954087347,0,92,Undergraduate another gender
+StatisticsRV,33,35020,CSGUUGTT,6005,48314,8.0456286427976682,0,4257,Undergraduate gender unknown and another gender
+StatisticsRV,34,35025,CSGUGUN,6005,14082,2.3450457951706909,0,2811,Graduate gender unknown
+StatisticsRV,35,35030,CSGUGAG,404,460,1.1386138613861385,0,33,Graduate another gender
+StatisticsRV,36,35035,CSGUGTOT,6005,14542,2.4216486261448793,0,2811,Graduate gender unknown and another gender
+StatisticsRV,37,35040,CSGUTOTUN,6005,60519,10.078101582014988,0,7068,Total gender unknown
+StatisticsRV,38,35045,CSGUTOTAG,983,2337,2.3774160732451679,0,108,Total another gender
+StatisticsRV,39,35050,CSGUTOT,6005,62856,10.467277268942548,0,7068,Total of gender unknown and  another gender
+StatisticsRV,40,35055,CSGUKN,6005,4756926,792.16086594504577,0,43908,Total gender reported as one of the mutually exclusive binary categories (Men/Women)
+Imputation codes,0,Code values for item imputation variables Xvarname
+Imputation codes,1,CodeValue,ValueLabel
+Imputation codes,2,A,Not applicable
+Imputation codes,3,B,Institution left item blank
+Imputation codes,4,C,Analyst corrected reported value
+Imputation codes,5,D,Do not know
+Imputation codes,6,G,Data generated from other data values
+Imputation codes,7,H,Value not derived - data not usable
+Imputation codes,8,J,Logical imputation
+Imputation codes,9,K,Ratio adjustment 
+Imputation codes,10,L,Imputed using the Group Median procedure
+Imputation codes,11,N,Imputed using Nearest Neighbor procedure
+Imputation codes,12,P,Imputed using Carry Forward procedure
+Imputation codes,13,R,Reported
+Imputation codes,14,Z,Implied zero;

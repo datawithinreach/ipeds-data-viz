@@ -136,6 +136,69 @@
     border-top: 1px solid rgba($primary, 0.1);
   }
 
+  &__heroStat {
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    max-width: 42rem;
+  }
+
+  &__heroStatContext {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba($primary, 0.7);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  &__body--lede {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba($primary, 0.92);
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  &__sectionHeader {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__sectionRole {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    color: rgba($primary, 0.7);
+    background: rgba($primary, 0.08);
+    flex-shrink: 0;
+
+    &--comparison { background: rgba(30, 108, 255, 0.12); color: #1551c4; }
+    &--spotlight  { background: rgba(212, 160, 23, 0.15); color: #8a6914; }
+    &--analysis   { background: rgba(80, 19, 21, 0.12); color: $primary; }
+    &--caveat     { background: rgba(176, 42, 55, 0.12); color: #722029; }
+  }
+
+  &__methodology {
+    margin-top: 3rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba($primary, 0.15);
+  }
+
+  &__methodologyTitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba($primary, 0.6);
+    margin: 0 0 0.7rem;
+  }
+
   &__chart {
     margin: 2rem 0;
   }

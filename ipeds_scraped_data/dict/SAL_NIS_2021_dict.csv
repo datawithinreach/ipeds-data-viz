@@ -1,0 +1,365 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File Documentation for Salary Outlays for Full-time, Nonmedical, Non-Instructional Staff by Occupational Category, Academic year 2021-22",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,,,,,,,,,,
+Introduction,3,Filename,SAL2021_NIS
+Introduction,4,  Provisional release:,December 2022
+Introduction,5,Filename,SAL2021_NIS_RV
+Introduction,6,  Final/revised release:,December 2023
+Introduction,7,Overview,"This file contains the number and salary outlays for full-time, nonmedical, non-instructional staff by occupational category
+ ",,,,,,,,
+Introduction,8,,,,,,,,,,
+Introduction,9,Note,"Provisional release data have undergone all NCES data quality control procedures. Data are imputed for nonresponding institutions. These data are used for First Look (Provisional Data) Web Tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. The final release data can be used when the most up to date data are required; however, these data may not match First Look Web Tables based on provisional data. ",,,,,,,,
+Introduction,10,,,,,,,,,,
+Introduction,11,Contents of spreadsheet,,,,,,,,,
+Introduction,12,,,,,,,,,,
+Introduction,13,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,14,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,15,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (provisional release)",,,,,,,,
+Introduction,16,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file.(final/revised release)",,,,,,,,
+Introduction,17,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,40606,SANIN01,N,6,Cont,XSANIN01,Full-time non-instructional staff - number
+varlist,3,40611,SANIT01,N,10,Cont,XSANIT01,Full-time non-instructional staff - outlays
+varlist,4,40616,SANIN02,N,6,Cont,XSANIN02,Research - number
+varlist,5,40621,SANIT02,N,10,Cont,XSANIT02,Research - outlays
+varlist,6,40626,SANIN03,N,6,Cont,XSANIN03,Public service - number
+varlist,7,40631,SANIT03,N,10,Cont,XSANIT03,Public service - Outlays
+varlist,8,40636,SANIN04,N,6,Cont,XSANIN04,"Librarians, Curators, Archivists, and Academic Affairs and Other Education Services  - number"
+varlist,9,40641,SANIT04,N,10,Cont,XSANIT04,"Librarians, Curators, Archivists and Academic Affairs and Other Education Services - outlays"
+varlist,10,40646,SANIN05,N,6,Cont,XSANIN05,Management - number
+varlist,11,40651,SANIT05,N,10,Cont,XSANIT05,Management - outlays
+varlist,12,40656,SANIN06,N,6,Cont,XSANIN06,Business and Financial Operations - number
+varlist,13,40661,SANIT06,N,10,Cont,XSANIT06,Business and Financial Operations - outlays
+varlist,14,40666,SANIN07,N,6,Cont,XSANIN07,"Computer, Engineering, and Science - number"
+varlist,15,40671,SANIT07,N,10,Cont,XSANIT07,"Computer, Engineering, and Science - outlays"
+varlist,16,40676,SANIN08,N,6,Cont,XSANIN08,"Community, Social  Service, Legal, Arts, Design, Entertainment, Sports and Media - number"
+varlist,17,40681,SANIT08,N,10,Cont,XSANIT08,"Community, Social  Service, Legal, Arts, Design, Entertainment, Sports and Media - outlays"
+varlist,18,40686,SANIN09,N,6,Cont,XSANIN09,Healthcare Practioners and Technical -number
+varlist,19,40691,SANIT09,N,10,Cont,XSANIT09,Healthcare Practioners and Technical - outlays
+varlist,20,40696,SANIN10,N,6,Cont,XSANIN10,Service - number
+varlist,21,40701,SANIT10,N,10,Cont,XSANIT10,Service - outlays
+varlist,22,40706,SANIN11,N,6,Cont,XSANIN11,Sales and related - number
+varlist,23,40711,SANIT11,N,10,Cont,XSANIT11,Sales and related - outlays
+varlist,24,40716,SANIN12,N,6,Cont,XSANIN12,Office and Administrative Support - number
+varlist,25,40721,SANIT12,N,10,Cont,XSANIT12,Office and Administrative Support - outlays
+varlist,26,40726,SANIN13,N,6,Cont,XSANIN13,"Natural Resources, Construction, and Maintenance - number"
+varlist,27,40731,SANIT13,N,10,Cont,XSANIT13,"Natural Resources, Construction, and Maintenance - outlays"
+varlist,28,40736,SANIN14,N,6,Cont,XSANIN14,"Production, Transportation, and Material Moving - number"
+varlist,29,40741,SANIT14,N,10,Cont,XSANIT14,"Production, Transportation, and Material Moving - outlays"
+varlist,30,,,,,,,
+varlist,31,,,,,,,
+varlist,32,,,,,,,
+varlist,33,,,,,,,
+varlist,34,,,,,,,
+varlist,35,,,,,,,
+varlist,36,,,,,,,
+varlist,37,,,,,,,
+varlist,38,,,,,,,
+varlist,39,,,,,,,
+varlist,40,,,,,,,
+varlist,41,,,,,,,
+varlist,42,,,,,,,
+varlist,43,,,,,,,
+varlist,44,,,,,,,
+varlist,45,,,,,,,
+varlist,46,,,,,,,
+varlist,47,,,,,,,
+varlist,48,,,,,,,
+varlist,49,,,,,,,
+varlist,50,,,,,,,
+varlist,51,,,,,,,
+varlist,52,,,,,,,
+varlist,53,,,,,,,
+varlist,54,,,,,,,
+varlist,55,,,,,,,
+varlist,56,,,,,,,
+varlist,57,,,,,,,
+varlist,58,,,,,,,
+varlist,59,,,,,,,
+varlist,60,,,,,,,
+varlist,61,,,,,,,
+varlist,62,,,,,,,
+varlist,63,,,,,,,
+varlist,64,,,,,,,
+varlist,65,,,,,,,
+varlist,66,,,,,,,
+varlist,67,,,,,,,
+varlist,68,,,,,,,
+varlist,69,,,,,,,
+varlist,70,,,,,,,
+varlist,71,,,,,,,
+varlist,72,,,,,,,
+varlist,73,,,,,,,
+varlist,74,,,,,,,
+varlist,75,,,,,,,
+varlist,76,,,,,,,
+varlist,77,,,,,,,
+varlist,78,,,,,,,
+varlist,79,,,,,,,
+varlist,80,,,,,,,
+varlist,81,,,,,,,
+varlist,82,,,,,,,
+varlist,83,,,,,,,
+varlist,84,,,,,,,
+varlist,85,,,,,,,
+varlist,86,,,,,,,
+varlist,87,,,,,,,
+varlist,88,,,,,,,
+varlist,89,,,,,,,
+varlist,90,,,,,,,
+varlist,91,,,,,,,
+varlist,92,,,,,,,
+varlist,93,,,,,,,
+varlist,94,,,,,,,
+varlist,95,,,,,,,
+varlist,96,,,,,,,
+varlist,97,,,,,,,
+varlist,98,,,,,,,
+varlist,99,,,,,,,
+varlist,100,,,,,,,
+varlist,101,,,,,,,
+varlist,102,,,,,,,
+varlist,103,,,,,,,
+varlist,104,,,,,,,
+varlist,105,,,,,,,
+varlist,106,,,,,,,
+varlist,107,,,,,,,
+varlist,108,,,,,,,
+varlist,109,,,,,,,
+varlist,110,,,,,,,
+varlist,111,,,,,,,
+varlist,112,,,,,,,
+varlist,113,,,,,,,
+varlist,114,,,,,,,
+varlist,115,,,,,,,
+varlist,116,,,,,,,
+varlist,117,,,,,,,
+varlist,118,,,,,,,
+varlist,119,,,,,,,
+varlist,120,,,,,,,
+varlist,121,,,,,,,
+varlist,122,,,,,,,
+varlist,123,,,,,,,
+varlist,124,,,,,,,
+varlist,125,,,,,,,
+varlist,126,,,,,,,
+varlist,127,,,,,,,
+varlist,128,,,,,,,
+varlist,129,,,,,,,
+varlist,130,,,,,,,
+varlist,131,,,,,,,
+varlist,132,,,,,,,
+varlist,133,,,,,,,
+varlist,134,,,,,,,
+varlist,135,,,,,,,
+varlist,136,,,,,,,
+varlist,137,,,,,,,
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,40606,SANIN01,"Number of full-time, non-medical, non-instructional staff
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,3,40611,SANIT01,"Salary outlays for full-time, non-medical, non-instructional staff
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,4,40616,SANIN02,"Research - An occupational category used to classify persons whose specific assignments customarily are made for the purpose of conducting research. Regardless of title, academic rank, or tenure status, these employees formally spend the majority of their time conducting research"
+Description,5,40621,SANIT02,"Research - An occupational category used to classify persons whose specific assignments customarily are made for the purpose of conducting research. Regardless of title, academic rank, or tenure status, these employees formally spend the majority of their time conducting research"
+Description,6,40626,SANIN03,"Public Service  - An occupational category used to classify persons whose specific assignments customarily are made for the purpose of carrying out public service activities such as agricultural extension services, clinical services, or continuing education. Regardless of title, academic rank, or tenure status, these employees formally spend the majority of their time carrying out public service activities. (This category includes employees with a public service assignment regardless of the location of the assignment (e.g., in the field rather than on campus)."
+Description,7,40631,SANIT03,"Public service  - An occupational category used to classify persons whose specific assignments customarily are made for the purpose of carrying out public service activities such as agricultural extension services, clinical services, or continuing education. Regardless of title, academic rank, or tenure status, these employees formally spend the majority of their time carrying out public service activities. (This category includes employees with a public service assignment regardless of the location of the assignment (e.g., in the field rather than on campus)."
+Description,8,40636,SANIN04,"This variable includes the following four SOC categories    Archivists, Curators, and Museum Technicians - An occupational category based on the broad occupation in the 2018 Standard Occupational Classification (SOC) Manual called ""Archivists, Curators, and Museum Technicians"" (SOC code 25-4010).  For detailed information, refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#25-0000.    Librarians -  An occupational category based on the broad occupation in the 2018 Standard Occupational Classification (SOC) Manual called ""Librarians and Media Collections Specialists"" (SOC code 25-4020).  For detailed information, refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#25-0000.    Library Technicians  An occupational category based on the broad occupation in the 2018 Standard Occupational Classification (SOC) Manual called ""Library Technicians"" (SOC code 25-4030).  For detailed information, refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#25-0000.      Academic Affairs and Other Education Services Occupations  - An occupational category based on the following three minor groups in the 2018 Standard Occupational Classification (SOC) Manual:  1) Pre-school, Primary, Secondary, and Special Education School Teachers (SOC code 25-2000) (https://www.bls.gov/soc/2018/major_groups.htm#25-0000); 2) Other Teachers and Instructors (SOC code 25-3000) (https://www.bls.gov/soc/2018/major_groups.htm#25-0000); and 3) Other Education Instruction and Library Occupations (SOC code 25-9000) (https://www.bls.gov/soc/2018/major_groups.htm#25-0000)."
+Description,9,40641,SANIT04,"This variable includes the following four SOC categories    Archivists, Curators, and Museum Technicians - An occupational category based on the broad occupation in the 2018 Standard Occupational Classification (SOC) Manual called ""Archivists, Curators, and Museum Technicians"" (SOC code 25-4010).  For detailed information, refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#25-0000.    Librarians -  An occupational category based on the broad occupation in the 2018 Standard Occupational Classification (SOC) Manual called ""Librarians and Media Collections Specialists"" (SOC code 25-4020).  For detailed information, refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#25-0000.    Library Technicians  An occupational category based on the broad occupation in the 2018 Standard Occupational Classification (SOC) Manual called ""Library Technicians"" (SOC code 25-4030).  For detailed information, refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#25-0000.      Academic Affairs and Other Education Services Occupations  - An occupational category based on the following three minor groups in the 2018 Standard Occupational Classification (SOC) Manual:  1) Pre-school, Primary, Secondary, and Special Education School Teachers (SOC code 25-2000) (https://www.bls.gov/soc/2018/major_groups.htm#25-0000); 2) Other Teachers and Instructors (SOC code 25-3000) (https://www.bls.gov/soc/2018/major_groups.htm#25-0000); and 3) Other Education Instruction and Library Occupations (SOC code 25-9000) (https://www.bls.gov/soc/2018/major_groups.htm#25-0000)."
+Description,10,40646,SANIN05,"Management Occupations  - Management function should include those staff whose job it is to plan, direct, or coordinate policies, programs, and may include some supervision of other workers. In addition, Postsecondary Deans should be classified in this category as well, even though they perform similar activities to the workers that they supervise. For additional guidance please refer to the Crosswalk for the IPEDS Human Resources Occupational Functions. For detailed information refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#11-0000"
+Description,11,40651,SANIT05,"Management Occupations  - Management function should include those staff whose job it is to plan, direct, or coordinate policies, programs, and may include some supervision of other workers. In addition, Postsecondary Deans should be classified in this category as well, even though they perform similar activities to the workers that they supervise. For additional guidance please refer to the Crosswalk for the IPEDS Human Resources Occupational Functions.  For detailed information refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#11-0000"
+Description,12,40656,SANIN06,"Business and Financial Operations Occupations  - An occupational category based on the major group in the 2018 Standard Occupational Classification (SOC) Manual called ""Business and Financial Operations Occupations."" For detailed information refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#13-0000"
+Description,13,40661,SANIT06,"Business and Financial Operations Occupations  - An occupational category based on the major group in the 2018 Standard Occupational Classification (SOC) Manual called ""Business and Financial Operations Occupations."" For detailed information refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#13-0000"
+Description,14,40666,SANIN07,"Computer, Engineering, and Science Occupations - An occupational category based on the following three major groups in the 2018 Standard Occupational Classification (SOC) Manual:  1) Computer and Mathematical Occupations (https://www.bls.gov/soc/2018/major_groups.htm#15-0000); 2) Architecture and Engineering Occupations (https://www.bls.gov/soc/2018/major_groups.htm#17-0000); and 3) Life, Physical, and Social Science Occupations (https://www.bls.gov/soc/2018/major_groups.htm#19-0000)."
+Description,15,40671,SANIT07,"Computer, Engineering, and Science Occupations - An occupational category based on the following three major groups in the 2018 Standard Occupational Classification (SOC) Manual:  1) Computer and Mathematical Occupations (https://www.bls.gov/soc/2018/major_groups.htm#15-0000); 2) Architecture and Engineering Occupations (https://www.bls.gov/soc/2018/major_groups.htm#17-0000); and 3) Life, Physical, and Social Science Occupations (https://www.bls.gov/soc/2018/major_groups.htm#19-0000)."
+Description,16,40676,SANIN08,"Community, Social  Service, Legal, Arts, Design, Entertainment, Sports and Media  Occupations  - An occupational category based on the following three major groups in the 2018 Standard Occupational Classification (SOC) Manual:  1) Community and Social Service Occupations (https://www.bls.gov/soc/2018/major_groups.htm#21-0000); 2) Legal Occupations (https://www.bls.gov/soc/2018/major_groups.htm#23-0000); and 3) Arts, Design, Entertainment, Sports, and Media Occupations (https://www.bls.gov/soc/2018/major_groups.htm#27-0000)."
+Description,17,40681,SANIT08,"Community, Social  Service, Legal, Arts, Design, Entertainment, Sports and Media Occupations  - An occupational category based on the following three major groups in the 2018 Standard Occupational Classification (SOC) Manual:  1) Community and Social Service Occupations (https://www.bls.gov/soc/2018/major_groups.htm#21-0000); 2) Legal Occupations (https://www.bls.gov/soc/2018/major_groups.htm#23-0000); and 3) Arts, Design, Entertainment, Sports, and Media Occupations (https://www.bls.gov/soc/2018/major_groups.htm#27-0000)."
+Description,18,40686,SANIN09,"Healthcare Practitioners and Technical Occupations  - An occupational category based on the major group in the 2018 Standard Occupational Classification (SOC) Manual called ""Healthcare Practitioners and Technical Occupations."" For detailed information refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#29-0000."
+Description,19,40691,SANIT09,"Healthcare Practitioners and Technical Occupations  - An occupational category based on the major group in the 2018 Standard Occupational Classification (SOC) Manual called ""Healthcare Practitioners and Technical Occupations."" For detailed information refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#29-0000."
+Description,20,40696,SANIN10,Service Occupations - An occupational category based on the following five major groups in the 2018 Standard Occupational Classification (SOC) Manual:  1) Healthcare Support Occupations (https://www.bls.gov/soc/2018/major_groups.htm#31-0000); 2) Protective Service Occupations (https://www.bls.gov/soc/2018/major_groups.htm#33-0000); 3) Food Preparation and Serving Related Occupations (https://www.bls.gov/soc/2018/major_groups.htm#35-0000); 4) Building and Grounds Cleaning and Maintenance Occupations (https://www.bls.gov/soc/2018/major_groups.htm#37-0000); and 5) Personal Care and Service Occupations (https://www.bls.gov/soc/2018/major_groups.htm#39-0000).
+Description,21,40701,SANIT10,Service Occupations - An occupational category based on the following five major groups in the 2018 Standard Occupational Classification (SOC) Manual:  1) Healthcare Support Occupations (https://www.bls.gov/soc/2018/major_groups.htm#31-0000); 2) Protective Service Occupations (https://www.bls.gov/soc/2018/major_groups.htm#33-0000); 3) Food Preparation and Serving Related Occupations (https://www.bls.gov/soc/2018/major_groups.htm#35-0000); 4) Building and Grounds Cleaning and Maintenance Occupations (https://www.bls.gov/soc/2018/major_groups.htm#37-0000); and 5) Personal Care and Service Occupations (https://www.bls.gov/soc/2018/major_groups.htm#39-0000).
+Description,22,40706,SANIN11,"Sales and Related Occupations - An occupational category based on the major group in the 2018 Standard Occupational Classification (SOC) Manual called ""Sales and Related Occupations."" For detailed information refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#41-0000."
+Description,23,40711,SANIT11,"Sales and Related Occupations - An occupational category based on the major group in the 2018 Standard Occupational Classification (SOC) Manual called ""Sales and Related Occupations."" For detailed information refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#41-0000."
+Description,24,40716,SANIN12,"Office and Administrative Support Occupations - An occupational category based on the major group in the 2018 Standard Occupational Classification (SOC) Manual called ""Office and Administrative Support Occupations."" For detailed information refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#43-000"
+Description,25,40721,SANIT12,"Office and Administrative Support Occupations - An occupational category based on the major group in the 2018 Standard Occupational Classification (SOC) Manual called ""Office and Administrative Support Occupations."" For detailed information refer to the following website: https://www.bls.gov/soc/2018/major_groups.htm#43-000"
+Description,26,40726,SANIN13,"Natural Resources, Construction, and Maintenance Occupations  - An occupational category based on the following three major groups in the 2018 Standard Occupational Classification (SOC) Manual:  1) Farming, Fishing, and Forestry Occupations (https://www.bls.gov/soc/2018/major_groups.htm#45-0000); 2) Construction and Extraction Occupations (https://www.bls.gov/soc/2018/major_groups.htm#47-0000); and 3) Installation, Maintenance, and Repair Occupations (https://www.bls.gov/soc/2018/major_groups.htm#49-0000)."
+Description,27,40731,SANIT13,"Natural Resources, Construction, and Maintenance Occupations  - An occupational category based on the following three major groups in the 2018 Standard Occupational Classification (SOC) Manual:  1) Farming, Fishing, and Forestry Occupations (https://www.bls.gov/soc/2018/major_groups.htm#45-0000); 2) Construction and Extraction Occupations (https://www.bls.gov/soc/2018/major_groups.htm#47-0000); and 3) Installation, Maintenance, and Repair Occupations (https://www.bls.gov/soc/2018/major_groups.htm#49-0000)."
+Description,28,40736,SANIN14,"Production, Transportation, and Material Moving Occupations  - An occupational category based on the following two major groups in the 2018 Standard Occupational Classification (SOC) Manual:  1) Production Occupations (https://www.bls.gov/soc/2018/major_groups.htm#51-0000) and 2) Transportation and Material Moving Occupations (https://www.bls.gov/soc/2018/major_groups.htm#53-0000)."
+Description,29,40741,SANIT14,"Production, Transportation, and Material Moving Occupations  - An occupational category based on the following two major groups in the 2018 Standard Occupational Classification (SOC) Manual:  1) Production Occupations (https://www.bls.gov/soc/2018/major_groups.htm#51-0000) and 2) Transportation and Material Moving Occupations (https://www.bls.gov/soc/2018/major_groups.htm#53-0000)."
+Description,30,,,
+Description,31,,,
+Description,32
+Description,33
+Description,34
+Description,35
+Description,36
+Description,37
+Description,38
+Description,39
+Description,40
+Description,41
+Description,42
+Description,43
+Description,44
+Description,45
+Description,46
+Description,47
+Description,48
+Description,49
+Description,50
+Description,51
+Description,52
+Description,53
+Description,54
+Description,55
+Description,56
+Description,57
+Description,58
+Description,59
+Description,60
+Description,61
+Description,62
+Description,63
+Description,64
+Description,65
+Description,66
+Description,67
+Description,68
+Description,69
+Description,70
+Description,71
+Description,72
+Description,73
+Description,74
+Description,75
+Description,76
+Description,77
+Description,78
+Description,79
+Description,80
+Description,81
+Description,82
+Description,83
+Description,84
+Description,85
+Description,86
+Description,87
+Description,88
+Description,89
+Description,90
+Description,91
+Description,92
+Description,93
+Description,94
+Description,95
+Description,96
+Description,97
+Description,98
+Description,99
+Description,100
+Description,101
+Description,102
+Description,103
+Description,104
+Description,105
+Description,106
+Description,107
+Description,108
+Description,109
+Description,110
+Description,111
+Description,112
+Description,113
+Description,114
+Description,115
+Description,116
+Description,117
+Description,118
+Description,119
+Description,120
+Description,121
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,40606,SANIN01,4012,1548894,386.06530408773676,1,13977,Full-time non-instructional staff - number
+Statistics,2,40611,SANIT01,4012,105178756662,26216041.042372882,20000,1172998266,Full-time non-instructional staff - outlays
+Statistics,3,40616,SANIN02,4012,59090,14.728315054835493,0,4374,Research - number
+Statistics,4,40621,SANIT02,4012,4618521599,1151176.8691425724,0,492230258,Research - outlays
+Statistics,5,40626,SANIN03,4012,10098,2.5169491525423728,0,524,Public service - number
+Statistics,6,40631,SANIT03,4012,771486994,192294.86390827518,0,43561170,Public service - Outlays
+Statistics,7,40636,SANIN04,4012,151687,37.808325024925225,0,1184,"Librarians, Curators, Archivists, and Academic Affairs and Other Education Services  - number"
+Statistics,8,40641,SANIT04,4012,8837143793,2202677.9145064806,0,88381170,"Librarians, Curators, Archivists and Academic Affairs and Other Education Services - outlays"
+Statistics,9,40646,SANIN05,4012,239889,59.792871385842474,0,2313,Management - number
+Statistics,10,40651,SANIT05,4012,27500107835,6854463.568045862,0,283813320,Management - outlays
+Statistics,11,40656,SANIN06,4012,191573,47.75,0,2725,Business and Financial Operations - number
+Statistics,12,40661,SANIT06,4012,13415311584,3343796.5064805583,0,289379470,Business and Financial Operations - outlays
+Statistics,13,40666,SANIN07,4012,175302,43.694416749750751,0,2662,"Computer, Engineering, and Science - number"
+Statistics,14,40671,SANIT07,4012,12810148563,3192958.2659521434,0,208116140,"Computer, Engineering, and Science - outlays"
+Statistics,15,40676,SANIN08,4012,154386,38.481056829511466,0,1436,"Community, Social  Service, Legal, Arts, Design, Entertainment, Sports and Media - number"
+Statistics,16,40681,SANIT08,4012,10005977119,2494012.2430209373,0,95501625,"Community, Social  Service, Legal, Arts, Design, Entertainment, Sports and Media - outlays"
+Statistics,17,40686,SANIN09,4012,38333,9.5545862412761711,0,3504,Healthcare Practioners and Technical -number
+Statistics,18,40691,SANIT09,4012,2577403961,642423.71909272182,0,204752561,Healthcare Practioners and Technical - outlays
+Statistics,19,40696,SANIN10,4012,177244,44.178464606181457,0,2266,Service - number
+Statistics,20,40701,SANIT10,4012,7498356268,1868982.1206380858,0,122168052,Service - outlays
+Statistics,21,40706,SANIN11,4012,9131,2.2759222333000997,0,471,Sales and related - number
+Statistics,22,40711,SANIT11,4012,460374493,114749.37512462612,0,30238909,Sales and related - outlays
+Statistics,23,40716,SANIN12,4012,264801,66.002243270189425,0,2064,Office and Administrative Support - number
+Statistics,24,40721,SANIT12,4012,12468937165,3107910.5595712862,0,138220013,Office and Administrative Support - outlays
+Statistics,25,40726,SANIN13,4012,63508,15.82951146560319,0,749,"Natural Resources, Construction, and Maintenance - number"
+Statistics,26,40731,SANIT13,4012,3498320716,871964.28614157531,0,76447609,"Natural Resources, Construction, and Maintenance - outlays"
+Statistics,27,40736,SANIN14,4012,13852,3.4526420737786641,0,235,"Production, Transportation, and Material Moving - number"
+Statistics,28,40741,SANIT14,4012,716666572,178630.75074775674,0,18250652,"Production, Transportation, and Material Moving - outlays"
+Statistics,29,,,,,,,
+Statistics,30,,,,,,,
+Statistics,31,,,,,,,
+Statistics,32,,,,,,,
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,40606,SANIN01,4013,1548912,385.9735858460005,1,13977,Full-time non-instructional staff - number
+StatisticsRV,2,40611,SANIT01,4013,105156150954,26203875.144281086,20000,1172998266,Full-time non-instructional staff - outlays
+StatisticsRV,3,40616,SANIN02,4013,59088,14.724146523797657,0,4374,Research - number
+StatisticsRV,4,40621,SANIT02,4013,4618521600,1150890.007475704,0,492230258,Research - outlays
+StatisticsRV,5,40626,SANIN03,4013,10092,2.5148268128582107,0,524,Public service - number
+StatisticsRV,6,40631,SANIT03,4013,771238312,192184.97682531772,0,43561170,Public service - Outlays
+StatisticsRV,7,40636,SANIN04,4013,151687,37.798903563418889,0,1184,"Librarians, Curators, Archivists, and Academic Affairs and Other Education Services  - number"
+StatisticsRV,8,40641,SANIT04,4013,8833921040,2201325.950660354,0,88381170,"Librarians, Curators, Archivists and Academic Affairs and Other Education Services - outlays"
+StatisticsRV,9,40646,SANIN05,4013,239900,59.780712683777722,0,2313,Management - number
+StatisticsRV,10,40651,SANIT05,4013,27496748622,6851918.4206329426,0,283813320,Management - outlays
+StatisticsRV,11,40656,SANIN06,4013,191585,47.74109145277847,0,2725,Business and Financial Operations - number
+StatisticsRV,12,40661,SANIT06,4013,13415699040,3343059.8155993023,0,289379470,Business and Financial Operations - outlays
+StatisticsRV,13,40666,SANIN07,4013,175314,43.686518813854974,0,2662,"Computer, Engineering, and Science - number"
+StatisticsRV,14,40671,SANIT07,4013,12810466528,3192241.8460004982,0,208116140,"Computer, Engineering, and Science - outlays"
+StatisticsRV,15,40676,SANIN08,4013,154337,38.459257413406426,0,1436,"Community, Social  Service, Legal, Arts, Design, Entertainment, Sports and Media - number"
+StatisticsRV,16,40681,SANIT08,4013,9999487368,2491773.5778719163,0,95501625,"Community, Social  Service, Legal, Arts, Design, Entertainment, Sports and Media - outlays"
+StatisticsRV,17,40686,SANIN09,4013,38330,9.551457762272614,0,3504,Healthcare Practioners and Technical -number
+StatisticsRV,18,40691,SANIT09,4013,2576700292,642088.28607027163,0,204752561,Healthcare Practioners and Technical - outlays
+StatisticsRV,19,40696,SANIN10,4013,177256,44.170446050336409,0,2266,Service - number
+StatisticsRV,20,40701,SANIT10,4013,7494508361,1867557.5282830801,0,122168052,Service - outlays
+StatisticsRV,21,40706,SANIN11,4013,9132,2.2756042860702714,0,471,Sales and related - number
+StatisticsRV,22,40711,SANIT11,4013,460374395,114720.75629205084,0,30238909,Sales and related - outlays
+StatisticsRV,23,40716,SANIN12,4013,264821,65.990779965113376,0,2064,Office and Administrative Support - number
+StatisticsRV,24,40721,SANIT12,4013,12463486075,3105777.741091453,0,138220013,Office and Administrative Support - outlays
+StatisticsRV,25,40726,SANIN13,4013,63523,15.829304759531523,0,749,"Natural Resources, Construction, and Maintenance - number"
+StatisticsRV,26,40731,SANIT13,4013,3498540161,871801.68477448297,0,76447609,"Natural Resources, Construction, and Maintenance - outlays"
+StatisticsRV,27,40736,SANIN14,4013,13847,3.450535758783952,0,235,"Production, Transportation, and Material Moving - number"
+StatisticsRV,28,40741,SANIT14,4013,716459160,178534.55270371292,0,18250652,"Production, Transportation, and Material Moving - outlays"
+StatisticsRV,29,,,,,,,
+StatisticsRV,30,,,,,,,
+StatisticsRV,31,,,,,,,
+StatisticsRV,32,,,,,,,
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

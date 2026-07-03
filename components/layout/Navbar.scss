@@ -12,6 +12,12 @@
     font-weight: 500;
   }
 
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
   &__logo {
     display: flex;
     align-items: center;
@@ -22,5 +28,91 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+  }
+
+  &__auth {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__authLink {
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: opacity 0.15s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__signupBtn {
+    font-size: 0.875rem;
+    font-weight: 600;
+    background: $primary;
+    color: $background;
+    padding: 0.375rem 1rem;
+    border-radius: 9999px;
+    transition: opacity 0.15s;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &__dropdown {
+    position: relative;
+  }
+
+  &__avatarBtn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: $primary;
+    color: $background;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.15s;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &__dropdownMenu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 12rem;
+    background: $background;
+    border: 1px solid rgba($primary, 0.2);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    overflow: hidden;
+  }
+
+  &__dropdownEmail {
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    color: rgba($primary, 0.5);
+    border-bottom: 1px solid rgba($primary, 0.1);
+    word-break: break-all;
+  }
+
+  &__dropdownItem {
+    width: 100%;
+    padding: 0.625rem 1rem;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background 0.1s;
+
+    &:hover {
+      background: rgba($primary, 0.05);
+    }
   }
 }

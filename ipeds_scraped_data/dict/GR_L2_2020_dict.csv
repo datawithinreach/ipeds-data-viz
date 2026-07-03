@@ -1,0 +1,583 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for graduation rate data, 150% of normal time to complete - cohort year 2017 (less than 2-year institutions): 2020",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,,,,,,,,,,,
+Introduction,3,Filename,GR2020_L2,,,,,,,,
+Introduction,4,  Provisional release:,October 2021,,,,,,,,
+Introduction,5,Filename,GR2020_L2_RV,,,,,,,,
+Introduction,6,  Final/revised release:,October 2022,,,,,,,,
+Introduction,7,Overview,"This file contains the graduation rate status as of August 31, 2020 for the cohort of full-time, first-time degree/certificate-seeking undergraduates enrolled in 2017 for less-than-2-year institutions. Included are the number of students enrolled in 2017 and the number of those students that completed their program in 100 or 150 percent of normal time, or had transferred out. Beginning with 2017, graduation rate data are now available for the subcohorts of Pell grant recipients,  Subsidized Stafford Loan recipients not receiving Pell Grants, and students not receiving Pell grants or subsidized Stafford loans. The number who completed in 150 percent of normal time are included for the subcohorts.
+",,,,,,,,
+Introduction,8,Note,"Provisional release data have undergone all NCES data quality control procedures. Data are imputed for nonresponding institutions. These data are used for First Look (Provisional Data) Web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. The final release data can be used when the most up to date data are required; however, these data may not match the First Look Web tables based on provisional data. ",,,,,,,,
+Introduction,9,Contents of spreadsheet,,,,,,,,,
+Introduction,10,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,11,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,12,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (provisional release)",,,,,,,,,
+Introduction,13,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file.(final/revised release)",,,,,,,,
+Introduction,14,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,80906,LINE_10,N,6,Cont,XLINE_10,Revised Cohort
+varlist,3,80907,LINE_45,N,6,Cont,XLINE_45,Exclusions
+varlist,4,80915,LINE_50,N,6,Cont,XLINE_50,Adjusted cohort (revised cohort minus exclusions)
+varlist,5,81401,LINE_55,N,6,Cont,XLINE_55,Completers within 100% of normal time
+varlist,6,80916,LINE_11,N,6,Cont,XLINE_11,Completers within 150% of normal time
+varlist,7,80917,LINE_30,N,6,Cont,XLINE_30,Transfer-out students
+varlist,8,80908,LINE_51,N,6,Cont,XLINE_51,Still enrolled
+varlist,9,80909,LINE_52,N,6,Cont,XLINE_52,No longer enrolled
+varlist,10,81626,PGLIN10,N,6,Cont,XPGLIN10,Pell Grant recipients - revised cohort
+varlist,11,81631,PGLIN45,N,6,Cont,XPGLIN45,Pell Grant recipients - exclusions
+varlist,12,81636,PGLIN50,N,6,Cont,XPGLIN50,Pell Grant recipients - adjusted  cohort (revised minus exclusions)
+varlist,13,81641,PGLIN11,N,6,Cont,XPGLIN11,Pell Grant  recipients - total number that completed an award  within 150% of normal time to completion
+varlist,14,81646,SSLIN10,N,6,Cont,XSSLIN10,Subsidized Stafford Loan recipients not receiving Pell Grants - revised cohort
+varlist,15,81651,SSLIN45,N,6,Cont,XSSLIN45,Subsidized Stafford Loan recipients not receiving Pell Grants - exclusions
+varlist,16,81656,SSLIN50,N,6,Cont,XSSLIN50,Subsidized Stafford Loan recipients not receiving Pell Grants - adjusted cohort (revised minus exclusions)
+varlist,17,81661,SSLIN11,N,6,Cont,XSSLIN11,Subsidized Stafford Loan recipients not receiving Pell Grants - total number completed an award within 150% of normal time to completion
+varlist,18,81666,NRLIN10,N,6,Cont,XNRLIN10,Did not receive Pell grant or subsidized Stafford loan - revised cohort
+varlist,19,81671,NRLIN45,N,6,Cont,XNRLIN45,Did not receive Pell grant or subsidized Stafford loan - exclusions
+varlist,20,81676,NRLIN50,N,6,Cont,XNRLIN50,Did not receive Pell grant or subsidized Stafford loan - adjusted cohort
+varlist,21,81681,NRLIN11,N,6,Cont,XNRLIN11,Did not receive Pell grant or subsidized Stafford loan -  total number completed an award within 150% of normal time to completion
+varlist,22,,,,,,,
+varlist,23,,,,,,,
+varlist,24,,,,,,,
+varlist,25,,,,,,,
+varlist,26,,,,,,,
+varlist,27,,,,,,,
+varlist,28,,,,,,,
+varlist,29,,,,,,,
+varlist,30,,,,,,,
+varlist,31,,,,,,,
+varlist,32,,,,,,,
+varlist,33,,,,,,,
+varlist,34,,,,,,,
+varlist,35,,,,,,,
+varlist,36,,,,,,,
+varlist,37,,,,,,,
+varlist,38,,,,,,,
+varlist,39,,,,,,,
+varlist,40,,,,,,,
+varlist,41,,,,,,,
+varlist,42,,,,,,,
+varlist,43,,,,,,,
+varlist,44,,,,,,,
+varlist,45,,,,,,,
+varlist,46,,,,,,,
+varlist,47,,,,,,,
+varlist,48,,,,,,,
+varlist,49,,,,,,,
+varlist,50,,,,,,,
+varlist,51,,,,,,,
+varlist,52,,,,,,,
+varlist,53,,,,,,,
+varlist,54,,,,,,,
+varlist,55,,,,,,,
+varlist,56,,,,,,,
+varlist,57,,,,,,,
+varlist,58,,,,,,,
+varlist,59,,,,,,,
+varlist,60,,,,,,,
+varlist,61,,,,,,,
+varlist,62,,,,,,,
+varlist,63,,,,,,,
+varlist,64,,,,,,,
+varlist,65,,,,,,,
+varlist,66,,,,,,,
+varlist,67,,,,,,,
+varlist,68,,,,,,,
+varlist,69,,,,,,,
+varlist,70,,,,,,,
+varlist,71,,,,,,,
+varlist,72,,,,,,,
+varlist,73,,,,,,,
+varlist,74,,,,,,,
+varlist,75,,,,,,,
+varlist,76,,,,,,,
+varlist,77,,,,,,,
+varlist,78,,,,,,,
+varlist,79,,,,,,,
+varlist,80,,,,,,,
+varlist,81,,,,,,,
+varlist,82,,,,,,,
+varlist,83,,,,,,,
+varlist,84,,,,,,,
+varlist,85,,,,,,,
+varlist,86,,,,,,,
+varlist,87,,,,,,,
+varlist,88,,,,,,,
+varlist,89,,,,,,,
+varlist,90,,,,,,,
+varlist,91,,,,,,,
+varlist,92,,,,,,,
+varlist,93,,,,,,,
+varlist,94,,,,,,,
+varlist,95,,,,,,,
+varlist,96,,,,,,,
+varlist,97,,,,,,,
+varlist,98,,,,,,,
+varlist,99,,,,,,,
+varlist,100,,,,,,,
+varlist,101,,,,,,,
+varlist,102,,,,,,,
+varlist,103,,,,,,,
+varlist,104,,,,,,,
+varlist,105,,,,,,,
+varlist,106,,,,,,,
+varlist,107,,,,,,,
+varlist,108,,,,,,,
+varlist,109,,,,,,,
+varlist,110,,,,,,,
+varlist,111,,,,,,,
+varlist,112,,,,,,,
+varlist,113,,,,,,,
+varlist,114,,,,,,,
+varlist,115,,,,,,,
+varlist,116,,,,,,,
+varlist,117,,,,,,,
+varlist,118,,,,,,,
+varlist,119,,,,,,,
+varlist,120,,,,,,,
+varlist,121,,,,,,,
+varlist,122,,,,,,,
+varlist,123,,,,,,,
+varlist,124,,,,,,,
+varlist,125,,,,,,,
+varlist,126,,,,,,,
+varlist,127,,,,,,,
+varlist,128,,,,,,,
+varlist,129,,,,,,,
+varlist,130,,,,,,,
+varlist,131,,,,,,,
+varlist,132,,,,,,,
+varlist,133,,,,,,,
+varlist,134,,,,,,,
+varlist,135,,,,,,,
+varlist,136,,,,,,,
+varlist,137,,,,,,,
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,80906,LINE_10,REVISED COHORT - Initial cohort after revisions are made. This is the number from which graduation and transfer-out rates are calculated. Cohorts may be revised if an institution discovers that incorrect data were reported in an earlier year.
+Description,3,80907,LINE_45,"EXCLUSIONS  - Those students who may be removed (deleted) from a cohort (or subcohort). For the Graduation Rates data collection students maybe removed from a cohort if they left the institution for one of the following reasons: died or were totally and permanently disabled; to serve in the armed forces; to serve with a foreign aid service of the federal government, such as the Peace Corps; or to serve on official church missions."
+Description,4,80915,LINE_50,"Adjusted cohort (revised cohort minus exclusions)
+
+REVISED COHORT - Initial cohort after revisions are made. This is the number from which graduation and transfer-out rates are calculated. Cohorts may be revised if an institution discovers that incorrect data were reported in an earlier year. 
+EXCLUSIONS  - Those students who may be removed (deleted) from a cohort (or subcohort). For the Graduation Rates data collection students maybe removed from a cohort if they left the institution for one of the following reasons: died or were totally and permanently disabled; to serve in the armed forces; to serve with a foreign aid service of the federal government, such as the Peace Corps; or to serve on official church missions."
+Description,5,81401,LINE_55,NORMAL TIME TO COMPLETION - The amount of time necessary for a student to complete all requirements for a degree or certificate according to the institution's catalog.
+Description,6,80916,LINE_11,NORMAL TIME TO COMPLETION - The amount of time necessary for a student to complete all requirements for a degree or certificate according to the institution's catalog.
+Description,7,80917,LINE_30,Transfer-out student	  - A student that leaves the reporting institution and enrolls at another institution.
+Description,8,80908,LINE_51,Still enrolled - the number of students who are still enrolled at your institution as of the fall census date for the fall term following 150% of normal time to completion of their program.
+Description,9,80909,LINE_52,"No longer enrolled - Adjusted cohort minus the sum of number of completers in 150 percent of normal time, number of transfer-outs and the number still enrolled"
+Description,10,81626,PGLIN10,"Number of students in the cohort/subcohort who were recipients of a Pell Grant in the cohort year. 
+
+Recipients are defined as those students receiving and using their Pell Grant.  These students must receive the award upon entry into the institution.  Students that are recipients of an award at a later point after entry, are not included."
+Description,11,81631,PGLIN45,"Exclusions from the Pell grant cohort within 150% percent of normal time
+
+Exclusions who left institution within 150% of normal time and have neither graduated nor transferred to another institution) because of one of the following documented reasons:
+
+The student is deceased or is totally and permanently disabled and thus unable to return to school. 
+
+The student left school to serve in the armed forces or was called to active duty. ( students already in the military who transfer to another duty station are not included.) 
+
+The student left school to serve with a foreign aid service of the Federal Government, such as the Peace Corps. 
+
+The student left school to serve on an official church mission. 
+
+NOTE: Students who leave the institution for one of the above reasons, but return prior to the 150 percent status date of August 31, may still be reported as exclusions."
+Description,12,81636,PGLIN50,This is the number of Pell grant recipients in the revised cohort minus the number of exclusions.
+Description,13,81641,PGLIN11,"This is the number of students in the adjusted Pell grant recipient cohort that completed an award in 150 percent of normal time to complete. 
+
+150 percent of normal time to complete - Students who completed their program within 150% of the normal (or expected) time for completion.  Normal time is the amount of time necessary for a student to complete all requirements for a degree or certificate according to the institution's catalog. This is typically 4 years (8 semesters or trimesters, or 12 quarters, excluding summer terms) for a bachelor's degree in a standard term-based institution; 2 years (4 semesters or trimesters, or 6 quarters, excluding summer terms) for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Description,14,81646,SSLIN10,"Number of students in the cohort/subcohort who were recipients of a subsidized Stafford loan and who did not receive a Pell grant in the cohort year. 
+
+Recipients are defined as those students receiving and using their subsidized Stafford loan.  These students must receive the award upon entry into the institution.  Students that are recipients of an award at a later point after entry, are not included.  Students receiving a Pell grant are not included"
+Description,15,81651,SSLIN45,"Exclusions from the subsidized Stafford loan who did not receive a Pell grant cohort within 150% percent of normal time
+
+Exclusions who left institution within 150% of normal time and have neither graduated nor transferred to another institution) because of one of the following documented reasons:
+
+The student is deceased or is totally and permanently disabled and thus unable to return to school. 
+
+The student left school to serve in the armed forces or was called to active duty. ( students already in the military who transfer to another duty station are not included.) 
+
+The student left school to serve with a foreign aid service of the Federal Government, such as the Peace Corps. 
+
+The student left school to serve on an official church mission. 
+
+NOTE: Students who leave the institution for one of the above reasons, but return prior to the 150 percent status date of August 31, may still be reported as exclusions."
+Description,16,81656,SSLIN50,This is the number of susidized Stafford loan recipients who did not receive a Pell Grant in the revised cohort minus the number of exclusions.
+Description,17,81661,SSLIN11,"This is the number of students in the adjusted cohort of subsidized Stafford loan recipients who did not receive a Pell grant, that completed an award in 150 percent of normal time to complete. 
+
+150 percent of normal time to complete - Students who completed their program within 150% of the normal (or expected) time for completion.  Normal time is the amount of time necessary for a student to complete all requirements for a degree or certificate according to the institution's catalog. This is typically 4 years (8 semesters or trimesters, or 12 quarters, excluding summer terms) for a bachelor's degree in a standard term-based institution; 2 years (4 semesters or trimesters, or 6 quarters, excluding summer terms) for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Description,18,81666,NRLIN10,This is the total number of students of the revised cohort who did not receive a Pell grant or a subsidized stafford loan
+Description,19,81671,NRLIN45,"Exclusions from the revised cohort of students who did not receive a Pell grant or a subsidized Stafford loan within 150% percent of normal time
+
+Exclusions who left institution within 150% of normal time and have neither graduated nor transferred to another institution) because of one of the following documented reasons:
+
+The student is deceased or is totally and permanently disabled and thus unable to return to school. 
+
+The student left school to serve in the armed forces or was called to active duty. ( students already in the military who transfer to another duty station are not included.) 
+
+The student left school to serve with a foreign aid service of the Federal Government, such as the Peace Corps. 
+
+The student left school to serve on an official church mission. 
+
+NOTE: Students who leave the institution for one of the above reasons, but return prior to the 150 percent status date of August 31, may still be reported as exclusions."
+Description,20,81676,NRLIN50,This is the number cohort of students who did not receive a Pell grant of subsidized Stafford loan minus the number of exclusions.
+Description,21,81681,NRLIN11,"This is the number of students in the adjusted cohort of students not receiving a Pell grant or subsidized Stafford loan, that completed an award in 150 percent of normal time to complete. 
+
+150 percent of normal time to complete - Students who completed their program within 150% of the normal (or expected) time for completion.  Normal time is the amount of time necessary for a student to complete all requirements for a degree or certificate according to the institution's catalog. This is typically 4 years (8 semesters or trimesters, or 12 quarters, excluding summer terms) for a bachelor's degree in a standard term-based institution; 2 years (4 semesters or trimesters, or 6 quarters, excluding summer terms) for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Description,22,,,
+Description,23,,,
+Description,24,,,
+Description,25,,,
+Description,26,,,
+Description,27,,,
+Description,28,,,
+Description,29,,,
+Description,30,,,
+Description,31,,,
+Description,32,,,
+Description,33,,,
+Description,34,,,
+Description,35,,,
+Description,36,,,
+Description,37,,,
+Description,38,,,
+Description,39,,,
+Description,40,,,
+Description,41,,,
+Description,42,,,
+Description,43,,,
+Description,44,,,
+Description,45,,,
+Description,46,,,
+Description,47,,,
+Description,48,,,
+Description,49,,,
+Description,50,,,
+Description,51,,,
+Description,52,,,
+Description,53,,,
+Description,54,,,
+Description,55,,,
+Description,56,,,
+Description,57,,,
+Description,58,,,
+Description,59,,,
+Description,60,,,
+Description,61,,,
+Description,62,,,
+Description,63,,,
+Description,64,,,
+Description,65,,,
+Description,66,,,
+Description,67,,,
+Description,68,,,
+Description,69,,,
+Description,70,,,
+Description,71,,,
+Description,72,,,
+Description,73,,,
+Description,74,,,
+Description,75,,,
+Description,76,,,
+Description,77,,,
+Description,78,,,
+Description,79,,,
+Description,80
+Description,81
+Description,82
+Description,83
+Description,84
+Description,85
+Description,86
+Description,87
+Description,88
+Description,89
+Description,90
+Description,91
+Description,92
+Description,93
+Description,94
+Description,95
+Description,96
+Description,97
+Description,98
+Description,99
+Description,100
+Description,101
+Description,102
+Description,103
+Description,104
+Description,105
+Description,106
+Description,107
+Description,108
+Description,109
+Description,110
+Description,111
+Description,112
+Description,113
+Description,114
+Description,115
+Description,116
+Description,117
+Description,118
+Description,119
+Description,120
+Description,121
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,80906,LINE_10,1634,145218,88.872705018359852,1,1323,Revised Cohort
+Statistics,2,80907,LINE_45,1634,222,0.13586291309669524,0,17,Exclusions
+Statistics,3,80915,LINE_50,1634,144996,88.736842105263165,1,1323,Adjusted cohort (revised cohort minus exclusions)
+Statistics,4,81401,LINE_55,1634,62996,38.553243574051407,0,1115,Completers within 100% of normal time
+Statistics,5,80916,LINE_11,1634,100398,61.44308445532436,0,1115,Completers within 150% of normal time
+Statistics,6,80917,LINE_30,1634,479,0.29314565483476135,0,34,Transfer-out students
+Statistics,7,80908,LINE_51,1634,3581,2.1915544675642593,0,200,Still enrolled
+Statistics,8,80909,LINE_52,1634,40538,24.809057527539778,0,437,No longer enrolled
+Statistics,9,81626,PGLIN10,1634,99614,60.963280293757649,0,1323,Pell Grant recipients - revised cohort
+Statistics,10,81631,PGLIN45,1634,130,7.9559363525091797E-2,0,14,Pell Grant recipients - exclusions
+Statistics,11,81636,PGLIN50,1634,99484,60.883720930232556,0,1323,Pell Grant recipients - adjusted  cohort (revised minus exclusions)
+Statistics,12,81641,PGLIN11,1634,68220,41.750305997552019,0,1115,Pell Grant  recipients - total number that completed an award  within 150% of normal time to completion
+Statistics,13,81646,SSLIN10,1634,13023,7.970012239902081,0,297,Subsidized Stafford Loan recipients not receiving Pell Grants - revised cohort
+Statistics,14,81651,SSLIN45,1634,22,1.346389228886169E-2,0,8,Subsidized Stafford Loan recipients not receiving Pell Grants - exclusions
+Statistics,15,81656,SSLIN50,1634,13001,7.9565483476132188,0,297,Subsidized Stafford Loan recipients not receiving Pell Grants - adjusted cohort (revised minus exclusions)
+Statistics,16,81661,SSLIN11,1634,9937,6.0813953488372094,0,230,Subsidized Stafford Loan recipients not receiving Pell Grants - total number completed an award within 150% of normal time to completion
+Statistics,17,81666,NRLIN10,1634,32581,19.939412484700121,0,1100,Did not receive Pell grant or subsidized Stafford loan - revised cohort
+Statistics,18,81671,NRLIN45,1634,70,4.2839657282741736E-2,0,8,Did not receive Pell grant or subsidized Stafford loan - exclusions
+Statistics,19,81676,NRLIN50,1634,32511,19.89657282741738,0,1100,Did not receive Pell grant or subsidized Stafford loan - adjusted cohort
+Statistics,20,81681,NRLIN11,1634,22241,13.611383108935129,0,874,Did not receive Pell grant or subsidized Stafford loan -  total number completed an award within 150% of normal time to completion
+Statistics,21,,,,,
+Statistics,22,,,,,
+Statistics,23,,,,,
+Statistics,24,,,,,
+Statistics,25,,,,,
+Statistics,26,,,,,
+Statistics,27,,,,,
+Statistics,28,,,,,
+Statistics,29,,,,,
+Statistics,30,,,,,
+Statistics,31,,,
+Statistics,32,,,
+Statistics,33,,,,,,,
+Statistics,34,,,,,,,
+Statistics,35,,,,,,,
+Statistics,36,,,,,,,
+Statistics,37,,,
+Statistics,38,,,
+Statistics,39,,,
+Statistics,40,,,
+Statistics,41,,,
+Statistics,42,,,
+Statistics,43,,,
+Statistics,44,,,
+Statistics,45,,,
+Statistics,46,,,
+Statistics,47
+Statistics,48
+Statistics,49
+Statistics,50
+Statistics,51
+Statistics,52
+Statistics,53
+Statistics,54
+Statistics,55
+Statistics,56
+Statistics,57
+Statistics,58
+Statistics,59
+Statistics,60
+Statistics,61
+Statistics,62
+Statistics,63
+Statistics,64
+Statistics,65
+Statistics,66
+Statistics,67
+Statistics,68
+Statistics,69
+Statistics,70
+Statistics,71
+Statistics,72
+Statistics,73
+Statistics,74
+Statistics,75
+Statistics,76
+Statistics,77
+Statistics,78
+Statistics,79
+Statistics,80
+Statistics,81
+Statistics,82
+Statistics,83
+Statistics,84
+Statistics,85
+Statistics,86
+Statistics,87
+Statistics,88
+Statistics,89
+Statistics,90
+Statistics,91
+Statistics,92
+Statistics,93
+Statistics,94
+Statistics,95
+Statistics,96
+Statistics,97
+Statistics,98
+Statistics,99
+Statistics,100
+Statistics,101
+Statistics,102
+Statistics,103
+Statistics,104
+Statistics,105
+Statistics,106
+Statistics,107
+Statistics,108
+Statistics,109
+Statistics,110
+Statistics,111
+Statistics,112
+Statistics,113
+Statistics,114
+Statistics,115
+Statistics,116
+Statistics,117
+Statistics,118
+Statistics,119
+Statistics,120
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,80906,LINE_10,1635,145244,88.83425076452599,1,1323,Revised Cohort
+StatisticsRV,2,80907,LINE_45,1635,221,0.13516819571865443,0,17,Exclusions
+StatisticsRV,3,80915,LINE_50,1635,145023,88.699082568807341,1,1323,Adjusted cohort (revised cohort minus exclusions)
+StatisticsRV,4,81401,LINE_55,1635,62923,38.485015290519875,0,1115,Completers within 100% of normal time
+StatisticsRV,5,80916,LINE_11,1635,100387,61.398776758409788,0,1115,Completers within 150% of normal time
+StatisticsRV,6,80917,LINE_30,1635,485,0.29663608562691129,0,34,Transfer-out students
+StatisticsRV,7,80908,LINE_51,1635,3483,2.1302752293577982,0,200,Still enrolled
+StatisticsRV,8,80909,LINE_52,1635,40668,24.873394495412843,0,437,No longer enrolled
+StatisticsRV,9,81626,PGLIN10,1635,99618,60.928440366972474,0,1323,Pell Grant recipients - revised cohort
+StatisticsRV,10,81631,PGLIN45,1635,129,7.8899082568807344E-2,0,14,Pell Grant recipients - exclusions
+StatisticsRV,11,81636,PGLIN50,1635,99489,60.849541284403671,0,1323,Pell Grant recipients - adjusted  cohort (revised minus exclusions)
+StatisticsRV,12,81641,PGLIN11,1635,68185,41.703363914373085,0,1115,Pell Grant  recipients - total number that completed an award  within 150% of normal time to completion
+StatisticsRV,13,81646,SSLIN10,1635,13014,7.9596330275229361,0,297,Subsidized Stafford Loan recipients not receiving Pell Grants - revised cohort
+StatisticsRV,14,81651,SSLIN45,1635,22,1.345565749235474E-2,0,8,Subsidized Stafford Loan recipients not receiving Pell Grants - exclusions
+StatisticsRV,15,81656,SSLIN50,1635,12992,7.9461773700305809,0,297,Subsidized Stafford Loan recipients not receiving Pell Grants - adjusted cohort (revised minus exclusions)
+StatisticsRV,16,81661,SSLIN11,1635,9928,6.0721712538226296,0,230,Subsidized Stafford Loan recipients not receiving Pell Grants - total number completed an award within 150% of normal time to completion
+StatisticsRV,17,81666,NRLIN10,1635,32612,19.946177370030583,0,1100,Did not receive Pell grant or subsidized Stafford loan - revised cohort
+StatisticsRV,18,81671,NRLIN45,1635,70,4.2813455657492352E-2,0,8,Did not receive Pell grant or subsidized Stafford loan - exclusions
+StatisticsRV,19,81676,NRLIN50,1635,32542,19.903363914373088,0,1100,Did not receive Pell grant or subsidized Stafford loan - adjusted cohort
+StatisticsRV,20,81681,NRLIN11,1635,22274,13.623241590214068,0,874,Did not receive Pell grant or subsidized Stafford loan -  total number completed an award within 150% of normal time to completion
+StatisticsRV,21,,,,,
+StatisticsRV,22,,,,,
+StatisticsRV,23,,,,,
+StatisticsRV,24,,,,,
+StatisticsRV,25,,,,,
+StatisticsRV,26,,,,,
+StatisticsRV,27,,,,,
+StatisticsRV,28,,,,,
+StatisticsRV,29,,,,,
+StatisticsRV,30,,,,,
+StatisticsRV,31,,,
+StatisticsRV,32,,,
+StatisticsRV,33,,,,,,,
+StatisticsRV,34,,,,,,,
+StatisticsRV,35,,,,,,,
+StatisticsRV,36,,,,,,,
+StatisticsRV,37,,,
+StatisticsRV,38,,,
+StatisticsRV,39,,,
+StatisticsRV,40,,,
+StatisticsRV,41,,,
+StatisticsRV,42,,,
+StatisticsRV,43,,,
+StatisticsRV,44,,,
+StatisticsRV,45,,,
+StatisticsRV,46,,,
+StatisticsRV,47
+StatisticsRV,48
+StatisticsRV,49
+StatisticsRV,50
+StatisticsRV,51
+StatisticsRV,52
+StatisticsRV,53
+StatisticsRV,54
+StatisticsRV,55
+StatisticsRV,56
+StatisticsRV,57
+StatisticsRV,58
+StatisticsRV,59
+StatisticsRV,60
+StatisticsRV,61
+StatisticsRV,62
+StatisticsRV,63
+StatisticsRV,64
+StatisticsRV,65
+StatisticsRV,66
+StatisticsRV,67
+StatisticsRV,68
+StatisticsRV,69
+StatisticsRV,70
+StatisticsRV,71
+StatisticsRV,72
+StatisticsRV,73
+StatisticsRV,74
+StatisticsRV,75
+StatisticsRV,76
+StatisticsRV,77
+StatisticsRV,78
+StatisticsRV,79
+StatisticsRV,80
+StatisticsRV,81
+StatisticsRV,82
+StatisticsRV,83
+StatisticsRV,84
+StatisticsRV,85
+StatisticsRV,86
+StatisticsRV,87
+StatisticsRV,88
+StatisticsRV,89
+StatisticsRV,90
+StatisticsRV,91
+StatisticsRV,92
+StatisticsRV,93
+StatisticsRV,94
+StatisticsRV,95
+StatisticsRV,96
+StatisticsRV,97
+StatisticsRV,98
+StatisticsRV,99
+StatisticsRV,100
+StatisticsRV,101
+StatisticsRV,102
+StatisticsRV,103
+StatisticsRV,104
+StatisticsRV,105
+StatisticsRV,106
+StatisticsRV,107
+StatisticsRV,108
+StatisticsRV,109
+StatisticsRV,110
+StatisticsRV,111
+StatisticsRV,112
+StatisticsRV,113
+StatisticsRV,114
+StatisticsRV,115
+StatisticsRV,116
+StatisticsRV,117
+StatisticsRV,118
+StatisticsRV,119
+StatisticsRV,120
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

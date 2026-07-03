@@ -9,10 +9,14 @@ export function StoryCard({
   title,
   description,
   href,
+  isCommunity,
 }: StoryCardType) {
   return (
     <Link href={href} className="storyCard">
-      <div className="storyCard__date">{date}</div>
+      <div className="storyCard__date">
+        {isCommunity && <span className="storyCard__badge">Community</span>}
+        {date}
+      </div>
       <div className="storyCard__imageWrapper">
         <Image
           src={imageUrl}

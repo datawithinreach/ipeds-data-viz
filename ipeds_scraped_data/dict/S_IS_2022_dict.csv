@@ -1,0 +1,1791 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for full-time instructional staff, by faculty and tenure status, academic rank, race/ethnicity, and gender (Degree-granting institutions with 15 or more full-time staff): Fall 2022",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,Filename,S2022_IS
+Introduction,3,  Provisional release:,January 2024
+Introduction,4,Filename,S2022_IS_RV
+Introduction,5,  Final release:,December 2024
+Introduction,6,Overview,"This file contains the number of full-time instructional staff on the payroll of the institution as of November 1,  by faculty and tenure status, academic rank, race/ethnicity and gender. This file has multiple records per institution.  Each record is uniquely defined by the variables IPEDS ID (UNITID), and the variable SISCAT which is the combination of faculty and tenure status FACSTAT (tenured, on tenure track, and not on-tenure track/no tenure system) and academic rank ARANK  (professors, associate professors, etc.) . Beginning with 2016, staff that are not on tenure track are further disaggregated by contract length (multi-year, indefinite, annual and less-than-annual).  From 2012 through 2015 the multi-year and indefinite contract lengths were combined as one category and often referred to as multi-year in past documentation. These data are applicable to degree-granting institutions with 15 or more full-time employees and related administrative offices.  
+",,,,,,,,
+Introduction,7,Note,"Prior to the IPEDS Web-based data collection in 2001, human resource data reported by race/ethnicity and gender was only available in odd-numbered years.  Beginning with 2001, human resource data reported by race/ethnicity and gender was mandatory in odd-numbered years and optional in even-numbered years.  Beginning with 2016 reporting human resource data by race/ethnicity and gender is mandatory annually.",,,,,,,,
+Introduction,8,,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.",,,,,,,,
+Introduction,9,Contents of spreadsheet,,,,,,,,,
+Introduction,10,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,11,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,12,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable. (Provisional release),,,,,,,,
+Introduction,13,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Provisional release)",,,,,,,,
+Introduction,14,FrequenciesRV,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable. (Final/revised release),,,,,,,,
+Introduction,15,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Final/revised release)",,,,,,,,
+Introduction,16,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,53001,SISCAT,N,3,Disc,,Instructional staff category
+varlist,3,53006,FACSTAT,N,3,Disc,,Faculty and tenure status
+varlist,4,53011,ARANK,N,3,Disc,,Academic rank
+varlist,5,50476,HRTOTLT,N,6,Cont,XHRTOTLT,Grand total
+varlist,6,50431,HRTOTLM,N,6,Cont,XHRTOTLM,Grand total men
+varlist,7,50436,HRTOTLW,N,6,Cont,XHRTOTLW,Grand total women
+varlist,8,52132,HRAIANT,N,6,Cont,XHRAIANT,American Indian or Alaska Native total
+varlist,9,52134,HRAIANM,N,6,Cont,XHRAIANM,American Indian or Alaska Native men
+varlist,10,52136,HRAIANW,N,6,Cont,XHRAIANW,American Indian or Alaska Native women
+varlist,11,52138,HRASIAT,N,6,Cont,XHRASIAT,Asian total
+varlist,12,52140,HRASIAM,N,6,Cont,XHRASIAM,Asian men
+varlist,13,52142,HRASIAW,N,6,Cont,XHRASIAW,Asian women
+varlist,14,52144,HRBKAAT,N,6,Cont,XHRBKAAT,Black or African American total
+varlist,15,52146,HRBKAAM,N,6,Cont,XHRBKAAM,Black or African American men
+varlist,16,52148,HRBKAAW,N,6,Cont,XHRBKAAW,Black or African American women
+varlist,17,52150,HRHISPT,N,6,Cont,XHRHISPT,Hispanic or Latino total
+varlist,18,52152,HRHISPM,N,6,Cont,XHRHISPM,Hispanic or Latino men
+varlist,19,52154,HRHISPW,N,6,Cont,XHRHISPW,Hispanic or Latino women
+varlist,20,52156,HRNHPIT,N,6,Cont,XHRNHPIT,Native Hawaiian or Other Pacific Islander total
+varlist,21,52158,HRNHPIM,N,6,Cont,XHRNHPIM,Native Hawaiian or Other Pacific Islander men
+varlist,22,52160,HRNHPIW,N,6,Cont,XHRNHPIW,Native Hawaiian or Other Pacific Islander women
+varlist,23,52162,HRWHITT,N,6,Cont,XHRWHITT,White total
+varlist,24,52164,HRWHITM,N,6,Cont,XHRWHITM,White men
+varlist,25,52166,HRWHITW,N,6,Cont,XHRWHITW,White women
+varlist,26,52168,HR2MORT,N,6,Cont,XHR2MORT,Two or more races total
+varlist,27,52170,HR2MORM,N,6,Cont,XHR2MORM,Two or more races men
+varlist,28,52172,HR2MORW,N,6,Cont,XHR2MORW,Two or more races women
+varlist,29,50471,HRUNKNT,N,6,Cont,XHRUNKNT,Race/ethnicity unknown total
+varlist,30,50421,HRUNKNM,N,6,Cont,XHRUNKNM,Race/ethnicity unknown men
+varlist,31,50426,HRUNKNW,N,6,Cont,XHRUNKNW,Race/ethnicity unknown women
+varlist,32,50441,HRNRALT,N,6,Cont,XHRNRALT,U.S. Nonresident total
+varlist,33,50361,HRNRALM,N,6,Cont,XHRNRALM,U.S. Nonresident men
+varlist,34,50366,HRNRALW,N,6,Cont,XHRNRALW,U.S. Nonresident women
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,53001,SISCAT,"Instructional staff category - defines instructional staff by faculty and tenure status by academic rank
+
+Faculty Persons identified by the institution as such and typically those whose initial assignments are made for the purpose of conducting instruction, research or public service as a principal activity (or activities). They may hold academic rank titles of professor, associate professor, assistant professor, instructor, lecturer or the equivalent of any of those academic ranks. Faculty may also include the chancellor/president, provost, vice provosts, deans, directors or the equivalent, as well as associate deans, assistant deans and executive officers of academic departments (chairpersons, heads or the equivalent) if their principal activity is instruction combined with research and/or public service. The designation as ""faculty"" is separate from the activities to which they may be currently assigned. For example, a newly appointed president of an institution may also be appointed as a faculty member. Graduate, instruction, and research assistants are not included in this category 
+
+Tenure-Status of a personnel position with respect to permanence of the position.  
+Tenure track - Personnel positions that lead to consideration for tenure.  
+Not on tenure track - Personnel positions that are considered non-tenure earning positions 
+
+Multi-year contract - a contract or employment agreement that is in effect for more than one year (e.g., more than 365 days) where subsequent years of the contract may be contingent upon other factors such as the appropriation of funds. The renewal period of a multi-year contract is not on an annual basis (e.g., a 5-year multi-year contract is renewed every 5 years NOT annually). 
+Annual contract - An annually-renewable contract or employment agreement that is in effect for a stated annual period within one year of execution, and may be equal to a period of 365 days, or a standard academic year, or the equivalent. Does not include contracts for partial year periods such as a single semester, quarter, term, block, or course.
+Less-than-annual-contract - A contract or employment agreement that is in effect for a partial year period of less than 365 days, or less than a standard academic year or the equivalent. Includes contracts for partial year periods such as a single semester, quarter, term, block, or course. 
+
+Academic rank - include Professors, Associate professors, Assistant professors, Instructors, Lecturers, and No academic rank."
+Description,3,53006,FACSTAT,"Faculty and tenure status
+
+Faculty Persons identified by the institution as such and typically those whose initial assignments are made for the purpose of conducting instruction, research or public service as a principal activity (or activities). They may hold academic rank titles of professor, associate professor, assistant professor, instructor, lecturer or the equivalent of any of those academic ranks. Faculty may also include the chancellor/president, provost, vice provosts, deans, directors or the equivalent, as well as associate deans, assistant deans and executive officers of academic departments (chairpersons, heads or the equivalent) if their principal activity is instruction combined with research and/or public service. The designation as ""faculty"" is separate from the activities to which they may be currently assigned. For example, a newly appointed president of an institution may also be appointed as a faculty member. Graduate, instruction, and research assistants are not included in this category 
+
+Tenure-Status of a personnel position with respect to permanence of the position.  
+Tenure track - Personnel positions that lead to consideration for tenure.  
+Not on tenure track - Personnel positions that are considered non-tenure earning positions 
+
+Multi-year contract - a contract or employment agreement that is in effect for more than one year (e.g., more than 365 days) where subsequent years of the contract may be contingent upon other factors such as the appropriation of funds. The renewal period of a multi-year contract is not on an annual basis (e.g., a 5-year multi-year contract is renewed every 5 years NOT annually). 
+Annual contract - An annually-renewable contract or employment agreement that is in effect for a stated annual period within one year of execution, and may be equal to a period of 365 days, or a standard academic year, or the equivalent. Does not include contracts for partial year periods such as a single semester, quarter, term, block, or course.
+Less-than-annual-contract - A contract or employment agreement that is in effect for a partial year period of less than 365 days, or less than a standard academic year or the equivalent. Includes contracts for partial year periods such as a single semester, quarter, term, block, or course."
+Description,4,53011,ARANK,"Academic rank - Assigned by the institution and includes Professors, Associate professors, Assistant professors, Instructors, Lecturers, and No academic rank."
+Description,5,50476,HRTOTLT,Grand total across all race/ethnicities and both genders.
+Description,6,50431,HRTOTLM,Grand total men
+Description,7,50436,HRTOTLW,Grand total women
+Description,8,52132,HRAIANT,"American Indian or Alaska Native men and women.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,9,52134,HRAIANM,"American Indian or Alaska Native men.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,10,52136,HRAIANW,"American Indian or Alaska Native women.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,11,52138,HRASIAT,"Asian men and women.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,12,52140,HRASIAM,"Asian men.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,13,52142,HRASIAW,"Asian women.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,14,52144,HRBKAAT,"Black or African American men and women.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,15,52146,HRBKAAM,"Black or African American men.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,16,52148,HRBKAAW,"Black or African American women.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,17,52150,HRHISPT,"Hispanic or Latino men and women.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,18,52152,HRHISPM,"Hispanic or Latino men.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,19,52154,HRHISPW,"Hispanic or Latino women.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,20,52156,HRNHPIT,"Native Hawaiian or Other Pacific Islanders men and women.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,21,52158,HRNHPIM,"Native Hawaiian or Other Pacific Islanders men.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,22,52160,HRNHPIW,"Native Hawaiian or Other Pacific Islanders women.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,23,52162,HRWHITT,"White men and women.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,24,52164,HRWHITM,"White men.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,25,52166,HRWHITW,"White women.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,26,52168,HR2MORT,"Two or more races men and women.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,27,52170,HR2MORM,"Two or more races men.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,28,52172,HR2MORW,"Two or more races women.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,29,50471,HRUNKNT,"Race/ethnicity unknown total
+
+RACE/ETHNICITY UNKNOWN -Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories.
+
+RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,30,50421,HRUNKNM,"Race/ethnicity unknown men. 
+
+RACE/ETHNICITY UNKNOWN - Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories. 
+
+RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,31,50426,HRUNKNW,"Race/ethnicity unknown women. 
+
+RACE/ETHNICITY UNKNOWN - Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories. 
+
+RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,32,50441,HRNRALT,"U.S. Nonresident total
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.
+
+Resident (and other eligible non-citizens) - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident status (and who holds either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Description,33,50361,HRNRALM,"U.S. Nonresident men.  
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.  
+
+Resident (and other eligible non-citizens) - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident status (and who holds either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Description,34,50366,HRNRALW,"U.S. Nonresident women.  
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.  
+
+Resident (and other eligible non-citizens) - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident status (and who holds either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,53001,SISCAT,1,All full-time instructional staff,3590,5.6
+Frequencies,2,53001,SISCAT,100,Full-time instructional with faculty status,3464,5.4
+Frequencies,3,53001,SISCAT,101,Full-time instructional professors,2409,3.76
+Frequencies,4,53001,SISCAT,102,Full-time instructional associate professors,2315,3.61
+Frequencies,5,53001,SISCAT,103,Full-time instructional assistant professors,2305,3.6
+Frequencies,6,53001,SISCAT,104,Full-time instructional instructors,2408,3.76
+Frequencies,7,53001,SISCAT,105,Full-time instructional lecturers,799,1.25
+Frequencies,8,53001,SISCAT,106,Full-time instructional no academic rank,763,1.19
+Frequencies,9,53001,SISCAT,200,Full-time instructional tenured total,2051,3.2
+Frequencies,10,53001,SISCAT,201,"Full-time instructional tenured, professors",1764,2.75
+Frequencies,11,53001,SISCAT,202,"Full-time instructional tenured, associate professors",1646,2.57
+Frequencies,12,53001,SISCAT,203,"Full-time instructional tenured, assistant professors",819,1.28
+Frequencies,13,53001,SISCAT,204,"Full-time instructional tenured, instructors",355,0.55000000000000004
+Frequencies,14,53001,SISCAT,205,"Full-time instructional tenured, lecturers",38,0.06
+Frequencies,15,53001,SISCAT,206,"Full-time instructional tenured, no academic rank",133,0.21
+Frequencies,16,53001,SISCAT,300,Full-time instructional on-tenure track total,1951,3.04
+Frequencies,17,53001,SISCAT,301,"Full-time instructional on-tenure track, professors",526,0.82
+Frequencies,18,53001,SISCAT,302,"Full-time instructional on-tenure track, associate professors",1216,1.9
+Frequencies,19,53001,SISCAT,303,"Full-time instructional on-tenure track, assistant professors",1587,2.48
+Frequencies,20,53001,SISCAT,304,"Full-time instructional on-tenure track, instructors",621,0.97
+Frequencies,21,53001,SISCAT,305,"Full-time instructional on-tenure track, lecturers",61,0.1
+Frequencies,22,53001,SISCAT,306,"Full-time instructional on-tenure track, no academic rank",143,0.22
+Frequencies,23,53001,SISCAT,400,Full-time instructional not on tenure track/no tenure system system total,3243,5.0599999999999996
+Frequencies,24,53001,SISCAT,401,"Full-time instructional not on tenure/no tenure system, professors",1366,2.13
+Frequencies,25,53001,SISCAT,402,"Full-time instructional not on tenure/no tenure system, associate professors",1480,2.31
+Frequencies,26,53001,SISCAT,403,"Full-time instructional not on tenure/no tenure system, assistant professors",1856,2.9
+Frequencies,27,53001,SISCAT,404,"Full-time instructional not on tenure/no tenure system, instructors",2191,3.42
+Frequencies,28,53001,SISCAT,405,"Full-time instructional not on tenure/no tenure system, lecturers",791,1.23
+Frequencies,29,53001,SISCAT,406,"Full-time instructional not on tenure/no tenure system, no academic rank",703,1.1000000000000001
+Frequencies,30,53001,SISCAT,410,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, total",1569,2.4500000000000002
+Frequencies,31,53001,SISCAT,411,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, professors",701,1.0900000000000001
+Frequencies,32,53001,SISCAT,412,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, asssociate professors",714,1.1100000000000001
+Frequencies,33,53001,SISCAT,413,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, assistant professors",823,1.28
+Frequencies,34,53001,SISCAT,414,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, instructors",879,1.37
+Frequencies,35,53001,SISCAT,415,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts contract,lecturers",331,0.52
+Frequencies,36,53001,SISCAT,416,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, no academic rank",243,0.38
+Frequencies,37,53001,SISCAT,420,"Full-time instructional not on tenure track/no tenure system, annual contract, total",2347,3.66
+Frequencies,38,53001,SISCAT,421,"Full-time instructional not on tenure track/no tenure system, annual contract, professors",857,1.34
+Frequencies,39,53001,SISCAT,422,"Full-time instructional not on tenure track/no tenure system, annual contract, asssociate professors",1007,1.57
+Frequencies,40,53001,SISCAT,423,"Full-time instructional not on tenure track/no tenure system, annual contract, assistant professors",1456,2.27
+Frequencies,41,53001,SISCAT,424,"Full-time instructional not on tenure track/no tenure system, annual contract, instructors",1486,2.3199999999999998
+Frequencies,42,53001,SISCAT,425,"Full-time instructional not on tenure track/no tenure system, annual contract,lecturers",665,1.04
+Frequencies,43,53001,SISCAT,426,"Full-time instructional not on tenure track/no tenure system, annual contract, no academic rank",513,0.8
+Frequencies,44,53001,SISCAT,430,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, total",665,1.04
+Frequencies,45,53001,SISCAT,431,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, professors",107,0.17
+Frequencies,46,53001,SISCAT,432,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, asssociate professors",112,0.17
+Frequencies,47,53001,SISCAT,433,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, assistant professors",223,0.35
+Frequencies,48,53001,SISCAT,434,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, instructors",384,0.6
+Frequencies,49,53001,SISCAT,435,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract,lecturers",166,0.26
+Frequencies,50,53001,SISCAT,436,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, no academic rank",145,0.23
+Frequencies,51,53001,SISCAT,440,"Full-time instructional not on tenure track/no tenure system, multi-year contract, total",961,1.5
+Frequencies,52,53001,SISCAT,441,"Full-time instructional not on tenure track/no tenure system, multi-year contract, professors",526,0.82
+Frequencies,53,53001,SISCAT,442,"Full-time instructional not on tenure track/no tenure system, multi-year contract, associate professors",563,0.88
+Frequencies,54,53001,SISCAT,443,"Full-time instructional not on tenure track/no tenure system, multi-year contract, assistant professors",654,1.02
+Frequencies,55,53001,SISCAT,444,"Full-time instructional not on tenure track/no tenure system, multi-year contract, instructors",436,0.68
+Frequencies,56,53001,SISCAT,445,"Full-time instructional not on tenure track/no tenure system, multi-year contract, lecturers",292,0.46
+Frequencies,57,53001,SISCAT,446,"Full-time instructional not on tenure track/no tenure system, multi-year contract, no academic rank",133,0.21
+Frequencies,58,53001,SISCAT,450,"Full-time instructional not on tenure track/no tenure system, multi-year contract, total",741,1.1599999999999999
+Frequencies,59,53001,SISCAT,451,"Full-time instructional not on tenure track/no tenure system, indefinite contract, professors",210,0.33
+Frequencies,60,53001,SISCAT,452,"Full-time instructional not on tenure track/no tenure system, indefinite contract, associate professors",184,0.28999999999999998
+Frequencies,61,53001,SISCAT,453,"Full-time instructional not on tenure track/no tenure system, indefinite contract, assistant professors",223,0.35
+Frequencies,62,53001,SISCAT,454,"Full-time instructional not on tenure track/no tenure system, indefinite contract, instructors",482,0.75
+Frequencies,63,53001,SISCAT,455,"Full-time instructional not on tenure track/no tenure system, indefinite contract, lecturers",75,0.12
+Frequencies,64,53001,SISCAT,456,"Full-time instructional not on tenure track/no tenure system, indefinite contract, no academic rank",129,0.2
+Frequencies,65,53001,SISCAT,500,Full-time instructional without faculty status,506,0.79
+Frequencies,66,53006,FACSTAT,0,All full-time instructional staff,3590,5.6
+Frequencies,67,53006,FACSTAT,10,"With faculty status, total",14463,22.56
+Frequencies,68,53006,FACSTAT,20,"With faculty status, tenured",6806,10.62
+Frequencies,69,53006,FACSTAT,30,"With faculty status, on tenure track",6105,9.52
+Frequencies,70,53006,FACSTAT,40,"With faculty status not on tenure track/No tenure system, total",11630,18.14
+Frequencies,71,53006,FACSTAT,41,"With faculty status not on tenure track/No tenure system, multi-year and indefinite contract",5260,8.2100000000000009
+Frequencies,72,53006,FACSTAT,44,"With faculty status not on tenure track/No tenure system, multi-year contract",3565,5.56
+Frequencies,73,53006,FACSTAT,45,"With faculty status not on tenure track/No tenure system, indefinite contract",2044,3.19
+Frequencies,74,53006,FACSTAT,42,"With faculty status not on tenure track/No tenure system, annual contract",8331,13
+Frequencies,75,53006,FACSTAT,43,"With faculty status not on tenure track/No tenure system, less-than-annual contract",1802,2.81
+Frequencies,76,53006,FACSTAT,50,Without faculty status,506,0.79
+Frequencies,77,53011,ARANK,0,All ranks,21088,32.9
+Frequencies,78,53011,ARANK,1,Professors,8466,13.21
+Frequencies,79,53011,ARANK,2,Associate professors,9237,14.41
+Frequencies,80,53011,ARANK,3,Assistant professors,9946,15.52
+Frequencies,81,53011,ARANK,4,Instructors,9242,14.42
+Frequencies,82,53011,ARANK,5,Lecturers,3218,5.0199999999999996
+Frequencies,83,53011,ARANK,6,No academic rank,2905,4.53
+Frequencies,84,,,,,,
+Frequencies,85,,,,,,
+Frequencies,86,,,,,,
+Frequencies,87,,,,,,
+Frequencies,88,,,,,,
+Frequencies,89,,,,,,
+Frequencies,90,,,,,,
+Frequencies,91,,,,,,
+Frequencies,92,,,,,,
+Frequencies,93,,,,,,
+Frequencies,94,,,,,,
+Frequencies,95,,,,,,
+Frequencies,96,,,,,,
+Frequencies,97,,,,,,
+Frequencies,98,,,,,,
+Frequencies,99,,,,,,
+Frequencies,100,,,,,,
+Frequencies,101,,,,,,
+Frequencies,102,,,,,,
+Frequencies,103,,,,,,
+Frequencies,104,,,,,,
+Frequencies,105,,,,,,
+Frequencies,106,,,,,,
+Frequencies,107,,,,,,
+Frequencies,108,,,,,,
+Frequencies,109,,,,,,
+Frequencies,110,,,,,,
+Frequencies,111,,,,,,
+Frequencies,112,,,,,,
+Frequencies,113,,,,,,
+Frequencies,114,,,,,,
+Frequencies,115,,,,,,
+Frequencies,116,,,,,,
+Frequencies,117,,,,,,
+Frequencies,118,,,,,,
+Frequencies,119,,,,,,
+Frequencies,120,,,,,,
+Frequencies,121,,,,,,
+Frequencies,122,,,,,,
+Frequencies,123,,,,,,
+Frequencies,124,,,,,,
+Frequencies,125,,,,,,
+Frequencies,126,,,,,,
+Frequencies,127,,,,,,
+Frequencies,128,,,,,,
+Frequencies,129,,,,,,
+Frequencies,130,,,,,,
+Frequencies,131,,,,,,
+Frequencies,132,,,,,,
+Frequencies,133,,,,,,
+Frequencies,134,,,,,,
+Frequencies,135,,,,,,
+Frequencies,136,,,,,,
+Frequencies,137,,,,,,
+Frequencies,138,,,,,,
+Frequencies,139,,,,,,
+Frequencies,140,,,,,,
+Frequencies,141,,,,,,
+Frequencies,142,,,,,,
+Frequencies,143,,,,,,
+Frequencies,144,,,,,,
+Frequencies,145,,,,,,
+Frequencies,146,,,,,,
+Frequencies,147,,,,,,
+Frequencies,148,,,,,,
+Frequencies,149,,,,,,
+Frequencies,150,,,,,,
+Frequencies,151,,,,,,
+Frequencies,152,,,,,,
+Frequencies,153,,,,,,
+Frequencies,154,,,,,,
+Frequencies,155,,,,,,
+Frequencies,156,,,,,,
+Frequencies,157,,,,,,
+Frequencies,158,,,,,,
+Frequencies,159,,,,,,
+Frequencies,160,,,,,,
+Frequencies,161,,,,,,
+Frequencies,162,,,,,,
+Frequencies,163,,,,,,
+Frequencies,164,,,,,,
+Frequencies,165,,,,,,
+Frequencies,166,,,,,,
+Frequencies,167,,,,,,
+Frequencies,168,,,,,,
+Frequencies,169,,,,,,
+Frequencies,170,,,,,,
+Frequencies,171,,,,,,
+Frequencies,172,,,,,,
+Frequencies,173,,,,,,
+Frequencies,174,,,,,,
+Frequencies,175,,,,,,
+Frequencies,176,,,,,,
+Frequencies,177,,,,,,
+Frequencies,178,,,,,,
+Frequencies,179,,,,,,
+Frequencies,180,,,,,,
+Frequencies,181,,,,,,
+Frequencies,182,,,,,,
+Frequencies,183,,,,,,
+Frequencies,184,,,,,,
+Frequencies,185,,,,,,
+Frequencies,186,,,,,,
+Frequencies,187,,,,,,
+Frequencies,188,,,,,,
+Frequencies,189,,,,,,
+Frequencies,190,,,,,,
+Frequencies,191,,,,,,
+Frequencies,192,,,,,,
+Frequencies,193,,,,,,
+Frequencies,194,,,,,,
+Frequencies,195,,,,,,
+Frequencies,196,,,,,,
+Frequencies,197,,,,,,
+Frequencies,198,,,,,,
+Frequencies,199,,,,,,
+Frequencies,200,,,,,,
+Frequencies,201,,,,,,
+Frequencies,202,,,,,,
+Frequencies,203,,,,,,
+Frequencies,204,,,,,,
+Frequencies,205,,,,,,
+Frequencies,206,,,,,,
+Frequencies,207,,,,,,
+Frequencies,208,,,,,,
+Frequencies,209,,,,,,
+Frequencies,210,,,,,,
+Frequencies,211,,,,,,
+Frequencies,212,,,,,,
+Frequencies,213,,,,,,
+Frequencies,214,,,,,,
+Frequencies,215,,,,,,
+Frequencies,216,,,,,,
+Frequencies,217,,,,,,
+Frequencies,218,,,,,,
+Frequencies,219,,,,,,
+Frequencies,220,,,,,,
+Frequencies,221,,,,,,
+Frequencies,222,,,,,,
+Frequencies,223,,,,,,
+Frequencies,224,,,,,,
+Frequencies,225,,,,,,
+Frequencies,226,,,,,,
+Frequencies,227,,,,,,
+Frequencies,228,,,,,,
+Frequencies,229,,,,,,
+Frequencies,230,,,,,,
+Frequencies,231,,,,,,
+Frequencies,232,,,,,,
+Frequencies,233,,,,,,
+Frequencies,234,,,,,,
+Frequencies,235,,,,,,
+Frequencies,236,,,,,,
+Frequencies,237,,,,,,
+Frequencies,238,,,,,,
+Frequencies,239,,,,,,
+Frequencies,240,,,,,,
+Frequencies,241,,,,,,
+Frequencies,242,,,,,,
+Frequencies,243,,,,,,
+Frequencies,244,,,,,,
+Frequencies,245,,,,,,
+Frequencies,246,,,,,,
+Frequencies,247,,,,,,
+Frequencies,248,,,,,,
+Frequencies,249,,,,,,
+Frequencies,250,,,,,,
+Frequencies,251,,,,,,
+Frequencies,252,,,,,,
+Frequencies,253,,,,,,
+Frequencies,254,,,,,,
+Frequencies,255,,,,,,
+Frequencies,256,,,,,,
+Frequencies,257,,,,,,
+Frequencies,258,,,,,,
+Frequencies,259,,,,,,
+Frequencies,260,,,,,,
+Frequencies,261,,,,,,
+Frequencies,262,,,,,,
+Frequencies,263,,,,,,
+Frequencies,264,,,,,,
+Frequencies,265,,,,,,
+Frequencies,266,,,,,,
+Frequencies,267,,,,,,
+Frequencies,268,,,,,,
+Frequencies,269,,,,,,
+Frequencies,270,,,,,,
+Frequencies,271,,,,,,
+Frequencies,272,,,,,,
+Frequencies,273,,,,,,
+Frequencies,274,,,,,,
+Frequencies,275,,,,,,
+Frequencies,276,,,,,,
+Frequencies,277,,,,,,
+Frequencies,278,,,,,,
+Frequencies,279,,,,,,
+Frequencies,280,,,,,,
+Frequencies,281,,,,,,
+Frequencies,282,,,,,,
+Frequencies,283,,,,,,
+Frequencies,284,,,,,,
+Frequencies,285,,,,,,
+Frequencies,286,,,,,,
+Frequencies,287,,,,,,
+Frequencies,288,,,,,,
+Frequencies,289,,,,,,
+Frequencies,290,,,,,,
+Frequencies,291,,,,,,
+Frequencies,292,,,,,,
+Frequencies,293,,,,,,
+Frequencies,294,,,,,,
+Frequencies,295,,,,,,
+Frequencies,296,,,,,,
+Frequencies,297,,,,,,
+Frequencies,298,,,,,,
+Frequencies,299,,,,,,
+Frequencies,300,,,,,,
+Frequencies,301,,,,,,
+Frequencies,302,,,,,,
+Frequencies,303,,,,,,
+Frequencies,304,,,,,,
+Frequencies,305,,,,,,
+Frequencies,306,,,,,,
+Frequencies,307,,,,,,
+Frequencies,308,,,,,,
+Frequencies,309,,,,,,
+Frequencies,310,,,,,,
+Frequencies,311,,,,,,
+Frequencies,312,,,,,,
+Frequencies,313,,,,,,
+Frequencies,314,,,,,,
+Frequencies,315,,,,,,
+Frequencies,316,,,,,,
+Frequencies,317,,,,,,
+Frequencies,318,,,,,,
+Frequencies,319,,,,,,
+Frequencies,320,,,,,,
+Frequencies,321,,,,,,
+Frequencies,322,,,,,,
+Frequencies,323,,,,,,
+Frequencies,324,,,,,,
+Frequencies,325,,,,,,
+Frequencies,326,,,,,,
+Frequencies,327,,,,,,
+Frequencies,328,,,,,,
+Frequencies,329,,,,,,
+Frequencies,330,,,,,,
+Frequencies,331,,,,,,
+Frequencies,332,,,,,,
+Frequencies,333,,,,,,
+Frequencies,334,,,,,,
+Frequencies,335,,,,,,
+Frequencies,336,,,,,,
+Frequencies,337,,,,,,
+Frequencies,338,,,,,,
+Frequencies,339,,,,,,
+Frequencies,340,,,,,,
+Frequencies,341,,,,,,
+Frequencies,342,,,,,,
+Frequencies,343,,,,,,
+Frequencies,344,,,,,,
+Frequencies,345,,,,,,
+Frequencies,346,,,,,,
+Frequencies,347,,,,,,
+Frequencies,348,,,,,,
+Frequencies,349,,,,,,
+Frequencies,350,,,,,,
+Frequencies,351,,,,,,
+Frequencies,352,,,,,,
+Frequencies,353,,,,,,
+Frequencies,354,,,,,,
+Frequencies,355,,,,,,
+Frequencies,356,,,,,,
+Frequencies,357,,,,,,
+Frequencies,358,,,,,,
+Frequencies,359,,,,,,
+Frequencies,360,,,,,,
+Frequencies,361,,,,,,
+Frequencies,362,,,,,,
+Frequencies,363,,,,,,
+Frequencies,364,,,,,,
+Frequencies,365,,,,,,
+Frequencies,366,,,,,,
+Frequencies,367,,,,,,
+Frequencies,368,,,,,,
+Frequencies,369,,,,,,
+Frequencies,370,,,,,,
+Frequencies,371,,,,,,
+Frequencies,372,,,,,,
+Frequencies,373,,,,,,
+Frequencies,374,,,,,,
+Frequencies,375,,,,,,
+Frequencies,376,,,,,,
+Frequencies,377,,,,,,
+Frequencies,378,,,,,,
+Frequencies,379,,,,,,
+Frequencies,380,,,,,,
+Frequencies,381,,,,,,
+Frequencies,382,,,,,,
+Frequencies,383,,,,,,
+Frequencies,384,,,,,,
+Frequencies,385,,,,,,
+Frequencies,386,,,,,,
+Frequencies,387,,,,,,
+Frequencies,388,,,,,,
+Frequencies,389,,,,,,
+Frequencies,390,,,,,,
+Frequencies,391,,,,,,
+Frequencies,392,,,,,,
+Frequencies,393,,,,,,
+Frequencies,394,,,,,,
+Frequencies,395,,,,,,
+Frequencies,396,,,,,,
+Frequencies,397,,,,,,
+Frequencies,398,,,,,,
+Frequencies,399,,,,,,
+Frequencies,400,,,,,,
+Frequencies,401,,,,,,
+Frequencies,402,,,,,,
+Frequencies,403,,,,,,
+Frequencies,404,,,,,,
+Frequencies,405,,,,,,
+Frequencies,406,,,,,,
+Frequencies,407,,,,,,
+Frequencies,408,,,,,,
+Frequencies,409,,,,,,
+Frequencies,410,,,,,,
+Frequencies,411,,,,,,
+Frequencies,412,,,,,,
+Frequencies,413,,,,,,
+Frequencies,414,,,,,,
+Frequencies,415,,,,,,
+Frequencies,416,,,,,,
+Frequencies,417,,,,,,
+Frequencies,418,,,,,,
+Frequencies,419,,,,,,
+Frequencies,420,,,,,,
+Frequencies,421,,,,,,
+Frequencies,422,,,,,,
+Frequencies,423,,,,,,
+Frequencies,424,,,,,,
+Frequencies,425,,,,,,
+Frequencies,426,,,,,,
+Frequencies,427,,,,,,
+Frequencies,428,,,,,,
+Frequencies,429,,,,,,
+Frequencies,430,,,,,,
+Frequencies,431,,,,,,
+Frequencies,432,,,,,,
+Frequencies,433,,,,,,
+Frequencies,434,,,,,,
+Frequencies,435,,,,,,
+Frequencies,436,,,,,,
+Frequencies,437,,,,,,
+Frequencies,438,,,,,,
+Frequencies,439,,,,,,
+Frequencies,440,,,,,,
+Frequencies,441,,,,,,
+Frequencies,442,,,,,,
+Frequencies,443,,,,,,
+Frequencies,444,,,,,,
+Frequencies,445,,,,,,
+Frequencies,446,,,,,,
+Frequencies,447,,,,,,
+Frequencies,448,,,,,,
+Frequencies,449,,,,,,
+Frequencies,450,,,,,,
+Frequencies,451,,,,,,
+Frequencies,452,,,,,,
+Frequencies,453,,,,,,
+Frequencies,454,,,,,,
+Frequencies,455,,,,,,
+Frequencies,456,,,,,,
+Frequencies,457,,,,,,
+Frequencies,458,,,,,,
+Frequencies,459,,,,,,
+Frequencies,460,,,,,,
+Frequencies,461,,,,,,
+Frequencies,462,,,,,,
+Frequencies,463,,,,,,
+Frequencies,464,,,,,,
+Frequencies,465,,,,,,
+Frequencies,466,,,,,,
+Frequencies,467,,,,,,
+Frequencies,468,,,,,,
+Frequencies,469,,,,,,
+Frequencies,470,,,,,,
+Frequencies,471,,,,,,
+Frequencies,472,,,,,,
+Frequencies,473,,,,,,
+Frequencies,474,,,,,,
+Frequencies,475,,,,,,
+Frequencies,476,,,,,,
+Frequencies,477,,,,,,
+Frequencies,478,,,,,,
+Frequencies,479,,,,,,
+Frequencies,480,,,,,,
+Frequencies,481,,,,,,
+Frequencies,482,,,,,,
+Frequencies,483,,,,,,
+Frequencies,484,,,,,,
+Frequencies,485,,,,,,
+Frequencies,486,,,,,,
+Frequencies,487,,,,,,
+Frequencies,488,,,,,,
+Frequencies,489,,,,,,
+Frequencies,490,,,,,,
+Frequencies,491,,,,,,
+Frequencies,492,,,,,,
+Frequencies,493,,,,,,
+Frequencies,494,,,,,,
+Frequencies,495,,,,,,
+Frequencies,496,,,,,,
+Frequencies,497,,,,,,
+Frequencies,498,,,,,,
+Frequencies,499,,,,,,
+Frequencies,500,,,,,,
+Frequencies,501,,,,,,
+Frequencies,502,,,,,,
+Frequencies,503,,,,,,
+Frequencies,504,,,,,,
+Frequencies,505,,,,,,
+Frequencies,506,,,,,,
+Frequencies,507,,,,,,
+Frequencies,508,,,,,,
+Frequencies,509,,,,,,
+Frequencies,510,,,,,,
+Frequencies,511,,,,,,
+Frequencies,512,,,,,,
+Frequencies,513,,,,,,
+Frequencies,514,,,,,,
+Frequencies,515,,,,,,
+Frequencies,516,,,,,,
+Frequencies,517,,,,,,
+Frequencies,518,,,,,,
+Frequencies,519,,,,,,
+Frequencies,520,,,,,,
+Frequencies,521,,,,,,
+Frequencies,522,,,,,,
+Frequencies,523,,,,,,
+Frequencies,524,,,,,,
+Frequencies,525,,,,,,
+Frequencies,526,,,,,,
+Frequencies,527,,,,,,
+Frequencies,528,,,,,,
+Frequencies,529,,,,,,
+Frequencies,530,,,,,,
+Frequencies,531,,,,,,
+Frequencies,532,,,,,,
+Frequencies,533,,,,,,
+Frequencies,534,,,,,,
+Frequencies,535,,,,,,
+Frequencies,536,,,,,,
+Frequencies,537,,,,,,
+Frequencies,538,,,,,,
+Frequencies,539,,,,,,
+Frequencies,540,,,,,,
+Frequencies,541,,,,,,
+Frequencies,542,,,,,,
+Frequencies,543,,,,,,
+Frequencies,544,,,,,,
+Frequencies,545,,,,,,
+Frequencies,546,,,,,,
+Frequencies,547,,,,,,
+Frequencies,548,,,,,,
+Frequencies,549,,,,,,
+Frequencies,550,,,,,,
+Frequencies,551,,,,,,
+Frequencies,552,,,,,,
+Frequencies,553,,,,,,
+Frequencies,554,,,,,,
+Frequencies,555,,,,,,
+Frequencies,556,,,,,,
+Frequencies,557,,,,,,
+Frequencies,558,,,,,,
+Frequencies,559,,,,,,
+Frequencies,560,,,,,,
+Frequencies,561,,,,,,
+Frequencies,562,,,,,,
+Frequencies,563,,,,,,
+Frequencies,564,,,,,,
+Frequencies,565,,,,,,
+Frequencies,566,,,,,,
+Frequencies,567,,,,,,
+Frequencies,568,,,,,,
+Frequencies,569,,,,,,
+Frequencies,570,,,,,,
+Frequencies,571,,,,,,
+Frequencies,572,,,,,,
+Frequencies,573,,,,,,
+Frequencies,574,,,,,,
+Frequencies,575,,,,,,
+Frequencies,576,,,,,,
+Frequencies,577,,,,,,
+Frequencies,578,,,,,,
+Frequencies,579,,,,,,
+Frequencies,580,,,,,,
+Frequencies,581,,,,,,
+Frequencies,582,,,,,,
+Frequencies,583,,,,,,
+Frequencies,584,,,,,,
+Frequencies,585,,,,,,
+Frequencies,586,,,,,,
+Frequencies,587,,,,,,
+Frequencies,588,,,,,,
+Frequencies,589,,,,,,
+Frequencies,590,,,,,,
+Frequencies,591,,,,,,
+Frequencies,592,,,,,,
+Frequencies,593,,,,,,
+Frequencies,594,,,,,,
+Frequencies,595,,,,,,
+Frequencies,596,,,,,,
+Frequencies,597,,,,,,
+Frequencies,598,,,,,,
+Frequencies,599,,,,,,
+Frequencies,600,,,,,,
+Frequencies,601,,,,,,
+Frequencies,602,,,,,,
+Frequencies,603,,,,,,
+Frequencies,604,,,,,,
+Frequencies,605,,,,,,
+Frequencies,606,,,,,,
+Frequencies,607,,,,,,
+Frequencies,608,,,,,,
+Frequencies,609,,,,,,
+Frequencies,610,,,,,,
+Frequencies,611,,,,,,
+Frequencies,612,,,,,,
+Frequencies,613,,,,,,
+Frequencies,614,,,,,,
+Frequencies,615,,,,,,
+Frequencies,616,,,,,,
+Frequencies,617,,,,,,
+Frequencies,618,,,,,,
+Frequencies,619,,,,,,
+Frequencies,620,,,,,,
+Frequencies,621,,,,,,
+Frequencies,622,,,,,,
+Frequencies,623,,,,,,
+Frequencies,624,,,,,,
+Frequencies,625,,,,,,
+Frequencies,626,,,,,,
+Frequencies,627,,,,,,
+Frequencies,628,,,,,,
+Frequencies,629,,,,,,
+Frequencies,630,,,,,,
+Frequencies,631,,,,,,
+Frequencies,632,,,,,,
+Frequencies,633,,,,,,
+Frequencies,634,,,,,,
+Frequencies,635,,,,,,
+Frequencies,636,,,,,,
+Frequencies,637,,,,,,
+Frequencies,638,,,,,,
+Frequencies,639,,,,,,
+Frequencies,640,,,,,,
+Frequencies,641,,,,,,
+Frequencies,642,,,,,,
+Frequencies,643,,,,,,
+Frequencies,644,,,,,,
+Frequencies,645,,,,,,
+Frequencies,646,,,,,,
+Frequencies,647,,,,,,
+Frequencies,648,,,,,,
+Frequencies,649,,,,,,
+Frequencies,650,,,,,,
+Frequencies,651,,,,,,
+Frequencies,652,,,,,,
+Frequencies,653,,,,,,
+Frequencies,654,,,,,,
+Frequencies,655,,,,,,
+Frequencies,656,,,,,,
+Frequencies,657,,,,,,
+Frequencies,658,,,,,,
+Frequencies,659,,,,,,
+Frequencies,660,,,,,,
+Frequencies,661,,,,,,
+Frequencies,662,,,,,,
+Frequencies,663,,,,,,
+Frequencies,664,,,,,,
+Frequencies,665,,,,,,
+Frequencies,666,,,,,,
+Frequencies,667,,,,,,
+Frequencies,668,,,,,,
+Frequencies,669,,,,,,
+Frequencies,670,,,,,,
+Frequencies,671,,,,,,
+Frequencies,672,,,,,,
+Frequencies,673,,,,,,
+Frequencies,674,,,,,,
+Frequencies,675,,,,,,
+Frequencies,676,,,,,,
+Frequencies,677,,,,,,
+Frequencies,678,,,,,,
+Frequencies,679,,,,,,
+Frequencies,680,,,,,,
+Frequencies,681,,,,,,
+Frequencies,682,,,,,,
+Frequencies,683,,,,,,
+Frequencies,684,,,,,,
+Frequencies,685,,,,,,
+Frequencies,686,,,,,,
+Frequencies,687,,,,,,
+Frequencies,688,,,,,,
+Frequencies,689,,,,,,
+Frequencies,690,,,,,,
+Frequencies,691,,,,,,
+Frequencies,692,,,,,,
+Frequencies,693,,,,,,
+Frequencies,694,,,,,,
+Frequencies,695,,,,,,
+Frequencies,696,,,,,,
+Frequencies,697,,,,,,
+Frequencies,698,,,,,,
+Frequencies,699,,,,,,
+Frequencies,700,,,,,,
+Frequencies,701,,,,,,
+Frequencies,702,,,,,,
+Frequencies,703,,,,,,
+Frequencies,704,,,,,,
+Frequencies,705,,,,,,
+Frequencies,706,,,,,,
+Frequencies,707,,,,,,
+Frequencies,708,,,,,,
+Frequencies,709,,,,,,
+Frequencies,710,,,,,,
+Frequencies,711,,,,,,
+Frequencies,712,,,,,,
+Frequencies,713,,,,,,
+Frequencies,714,,,,,,
+Frequencies,715,,,,,,
+Frequencies,716,,,,,,
+Frequencies,717,,,,,,
+Frequencies,718,,,,,,
+Frequencies,719,,,,,,
+Frequencies,720,,,,,,
+Frequencies,721,,,,,,
+Frequencies,722,,,,,,
+Frequencies,723,,,,,,
+Frequencies,724,,,,,,
+Frequencies,725,,,,,,
+Frequencies,726,,,,,,
+Frequencies,727,,,,,,
+Frequencies,728,,,,,,
+Frequencies,729,,,,,,
+Frequencies,730,,,,,,
+Frequencies,731,,,,,,
+Frequencies,732,,,,,,
+Frequencies,733,,,,,,
+Frequencies,734,,,,,,
+Frequencies,735,,,,,,
+Frequencies,736,,,,,,
+Frequencies,737,,,,,,
+Frequencies,738,,,,,,
+Frequencies,739,,,,,,
+Frequencies,740,,,,,,
+Frequencies,741,,,,,,
+Frequencies,742,,,,,,
+Frequencies,743,,,,,,
+Frequencies,744,,,,,,
+Frequencies,745,,,,,,
+Frequencies,746,,,,,,
+Frequencies,747,,,,,,
+Frequencies,748,,,,,,
+Frequencies,749,,,,,,
+Frequencies,750,,,,,,
+Frequencies,751,,,,,,
+Frequencies,752,,,,,,
+Frequencies,753,,,,,,
+Frequencies,754,,,,,,
+Frequencies,755,,,,,,
+Frequencies,756,,,,,,
+Frequencies,757,,,,,,
+Frequencies,758,,,,,,
+Frequencies,759,,,,,,
+Frequencies,760,,,,,,
+Frequencies,761,,,,,,
+Frequencies,762,,,,,,
+Frequencies,763,,,,,,
+Frequencies,764,,,,,,
+Frequencies,765,,,,,,
+Frequencies,766,,,,,,
+Frequencies,767,,,,,,
+Frequencies,768,,,,,,
+Frequencies,769,,,,,,
+Frequencies,770,,,,,,
+Frequencies,771,,,,,,
+Frequencies,772,,,,,,
+Frequencies,773,,,,,,
+Frequencies,774,,,,,,
+Frequencies,775,,,,,,
+Frequencies,776,,,,,,
+Frequencies,777,,,,,,
+Frequencies,778,,,,,,
+Frequencies,779,,,,,,
+Frequencies,780,,,,,,
+Frequencies,781,,,,,,
+Frequencies,782,,,,,,
+Frequencies,783,,,,,,
+Frequencies,784,,,,,,
+Frequencies,785,,,,,,
+Frequencies,786,,,,,,
+Frequencies,787,,,,,,
+Frequencies,788,,,,,,
+Frequencies,789,,,,,,
+Frequencies,790,,,,,,
+Frequencies,791,,,,,,
+Frequencies,792,,,,,,
+Frequencies,793,,,,,,
+Frequencies,794,,,,,,
+Frequencies,795,,,,,,
+Frequencies,796,,,,,,
+Frequencies,797,,,,,,
+Frequencies,798,,,,,,
+Frequencies,799,,,,,,
+Frequencies,800,,,,,,
+Frequencies,801,,,,,,
+Frequencies,802,,,,,,
+Frequencies,803,,,,,,
+Frequencies,804,,,,,,
+Frequencies,805,,,,,,
+Frequencies,806,,,,,,
+Frequencies,807,,,,,,
+Frequencies,808,,,,,,
+Frequencies,809,,,,,,
+Frequencies,810,,,,,,
+Frequencies,811,,,,,,
+Frequencies,812,,,,,,
+Frequencies,813,,,,,,
+Frequencies,814,,,,,,
+Frequencies,815,,,,,,
+Frequencies,816,,,,,,
+Frequencies,817,,,,,,
+Frequencies,818,,,,,,
+Frequencies,819,,,,,,
+Frequencies,820,,,,,,
+Frequencies,821,,,,,,
+Frequencies,822,,,,,,
+Frequencies,823,,,,,,
+Frequencies,824,,,,,,
+Frequencies,825,,,,,,
+Frequencies,826,,,,,,
+Frequencies,827,,,,,,
+Frequencies,828,,,,,,
+Frequencies,829,,,,,,
+Frequencies,830,,,,,,
+Frequencies,831,,,,,,
+Frequencies,832,,,,,,
+Frequencies,833,,,,,,
+Frequencies,834,,,,,,
+Frequencies,835,,,,,,
+Frequencies,836,,,,,,
+Frequencies,837,,,,,,
+Frequencies,838,,,,,,
+Frequencies,839,,,,,,
+Frequencies,840,,,,,,
+Frequencies,841,,,,,,
+Frequencies,842,,,,,,
+Frequencies,843,,,,,,
+Frequencies,844,,,,,,
+Frequencies,845,,,,,,
+Frequencies,846,,,,,,
+Frequencies,847,,,,,,
+Frequencies,848,,,,,,
+Frequencies,849,,,,,,
+Frequencies,850,,,,,,
+Frequencies,851,,,,,,
+Frequencies,852,,,,,,
+Frequencies,853,,,,,,
+Frequencies,854,,,,,,
+Frequencies,855,,,,,,
+Frequencies,856,,,,,,
+Frequencies,857,,,,,,
+Frequencies,858,,,,,,
+Frequencies,859,,,,,,
+Frequencies,860,,,,,,
+Frequencies,861,,,,,,
+Frequencies,862,,,,,,
+Frequencies,863,,,,,,
+Frequencies,864,,,,,,
+Frequencies,865,,,,,,
+Frequencies,866,,,,,,
+Frequencies,867,,,,,,
+Frequencies,868,,,,,,
+Frequencies,869,,,,,,
+Frequencies,870,,,,,,
+Frequencies,871,,,,,,
+Frequencies,872,,,,,,
+Frequencies,873,,,,,,
+Frequencies,874,,,,,,
+Frequencies,875,,,,,,
+Frequencies,876,,,,,,
+Frequencies,877,,,,,,
+Frequencies,878,,,,,,
+Frequencies,879,,,,,,
+Frequencies,880,,,,,,
+Frequencies,881,,,,,,
+Frequencies,882,,,,,,
+Frequencies,883,,,,,,
+Frequencies,884,,,,,,
+Frequencies,885,,,,,,
+Frequencies,886,,,,,,
+Frequencies,887,,,,,,
+Frequencies,888,,,,,,
+Frequencies,889,,,,,,
+Frequencies,890,,,,,,
+Frequencies,891,,,,,,
+Frequencies,892,,,,,,
+Frequencies,893,,,,,,
+Frequencies,894,,,,,,
+Frequencies,895,,,,,,
+Frequencies,896,,,,,,
+Frequencies,897,,,,,,
+Frequencies,898,,,,,,
+Frequencies,899,,,,,,
+Frequencies,900,,,,,,
+Frequencies,901,,,,,,
+Frequencies,902,,,,,,
+Frequencies,903,,,,,,
+Frequencies,904,,,,,,
+Frequencies,905,,,,,,
+Frequencies,906,,,,,,
+Frequencies,907,,,,,,
+Frequencies,908,,,,,,
+Frequencies,909,,,,,,
+Frequencies,910,,,,,,
+Frequencies,911,,,,,,
+Frequencies,912,,,,,,
+Frequencies,913,,,,,,
+Frequencies,914,,,,,,
+Frequencies,915,,,,,,
+Frequencies,916,,,,,,
+Frequencies,917,,,,,,
+Frequencies,918,,,,,,
+Frequencies,919,,,,,,
+Frequencies,920,,,,,,
+Frequencies,921,,,,,,
+Frequencies,922,,,,,,
+Frequencies,923,,,,,,
+Frequencies,924,,,,,,
+Frequencies,925,,,,,,
+Frequencies,926,,,,,,
+Frequencies,927,,,,,,
+Frequencies,928,,,,,,
+Frequencies,929,,,,,,
+Frequencies,930,,,,,,
+Frequencies,931,,,,,,
+Frequencies,932,,,,,,
+Frequencies,933,,,,,,
+Frequencies,934,,,,,,
+Frequencies,935,,,,,,
+Frequencies,936,,,,,,
+Frequencies,937,,,,,,
+Frequencies,938,,,,,,
+Frequencies,939,,,,,,
+Frequencies,940,,,,,,
+Frequencies,941,,,,,,
+Frequencies,942,,,,,,
+Frequencies,943,,,,,,
+Frequencies,944,,,,,,
+Frequencies,945,,,,,,
+Frequencies,946,,,,,,
+Frequencies,947,,,,,,
+Frequencies,948,,,,,,
+Frequencies,949,,,,,,
+Frequencies,950,,,,,,
+Frequencies,951,,,,,,
+Frequencies,952,,,,,,
+Frequencies,953,,,,,,
+Frequencies,954,,,,,,
+Frequencies,955,,,,,,
+Frequencies,956,,,,,,
+Frequencies,957,,,,,,
+Frequencies,958,,,,,,
+Frequencies,959,,,,,,
+Frequencies,960,,,,,,
+Frequencies,961,,,,,,
+Frequencies,962,,,,,,
+Frequencies,963,,,,,,
+Frequencies,964,,,,,,
+Frequencies,965,,,,,,
+Frequencies,966,,,,,,
+Frequencies,967,,,,,,
+Frequencies,968,,,,,,
+Frequencies,969,,,,,,
+Frequencies,970,,,,,,
+Frequencies,971,,,,,,
+Frequencies,972,,,,,,
+Frequencies,973,,,,,,
+Frequencies,974,,,,,,
+Frequencies,975,,,,,,
+Frequencies,976,,,,,,
+Frequencies,977,,,,,,
+Frequencies,978,,,,,,
+Frequencies,979,,,,,,
+Frequencies,980,,,,,,
+Frequencies,981,,,,,,
+Frequencies,982,,,,,,
+Frequencies,983,,,,,,
+Frequencies,984,,,,,,
+Frequencies,985,,,,,,
+Frequencies,986,,,,,,
+Frequencies,987,,,,,,
+Frequencies,988,,,,,,
+Frequencies,989,,,,,,
+Frequencies,990,,,,,,
+Frequencies,991,,,,,,
+Frequencies,992,,,,,,
+Frequencies,993,,,,,,
+Frequencies,994,,,,,,
+Frequencies,995,,,,,,
+Frequencies,996,,,,,,
+Frequencies,997,,,,,,
+Frequencies,998,,,,,,
+Frequencies,999,,,,,,
+Frequencies,1000,,,,,,
+Frequencies,1001,,,,,,
+Frequencies,1002,,,,,,
+Frequencies,1003,,,,,,
+Frequencies,1004,,,,,,
+Frequencies,1005,,,,,,
+Frequencies,1006,,,,,,
+Frequencies,1007,,,,,,
+Frequencies,1008,,,,,,
+Frequencies,1009,,,,,,
+Frequencies,1010,,,,,,
+Frequencies,1011,,,,,,
+Frequencies,1012,,,,,,
+Frequencies,1013,,,,,,
+Frequencies,1014,,,,,,
+Frequencies,1015,,,,,,
+Frequencies,1016,,,,,,
+Frequencies,1017,,,,,,
+Frequencies,1018,,,,,,
+Frequencies,1019,,,,,,
+Frequencies,1020,,,,,,
+Frequencies,1021,,,,,,
+Frequencies,1022,,,,,,
+Frequencies,1023,,,,,,
+Frequencies,1024,,,,,,
+Frequencies,1025,,,,,,
+Frequencies,1026,,,,,,
+Frequencies,1027,,,,,,
+Frequencies,1028,,,,,,
+Frequencies,1029,,,,,,
+Frequencies,1030,,,,,,
+Frequencies,1031,,,,,,
+Frequencies,1032,,,,,,
+Frequencies,1033,,,,,,
+Frequencies,1034,,,,,,
+Frequencies,1035,,,,,,
+Frequencies,1036,,,,,,
+Frequencies,1037,,,,,,
+Frequencies,1038,,,,,,
+Frequencies,1039,,,,,,
+Frequencies,1040,,,,,,
+Frequencies,1041,,,,,,
+Frequencies,1042,,,,,,
+Frequencies,1043,,,,,,
+Frequencies,1044,,,,,,
+Frequencies,1045,,,,,,
+Frequencies,1046,,,,,,
+Frequencies,1047,,,,,,
+Frequencies,1048,,,,,,
+Frequencies,1049,,,,,,
+Frequencies,1050,,,,,,
+Frequencies,1051,,,,,,
+Frequencies,1052,,,,,,
+Frequencies,1053,,,,,,
+Frequencies,1054,,,,,,
+Frequencies,1055,,,,,,
+Frequencies,1056,,,,,,
+Frequencies,1057,,,,,,
+Frequencies,1058,,,,,,
+Frequencies,1059,,,,,,
+Frequencies,1060,,,,,,
+Frequencies,1061,,,,,,
+Frequencies,1062,,,,,,
+Frequencies,1063,,,,,,
+Frequencies,1064,,,,,,
+Frequencies,1065,,,,,,
+Frequencies,1066,,,,,,
+Frequencies,1067,,,,,,
+Frequencies,1068,,,,,,
+Frequencies,1069,,,,,,
+Frequencies,1070,,,,,,
+Frequencies,1071,,,,,,
+Frequencies,1072,,,,,,
+Frequencies,1073,,,,,,
+Frequencies,1074,,,,,,
+Frequencies,1075,,,,,,
+Frequencies,1076,,,,,,
+Frequencies,1077,,,,,,
+Frequencies,1078,,,,,,
+Frequencies,1079,,,,,,
+Frequencies,1080,,,,,,
+Frequencies,1081,,,,,,
+Frequencies,1082,,,,,,
+Frequencies,1083,,,,,,
+Frequencies,1084,,,,,,
+Frequencies,1085,,,,,,
+Frequencies,1086,,,,,,
+Frequencies,1087,,,,,,
+Frequencies,1088,,,,,,
+Frequencies,1089,,,,,,
+Frequencies,1090,,,,,,
+Frequencies,1091,,,,,,
+Frequencies,1092,,,,,,
+Frequencies,1093,,,,,,
+Frequencies,1094,,,,,,
+Frequencies,1095,,,,,,
+Frequencies,1096,,,,,,
+Frequencies,1097,,,,,,
+Frequencies,1098,,,,,,
+Frequencies,1099,,,,,,
+Frequencies,1100,,,,,,
+Frequencies,1101,,,,,,
+Frequencies,1102,,,,,,
+Frequencies,1103,,,,,,
+Frequencies,1104,,,,,,
+Frequencies,1105,,,,,,
+Frequencies,1106,,,,,,
+Frequencies,1107,,,,,,
+Frequencies,1108,,,,,,
+Frequencies,1109,,,,,,
+Frequencies,1110,,,,,,
+Frequencies,1111,,,,,,
+Frequencies,1112,,,,,,
+Frequencies,1113,,,,,,
+Frequencies,1114,,,,,,
+Frequencies,1115,,,,,,
+Frequencies,1116,,,,,,
+Frequencies,1117,,,,,,
+Frequencies,1118,,,,,,
+Frequencies,1119,,,,,,
+Frequencies,1120,,,,,,
+Frequencies,1121,,,,,,
+Frequencies,1122,,,,,,
+Frequencies,1123,,,,,,
+Frequencies,1124,,,,,,
+Frequencies,1125,,,,,,
+Frequencies,1126,,,,,,
+Frequencies,1127,,,,,,
+Frequencies,1128,,,,,,
+Frequencies,1129,,,,,,
+Frequencies,1130,,,,,,
+Frequencies,1131,,,,,,
+Frequencies,1132,,,,,,
+Frequencies,1133,,,,,,
+Frequencies,1134,,,,,,
+Frequencies,1135,,,,,,
+Frequencies,1136,,,,,,
+Frequencies,1137,,,,,,
+Frequencies,1138,,,,,,
+Frequencies,1139,,,,,,
+Frequencies,1140,,,,,,
+Frequencies,1141,,,,,,
+Frequencies,1142,,,,,,
+Frequencies,1143,,,,,,
+Frequencies,1144,,,,,,
+Frequencies,1145,,,,,,
+Frequencies,1146,,,,,,
+Frequencies,1147,,,,,,
+Frequencies,1148,,,,,,
+Frequencies,1149,,,,,,
+Frequencies,1150,,,,,,
+Frequencies,1151,,,,,,
+Frequencies,1152,,,,,,
+Frequencies,1153,,,,,,
+Frequencies,1154,,,,,,
+Frequencies,1155,,,,,,
+Frequencies,1156,,,,,,
+Frequencies,1157,,,,,,
+Frequencies,1158,,,,,,
+Frequencies,1159,,,,,,
+Frequencies,1160,,,,,,
+Frequencies,1161,,,,,,
+Frequencies,1162,,,,,,
+Frequencies,1163,,,,,,
+Frequencies,1164,,,,,,
+Frequencies,1165,,,,,,
+Frequencies,1166,,,,,,
+Frequencies,1167,,,,,,
+Frequencies,1168,,,,,,
+Frequencies,1169,,,,,,
+Frequencies,1170,,,,,,
+Frequencies,1171,,,,,,
+Frequencies,1172,,,,,,
+Frequencies,1173,,,,,,
+Frequencies,1174,,,,,,
+Frequencies,1175,,,,,,
+Frequencies,1176,,,,,,
+Frequencies,1177,,,,,,
+Frequencies,1178,,,,,,
+Frequencies,1179,,,,,,
+Frequencies,1180,,,,,,
+Frequencies,1181,,,,,,
+Frequencies,1182,,,,,,
+Frequencies,1183,,,,,,
+Frequencies,1184,,,,,,
+Frequencies,1185,,,,,,
+Frequencies,1186,,,,,,
+Frequencies,1187,,,,,,
+Frequencies,1188,,,,,,
+Frequencies,1189,,,,,,
+Frequencies,1190,,,,,,
+Frequencies,1191,,,,,,
+Frequencies,1192,,,,,,
+Frequencies,1193,,,,,,
+Frequencies,1194,,,,,,
+Frequencies,1195,,,,,,
+Frequencies,1196,,,,,,
+Frequencies,1197,,,,,,
+Frequencies,1198,,,,,,
+Frequencies,1199,,,,,,
+Frequencies,1200,,,,,,
+Frequencies,1201,,,,,,
+Frequencies,1202,,,,,,
+Frequencies,1203,,,,,,
+Frequencies,1204,,,,,,
+Frequencies,1205,,,,,,
+Frequencies,1206,,,,,,
+Frequencies,1207,,,,,,
+Frequencies,1208,,,,,,
+Frequencies,1209,,,,,,
+Frequencies,1210,,,,,,
+Frequencies,1211,,,,,,
+Frequencies,1212,,,,,,
+Frequencies,1213,,,,,,
+Frequencies,1214,,,,,,
+Frequencies,1215,,,,,,
+Frequencies,1216,,,,,,
+Frequencies,1217,,,,,,
+Frequencies,1218,,,,,,
+Frequencies,1219,,,,,,
+Frequencies,1220,,,,,,
+Frequencies,1221,,,,,,
+Frequencies,1222,,,,,,
+Frequencies,1223,,,,,,
+Frequencies,1224,,,,,,
+Frequencies,1225,,,,,,
+Frequencies,1226,,,,,,
+Frequencies,1227,,,,,,
+Frequencies,1228,,,,,,
+Frequencies,1229,,,,,,
+Frequencies,1230,,,,,,
+Frequencies,1231,,,,,,
+Frequencies,1232,,,,,,
+Frequencies,1233,,,,,,
+Frequencies,1234,,,,,,
+Frequencies,1235,,,,,,
+Frequencies,1236,,,,,,
+Frequencies,1237,,,,,,
+Frequencies,1238,,,,,,
+Frequencies,1239,,,,,,
+Frequencies,1240,,,,,,
+Frequencies,1241,,,,,,
+Frequencies,1242,,,,,,
+Frequencies,1243,,,,,,
+Frequencies,1244,,,,,,
+Frequencies,1245,,,,,,
+Frequencies,1246,,,,,,
+Frequencies,1247,,,,,,
+Frequencies,1248,,,,,,
+Frequencies,1249,,,,,,
+Frequencies,1250,,,,,,
+Frequencies,1251,,,,,,
+Frequencies,1252,,,,,,
+Frequencies,1253,,,,,,
+Frequencies,1254,,,,,,
+Frequencies,1255,,,,,,
+Frequencies,1256,,,,,,
+Frequencies,1257,,,,,,
+Frequencies,1258,,,,,,
+Frequencies,1259,,,,,,
+Frequencies,1260,,,,,,
+Frequencies,1261,,,,,,
+Frequencies,1262,,,,,,
+Frequencies,1263,,,,,,
+Frequencies,1264,,,,,,
+Frequencies,1265,,,,,,
+Frequencies,1266,,,,,,
+Frequencies,1267,,,,,,
+Frequencies,1268,,,,,,
+Frequencies,1269,,,,,,
+Frequencies,1270,,,,,,
+Frequencies,1271,,,,,,
+Frequencies,1272,,,,,,
+Frequencies,1273,,,,,,
+Frequencies,1274,,,,,,
+Frequencies,1275,,,,,,
+Frequencies,1276,,,,,,
+Frequencies,1277,,,,,,
+Frequencies,1278,,,,,,
+Frequencies,1279,,,,,,
+Frequencies,1280,,,,,,
+Frequencies,1281,,,,,,
+Frequencies,1282,,,,,,
+Frequencies,1283,,,,,,
+Frequencies,1284,,,,,,
+Frequencies,1285,,,,,,
+Frequencies,1286,,,,,,
+Frequencies,1287,,,,,,
+Frequencies,1288,,,,,,
+Frequencies,1289,,,,,,
+Frequencies,1290,,,,,,
+Frequencies,1291,,,,,,
+Frequencies,1292,,,,,,
+Frequencies,1293,,,,,,
+Frequencies,1294,,,,,,
+Frequencies,1295,,,,,,
+Frequencies,1296,,,,,,
+Frequencies,1297,,,,,,
+Frequencies,1298,,,,,,
+Frequencies,1299,,,,,,
+Frequencies,1300,,,,,,
+Frequencies,1301,,,,,,
+Frequencies,1302,,,,,,
+Frequencies,1303,,,,,,
+Frequencies,1304,,,,,,
+Frequencies,1305,,,,,,
+Frequencies,1306,,,,,,
+Frequencies,1307,,,,,,
+Frequencies,1308,,,,,,
+Frequencies,1309,,,,,,
+Frequencies,1310,,,,,,
+Frequencies,1311,,,,,,
+Frequencies,1312,,,,,,
+Frequencies,1313,,,,,,
+Frequencies,1314,,,,,,
+Frequencies,1315,,,,,,
+Frequencies,1316,,,,,,
+Frequencies,1317,,,,,,
+Frequencies,1318,,,,,,
+Frequencies,1319,,,,,,
+Frequencies,1320,,,,,,
+Frequencies,1321,,,,,,
+Frequencies,1322,,,,,,
+Frequencies,1323,,,,,,
+Frequencies,1324,,,,,,
+Frequencies,1325,,,,,,
+Frequencies,1326,,,,,,
+Frequencies,1327,,,,,,
+Frequencies,1328,,,,,,
+Frequencies,1329,,,,,,
+Frequencies,1330,,,,,,
+Frequencies,1331,,,,,,
+Frequencies,1332,,,,,,
+Frequencies,1333,,,,,,
+Frequencies,1334,,,,,,
+Frequencies,1335,,,,,,
+Frequencies,1336,,,,,,
+Frequencies,1337,,,,,,
+Frequencies,1338,,,,,,
+Frequencies,1339,,,,,,
+Frequencies,1340,,,,,,
+Frequencies,1341,,,,,,
+Frequencies,1342,,,,,,
+Frequencies,1343,,,,,,
+Frequencies,1344,,,,,,
+Frequencies,1345,,,,,,
+Frequencies,1346,,,,,,
+Frequencies,1347,,,,,,
+Frequencies,1348,,,,,,
+Frequencies,1349,,,,,,
+Frequencies,1350,,,,,,
+Frequencies,1351,,,,,,
+Frequencies,1352,,,,,,
+Frequencies,1353,,,,,,
+Frequencies,1354,,,,,,
+Frequencies,1355,,,,,,
+Frequencies,1356,,,,,,
+Frequencies,1357,,,,,,
+Frequencies,1358,,,,,,
+Frequencies,1359,,,,,,
+Frequencies,1360,,,,,,
+Frequencies,1361,,,,,,
+Frequencies,1362,,,,,,
+Frequencies,1363,,,,,,
+Frequencies,1364,,,,,,
+Frequencies,1365,,,,,,
+Frequencies,1366,,,,,,
+Frequencies,1367,,,,,,
+Frequencies,1368,,,,,,
+Frequencies,1369,,,,,,
+Frequencies,1370,,,,,,
+Frequencies,1371,,,,,,
+Frequencies,1372,,,,,,
+Frequencies,1373,,,,,,
+Frequencies,1374,,,,,,
+Frequencies,1375,,,,,,
+Frequencies,1376,,,,,,
+Frequencies,1377,,,,,,
+Frequencies,1378,,,,,,
+Frequencies,1379,,,,,,
+Frequencies,1380,,,,,,
+Frequencies,1381,,,,,,
+Frequencies,1382,,,,,,
+Frequencies,1383,,,,,,
+Frequencies,1384,,,,,,
+Frequencies,1385,,,,,,
+Frequencies,1386,,,,,,
+Frequencies,1387,,,,,,
+Frequencies,1388,,,,,,
+Frequencies,1389,,,,,,
+Frequencies,1390,,,,,,
+Frequencies,1391,,,,,,
+Frequencies,1392,,,,,,
+Frequencies,1393,,,,,,
+Frequencies,1394,,,,,,
+Frequencies,1395,,,,,,
+Frequencies,1396,,,,,,
+Frequencies,1397,,,,,,
+Frequencies,1398,,,,,,
+Frequencies,1399,,,,,,
+Frequencies,1400,,,,,,
+Frequencies,1401,,,,,,
+Frequencies,1402,,,,,,
+Frequencies,1403,,,,,,
+Frequencies,1404,,,,,,
+Frequencies,1405,,,,,,
+Frequencies,1406,,,,,,
+Frequencies,1407,,,,,,
+Frequencies,1408,,,,,,
+Frequencies,1409,,,,,,
+Frequencies,1410,,,,,,
+Frequencies,1411,,,,,,
+Frequencies,1412,,,,,,
+Frequencies,1413,,,,,,
+Frequencies,1414,,,,,,
+Frequencies,1415,,,,,,
+Frequencies,1416,,,,,,
+Frequencies,1417,,,,,,
+Frequencies,1418,,,,,,
+Frequencies,1419,,,,,,
+Frequencies,1420,,,,,,
+Frequencies,1421,,,,,,
+Frequencies,1422,,,,,,
+Frequencies,1423,,,,,,
+Frequencies,1424,,,,,,
+Frequencies,1425,,,,,,
+Frequencies,1426,,,,,,
+Frequencies,1427,,,,,,
+Frequencies,1428,,,,,,
+Frequencies,1429,,,,,,
+Frequencies,1430,,,,,,
+Frequencies,1431,,,,,,
+Frequencies,1432,,,,,,
+Frequencies,1433,,,,,,
+Frequencies,1434,,,,,,
+Frequencies,1435,,,,,,
+Frequencies,1436,,,,,,
+Frequencies,1437,,,,,,
+Frequencies,1438,,,,,,
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,50476,HRTOTLT,64102,4511448,70.379208137031611,1,6789,Grand total
+Statistics,2,50431,HRTOTLM,64102,2254883,35.176484353062307,0,3869,Grand total men
+Statistics,3,50436,HRTOTLW,64102,2256565,35.202723783969297,0,3032,Grand total women
+Statistics,4,52132,HRAIANT,64102,19265,0.30053664472247354,0,42,American Indian or Alaska Native total
+Statistics,5,52134,HRAIANM,64102,8966,0.13987083086331159,0,22,American Indian or Alaska Native men
+Statistics,6,52136,HRAIANW,64102,10299,0.16066581385916195,0,25,American Indian or Alaska Native women
+Statistics,7,52138,HRASIAT,64102,481798,7.5161149418114883,0,1280,Asian total
+Statistics,8,52140,HRASIAM,64102,262113,4.0889987831892922,0,645,Asian men
+Statistics,9,52142,HRASIAW,64102,219685,3.4271161586221961,0,635,Asian women
+Statistics,10,52144,HRBKAAT,64102,280785,4.3802845465040097,0,576,Black or African American total
+Statistics,11,52146,HRBKAAM,64102,114178,1.7811924744937755,0,275,Black or African American men
+Statistics,12,52148,HRBKAAW,64102,166607,2.5990920720102335,0,319,Black or African American women
+Statistics,13,52150,HRHISPT,64102,291753,4.5513868522042991,0,660,Hispanic or Latino total
+Statistics,14,52152,HRHISPM,64102,139874,2.1820536020716981,0,354,Hispanic or Latino men
+Statistics,15,52154,HRHISPW,64102,151879,2.369333250132601,0,327,Hispanic or Latino women
+Statistics,16,52156,HRNHPIT,64102,8311,0.1296527409441203,0,73,Native Hawaiian or Other Pacific Islander total
+Statistics,17,52158,HRNHPIM,64102,3815,5.9514523727808806E-2,0,30,Native Hawaiian or Other Pacific Islander men
+Statistics,18,52160,HRNHPIW,64102,4496,7.0138217216311499E-2,0,51,Native Hawaiian or Other Pacific Islander women
+Statistics,19,52162,HRWHITT,64102,3062107,47.769289569748217,0,4325,White total
+Statistics,20,52164,HRWHITM,64102,1531593,23.89306105893732,0,2505,White men
+Statistics,21,52166,HRWHITW,64102,1530514,23.876228510810893,0,2030,White women
+Statistics,22,52168,HR2MORT,64102,58545,0.9133100371283267,0,109,Two or more races total
+Statistics,23,52170,HR2MORM,64102,25605,0.39944151508533277,0,46,Two or more races men
+Statistics,24,52172,HR2MORW,64102,32940,0.51386852204299394,0,69,Two or more races women
+Statistics,25,50471,HRUNKNT,64102,158115,2.4666157062182146,0,829,Race/ethnicity unknown total
+Statistics,26,50421,HRUNKNM,64102,79745,1.2440329474899379,0,330,Race/ethnicity unknown men
+Statistics,27,50426,HRUNKNW,64102,78370,1.2225827587282767,0,521,Race/ethnicity unknown women
+Statistics,28,50441,HRNRALT,64102,150769,2.3520170977504602,0,947,U.S. Nonresident total
+Statistics,29,50361,HRNRALM,64102,88994,1.3883186172038313,0,611,U.S. Nonresident men
+Statistics,30,50366,HRNRALW,64102,61775,0.96369848054662877,0,336,U.S. Nonresident women
+Statistics,31,
+Statistics,32,
+Statistics,33,
+Statistics,34,
+Statistics,35,
+Statistics,36,
+Statistics,37,
+Statistics,38,
+Statistics,39,
+Statistics,40,
+Statistics,41,
+Statistics,42,
+Statistics,43,
+Statistics,44,
+FrequenciesRV,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+FrequenciesRV,1,53001,SISCAT,1,All full-time instructional staff,3590,5.6
+FrequenciesRV,2,53001,SISCAT,100,Full-time instructional with faculty status,3464,5.41
+FrequenciesRV,3,53001,SISCAT,101,Full-time instructional professors,2409,3.76
+FrequenciesRV,4,53001,SISCAT,102,Full-time instructional associate professors,2315,3.61
+FrequenciesRV,5,53001,SISCAT,103,Full-time instructional assistant professors,2305,3.6
+FrequenciesRV,6,53001,SISCAT,104,Full-time instructional instructors,2409,3.76
+FrequenciesRV,7,53001,SISCAT,105,Full-time instructional lecturers,802,1.25
+FrequenciesRV,8,53001,SISCAT,106,Full-time instructional no academic rank,760,1.19
+FrequenciesRV,9,53001,SISCAT,200,Full-time instructional tenured total,2051,3.2
+FrequenciesRV,10,53001,SISCAT,201,"Full-time instructional tenured, professors",1764,2.75
+FrequenciesRV,11,53001,SISCAT,202,"Full-time instructional tenured, associate professors",1646,2.57
+FrequenciesRV,12,53001,SISCAT,203,"Full-time instructional tenured, assistant professors",817,1.28
+FrequenciesRV,13,53001,SISCAT,204,"Full-time instructional tenured, instructors",354,0.55000000000000004
+FrequenciesRV,14,53001,SISCAT,205,"Full-time instructional tenured, lecturers",38,0.06
+FrequenciesRV,15,53001,SISCAT,206,"Full-time instructional tenured, no academic rank",134,0.21
+FrequenciesRV,16,53001,SISCAT,300,Full-time instructional on-tenure track total,1951,3.04
+FrequenciesRV,17,53001,SISCAT,301,"Full-time instructional on-tenure track, professors",524,0.82
+FrequenciesRV,18,53001,SISCAT,302,"Full-time instructional on-tenure track, associate professors",1215,1.9
+FrequenciesRV,19,53001,SISCAT,303,"Full-time instructional on-tenure track, assistant professors",1587,2.48
+FrequenciesRV,20,53001,SISCAT,304,"Full-time instructional on-tenure track, instructors",620,0.97
+FrequenciesRV,21,53001,SISCAT,305,"Full-time instructional on-tenure track, lecturers",61,0.1
+FrequenciesRV,22,53001,SISCAT,306,"Full-time instructional on-tenure track, no academic rank",144,0.22
+FrequenciesRV,23,53001,SISCAT,400,Full-time instructional not on tenure track/no tenure system system total,3242,5.0599999999999996
+FrequenciesRV,24,53001,SISCAT,401,"Full-time instructional not on tenure/no tenure system, professors",1365,2.13
+FrequenciesRV,25,53001,SISCAT,402,"Full-time instructional not on tenure/no tenure system, associate professors",1476,2.2999999999999998
+FrequenciesRV,26,53001,SISCAT,403,"Full-time instructional not on tenure/no tenure system, assistant professors",1852,2.89
+FrequenciesRV,27,53001,SISCAT,404,"Full-time instructional not on tenure/no tenure system, instructors",2192,3.42
+FrequenciesRV,28,53001,SISCAT,405,"Full-time instructional not on tenure/no tenure system, lecturers",794,1.24
+FrequenciesRV,29,53001,SISCAT,406,"Full-time instructional not on tenure/no tenure system, no academic rank",700,1.0900000000000001
+FrequenciesRV,30,53001,SISCAT,410,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, total",1570,2.4500000000000002
+FrequenciesRV,31,53001,SISCAT,411,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, professors",702,1.1000000000000001
+FrequenciesRV,32,53001,SISCAT,412,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, asssociate professors",714,1.1100000000000001
+FrequenciesRV,33,53001,SISCAT,413,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, assistant professors",824,1.29
+FrequenciesRV,34,53001,SISCAT,414,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, instructors",879,1.37
+FrequenciesRV,35,53001,SISCAT,415,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts contract,lecturers",332,0.52
+FrequenciesRV,36,53001,SISCAT,416,"Full-time instructional not on tenure track/no tenure system, multi-year and indefinite contracts, no academic rank",243,0.38
+FrequenciesRV,37,53001,SISCAT,420,"Full-time instructional not on tenure track/no tenure system, annual contract, total",2344,3.66
+FrequenciesRV,38,53001,SISCAT,421,"Full-time instructional not on tenure track/no tenure system, annual contract, professors",852,1.33
+FrequenciesRV,39,53001,SISCAT,422,"Full-time instructional not on tenure track/no tenure system, annual contract, asssociate professors",1002,1.56
+FrequenciesRV,40,53001,SISCAT,423,"Full-time instructional not on tenure track/no tenure system, annual contract, assistant professors",1450,2.2599999999999998
+FrequenciesRV,41,53001,SISCAT,424,"Full-time instructional not on tenure track/no tenure system, annual contract, instructors",1485,2.3199999999999998
+FrequenciesRV,42,53001,SISCAT,425,"Full-time instructional not on tenure track/no tenure system, annual contract,lecturers",666,1.04
+FrequenciesRV,43,53001,SISCAT,426,"Full-time instructional not on tenure track/no tenure system, annual contract, no academic rank",510,0.8
+FrequenciesRV,44,53001,SISCAT,430,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, total",664,1.04
+FrequenciesRV,45,53001,SISCAT,431,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, professors",108,0.17
+FrequenciesRV,46,53001,SISCAT,432,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, asssociate professors",111,0.17
+FrequenciesRV,47,53001,SISCAT,433,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, assistant professors",220,0.34
+FrequenciesRV,48,53001,SISCAT,434,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, instructors",380,0.59
+FrequenciesRV,49,53001,SISCAT,435,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract,lecturers",166,0.26
+FrequenciesRV,50,53001,SISCAT,436,"Full-time instructional not on tenure track/no tenure system, less-than-annual contract, no academic rank",144,0.22
+FrequenciesRV,51,53001,SISCAT,440,"Full-time instructional not on tenure track/no tenure system, multi-year contract, total",963,1.5
+FrequenciesRV,52,53001,SISCAT,441,"Full-time instructional not on tenure track/no tenure system, multi-year contract, professors",527,0.82
+FrequenciesRV,53,53001,SISCAT,442,"Full-time instructional not on tenure track/no tenure system, multi-year contract, associate professors",563,0.88
+FrequenciesRV,54,53001,SISCAT,443,"Full-time instructional not on tenure track/no tenure system, multi-year contract, assistant professors",654,1.02
+FrequenciesRV,55,53001,SISCAT,444,"Full-time instructional not on tenure track/no tenure system, multi-year contract, instructors",437,0.68
+FrequenciesRV,56,53001,SISCAT,445,"Full-time instructional not on tenure track/no tenure system, multi-year contract, lecturers",296,0.46
+FrequenciesRV,57,53001,SISCAT,446,"Full-time instructional not on tenure track/no tenure system, multi-year contract, no academic rank",132,0.21
+FrequenciesRV,58,53001,SISCAT,450,"Full-time instructional not on tenure track/no tenure system, multi-year contract, total",742,1.1599999999999999
+FrequenciesRV,59,53001,SISCAT,451,"Full-time instructional not on tenure track/no tenure system, indefinite contract, professors",211,0.33
+FrequenciesRV,60,53001,SISCAT,452,"Full-time instructional not on tenure track/no tenure system, indefinite contract, associate professors",185,0.28999999999999998
+FrequenciesRV,61,53001,SISCAT,453,"Full-time instructional not on tenure track/no tenure system, indefinite contract, assistant professors",225,0.35
+FrequenciesRV,62,53001,SISCAT,454,"Full-time instructional not on tenure track/no tenure system, indefinite contract, instructors",482,0.75
+FrequenciesRV,63,53001,SISCAT,455,"Full-time instructional not on tenure track/no tenure system, indefinite contract, lecturers",74,0.12
+FrequenciesRV,64,53001,SISCAT,456,"Full-time instructional not on tenure track/no tenure system, indefinite contract, no academic rank",130,0.2
+FrequenciesRV,65,53001,SISCAT,500,Full-time instructional without faculty status,507,0.79
+FrequenciesRV,66,53006,FACSTAT,0,All full-time instructional staff,3590,5.6
+FrequenciesRV,67,53006,FACSTAT,10,"With faculty status, total",14464,22.57
+FrequenciesRV,68,53006,FACSTAT,20,"With faculty status, tenured",6804,10.62
+FrequenciesRV,69,53006,FACSTAT,30,"With faculty status, on tenure track",6102,9.52
+FrequenciesRV,70,53006,FACSTAT,40,"With faculty status not on tenure track/No tenure system, total",11621,18.14
+FrequenciesRV,71,53006,FACSTAT,41,"With faculty status not on tenure track/No tenure system, multi-year and indefinite contract",5264,8.2200000000000006
+FrequenciesRV,72,53006,FACSTAT,44,"With faculty status not on tenure track/No tenure system, multi-year contract",3572,5.57
+FrequenciesRV,73,53006,FACSTAT,45,"With faculty status not on tenure track/No tenure system, indefinite contract",2049,3.2
+FrequenciesRV,74,53006,FACSTAT,42,"With faculty status not on tenure track/No tenure system, annual contract",8309,12.97
+FrequenciesRV,75,53006,FACSTAT,43,"With faculty status not on tenure track/No tenure system, less-than-annual contract",1793,2.8
+FrequenciesRV,76,53006,FACSTAT,50,Without faculty status,507,0.79
+FrequenciesRV,77,53011,ARANK,0,All ranks,21088,32.909999999999997
+FrequenciesRV,78,53011,ARANK,1,Professors,8462,13.21
+FrequenciesRV,79,53011,ARANK,2,Associate professors,9227,14.4
+FrequenciesRV,80,53011,ARANK,3,Assistant professors,9934,15.5
+FrequenciesRV,81,53011,ARANK,4,Instructors,9238,14.42
+FrequenciesRV,82,53011,ARANK,5,Lecturers,3229,5.04
+FrequenciesRV,83,53011,ARANK,6,No academic rank,2897,4.5199999999999996
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,50476,HRTOTLT,64075,4508958,70.37000390167772,1,6789,Grand total
+StatisticsRV,2,50431,HRTOTLM,64075,2254358,35.183113538821694,0,3869,Grand total men
+StatisticsRV,3,50436,HRTOTLW,64075,2254600,35.186890362856026,0,3032,Grand total women
+StatisticsRV,4,52132,HRAIANT,64075,19191,0.29950838860710105,0,42,American Indian or Alaska Native total
+StatisticsRV,5,52134,HRAIANM,64075,8982,0.14017947717518534,0,22,American Indian or Alaska Native men
+StatisticsRV,6,52136,HRAIANW,64075,10209,0.15932891143191572,0,25,American Indian or Alaska Native women
+StatisticsRV,7,52138,HRASIAT,64075,482117,7.5242606320717913,0,1280,Asian total
+StatisticsRV,8,52140,HRASIAM,64075,262327,4.0940616465079982,0,645,Asian men
+StatisticsRV,9,52142,HRASIAW,64075,219790,3.4301989855637922,0,635,Asian women
+StatisticsRV,10,52144,HRBKAAT,64075,280478,4.3773390557939917,0,576,Black or African American total
+StatisticsRV,11,52146,HRBKAAM,64075,114046,1.7798829496683575,0,275,Black or African American men
+StatisticsRV,12,52148,HRBKAAW,64075,166432,2.5974561061256338,0,319,Black or African American women
+StatisticsRV,13,52150,HRHISPT,64075,291161,4.5440655481857197,0,660,Hispanic or Latino total
+StatisticsRV,14,52152,HRHISPM,64075,139738,2.1808505657432695,0,354,Hispanic or Latino men
+StatisticsRV,15,52154,HRHISPW,64075,151423,2.3632149824424502,0,327,Hispanic or Latino women
+StatisticsRV,16,52156,HRNHPIT,64075,8065,0.125868123293016,0,73,Native Hawaiian or Other Pacific Islander total
+StatisticsRV,17,52158,HRNHPIM,64075,3803,5.9352321498244244E-2,0,30,Native Hawaiian or Other Pacific Islander men
+StatisticsRV,18,52160,HRNHPIW,64075,4262,6.6515801794771748E-2,0,51,Native Hawaiian or Other Pacific Islander women
+StatisticsRV,19,52162,HRWHITT,64075,3061656,47.782380023410063,0,4326,White total
+StatisticsRV,20,52164,HRWHITM,64075,1531704,23.90486149044089,0,2505,White men
+StatisticsRV,21,52166,HRWHITW,64075,1529952,23.877518532969177,0,2030,White women
+StatisticsRV,22,52168,HR2MORT,64075,58551,0.91378852906749908,0,109,Two or more races total
+StatisticsRV,23,52170,HR2MORM,64075,25586,0.39931330472103005,0,46,Two or more races men
+StatisticsRV,24,52172,HR2MORW,64075,32965,0.51447522434646897,0,69,Two or more races women
+StatisticsRV,25,50471,HRUNKNT,64075,158021,2.4661880608661724,0,829,Race/ethnicity unknown total
+StatisticsRV,26,50421,HRUNKNM,64075,79754,1.24469761997659,0,330,Race/ethnicity unknown men
+StatisticsRV,27,50426,HRUNKNW,64075,78267,1.2214904408895826,0,521,Race/ethnicity unknown women
+StatisticsRV,28,50441,HRNRALT,64075,149718,2.3366055403823642,0,947,U.S. Nonresident total
+StatisticsRV,29,50361,HRNRALM,64075,88418,1.3799141630901288,0,611,U.S. Nonresident men
+StatisticsRV,30,50366,HRNRALW,64075,61300,0.95669137729223563,0,336,U.S. Nonresident women
+Imputation code values,0,Code values for item imputation variables Xvarname
+Imputation code values,1,CodeValue,ValueLabel
+Imputation code values,2,A,Not applicable
+Imputation code values,3,B,Institution left item blank
+Imputation code values,4,C,Analyst corrected reported value
+Imputation code values,5,D,Do not know
+Imputation code values,6,G,Data generated from other data values
+Imputation code values,7,H,Value not derived - data not usable
+Imputation code values,8,J,Logical imputation
+Imputation code values,9,K,Ratio adjustment 
+Imputation code values,10,L,Imputed using the Group Median procedure
+Imputation code values,11,N,Imputed using Nearest Neighbor procedure
+Imputation code values,12,P,Imputed using Carry Forward procedure
+Imputation code values,13,R,Reported
+Imputation code values,14,Z,Implied zero;

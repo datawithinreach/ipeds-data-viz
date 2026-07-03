@@ -1,0 +1,601 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File Documentation for Salary Outlays for Full-time, Nonmedical, Instructional Staff by Academic Rank and Gender, Academic year 2023-24",,,,,,,,,
+Introduction,1,(Provisional release),,,,,,,,,
+Introduction,2,,,,,,,,,
+Introduction,3,Filename,SAL2023_IS
+Introduction,4,Overview,"This file contains the number of staff,  total salary outlays and average salaries of full-time, nonmedical, instructional staff by academic rank, number of months worked, and gender. The categories for number of months worked are 9-, 10-, 11- and 12-months. Number of staff working less than 9 months are also available, but salary data are not available for this group. Equated 9-month salary outlays and equated 9-month average salaries are also available by academic rank and gender. For details see the variables listed in the description tab. This data file has multiple records for each institution. Each record is uniquely defined by the variables IPEDS ID (UNITID), and the variable academic rank (ARANK) of full-time instructional staff.
+
+Between 2012 and 2015 salary information were not available by number of months worked. Equated 9-month average salaries were available, but because of the lack of detailed salary data by the number of months worked, it is not consistent with equated 9-month salary data beginning with 2016. 
+
+Prior to 2012, number of staff and salary information were available for 9/10 months worked and 11/12 months worked. Equated 9-month average salaries and equated 9-month salary outlays were available and is more consistent with equated salaries beginning with 2016.
+
+Prior to 2016 the number of months worked were referred to as contract lengths.  Beginning with 2016, the salary survey collection screens used the  ""number of months worked"" terminology. 
+.
+ ",,,,,,,,
+Introduction,5,,,,,,,,,,
+Introduction,6,Note,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.",,,,,,,,
+Introduction,7,Contents of spreadsheet,,,,,,,,,
+Introduction,8,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,9,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,10,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.,,,,,,,,
+Introduction,11,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. ",,,,,,,,
+Introduction,12,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,40106,ARANK,N,2,Disc,,Academic rank
+varlist,3,40481,SAINSTT,N,6,Cont,XSAINSTT,Instructional staff - total
+varlist,4,40482,SAINSTM,N,6,Cont,XSAINSTM,Instructional staff - men
+varlist,5,40483,SAINSTW,N,6,Cont,XSAINSTW,Instructional staff - women
+varlist,6,40491,SA_9MCT,N,6,Cont,XSA_9MCT,Instructional staff on less than 9-month contract-total
+varlist,7,40492,SA_9MCM,N,6,Cont,XSA_9MCM,Instructional staff on less than 9-month contract-men
+varlist,8,40493,SA_9MCW,N,6,Cont,XSA_9MCW,Instructional staff on less than 9-month contract-women
+varlist,9,40113,SATOTLT,N,6,Cont,XSATOTLT,"Instructional staff on 9, 10, 11 or 12 month contract-total"
+varlist,10,40107,SATOTLM,N,6,Cont,XSATOTLM,"Instructional staff on 9, 10, 11 or 12 month contract-men"
+varlist,11,40110,SATOTLW,N,6,Cont,XSATOTLW,"Instructional staff on 9, 10, 11 or 12 month contract-women"
+varlist,12,40501,SA09MCT,N,6,Cont,XSA09MCT,Instructional staff on 9-month contract-total
+varlist,13,40506,SA09MCM,N,6,Cont,XSA09MCM,Instructional staff on 9-month contract-men
+varlist,14,40511,SA09MCW,N,6,Cont,XSA09MCW,Instructional staff on 9-month contract-women
+varlist,15,40516,SA10MCT,N,6,Cont,XSA10MCT,Instructional staff on 10-month contract-total
+varlist,16,40521,SA10MCM,N,6,Cont,XSA10MCM,Instructional staff on 10-month contract-men
+varlist,17,40526,SA10MCW,N,6,Cont,XSA10MCW,Instructional staff on 10-month contract-women
+varlist,18,40531,SA11MCT,N,6,Cont,XSA11MCT,Instructional staff on 11-month contract-total
+varlist,19,40536,SA11MCM,N,6,Cont,XSA11MCM,Instructional staff on 11-month contract-men
+varlist,20,40541,SA11MCW,N,6,Cont,XSA11MCW,Instructional staff on 11-month contract-women
+varlist,21,40546,SA12MCT,N,6,Cont,XSA12MCT,Instructional staff on 12-month contract total
+varlist,22,40551,SA12MCM,N,6,Cont,XSA12MCM,Instructional staff on 12-month contract men
+varlist,23,40556,SA12MCW,N,6,Cont,XSA12MCW,Instructional staff on 12--month contract women
+varlist,24,40576,SAOUTLT,N,10,Cont,XSAOUTLT,Salary outlays - total
+varlist,25,40581,SAOUTLM,N,10,Cont,XSAOUTLM,Salary outlays - men
+varlist,26,40586,SAOUTLW,N,10,Cont,XSAOUTLW,Salary outlays - women
+varlist,27,40901,SA09MOT,N,10,Cont,XSA09MOT,Salary outlays for instructional staff on 9-month contract-total
+varlist,28,40906,SA09MOM,N,10,Cont,XSA09MOM,Salary outlays for instructional staff on 9-month contract-men
+varlist,29,40911,SA09MOW,N,10,Cont,XSA09MOW,Salary outlays for instructional staff on 9-month contract-women
+varlist,30,40916,SA10MOT,N,10,Cont,XSA10MOT,Salary outlays for instructional staff on 10-month contract-total
+varlist,31,40921,SA10MOM,N,10,Cont,XSA10MOM,Salary outlays for instructional staff on 10-month contract-men
+varlist,32,40926,SA10MOW,N,10,Cont,XSA10MOW,Salary outlays for instructional staff on 10-month contract-women
+varlist,33,40931,SA11MOT,N,10,Cont,XSA11MOT,Salary outlays for instructional staff on 11-month contract-total
+varlist,34,40936,SA11MOM,N,10,Cont,XSA11MOM,Salary outlays for instructional staff on 11-month contract-men
+varlist,35,40941,SA11MOW,N,10,Cont,XSA11MOW,Salary outlays for instructional staff on 11-month contract-women
+varlist,36,40946,SA12MOT,N,10,Cont,XSA12MOT,Salary outlays for instructional staff on 12-month contract-total
+varlist,37,40951,SA12MOM,N,10,Cont,XSA12MOM,Salary outlays for instructional staff on 12-month contract-men
+varlist,38,40956,SA12MOW,N,10,Cont,XSA12MOW,Salary outlays for instructional staff on 12-month contract-women
+varlist,39,40961,SAEQ9OT,N,10,Cont,XSAEQ9OT,Salary outlays for instructional staff equated to a 9-month contract-total
+varlist,40,40963,SAEQ9OM,N,10,Cont,XSAEQ9OM,Salary outlays for instructional staff equated to a 9-month contract-men
+varlist,41,40965,SAEQ9OW,N,10,Cont,XSAEQ9OW,Salary outlays for instructional staff equated to a 9-month contract-women
+varlist,42,40967,SAEQ9AT,N,6,Cont,XSAEQ9AT,Average salary for instructional staff equated to a 9-month contract-total
+varlist,43,40969,SAEQ9AM,N,6,Cont,XSAEQ9AM,Average salary for instructional staff equated to a 9-month contract-men
+varlist,44,40971,SAEQ9AW,N,6,Cont,XSAEQ9AW,Average salary for instructional staff equated to a 9-month contract-women
+varlist,45,40976,SA09MAT,N,6,Cont,XSA09MAT,Average salary for instructional staff on 9-month contract-total
+varlist,46,40981,SA09MAM,N,6,Cont,XSA09MAM,Average salary for instructional staff on 9-month contract-men
+varlist,47,40986,SA09MAW,N,6,Cont,XSA09MAW,Average salary for instructional staff on 9-month contract-women
+varlist,48,40991,SA10MAT,N,6,Cont,XSA10MAT,Average salary for instructional staff on 10-month contract-total
+varlist,49,40996,SA10MAM,N,6,Cont,XSA10MAM,Average salary for instructional staff on 10-month contract-men
+varlist,50,41001,SA10MAW,N,6,Cont,XSA10MAW,Average salary for instructional staff on 10-month contract-women
+varlist,51,41006,SA11MAT,N,6,Cont,XSA11MAT,Average salary for instructional staff on 11-month contract-total
+varlist,52,41011,SA11MAM,N,6,Cont,XSA11MAM,Average salary for instructional staff on 11-month contract-men
+varlist,53,41016,SA11MAW,N,6,Cont,XSA11MAW,Average salary for instructional staff on 11-month contract-women
+varlist,54,41021,SA12MAT,N,6,Cont,XSA12MAT,Average salary for instructional staff on 12-month contract-total
+varlist,55,41026,SA12MAM,N,6,Cont,XSA12MAM,Average salary for instructional staff on 12-month contract-men
+varlist,56,41031,SA12MAW,N,6,Cont,XSA12MAW,Average salary for instructional staff on 12-month contract-women
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,40106,ARANK,"Academic rank is usually assigned by institution and includes Professors, Associate professors, Assistant professors, Instructors, Lecturers, and No academic rank."
+Description,3,40481,SAINSTT,"Number of full-time, non-medical, instructional staff - total as of November 1, on 9, 10, 11 or 12 month contract and less less-than 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,4,40482,SAINSTM,"Number of full-time, non-medical, instructional staff -men as of November 1, on 9, 10, 11 or 12 month contract and less less-than 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,5,40483,SAINSTW,"Number of full-time, non-medical, instructional staff - women as of November 1, on 9, 10, 11 or 12 month contract and less less-than 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,6,40491,SA_9MCT,"Number of full-time, non-medical, instructional staff - total as of November 1, on less less-than 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,7,40492,SA_9MCM,"Number of full-time, non-medical, instructional staff - men as of November 1, on less than 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,8,40493,SA_9MCW,"Number of full-time, non-medical, instructional staff - women as of November 1, on less less-than 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,9,40113,SATOTLT,"Number of full-time, non-medical, instructional staff - total as of November 1, on 9, 10, 11 or 12 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,10,40107,SATOTLM,"Number of full-time, non-medical, instructional staff - men as of November 1, on 9, 10, 11 or 12 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,11,40110,SATOTLW,"Number of full-time, non-medical, instructional staff - women as of November 1, on 9, 10, 11 or 12 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,12,40501,SA09MCT,"Number of full-time, non-medical, instructional staff - total as of November 1, on 9 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,13,40506,SA09MCM,"Number of full-time, non-medical, instructional staff - men of November 1, on 9 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,14,40511,SA09MCW,"Number of full-time, non-medical, instructional staff - women as of November 1, on 9 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,15,40516,SA10MCT,"Number of full-time, non-medical, instructional staff - total as of November 1, on 10 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,16,40521,SA10MCM,"Number of full-time, non-medical, instructional staff - men as of November 1, on 10 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,17,40526,SA10MCW,"Number of full-time, non-medical, instructional staff - women as of November 1, on 10 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,18,40531,SA11MCT,"Number of full-time, non-medical, instructional staff - total as of November 1, on 11 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,19,40536,SA11MCM,"Number of full-time, non-medical, instructional staff - men as of November 1, on 11 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,20,40541,SA11MCW,"Number of full-time, non-medical, instructional staff - women as of November 1, on 11 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,21,40546,SA12MCT,"Number of full-time, non-medical, instructional staff - total as of November 1, on 12 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,22,40551,SA12MCM,"Number of full-time, non-medical, instructional staff - men as of November 1, on 12 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,23,40556,SA12MCW,"Number of full-time, non-medical, instructional staff - women as of November 1, on 12 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,24,40576,SAOUTLT,"Total salary outlays of full-time, non-medical, instructional staff  as of November 1.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,25,40581,SAOUTLM,"Total salary outlays of full-time, non-medical, instructional staff - men as of November 1.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,26,40586,SAOUTLW,"Total salary outlays of full-time, non-medical, instructional staff - women as of November 1.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,27,40901,SA09MOT,"Total salary outlays of full-time, non-medical, instructional staff -total  as of November 1 on 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,28,40906,SA09MOM,"Total salary outlays of full-time, non-medical, instructional staff - men  as of November 1 on 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,29,40911,SA09MOW,"Total salary outlays of full-time, non-medical, instructional staff - women  as of November 1 on 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,30,40916,SA10MOT,"Total salary outlays of full-time, non-medical, instructional staff -total  as of November 1 on 10-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,31,40921,SA10MOM,"Total salary outlays of full-time, non-medical, instructional staff - men  as of November 1 on 10-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,32,40926,SA10MOW,"Total salary outlays of full-time, non-medical, instructional staff - men as of November 1 on 10-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,33,40931,SA11MOT,"Total salary outlays of full-time, non-medical, instructional staff - total  as of November 1 on 11-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,34,40936,SA11MOM,"Total salary outlays of full-time, non-medical, instructional staff - men  as of November 1 on 11-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,35,40941,SA11MOW,"Total salary outlays of full-time, non-medical, instructional staff - women  as of November 1 on 11-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,36,40946,SA12MOT,"Total salary outlays of full-time, non-medical, instructional staff - total  as of November 1 on 12-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,37,40951,SA12MOM,"Total salary outlays of full-time, non-medical, instructional staff - men  as of November 1 on 12-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,38,40956,SA12MOW,"Total salary outlays of full-time, non-medical, instructional staff -women as of November 1 on 12-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,39,40961,SAEQ9OT,"Total salary outlays of full-time, non-medical, instructional staff - total  equated to month contract.
+
+This is  calculated by adjusting the salary outlays at 10-, 11- 12-month contracts to a 9-month contract as follows:
+
+(salary outlays at 9-months SA09MOT)+
+(.90 * salary outlays at 10 months SA10MOT)+
+(.818 *salary outlays at 11 months SA11MOT) +
+(.75 * salary outlays at 12 months SA12MOT)
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,40,40963,SAEQ9OM,"Total salary outlays of full-time, non-medical, instructional staff - men  equated to month contract.
+
+This is  calculated by adjusting the salary outlays at 10-, 11- 12-month contracts to a 9-month contract as follows:
+
+(salary outlays at 9-months SA09MOM)+
+(.90 * salary outlays at 10 months SA10MOM)+
+(.818 *salary outlays at 11 months SA11MOM) +
+(.75 * salary outlays at 12 months SA12MOM)
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,41,40965,SAEQ9OW,"Total salary outlays of full-time, non-medical, instructional staff - women  equated to month contract.
+
+This is  calculated by adjusting the salary outlays at 10-, 11- 12-month contracts to a 9-month contract as follows:
+
+(salary outlays at 9-months SA09MOW)+
+(.90 * salary outlays at 10 months SA10MOW)+
+(.818 *salary outlays at 11 months SA11MOW) +
+(.75 * salary outlays at 12 months SA12MOW)
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,42,40967,SAEQ9AT,"Average salary for instructional staff equated to a 9-month contract-total
+
+This is  calculated by dividing  the total salary outlays of full-time, non-medical, instructional staff - total  equated to month contract (SAEQ9OT) by the number of full-time, non-medical, instructional staff (SATOTLT)"
+Description,43,40969,SAEQ9AM,"Average salary for instructional staff equated to a 9-month contract - men
+
+This is  calculated by dividing  the total salary outlays of full-time, non-medical, instructional staff - men  equated to month contract (SAEQ9OM) by the number of full-time, non-medical, instructional staff (SATOTLM)"
+Description,44,40971,SAEQ9AW,"Average salary for instructional staff equated to a 9-month contract - women
+
+This is  calculated by dividing  the total salary outlays of full-time, non-medical, instructional staff - women  equated to month contract (SAEQ9OW) by the number of full-time, non-medical, instructional staff (SATOTLW)"
+Description,45,40976,SA09MAT,"Average salary of full-time, non-medical, instructional staff - total  as of November 1 on 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,46,40981,SA09MAM,"Average salary of full-time, non-medical, instructional staff - men  as of November 1 on 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,47,40986,SA09MAW,"Average salary of full-time, non-medical, instructional staff - women  as of November 1 on 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,48,40991,SA10MAT,"Average salary of full-time, non-medical, instructional staff - total  as of November 1 on 10-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,49,40996,SA10MAM,"Average salary of full-time, non-medical, instructional staff - men  as of November 1 on 10-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,50,41001,SA10MAW,"Average salary of full-time, non-medical, instructional staff - women as of November 1 on 10-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,51,41006,SA11MAT,"Average salary of full-time, non-medical, instructional staff - total  as of November 1 on 11-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,52,41011,SA11MAM,"Average salary of full-time, non-medical, instructional staff - men as of November 1 on 11-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,53,41016,SA11MAW,"Average salary of full-time, non-medical, instructional staff - women as of November 1 on 11-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,54,41021,SA12MAT,"Average salary of full-time, non-medical, instructional staff - total  as of November 1 on 12-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,55,41026,SA12MAM,"Average salary of full-time, non-medical, instructional staff - men as of November 1 on 12-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,56,41031,SA12MAW,"Average salary of full-time, non-medical, instructional staff - women as of November 1 on 12-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,40106,ARANK,7,All instructional staff total,3818,24.95
+Frequencies,2,40106,ARANK,1,Professor,2450,16.010000000000002
+Frequencies,3,40106,ARANK,2,Associate professor,2308,15.08
+Frequencies,4,40106,ARANK,3,Assistant professor,2306,15.07
+Frequencies,5,40106,ARANK,4,Instructor,2626,17.16
+Frequencies,6,40106,ARANK,5,Lecturer,800,5.23
+Frequencies,7,40106,ARANK,6,No academic rank,992,6.48
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,40481,SAINSTT,15300,1262360,82.507189542483658,1,4089,Instructional staff - total
+Statistics,2,40482,SAINSTM,15300,636120,41.576470588235296,0,2314,Instructional staff - men
+Statistics,3,40483,SAINSTW,15300,626240,40.930718954248363,0,2341,Instructional staff - women
+Statistics,4,40491,SA_9MCT,15300,7246,0.47359477124183008,0,155,Instructional staff on less than 9-month contract-total
+Statistics,5,40492,SA_9MCM,15300,3376,0.22065359477124183,0,84,Instructional staff on less than 9-month contract-men
+Statistics,6,40493,SA_9MCW,15300,3870,0.25294117647058822,0,81,Instructional staff on less than 9-month contract-women
+Statistics,7,40113,SATOTLT,15300,1255114,82.033594771241823,0,3989,"Instructional staff on 9, 10, 11 or 12 month contract-total"
+Statistics,8,40107,SATOTLM,15300,632744,41.355816993464053,0,2270,"Instructional staff on 9, 10, 11 or 12 month contract-men"
+Statistics,9,40110,SATOTLW,15300,622370,40.677777777777777,0,2341,"Instructional staff on 9, 10, 11 or 12 month contract-women"
+Statistics,10,40501,SA09MCT,15300,841720,55.014379084967324,0,3075,Instructional staff on 9-month contract-total
+Statistics,11,40506,SA09MCM,15300,441910,28.883006535947711,0,1626,Instructional staff on 9-month contract-men
+Statistics,12,40511,SA09MCW,15300,399810,26.131372549019609,0,1449,Instructional staff on 9-month contract-women
+Statistics,13,40516,SA10MCT,15300,167976,10.978823529411764,0,1949,Instructional staff on 10-month contract-total
+Statistics,14,40521,SA10MCM,15300,81248,5.3103267973856205,0,1123,Instructional staff on 10-month contract-men
+Statistics,15,40526,SA10MCW,15300,86728,5.6684967320261439,0,826,Instructional staff on 10-month contract-women
+Statistics,16,40531,SA11MCT,15300,20244,1.3231372549019609,0,1131,Instructional staff on 11-month contract-total
+Statistics,17,40536,SA11MCM,15300,10148,0.66326797385620917,0,892,Instructional staff on 11-month contract-men
+Statistics,18,40541,SA11MCW,15300,10096,0.6598692810457516,0,286,Instructional staff on 11-month contract-women
+Statistics,19,40546,SA12MCT,15300,225174,14.717254901960784,0,3200,Instructional staff on 12-month contract total
+Statistics,20,40551,SA12MCM,15300,99438,6.4992156862745096,0,859,Instructional staff on 12-month contract men
+Statistics,21,40556,SA12MCW,15300,125736,8.2180392156862752,0,2341,Instructional staff on 12--month contract women
+Statistics,22,40576,SAOUTLT,15300,129090190070,8437267.3248366006,0,527776120,Salary outlays - total
+Statistics,23,40581,SAOUTLM,15300,70155727146,4585341.6435294114,0,309013232,Salary outlays - men
+Statistics,24,40586,SAOUTLW,15300,58934462924,3851925.6813071896,0,218762888,Salary outlays - women
+Statistics,25,40901,SA09MOT,15300,86361500734,5644542.5316339871,0,390166432,Salary outlays for instructional staff on 9-month contract-total
+Statistics,26,40906,SA09MOM,15300,49209237404,3216290.0264052288,0,241560260,Salary outlays for instructional staff on 9-month contract-men
+Statistics,27,40911,SA09MOW,15300,37152263330,2428252.5052287583,0,152376299,Salary outlays for instructional staff on 9-month contract-women
+Statistics,28,40916,SA10MOT,15300,16349028516,1068563.9552941176,0,229462543,Salary outlays for instructional staff on 10-month contract-total
+Statistics,29,40921,SA10MOM,15300,8318297786,543679.59385620919,0,140601580,Salary outlays for instructional staff on 10-month contract-men
+Statistics,30,40926,SA10MOW,15300,8030730730,524884.36143790849,0,90493619,Salary outlays for instructional staff on 10-month contract-women
+Statistics,31,40931,SA11MOT,15300,2375799028,155280.98222222223,0,171260796,Salary outlays for instructional staff on 11-month contract-total
+Statistics,32,40936,SA11MOM,15300,1324421904,86563.523137254902,0,140733590,Salary outlays for instructional staff on 11-month contract-men
+Statistics,33,40941,SA11MOW,15300,1051377124,68717.459084967326,0,36155400,Salary outlays for instructional staff on 11-month contract-women
+Statistics,34,40946,SA12MOT,15300,24003861792,1568879.8556862746,0,236863422,Salary outlays for instructional staff on 12-month contract-total
+Statistics,35,40951,SA12MOM,15300,11303770052,738808.50013071892,0,90648717,Salary outlays for instructional staff on 12-month contract-men
+Statistics,36,40956,SA12MOW,15300,12700091740,830071.35555555555,0,172691833,Salary outlays for instructional staff on 12-month contract-women
+Statistics,37,40961,SAEQ9OT,15300,121021927176,7909929.8807843141,0,493470919,Salary outlays for instructional staff equated to a 9-month contract-total
+Statistics,38,40963,SAEQ9OM,15300,66256910822,4330517.0471895421,0,292197028,Salary outlays for instructional staff equated to a 9-month contract-men
+Statistics,39,40965,SAEQ9OW,15300,54765017019,3579412.8770588236,0,201273891,Salary outlays for instructional staff equated to a 9-month contract-women
+Statistics,40,40967,SAEQ9AT,15263,1093193889,71623.788835746571,3335,326040,Average salary for instructional staff equated to a 9-month contract-total
+Statistics,41,40969,SAEQ9AM,14291,1054587916,73793.850395353715,3335,356715,Average salary for instructional staff equated to a 9-month contract-men
+Statistics,42,40971,SAEQ9AW,14277,1020066738,71448.255095608314,0,301634,Average salary for instructional staff equated to a 9-month contract-women
+Statistics,43,40976,SA09MAT,9246,718963495,77759.408933592902,5000,308665,Average salary for instructional staff on 9-month contract-total
+Statistics,44,40981,SA09MAM,8774,703019231,80125.282767266923,5000,310602,Average salary for instructional staff on 9-month contract-men
+Statistics,45,40986,SA09MAW,8916,682076230,76500.250112157912,0,302374,Average salary for instructional staff on 9-month contract-women
+Statistics,46,40991,SA10MAT,4080,313070179,76732.887009803919,9037,322950,Average salary for instructional staff on 10-month contract-total
+Statistics,47,40996,SA10MAM,3492,274830207,78702.808419243986,8732,322950,Average salary for instructional staff on 10-month contract-men
+Statistics,48,41001,SA10MAW,3598,276909775,76962.138688160092,6189,210009,Average salary for instructional staff on 10-month contract-women
+Statistics,49,41006,SA11MAT,1565,134337895,85838.910543130987,8854,294203,Average salary for instructional staff on 11-month contract-total
+Statistics,50,41011,SA11MAM,1108,98948479,89303.681407942233,10083,294203,Average salary for instructional staff on 11-month contract-men
+Statistics,51,41016,SA11MAW,1264,108696249,85993.867879746831,4007,274222,Average salary for instructional staff on 11-month contract-women
+Statistics,52,41021,SA12MAT,9104,823714472,90478.303163444638,4447,434720,Average salary for instructional staff on 12-month contract-total
+Statistics,53,41026,SA12MAM,7579,706354108,93198.853146853144,4447,475621,Average salary for instructional staff on 12-month contract-men
+Statistics,54,41031,SA12MAW,7960,718577562,90273.563065326627,1200,402178,Average salary for instructional staff on 12-month contract-women
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

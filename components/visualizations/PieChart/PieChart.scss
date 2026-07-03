@@ -1,0 +1,15 @@
+.pieChart {
+  position: relative;
+  width: 100%;
+  text-align: center;
+
+  &__centerLabel {
+    font-size: 1.4rem;
+    font-weight: 700;
+    fill: #501315;
+  }
+
+  &__tooltipLabel {
+    font-weight: 600;
+  }
+}

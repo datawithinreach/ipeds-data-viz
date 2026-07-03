@@ -1,0 +1,209 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for graduation rate data, 200% of normal time to complete - cohort year 2014 (4-year institutions) - cohort year 2018 (less than 4-year institutions) : 2022",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,Filename,GR200_22,,,,,,,,
+Introduction,3,  Provisional release:,December 2023,,,,,,,,
+Introduction,4,Filename,GR200_22_RV,,,,,,,,
+Introduction,5,  Final release:,September 2024,,,,,,,,
+Introduction,6,,,,,,,,,,
+Introduction,7,Overview,"This file contains the graduation rate status as of August 31, 2022 for the cohort of full-time, first-time degree/certificate-seeking undergraduates. Data for four year institutions include the number of bachelor degree-seeking students who were enrolled in 2014, the number of bachelor degree seeking students who completed a bachelor's degree within 100, 150  or 200 percent of normal time.  Data for less than 4-year institutions include the number of full-time, first-time students who were enrolled in 2018, the number of students who completed any degree/certificate within 100, 150, or 200 percent of normal time.   
+",,,,,,,,
+Introduction,8,,,,,,,,,,
+Introduction,9,Note,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.  ",,,,,,,,
+Introduction,10,,,,,,,,,,
+Introduction,11,Contents of spreadsheet,,,,,,,,,
+Introduction,12,,,,,,,,,,
+Introduction,13,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,14,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,15,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Provisional release)",,,,,,,,
+Introduction,16,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+Introduction,17,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Final/revised release)",,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,81281,BAREVCT,N,6,Cont,XBAREVCT,"Revised bachelor's degree-seeking cohort, (cohort year 2014)"
+varlist,3,81286,BAEXCLU,N,6,Cont,XBAEXCLU,Exclusions from bachelor's degree-seeking cohort within 150% percent of normal time
+varlist,4,81291,BAAC150,N,6,Cont,XBAAC150,Adjusted bachelor's degree-seeking cohort within 150% of normal time
+varlist,5,81296,BANC100,N,6,Cont,XBANC100,Number completed a bachelor's degree within 100% of normal time (4-years)
+varlist,6,81301,BAGR100,N,6,Cont,XBAGR100,4-year Graduation rate - bachelor's degree within 100% of normal time
+varlist,7,81306,BANC150,N,6,Cont,XBANC150,Number completed a bachelor's degree within 150% of normal time (6-years)
+varlist,8,81311,BAGR150,N,6,Cont,XBAGR150,6-year Graduation rate - bachelor's degree within 150% of normal time
+varlist,9,81316,BAAEXCL,N,6,Cont,XBAAEXCL,Additional exclusions from bachelor's degree-seeking cohort
+varlist,10,81321,BAAC200,N,6,Cont,XBAAC200,Adjusted bachelor's degree-seeking cohort within 200% of normal time
+varlist,11,81326,BANC200A,N,6,Cont,XBANC20A,Number completed a bachelor's degree between 150% and 200% of normal time
+varlist,12,81338,BASTEND,N,6,Cont,XBASTEND,Still enrolled
+varlist,13,81331,BANC200,N,6,Cont,XBANC200,Number completed a bachelor's degree within 200% of normal time (8-years)
+varlist,14,81336,BAGR200,N,6,Cont,XBAGR200,8-year Graduation rate - bachelor's degree within 200% of normal time
+varlist,15,81341,L4REVCT,N,6,Cont,XL4REVCT,"Revised degree/certificate-seeking cohort, (cohort year 2018)"
+varlist,16,81346,L4EXCLU,N,6,Cont,XL4EXCLU,Exclusions from degree/certificate-seeking cohort within 150% percent of normal time
+varlist,17,81351,L4AC150,N,6,Cont,XL4AC150,Adjusted degree/certificate-seeking cohort within 150% of normal time
+varlist,18,81356,L4NC100,N,6,Cont,XL4NC100,Number completed a degree/certificate within 100% of normal time
+varlist,19,81361,L4GR100,N,6,Cont,XL4GR100,Graduation rate - degree/certificate within 100% of normal time
+varlist,20,81366,L4NC150,N,6,Cont,XL4NC150,Number completed a degree/certificate  within 150% of normal time
+varlist,21,81371,L4GR150,N,6,Cont,XL4GR150,Graduation rate - degree/certificate within 150% of normal time
+varlist,22,81376,L4AEXCL,N,6,Cont,XL4AEXCL,Additional exclusions from degree/certificate-seeking cohort
+varlist,23,81381,L4AC200,N,6,Cont,XL4AC200,Adjusted degree/certificate-seeking cohort within 200% of normal time
+varlist,24,81386,L4NC200A,N,6,Cont,XL4NC20a,Number completed a  degree/certificate between 150% and 200% of normal time
+varlist,25,81398,L4STEND,N,6,Cont,XL4STEND,Still enrolled
+varlist,26,81391,L4NC200,N,6,Cont,XL4NC200,Number completed a degree/certificate within 200% of normal time
+varlist,27,81396,L4GR200,N,6,Cont,XL4GR200,Graduation rate - degree/certificate within 200% of normal time
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,81281,BAREVCT,"Revised bachelor's degree-seeking cohort, (cohort year 2014)"
+Description,3,81286,BAEXCLU,"Exclusions from bachelor's degree-seeking cohort within 150% percent of normal time
+
+Exclusions who left institution within 150% of normal time and have neither graduated nor transferred to another institution) because of one of the following documented reasons:
+The student is deceased or is totally and permanently disabled and thus unable to return to school. 
+The student left school to serve in the armed forces or was called to active duty. (DO NOT include students already in the military who transfer to another duty station.) 
+The student left school to serve with a foreign aid service of the Federal Government, such as the Peace Corps. 
+The student left school to serve on an official church mission.
+NOTE: Students who leave the institution for one of the above reasons, but return prior to the 150 percent status date of August 31, may still be reported as exclusions."
+Description,4,81291,BAAC150,"Adjusted bachelor's degree-seeking cohort,  Revised cohort minus exclusions"
+Description,5,81296,BANC100,"The number of students from the adjusted bachelor's degree-seeking cohort,  who completed a bachelor's degree within 100 percent of normal time (4 years)."
+Description,6,81301,BAGR100,"4-year Graduation rate - bachelor’s degree within 100% of normal time (2014 cohort)
+
+The number of students from the adjusted bachelor's degree-seeking cohort, who completed a bachelor's degree within 100 percent of normal time (4-years) divided by the adjusted cohort. Note: Adjusted Cohort is the revised cohort minus exclusions as reported by the institution as of 150 percent of normal time. (6-years)."
+Description,7,81306,BANC150,"The number of students from the adjusted bachelor's degree-seeking cohort,  who completed a bachelor's degree within 150 percent of normal time (6 years)."
+Description,8,81311,BAGR150,"6-year Graduation rate - bachelor’s degree within 150% of normal time (2014 cohort)
+
+The number of students from the adjusted bachelor's degree-seeking cohort, who completed a bachelor's degree within 150 percent of normal time (6-years) divided by the adjusted cohort. Note: Adjusted Cohort is the revised cohort minus exclusions as reported by the institution as of 150 percent of normal time. (6-years)."
+Description,9,81316,BAAEXCL,"Additional exclusions from bachelor's degree-seeking cohort,
+
+Additional exclusions who left institution between 150% of normal time and 200% of normal time (and have neither graduated nor transferred to another institution) because of one of the following documented reasons:
+The student is deceased or is totally and permanently disabled and thus unable to return to school. 
+The student left school to serve in the armed forces or was called to active duty. (DO NOT include students already in the military who transfer to another duty station.) 
+The student left school to serve with a foreign aid service of the Federal Government, such as the Peace Corps. 
+The student left school to serve on an official church mission.
+NOTE: Students who leave the institution for one of the above reasons, but return prior to the 200 percent status date of August 31, may still be reported as exclusions."
+Description,10,81321,BAAC200,Adjusted bachelor's degree-seeking cohort within 200% of normal time. - Adjusted cohort minus additional exclusion who left institution between 150% of normal time and 200% of normal time
+Description,11,81326,BANC200A,"The number of students from the adjusted bachelor's degree-seeking cohort,  who completed a bachelor's degree between 150% and  200% (7 or 8 years) of normal time ."
+Description,12,81338,BASTEND,Still enrolled - The number of students who are still enrolled as of the fall census date
+Description,13,81331,BANC200,"The number of students from the adjusted bachelor's degree-seeking cohort,  who completed a bachelor's degree within 200 percent of normal time  (8 years)."
+Description,14,81336,BAGR200,"8-year Graduation rate - bachelor’s degree within 200% of normal time. (2014 cohort)
+
+The number of students from the adjusted bachelor's degree-seeking cohort, who completed a bachelor's degree within 200 percent of normal time (8-years) divided by the adjusted cohort. Note: Adjusted Cohort is the revised cohort minus exclusions as reported by the institution as of 200 percent of normal time. (8-years)."
+Description,15,81341,L4REVCT,Revised degree/certificate-seeking cohort (cohort year 2018) in two-year and less-than-two year institutions
+Description,16,81346,L4EXCLU,"Exclusions from degree/certificate-seeking cohort within 150% percent of normal time (two year and less-than-two year institutions)
+
+Exclusions who left institution within 150% of normal time and have neither graduated nor transferred to another institution) because of one of the following documented reasons:
+The student is deceased or is totally and permanently disabled and thus unable to return to school. 
+The student left school to serve in the armed forces or was called to active duty. (DO NOT include students already in the military who transfer to another duty station.) 
+The student left school to serve with a foreign aid service of the Federal Government, such as the Peace Corps. 
+The student left school to serve on an official church mission.
+NOTE: Students who leave the institution for one of the above reasons, but return prior to the 150 percent status date of August 31, may still be reported as exclusions."
+Description,17,81351,L4AC150,Adjusted degree/certificate-seeking cohort within 150% of normal time - Revised cohort minus exclusions  (two-year and less-than-two year institutions)
+Description,18,81356,L4NC100,"The number of students from the adjusted degree/certificate-seeking cohort, who completed a degree/certificate within 100 percent of normal time. (two-year and less-than-two year institutions).
+
+Normal time is 2 years for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Description,19,81361,L4GR100,"Graduation rate - degree/certificate within 100% of normal time (two-year and less-than-two year institutions 2018 cohort)
+
+The number of students from the adjusted degree/certificate-seeking cohort, who completed a program within 100 percent of normal time  divided by the adjusted cohort. Note: Adjusted Cohort is the revised cohort minus exclusions as reported by the institution as of 150 percent of normal time.
+
+Normal time is 2 years for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Description,20,81366,L4NC150,"Number completed a degree/certificate within 150% of normal time (two-year and less-than-two year institutions)
+
+The number of students from the adjusted degree/certificate-seeking cohort,  who completed a program within 150 percent of normal time.
+
+Normal time is 2 years for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Description,21,81371,L4GR150,"Graduation rate - degree/certificate within 150% of normal time (two-year and less-than-two year institutions 2018 cohort)
+
+The number of students from the adjusted degree/certificate-seeking cohort,  who completed a program within 150 percent of normal time divided by the adjusted degree/certificate-seeking cohort. Note: Adjusted Cohort is the revised cohort minus exclusions as reported by the institution as of 150 percent of normal time.
+
+Normal time is 2 years for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Description,22,81376,L4AEXCL,"Additional exclusions from degree/certificate-seeking cohort (two-year and less-than-two year institutions)
+
+Additional exclusions who left institution between 150% of normal time and 200% of normal time (and have neither graduated nor transferred to another institution) because of one of the following documented reasons:
+The student is deceased or is totally and permanently disabled and thus unable to return to school. 
+The student left school to serve in the armed forces or was called to active duty. (DO NOT include students already in the military who transfer to another duty station.) 
+The student left school to serve with a foreign aid service of the Federal Government, such as the Peace Corps. 
+The student left school to serve on an official church mission.
+NOTE: Students who leave the institution for one of the above reasons, but return prior to the 200 percent status date of August 31, may still be reported as exclusions."
+Description,23,81381,L4AC200,"Adjusted degree/certificate-seeking cohort within 200% of normal time (two-year and less-than-two year institutions)
+
+Adjusted degree/certificate-seeking cohort at 150% of normal time minus additional exclusions.
+
+Normal time is 2 years for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Description,24,81386,L4NC200A,"The number of students from the adjusted degree/certificate-seeking cohort,  who completed a program  between 150% and  200% of normal time. (two-year and less-than-two year institutions).
+
+Normal time is 2 years for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Description,25,81398,L4STEND,Still enrolled - The number of students who are still enrolled as of the fall census date
+Description,26,81391,L4NC200,"The number of students from the adjusted degree/certificate-seeking cohort,  who completed a program within 200% of normal time. (two-year and less-than-two year institutions).
+
+Normal time is 2 years for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Description,27,81396,L4GR200,"Graduation rate - degree/certificate within 200% of normal time (two-year and less-than-two year institutions 2018 cohort)
+
+The number of students from the adjusted degree/certificate-seeking cohort,  who completed a program within 200% of normal time divided by the adjusted cohort. Adjusted Cohort is the revised cohort minus exclusions as reported by the institution as of 200 percent of normal time. 
+
+Normal time is 2 years for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,81281,BAREVCT,1980,1516473,765.89545454545453,1,10673,"Revised bachelor's degree-seeking cohort, (cohort year 2014)"
+Statistics,2,81286,BAEXCLU,1980,4929,2.4893939393939393,0,962,Exclusions from bachelor's degree-seeking cohort within 150% percent of normal time
+Statistics,3,81291,BAAC150,1980,1511544,763.40606060606058,1,10598,Adjusted bachelor's degree-seeking cohort within 150% of normal time
+Statistics,4,81296,BANC100,1980,694311,350.66212121212124,0,5637,Number completed a bachelor's degree within 100% of normal time (4-years)
+Statistics,5,81301,BAGR100,1980,75676,38.220202020202024,0,100,4-year Graduation rate - bachelor's degree within 100% of normal time
+Statistics,6,81306,BANC150,1980,958393,484.03686868686867,0,7831,Number completed a bachelor's degree within 150% of normal time (6-years)
+Statistics,7,81311,BAGR150,1980,101567,51.296464646464649,0,100,6-year Graduation rate - bachelor's degree within 150% of normal time
+Statistics,8,81316,BAAEXCL,1980,-757,-0.38232323232323234,-759,13,Additional exclusions from bachelor's degree-seeking cohort
+Statistics,9,81321,BAAC200,1980,1512301,763.78838383838388,1,10598,Adjusted bachelor's degree-seeking cohort within 200% of normal time
+Statistics,10,81326,BANC200A,1980,26229,13.246969696969696,0,807,Number completed a bachelor's degree between 150% and 200% of normal time
+Statistics,11,81338,BASTEND,1980,9880,4.9898989898989896,0,150,Still enrolled
+Statistics,12,81331,BANC200,1980,984622,497.28383838383837,0,7913,Number completed a bachelor's degree within 200% of normal time (8-years)
+Statistics,13,81336,BAGR200,1980,104765,52.911616161616159,0,100,8-year Graduation rate - bachelor's degree within 200% of normal time
+Statistics,14,81341,L4REVCT,3030,820620,270.83168316831683,1,5855,"Revised degree/certificate-seeking cohort, (cohort year 2018)"
+Statistics,15,81346,L4EXCLU,3030,653,0.2155115511551155,0,69,Exclusions from degree/certificate-seeking cohort within 150% percent of normal time
+Statistics,16,81351,L4AC150,3030,819967,270.61617161716174,1,5855,Adjusted degree/certificate-seeking cohort within 150% of normal time
+Statistics,17,81356,L4NC100,3030,213681,70.521782178217819,0,1566,Number completed a degree/certificate within 100% of normal time
+Statistics,18,81361,L4GR100,3030,107432,35.456105610561053,0,100,Graduation rate - degree/certificate within 100% of normal time
+Statistics,19,81366,L4NC150,3030,344098,113.56369636963696,0,2424,Number completed a degree/certificate  within 150% of normal time
+Statistics,20,81371,L4GR150,3030,176861,58.369966996699667,0,100,Graduation rate - degree/certificate within 150% of normal time
+Statistics,21,81376,L4AEXCL,3030,171,5.6435643564356437E-2,0,15,Additional exclusions from degree/certificate-seeking cohort
+Statistics,22,81381,L4AC200,3030,819796,270.55973597359736,1,5855,Adjusted degree/certificate-seeking cohort within 200% of normal time
+Statistics,23,81386,L4NC200A,3030,29907,9.8702970297029697,0,354,Number completed a  degree/certificate between 150% and 200% of normal time
+Statistics,24,81398,L4STEND,3030,34906,11.520132013201319,0,441,Still enrolled
+Statistics,25,81391,L4NC200,3030,374005,123.43399339933994,0,2475,Number completed a degree/certificate within 200% of normal time
+Statistics,26,81396,L4GR200,3030,183378,60.520792079207922,0,100,Graduation rate - degree/certificate within 200% of normal time
+Statistics,27,,,,,,,
+Statistics,28,,,,,,,
+Statistics,29,,,,,,,
+Statistics,30,,,,,,,
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,81281,BAREVCT,1980,1516490,765.90404040404042,1,10673,"Revised bachelor's degree-seeking cohort, (cohort year 2014)"
+StatisticsRV,2,81286,BAEXCLU,1980,4929,2.4893939393939393,0,962,Exclusions from bachelor's degree-seeking cohort within 150% percent of normal time
+StatisticsRV,3,81291,BAAC150,1980,1511561,763.41464646464647,1,10598,Adjusted bachelor's degree-seeking cohort within 150% of normal time
+StatisticsRV,4,81296,BANC100,1980,694327,350.670202020202,0,5637,Number completed a bachelor's degree within 100% of normal time (4-years)
+StatisticsRV,5,81301,BAGR100,1980,75690,38.227272727272727,0,100,4-year Graduation rate - bachelor's degree within 100% of normal time
+StatisticsRV,6,81306,BANC150,1980,958374,484.0272727272727,0,7831,Number completed a bachelor's degree within 150% of normal time (6-years)
+StatisticsRV,7,81311,BAGR150,1980,101592,51.309090909090912,0,100,6-year Graduation rate - bachelor's degree within 150% of normal time
+StatisticsRV,8,81316,BAAEXCL,1980,-764,-0.38585858585858585,-759,13,Additional exclusions from bachelor's degree-seeking cohort
+StatisticsRV,9,81321,BAAC200,1980,1512325,763.80050505050508,1,10598,Adjusted bachelor's degree-seeking cohort within 200% of normal time
+StatisticsRV,10,81326,BANC200A,1980,26237,13.251010101010101,0,807,Number completed a bachelor's degree between 150% and 200% of normal time
+StatisticsRV,11,81338,BASTEND,1980,9712,4.9050505050505047,0,150,Still enrolled
+StatisticsRV,12,81331,BANC200,1980,984611,497.27828282828284,0,7913,Number completed a bachelor's degree within 200% of normal time (8-years)
+StatisticsRV,13,81336,BAGR200,1980,104783,52.920707070707074,0,100,8-year Graduation rate - bachelor's degree within 200% of normal time
+StatisticsRV,14,81341,L4REVCT,3030,820546,270.80726072607263,1,5855,"Revised degree/certificate-seeking cohort, (cohort year 2018)"
+StatisticsRV,15,81346,L4EXCLU,3030,652,0.21518151815181519,0,69,Exclusions from degree/certificate-seeking cohort within 150% percent of normal time
+StatisticsRV,16,81351,L4AC150,3030,819894,270.59207920792079,1,5855,Adjusted degree/certificate-seeking cohort within 150% of normal time
+StatisticsRV,17,81356,L4NC100,3030,213683,70.522442244224422,0,1566,Number completed a degree/certificate within 100% of normal time
+StatisticsRV,18,81361,L4GR100,3030,107434,35.456765676567656,0,100,Graduation rate - degree/certificate within 100% of normal time
+StatisticsRV,19,81366,L4NC150,3030,344081,113.55808580858086,0,2424,Number completed a degree/certificate  within 150% of normal time
+StatisticsRV,20,81371,L4GR150,3030,176859,58.369306930693071,0,100,Graduation rate - degree/certificate within 150% of normal time
+StatisticsRV,21,81376,L4AEXCL,3030,171,5.6435643564356437E-2,0,15,Additional exclusions from degree/certificate-seeking cohort
+StatisticsRV,22,81381,L4AC200,3030,819723,270.53564356435646,1,5855,Adjusted degree/certificate-seeking cohort within 200% of normal time
+StatisticsRV,23,81386,L4NC200A,3030,29890,9.8646864686468643,0,354,Number completed a  degree/certificate between 150% and 200% of normal time
+StatisticsRV,24,81398,L4STEND,3030,34933,11.52904290429043,0,441,Still enrolled
+StatisticsRV,25,81391,L4NC200,3030,373971,123.42277227722772,0,2475,Number completed a degree/certificate within 200% of normal time
+StatisticsRV,26,81396,L4GR200,3030,183381,60.521782178217819,0,100,Graduation rate - degree/certificate within 200% of normal time

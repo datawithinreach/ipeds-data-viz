@@ -1,0 +1,3675 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for full- and part-time staff by occupational category, race/ethnicity, and gender: Fall 2021",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,,,,,,,,,,
+Introduction,3,Filename,S2021_OC,,,,,,,,
+Introduction,4,Provisional release:,December 2022,,,,,,,,
+Introduction,5,Filename,S2021_OC_RV,,,,,,,,
+Introduction,6,  Final/revised release:,December  2023
+Introduction,7,Overview,"This file contains the number of staff on the payroll of the institution as of November 1,  by occupational categories, race/ethnicity and gender. This file has multiple records per institution.  Each record is uniquely defined by the variables IPEDS ID (UNITID), and occupational category and full- and part-time status (STAFFCAT).  
+",,,,,,,,
+Introduction,8,Note,"Prior to the IPEDS Web-based data collection in 2001, human resource data reported by race/ethnicity and gender was only available in odd-numbered years.  Beginning with 2001, human resource data reported by race/ethnicity and gender was mandatory in odd-numbered years and optional in even-numbered years.  Beginning with 2016 reporting human resource data by race/ethnicity and gender is mandatory annually.",,,,,,,,
+Introduction,9,,"Provisional release data have undergone all NCES data quality control procedures. Data are imputed for nonresponding institutions. These data are used for First Look (Provisional Data) Web Tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. The final release data can be used when the most up to date data are required; however, these data may not match First Look Web Tables based on provisional data. ",,,,,,,,
+Introduction,10,Contents of spreadsheet,,,,,,,,,
+Introduction,11,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,12,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,13,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.(provisional release),,,,,,,,
+Introduction,14,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (provisional release)",,,,,,,,
+Introduction,15,FrequenciesRV,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.(final/revised release),,,,,,,,
+Introduction,16,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file.(final/revised release)",,,,,,,,
+Introduction,17,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,53016,STAFFCAT,N,4,Disc,,Occupation and full- and part-time status
+varlist,3,53021,FTPT,N,2,Disc,,Full-time or part-time status
+varlist,4,53026,OCCUPCAT,N,3,Disc,,Occupation category
+varlist,5,50131,SABDTYPE,N,3,Disc,,Identifies occupations consistent with previous codes
+varlist,6,50251,HRTOTLT,N,6,Cont,XHRTOTLT,Grand total
+varlist,7,50206,HRTOTLM,N,6,Cont,XHRTOTLM,Grand total men
+varlist,8,50211,HRTOTLW,N,6,Cont,XHRTOTLW,Grand total women
+varlist,9,52032,HRAIANT,N,6,Cont,XHRAIANT,American Indian or Alaska Native total
+varlist,10,52034,HRAIANM,N,6,Cont,XHRAIANM,American Indian or Alaska Native men
+varlist,11,52036,HRAIANW,N,6,Cont,XHRAIANW,American Indian or Alaska Native women
+varlist,12,52038,HRASIAT,N,6,Cont,XHRASIAT,Asian total
+varlist,13,52040,HRASIAM,N,6,Cont,XHRASIAM,Asian men
+varlist,14,52042,HRASIAW,N,6,Cont,XHRASIAW,Asian women
+varlist,15,52044,HRBKAAT,N,6,Cont,XHRBKAAT,Black or African American total
+varlist,16,52046,HRBKAAM,N,6,Cont,XHRBKAAM,Black or African American men
+varlist,17,52048,HRBKAAW,N,6,Cont,XHRBKAAW,Black or African American women
+varlist,18,52050,HRHISPT,N,6,Cont,XHRHISPT,Hispanic or Latino total
+varlist,19,52052,HRHISPM,N,6,Cont,XHRHISPM,Hispanic or Latino men
+varlist,20,52054,HRHISPW,N,6,Cont,XHRHISPW,Hispanic or Latino women
+varlist,21,52056,HRNHPIT,N,6,Cont,XHRNHPIT,Native Hawaiian or Other Pacific Islander total
+varlist,22,52058,HRNHPIM,N,6,Cont,XHRNHPIM,Native Hawaiian or Other Pacific Islander men
+varlist,23,52060,HRNHPIW,N,6,Cont,XHRNHPIW,Native Hawaiian or Other Pacific Islander women
+varlist,24,52062,HRWHITT,N,6,Cont,XHRWHITT,White total
+varlist,25,52064,HRWHITM,N,6,Cont,XHRWHITM,White men
+varlist,26,52066,HRWHITW,N,6,Cont,XHRWHITW,White women
+varlist,27,52068,HR2MORT,N,6,Cont,XHR2MORT,Two or more races total
+varlist,28,52070,HR2MORM,N,6,Cont,XHR2MORM,Two or more races men
+varlist,29,52072,HR2MORW,N,6,Cont,XHR2MORW,Two or more races women
+varlist,30,50246,HRUNKNT,N,6,Cont,XHRUNKNT,Race/ethnicity unknown total
+varlist,31,50196,HRUNKNM,N,6,Cont,XHRUNKNM,Race/ethnicity unknown men
+varlist,32,50201,HRUNKNW,N,6,Cont,XHRUNKNW,Race/ethnicity unknown women
+varlist,33,50216,HRNRALT,N,6,Cont,XHRNRALT,Nonresident alien total
+varlist,34,50136,HRNRALM,N,6,Cont,XHRNRALM,Nonresident alien men
+varlist,35,50141,HRNRALW,N,6,Cont,XHRNRALW,Nonresident alien women
+varlist,36,,,,,,,
+varlist,37,,,,,,,
+varlist,38,,,,,,,
+varlist,39,,,,,,,
+varlist,40,,,,,,,
+varlist,41,,,,,,,
+varlist,42,,,,,,,
+varlist,43,,,,,,,
+varlist,44,,,,,,,
+varlist,45,,,,,,,
+varlist,46,,,,,,,
+varlist,47,,,,,,,
+varlist,48,,,,,,,
+varlist,49,,,,,,,
+varlist,50,,,,,,,
+varlist,51,,,,,,,
+varlist,52,,,,,,,
+varlist,53,,,,,,,
+varlist,54,,,,,,,
+varlist,55,,,,,,,
+varlist,56,,,,,,,
+varlist,57,,,,,,,
+varlist,58,,,,,,,
+varlist,59,,,,,,,
+varlist,60,,,,,,,
+varlist,61,,,,,,,
+varlist,62,,,,,,,
+varlist,63,,,,,,,
+varlist,64,,,,,,,
+varlist,65,,,,,,,
+varlist,66,,,,,,,
+varlist,67,,,,,,,
+varlist,68,,,,,,,
+varlist,69,,,,,,,
+varlist,70,,,,,,,
+varlist,71,,,,,,,
+varlist,72,,,,,,,
+varlist,73,,,,,,,
+varlist,74,,,,,,,
+varlist,75,,,,,,,
+varlist,76,,,,,,,
+varlist,77,,,,,,,
+varlist,78,,,,,,,
+varlist,79,,,,,,,
+varlist,80,,,,,,,
+varlist,81,,,,,,,
+varlist,82,,,,,,,
+varlist,83,,,,,,,
+varlist,84,,,,,,,
+varlist,85,,,,,,,
+varlist,86,,,,,,,
+varlist,87,,,,,,,
+varlist,88,,,,,,,
+varlist,89,,,,,,,
+varlist,90,,,,,,,
+varlist,91,,,,,,,
+varlist,92,,,,,,,
+varlist,93,,,,,,,
+varlist,94,,,,,,,
+varlist,95,,,,,,,
+varlist,96,,,,,,,
+varlist,97,,,,,,,
+varlist,98,,,,,,,
+varlist,99,,,,,,,
+varlist,100,,,,,,,
+varlist,101,,,,,,,
+varlist,102,,,,,,,
+varlist,103,,,,,,,
+varlist,104,,,,,,,
+varlist,105,,,,,,,
+varlist,106,,,,,,,
+varlist,107,,,,,,,
+varlist,108,,,,,,,
+varlist,109,,,,,,,
+varlist,110,,,,,,,
+varlist,111,,,,,,,
+varlist,112,,,,,,,
+varlist,113,,,,,,,
+varlist,114,,,,,,,
+varlist,115,,,,,,,
+varlist,116,,,,,,,
+varlist,117,,,,,,,
+varlist,118,,,,,,,
+varlist,119,,,,,,,
+varlist,120,,,,,,,
+varlist,121,,,,,,,
+varlist,122,,,,,,,
+varlist,123,,,,,,,
+varlist,124,,,,,,,
+varlist,125,,,,,,,
+varlist,126,,,,,,,
+varlist,127,,,,,,,
+varlist,128,,,,,,,
+varlist,129,,,,,,,
+varlist,130,,,,,,,
+varlist,131,,,,,,,
+varlist,132,,,,,,,
+varlist,133,,,,,,,
+varlist,134,,,,,,,
+varlist,135,,,,,,,
+varlist,136,,,,,,,
+varlist,137,,,,,,,
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,53016,STAFFCAT,"Occupation and full and part-time status.
+
+This variable identifies postsecondary staff by IPEDS Human Resource occupation categories and full- and part-time status
+
+The IPEDS HR survey component uses the Standard Occupational Classification (SOC) system to assist institutions in classifying employees for IPEDS reporting purposes. The SOC is a system used by Federal statistical agencies to classify workers and jobs into occupational categories for the purpose of collecting, calculating, analyzing, or disseminating data. In 2018, an updated version of the SOC system (http://www.bls.gov/soc/) was released. Consequently, the IPEDS HR survey was revised to incorporate the 2018 SOC information. The new IPEDS occupational categories are effective with 2018-19 Human Resources reporting.
+
+Full-time staff (employees)  As defined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time.  
+
+Part-time staff (employees)  As determined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time. Casual employees (hired on an ad-hoc basis or occasional basis to meet short-term needs) and students in the College Work-Study Program (CWS) are not considered part-time staff."
+Description,3,53021,FTPT,"Full-time or part-time status
+
+Full-time staff (employees)  As defined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time.  
+
+Part-time staff (employees)  As determined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time. Casual employees (hired on an ad-hoc basis or occasional basis to meet short-term needs) and students in the College Work-Study Program (CWS) are not considered part-time staff."
+Description,4,53026,OCCUPCAT,"Occupation code -  This variable identifies postsecondary staff by IPEDS Human Resource occupation categories 
+
+The IPEDS HR survey component uses the Standard Occupational Classification (SOC) system to assist institutions in classifying employees for IPEDS reporting purposes. The SOC is a system used by Federal statistical agencies to classify workers and jobs into occupational categories for the purpose of collecting, calculating, analyzing, or disseminating data. In 2018, an updated version of the SOC system (http://www.bls.gov/soc/) was released. Consequently, the IPEDS HR survey was revised to incorporate the 2018 SOC information. The new IPEDS occupational categories are effective with 2018-19 Human Resources reporting."
+Description,5,50131,SABDTYPE,"Description of staff counted, by primary funcition and occupation, full- or part-time. PRIMARY OCCUPATIONAL ACTIVITY - The principal activity of a staff member as determined by the institution. If an individual participates in two or more activities, the primary activity is normally determined by the amount of time spent in each activity. 
+
+FULL-TIME STAFF (EMPLOYEES) 
+As defined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time. 
+
+
+PART-TIME STAFF(EMPLOYEES) 
+As determined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time. Casual employees (hired on an ad-hoc basis or occasional basis to meet short-term needs) and students in the College Work-Study Program are not considered part-time staff. 
+
+
+FACULTY 
+Persons identified by the institution as such and typically those whose initial assignments are made for the purpose of conducting instruction, research or public service as a principal activity (or activities). They may hold academic rank titles of professor, associate professor, assistant professor, instructor, lecturer or the equivalent of any of those academic ranks. Faculty may also include the chancellor/president, provost, vice provosts, deans, directors or the equivalent, as well as associate deans, assistant deans and executive officers of academic departments (chairpersons, heads or the equivalent) if their principal activity is instruction combined with research and/or public service. The designation as ""faculty"" is separate from the activities to which they may be currently assigned. For example, a newly appointed president of an institution may also be appointed as a faculty member. Graduate, instruction, and research assistants are not included in this category 
+
+9/10-MONTH SALARY CONTRACT/TEACHING PERIOD - The contracted teaching period of faculty employed for 2 semesters, 3 quarters, 2 trimesters,  4-month sessions, or the equivalent. 
+11/12-MONTH SALARY CONTRACT/TEACHING PERIOD - The contracted teaching period of faculty employed for the entire year, usually a period of 11 or 12 months. 
+LESS-THAN-9-MONTH SALARY CONTRACT/TEACHING PERIOD -The contracted teaching period of faculty employed for less than 2 semesters, 3 quarters, 2 trimesters, or 2 4-month sessions. 
+
+EXECUTIVE, ADMINISTRATIVE, AND MANAGERIAL 
+Persons whose assignments require management of the institution, or a customarily recognized department or subdivision thereof. Assignments require the performance of work directly related to management policies or general business operations of the institution, department or subdivision. Assignments in this category customarily and regularly require the incumbent to exercise discretion and independent judgment. Included in this category are employees holding titles such as: top executives; chief executives; general and operations managers; advertising, marketing, promotions, public relations, and sales managers; operations specialties managers; administrative services managers; computer and information systems managers; financial managers; human resources managers; purchasing managers; postsecondary education administrators such as: presidents, vice presidents (including assistants and associates), deans (including assistants and associates) if their principal activity is administrative and not primarily instruction, research or public service, directors (including assistants and associates), department heads (including assistants and associates) if their principal activity is administrative and not primarily instruction, research or public service, assistant and associate managers (including first-line managers of service, production and sales workers who spend more than 80 percent of their time performing supervisory activities); engineering managers; food service managers; lodging managers; and medical and health services managers. 
+
+GRADUATE ASSISTANTS 
+Students employed on a part-time basis for the primary purpose of assisting in classroom or laboratory instruction or in the conduct of research. Graduate students having titles such as graduate assistant, teaching assistant, teaching associate, teaching fellow, or research assistant typically hold these positions. Students in the College Work-Study Program are not included in this category. 
+
+
+OTHER PROFESSIONAL STAFF (SUPPORT/SERVICE) 
+Persons employed for the primary purpose of performing academic support, student service, and institutional support, whose assignments would require either a baccalaureate degree or higher or experience of such kind and amount as to provide a comparable background. Included in this category are all employees holding titles such as business operations specialists; buyers and purchasing agents; human resources, training, and labor relations specialists; management analysts; meeting and convention planners; miscellaneous business operations specialists; financial specialists; accountants and auditors; budget analysts; financial analysts and advisors; financial examiners; loan counselors and officers; computer specialists; computer and information scientists, research; computer programmers; computer software engineers; computer support specialists; computer systems analysts; database administrators; network and computer systems administrators; network systems and data communication analysts; counselors, social workers, and other community and social service specialists; counselors; social workers; health educators; clergy; directors, religious activities and education; lawyers; librarians, curators, and archivists; museum technicians and conservators; librarians; artists and related workers; designers; athletes, coaches, umpires; dancers and choreographers; music directors and composers; chiropractors; dentists; dietitians and nutritionists; optometrists; pharmacists; physicians and surgeons; podiatrists; registered nurses; therapists; a 
+
+TECHNICAL AND PARAPROFESSIONAL (STAFF) 
+Persons whose assignments require specialized knowledge or skills which may be acquired through experience, apprenticeship, on-the-job-training, or academic work in occupationally specific programs that result in a 2-year degree or other certificate or diploma. Includes persons who perform some of the duties of a professional in a supportive role, which usually requires less formal training and/or experience than normally required for professional status. Included in this category are mathematical technicians; life, physical, and social science technicians; agricultural and food science technicians; chemical technicians; geological and petroleum technicians; nuclear technicians; paralegals and legal assistants; miscellaneous legal support workers; health technologists and technicians; dietetic technicians; pharmacy technicians; licensed practical and licensed vocational nurses; medical records and health information technicians; opticians, dispensing; healthcare support occupations; nursing aides, orderlies, and attendants; physical therapist assistants and aides; massage therapists; dental assistants; medical assistants; and pharmacy aides. 
+
+CLERICAL AND SECRETARIAL 
+Persons whose assignments typically are assoc"
+Description,6,50251,HRTOTLT,Grand total across all race/ethnicities and both genders.
+Description,7,50206,HRTOTLM,Grand total men
+Description,8,50211,HRTOTLW,Grand total women
+Description,9,52032,HRAIANT,"American Indian or Alaska Native men and women.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,10,52034,HRAIANM,"American Indian or Alaska Native men.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,11,52036,HRAIANW,"American Indian or Alaska Native women.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,12,52038,HRASIAT,"Asian men and women.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,13,52040,HRASIAM,"Asian men.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,14,52042,HRASIAW,"Asian women.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,15,52044,HRBKAAT,"Black or African American men and women.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,16,52046,HRBKAAM,"Black or African American men.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,17,52048,HRBKAAW,"Black or African American women.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,18,52050,HRHISPT,"Hispanic or Latino men and women.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,19,52052,HRHISPM,"Hispanic or Latino men.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,20,52054,HRHISPW,"Hispanic or Latino women.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,21,52056,HRNHPIT,"Native Hawaiian or Other Pacific Islanders men and women.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,22,52058,HRNHPIM,"Native Hawaiian or Other Pacific Islanders men.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,23,52060,HRNHPIW,"Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,24,52062,HRWHITT,"White men and women.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,25,52064,HRWHITM,"White men.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,26,52066,HRWHITW,"White women.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,27,52068,HR2MORT,"Two or more races men and women.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,28,52070,HR2MORM,"Two or more races men.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,29,52072,HR2MORW,"Two or more races women.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,30,50246,HRUNKNT,"Race/ethnicity unknown total
+RACE/ETHNICITY UNKNOWN -Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories. 
+RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,31,50196,HRUNKNM,"Race/ethnicity unknown men. RACE/ETHNICITY UNKNOWN - Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories. RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,32,50201,HRUNKNW,"Race/ethnicity unknown women. RACE/ETHNICITY UNKNOWN -Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories. RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,33,50216,HRNRALT,"Nonresident alien total
+NONRESIDENT ALIEN - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.  RESIDENT ALIEN - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident alien status (and who holds either an alien registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Description,34,50136,HRNRALM,"Non resident alien men.  NONRESIDENTALIEN - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.  RESIDENT ALIEN - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident alien status (and who holds either an alien registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Description,35,50141,HRNRALW,"Non resident alien women.  NONRESIDENTALIEN - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.  RESIDENT ALIEN - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident alien status (and who holds either an alien registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Description,36,,,
+Description,37,,,
+Description,38,,,
+Description,39,,,
+Description,40,,,
+Description,41,,,
+Description,42,,,
+Description,43,,,
+Description,44,,,
+Description,45,,,
+Description,46,,,
+Description,47,,,
+Description,48
+Description,49
+Description,50
+Description,51
+Description,52
+Description,53
+Description,54
+Description,55
+Description,56
+Description,57
+Description,58
+Description,59
+Description,60
+Description,61
+Description,62
+Description,63
+Description,64
+Description,65
+Description,66
+Description,67
+Description,68
+Description,69
+Description,70
+Description,71
+Description,72
+Description,73
+Description,74
+Description,75
+Description,76
+Description,77
+Description,78
+Description,79
+Description,80
+Description,81
+Description,82
+Description,83
+Description,84
+Description,85
+Description,86
+Description,87
+Description,88
+Description,89
+Description,90
+Description,91
+Description,92
+Description,93
+Description,94
+Description,95
+Description,96
+Description,97
+Description,98
+Description,99
+Description,100
+Description,101
+Description,102
+Description,103
+Description,104
+Description,105
+Description,106
+Description,107
+Description,108
+Description,109
+Description,110
+Description,111
+Description,112
+Description,113
+Description,114
+Description,115
+Description,116
+Description,117
+Description,118
+Description,119
+Description,120
+Description,121
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,53016,STAFFCAT,1100,Grand Total,6055,3.28
+Frequencies,2,53016,STAFFCAT,1200,"Instructional, research and public service",5984,3.24
+Frequencies,3,53016,STAFFCAT,1210,Instructional staff,5973,3.24
+Frequencies,4,53016,STAFFCAT,1220,Research,664,0.36
+Frequencies,5,53016,STAFFCAT,1230,Public service,386,0.21
+Frequencies,6,53016,STAFFCAT,1250,"Librarians and Library Technicians/Archivists, Curators, and Museum Technicians/Student and Academic Affairs and Other Education Services",4758,2.58
+Frequencies,7,53016,STAFFCAT,1260,"Librarians and Library Technicians/Archivists, Curators, and Museum Technicians",3331,1.8
+Frequencies,8,53016,STAFFCAT,1261,"Archivists, Curators, and Museum Technicians",844,0.46
+Frequencies,9,53016,STAFFCAT,1262,Librarians,2834,1.54
+Frequencies,10,53016,STAFFCAT,1263,Library Technicians,1980,1.07
+Frequencies,11,53016,STAFFCAT,1264,Detailed library occupations not available for non-degree-granting institutions,243,0.13
+Frequencies,12,53016,STAFFCAT,1270,Student and Academic Affairs and Other Education Services,4443,2.41
+Frequencies,13,53016,STAFFCAT,1300,Management,5778,3.13
+Frequencies,14,53016,STAFFCAT,1310,Business and Financial Operations,4778,2.59
+Frequencies,15,53016,STAFFCAT,1320,"Computer, Engineering, and Science",3430,1.86
+Frequencies,16,53016,STAFFCAT,1330,"Community Service, Legal, Arts, and Media",3208,1.74
+Frequencies,17,53016,STAFFCAT,1340,Healthcare Practioners and Technical,1881,1.02
+Frequencies,18,53016,STAFFCAT,1350,Service occupations,3558,1.93
+Frequencies,19,53016,STAFFCAT,1360,Sales and related occupations,1939,1.05
+Frequencies,20,53016,STAFFCAT,1370,Office and Administrative Support,5461,2.96
+Frequencies,21,53016,STAFFCAT,1380,"Natural Resources, Construction, and Maintenance",2598,1.41
+Frequencies,22,53016,STAFFCAT,1390,"Production, Transportation, and Material Moving",1307,0.71
+Frequencies,23,53016,STAFFCAT,2100,Full-time total,6044,3.27
+Frequencies,24,53016,STAFFCAT,2200,"Full-time, Instructional, research and public service",5790,3.14
+Frequencies,25,53016,STAFFCAT,2210,"Full-time, Instructional staff",5777,3.13
+Frequencies,26,53016,STAFFCAT,2220,"Full-time, Research",603,0.33
+Frequencies,27,53016,STAFFCAT,2230,"Full-time, Public service",310,0.17
+Frequencies,28,53016,STAFFCAT,2250,"Full-time, Librarians and Library Technicians/Archivists, Curators, and Museum Technicians/Student and Academic Affairs and Other Education Services",4599,2.4900000000000002
+Frequencies,29,53016,STAFFCAT,2260,"Full-time, Librarians and Library Technicians/Archivists, Curators, and Museum Technicians",3112,1.69
+Frequencies,30,53016,STAFFCAT,2261,"Full-time, Archivists, Curators, and Museum Technicians",746,0.4
+Frequencies,31,53016,STAFFCAT,2262,"Full-time, Librarians",2745,1.49
+Frequencies,32,53016,STAFFCAT,2263,"Full-time, Library Technicians",1749,0.95
+Frequencies,33,53016,STAFFCAT,2264,"Full-time, Detailed library occupations not available for non-degree-granting institutions",130,7.0000000000000007E-2
+Frequencies,34,53016,STAFFCAT,2270,"Full-time, Student and Academic Affairs and Other Education Services",4266,2.31
+Frequencies,35,53016,STAFFCAT,2300,"Full-time, Management",5738,3.11
+Frequencies,36,53016,STAFFCAT,2310,"Full-time, Business and Financial Operations",4613,2.5
+Frequencies,37,53016,STAFFCAT,2320,"Full-time, Computer, Engineering, and Science",3351,1.82
+Frequencies,38,53016,STAFFCAT,2330,"Full-time, Community Service, Legal, Arts, and Media",3125,1.69
+Frequencies,39,53016,STAFFCAT,2340,"Full-time, Healthcare Practioners and Technical",1717,0.93
+Frequencies,40,53016,STAFFCAT,2350,"Full-time, Service occupations",3357,1.82
+Frequencies,41,53016,STAFFCAT,2360,"Full-time, Sales and related occupations",1816,0.98
+Frequencies,42,53016,STAFFCAT,2370,"Full-time, Office and Administrative Support",5242,2.84
+Frequencies,43,53016,STAFFCAT,2380,"Full-time, Natural Resources, Construction, and Maintenance",2461,1.33
+Frequencies,44,53016,STAFFCAT,2390,"Full-time, Production, Transportation, and Material Moving",1118,0.61
+Frequencies,45,53016,STAFFCAT,3100,"Part-time, total",5463,2.96
+Frequencies,46,53016,STAFFCAT,3200,"Part-time, Instructional, research and public service",5196,2.82
+Frequencies,47,53016,STAFFCAT,3210,"Part-time, Instructional staff",5182,2.81
+Frequencies,48,53016,STAFFCAT,3220,"Part-time, Research",378,0.2
+Frequencies,49,53016,STAFFCAT,3230,"Part-time, Public service",229,0.12
+Frequencies,50,53016,STAFFCAT,3250,"Part-time, Librarians and Library Technicians/Archivists, Curators, and Museum Technicians/Student and Academic Affairs and Other Education Services",3032,1.64
+Frequencies,51,53016,STAFFCAT,3260,"Part-time, Librarians and Library Technicians/Archivists, Curators, and Museum Technicians",1596,0.86
+Frequencies,52,53016,STAFFCAT,3261,"Part-time, Archivists, Curators, and Museum Technicians",260,0.14000000000000001
+Frequencies,53,53016,STAFFCAT,3262,"Part-time, Librarians",736,0.4
+Frequencies,54,53016,STAFFCAT,3263,"Part-time, Library Technicians",837,0.45
+Frequencies,55,53016,STAFFCAT,3264,"Part-time, Detailed library occupations not available for non-degree-granting institutions",135,7.0000000000000007E-2
+Frequencies,56,53016,STAFFCAT,3270,"Part-time, Student and Academic Affairs and Other Education Services",2634,1.43
+Frequencies,57,53016,STAFFCAT,3300,"Part-time, Management",1560,0.85
+Frequencies,58,53016,STAFFCAT,3310,"Part-time, Business and Financial Operations",1868,1.01
+Frequencies,59,53016,STAFFCAT,3320,"Part-time, Computer, Engineering, and Science",1466,0.79
+Frequencies,60,53016,STAFFCAT,3330,"Part-time, Community Service, Legal, Arts, and Media",2257,1.22
+Frequencies,61,53016,STAFFCAT,3340,"Part-time, Healthcare Practioners and Technical",1065,0.57999999999999996
+Frequencies,62,53016,STAFFCAT,3350,"Part-time, Service occupations",2318,1.26
+Frequencies,63,53016,STAFFCAT,3360,"Part-time, Sales and related occupations",579,0.31
+Frequencies,64,53016,STAFFCAT,3370,"Part-time, Office and Administrative Support",3612,1.96
+Frequencies,65,53016,STAFFCAT,3380,"Part-time, Natural Resources, Construction, and Maintenance",860,0.47
+Frequencies,66,53016,STAFFCAT,3390,"Part-time, Production, Transportation, and Material Moving",604,0.33
+Frequencies,67,53016,STAFFCAT,4400,"Graduate Assistants, Total",1021,0.55000000000000004
+Frequencies,68,53016,STAFFCAT,4410,"Graduate Assistants, Teaching",646,0.35
+Frequencies,69,53016,STAFFCAT,4420,"Graduate Assistants, Research",489,0.26
+Frequencies,70,53016,STAFFCAT,4490,"Graduate Assistants, Other",717,0.39
+Frequencies,71,53021,FTPT,1,All staff,71433,38.700000000000003
+Frequencies,72,53021,FTPT,2,Full-time,68409,37.06
+Frequencies,73,53021,FTPT,3,Part-time,41867,22.68
+Frequencies,74,53021,FTPT,4,Graduate Assistants,2873,1.56
+Frequencies,75,53026,OCCUPCAT,100,All staff,17562,9.51
+Frequencies,76,53026,OCCUPCAT,200,"Instructional, research and public service staff",16970,9.19
+Frequencies,77,53026,OCCUPCAT,210,"Instructional staff, total",16932,9.17
+Frequencies,78,53026,OCCUPCAT,220,Research,1645,0.89
+Frequencies,79,53026,OCCUPCAT,230,Public service,925,0.5
+Frequencies,80,53026,OCCUPCAT,250,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",12389,6.71
+Frequencies,81,53026,OCCUPCAT,260,"Librarians, Curators, and Archivists",8039,4.3600000000000003
+Frequencies,82,53026,OCCUPCAT,261,"Archivists, Curators, and Museum Technicians",1850,1
+Frequencies,83,53026,OCCUPCAT,262,Librarians,6315,3.42
+Frequencies,84,53026,OCCUPCAT,263,Library Technicians,4566,2.4700000000000002
+Frequencies,85,53026,OCCUPCAT,264,Detailed library occupations not available for non-degree-granting institutions,508,0.28000000000000003
+Frequencies,86,53026,OCCUPCAT,270,Student and Academic Affairs and Other Education Services,11343,6.15
+Frequencies,87,53026,OCCUPCAT,300,Management,13076,7.08
+Frequencies,88,53026,OCCUPCAT,310,Business and Financial Operations,11259,6.1
+Frequencies,89,53026,OCCUPCAT,320,"Computer, Engineering, and Science",8247,4.47
+Frequencies,90,53026,OCCUPCAT,330,"Community, Social Service, Legal, Arts,Design, Entertainment, Sports and Media",8590,4.6500000000000004
+Frequencies,91,53026,OCCUPCAT,340,Healthcare Practioners and Technical,4663,2.5299999999999998
+Frequencies,92,53026,OCCUPCAT,350,Service Occupations,9233,5
+Frequencies,93,53026,OCCUPCAT,360,Sales and Related Occupations,4334,2.35
+Frequencies,94,53026,OCCUPCAT,370,Office and Administrative Support,14315,7.76
+Frequencies,95,53026,OCCUPCAT,380,"Natural Resources, Construction, and Maintenance",5919,3.21
+Frequencies,96,53026,OCCUPCAT,390,"Production, Transportation, and Material Moving",3029,1.64
+Frequencies,97,53026,OCCUPCAT,400,Graduate Assistants Total,1021,0.55000000000000004
+Frequencies,98,53026,OCCUPCAT,410,Graduate Assistants Teaching,646,0.35
+Frequencies,99,53026,OCCUPCAT,420,Graduate Assistants Research,489,0.26
+Frequencies,100,53026,OCCUPCAT,490,Graduate Assistants Other,717,0.39
+Frequencies,101,50131,SABDTYPE,10,Full-time (occupation code prior to 2012),6044,3.27
+Frequencies,102,50131,SABDTYPE,11,Full-time postecondary teachers (occupation code prior to 2012),5790,3.14
+Frequencies,103,50131,SABDTYPE,70,Part-time postecondary teachers (occupation code prior to 2012),5196,2.82
+Frequencies,104,50131,SABDTYPE,-2,"Not applicable, current occupation does not map to occupations prior to 2012",167552,90.77
+Frequencies,105,,,,,,
+Frequencies,106,,,,,,
+Frequencies,107,,,,,,
+Frequencies,108,,,,,,
+Frequencies,109,,,,,,
+Frequencies,110,,,,,,
+Frequencies,111,,,,,,
+Frequencies,112,,,,,,
+Frequencies,113,,,,,,
+Frequencies,114,,,,,,
+Frequencies,115,,,,,,
+Frequencies,116,,,,,,
+Frequencies,117,,,,,,
+Frequencies,118,,,,,,
+Frequencies,119,,,,,,
+Frequencies,120,,,,,,
+Frequencies,121,,,,,,
+Frequencies,122,,,,,,
+Frequencies,123,,,,,,
+Frequencies,124,,,,,,
+Frequencies,125,,,,,,
+Frequencies,126,,,,,,
+Frequencies,127,,,,,,
+Frequencies,128,,,,,,
+Frequencies,129,,,,,,
+Frequencies,130,,,,,,
+Frequencies,131,,,,,,
+Frequencies,132,,,,,,
+Frequencies,133,,,,,,
+Frequencies,134,,,,,,
+Frequencies,135,,,,,,
+Frequencies,136,,,,,,
+Frequencies,137,,,,,,
+Frequencies,138,,,,,,
+Frequencies,139,,,,,,
+Frequencies,140,,,,,,
+Frequencies,141,,,,,,
+Frequencies,142,,,,,,
+Frequencies,143,,,,,,
+Frequencies,144,,,,,,
+Frequencies,145,,,,,,
+Frequencies,146,,,,,,
+Frequencies,147,,,,,,
+Frequencies,148,,,,,,
+Frequencies,149,,,,,,
+Frequencies,150,,,,,,
+Frequencies,151,,,,,,
+Frequencies,152,,,,,,
+Frequencies,153,,,,,,
+Frequencies,154,,,,,,
+Frequencies,155,,,,,,
+Frequencies,156,,,,,,
+Frequencies,157,,,,,,
+Frequencies,158,,,,,,
+Frequencies,159,,,,,,
+Frequencies,160,,,,,,
+Frequencies,161,,,,,,
+Frequencies,162,,,,,,
+Frequencies,163,,,,,,
+Frequencies,164,,,,,,
+Frequencies,165,,,,,,
+Frequencies,166,,,,,,
+Frequencies,167,,,,,,
+Frequencies,168,,,,,,
+Frequencies,169,,,,,,
+Frequencies,170,,,,,,
+Frequencies,171,,,,,,
+Frequencies,172,,,,,,
+Frequencies,173,,,,,,
+Frequencies,174,,,,,,
+Frequencies,175,,,,,,
+Frequencies,176,,,,,,
+Frequencies,177,,,,,,
+Frequencies,178,,,,,,
+Frequencies,179,,,,,,
+Frequencies,180,,,,,,
+Frequencies,181,,,,,,
+Frequencies,182,,,,,,
+Frequencies,183,,,,,,
+Frequencies,184,,,,,,
+Frequencies,185,,,,,,
+Frequencies,186,,,,,,
+Frequencies,187,,,,,,
+Frequencies,188,,,,,,
+Frequencies,189,,,,,,
+Frequencies,190,,,,,,
+Frequencies,191,,,,,,
+Frequencies,192,,,,,,
+Frequencies,193,,,,,,
+Frequencies,194,,,,,,
+Frequencies,195,,,,,,
+Frequencies,196,,,,,,
+Frequencies,197,,,,,,
+Frequencies,198,,,,,,
+Frequencies,199,,,,,,
+Frequencies,200,,,,,,
+Frequencies,201,,,,,,
+Frequencies,202,,,,,,
+Frequencies,203,,,,,,
+Frequencies,204,,,,,,
+Frequencies,205,,,,,,
+Frequencies,206,,,,,,
+Frequencies,207,,,,,,
+Frequencies,208,,,,,,
+Frequencies,209,,,,,,
+Frequencies,210,,,,,,
+Frequencies,211,,,,,,
+Frequencies,212,,,,,,
+Frequencies,213,,,,,,
+Frequencies,214,,,,,,
+Frequencies,215,,,,,,
+Frequencies,216,,,,,,
+Frequencies,217,,,,,,
+Frequencies,218,,,,,,
+Frequencies,219,,,,,,
+Frequencies,220,,,,,,
+Frequencies,221,,,,,,
+Frequencies,222,,,,,,
+Frequencies,223,,,,,,
+Frequencies,224,,,,,,
+Frequencies,225,,,,,,
+Frequencies,226,,,,,,
+Frequencies,227,,,,,,
+Frequencies,228,,,,,,
+Frequencies,229,,,,,,
+Frequencies,230,,,,,,
+Frequencies,231,,,,,,
+Frequencies,232,,,,,,
+Frequencies,233,,,,,,
+Frequencies,234,,,,,,
+Frequencies,235,,,,,,
+Frequencies,236,,,,,,
+Frequencies,237,,,,,,
+Frequencies,238,,,,,,
+Frequencies,239,,,,,,
+Frequencies,240,,,,,,
+Frequencies,241,,,,,,
+Frequencies,242,,,,,,
+Frequencies,243,,,,,,
+Frequencies,244,,,,,,
+Frequencies,245,,,,,,
+Frequencies,246,,,,,,
+Frequencies,247,,,,,,
+Frequencies,248,,,,,,
+Frequencies,249,,,,,,
+Frequencies,250,,,,,,
+Frequencies,251,,,,,,
+Frequencies,252,,,,,,
+Frequencies,253,,,,,,
+Frequencies,254,,,,,,
+Frequencies,255,,,,,,
+Frequencies,256,,,,,,
+Frequencies,257,,,,,,
+Frequencies,258,,,,,,
+Frequencies,259,,,,,,
+Frequencies,260,,,,,,
+Frequencies,261,,,,,,
+Frequencies,262,,,,,,
+Frequencies,263,,,,,,
+Frequencies,264,,,,,,
+Frequencies,265,,,,,,
+Frequencies,266,,,,,,
+Frequencies,267,,,,,,
+Frequencies,268,,,,,,
+Frequencies,269,,,,,,
+Frequencies,270,,,,,,
+Frequencies,271,,,,,,
+Frequencies,272,,,,,,
+Frequencies,273,,,,,,
+Frequencies,274,,,,,,
+Frequencies,275,,,,,,
+Frequencies,276,,,,,,
+Frequencies,277,,,,,,
+Frequencies,278,,,,,,
+Frequencies,279,,,,,,
+Frequencies,280,,,,,,
+Frequencies,281,,,,,,
+Frequencies,282,,,,,,
+Frequencies,283,,,,,,
+Frequencies,284,,,,,,
+Frequencies,285,,,,,,
+Frequencies,286,,,,,,
+Frequencies,287,,,,,,
+Frequencies,288,,,,,,
+Frequencies,289,,,,,,
+Frequencies,290,,,,,,
+Frequencies,291,,,,,,
+Frequencies,292,,,,,,
+Frequencies,293,,,,,,
+Frequencies,294,,,,,,
+Frequencies,295,,,,,,
+Frequencies,296,,,,,,
+Frequencies,297,,,,,,
+Frequencies,298,,,,,,
+Frequencies,299,,,,,,
+Frequencies,300,,,,,,
+Frequencies,301,,,,,,
+Frequencies,302,,,,,,
+Frequencies,303,,,,,,
+Frequencies,304,,,,,,
+Frequencies,305,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Frequencies,306
+Frequencies,307
+Frequencies,308
+Frequencies,309
+Frequencies,310
+Frequencies,311
+Frequencies,312
+Frequencies,313
+Frequencies,314
+Frequencies,315
+Frequencies,316
+Frequencies,317
+Frequencies,318
+Frequencies,319
+Frequencies,320
+Frequencies,321
+Frequencies,322
+Frequencies,323
+Frequencies,324
+Frequencies,325
+Frequencies,326
+Frequencies,327
+Frequencies,328
+Frequencies,329
+Frequencies,330
+Frequencies,331
+Frequencies,332
+Frequencies,333
+Frequencies,334
+Frequencies,335
+Frequencies,336
+Frequencies,337
+Frequencies,338
+Frequencies,339
+Frequencies,340
+Frequencies,341
+Frequencies,342
+Frequencies,343
+Frequencies,344
+Frequencies,345
+Frequencies,346
+Frequencies,347
+Frequencies,348
+Frequencies,349
+Frequencies,350
+Frequencies,351
+Frequencies,352
+Frequencies,353
+Frequencies,354
+Frequencies,355
+Frequencies,356
+Frequencies,357
+Frequencies,358
+Frequencies,359
+Frequencies,360
+Frequencies,361
+Frequencies,362
+Frequencies,363
+Frequencies,364
+Frequencies,365
+Frequencies,366
+Frequencies,367
+Frequencies,368
+Frequencies,369
+Frequencies,370
+Frequencies,371
+Frequencies,372
+Frequencies,373
+Frequencies,374
+Frequencies,375
+Frequencies,376
+Frequencies,377
+Frequencies,378
+Frequencies,379
+Frequencies,380
+Frequencies,381
+Frequencies,382
+Frequencies,383
+Frequencies,384
+Frequencies,385
+Frequencies,386
+Frequencies,387
+Frequencies,388
+Frequencies,389
+Frequencies,390
+Frequencies,391
+Frequencies,392
+Frequencies,393
+Frequencies,394
+Frequencies,395
+Frequencies,396
+Frequencies,397
+Frequencies,398
+Frequencies,399
+Frequencies,400
+Frequencies,401
+Frequencies,402
+Frequencies,403
+Frequencies,404
+Frequencies,405
+Frequencies,406
+Frequencies,407
+Frequencies,408
+Frequencies,409
+Frequencies,410
+Frequencies,411
+Frequencies,412
+Frequencies,413
+Frequencies,414
+Frequencies,415
+Frequencies,416
+Frequencies,417
+Frequencies,418
+Frequencies,419
+Frequencies,420
+Frequencies,421
+Frequencies,422
+Frequencies,423
+Frequencies,424
+Frequencies,425
+Frequencies,426
+Frequencies,427
+Frequencies,428
+Frequencies,429
+Frequencies,430
+Frequencies,431
+Frequencies,432
+Frequencies,433
+Frequencies,434
+Frequencies,435
+Frequencies,436
+Frequencies,437
+Frequencies,438
+Frequencies,439
+Frequencies,440
+Frequencies,441
+Frequencies,442
+Frequencies,443
+Frequencies,444
+Frequencies,445
+Frequencies,446
+Frequencies,447
+Frequencies,448
+Frequencies,449
+Frequencies,450
+Frequencies,451
+Frequencies,452
+Frequencies,453
+Frequencies,454
+Frequencies,455
+Frequencies,456
+Frequencies,457
+Frequencies,458
+Frequencies,459
+Frequencies,460
+Frequencies,461
+Frequencies,462
+Frequencies,463
+Frequencies,464
+Frequencies,465
+Frequencies,466
+Frequencies,467
+Frequencies,468
+Frequencies,469
+Frequencies,470
+Frequencies,471
+Frequencies,472
+Frequencies,473
+Frequencies,474
+Frequencies,475
+Frequencies,476
+Frequencies,477
+Frequencies,478
+Frequencies,479
+Frequencies,480
+Frequencies,481
+Frequencies,482
+Frequencies,483
+Frequencies,484
+Frequencies,485
+Frequencies,486
+Frequencies,487
+Frequencies,488
+Frequencies,489
+Frequencies,490
+Frequencies,491
+Frequencies,492
+Frequencies,493
+Frequencies,494
+Frequencies,495
+Frequencies,496
+Frequencies,497
+Frequencies,498
+Frequencies,499
+Frequencies,500
+Frequencies,501
+Frequencies,502
+Frequencies,503
+Frequencies,504
+Frequencies,505
+Frequencies,506
+Frequencies,507
+Frequencies,508
+Frequencies,509
+Frequencies,510
+Frequencies,511
+Frequencies,512
+Frequencies,513
+Frequencies,514
+Frequencies,515
+Frequencies,516
+Frequencies,517
+Frequencies,518
+Frequencies,519
+Frequencies,520
+Frequencies,521
+Frequencies,522
+Frequencies,523
+Frequencies,524
+Frequencies,525
+Frequencies,526
+Frequencies,527
+Frequencies,528
+Frequencies,529
+Frequencies,530
+Frequencies,531
+Frequencies,532
+Frequencies,533
+Frequencies,534
+Frequencies,535
+Frequencies,536
+Frequencies,537
+Frequencies,538
+Frequencies,539
+Frequencies,540
+Frequencies,541
+Frequencies,542
+Frequencies,543
+Frequencies,544
+Frequencies,545
+Frequencies,546
+Frequencies,547
+Frequencies,548
+Frequencies,549
+Frequencies,550
+Frequencies,551
+Frequencies,552
+Frequencies,553
+Frequencies,554
+Frequencies,555
+Frequencies,556
+Frequencies,557
+Frequencies,558
+Frequencies,559
+Frequencies,560
+Frequencies,561
+Frequencies,562
+Frequencies,563
+Frequencies,564
+Frequencies,565
+Frequencies,566
+Frequencies,567
+Frequencies,568
+Frequencies,569
+Frequencies,570
+Frequencies,571
+Frequencies,572
+Frequencies,573
+Frequencies,574
+Frequencies,575
+Frequencies,576
+Frequencies,577
+Frequencies,578
+Frequencies,579
+Frequencies,580
+Frequencies,581
+Frequencies,582
+Frequencies,583
+Frequencies,584
+Frequencies,585
+Frequencies,586
+Frequencies,587
+Frequencies,588
+Frequencies,589
+Frequencies,590
+Frequencies,591
+Frequencies,592
+Frequencies,593
+Frequencies,594
+Frequencies,595
+Frequencies,596
+Frequencies,597
+Frequencies,598
+Frequencies,599
+Frequencies,600
+Frequencies,601
+Frequencies,602
+Frequencies,603
+Frequencies,604
+Frequencies,605
+Frequencies,606
+Frequencies,607
+Frequencies,608
+Frequencies,609
+Frequencies,610
+Frequencies,611
+Frequencies,612
+Frequencies,613
+Frequencies,614
+Frequencies,615
+Frequencies,616
+Frequencies,617
+Frequencies,618
+Frequencies,619
+Frequencies,620
+Frequencies,621
+Frequencies,622
+Frequencies,623
+Frequencies,624
+Frequencies,625
+Frequencies,626
+Frequencies,627
+Frequencies,628
+Frequencies,629
+Frequencies,630
+Frequencies,631
+Frequencies,632
+Frequencies,633
+Frequencies,634
+Frequencies,635
+Frequencies,636
+Frequencies,637
+Frequencies,638
+Frequencies,639
+Frequencies,640
+Frequencies,641
+Frequencies,642
+Frequencies,643
+Frequencies,644
+Frequencies,645
+Frequencies,646
+Frequencies,647
+Frequencies,648
+Frequencies,649
+Frequencies,650
+Frequencies,651
+Frequencies,652
+Frequencies,653
+Frequencies,654
+Frequencies,655
+Frequencies,656
+Frequencies,657
+Frequencies,658
+Frequencies,659
+Frequencies,660
+Frequencies,661
+Frequencies,662
+Frequencies,663
+Frequencies,664
+Frequencies,665
+Frequencies,666
+Frequencies,667
+Frequencies,668
+Frequencies,669
+Frequencies,670
+Frequencies,671
+Frequencies,672
+Frequencies,673
+Frequencies,674
+Frequencies,675
+Frequencies,676
+Frequencies,677
+Frequencies,678
+Frequencies,679
+Frequencies,680
+Frequencies,681
+Frequencies,682
+Frequencies,683
+Frequencies,684
+Frequencies,685
+Frequencies,686
+Frequencies,687
+Frequencies,688
+Frequencies,689
+Frequencies,690
+Frequencies,691
+Frequencies,692
+Frequencies,693
+Frequencies,694
+Frequencies,695
+Frequencies,696
+Frequencies,697
+Frequencies,698
+Frequencies,699
+Frequencies,700
+Frequencies,701
+Frequencies,702
+Frequencies,703
+Frequencies,704
+Frequencies,705
+Frequencies,706
+Frequencies,707
+Frequencies,708
+Frequencies,709
+Frequencies,710
+Frequencies,711
+Frequencies,712
+Frequencies,713
+Frequencies,714
+Frequencies,715
+Frequencies,716
+Frequencies,717
+Frequencies,718
+Frequencies,719
+Frequencies,720
+Frequencies,721
+Frequencies,722
+Frequencies,723
+Frequencies,724
+Frequencies,725
+Frequencies,726
+Frequencies,727
+Frequencies,728
+Frequencies,729
+Frequencies,730
+Frequencies,731
+Frequencies,732
+Frequencies,733
+Frequencies,734
+Frequencies,735
+Frequencies,736
+Frequencies,737
+Frequencies,738
+Frequencies,739
+Frequencies,740
+Frequencies,741
+Frequencies,742
+Frequencies,743
+Frequencies,744
+Frequencies,745
+Frequencies,746
+Frequencies,747
+Frequencies,748
+Frequencies,749
+Frequencies,750
+Frequencies,751
+Frequencies,752
+Frequencies,753
+Frequencies,754
+Frequencies,755
+Frequencies,756
+Frequencies,757
+Frequencies,758
+Frequencies,759
+Frequencies,760
+Frequencies,761
+Frequencies,762
+Frequencies,763
+Frequencies,764
+Frequencies,765
+Frequencies,766
+Frequencies,767
+Frequencies,768
+Frequencies,769
+Frequencies,770
+Frequencies,771
+Frequencies,772
+Frequencies,773
+Frequencies,774
+Frequencies,775
+Frequencies,776
+Frequencies,777
+Frequencies,778
+Frequencies,779
+Frequencies,780
+Frequencies,781
+Frequencies,782
+Frequencies,783
+Frequencies,784
+Frequencies,785
+Frequencies,786
+Frequencies,787
+Frequencies,788
+Frequencies,789
+Frequencies,790
+Frequencies,791
+Frequencies,792
+Frequencies,793
+Frequencies,794
+Frequencies,795
+Frequencies,796
+Frequencies,797
+Frequencies,798
+Frequencies,799
+Frequencies,800
+Frequencies,801
+Frequencies,802
+Frequencies,803
+Frequencies,804
+Frequencies,805
+Frequencies,806
+Frequencies,807
+Frequencies,808
+Frequencies,809
+Frequencies,810
+Frequencies,811
+Frequencies,812
+Frequencies,813
+Frequencies,814
+Frequencies,815
+Frequencies,816
+Frequencies,817
+Frequencies,818
+Frequencies,819
+Frequencies,820
+Frequencies,821
+Frequencies,822
+Frequencies,823
+Frequencies,824
+Frequencies,825
+Frequencies,826
+Frequencies,827
+Frequencies,828
+Frequencies,829
+Frequencies,830
+Frequencies,831
+Frequencies,832
+Frequencies,833
+Frequencies,834
+Frequencies,835
+Frequencies,836
+Frequencies,837
+Frequencies,838
+Frequencies,839
+Frequencies,840
+Frequencies,841
+Frequencies,842
+Frequencies,843
+Frequencies,844
+Frequencies,845
+Frequencies,846
+Frequencies,847
+Frequencies,848
+Frequencies,849
+Frequencies,850
+Frequencies,851
+Frequencies,852
+Frequencies,853
+Frequencies,854
+Frequencies,855
+Frequencies,856
+Frequencies,857
+Frequencies,858
+Frequencies,859
+Frequencies,860
+Frequencies,861
+Frequencies,862
+Frequencies,863
+Frequencies,864
+Frequencies,865
+Frequencies,866
+Frequencies,867
+Frequencies,868
+Frequencies,869
+Frequencies,870
+Frequencies,871
+Frequencies,872
+Frequencies,873
+Frequencies,874
+Frequencies,875
+Frequencies,876
+Frequencies,877
+Frequencies,878
+Frequencies,879
+Frequencies,880
+Frequencies,881
+Frequencies,882
+Frequencies,883
+Frequencies,884
+Frequencies,885
+Frequencies,886
+Frequencies,887
+Frequencies,888
+Frequencies,889
+Frequencies,890
+Frequencies,891
+Frequencies,892
+Frequencies,893
+Frequencies,894
+Frequencies,895
+Frequencies,896
+Frequencies,897
+Frequencies,898
+Frequencies,899
+Frequencies,900
+Frequencies,901
+Frequencies,902
+Frequencies,903
+Frequencies,904
+Frequencies,905
+Frequencies,906
+Frequencies,907
+Frequencies,908
+Frequencies,909
+Frequencies,910
+Frequencies,911
+Frequencies,912
+Frequencies,913
+Frequencies,914
+Frequencies,915
+Frequencies,916
+Frequencies,917
+Frequencies,918
+Frequencies,919
+Frequencies,920
+Frequencies,921
+Frequencies,922
+Frequencies,923
+Frequencies,924
+Frequencies,925
+Frequencies,926
+Frequencies,927
+Frequencies,928
+Frequencies,929
+Frequencies,930
+Frequencies,931
+Frequencies,932
+Frequencies,933
+Frequencies,934
+Frequencies,935
+Frequencies,936
+Frequencies,937
+Frequencies,938
+Frequencies,939
+Frequencies,940
+Frequencies,941
+Frequencies,942
+Frequencies,943
+Frequencies,944
+Frequencies,945
+Frequencies,946
+Frequencies,947
+Frequencies,948
+Frequencies,949
+Frequencies,950
+Frequencies,951
+Frequencies,952
+Frequencies,953
+Frequencies,954
+Frequencies,955
+Frequencies,956
+Frequencies,957
+Frequencies,958
+Frequencies,959
+Frequencies,960
+Frequencies,961
+Frequencies,962
+Frequencies,963
+Frequencies,964
+Frequencies,965
+Frequencies,966
+Frequencies,967
+Frequencies,968
+Frequencies,969
+Frequencies,970
+Frequencies,971
+Frequencies,972
+Frequencies,973
+Frequencies,974
+Frequencies,975
+Frequencies,976
+Frequencies,977
+Frequencies,978
+Frequencies,979
+Frequencies,980
+Frequencies,981
+Frequencies,982
+Frequencies,983
+Frequencies,984
+Frequencies,985
+Frequencies,986
+Frequencies,987
+Frequencies,988
+Frequencies,989
+Frequencies,990
+Frequencies,991
+Frequencies,992
+Frequencies,993
+Frequencies,994
+Frequencies,995
+Frequencies,996
+Frequencies,997
+Frequencies,998
+Frequencies,999
+Frequencies,1000
+Frequencies,1001
+Frequencies,1002
+Frequencies,1003
+Frequencies,1004
+Frequencies,1005
+Frequencies,1006
+Frequencies,1007
+Frequencies,1008
+Frequencies,1009
+Frequencies,1010
+Frequencies,1011
+Frequencies,1012
+Frequencies,1013
+Frequencies,1014
+Frequencies,1015
+Frequencies,1016
+Frequencies,1017
+Frequencies,1018
+Frequencies,1019
+Frequencies,1020
+Frequencies,1021
+Frequencies,1022
+Frequencies,1023
+Frequencies,1024
+Frequencies,1025
+Frequencies,1026
+Frequencies,1027
+Frequencies,1028
+Frequencies,1029
+Frequencies,1030
+Frequencies,1031
+Frequencies,1032
+Frequencies,1033
+Frequencies,1034
+Frequencies,1035
+Frequencies,1036
+Frequencies,1037
+Frequencies,1038
+Frequencies,1039
+Frequencies,1040
+Frequencies,1041
+Frequencies,1042
+Frequencies,1043
+Frequencies,1044
+Frequencies,1045
+Frequencies,1046
+Frequencies,1047
+Frequencies,1048
+Frequencies,1049
+Frequencies,1050
+Frequencies,1051
+Frequencies,1052
+Frequencies,1053
+Frequencies,1054
+Frequencies,1055
+Frequencies,1056
+Frequencies,1057
+Frequencies,1058
+Frequencies,1059
+Frequencies,1060
+Frequencies,1061
+Frequencies,1062
+Frequencies,1063
+Frequencies,1064
+Frequencies,1065
+Frequencies,1066
+Frequencies,1067
+Frequencies,1068
+Frequencies,1069
+Frequencies,1070
+Frequencies,1071
+Frequencies,1072
+Frequencies,1073
+Frequencies,1074
+Frequencies,1075
+Frequencies,1076
+Frequencies,1077
+Frequencies,1078
+Frequencies,1079
+Frequencies,1080
+Frequencies,1081
+Frequencies,1082
+Frequencies,1083
+Frequencies,1084
+Frequencies,1085
+Frequencies,1086
+Frequencies,1087
+Frequencies,1088
+Frequencies,1089
+Frequencies,1090
+Frequencies,1091
+Frequencies,1092
+Frequencies,1093
+Frequencies,1094
+Frequencies,1095
+Frequencies,1096
+Frequencies,1097
+Frequencies,1098
+Frequencies,1099
+Frequencies,1100
+Frequencies,1101
+Frequencies,1102
+Frequencies,1103
+Frequencies,1104
+Frequencies,1105
+Frequencies,1106
+Frequencies,1107
+Frequencies,1108
+Frequencies,1109
+Frequencies,1110
+Frequencies,1111
+Frequencies,1112
+Frequencies,1113
+Frequencies,1114
+Frequencies,1115
+Frequencies,1116
+Frequencies,1117
+Frequencies,1118
+Frequencies,1119
+Frequencies,1120
+Frequencies,1121
+Frequencies,1122
+Frequencies,1123
+Frequencies,1124
+Frequencies,1125
+Frequencies,1126
+Frequencies,1127
+Frequencies,1128
+Frequencies,1129
+Frequencies,1130
+Frequencies,1131
+Frequencies,1132
+Frequencies,1133
+Frequencies,1134
+Frequencies,1135
+Frequencies,1136
+Frequencies,1137
+Frequencies,1138
+Frequencies,1139
+Frequencies,1140
+Frequencies,1141
+Frequencies,1142
+Frequencies,1143
+Frequencies,1144
+Frequencies,1145
+Frequencies,1146
+Frequencies,1147
+Frequencies,1148
+Frequencies,1149
+Frequencies,1150
+Frequencies,1151
+Frequencies,1152
+Frequencies,1153
+Frequencies,1154
+Frequencies,1155
+Frequencies,1156
+Frequencies,1157
+Frequencies,1158
+Frequencies,1159
+Frequencies,1160
+Frequencies,1161
+Frequencies,1162
+Frequencies,1163
+Frequencies,1164
+Frequencies,1165
+Frequencies,1166
+Frequencies,1167
+Frequencies,1168
+Frequencies,1169
+Frequencies,1170
+Frequencies,1171
+Frequencies,1172
+Frequencies,1173
+Frequencies,1174
+Frequencies,1175
+Frequencies,1176
+Frequencies,1177
+Frequencies,1178
+Frequencies,1179
+Frequencies,1180
+Frequencies,1181
+Frequencies,1182
+Frequencies,1183
+Frequencies,1184
+Frequencies,1185
+Frequencies,1186
+Frequencies,1187
+Frequencies,1188
+Frequencies,1189
+Frequencies,1190
+Frequencies,1191
+Frequencies,1192
+Frequencies,1193
+Frequencies,1194
+Frequencies,1195
+Frequencies,1196
+Frequencies,1197
+Frequencies,1198
+Frequencies,1199
+Frequencies,1200
+Frequencies,1201
+Frequencies,1202
+Frequencies,1203
+Frequencies,1204
+Frequencies,1205
+Frequencies,1206
+Frequencies,1207
+Frequencies,1208
+Frequencies,1209
+Frequencies,1210
+Frequencies,1211
+Frequencies,1212
+Frequencies,1213
+Frequencies,1214
+Frequencies,1215
+Frequencies,1216
+Frequencies,1217
+Frequencies,1218
+Frequencies,1219
+Frequencies,1220
+Frequencies,1221
+Frequencies,1222
+Frequencies,1223
+Frequencies,1224
+Frequencies,1225
+Frequencies,1226
+Frequencies,1227
+Frequencies,1228
+Frequencies,1229
+Frequencies,1230
+Frequencies,1231
+Frequencies,1232
+Frequencies,1233
+Frequencies,1234
+Frequencies,1235
+Frequencies,1236
+Frequencies,1237
+Frequencies,1238
+Frequencies,1239
+Frequencies,1240
+Frequencies,1241
+Frequencies,1242
+Frequencies,1243
+Frequencies,1244
+Frequencies,1245
+Frequencies,1246
+Frequencies,1247
+Frequencies,1248
+Frequencies,1249
+Frequencies,1250
+Frequencies,1251
+Frequencies,1252
+Frequencies,1253
+Frequencies,1254
+Frequencies,1255
+Frequencies,1256
+Frequencies,1257
+Frequencies,1258
+Frequencies,1259
+Frequencies,1260
+Frequencies,1261
+Frequencies,1262
+Frequencies,1263
+Frequencies,1264
+Frequencies,1265
+Frequencies,1266
+Frequencies,1267
+Frequencies,1268
+Frequencies,1269
+Frequencies,1270
+Frequencies,1271
+Frequencies,1272
+Frequencies,1273
+Frequencies,1274
+Frequencies,1275
+Frequencies,1276
+Frequencies,1277
+Frequencies,1278
+Frequencies,1279
+Frequencies,1280
+Frequencies,1281
+Frequencies,1282
+Frequencies,1283
+Frequencies,1284
+Frequencies,1285
+Frequencies,1286
+Frequencies,1287
+Frequencies,1288
+Frequencies,1289
+Frequencies,1290
+Frequencies,1291
+Frequencies,1292
+Frequencies,1293
+Frequencies,1294
+Frequencies,1295
+Frequencies,1296
+Frequencies,1297
+Frequencies,1298
+Frequencies,1299
+Frequencies,1300
+Frequencies,1301
+Frequencies,1302
+Frequencies,1303
+Frequencies,1304
+Frequencies,1305
+Frequencies,1306
+Frequencies,1307
+Frequencies,1308
+Frequencies,1309
+Frequencies,1310
+Frequencies,1311
+Frequencies,1312
+Frequencies,1313
+Frequencies,1314
+Frequencies,1315
+Frequencies,1316
+Frequencies,1317
+Frequencies,1318
+Frequencies,1319
+Frequencies,1320
+Frequencies,1321
+Frequencies,1322
+Frequencies,1323
+Frequencies,1324
+Frequencies,1325
+Frequencies,1326
+Frequencies,1327
+Frequencies,1328
+Frequencies,1329
+Frequencies,1330
+Frequencies,1331
+Frequencies,1332
+Frequencies,1333
+Frequencies,1334
+Frequencies,1335
+Frequencies,1336
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,50251,HRTOTLT,184582,18487102,100.15658081503072,1,34854,Grand total
+Statistics,2,50206,HRTOTLM,184582,8190656,44.374077645707601,0,12898,Grand total men
+Statistics,3,50211,HRTOTLW,184582,10296446,55.782503169323121,0,21956,Grand total women
+Statistics,4,52032,HRAIANT,184582,92156,0.49926861774170828,0,316,American Indian or Alaska Native total
+Statistics,5,52034,HRAIANM,184582,38872,0.2105947492171501,0,132,American Indian or Alaska Native men
+Statistics,6,52036,HRAIANW,184582,53284,0.28867386852455817,0,203,American Indian or Alaska Native women
+Statistics,7,52038,HRASIAT,184582,1324946,7.1780888710708517,0,4913,Asian total
+Statistics,8,52040,HRASIAM,184582,622548,3.3727449047036004,0,2128,Asian men
+Statistics,9,52042,HRASIAW,184582,702398,3.8053439663672513,0,2785,Asian women
+Statistics,10,52044,HRBKAAT,184582,1763830,9.5558071751308358,0,3622,Black or African American total
+Statistics,11,52046,HRBKAAM,184582,646822,3.5042528523908074,0,1180,Black or African American men
+Statistics,12,52048,HRBKAAW,184582,1117008,6.0515543227400288,0,2929,Black or African American women
+Statistics,13,52050,HRHISPT,184582,1659850,8.992480306855489,0,7269,Hispanic or Latino total
+Statistics,14,52052,HRHISPM,184582,677854,3.6723732541634599,0,2595,Hispanic or Latino men
+Statistics,15,52054,HRHISPW,184582,981996,5.3201070526920287,0,4674,Hispanic or Latino women
+Statistics,16,52056,HRNHPIT,184582,45128,0.24448754483102361,0,472,Native Hawaiian or Other Pacific Islander total
+Statistics,17,52058,HRNHPIM,184582,19754,0.10702018615032885,0,262,Native Hawaiian or Other Pacific Islander men
+Statistics,18,52060,HRNHPIW,184582,25374,0.13746735868069476,0,215,Native Hawaiian or Other Pacific Islander women
+Statistics,19,52062,HRWHITT,184582,11803216,63.945650171739388,0,24844,White total
+Statistics,20,52064,HRWHITM,184582,5288182,28.649499951241182,0,8973,White men
+Statistics,21,52066,HRWHITW,184582,6515034,35.296150220498205,0,15871,White women
+Statistics,22,52068,HR2MORT,184582,285670,1.5476590350088308,0,770,Two or more races total
+Statistics,23,52070,HR2MORM,184582,110196,0.59700295803491132,0,263,Two or more races men
+Statistics,24,52072,HR2MORW,184582,175474,0.95065607697391941,0,507,Two or more races women
+Statistics,25,50246,HRUNKNT,184582,795134,4.3077548189964352,0,5809,Race/ethnicity unknown total
+Statistics,26,50196,HRUNKNM,184582,370710,2.0083756812690297,0,2652,Race/ethnicity unknown men
+Statistics,27,50201,HRUNKNW,184582,424424,2.2993791377274055,0,3157,Race/ethnicity unknown women
+Statistics,28,50216,HRNRALT,184582,717172,3.885384273656153,0,3078,Nonresident alien total
+Statistics,29,50136,HRNRALM,184582,415718,2.2522131085371271,0,1963,Nonresident alien men
+Statistics,30,50141,HRNRALW,184582,301454,1.6331711651190257,0,1115,Nonresident alien women
+Statistics,31,,,,,,,
+Statistics,32,,,,,,,
+Statistics,33,,,,,,,
+Statistics,34,,,,,,,
+Statistics,35,,,,,,,
+Statistics,36,,,,,
+Statistics,37,,,,,
+Statistics,38,,,,,
+Statistics,39,,,,,
+Statistics,40,,,,,
+Statistics,41,,,,,
+Statistics,42,,,,,
+Statistics,43,,,,,
+Statistics,44,,,,,
+Statistics,45,,,,,
+Statistics,46,,,,,
+Statistics,47,,,,,
+Statistics,48,,,,,
+Statistics,49,,,,,
+Statistics,50,,,,,
+Statistics,51,,,,,
+Statistics,52,,,,,
+Statistics,53,,,,,
+Statistics,54,,,,,
+Statistics,55,,,,,
+Statistics,56,,,,,
+Statistics,57,,,,,
+Statistics,58,,,,,
+Statistics,59,,,,,
+Statistics,60,,,,,
+Statistics,61,,,,,
+Statistics,62,,,,,
+Statistics,63,,,,,
+Statistics,64,,,,,
+Statistics,65,,,,,
+Statistics,66,,,,,
+Statistics,67,,,,,
+Statistics,68,,,,,
+Statistics,69,,,,,
+Statistics,70,,,,,
+Statistics,71,,,,,
+Statistics,72,,,,,
+Statistics,73,,,,,
+Statistics,74,,,,,
+Statistics,75,,,,,
+Statistics,76,,,,,
+Statistics,77,,,,,
+Statistics,78,,,,,
+Statistics,79,,,,,
+Statistics,80,,,,,
+Statistics,81,,,,,
+Statistics,82,,,,,
+Statistics,83,,,,,
+Statistics,84,,,,,
+Statistics,85,,,,,
+Statistics,86,,,,,
+Statistics,87,,,,,
+Statistics,88,,,,,
+Statistics,89,,,,,
+Statistics,90,,,,,
+Statistics,91,,,,,
+Statistics,92,,,,,
+Statistics,93,,,,,
+Statistics,94,,,,,
+Statistics,95,,,,,
+Statistics,96,,,,,
+Statistics,97,,,,,
+Statistics,98,,,,,
+Statistics,99,,,,,
+Statistics,100,,,,,
+Statistics,101,,,,,
+Statistics,102,,,,,
+Statistics,103,,,,,
+Statistics,104,,,,,
+Statistics,105,,,,,
+Statistics,106,,,,,
+Statistics,107,,,,,
+Statistics,108,,,,,
+Statistics,109,,,,,
+Statistics,110,,,,,
+Statistics,111,,,,,
+Statistics,112,,,,,
+Statistics,113,,,,,
+Statistics,114,,,,,
+Statistics,115,,,,,
+Statistics,116,,,,,
+Statistics,117,,,,,
+Statistics,118,,,,,
+Statistics,119,,,,,
+Statistics,120,,,,,
+Statistics,121,,,,,
+Statistics,122,,,,,
+Statistics,123,,,,,
+Statistics,124,,,,,
+Statistics,125,,,,,
+Statistics,126,,,,,
+Statistics,127,,,,,
+Statistics,128,,,,,
+Statistics,129,,,,,
+Statistics,130,,,,,
+Statistics,131,,,,,
+Statistics,132,,,,,
+Statistics,133,,,,,
+Statistics,134,,,,,
+Statistics,135,,,,,
+Statistics,136,,,,,
+Statistics,137,,,,,
+Statistics,138,,,,,
+Statistics,139,,,,,
+Statistics,140,,,,,
+Statistics,141,,,,,
+Statistics,142,,,,,
+Statistics,143,,,,,
+Statistics,144,,,,,
+Statistics,145,,,,,
+Statistics,146,,,,,
+Statistics,147,,,,,
+Statistics,148,,,,,
+Statistics,149,,,,,
+Statistics,150,,,,,
+Statistics,151,,,,,
+Statistics,152,,,,,
+Statistics,153,,,,,
+Statistics,154,,,,,
+Statistics,155,,,,,
+Statistics,156,,,,,
+Statistics,157,,,,,
+Statistics,158,,,,,
+Statistics,159,,,,,
+Statistics,160,,,,,
+Statistics,161,,,,,
+Statistics,162,,,,,
+Statistics,163,,,,,
+Statistics,164,,,,,
+Statistics,165,,,,,
+Statistics,166,,,,,
+Statistics,167,,,,,
+Statistics,168,,,,,
+Statistics,169,,,,,
+Statistics,170,,,,,
+Statistics,171,,,,,
+Statistics,172,,,,,
+Statistics,173,,,,,
+Statistics,174,,,,,
+Statistics,175,,,,,
+Statistics,176,,,,,
+Statistics,177,,,,,
+Statistics,178,,,,,
+Statistics,179,,,,,
+Statistics,180,,,,,
+Statistics,181,,,,,
+Statistics,182,,,,,
+Statistics,183,,,,,
+Statistics,184,,,,,
+Statistics,185,,,,,
+Statistics,186,,,,,
+Statistics,187,,,,,
+Statistics,188,,,,,
+Statistics,189,,,,,
+Statistics,190,,,,,
+Statistics,191,,,,,
+Statistics,192,,,,,
+Statistics,193,,,,,
+Statistics,194,,,,,
+Statistics,195,,,,,
+Statistics,196,,,,,
+Statistics,197,,,,,
+Statistics,198,,,,,
+Statistics,199,,,,,
+Statistics,200,,,,,
+Statistics,201,,,,,
+Statistics,202,,,,,
+Statistics,203,,,,,
+Statistics,204,,,,,
+Statistics,205,,,,,
+Statistics,206,,,,,
+Statistics,207,,,,,
+Statistics,208,,,,,
+Statistics,209,,,,,
+Statistics,210,,,,,
+Statistics,211,,,,,
+Statistics,212,,,,,
+Statistics,213,,,,,
+Statistics,214,,,,,
+Statistics,215,,,,,
+Statistics,216,,,,,
+Statistics,217,,,,,
+Statistics,218,,,,,
+Statistics,219,,,,,
+Statistics,220,,,,,
+Statistics,221,,,,,
+Statistics,222,,,,,
+Statistics,223,,,,,
+Statistics,224,,,,,
+Statistics,225,,,,,
+Statistics,226,,,,,
+Statistics,227,,,,,
+Statistics,228,,,,,
+Statistics,229,,,,,
+Statistics,230,,,,,
+Statistics,231,,,,,
+Statistics,232,,,,,
+Statistics,233,,,,,
+Statistics,234,,,,,
+Statistics,235,,,,,
+Statistics,236,,,,,
+Statistics,237,,,,,
+Statistics,238,,,,,
+Statistics,239,,,,,
+Statistics,240,,,,,
+Statistics,241,,,,,
+Statistics,242,,,,,
+Statistics,243,,,,,
+Statistics,244,,,,,
+Statistics,245,,,,,
+Statistics,246,,,,,
+Statistics,247,,,,,
+Statistics,248,,,,,
+Statistics,249,,,,,
+Statistics,250,,,,,
+Statistics,251,,,,,
+Statistics,252,,,,,
+Statistics,253,,,,,
+Statistics,254,,,,,
+Statistics,255,,,,,
+Statistics,256,,,,,
+Statistics,257,,,,,
+Statistics,258,,,,,
+Statistics,259,,,,,
+Statistics,260,,,,,
+Statistics,261,,,,,
+Statistics,262,,,,,
+Statistics,263,,,,,
+Statistics,264,,,,,
+Statistics,265,,,,,
+Statistics,266,,,,,
+Statistics,267,,,,,
+Statistics,268,,,,,
+Statistics,269,,,,,
+Statistics,270,,,,,
+Statistics,271,,,,,
+Statistics,272,,,,,
+Statistics,273,,,,,
+Statistics,274,,,,,
+Statistics,275,,,,,
+Statistics,276,,,,,
+Statistics,277,,,,,
+Statistics,278,,,,,
+Statistics,279,,,,,
+Statistics,280,,,,,
+Statistics,281,,,,,
+Statistics,282,,,,,
+Statistics,283,,,,,
+Statistics,284,,,,,
+Statistics,285,,,,,
+Statistics,286,,,,,
+Statistics,287,,,,,
+Statistics,288,,,,,
+Statistics,289,,,,,
+Statistics,290,,,,,
+Statistics,291,,,,,
+Statistics,292,,,,,
+Statistics,293,,,,,
+Statistics,294,,,,,
+Statistics,295,,,,,
+Statistics,296,,,,,
+Statistics,297,,,,,
+Statistics,298,,,,,
+Statistics,299,,,,,
+Statistics,300,,,,,
+Statistics,301,,,,,
+Statistics,302,,,,,
+Statistics,303,,,,,
+Statistics,304,,,,,
+Statistics,305,,,,,
+Statistics,306,,,,,
+Statistics,307,,,,,
+Statistics,308,,,,,
+FrequenciesRV,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+FrequenciesRV,1,53016,STAFFCAT,1100,Grand Total,6057,3.28
+FrequenciesRV,2,53016,STAFFCAT,1200,"Instructional, research and public service",5986,3.24
+FrequenciesRV,3,53016,STAFFCAT,1210,Instructional staff,5975,3.24
+FrequenciesRV,4,53016,STAFFCAT,1220,Research,663,0.36
+FrequenciesRV,5,53016,STAFFCAT,1230,Public service,386,0.21
+FrequenciesRV,6,53016,STAFFCAT,1250,"Librarians and Library Technicians/Archivists, Curators, and Museum Technicians/Student and Academic Affairs and Other Education Services",4759,2.58
+FrequenciesRV,7,53016,STAFFCAT,1260,"Librarians and Library Technicians/Archivists, Curators, and Museum Technicians",3336,1.81
+FrequenciesRV,8,53016,STAFFCAT,1261,"Archivists, Curators, and Museum Technicians",844,0.46
+FrequenciesRV,9,53016,STAFFCAT,1262,Librarians,2837,1.54
+FrequenciesRV,10,53016,STAFFCAT,1263,Library Technicians,1983,1.07
+FrequenciesRV,11,53016,STAFFCAT,1264,Detailed library occupations not available for non-degree-granting institutions,244,0.13
+FrequenciesRV,12,53016,STAFFCAT,1270,Student and Academic Affairs and Other Education Services,4443,2.41
+FrequenciesRV,13,53016,STAFFCAT,1300,Management,5779,3.13
+FrequenciesRV,14,53016,STAFFCAT,1310,Business and Financial Operations,4779,2.59
+FrequenciesRV,15,53016,STAFFCAT,1320,"Computer, Engineering, and Science",3431,1.86
+FrequenciesRV,16,53016,STAFFCAT,1330,"Community Service, Legal, Arts, and Media",3209,1.74
+FrequenciesRV,17,53016,STAFFCAT,1340,Healthcare Practioners and Technical,1882,1.02
+FrequenciesRV,18,53016,STAFFCAT,1350,Service occupations,3559,1.93
+FrequenciesRV,19,53016,STAFFCAT,1360,Sales and related occupations,1939,1.05
+FrequenciesRV,20,53016,STAFFCAT,1370,Office and Administrative Support,5462,2.96
+FrequenciesRV,21,53016,STAFFCAT,1380,"Natural Resources, Construction, and Maintenance",2599,1.41
+FrequenciesRV,22,53016,STAFFCAT,1390,"Production, Transportation, and Material Moving",1307,0.71
+FrequenciesRV,23,53016,STAFFCAT,2100,Full-time total,6046,3.27
+FrequenciesRV,24,53016,STAFFCAT,2200,"Full-time, Instructional, research and public service",5792,3.14
+FrequenciesRV,25,53016,STAFFCAT,2210,"Full-time, Instructional staff",5779,3.13
+FrequenciesRV,26,53016,STAFFCAT,2220,"Full-time, Research",603,0.33
+FrequenciesRV,27,53016,STAFFCAT,2230,"Full-time, Public service",309,0.17
+FrequenciesRV,28,53016,STAFFCAT,2250,"Full-time, Librarians and Library Technicians/Archivists, Curators, and Museum Technicians/Student and Academic Affairs and Other Education Services",4599,2.4900000000000002
+FrequenciesRV,29,53016,STAFFCAT,2260,"Full-time, Librarians and Library Technicians/Archivists, Curators, and Museum Technicians",3116,1.69
+FrequenciesRV,30,53016,STAFFCAT,2261,"Full-time, Archivists, Curators, and Museum Technicians",747,0.4
+FrequenciesRV,31,53016,STAFFCAT,2262,"Full-time, Librarians",2748,1.49
+FrequenciesRV,32,53016,STAFFCAT,2263,"Full-time, Library Technicians",1751,0.95
+FrequenciesRV,33,53016,STAFFCAT,2264,"Full-time, Detailed library occupations not available for non-degree-granting institutions",130,7.0000000000000007E-2
+FrequenciesRV,34,53016,STAFFCAT,2270,"Full-time, Student and Academic Affairs and Other Education Services",4266,2.31
+FrequenciesRV,35,53016,STAFFCAT,2300,"Full-time, Management",5739,3.11
+FrequenciesRV,36,53016,STAFFCAT,2310,"Full-time, Business and Financial Operations",4614,2.5
+FrequenciesRV,37,53016,STAFFCAT,2320,"Full-time, Computer, Engineering, and Science",3351,1.81
+FrequenciesRV,38,53016,STAFFCAT,2330,"Full-time, Community Service, Legal, Arts, and Media",3125,1.69
+FrequenciesRV,39,53016,STAFFCAT,2340,"Full-time, Healthcare Practioners and Technical",1717,0.93
+FrequenciesRV,40,53016,STAFFCAT,2350,"Full-time, Service occupations",3358,1.82
+FrequenciesRV,41,53016,STAFFCAT,2360,"Full-time, Sales and related occupations",1816,0.98
+FrequenciesRV,42,53016,STAFFCAT,2370,"Full-time, Office and Administrative Support",5243,2.84
+FrequenciesRV,43,53016,STAFFCAT,2380,"Full-time, Natural Resources, Construction, and Maintenance",2462,1.33
+FrequenciesRV,44,53016,STAFFCAT,2390,"Full-time, Production, Transportation, and Material Moving",1118,0.61
+FrequenciesRV,45,53016,STAFFCAT,3100,"Part-time, total",5465,2.96
+FrequenciesRV,46,53016,STAFFCAT,3200,"Part-time, Instructional, research and public service",5198,2.81
+FrequenciesRV,47,53016,STAFFCAT,3210,"Part-time, Instructional staff",5184,2.81
+FrequenciesRV,48,53016,STAFFCAT,3220,"Part-time, Research",376,0.2
+FrequenciesRV,49,53016,STAFFCAT,3230,"Part-time, Public service",228,0.12
+FrequenciesRV,50,53016,STAFFCAT,3250,"Part-time, Librarians and Library Technicians/Archivists, Curators, and Museum Technicians/Student and Academic Affairs and Other Education Services",3034,1.64
+FrequenciesRV,51,53016,STAFFCAT,3260,"Part-time, Librarians and Library Technicians/Archivists, Curators, and Museum Technicians",1599,0.87
+FrequenciesRV,52,53016,STAFFCAT,3261,"Part-time, Archivists, Curators, and Museum Technicians",260,0.14000000000000001
+FrequenciesRV,53,53016,STAFFCAT,3262,"Part-time, Librarians",737,0.4
+FrequenciesRV,54,53016,STAFFCAT,3263,"Part-time, Library Technicians",838,0.45
+FrequenciesRV,55,53016,STAFFCAT,3264,"Part-time, Detailed library occupations not available for non-degree-granting institutions",136,7.0000000000000007E-2
+FrequenciesRV,56,53016,STAFFCAT,3270,"Part-time, Student and Academic Affairs and Other Education Services",2635,1.43
+FrequenciesRV,57,53016,STAFFCAT,3300,"Part-time, Management",1562,0.85
+FrequenciesRV,58,53016,STAFFCAT,3310,"Part-time, Business and Financial Operations",1870,1.01
+FrequenciesRV,59,53016,STAFFCAT,3320,"Part-time, Computer, Engineering, and Science",1467,0.79
+FrequenciesRV,60,53016,STAFFCAT,3330,"Part-time, Community Service, Legal, Arts, and Media",2257,1.22
+FrequenciesRV,61,53016,STAFFCAT,3340,"Part-time, Healthcare Practioners and Technical",1066,0.57999999999999996
+FrequenciesRV,62,53016,STAFFCAT,3350,"Part-time, Service occupations",2321,1.26
+FrequenciesRV,63,53016,STAFFCAT,3360,"Part-time, Sales and related occupations",579,0.31
+FrequenciesRV,64,53016,STAFFCAT,3370,"Part-time, Office and Administrative Support",3615,1.96
+FrequenciesRV,65,53016,STAFFCAT,3380,"Part-time, Natural Resources, Construction, and Maintenance",860,0.47
+FrequenciesRV,66,53016,STAFFCAT,3390,"Part-time, Production, Transportation, and Material Moving",603,0.33
+FrequenciesRV,67,53016,STAFFCAT,4400,"Graduate Assistants, Total",1022,0.55000000000000004
+FrequenciesRV,68,53016,STAFFCAT,4410,"Graduate Assistants, Teaching",644,0.35
+FrequenciesRV,69,53016,STAFFCAT,4420,"Graduate Assistants, Research",490,0.27
+FrequenciesRV,70,53016,STAFFCAT,4490,"Graduate Assistants, Other",720,0.39
+FrequenciesRV,71,53021,FTPT,1,All staff,71459,38.700000000000003
+FrequenciesRV,72,53021,FTPT,2,Full-time,68429,37.06
+FrequenciesRV,73,53021,FTPT,3,Part-time,41890,22.69
+FrequenciesRV,74,53021,FTPT,4,Graduate Assistants,2876,1.56
+FrequenciesRV,75,53026,OCCUPCAT,100,All staff,17568,9.51
+FrequenciesRV,76,53026,OCCUPCAT,200,"Instructional, research and public service staff",16976,9.19
+FrequenciesRV,77,53026,OCCUPCAT,210,"Instructional staff, total",16938,9.17
+FrequenciesRV,78,53026,OCCUPCAT,220,Research,1642,0.89
+FrequenciesRV,79,53026,OCCUPCAT,230,Public service,923,0.5
+FrequenciesRV,80,53026,OCCUPCAT,250,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",12392,6.71
+FrequenciesRV,81,53026,OCCUPCAT,260,"Librarians, Curators, and Archivists",8051,4.3600000000000003
+FrequenciesRV,82,53026,OCCUPCAT,261,"Archivists, Curators, and Museum Technicians",1851,1
+FrequenciesRV,83,53026,OCCUPCAT,262,Librarians,6322,3.42
+FrequenciesRV,84,53026,OCCUPCAT,263,Library Technicians,4572,2.48
+FrequenciesRV,85,53026,OCCUPCAT,264,Detailed library occupations not available for non-degree-granting institutions,510,0.28000000000000003
+FrequenciesRV,86,53026,OCCUPCAT,270,Student and Academic Affairs and Other Education Services,11344,6.14
+FrequenciesRV,87,53026,OCCUPCAT,300,Management,13080,7.08
+FrequenciesRV,88,53026,OCCUPCAT,310,Business and Financial Operations,11263,6.1
+FrequenciesRV,89,53026,OCCUPCAT,320,"Computer, Engineering, and Science",8249,4.47
+FrequenciesRV,90,53026,OCCUPCAT,330,"Community, Social Service, Legal, Arts,Design, Entertainment, Sports and Media",8591,4.6500000000000004
+FrequenciesRV,91,53026,OCCUPCAT,340,Healthcare Practioners and Technical,4665,2.5299999999999998
+FrequenciesRV,92,53026,OCCUPCAT,350,Service Occupations,9238,5
+FrequenciesRV,93,53026,OCCUPCAT,360,Sales and Related Occupations,4334,2.35
+FrequenciesRV,94,53026,OCCUPCAT,370,Office and Administrative Support,14320,7.76
+FrequenciesRV,95,53026,OCCUPCAT,380,"Natural Resources, Construction, and Maintenance",5921,3.21
+FrequenciesRV,96,53026,OCCUPCAT,390,"Production, Transportation, and Material Moving",3028,1.64
+FrequenciesRV,97,53026,OCCUPCAT,400,Graduate Assistants Total,1022,0.55000000000000004
+FrequenciesRV,98,53026,OCCUPCAT,410,Graduate Assistants Teaching,644,0.35
+FrequenciesRV,99,53026,OCCUPCAT,420,Graduate Assistants Research,490,0.27
+FrequenciesRV,100,53026,OCCUPCAT,490,Graduate Assistants Other,720,0.39
+FrequenciesRV,101,50131,SABDTYPE,10,Full-time (occupation code prior to 2012),6046,3.27
+FrequenciesRV,102,50131,SABDTYPE,11,Full-time postecondary teachers (occupation code prior to 2012),5792,3.14
+FrequenciesRV,103,50131,SABDTYPE,70,Part-time postecondary teachers (occupation code prior to 2012),5198,2.81
+FrequenciesRV,104,50131,SABDTYPE,-2,"Not applicable, current occupation does not map to occupations prior to 2012",167618,90.77
+FrequenciesRV,105,,,,,,
+FrequenciesRV,106,,,,,,
+FrequenciesRV,107,,,,,,
+FrequenciesRV,108,,,,,,
+FrequenciesRV,109,,,,,,
+FrequenciesRV,110,,,,,,
+FrequenciesRV,111,,,,,,
+FrequenciesRV,112,,,,,,
+FrequenciesRV,113,,,,,,
+FrequenciesRV,114,,,,,,
+FrequenciesRV,115,,,,,,
+FrequenciesRV,116,,,,,,
+FrequenciesRV,117,,,,,,
+FrequenciesRV,118,,,,,,
+FrequenciesRV,119,,,,,,
+FrequenciesRV,120,,,,,,
+FrequenciesRV,121,,,,,,
+FrequenciesRV,122,,,,,,
+FrequenciesRV,123,,,,,,
+FrequenciesRV,124,,,,,,
+FrequenciesRV,125,,,,,,
+FrequenciesRV,126,,,,,,
+FrequenciesRV,127,,,,,,
+FrequenciesRV,128,,,,,,
+FrequenciesRV,129,,,,,,
+FrequenciesRV,130,,,,,,
+FrequenciesRV,131,,,,,,
+FrequenciesRV,132,,,,,,
+FrequenciesRV,133,,,,,,
+FrequenciesRV,134,,,,,,
+FrequenciesRV,135,,,,,,
+FrequenciesRV,136,,,,,,
+FrequenciesRV,137,,,,,,
+FrequenciesRV,138,,,,,,
+FrequenciesRV,139,,,,,,
+FrequenciesRV,140,,,,,,
+FrequenciesRV,141,,,,,,
+FrequenciesRV,142,,,,,,
+FrequenciesRV,143,,,,,,
+FrequenciesRV,144,,,,,,
+FrequenciesRV,145,,,,,,
+FrequenciesRV,146,,,,,,
+FrequenciesRV,147,,,,,,
+FrequenciesRV,148,,,,,,
+FrequenciesRV,149,,,,,,
+FrequenciesRV,150,,,,,,
+FrequenciesRV,151,,,,,,
+FrequenciesRV,152,,,,,,
+FrequenciesRV,153,,,,,,
+FrequenciesRV,154,,,,,,
+FrequenciesRV,155,,,,,,
+FrequenciesRV,156,,,,,,
+FrequenciesRV,157,,,,,,
+FrequenciesRV,158,,,,,,
+FrequenciesRV,159,,,,,,
+FrequenciesRV,160,,,,,,
+FrequenciesRV,161,,,,,,
+FrequenciesRV,162,,,,,,
+FrequenciesRV,163,,,,,,
+FrequenciesRV,164,,,,,,
+FrequenciesRV,165,,,,,,
+FrequenciesRV,166,,,,,,
+FrequenciesRV,167,,,,,,
+FrequenciesRV,168,,,,,,
+FrequenciesRV,169,,,,,,
+FrequenciesRV,170,,,,,,
+FrequenciesRV,171,,,,,,
+FrequenciesRV,172,,,,,,
+FrequenciesRV,173,,,,,,
+FrequenciesRV,174,,,,,,
+FrequenciesRV,175,,,,,,
+FrequenciesRV,176,,,,,,
+FrequenciesRV,177,,,,,,
+FrequenciesRV,178,,,,,,
+FrequenciesRV,179,,,,,,
+FrequenciesRV,180,,,,,,
+FrequenciesRV,181,,,,,,
+FrequenciesRV,182,,,,,,
+FrequenciesRV,183,,,,,,
+FrequenciesRV,184,,,,,,
+FrequenciesRV,185,,,,,,
+FrequenciesRV,186,,,,,,
+FrequenciesRV,187,,,,,,
+FrequenciesRV,188,,,,,,
+FrequenciesRV,189,,,,,,
+FrequenciesRV,190,,,,,,
+FrequenciesRV,191,,,,,,
+FrequenciesRV,192,,,,,,
+FrequenciesRV,193,,,,,,
+FrequenciesRV,194,,,,,,
+FrequenciesRV,195,,,,,,
+FrequenciesRV,196,,,,,,
+FrequenciesRV,197,,,,,,
+FrequenciesRV,198,,,,,,
+FrequenciesRV,199,,,,,,
+FrequenciesRV,200,,,,,,
+FrequenciesRV,201,,,,,,
+FrequenciesRV,202,,,,,,
+FrequenciesRV,203,,,,,,
+FrequenciesRV,204,,,,,,
+FrequenciesRV,205,,,,,,
+FrequenciesRV,206,,,,,,
+FrequenciesRV,207,,,,,,
+FrequenciesRV,208,,,,,,
+FrequenciesRV,209,,,,,,
+FrequenciesRV,210,,,,,,
+FrequenciesRV,211,,,,,,
+FrequenciesRV,212,,,,,,
+FrequenciesRV,213,,,,,,
+FrequenciesRV,214,,,,,,
+FrequenciesRV,215,,,,,,
+FrequenciesRV,216,,,,,,
+FrequenciesRV,217,,,,,,
+FrequenciesRV,218,,,,,,
+FrequenciesRV,219,,,,,,
+FrequenciesRV,220,,,,,,
+FrequenciesRV,221,,,,,,
+FrequenciesRV,222,,,,,,
+FrequenciesRV,223,,,,,,
+FrequenciesRV,224,,,,,,
+FrequenciesRV,225,,,,,,
+FrequenciesRV,226,,,,,,
+FrequenciesRV,227,,,,,,
+FrequenciesRV,228,,,,,,
+FrequenciesRV,229,,,,,,
+FrequenciesRV,230,,,,,,
+FrequenciesRV,231,,,,,,
+FrequenciesRV,232,,,,,,
+FrequenciesRV,233,,,,,,
+FrequenciesRV,234,,,,,,
+FrequenciesRV,235,,,,,,
+FrequenciesRV,236,,,,,,
+FrequenciesRV,237,,,,,,
+FrequenciesRV,238,,,,,,
+FrequenciesRV,239,,,,,,
+FrequenciesRV,240,,,,,,
+FrequenciesRV,241,,,,,,
+FrequenciesRV,242,,,,,,
+FrequenciesRV,243,,,,,,
+FrequenciesRV,244,,,,,,
+FrequenciesRV,245,,,,,,
+FrequenciesRV,246,,,,,,
+FrequenciesRV,247,,,,,,
+FrequenciesRV,248,,,,,,
+FrequenciesRV,249,,,,,,
+FrequenciesRV,250,,,,,,
+FrequenciesRV,251,,,,,,
+FrequenciesRV,252,,,,,,
+FrequenciesRV,253,,,,,,
+FrequenciesRV,254,,,,,,
+FrequenciesRV,255,,,,,,
+FrequenciesRV,256,,,,,,
+FrequenciesRV,257,,,,,,
+FrequenciesRV,258,,,,,,
+FrequenciesRV,259,,,,,,
+FrequenciesRV,260,,,,,,
+FrequenciesRV,261,,,,,,
+FrequenciesRV,262,,,,,,
+FrequenciesRV,263,,,,,,
+FrequenciesRV,264,,,,,,
+FrequenciesRV,265,,,,,,
+FrequenciesRV,266,,,,,,
+FrequenciesRV,267,,,,,,
+FrequenciesRV,268,,,,,,
+FrequenciesRV,269,,,,,,
+FrequenciesRV,270,,,,,,
+FrequenciesRV,271,,,,,,
+FrequenciesRV,272,,,,,,
+FrequenciesRV,273,,,,,,
+FrequenciesRV,274,,,,,,
+FrequenciesRV,275,,,,,,
+FrequenciesRV,276,,,,,,
+FrequenciesRV,277,,,,,,
+FrequenciesRV,278,,,,,,
+FrequenciesRV,279,,,,,,
+FrequenciesRV,280,,,,,,
+FrequenciesRV,281,,,,,,
+FrequenciesRV,282,,,,,,
+FrequenciesRV,283,,,,,,
+FrequenciesRV,284,,,,,,
+FrequenciesRV,285,,,,,,
+FrequenciesRV,286,,,,,,
+FrequenciesRV,287,,,,,,
+FrequenciesRV,288,,,,,,
+FrequenciesRV,289,,,,,,
+FrequenciesRV,290,,,,,,
+FrequenciesRV,291,,,,,,
+FrequenciesRV,292,,,,,,
+FrequenciesRV,293,,,,,,
+FrequenciesRV,294,,,,,,
+FrequenciesRV,295,,,,,,
+FrequenciesRV,296,,,,,,
+FrequenciesRV,297,,,,,,
+FrequenciesRV,298,,,,,,
+FrequenciesRV,299,,,,,,
+FrequenciesRV,300,,,,,,
+FrequenciesRV,301,,,,,,
+FrequenciesRV,302,,,,,,
+FrequenciesRV,303,,,,,,
+FrequenciesRV,304,,,,,,
+FrequenciesRV,305,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+FrequenciesRV,306
+FrequenciesRV,307
+FrequenciesRV,308
+FrequenciesRV,309
+FrequenciesRV,310
+FrequenciesRV,311
+FrequenciesRV,312
+FrequenciesRV,313
+FrequenciesRV,314
+FrequenciesRV,315
+FrequenciesRV,316
+FrequenciesRV,317
+FrequenciesRV,318
+FrequenciesRV,319
+FrequenciesRV,320
+FrequenciesRV,321
+FrequenciesRV,322
+FrequenciesRV,323
+FrequenciesRV,324
+FrequenciesRV,325
+FrequenciesRV,326
+FrequenciesRV,327
+FrequenciesRV,328
+FrequenciesRV,329
+FrequenciesRV,330
+FrequenciesRV,331
+FrequenciesRV,332
+FrequenciesRV,333
+FrequenciesRV,334
+FrequenciesRV,335
+FrequenciesRV,336
+FrequenciesRV,337
+FrequenciesRV,338
+FrequenciesRV,339
+FrequenciesRV,340
+FrequenciesRV,341
+FrequenciesRV,342
+FrequenciesRV,343
+FrequenciesRV,344
+FrequenciesRV,345
+FrequenciesRV,346
+FrequenciesRV,347
+FrequenciesRV,348
+FrequenciesRV,349
+FrequenciesRV,350
+FrequenciesRV,351
+FrequenciesRV,352
+FrequenciesRV,353
+FrequenciesRV,354
+FrequenciesRV,355
+FrequenciesRV,356
+FrequenciesRV,357
+FrequenciesRV,358
+FrequenciesRV,359
+FrequenciesRV,360
+FrequenciesRV,361
+FrequenciesRV,362
+FrequenciesRV,363
+FrequenciesRV,364
+FrequenciesRV,365
+FrequenciesRV,366
+FrequenciesRV,367
+FrequenciesRV,368
+FrequenciesRV,369
+FrequenciesRV,370
+FrequenciesRV,371
+FrequenciesRV,372
+FrequenciesRV,373
+FrequenciesRV,374
+FrequenciesRV,375
+FrequenciesRV,376
+FrequenciesRV,377
+FrequenciesRV,378
+FrequenciesRV,379
+FrequenciesRV,380
+FrequenciesRV,381
+FrequenciesRV,382
+FrequenciesRV,383
+FrequenciesRV,384
+FrequenciesRV,385
+FrequenciesRV,386
+FrequenciesRV,387
+FrequenciesRV,388
+FrequenciesRV,389
+FrequenciesRV,390
+FrequenciesRV,391
+FrequenciesRV,392
+FrequenciesRV,393
+FrequenciesRV,394
+FrequenciesRV,395
+FrequenciesRV,396
+FrequenciesRV,397
+FrequenciesRV,398
+FrequenciesRV,399
+FrequenciesRV,400
+FrequenciesRV,401
+FrequenciesRV,402
+FrequenciesRV,403
+FrequenciesRV,404
+FrequenciesRV,405
+FrequenciesRV,406
+FrequenciesRV,407
+FrequenciesRV,408
+FrequenciesRV,409
+FrequenciesRV,410
+FrequenciesRV,411
+FrequenciesRV,412
+FrequenciesRV,413
+FrequenciesRV,414
+FrequenciesRV,415
+FrequenciesRV,416
+FrequenciesRV,417
+FrequenciesRV,418
+FrequenciesRV,419
+FrequenciesRV,420
+FrequenciesRV,421
+FrequenciesRV,422
+FrequenciesRV,423
+FrequenciesRV,424
+FrequenciesRV,425
+FrequenciesRV,426
+FrequenciesRV,427
+FrequenciesRV,428
+FrequenciesRV,429
+FrequenciesRV,430
+FrequenciesRV,431
+FrequenciesRV,432
+FrequenciesRV,433
+FrequenciesRV,434
+FrequenciesRV,435
+FrequenciesRV,436
+FrequenciesRV,437
+FrequenciesRV,438
+FrequenciesRV,439
+FrequenciesRV,440
+FrequenciesRV,441
+FrequenciesRV,442
+FrequenciesRV,443
+FrequenciesRV,444
+FrequenciesRV,445
+FrequenciesRV,446
+FrequenciesRV,447
+FrequenciesRV,448
+FrequenciesRV,449
+FrequenciesRV,450
+FrequenciesRV,451
+FrequenciesRV,452
+FrequenciesRV,453
+FrequenciesRV,454
+FrequenciesRV,455
+FrequenciesRV,456
+FrequenciesRV,457
+FrequenciesRV,458
+FrequenciesRV,459
+FrequenciesRV,460
+FrequenciesRV,461
+FrequenciesRV,462
+FrequenciesRV,463
+FrequenciesRV,464
+FrequenciesRV,465
+FrequenciesRV,466
+FrequenciesRV,467
+FrequenciesRV,468
+FrequenciesRV,469
+FrequenciesRV,470
+FrequenciesRV,471
+FrequenciesRV,472
+FrequenciesRV,473
+FrequenciesRV,474
+FrequenciesRV,475
+FrequenciesRV,476
+FrequenciesRV,477
+FrequenciesRV,478
+FrequenciesRV,479
+FrequenciesRV,480
+FrequenciesRV,481
+FrequenciesRV,482
+FrequenciesRV,483
+FrequenciesRV,484
+FrequenciesRV,485
+FrequenciesRV,486
+FrequenciesRV,487
+FrequenciesRV,488
+FrequenciesRV,489
+FrequenciesRV,490
+FrequenciesRV,491
+FrequenciesRV,492
+FrequenciesRV,493
+FrequenciesRV,494
+FrequenciesRV,495
+FrequenciesRV,496
+FrequenciesRV,497
+FrequenciesRV,498
+FrequenciesRV,499
+FrequenciesRV,500
+FrequenciesRV,501
+FrequenciesRV,502
+FrequenciesRV,503
+FrequenciesRV,504
+FrequenciesRV,505
+FrequenciesRV,506
+FrequenciesRV,507
+FrequenciesRV,508
+FrequenciesRV,509
+FrequenciesRV,510
+FrequenciesRV,511
+FrequenciesRV,512
+FrequenciesRV,513
+FrequenciesRV,514
+FrequenciesRV,515
+FrequenciesRV,516
+FrequenciesRV,517
+FrequenciesRV,518
+FrequenciesRV,519
+FrequenciesRV,520
+FrequenciesRV,521
+FrequenciesRV,522
+FrequenciesRV,523
+FrequenciesRV,524
+FrequenciesRV,525
+FrequenciesRV,526
+FrequenciesRV,527
+FrequenciesRV,528
+FrequenciesRV,529
+FrequenciesRV,530
+FrequenciesRV,531
+FrequenciesRV,532
+FrequenciesRV,533
+FrequenciesRV,534
+FrequenciesRV,535
+FrequenciesRV,536
+FrequenciesRV,537
+FrequenciesRV,538
+FrequenciesRV,539
+FrequenciesRV,540
+FrequenciesRV,541
+FrequenciesRV,542
+FrequenciesRV,543
+FrequenciesRV,544
+FrequenciesRV,545
+FrequenciesRV,546
+FrequenciesRV,547
+FrequenciesRV,548
+FrequenciesRV,549
+FrequenciesRV,550
+FrequenciesRV,551
+FrequenciesRV,552
+FrequenciesRV,553
+FrequenciesRV,554
+FrequenciesRV,555
+FrequenciesRV,556
+FrequenciesRV,557
+FrequenciesRV,558
+FrequenciesRV,559
+FrequenciesRV,560
+FrequenciesRV,561
+FrequenciesRV,562
+FrequenciesRV,563
+FrequenciesRV,564
+FrequenciesRV,565
+FrequenciesRV,566
+FrequenciesRV,567
+FrequenciesRV,568
+FrequenciesRV,569
+FrequenciesRV,570
+FrequenciesRV,571
+FrequenciesRV,572
+FrequenciesRV,573
+FrequenciesRV,574
+FrequenciesRV,575
+FrequenciesRV,576
+FrequenciesRV,577
+FrequenciesRV,578
+FrequenciesRV,579
+FrequenciesRV,580
+FrequenciesRV,581
+FrequenciesRV,582
+FrequenciesRV,583
+FrequenciesRV,584
+FrequenciesRV,585
+FrequenciesRV,586
+FrequenciesRV,587
+FrequenciesRV,588
+FrequenciesRV,589
+FrequenciesRV,590
+FrequenciesRV,591
+FrequenciesRV,592
+FrequenciesRV,593
+FrequenciesRV,594
+FrequenciesRV,595
+FrequenciesRV,596
+FrequenciesRV,597
+FrequenciesRV,598
+FrequenciesRV,599
+FrequenciesRV,600
+FrequenciesRV,601
+FrequenciesRV,602
+FrequenciesRV,603
+FrequenciesRV,604
+FrequenciesRV,605
+FrequenciesRV,606
+FrequenciesRV,607
+FrequenciesRV,608
+FrequenciesRV,609
+FrequenciesRV,610
+FrequenciesRV,611
+FrequenciesRV,612
+FrequenciesRV,613
+FrequenciesRV,614
+FrequenciesRV,615
+FrequenciesRV,616
+FrequenciesRV,617
+FrequenciesRV,618
+FrequenciesRV,619
+FrequenciesRV,620
+FrequenciesRV,621
+FrequenciesRV,622
+FrequenciesRV,623
+FrequenciesRV,624
+FrequenciesRV,625
+FrequenciesRV,626
+FrequenciesRV,627
+FrequenciesRV,628
+FrequenciesRV,629
+FrequenciesRV,630
+FrequenciesRV,631
+FrequenciesRV,632
+FrequenciesRV,633
+FrequenciesRV,634
+FrequenciesRV,635
+FrequenciesRV,636
+FrequenciesRV,637
+FrequenciesRV,638
+FrequenciesRV,639
+FrequenciesRV,640
+FrequenciesRV,641
+FrequenciesRV,642
+FrequenciesRV,643
+FrequenciesRV,644
+FrequenciesRV,645
+FrequenciesRV,646
+FrequenciesRV,647
+FrequenciesRV,648
+FrequenciesRV,649
+FrequenciesRV,650
+FrequenciesRV,651
+FrequenciesRV,652
+FrequenciesRV,653
+FrequenciesRV,654
+FrequenciesRV,655
+FrequenciesRV,656
+FrequenciesRV,657
+FrequenciesRV,658
+FrequenciesRV,659
+FrequenciesRV,660
+FrequenciesRV,661
+FrequenciesRV,662
+FrequenciesRV,663
+FrequenciesRV,664
+FrequenciesRV,665
+FrequenciesRV,666
+FrequenciesRV,667
+FrequenciesRV,668
+FrequenciesRV,669
+FrequenciesRV,670
+FrequenciesRV,671
+FrequenciesRV,672
+FrequenciesRV,673
+FrequenciesRV,674
+FrequenciesRV,675
+FrequenciesRV,676
+FrequenciesRV,677
+FrequenciesRV,678
+FrequenciesRV,679
+FrequenciesRV,680
+FrequenciesRV,681
+FrequenciesRV,682
+FrequenciesRV,683
+FrequenciesRV,684
+FrequenciesRV,685
+FrequenciesRV,686
+FrequenciesRV,687
+FrequenciesRV,688
+FrequenciesRV,689
+FrequenciesRV,690
+FrequenciesRV,691
+FrequenciesRV,692
+FrequenciesRV,693
+FrequenciesRV,694
+FrequenciesRV,695
+FrequenciesRV,696
+FrequenciesRV,697
+FrequenciesRV,698
+FrequenciesRV,699
+FrequenciesRV,700
+FrequenciesRV,701
+FrequenciesRV,702
+FrequenciesRV,703
+FrequenciesRV,704
+FrequenciesRV,705
+FrequenciesRV,706
+FrequenciesRV,707
+FrequenciesRV,708
+FrequenciesRV,709
+FrequenciesRV,710
+FrequenciesRV,711
+FrequenciesRV,712
+FrequenciesRV,713
+FrequenciesRV,714
+FrequenciesRV,715
+FrequenciesRV,716
+FrequenciesRV,717
+FrequenciesRV,718
+FrequenciesRV,719
+FrequenciesRV,720
+FrequenciesRV,721
+FrequenciesRV,722
+FrequenciesRV,723
+FrequenciesRV,724
+FrequenciesRV,725
+FrequenciesRV,726
+FrequenciesRV,727
+FrequenciesRV,728
+FrequenciesRV,729
+FrequenciesRV,730
+FrequenciesRV,731
+FrequenciesRV,732
+FrequenciesRV,733
+FrequenciesRV,734
+FrequenciesRV,735
+FrequenciesRV,736
+FrequenciesRV,737
+FrequenciesRV,738
+FrequenciesRV,739
+FrequenciesRV,740
+FrequenciesRV,741
+FrequenciesRV,742
+FrequenciesRV,743
+FrequenciesRV,744
+FrequenciesRV,745
+FrequenciesRV,746
+FrequenciesRV,747
+FrequenciesRV,748
+FrequenciesRV,749
+FrequenciesRV,750
+FrequenciesRV,751
+FrequenciesRV,752
+FrequenciesRV,753
+FrequenciesRV,754
+FrequenciesRV,755
+FrequenciesRV,756
+FrequenciesRV,757
+FrequenciesRV,758
+FrequenciesRV,759
+FrequenciesRV,760
+FrequenciesRV,761
+FrequenciesRV,762
+FrequenciesRV,763
+FrequenciesRV,764
+FrequenciesRV,765
+FrequenciesRV,766
+FrequenciesRV,767
+FrequenciesRV,768
+FrequenciesRV,769
+FrequenciesRV,770
+FrequenciesRV,771
+FrequenciesRV,772
+FrequenciesRV,773
+FrequenciesRV,774
+FrequenciesRV,775
+FrequenciesRV,776
+FrequenciesRV,777
+FrequenciesRV,778
+FrequenciesRV,779
+FrequenciesRV,780
+FrequenciesRV,781
+FrequenciesRV,782
+FrequenciesRV,783
+FrequenciesRV,784
+FrequenciesRV,785
+FrequenciesRV,786
+FrequenciesRV,787
+FrequenciesRV,788
+FrequenciesRV,789
+FrequenciesRV,790
+FrequenciesRV,791
+FrequenciesRV,792
+FrequenciesRV,793
+FrequenciesRV,794
+FrequenciesRV,795
+FrequenciesRV,796
+FrequenciesRV,797
+FrequenciesRV,798
+FrequenciesRV,799
+FrequenciesRV,800
+FrequenciesRV,801
+FrequenciesRV,802
+FrequenciesRV,803
+FrequenciesRV,804
+FrequenciesRV,805
+FrequenciesRV,806
+FrequenciesRV,807
+FrequenciesRV,808
+FrequenciesRV,809
+FrequenciesRV,810
+FrequenciesRV,811
+FrequenciesRV,812
+FrequenciesRV,813
+FrequenciesRV,814
+FrequenciesRV,815
+FrequenciesRV,816
+FrequenciesRV,817
+FrequenciesRV,818
+FrequenciesRV,819
+FrequenciesRV,820
+FrequenciesRV,821
+FrequenciesRV,822
+FrequenciesRV,823
+FrequenciesRV,824
+FrequenciesRV,825
+FrequenciesRV,826
+FrequenciesRV,827
+FrequenciesRV,828
+FrequenciesRV,829
+FrequenciesRV,830
+FrequenciesRV,831
+FrequenciesRV,832
+FrequenciesRV,833
+FrequenciesRV,834
+FrequenciesRV,835
+FrequenciesRV,836
+FrequenciesRV,837
+FrequenciesRV,838
+FrequenciesRV,839
+FrequenciesRV,840
+FrequenciesRV,841
+FrequenciesRV,842
+FrequenciesRV,843
+FrequenciesRV,844
+FrequenciesRV,845
+FrequenciesRV,846
+FrequenciesRV,847
+FrequenciesRV,848
+FrequenciesRV,849
+FrequenciesRV,850
+FrequenciesRV,851
+FrequenciesRV,852
+FrequenciesRV,853
+FrequenciesRV,854
+FrequenciesRV,855
+FrequenciesRV,856
+FrequenciesRV,857
+FrequenciesRV,858
+FrequenciesRV,859
+FrequenciesRV,860
+FrequenciesRV,861
+FrequenciesRV,862
+FrequenciesRV,863
+FrequenciesRV,864
+FrequenciesRV,865
+FrequenciesRV,866
+FrequenciesRV,867
+FrequenciesRV,868
+FrequenciesRV,869
+FrequenciesRV,870
+FrequenciesRV,871
+FrequenciesRV,872
+FrequenciesRV,873
+FrequenciesRV,874
+FrequenciesRV,875
+FrequenciesRV,876
+FrequenciesRV,877
+FrequenciesRV,878
+FrequenciesRV,879
+FrequenciesRV,880
+FrequenciesRV,881
+FrequenciesRV,882
+FrequenciesRV,883
+FrequenciesRV,884
+FrequenciesRV,885
+FrequenciesRV,886
+FrequenciesRV,887
+FrequenciesRV,888
+FrequenciesRV,889
+FrequenciesRV,890
+FrequenciesRV,891
+FrequenciesRV,892
+FrequenciesRV,893
+FrequenciesRV,894
+FrequenciesRV,895
+FrequenciesRV,896
+FrequenciesRV,897
+FrequenciesRV,898
+FrequenciesRV,899
+FrequenciesRV,900
+FrequenciesRV,901
+FrequenciesRV,902
+FrequenciesRV,903
+FrequenciesRV,904
+FrequenciesRV,905
+FrequenciesRV,906
+FrequenciesRV,907
+FrequenciesRV,908
+FrequenciesRV,909
+FrequenciesRV,910
+FrequenciesRV,911
+FrequenciesRV,912
+FrequenciesRV,913
+FrequenciesRV,914
+FrequenciesRV,915
+FrequenciesRV,916
+FrequenciesRV,917
+FrequenciesRV,918
+FrequenciesRV,919
+FrequenciesRV,920
+FrequenciesRV,921
+FrequenciesRV,922
+FrequenciesRV,923
+FrequenciesRV,924
+FrequenciesRV,925
+FrequenciesRV,926
+FrequenciesRV,927
+FrequenciesRV,928
+FrequenciesRV,929
+FrequenciesRV,930
+FrequenciesRV,931
+FrequenciesRV,932
+FrequenciesRV,933
+FrequenciesRV,934
+FrequenciesRV,935
+FrequenciesRV,936
+FrequenciesRV,937
+FrequenciesRV,938
+FrequenciesRV,939
+FrequenciesRV,940
+FrequenciesRV,941
+FrequenciesRV,942
+FrequenciesRV,943
+FrequenciesRV,944
+FrequenciesRV,945
+FrequenciesRV,946
+FrequenciesRV,947
+FrequenciesRV,948
+FrequenciesRV,949
+FrequenciesRV,950
+FrequenciesRV,951
+FrequenciesRV,952
+FrequenciesRV,953
+FrequenciesRV,954
+FrequenciesRV,955
+FrequenciesRV,956
+FrequenciesRV,957
+FrequenciesRV,958
+FrequenciesRV,959
+FrequenciesRV,960
+FrequenciesRV,961
+FrequenciesRV,962
+FrequenciesRV,963
+FrequenciesRV,964
+FrequenciesRV,965
+FrequenciesRV,966
+FrequenciesRV,967
+FrequenciesRV,968
+FrequenciesRV,969
+FrequenciesRV,970
+FrequenciesRV,971
+FrequenciesRV,972
+FrequenciesRV,973
+FrequenciesRV,974
+FrequenciesRV,975
+FrequenciesRV,976
+FrequenciesRV,977
+FrequenciesRV,978
+FrequenciesRV,979
+FrequenciesRV,980
+FrequenciesRV,981
+FrequenciesRV,982
+FrequenciesRV,983
+FrequenciesRV,984
+FrequenciesRV,985
+FrequenciesRV,986
+FrequenciesRV,987
+FrequenciesRV,988
+FrequenciesRV,989
+FrequenciesRV,990
+FrequenciesRV,991
+FrequenciesRV,992
+FrequenciesRV,993
+FrequenciesRV,994
+FrequenciesRV,995
+FrequenciesRV,996
+FrequenciesRV,997
+FrequenciesRV,998
+FrequenciesRV,999
+FrequenciesRV,1000
+FrequenciesRV,1001
+FrequenciesRV,1002
+FrequenciesRV,1003
+FrequenciesRV,1004
+FrequenciesRV,1005
+FrequenciesRV,1006
+FrequenciesRV,1007
+FrequenciesRV,1008
+FrequenciesRV,1009
+FrequenciesRV,1010
+FrequenciesRV,1011
+FrequenciesRV,1012
+FrequenciesRV,1013
+FrequenciesRV,1014
+FrequenciesRV,1015
+FrequenciesRV,1016
+FrequenciesRV,1017
+FrequenciesRV,1018
+FrequenciesRV,1019
+FrequenciesRV,1020
+FrequenciesRV,1021
+FrequenciesRV,1022
+FrequenciesRV,1023
+FrequenciesRV,1024
+FrequenciesRV,1025
+FrequenciesRV,1026
+FrequenciesRV,1027
+FrequenciesRV,1028
+FrequenciesRV,1029
+FrequenciesRV,1030
+FrequenciesRV,1031
+FrequenciesRV,1032
+FrequenciesRV,1033
+FrequenciesRV,1034
+FrequenciesRV,1035
+FrequenciesRV,1036
+FrequenciesRV,1037
+FrequenciesRV,1038
+FrequenciesRV,1039
+FrequenciesRV,1040
+FrequenciesRV,1041
+FrequenciesRV,1042
+FrequenciesRV,1043
+FrequenciesRV,1044
+FrequenciesRV,1045
+FrequenciesRV,1046
+FrequenciesRV,1047
+FrequenciesRV,1048
+FrequenciesRV,1049
+FrequenciesRV,1050
+FrequenciesRV,1051
+FrequenciesRV,1052
+FrequenciesRV,1053
+FrequenciesRV,1054
+FrequenciesRV,1055
+FrequenciesRV,1056
+FrequenciesRV,1057
+FrequenciesRV,1058
+FrequenciesRV,1059
+FrequenciesRV,1060
+FrequenciesRV,1061
+FrequenciesRV,1062
+FrequenciesRV,1063
+FrequenciesRV,1064
+FrequenciesRV,1065
+FrequenciesRV,1066
+FrequenciesRV,1067
+FrequenciesRV,1068
+FrequenciesRV,1069
+FrequenciesRV,1070
+FrequenciesRV,1071
+FrequenciesRV,1072
+FrequenciesRV,1073
+FrequenciesRV,1074
+FrequenciesRV,1075
+FrequenciesRV,1076
+FrequenciesRV,1077
+FrequenciesRV,1078
+FrequenciesRV,1079
+FrequenciesRV,1080
+FrequenciesRV,1081
+FrequenciesRV,1082
+FrequenciesRV,1083
+FrequenciesRV,1084
+FrequenciesRV,1085
+FrequenciesRV,1086
+FrequenciesRV,1087
+FrequenciesRV,1088
+FrequenciesRV,1089
+FrequenciesRV,1090
+FrequenciesRV,1091
+FrequenciesRV,1092
+FrequenciesRV,1093
+FrequenciesRV,1094
+FrequenciesRV,1095
+FrequenciesRV,1096
+FrequenciesRV,1097
+FrequenciesRV,1098
+FrequenciesRV,1099
+FrequenciesRV,1100
+FrequenciesRV,1101
+FrequenciesRV,1102
+FrequenciesRV,1103
+FrequenciesRV,1104
+FrequenciesRV,1105
+FrequenciesRV,1106
+FrequenciesRV,1107
+FrequenciesRV,1108
+FrequenciesRV,1109
+FrequenciesRV,1110
+FrequenciesRV,1111
+FrequenciesRV,1112
+FrequenciesRV,1113
+FrequenciesRV,1114
+FrequenciesRV,1115
+FrequenciesRV,1116
+FrequenciesRV,1117
+FrequenciesRV,1118
+FrequenciesRV,1119
+FrequenciesRV,1120
+FrequenciesRV,1121
+FrequenciesRV,1122
+FrequenciesRV,1123
+FrequenciesRV,1124
+FrequenciesRV,1125
+FrequenciesRV,1126
+FrequenciesRV,1127
+FrequenciesRV,1128
+FrequenciesRV,1129
+FrequenciesRV,1130
+FrequenciesRV,1131
+FrequenciesRV,1132
+FrequenciesRV,1133
+FrequenciesRV,1134
+FrequenciesRV,1135
+FrequenciesRV,1136
+FrequenciesRV,1137
+FrequenciesRV,1138
+FrequenciesRV,1139
+FrequenciesRV,1140
+FrequenciesRV,1141
+FrequenciesRV,1142
+FrequenciesRV,1143
+FrequenciesRV,1144
+FrequenciesRV,1145
+FrequenciesRV,1146
+FrequenciesRV,1147
+FrequenciesRV,1148
+FrequenciesRV,1149
+FrequenciesRV,1150
+FrequenciesRV,1151
+FrequenciesRV,1152
+FrequenciesRV,1153
+FrequenciesRV,1154
+FrequenciesRV,1155
+FrequenciesRV,1156
+FrequenciesRV,1157
+FrequenciesRV,1158
+FrequenciesRV,1159
+FrequenciesRV,1160
+FrequenciesRV,1161
+FrequenciesRV,1162
+FrequenciesRV,1163
+FrequenciesRV,1164
+FrequenciesRV,1165
+FrequenciesRV,1166
+FrequenciesRV,1167
+FrequenciesRV,1168
+FrequenciesRV,1169
+FrequenciesRV,1170
+FrequenciesRV,1171
+FrequenciesRV,1172
+FrequenciesRV,1173
+FrequenciesRV,1174
+FrequenciesRV,1175
+FrequenciesRV,1176
+FrequenciesRV,1177
+FrequenciesRV,1178
+FrequenciesRV,1179
+FrequenciesRV,1180
+FrequenciesRV,1181
+FrequenciesRV,1182
+FrequenciesRV,1183
+FrequenciesRV,1184
+FrequenciesRV,1185
+FrequenciesRV,1186
+FrequenciesRV,1187
+FrequenciesRV,1188
+FrequenciesRV,1189
+FrequenciesRV,1190
+FrequenciesRV,1191
+FrequenciesRV,1192
+FrequenciesRV,1193
+FrequenciesRV,1194
+FrequenciesRV,1195
+FrequenciesRV,1196
+FrequenciesRV,1197
+FrequenciesRV,1198
+FrequenciesRV,1199
+FrequenciesRV,1200
+FrequenciesRV,1201
+FrequenciesRV,1202
+FrequenciesRV,1203
+FrequenciesRV,1204
+FrequenciesRV,1205
+FrequenciesRV,1206
+FrequenciesRV,1207
+FrequenciesRV,1208
+FrequenciesRV,1209
+FrequenciesRV,1210
+FrequenciesRV,1211
+FrequenciesRV,1212
+FrequenciesRV,1213
+FrequenciesRV,1214
+FrequenciesRV,1215
+FrequenciesRV,1216
+FrequenciesRV,1217
+FrequenciesRV,1218
+FrequenciesRV,1219
+FrequenciesRV,1220
+FrequenciesRV,1221
+FrequenciesRV,1222
+FrequenciesRV,1223
+FrequenciesRV,1224
+FrequenciesRV,1225
+FrequenciesRV,1226
+FrequenciesRV,1227
+FrequenciesRV,1228
+FrequenciesRV,1229
+FrequenciesRV,1230
+FrequenciesRV,1231
+FrequenciesRV,1232
+FrequenciesRV,1233
+FrequenciesRV,1234
+FrequenciesRV,1235
+FrequenciesRV,1236
+FrequenciesRV,1237
+FrequenciesRV,1238
+FrequenciesRV,1239
+FrequenciesRV,1240
+FrequenciesRV,1241
+FrequenciesRV,1242
+FrequenciesRV,1243
+FrequenciesRV,1244
+FrequenciesRV,1245
+FrequenciesRV,1246
+FrequenciesRV,1247
+FrequenciesRV,1248
+FrequenciesRV,1249
+FrequenciesRV,1250
+FrequenciesRV,1251
+FrequenciesRV,1252
+FrequenciesRV,1253
+FrequenciesRV,1254
+FrequenciesRV,1255
+FrequenciesRV,1256
+FrequenciesRV,1257
+FrequenciesRV,1258
+FrequenciesRV,1259
+FrequenciesRV,1260
+FrequenciesRV,1261
+FrequenciesRV,1262
+FrequenciesRV,1263
+FrequenciesRV,1264
+FrequenciesRV,1265
+FrequenciesRV,1266
+FrequenciesRV,1267
+FrequenciesRV,1268
+FrequenciesRV,1269
+FrequenciesRV,1270
+FrequenciesRV,1271
+FrequenciesRV,1272
+FrequenciesRV,1273
+FrequenciesRV,1274
+FrequenciesRV,1275
+FrequenciesRV,1276
+FrequenciesRV,1277
+FrequenciesRV,1278
+FrequenciesRV,1279
+FrequenciesRV,1280
+FrequenciesRV,1281
+FrequenciesRV,1282
+FrequenciesRV,1283
+FrequenciesRV,1284
+FrequenciesRV,1285
+FrequenciesRV,1286
+FrequenciesRV,1287
+FrequenciesRV,1288
+FrequenciesRV,1289
+FrequenciesRV,1290
+FrequenciesRV,1291
+FrequenciesRV,1292
+FrequenciesRV,1293
+FrequenciesRV,1294
+FrequenciesRV,1295
+FrequenciesRV,1296
+FrequenciesRV,1297
+FrequenciesRV,1298
+FrequenciesRV,1299
+FrequenciesRV,1300
+FrequenciesRV,1301
+FrequenciesRV,1302
+FrequenciesRV,1303
+FrequenciesRV,1304
+FrequenciesRV,1305
+FrequenciesRV,1306
+FrequenciesRV,1307
+FrequenciesRV,1308
+FrequenciesRV,1309
+FrequenciesRV,1310
+FrequenciesRV,1311
+FrequenciesRV,1312
+FrequenciesRV,1313
+FrequenciesRV,1314
+FrequenciesRV,1315
+FrequenciesRV,1316
+FrequenciesRV,1317
+FrequenciesRV,1318
+FrequenciesRV,1319
+FrequenciesRV,1320
+FrequenciesRV,1321
+FrequenciesRV,1322
+FrequenciesRV,1323
+FrequenciesRV,1324
+FrequenciesRV,1325
+FrequenciesRV,1326
+FrequenciesRV,1327
+FrequenciesRV,1328
+FrequenciesRV,1329
+FrequenciesRV,1330
+FrequenciesRV,1331
+FrequenciesRV,1332
+FrequenciesRV,1333
+FrequenciesRV,1334
+FrequenciesRV,1335
+FrequenciesRV,1336
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,50251,HRTOTLT,184654,18485684,100.10984868998234,1,34854,Grand total
+StatisticsRV,2,50206,HRTOTLM,184654,8190086,44.353688520151202,0,12898,Grand total men
+StatisticsRV,3,50211,HRTOTLW,184654,10295598,55.756160169831141,0,21956,Grand total women
+StatisticsRV,4,52032,HRAIANT,184654,92126,0.4989114776825847,0,316,American Indian or Alaska Native total
+StatisticsRV,5,52034,HRAIANM,184654,38856,0.21042598589794967,0,132,American Indian or Alaska Native men
+StatisticsRV,6,52036,HRAIANW,184654,53270,0.28848549178463506,0,203,American Indian or Alaska Native women
+StatisticsRV,7,52038,HRASIAT,184654,1324870,7.1748784212635526,0,4913,Asian total
+StatisticsRV,8,52040,HRASIAM,184654,622482,3.3710723840263412,0,2128,Asian men
+StatisticsRV,9,52042,HRASIAW,184654,702388,3.8038060372372113,0,2785,Asian women
+StatisticsRV,10,52044,HRBKAAT,184654,1763940,9.5526768984154149,0,3622,Black or African American total
+StatisticsRV,11,52046,HRBKAAM,184654,646802,3.5027781688996718,0,1180,Black or African American men
+StatisticsRV,12,52048,HRBKAAW,184654,1117138,6.0498987295157427,0,2929,Black or African American women
+StatisticsRV,13,52050,HRHISPT,184654,1659932,8.9894180467252269,0,7269,Hispanic or Latino total
+StatisticsRV,14,52052,HRHISPM,184654,677892,3.6711471183944027,0,2595,Hispanic or Latino men
+StatisticsRV,15,52054,HRHISPW,184654,982040,5.3182709283308238,0,4674,Hispanic or Latino women
+StatisticsRV,16,52056,HRNHPIT,184654,45034,0.24388315444019626,0,472,Native Hawaiian or Other Pacific Islander total
+StatisticsRV,17,52058,HRNHPIM,184654,19670,0.10652355215700716,0,262,Native Hawaiian or Other Pacific Islander men
+StatisticsRV,18,52060,HRNHPIW,184654,25364,0.13735960228318911,0,215,Native Hawaiian or Other Pacific Islander women
+StatisticsRV,19,52062,HRWHITT,184654,11802852,63.918745329101995,0,24844,White total
+StatisticsRV,20,52064,HRWHITM,184654,5288060,28.637668287716487,0,8973,White men
+StatisticsRV,21,52066,HRWHITW,184654,6514792,35.281077041385508,0,15871,White women
+StatisticsRV,22,52068,HR2MORT,184654,284882,1.5427881334820801,0,770,Two or more races total
+StatisticsRV,23,52070,HR2MORM,184654,109998,0.59569789985594679,0,263,Two or more races men
+StatisticsRV,24,52072,HR2MORW,184654,174884,0.9470902336261332,0,507,Two or more races women
+StatisticsRV,25,50246,HRUNKNT,184654,794990,4.3052953090645207,0,5809,Race/ethnicity unknown total
+StatisticsRV,26,50196,HRUNKNM,184654,370658,2.0073109707886099,0,2652,Race/ethnicity unknown men
+StatisticsRV,27,50201,HRUNKNW,184654,424332,2.2979843382759104,0,3157,Race/ethnicity unknown women
+StatisticsRV,28,50216,HRNRALT,184654,717058,3.8832519198067739,0,3078,Nonresident alien total
+StatisticsRV,29,50136,HRNRALM,184654,415668,2.2510641524147865,0,1963,Nonresident alien men
+StatisticsRV,30,50141,HRNRALW,184654,301390,1.6321877673919871,0,1115,Nonresident alien women
+StatisticsRV,31,,,,,,,
+StatisticsRV,32,,,,,,,
+StatisticsRV,33,,,,,,,
+StatisticsRV,34,,,,,,,
+StatisticsRV,35,,,,,,,
+StatisticsRV,36,,,,,
+StatisticsRV,37,,,,,
+StatisticsRV,38,,,,,
+StatisticsRV,39,,,,,
+StatisticsRV,40,,,,,
+StatisticsRV,41,,,,,
+StatisticsRV,42,,,,,
+StatisticsRV,43,,,,,
+StatisticsRV,44,,,,,
+StatisticsRV,45,,,,,
+StatisticsRV,46,,,,,
+StatisticsRV,47,,,,,
+StatisticsRV,48,,,,,
+StatisticsRV,49,,,,,
+StatisticsRV,50,,,,,
+StatisticsRV,51,,,,,
+StatisticsRV,52,,,,,
+StatisticsRV,53,,,,,
+StatisticsRV,54,,,,,
+StatisticsRV,55,,,,,
+StatisticsRV,56,,,,,
+StatisticsRV,57,,,,,
+StatisticsRV,58,,,,,
+StatisticsRV,59,,,,,
+StatisticsRV,60,,,,,
+StatisticsRV,61,,,,,
+StatisticsRV,62,,,,,
+StatisticsRV,63,,,,,
+StatisticsRV,64,,,,,
+StatisticsRV,65,,,,,
+StatisticsRV,66,,,,,
+StatisticsRV,67,,,,,
+StatisticsRV,68,,,,,
+StatisticsRV,69,,,,,
+StatisticsRV,70,,,,,
+StatisticsRV,71,,,,,
+StatisticsRV,72,,,,,
+StatisticsRV,73,,,,,
+StatisticsRV,74,,,,,
+StatisticsRV,75,,,,,
+StatisticsRV,76,,,,,
+StatisticsRV,77,,,,,
+StatisticsRV,78,,,,,
+StatisticsRV,79,,,,,
+StatisticsRV,80,,,,,
+StatisticsRV,81,,,,,
+StatisticsRV,82,,,,,
+StatisticsRV,83,,,,,
+StatisticsRV,84,,,,,
+StatisticsRV,85,,,,,
+StatisticsRV,86,,,,,
+StatisticsRV,87,,,,,
+StatisticsRV,88,,,,,
+StatisticsRV,89,,,,,
+StatisticsRV,90,,,,,
+StatisticsRV,91,,,,,
+StatisticsRV,92,,,,,
+StatisticsRV,93,,,,,
+StatisticsRV,94,,,,,
+StatisticsRV,95,,,,,
+StatisticsRV,96,,,,,
+StatisticsRV,97,,,,,
+StatisticsRV,98,,,,,
+StatisticsRV,99,,,,,
+StatisticsRV,100,,,,,
+StatisticsRV,101,,,,,
+StatisticsRV,102,,,,,
+StatisticsRV,103,,,,,
+StatisticsRV,104,,,,,
+StatisticsRV,105,,,,,
+StatisticsRV,106,,,,,
+StatisticsRV,107,,,,,
+StatisticsRV,108,,,,,
+StatisticsRV,109,,,,,
+StatisticsRV,110,,,,,
+StatisticsRV,111,,,,,
+StatisticsRV,112,,,,,
+StatisticsRV,113,,,,,
+StatisticsRV,114,,,,,
+StatisticsRV,115,,,,,
+StatisticsRV,116,,,,,
+StatisticsRV,117,,,,,
+StatisticsRV,118,,,,,
+StatisticsRV,119,,,,,
+StatisticsRV,120,,,,,
+StatisticsRV,121,,,,,
+StatisticsRV,122,,,,,
+StatisticsRV,123,,,,,
+StatisticsRV,124,,,,,
+StatisticsRV,125,,,,,
+StatisticsRV,126,,,,,
+StatisticsRV,127,,,,,
+StatisticsRV,128,,,,,
+StatisticsRV,129,,,,,
+StatisticsRV,130,,,,,
+StatisticsRV,131,,,,,
+StatisticsRV,132,,,,,
+StatisticsRV,133,,,,,
+StatisticsRV,134,,,,,
+StatisticsRV,135,,,,,
+StatisticsRV,136,,,,,
+StatisticsRV,137,,,,,
+StatisticsRV,138,,,,,
+StatisticsRV,139,,,,,
+StatisticsRV,140,,,,,
+StatisticsRV,141,,,,,
+StatisticsRV,142,,,,,
+StatisticsRV,143,,,,,
+StatisticsRV,144,,,,,
+StatisticsRV,145,,,,,
+StatisticsRV,146,,,,,
+StatisticsRV,147,,,,,
+StatisticsRV,148,,,,,
+StatisticsRV,149,,,,,
+StatisticsRV,150,,,,,
+StatisticsRV,151,,,,,
+StatisticsRV,152,,,,,
+StatisticsRV,153,,,,,
+StatisticsRV,154,,,,,
+StatisticsRV,155,,,,,
+StatisticsRV,156,,,,,
+StatisticsRV,157,,,,,
+StatisticsRV,158,,,,,
+StatisticsRV,159,,,,,
+StatisticsRV,160,,,,,
+StatisticsRV,161,,,,,
+StatisticsRV,162,,,,,
+StatisticsRV,163,,,,,
+StatisticsRV,164,,,,,
+StatisticsRV,165,,,,,
+StatisticsRV,166,,,,,
+StatisticsRV,167,,,,,
+StatisticsRV,168,,,,,
+StatisticsRV,169,,,,,
+StatisticsRV,170,,,,,
+StatisticsRV,171,,,,,
+StatisticsRV,172,,,,,
+StatisticsRV,173,,,,,
+StatisticsRV,174,,,,,
+StatisticsRV,175,,,,,
+StatisticsRV,176,,,,,
+StatisticsRV,177,,,,,
+StatisticsRV,178,,,,,
+StatisticsRV,179,,,,,
+StatisticsRV,180,,,,,
+StatisticsRV,181,,,,,
+StatisticsRV,182,,,,,
+StatisticsRV,183,,,,,
+StatisticsRV,184,,,,,
+StatisticsRV,185,,,,,
+StatisticsRV,186,,,,,
+StatisticsRV,187,,,,,
+StatisticsRV,188,,,,,
+StatisticsRV,189,,,,,
+StatisticsRV,190,,,,,
+StatisticsRV,191,,,,,
+StatisticsRV,192,,,,,
+StatisticsRV,193,,,,,
+StatisticsRV,194,,,,,
+StatisticsRV,195,,,,,
+StatisticsRV,196,,,,,
+StatisticsRV,197,,,,,
+StatisticsRV,198,,,,,
+StatisticsRV,199,,,,,
+StatisticsRV,200,,,,,
+StatisticsRV,201,,,,,
+StatisticsRV,202,,,,,
+StatisticsRV,203,,,,,
+StatisticsRV,204,,,,,
+StatisticsRV,205,,,,,
+StatisticsRV,206,,,,,
+StatisticsRV,207,,,,,
+StatisticsRV,208,,,,,
+StatisticsRV,209,,,,,
+StatisticsRV,210,,,,,
+StatisticsRV,211,,,,,
+StatisticsRV,212,,,,,
+StatisticsRV,213,,,,,
+StatisticsRV,214,,,,,
+StatisticsRV,215,,,,,
+StatisticsRV,216,,,,,
+StatisticsRV,217,,,,,
+StatisticsRV,218,,,,,
+StatisticsRV,219,,,,,
+StatisticsRV,220,,,,,
+StatisticsRV,221,,,,,
+StatisticsRV,222,,,,,
+StatisticsRV,223,,,,,
+StatisticsRV,224,,,,,
+StatisticsRV,225,,,,,
+StatisticsRV,226,,,,,
+StatisticsRV,227,,,,,
+StatisticsRV,228,,,,,
+StatisticsRV,229,,,,,
+StatisticsRV,230,,,,,
+StatisticsRV,231,,,,,
+StatisticsRV,232,,,,,
+StatisticsRV,233,,,,,
+StatisticsRV,234,,,,,
+StatisticsRV,235,,,,,
+StatisticsRV,236,,,,,
+StatisticsRV,237,,,,,
+StatisticsRV,238,,,,,
+StatisticsRV,239,,,,,
+StatisticsRV,240,,,,,
+StatisticsRV,241,,,,,
+StatisticsRV,242,,,,,
+StatisticsRV,243,,,,,
+StatisticsRV,244,,,,,
+StatisticsRV,245,,,,,
+StatisticsRV,246,,,,,
+StatisticsRV,247,,,,,
+StatisticsRV,248,,,,,
+StatisticsRV,249,,,,,
+StatisticsRV,250,,,,,
+StatisticsRV,251,,,,,
+StatisticsRV,252,,,,,
+StatisticsRV,253,,,,,
+StatisticsRV,254,,,,,
+StatisticsRV,255,,,,,
+StatisticsRV,256,,,,,
+StatisticsRV,257,,,,,
+StatisticsRV,258,,,,,
+StatisticsRV,259,,,,,
+StatisticsRV,260,,,,,
+StatisticsRV,261,,,,,
+StatisticsRV,262,,,,,
+StatisticsRV,263,,,,,
+StatisticsRV,264,,,,,
+StatisticsRV,265,,,,,
+StatisticsRV,266,,,,,
+StatisticsRV,267,,,,,
+StatisticsRV,268,,,,,
+StatisticsRV,269,,,,,
+StatisticsRV,270,,,,,
+StatisticsRV,271,,,,,
+StatisticsRV,272,,,,,
+StatisticsRV,273,,,,,
+StatisticsRV,274,,,,,
+StatisticsRV,275,,,,,
+StatisticsRV,276,,,,,
+StatisticsRV,277,,,,,
+StatisticsRV,278,,,,,
+StatisticsRV,279,,,,,
+StatisticsRV,280,,,,,
+StatisticsRV,281,,,,,
+StatisticsRV,282,,,,,
+StatisticsRV,283,,,,,
+StatisticsRV,284,,,,,
+StatisticsRV,285,,,,,
+StatisticsRV,286,,,,,
+StatisticsRV,287,,,,,
+StatisticsRV,288,,,,,
+StatisticsRV,289,,,,,
+StatisticsRV,290,,,,,
+StatisticsRV,291,,,,,
+StatisticsRV,292,,,,,
+StatisticsRV,293,,,,,
+StatisticsRV,294,,,,,
+StatisticsRV,295,,,,,
+StatisticsRV,296,,,,,
+StatisticsRV,297,,,,,
+StatisticsRV,298,,,,,
+StatisticsRV,299,,,,,
+StatisticsRV,300,,,,,
+StatisticsRV,301,,,,,
+StatisticsRV,302,,,,,
+StatisticsRV,303,,,,,
+StatisticsRV,304,,,,,
+StatisticsRV,305,,,,,
+StatisticsRV,306,,,,,
+StatisticsRV,307,,,,,
+StatisticsRV,308,,,,,
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

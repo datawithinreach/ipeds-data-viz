@@ -1,0 +1,337 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for full- and part-time staff by occupational category, race/ethnicity, and gender: Fall 2023",,,,,,,,,
+Introduction,1,(Provisional release),,,,,,,,,
+Introduction,2,,,,,,,,,,
+Introduction,3,Filename,S2023_OC
+Introduction,4,Overview,"This file contains the number of staff on the payroll of the institution as of November 1,  by occupational categories, race/ethnicity and gender. This file has multiple records per institution.  Each record is uniquely defined by the variables IPEDS ID (UNITID), and occupational category and full- and part-time status (STAFFCAT).  
+",,,,,,,,
+Introduction,5,Note,"Prior to the IPEDS Web-based data collection in 2001, human resource data reported by race/ethnicity and gender was only available in odd-numbered years.  Beginning with 2001, human resource data reported by race/ethnicity and gender was mandatory in odd-numbered years and optional in even-numbered years.  Beginning with 2016 reporting human resource data by race/ethnicity and gender is mandatory annually.",,,,,,,,
+Introduction,6,,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.",,,,,,,,
+Introduction,7,Contents of spreadsheet,,,,,,,,,
+Introduction,8,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,9,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,10,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.,,,,,,,,
+Introduction,11,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. ",,,,,,,,
+Introduction,12,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,53016,STAFFCAT,N,4,Disc,,Occupation and full- and part-time status
+varlist,3,53021,FTPT,N,2,Disc,,Full-time or part-time status
+varlist,4,53026,OCCUPCAT,N,3,Disc,,Occupation category
+varlist,5,50131,SABDTYPE,N,3,Disc,,Identifies occupations consistent with previous codes
+varlist,6,50251,HRTOTLT,N,6,Cont,XHRTOTLT,Grand total
+varlist,7,50206,HRTOTLM,N,6,Cont,XHRTOTLM,Grand total men
+varlist,8,50211,HRTOTLW,N,6,Cont,XHRTOTLW,Grand total women
+varlist,9,52032,HRAIANT,N,6,Cont,XHRAIANT,American Indian or Alaska Native total
+varlist,10,52034,HRAIANM,N,6,Cont,XHRAIANM,American Indian or Alaska Native men
+varlist,11,52036,HRAIANW,N,6,Cont,XHRAIANW,American Indian or Alaska Native women
+varlist,12,52038,HRASIAT,N,6,Cont,XHRASIAT,Asian total
+varlist,13,52040,HRASIAM,N,6,Cont,XHRASIAM,Asian men
+varlist,14,52042,HRASIAW,N,6,Cont,XHRASIAW,Asian women
+varlist,15,52044,HRBKAAT,N,6,Cont,XHRBKAAT,Black or African American total
+varlist,16,52046,HRBKAAM,N,6,Cont,XHRBKAAM,Black or African American men
+varlist,17,52048,HRBKAAW,N,6,Cont,XHRBKAAW,Black or African American women
+varlist,18,52050,HRHISPT,N,6,Cont,XHRHISPT,Hispanic or Latino total
+varlist,19,52052,HRHISPM,N,6,Cont,XHRHISPM,Hispanic or Latino men
+varlist,20,52054,HRHISPW,N,6,Cont,XHRHISPW,Hispanic or Latino women
+varlist,21,52056,HRNHPIT,N,6,Cont,XHRNHPIT,Native Hawaiian or Other Pacific Islander total
+varlist,22,52058,HRNHPIM,N,6,Cont,XHRNHPIM,Native Hawaiian or Other Pacific Islander men
+varlist,23,52060,HRNHPIW,N,6,Cont,XHRNHPIW,Native Hawaiian or Other Pacific Islander women
+varlist,24,52062,HRWHITT,N,6,Cont,XHRWHITT,White total
+varlist,25,52064,HRWHITM,N,6,Cont,XHRWHITM,White men
+varlist,26,52066,HRWHITW,N,6,Cont,XHRWHITW,White women
+varlist,27,52068,HR2MORT,N,6,Cont,XHR2MORT,Two or more races total
+varlist,28,52070,HR2MORM,N,6,Cont,XHR2MORM,Two or more races men
+varlist,29,52072,HR2MORW,N,6,Cont,XHR2MORW,Two or more races women
+varlist,30,50246,HRUNKNT,N,6,Cont,XHRUNKNT,Race/ethnicity unknown total
+varlist,31,50196,HRUNKNM,N,6,Cont,XHRUNKNM,Race/ethnicity unknown men
+varlist,32,50201,HRUNKNW,N,6,Cont,XHRUNKNW,Race/ethnicity unknown women
+varlist,33,50216,HRNRALT,N,6,Cont,XHRNRALT,U.S. Nonresident total
+varlist,34,50136,HRNRALM,N,6,Cont,XHRNRALM,U.S. Nonresident men
+varlist,35,50141,HRNRALW,N,6,Cont,XHRNRALW,U.S. Nonresident women
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,53016,STAFFCAT,"Occupation and full and part-time status.
+
+This variable identifies postsecondary staff by IPEDS Human Resource occupation categories and full- and part-time status
+
+The IPEDS HR survey component uses the Standard Occupational Classification (SOC) system to assist institutions in classifying employees for IPEDS reporting purposes. The SOC is a system used by Federal statistical agencies to classify workers and jobs into occupational categories for the purpose of collecting, calculating, analyzing, or disseminating data. In 2018, an updated version of the SOC system (http://www.bls.gov/soc/) was released. Consequently, the IPEDS HR survey was revised to incorporate the 2018 SOC information. The new IPEDS occupational categories are effective with 2018-19 Human Resources reporting.
+
+Full-time staff (employees)  As defined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time.  
+
+Part-time staff (employees)  As determined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time. Casual employees (hired on an ad-hoc basis or occasional basis to meet short-term needs) and students in the College Work-Study Program (CWS) are not considered part-time staff."
+Description,3,53021,FTPT,"Full-time or part-time status
+
+Full-time staff (employees)  As defined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time.  
+
+Part-time staff (employees)  As determined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time. Casual employees (hired on an ad-hoc basis or occasional basis to meet short-term needs) and students in the College Work-Study Program (CWS) are not considered part-time staff."
+Description,4,53026,OCCUPCAT,"Occupation code -  This variable identifies postsecondary staff by IPEDS Human Resource occupation categories 
+
+The IPEDS HR survey component uses the Standard Occupational Classification (SOC) system to assist institutions in classifying employees for IPEDS reporting purposes. The SOC is a system used by Federal statistical agencies to classify workers and jobs into occupational categories for the purpose of collecting, calculating, analyzing, or disseminating data. In 2018, an updated version of the SOC system (http://www.bls.gov/soc/) was released. Consequently, the IPEDS HR survey was revised to incorporate the 2018 SOC information. The new IPEDS occupational categories are effective with 2018-19 Human Resources reporting."
+Description,5,50131,SABDTYPE,"Description of staff counted, by primary funcition and occupation, full- or part-time. PRIMARY OCCUPATIONAL ACTIVITY - The principal activity of a staff member as determined by the institution. If an individual participates in two or more activities, the primary activity is normally determined by the amount of time spent in each activity. 
+
+FULL-TIME STAFF (EMPLOYEES) 
+As defined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time. 
+
+
+PART-TIME STAFF(EMPLOYEES) 
+As determined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time. Casual employees (hired on an ad-hoc basis or occasional basis to meet short-term needs) and students in the College Work-Study Program are not considered part-time staff. 
+
+
+FACULTY 
+Persons identified by the institution as such and typically those whose initial assignments are made for the purpose of conducting instruction, research or public service as a principal activity (or activities). They may hold academic rank titles of professor, associate professor, assistant professor, instructor, lecturer or the equivalent of any of those academic ranks. Faculty may also include the chancellor/president, provost, vice provosts, deans, directors or the equivalent, as well as associate deans, assistant deans and executive officers of academic departments (chairpersons, heads or the equivalent) if their principal activity is instruction combined with research and/or public service. The designation as ""faculty"" is separate from the activities to which they may be currently assigned. For example, a newly appointed president of an institution may also be appointed as a faculty member. Graduate, instruction, and research assistants are not included in this category 
+
+9/10-MONTH SALARY CONTRACT/TEACHING PERIOD - The contracted teaching period of faculty employed for 2 semesters, 3 quarters, 2 trimesters,  4-month sessions, or the equivalent. 
+11/12-MONTH SALARY CONTRACT/TEACHING PERIOD - The contracted teaching period of faculty employed for the entire year, usually a period of 11 or 12 months. 
+LESS-THAN-9-MONTH SALARY CONTRACT/TEACHING PERIOD -The contracted teaching period of faculty employed for less than 2 semesters, 3 quarters, 2 trimesters, or 2 4-month sessions. 
+
+EXECUTIVE, ADMINISTRATIVE, AND MANAGERIAL 
+Persons whose assignments require management of the institution, or a customarily recognized department or subdivision thereof. Assignments require the performance of work directly related to management policies or general business operations of the institution, department or subdivision. Assignments in this category customarily and regularly require the incumbent to exercise discretion and independent judgment. Included in this category are employees holding titles such as: top executives; chief executives; general and operations managers; advertising, marketing, promotions, public relations, and sales managers; operations specialties managers; administrative services managers; computer and information systems managers; financial managers; human resources managers; purchasing managers; postsecondary education administrators such as: presidents, vice presidents (including assistants and associates), deans (including assistants and associates) if their principal activity is administrative and not primarily instruction, research or public service, directors (including assistants and associates), department heads (including assistants and associates) if their principal activity is administrative and not primarily instruction, research or public service, assistant and associate managers (including first-line managers of service, production and sales workers who spend more than 80 percent of their time performing supervisory activities); engineering managers; food service managers; lodging managers; and medical and health services managers. 
+
+GRADUATE ASSISTANTS 
+Students employed on a part-time basis for the primary purpose of assisting in classroom or laboratory instruction or in the conduct of research. Graduate students having titles such as graduate assistant, teaching assistant, teaching associate, teaching fellow, or research assistant typically hold these positions. Students in the College Work-Study Program are not included in this category. 
+
+
+OTHER PROFESSIONAL STAFF (SUPPORT/SERVICE) 
+Persons employed for the primary purpose of performing academic support, student service, and institutional support, whose assignments would require either a baccalaureate degree or higher or experience of such kind and amount as to provide a comparable background. Included in this category are all employees holding titles such as business operations specialists; buyers and purchasing agents; human resources, training, and labor relations specialists; management analysts; meeting and convention planners; miscellaneous business operations specialists; financial specialists; accountants and auditors; budget analysts; financial analysts and advisors; financial examiners; loan counselors and officers; computer specialists; computer and information scientists, research; computer programmers; computer software engineers; computer support specialists; computer systems analysts; database administrators; network and computer systems administrators; network systems and data communication analysts; counselors, social workers, and other community and social service specialists; counselors; social workers; health educators; clergy; directors, religious activities and education; lawyers; librarians, curators, and archivists; museum technicians and conservators; librarians; artists and related workers; designers; athletes, coaches, umpires; dancers and choreographers; music directors and composers; chiropractors; dentists; dietitians and nutritionists; optometrists; pharmacists; physicians and surgeons; podiatrists; registered nurses; therapists; a 
+
+TECHNICAL AND PARAPROFESSIONAL (STAFF) 
+Persons whose assignments require specialized knowledge or skills which may be acquired through experience, apprenticeship, on-the-job-training, or academic work in occupationally specific programs that result in a 2-year degree or other certificate or diploma. Includes persons who perform some of the duties of a professional in a supportive role, which usually requires less formal training and/or experience than normally required for professional status. Included in this category are mathematical technicians; life, physical, and social science technicians; agricultural and food science technicians; chemical technicians; geological and petroleum technicians; nuclear technicians; paralegals and legal assistants; miscellaneous legal support workers; health technologists and technicians; dietetic technicians; pharmacy technicians; licensed practical and licensed vocational nurses; medical records and health information technicians; opticians, dispensing; healthcare support occupations; nursing aides, orderlies, and attendants; physical therapist assistants and aides; massage therapists; dental assistants; medical assistants; and pharmacy aides. 
+
+CLERICAL AND SECRETARIAL 
+Persons whose assignments typically are assoc"
+Description,6,50251,HRTOTLT,Grand total across all race/ethnicities and both genders.
+Description,7,50206,HRTOTLM,Grand total men
+Description,8,50211,HRTOTLW,Grand total women
+Description,9,52032,HRAIANT,"American Indian or Alaska Native men and women.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,10,52034,HRAIANM,"American Indian or Alaska Native men.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,11,52036,HRAIANW,"American Indian or Alaska Native women.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,12,52038,HRASIAT,"Asian men and women.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,13,52040,HRASIAM,"Asian men.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,14,52042,HRASIAW,"Asian women.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,15,52044,HRBKAAT,"Black or African American men and women.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,16,52046,HRBKAAM,"Black or African American men.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,17,52048,HRBKAAW,"Black or African American women.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,18,52050,HRHISPT,"Hispanic or Latino men and women.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,19,52052,HRHISPM,"Hispanic or Latino men.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,20,52054,HRHISPW,"Hispanic or Latino women.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,21,52056,HRNHPIT,"Native Hawaiian or Other Pacific Islanders men and women.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,22,52058,HRNHPIM,"Native Hawaiian or Other Pacific Islanders men.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,23,52060,HRNHPIW,"Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,24,52062,HRWHITT,"White men and women.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,25,52064,HRWHITM,"White men.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,26,52066,HRWHITW,"White women.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,27,52068,HR2MORT,"Two or more races men and women.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,28,52070,HR2MORM,"Two or more races men.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,29,52072,HR2MORW,"Two or more races women.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,30,50246,HRUNKNT,"Race/ethnicity unknown total
+RACE/ETHNICITY UNKNOWN -Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories. 
+RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,31,50196,HRUNKNM,"Race/ethnicity unknown men. RACE/ETHNICITY UNKNOWN - Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories. RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,32,50201,HRUNKNW,"Race/ethnicity unknown women. RACE/ETHNICITY UNKNOWN -Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories. RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,33,50216,HRNRALT,"U.S. Nonresident total
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.  
+
+Resident (and other eligible non-citizens) - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident status (and who holds either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Description,34,50136,HRNRALM,"U.S. Nonresident men. 
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.  
+
+Resident (and other eligible non-citizens) - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent Resident (and other eligible non-citizens) status (and who holds either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Description,35,50141,HRNRALW,"U.S. Nonresident women. 
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely. 
+
+Resident (and other eligible non-citizens) - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident status (and who holds either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,53016,STAFFCAT,1100,Grand Total,5924,3.29
+Frequencies,2,53016,STAFFCAT,1200,"Instructional, research and public service",5858,3.25
+Frequencies,3,53016,STAFFCAT,1210,Instructional staff,5848,3.24
+Frequencies,4,53016,STAFFCAT,1220,Research,674,0.37
+Frequencies,5,53016,STAFFCAT,1230,Public service,378,0.21
+Frequencies,6,53016,STAFFCAT,1250,"Librarians and Library Technicians/Archivists, Curators, and Museum Technicians/Student and Academic Affairs and Other Education Services",4540,2.52
+Frequencies,7,53016,STAFFCAT,1260,"Librarians and Library Technicians/Archivists, Curators, and Museum Technicians",3257,1.81
+Frequencies,8,53016,STAFFCAT,1261,"Archivists, Curators, and Museum Technicians",803,0.45
+Frequencies,9,53016,STAFFCAT,1262,Librarians,2794,1.55
+Frequencies,10,53016,STAFFCAT,1263,Library Technicians,1880,1.04
+Frequencies,11,53016,STAFFCAT,1264,Detailed library occupations not available for non-degree-granting institutions,221,0.12
+Frequencies,12,53016,STAFFCAT,1270,Student and Academic Affairs and Other Education Services,4220,2.34
+Frequencies,13,53016,STAFFCAT,1300,Management,5650,3.13
+Frequencies,14,53016,STAFFCAT,1310,Business and Financial Operations,4685,2.6
+Frequencies,15,53016,STAFFCAT,1320,"Computer, Engineering, and Science",3379,1.87
+Frequencies,16,53016,STAFFCAT,1330,"Community Service, Legal, Arts, and Media",3222,1.79
+Frequencies,17,53016,STAFFCAT,1340,Healthcare Practioners and Technical,1867,1.04
+Frequencies,18,53016,STAFFCAT,1350,Service occupations,3554,1.97
+Frequencies,19,53016,STAFFCAT,1360,Sales and related occupations,1901,1.05
+Frequencies,20,53016,STAFFCAT,1370,Office and Administrative Support,5253,2.91
+Frequencies,21,53016,STAFFCAT,1380,"Natural Resources, Construction, and Maintenance",2539,1.41
+Frequencies,22,53016,STAFFCAT,1390,"Production, Transportation, and Material Moving",1298,0.72
+Frequencies,23,53016,STAFFCAT,2100,Full-time total,5916,3.28
+Frequencies,24,53016,STAFFCAT,2200,"Full-time, Instructional, research and public service",5651,3.13
+Frequencies,25,53016,STAFFCAT,2210,"Full-time, Instructional staff",5640,3.13
+Frequencies,26,53016,STAFFCAT,2220,"Full-time, Research",608,0.34
+Frequencies,27,53016,STAFFCAT,2230,"Full-time, Public service",308,0.17
+Frequencies,28,53016,STAFFCAT,2250,"Full-time, Librarians and Library Technicians/Archivists, Curators, and Museum Technicians/Student and Academic Affairs and Other Education Services",4394,2.44
+Frequencies,29,53016,STAFFCAT,2260,"Full-time, Librarians and Library Technicians/Archivists, Curators, and Museum Technicians",3058,1.7
+Frequencies,30,53016,STAFFCAT,2261,"Full-time, Archivists, Curators, and Museum Technicians",726,0.4
+Frequencies,31,53016,STAFFCAT,2262,"Full-time, Librarians",2682,1.49
+Frequencies,32,53016,STAFFCAT,2263,"Full-time, Library Technicians",1676,0.93
+Frequencies,33,53016,STAFFCAT,2264,"Full-time, Detailed library occupations not available for non-degree-granting institutions",128,7.0000000000000007E-2
+Frequencies,34,53016,STAFFCAT,2270,"Full-time, Student and Academic Affairs and Other Education Services",4056,2.25
+Frequencies,35,53016,STAFFCAT,2300,"Full-time, Management",5604,3.11
+Frequencies,36,53016,STAFFCAT,2310,"Full-time, Business and Financial Operations",4518,2.5099999999999998
+Frequencies,37,53016,STAFFCAT,2320,"Full-time, Computer, Engineering, and Science",3309,1.84
+Frequencies,38,53016,STAFFCAT,2330,"Full-time, Community Service, Legal, Arts, and Media",3139,1.74
+Frequencies,39,53016,STAFFCAT,2340,"Full-time, Healthcare Practioners and Technical",1707,0.95
+Frequencies,40,53016,STAFFCAT,2350,"Full-time, Service occupations",3363,1.87
+Frequencies,41,53016,STAFFCAT,2360,"Full-time, Sales and related occupations",1759,0.98
+Frequencies,42,53016,STAFFCAT,2370,"Full-time, Office and Administrative Support",5021,2.79
+Frequencies,43,53016,STAFFCAT,2380,"Full-time, Natural Resources, Construction, and Maintenance",2426,1.35
+Frequencies,44,53016,STAFFCAT,2390,"Full-time, Production, Transportation, and Material Moving",1098,0.61
+Frequencies,45,53016,STAFFCAT,3100,"Part-time, total",5352,2.97
+Frequencies,46,53016,STAFFCAT,3200,"Part-time, Instructional, research and public service",5112,2.84
+Frequencies,47,53016,STAFFCAT,3210,"Part-time, Instructional staff",5105,2.83
+Frequencies,48,53016,STAFFCAT,3220,"Part-time, Research",373,0.21
+Frequencies,49,53016,STAFFCAT,3230,"Part-time, Public service",221,0.12
+Frequencies,50,53016,STAFFCAT,3250,"Part-time, Librarians and Library Technicians/Archivists, Curators, and Museum Technicians/Student and Academic Affairs and Other Education Services",2876,1.6
+Frequencies,51,53016,STAFFCAT,3260,"Part-time, Librarians and Library Technicians/Archivists, Curators, and Museum Technicians",1516,0.84
+Frequencies,52,53016,STAFFCAT,3261,"Part-time, Archivists, Curators, and Museum Technicians",257,0.14000000000000001
+Frequencies,53,53016,STAFFCAT,3262,"Part-time, Librarians",725,0.4
+Frequencies,54,53016,STAFFCAT,3263,"Part-time, Library Technicians",778,0.43
+Frequencies,55,53016,STAFFCAT,3264,"Part-time, Detailed library occupations not available for non-degree-granting institutions",114,0.06
+Frequencies,56,53016,STAFFCAT,3270,"Part-time, Student and Academic Affairs and Other Education Services",2475,1.37
+Frequencies,57,53016,STAFFCAT,3300,"Part-time, Management",1553,0.86
+Frequencies,58,53016,STAFFCAT,3310,"Part-time, Business and Financial Operations",1903,1.06
+Frequencies,59,53016,STAFFCAT,3320,"Part-time, Computer, Engineering, and Science",1424,0.79
+Frequencies,60,53016,STAFFCAT,3330,"Part-time, Community Service, Legal, Arts, and Media",2245,1.25
+Frequencies,61,53016,STAFFCAT,3340,"Part-time, Healthcare Practioners and Technical",1025,0.56999999999999995
+Frequencies,62,53016,STAFFCAT,3350,"Part-time, Service occupations",2341,1.3
+Frequencies,63,53016,STAFFCAT,3360,"Part-time, Sales and related occupations",549,0.3
+Frequencies,64,53016,STAFFCAT,3370,"Part-time, Office and Administrative Support",3427,1.9
+Frequencies,65,53016,STAFFCAT,3380,"Part-time, Natural Resources, Construction, and Maintenance",849,0.47
+Frequencies,66,53016,STAFFCAT,3390,"Part-time, Production, Transportation, and Material Moving",598,0.33
+Frequencies,67,53016,STAFFCAT,4400,"Graduate Assistants, Total",1046,0.57999999999999996
+Frequencies,68,53016,STAFFCAT,4410,"Graduate Assistants, Teaching",635,0.35
+Frequencies,69,53016,STAFFCAT,4420,"Graduate Assistants, Research",494,0.27
+Frequencies,70,53016,STAFFCAT,4490,"Graduate Assistants, Other",741,0.41
+Frequencies,71,53021,FTPT,1,All staff,69745,38.69
+Frequencies,72,53021,FTPT,2,Full-time,66787,37.049999999999997
+Frequencies,73,53021,FTPT,3,Part-time,40818,22.64
+Frequencies,74,53021,FTPT,4,Graduate Assistants,2916,1.62
+Frequencies,75,53026,OCCUPCAT,100,All staff,17192,9.5399999999999991
+Frequencies,76,53026,OCCUPCAT,200,"Instructional, research and public service staff",16621,9.2200000000000006
+Frequencies,77,53026,OCCUPCAT,210,"Instructional staff, total",16593,9.1999999999999993
+Frequencies,78,53026,OCCUPCAT,220,Research,1655,0.92
+Frequencies,79,53026,OCCUPCAT,230,Public service,907,0.5
+Frequencies,80,53026,OCCUPCAT,250,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",11810,6.55
+Frequencies,81,53026,OCCUPCAT,260,"Librarians, Curators, and Archivists",7831,4.34
+Frequencies,82,53026,OCCUPCAT,261,"Archivists, Curators, and Museum Technicians",1786,0.99
+Frequencies,83,53026,OCCUPCAT,262,Librarians,6201,3.44
+Frequencies,84,53026,OCCUPCAT,263,Library Technicians,4334,2.4
+Frequencies,85,53026,OCCUPCAT,264,Detailed library occupations not available for non-degree-granting institutions,463,0.26
+Frequencies,86,53026,OCCUPCAT,270,Student and Academic Affairs and Other Education Services,10751,5.96
+Frequencies,87,53026,OCCUPCAT,300,Management,12807,7.1
+Frequencies,88,53026,OCCUPCAT,310,Business and Financial Operations,11106,6.16
+Frequencies,89,53026,OCCUPCAT,320,"Computer, Engineering, and Science",8112,4.5
+Frequencies,90,53026,OCCUPCAT,330,"Community, Social Service, Legal, Arts,Design, Entertainment, Sports and Media",8606,4.7699999999999996
+Frequencies,91,53026,OCCUPCAT,340,Healthcare Practioners and Technical,4599,2.5499999999999998
+Frequencies,92,53026,OCCUPCAT,350,Service Occupations,9258,5.14
+Frequencies,93,53026,OCCUPCAT,360,Sales and Related Occupations,4209,2.33
+Frequencies,94,53026,OCCUPCAT,370,Office and Administrative Support,13701,7.6
+Frequencies,95,53026,OCCUPCAT,380,"Natural Resources, Construction, and Maintenance",5814,3.23
+Frequencies,96,53026,OCCUPCAT,390,"Production, Transportation, and Material Moving",2994,1.66
+Frequencies,97,53026,OCCUPCAT,400,Graduate Assistants Total,1046,0.57999999999999996
+Frequencies,98,53026,OCCUPCAT,410,Graduate Assistants Teaching,635,0.35
+Frequencies,99,53026,OCCUPCAT,420,Graduate Assistants Research,494,0.27
+Frequencies,100,53026,OCCUPCAT,490,Graduate Assistants Other,741,0.41
+Frequencies,101,50131,SABDTYPE,10,Full-time (occupation code prior to 2012),5916,3.28
+Frequencies,102,50131,SABDTYPE,11,Full-time postecondary teachers (occupation code prior to 2012),5651,3.13
+Frequencies,103,50131,SABDTYPE,70,Part-time postecondary teachers (occupation code prior to 2012),5112,2.84
+Frequencies,104,50131,SABDTYPE,-2,"Not applicable, current occupation does not map to occupations prior to 2012",163587,90.75
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,50251,HRTOTLT,180266,20437518,113.37422475674836,1,318020,Grand total
+Statistics,2,50206,HRTOTLM,180266,8778638,48.698245925465699,0,93004,Grand total men
+Statistics,3,50211,HRTOTLW,180266,11658880,64.675978831282663,0,225016,Grand total women
+Statistics,4,52032,HRAIANT,180266,228118,1.2654521651337467,0,33002,American Indian or Alaska Native total
+Statistics,5,52034,HRAIANM,180266,39868,0.22116206051057882,0,126,American Indian or Alaska Native men
+Statistics,6,52036,HRAIANW,180266,188250,1.0442901046231681,0,33002,American Indian or Alaska Native women
+Statistics,7,52038,HRASIAT,180266,1681566,9.3282482553559731,0,62002,Asian total
+Statistics,8,52040,HRASIAM,180266,789248,4.3782410437908421,0,31001,Asian men
+Statistics,9,52042,HRASIAW,180266,892318,4.9500072115651319,0,31001,Asian women
+Statistics,10,52044,HRBKAAT,180266,2118618,11.75273207371329,0,62002,Black or African American total
+Statistics,11,52046,HRBKAAM,180266,805462,4.4681859030543754,0,31001,Black or African American men
+Statistics,12,52048,HRBKAAW,180266,1313156,7.2845461706589152,0,31001,Black or African American women
+Statistics,13,52050,HRHISPT,180266,1972514,10.942240910654256,0,31001,Hispanic or Latino total
+Statistics,14,52052,HRHISPM,180266,745238,4.1341018272996575,0,3078,Hispanic or Latino men
+Statistics,15,52054,HRHISPW,180266,1227276,6.8081390833545985,0,31001,Hispanic or Latino women
+Statistics,16,52056,HRNHPIT,180266,48806,0.27074434446872953,0,594,Native Hawaiian or Other Pacific Islander total
+Statistics,17,52058,HRNHPIM,180266,22616,0.12545904385741072,0,344,Native Hawaiian or Other Pacific Islander men
+Statistics,18,52060,HRNHPIW,180266,26190,0.14528530061131883,0,250,Native Hawaiian or Other Pacific Islander women
+Statistics,19,52062,HRWHITT,180266,12073956,66.978553914770401,0,66010,White total
+Statistics,20,52064,HRWHITM,180266,5358276,29.724274128232722,0,31002,White men
+Statistics,21,52066,HRWHITW,180266,6715680,37.254279786537673,0,35008,White women
+Statistics,22,52068,HR2MORT,180266,458622,2.544140325962744,0,31001,Two or more races total
+Statistics,23,52070,HR2MORM,180266,128486,0.71275781345345213,0,278,Two or more races men
+Statistics,24,52072,HR2MORW,180266,330136,1.8313825125092917,0,31001,Two or more races women
+Statistics,25,50246,HRUNKNT,180266,888450,4.9285500316199391,0,6799,Race/ethnicity unknown total
+Statistics,26,50196,HRUNKNM,180266,416580,2.310918309609133,0,2956,Race/ethnicity unknown men
+Statistics,27,50201,HRUNKNW,180266,471870,2.6176317220108061,0,3843,Race/ethnicity unknown women
+Statistics,28,50216,HRNRALT,180266,966868,5.3635627350692863,0,33002,U.S. Nonresident total
+Statistics,29,50136,HRNRALM,180266,472864,2.6231457956575284,0,2327,U.S. Nonresident men
+Statistics,30,50141,HRNRALW,180266,494004,2.7404169394117583,0,33002,U.S. Nonresident women
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

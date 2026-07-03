@@ -1,0 +1,405 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File Documentation for the Completers Data File, 2018-19",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,,,,,,,,,,
+Introduction,3,Filename,C2019_B
+Introduction,4,  Provisional release:,July 2020
+Introduction,5,Filename,C2019_B_RV
+Introduction,6,  Final/revised release:,July 2021
+Introduction,7,,
+Introduction,8,Overview,"This file contains the number of students who completed any degree or certificate by race/ethnicity and gender. Data covers all awards granted between July 1, 2018 and June 30, 2019. This file contains one record per institution. Each record is uniquely defined by the variables IPEDS ID (UNITID).  Each record will contain the total number of students,  men and women, and the total number of students for men and women for all nine race/ethnicity categories. ",,,,,,,,
+Introduction,9,Note:,"Provisional release data have undergone all NCES data quality control procedures. Data are imputed for nonresponding institutions. These data are used for First Look (Provisional Data) Web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. The final release data can be used when the most up to date data are required; however, these data may not match First Look Web tables based on provisional data. ",,,,,,,,
+Introduction,10,Contents of spreadsheet,,,,,,,,,
+Introduction,11,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont.) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,12,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,13,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file.  (provisional release)",,,,,,,,
+Introduction,14,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (final/revised release)",,,,,,,,
+Introduction,15,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,33100,CSTOTLT,N,6,Cont,XCSTOTLT,Grand total
+varlist,3,33101,CSTOTLM,N,6,Cont,XCSTOTLM,Grand total men
+varlist,4,33102,CSTOTLW,N,6,Cont,XCSTOTLW,Grand total women
+varlist,5,33110,CSAIANT,N,6,Cont,XCSAIANT,American Indian or Alaska Native total
+varlist,6,33111,CSAIANM,N,6,Cont,XCSAIANM,American Indian or Alaska Native men
+varlist,7,33112,CSAIANW,N,6,Cont,XCSAIANW,American Indian or Alaska Native women
+varlist,8,33120,CSASIAT,N,6,Cont,XCSASIAT,Asian total
+varlist,9,33121,CSASIAM,N,6,Cont,XCSASIAM,Asian men
+varlist,10,33122,CSASIAW,N,6,Cont,XCSASIAW,Asian women
+varlist,11,33130,CSBKAAT,N,6,Cont,XCSBKAAT,Black or African American total
+varlist,12,33131,CSBKAAM,N,6,Cont,XCSBKAAM,Black or African American men
+varlist,13,33132,CSBKAAW,N,6,Cont,XCSBKAAW,Black or African American women
+varlist,14,33140,CSHISPT,N,6,Cont,XCSHISPT,Hispanic or Latino total
+varlist,15,33141,CSHISPM,N,6,Cont,XCSHISPM,Hispanic or Latino men
+varlist,16,33142,CSHISPW,N,6,Cont,XCSHISPW,Hispanic or Latino women
+varlist,17,33150,CSNHPIT,N,6,Cont,XCSNHPIT,Native Hawaiian or Other Pacific Islander total
+varlist,18,33151,CSNHPIM,N,6,Cont,XCSNHPIM,Native Hawaiian or Other Pacific Islander men
+varlist,19,33152,CSNHPIW,N,6,Cont,XCSNHPIW,Native Hawaiian or Other Pacific Islander women
+varlist,20,33160,CSWHITT,N,6,Cont,XCSWHITT,White total
+varlist,21,33161,CSWHITM,N,6,Cont,XCSWHITM,White men
+varlist,22,33162,CSWHITW,N,6,Cont,XCSWHITW,White women
+varlist,23,33170,CS2MORT,N,6,Cont,XCS2MORT,Two or more races total
+varlist,24,33171,CS2MORM,N,6,Cont,XCS2MORM,Two or more races men
+varlist,25,33172,CS2MORW,N,6,Cont,XCS2MORW,Two or more races women
+varlist,26,33180,CSUNKNT,N,6,Cont,XCSUNKNT,Race/ethnicity unknown total
+varlist,27,33181,CSUNKNM,N,6,Cont,XCSUNKNM,Race/ethnicity unknown men
+varlist,28,33182,CSUNKNW,N,6,Cont,XCSUNKNW,Race/ethnicity unknown women
+varlist,29,33190,CSNRALT,N,6,Cont,XCSNRALT,Nonresident alien total
+varlist,30,33191,CSNRALM,N,6,Cont,XCSNRALM,Nonresident alien men
+varlist,31,33192,CSNRALW,N,6,Cont,XCSNRALW,Nonresident alien women
+varlist,32,,,,,,,
+varlist,33,,,,,,,
+varlist,34,,,,,,,
+varlist,35,,,,,,,
+varlist,36,,,,,,,
+varlist,37,,,,,,,
+varlist,38,,,,,,,
+varlist,39,,,,,,,
+varlist,40,,,,,,,
+varlist,41,,,,,,,
+varlist,42,,,,,,,
+varlist,43,,,,,,,
+varlist,44,,,,,,,
+varlist,45,,,,,,,
+varlist,46,,,,,,,
+varlist,47,,,,,,,
+varlist,48,,,,,,,
+varlist,49,,,,,,,
+varlist,50,,,,,,,
+varlist,51,,,,,,,
+varlist,52,,,,,,,
+varlist,53,,,,,,,
+varlist,54,,,,,,,
+varlist,55,,,,,,,
+varlist,56,,,,,,,
+varlist,57,,,,,,,
+varlist,58,,,,,,,
+varlist,59,,,,,,,
+varlist,60,,,,,,,
+varlist,61,,,,,,,
+varlist,62,,,,,,,
+varlist,63,,,,,,,
+varlist,64,,,,,,,
+varlist,65,,,,,,,
+varlist,66,,,,,,,
+varlist,67,,,,,,,
+varlist,68,,,,,,,
+varlist,69,,,,,,,
+varlist,70,,,,,,,
+varlist,71,,,,,,,
+varlist,72,,,,,,,
+varlist,73,,,,,,,
+varlist,74,,,,,,,
+varlist,75,,,,,,,
+varlist,76,,,,,,,
+varlist,77,,,,,,,
+varlist,78,,,,,,,
+varlist,79,,,,,,,
+varlist,80,,,,,,,
+varlist,81,,,,,,,
+varlist,82,,,,,,,
+varlist,83,,,,,,,
+varlist,84,,,,,,,
+varlist,85,,,,,,,
+varlist,86,,,,,,,
+varlist,87,,,,,,,
+varlist,88,,,,,,,
+varlist,89,,,,,,,
+varlist,90,,,,,,,
+varlist,91,,,,,,,
+varlist,92,,,,,,,
+varlist,93,,,,,,,
+varlist,94,,,,,,,
+varlist,95,,,,,,,
+varlist,96,,,,,,,
+varlist,97,,,,,,,
+varlist,98,,,,,,,
+varlist,99,,,,,,,
+varlist,100,,,,,,,
+varlist,101,,,,,,,
+varlist,102,,,,,,,
+varlist,103,,,,,,,
+varlist,104,,,,,,,
+varlist,105,,,,,,,
+varlist,106,,,,,,,
+varlist,107,,,,,,,
+varlist,108,,,,,,,
+varlist,109,,,,,,,
+varlist,110,,,,,,,
+varlist,111,,,,,,,
+varlist,112,,,,,,,
+varlist,113,,,,,,,
+varlist,114,,,,,,,
+varlist,115,,,,,,,
+varlist,116,,,,,,,
+varlist,117,,,,,,,
+varlist,118,,,,,,,
+varlist,119,,,,,,,
+varlist,120,,,,,,,
+varlist,121,,,,,,,
+varlist,122,,,,,,,
+varlist,123,,,,,,,
+varlist,124,,,,,,,
+varlist,125,,,,,,,
+varlist,126,,,,,,,
+varlist,127,,,,,,,
+varlist,128,,,,,,,
+varlist,129,,,,,,,
+varlist,130,,,,,,,
+varlist,131,,,,,,,
+varlist,132,,,,,,,
+varlist,133,,,,,,,
+varlist,134,,,,,,,
+varlist,135,,,,,,,
+varlist,136,,,,,,,
+varlist,137,,,,,,,
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,33100,CSTOTLT,"Number of students receiving awards/degrees conferred between July 1, 2018 and June 30, 2019 to all recipients, across all race/ethnicities and both genders"
+Description,3,33101,CSTOTLM,"Number of men receiving awards/degrees  conferred between July 1, 2018 and June 30, 2019"
+Description,4,33102,CSTOTLW,"Number of women receiving awards/degrees  conferred between July 1, 2018 and June 30, 2019"
+Description,5,33110,CSAIANT,"Number of American Indian or Alaska Native men and women receiving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,6,33111,CSAIANM,"Number of American Indian or Alaska Native men receiving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,7,33112,CSAIANW,"Number of American Indian or Alaska Native women receiving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,8,33120,CSASIAT,"Number of Asian men and women receving awards/degrees conferred between July 1, 2018 and June 30, 2019.
+
+ Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,9,33121,CSASIAM,"Number of Asian men receving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,10,33122,CSASIAW,"Number of Asian women receving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,11,33130,CSBKAAT,"Number of Black or African American men and women receving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,12,33131,CSBKAAM,"Number of Black or African American men receving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,13,33132,CSBKAAW,"Number of Black or African American women receving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,14,33140,CSHISPT,"Number of Hispanic or Latino men and women receiving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,15,33141,CSHISPM,"Number of Hispanic or Latino men receiving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,16,33142,CSHISPW,"Number of Hispanic or Latino women receiving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,17,33150,CSNHPIT,"Number of Native Hawaiian or Other Pacific Islanders men and women receivng awards/degrees conferred between July 1, 2017 and June 30, 2018. 
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,18,33151,CSNHPIM,"Number of Native Hawaiian or Other Pacific Islanders men receivng awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,19,33152,CSNHPIW,"Number of Native Hawaiian or Other Pacific Islanders women receivng awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,20,33160,CSWHITT,"Number of White men and women receiving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,21,33161,CSWHITM,"Number of White men receiving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,22,33162,CSWHITW,"Number of White women receiving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,23,33170,CS2MORT,"Number of  men and women of two or more races receiving awards/degrees conferred between July 1, 2018 and June 30, 2019. Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,24,33171,CS2MORM,"Number of  men of two or more races receiving awards/degrees conferred between July 1, 2018 and June 30, 2019.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,25,33172,CS2MORW,"Number of women of two or more races receiving awards/degrees conferred between July 1, 2018 and June 30, 2019. 
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,26,33180,CSUNKNT,"Number of race/ethnicity unknown men and women receiving awards/degrees conferred between July 1, 2018 and June 30, 2019.
+                                                        
+Race/ethnicity unknown - Category used to classify students or employees whose race/ethnicity is not known, and institutions are unable to place them in one of the specified racial/ethnic categories."
+Description,27,33181,CSUNKNM,"Number of race/ethnicity unknown men receiving awards/degrees conferred between July 1, 2018 and June 30, 2019.
+                                                        
+Race/ethnicity unknown - Category used to classify students or employees whose race/ethnicity is not known, and institutions are unable to place them in one of the specified racial/ethnic categories."
+Description,28,33182,CSUNKNW,"Number of race/ethnicity unknown women receiving awards/degrees conferred between July 1, 2018 and June 30, 2019.
+                                                        
+Race/ethnicity unknown - Category used to classify students or employees whose race/ethnicity is not known, and institutions are unable to place them in one of the specified racial/ethnic categories."
+Description,29,33190,CSNRALT,"Number of nonresident alien men and women receiving awards/degrees  conferred between July 1, 2018 and June 30, 2019. 
+
+Nonresident alien  - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely."
+Description,30,33191,CSNRALM,"Number of nonresident alien men receiving awards/degrees  conferred between July 1, 2018 and June 30, 2019. 
+
+Nonresident alien  - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely."
+Description,31,33192,CSNRALW,"Number of nonresident alien women receiving awards/degrees  conferred between July 1, 2018une 30, 2019. 
+
+Nonresident alien  - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely."
+Description,32,,,
+Description,33,,,
+Description,34,,,
+Description,35,,,
+Description,36,,,
+Description,37,,,
+Description,38,,,
+Description,39,,,
+Description,40,,,
+Description,41,,,
+Description,42,,,
+Description,43,,,
+Description,44,,,
+Description,45,,,
+Description,46,,,
+Description,47,,,
+Description,48,,,
+Description,49,,,
+Description,50,,,
+Description,51,,,
+Description,52,,,
+Description,53,,,
+Description,54,,,
+Description,55,,,
+Description,56,,,
+Description,57,,,
+Description,58,,,
+Description,59,,,
+Description,60,,,
+Description,61,,,
+Description,62,,,
+Description,63,,,
+Description,64,,,
+Description,65,,,
+Description,66,,,
+Description,67,,,
+Description,68,,,
+Description,69,,,
+Description,70,,,
+Description,71,,,
+Description,72,,,
+Description,73,,,
+Description,74,,,
+Description,75,,,
+Description,76,,,
+Description,77,,,
+Description,78,,,
+Description,79,,,
+Description,80,,,
+Description,81,,,
+Description,82,,,
+Description,83,,,
+Description,84,,,
+Description,85,,,
+Description,86,,,
+Description,87,,,
+Description,88,,,
+Description,89,,,
+Description,90,,,
+Description,91,,,
+Description,92,,,
+Description,93,,,
+Description,94,,,
+Description,95,,,
+Description,96,,,
+Description,97,,,
+Description,98,,,
+Description,99,,,
+Description,100,,,
+Description,101,,,
+Description,102,,,
+Description,103,,,
+Description,104,,,
+Description,105,,,
+Description,106,,,
+Description,107,,,
+Description,108,,,
+Description,109,,,
+Description,110,,,
+Description,111,,,
+Description,112,,,
+Description,113,,,
+Description,114,,,
+Description,115,,,
+Description,116,,,
+Description,117,,,
+Description,118,,,
+Description,119,,,
+Description,120,,,
+Description,121,,,
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,33100,CSTOTLT,6233,4764449,764.39098347505183,1,34132,Grand total
+Statistics,2,33101,CSTOTLM,6233,1956599,313.90967431413446,0,9996,Grand total men
+Statistics,3,33102,CSTOTLW,6233,2807850,450.48130916091759,0,24136,Grand total women
+Statistics,4,33110,CSAIANT,6233,29074,4.6645275148403664,0,520,American Indian or Alaska Native total
+Statistics,5,33111,CSAIANM,6233,10880,1.7455478902615116,0,284,American Indian or Alaska Native men
+Statistics,6,33112,CSAIANW,6233,18194,2.9189796245788551,0,288,American Indian or Alaska Native women
+Statistics,7,33120,CSASIAT,6233,292677,46.956040429969512,0,3533,Asian total
+Statistics,8,33121,CSASIAM,6233,126787,20.341248195090643,0,1798,Asian men
+Statistics,9,33122,CSASIAW,6233,165890,26.614792234878873,0,1792,Asian women
+Statistics,10,33130,CSBKAAT,6233,531623,85.291673351516124,0,5801,Black or African American total
+Statistics,11,33131,CSBKAAM,6233,181696,29.150649767367245,0,1704,Black or African American men
+Statistics,12,33132,CSBKAAW,6233,349927,56.141023584148911,0,4442,Black or African American women
+Statistics,13,33140,CSHISPT,6233,772108,123.87421787261351,0,10515,Hispanic or Latino total
+Statistics,14,33141,CSHISPM,6233,297026,47.653778276913201,0,4523,Hispanic or Latino men
+Statistics,15,33142,CSHISPW,6233,475082,76.220439595700299,0,5992,Hispanic or Latino women
+Statistics,16,33150,CSNHPIT,6233,12637,2.0274346221723079,0,439,Native Hawaiian or Other Pacific Islander total
+Statistics,17,33151,CSNHPIM,6233,5279,0.84694368682817278,0,180,Native Hawaiian or Other Pacific Islander men
+Statistics,18,33152,CSNHPIW,6233,7358,1.180490935344136,0,259,Native Hawaiian or Other Pacific Islander women
+Statistics,19,33160,CSWHITT,6233,2490408,399.55206160757257,0,25655,White total
+Statistics,20,33161,CSWHITM,6233,1037200,166.40462056794479,0,7239,White men
+Statistics,21,33162,CSWHITW,6233,1453208,233.14744103962775,0,18416,White women
+Statistics,22,33170,CS2MORT,6233,146593,23.518851275469281,0,957,Two or more races total
+Statistics,23,33171,CS2MORM,6233,57954,9.2979303706080554,0,400,Two or more races men
+Statistics,24,33172,CS2MORW,6233,88639,14.220920904861224,0,577,Two or more races women
+Statistics,25,33180,CSUNKNT,6233,197956,31.759345419541152,0,6890,Race/ethnicity unknown total
+Statistics,26,33181,CSUNKNM,6233,83789,13.44280442804428,0,2805,Race/ethnicity unknown men
+Statistics,27,33182,CSUNKNW,6233,114167,18.316540991496876,0,4085,Race/ethnicity unknown women
+Statistics,28,33190,CSNRALT,6233,291373,46.746831381357282,0,5505,Nonresident alien total
+Statistics,29,33191,CSNRALM,6233,155988,25.026151131076528,0,2594,Nonresident alien men
+Statistics,30,33192,CSNRALW,6233,135385,21.720680250280765,0,3036,Nonresident alien women
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,33100,CSTOTLT,6234,4765256,764.39781841514275,1,34132,Grand total
+StatisticsRV,2,33101,CSTOTLM,6234,1956742,313.88225858196984,0,9996,Grand total men
+StatisticsRV,3,33102,CSTOTLW,6234,2808514,450.51555983317292,0,24136,Grand total women
+StatisticsRV,4,33110,CSAIANT,6234,29054,4.6605710619185112,0,520,American Indian or Alaska Native total
+StatisticsRV,5,33111,CSAIANM,6234,10868,1.7433429579724093,0,284,American Indian or Alaska Native men
+StatisticsRV,6,33112,CSAIANW,6234,18186,2.9172281039461021,0,288,American Indian or Alaska Native women
+StatisticsRV,7,33120,CSASIAT,6234,292310,46.889637471928133,0,3533,Asian total
+StatisticsRV,8,33121,CSASIAM,6234,126574,20.30381777350016,0,1797,Asian men
+StatisticsRV,9,33122,CSASIAW,6234,165736,26.585819698427976,0,1803,Asian women
+StatisticsRV,10,33130,CSBKAAT,6234,531566,85.268848251523906,0,5801,Black or African American total
+StatisticsRV,11,33131,CSBKAAM,6234,181647,29.138113570741098,0,1704,Black or African American men
+StatisticsRV,12,33132,CSBKAAW,6234,349919,56.130734680782801,0,4442,Black or African American women
+StatisticsRV,13,33140,CSHISPT,6234,772471,123.91257619505936,0,10515,Hispanic or Latino total
+StatisticsRV,14,33141,CSHISPM,6234,297124,47.661854347128653,0,4523,Hispanic or Latino men
+StatisticsRV,15,33142,CSHISPW,6234,475347,76.250721847930706,0,5992,Hispanic or Latino women
+StatisticsRV,16,33150,CSNHPIT,6234,12637,2.0271094000641643,0,439,Native Hawaiian or Other Pacific Islander total
+StatisticsRV,17,33151,CSNHPIM,6234,5279,0.84680782803978183,0,180,Native Hawaiian or Other Pacific Islander men
+StatisticsRV,18,33152,CSNHPIW,6234,7358,1.1803015720243824,0,259,Native Hawaiian or Other Pacific Islander women
+StatisticsRV,19,33160,CSWHITT,6234,2490359,399.48010907924288,0,25655,White total
+StatisticsRV,20,33161,CSWHITM,6234,1037095,166.36108437600257,0,7239,White men
+StatisticsRV,21,33162,CSWHITW,6234,1453264,233.11902470324029,0,18416,White women
+StatisticsRV,22,33170,CS2MORT,6234,146683,23.529515559833172,0,957,Two or more races total
+StatisticsRV,23,33171,CS2MORM,6234,57999,9.3036573628488934,0,400,Two or more races men
+StatisticsRV,24,33172,CS2MORW,6234,88684,14.22585819698428,0,577,Two or more races women
+StatisticsRV,25,33180,CSUNKNT,6234,197957,31.75441129290985,0,6890,Race/ethnicity unknown total
+StatisticsRV,26,33181,CSUNKNM,6234,83755,13.435194096888033,0,2805,Race/ethnicity unknown men
+StatisticsRV,27,33182,CSUNKNW,6234,114202,18.319217196021818,0,4085,Race/ethnicity unknown women
+StatisticsRV,28,33190,CSNRALT,6234,292219,46.875040102662815,0,5505,Nonresident alien total
+StatisticsRV,29,33191,CSNRALM,6234,156401,25.08838626884825,0,2594,Nonresident alien men
+StatisticsRV,30,33192,CSNRALW,6234,135818,21.786653833814565,0,3036,Nonresident alien women
+Imputation codes,0,Code values for item imputation variables Xvarname
+Imputation codes,1,CodeValue,ValueLabel
+Imputation codes,2,A,Not applicable
+Imputation codes,3,B,Institution left item blank
+Imputation codes,4,C,Analyst corrected reported value
+Imputation codes,5,D,Do not know
+Imputation codes,6,G,Data generated from other data values
+Imputation codes,7,H,Value not derived - data not usable
+Imputation codes,8,J,Logical imputation
+Imputation codes,9,K,Ratio adjustment 
+Imputation codes,10,L,Imputed using the Group Median procedure
+Imputation codes,11,N,Imputed using Nearest Neighbor procedure
+Imputation codes,12,P,Imputed using Carry Forward procedure
+Imputation codes,13,R,Reported
+Imputation codes,14,Z,Implied zero;

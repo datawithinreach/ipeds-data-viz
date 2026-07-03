@@ -1,0 +1,212 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File Documentation for the  Military, Service members and Veteran's Benefit Data File, 2021-22",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,,,,,,,,,,
+Introduction,3,Filename,SFAV2122
+Introduction,4,  Provisional release:,December 2023
+Introduction,5,Filename,SFAV2122_RV
+Introduction,6,  Final release:,September 2024
+Introduction,7,Overview,"This file contains the number of students, who received either or both Post-9/11 GI Benefits or the Department of Defense Tuition Assistance through the institution. Eligible dependents receiving such benefits are included. Students who received both benefits, are counted in both programs. Total dollar amounts received by students are included. Data reported for the Post-9/11 GI Bill benefit are for the academic year July 1, 2021 to June 30, 2022.  Data reported for the Department of Defense Tuition Assistance are for the academic year October 1, 2021 to September 30, 2022. Data are provided for undergraduate and graduate students.",,,,,,,,
+Introduction,8,,,,,,,,,,
+Introduction,9,Note:,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.  ",,,,,,,,
+Introduction,10,Contents of spreadsheet,,,,,,,,,
+Introduction,11,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,12,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,13,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Provisional release)",,,,,,,,
+Introduction,14,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Final/revised release)",,,,,,,,
+Introduction,15,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,72001,UGPO9_N,N,6,Cont,XUGPO9_N,Number receiving Post-9/11 GI Bill Benefits - undergraduate students
+varlist,3,72006,UGPO9_T,N,10,Cont,XUGPO9_T,Total amount of Post-9/11 GI Bill Benefits awarded - undergraduate students
+varlist,4,72011,UGPO9_A,N,6,Cont,XUGPO9_A,Average amount of Post-9/11 GI Bill Benefits awarded - undergraduate students
+varlist,5,72016,GPO9_N,N,6,Cont,XGPO9_N,Number receiving Post-9/11 GI Bill Benefits - graduate students
+varlist,6,72021,GPO9_T,N,10,Cont,XGPO9_T,Total amount of Post-9/11 GI Bill Benefits awarded - graduate students
+varlist,7,72026,GPO9_A,N,6,Cont,XGPO9_A,Average amount of Post-9/11 GI Bill Benefits awarded - graduate students
+varlist,8,72031,PO9_N,N,6,Cont,XPO9_N,Number receiving Post-9/11 GI Bill Benefits - all students
+varlist,9,72036,PO9_T,N,10,Cont,XPO9_T,Total amount of Post-9/11 GI Bill Benefits awarded - all students
+varlist,10,72041,PO9_A,N,6,Cont,XPO9_A,Average amount of Post-9/11 GI Bill Benefits awarded - all students
+varlist,11,72046,UGDOD_N,N,6,Cont,XUGDOD_N,Number receiving Department of Defense Tuition Assistance Program benefits - undergraduate students
+varlist,12,72051,UGDOD_T,N,10,Cont,XUGDOD_T,Total amount of Department of Defense Tuition Assistance Program benefits  awarded - undergraduate students
+varlist,13,72056,UGDOD_A,N,6,Cont,XUGDOD_A,Average amount of Department of Defense Tuition Assistance Program benefits awarded- undergraduate students
+varlist,14,72061,GDOD_N,N,6,Cont,XGDOD_N,Number receiving Department of Defense Tuition Assistance Program benefits - graduate students
+varlist,15,72066,GDOD_T,N,10,Cont,XGDOD_T,Total amount of Department of Defense Tuition Assistance Program benefits awarded - graduate students
+varlist,16,72071,GDOD_A,N,6,Cont,XGDOD_A,Average amount of Department of Defense Tuition Assistance Program benefits awarded - graduate students
+varlist,17,72076,DOD_N,N,6,Cont,XDOD_N,Number receiving Department of Defense Tuition Assistance Program benefits - all students
+varlist,18,72081,DOD_T,N,10,Cont,XDOD_T,Total amount of Department of Defense Tuition Assistance Program benefits awarded - all students
+varlist,19,72086,DOD_A,N,6,Cont,XDOD_A,Average amount of Department of Defense Tuition Assistance Program benefits awarded - all students
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,72001,UGPO9_N,"Military Servicemembers and Veteran's Benefits - Number of undergraduate students receiving Post-9/11 GI Bill Benefits   
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,3,72006,UGPO9_T,"Military Servicemembers and Veteran's Benefits - Total amount of Post-9/11 GI Bill Benefits awarded through the institution to undergraduate students  
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,4,72011,UGPO9_A,"Military Servicemembers and Veteran's Benefits - Average amount of Post-9/11 GI Bill Benefits awarded through the institution to undergraduate students
+ 
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,5,72016,GPO9_N,"Military Servicemembers and Veteran's Benefits - Number of graduate students receiving Post-9/11 GI Bill Benefits   
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,6,72021,GPO9_T,"Military Servicemembers and Veteran's Benefits - Total amount of Post-9/11 GI Bill Benefits awarded through the institution to graduate students 
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,7,72026,GPO9_A,"Military Servicemembers and Veteran's Benefits - Average amount of Post-9/11 GI Bill Benefits awarded through the institution to graduate students 
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,8,72031,PO9_N,"Military Servicemembers and Veteran's Benefits - Number of all students receiving Post-9/11 GI Bill Benefits   
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,9,72036,PO9_T,"Military Servicemembers and Veteran's Benefits - Total amount of Post-9/11 GI Bill Benefits awarded through the institution to all students  
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,10,72041,PO9_A,"Military Servicemembers and Veteran's Benefits - Average amount of Post-9/11 GI Bill Benefits awarded through the institution to all students  
+
+Student recipients can also include eligible spouse or dependents. For Post-9/11 GI Bill Benefits, matching institutional aid provided through the Yellow Ribbon Program is not included. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Post 9/11 GI Bill is a federal education benefit program for veterans, who served on active duty after September 10, 2001. This Department of Veteran Affairs benefit provides up to 36 months of education benefits at an approved institution for the following college costs: tuition and fees, books and supplies and housing. The tuition and fees payment, which is the cost for an in-state student attending a public institution, is made directly to the postsecondary institution whereas payments for books and supplies and housing are sent directly to the student.
+
+Yellow Ribbon Program is a voluntary program through which participating public and private institutions can provide veterans and eligible beneficiaries additional institutional aid to cover the costs of tuition and fees at their institutions. The Yellow Ribbon Program is a supplementary program to the Post 9/11 GI Bill coverage of in-state tuition and fees. The Department of Veterans Affairs matches the institutional aid provided beyond the in-state tuition and fees, but to certain limit each year."
+Description,11,72046,UGDOD_N,"Military Servicemembers and Veteran's Benefits - Number of undergraduate students receiving Department of Defense Tuition Assistance Program benefits 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,12,72051,UGDOD_T,"Military Servicemembers and Veteran's Benefits - Total amount of Department of Defense Tuition Assistance Program benefits awarded through the institution to undergraduate students 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,13,72056,UGDOD_A,"Military Servicemembers and Veteran's Benefits - Average amount of Department of Defense Tuition Assistance Program benefits awarded through the institution to undergraduate students 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,14,72061,GDOD_N,"Military Servicemembers and Veteran's Benefits - Number of graduate students receiving Department of Defense Tuition Assistance Program benefits 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,15,72066,GDOD_T,"Military Servicemembers and Veteran's Benefits - Total amount of Department of Defense Tuition Assistance Program benefits awarded through the institution to graduate students 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,16,72071,GDOD_A,"Military Servicemembers and Veteran's Benefits - Average amount of Department of Defense Tuition Assistance Program benefits awarded through the institution to graduate students 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,17,72076,DOD_N,"Military Servicemembers and Veteran's Benefits - Number of all students receiving Department of Defense Tuition Assistance Program benefits 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,18,72081,DOD_T,"Military Servicemembers and Veteran's Benefits - Total amount of Department of Defense Tuition Assistance Program benefits awarded through the institution to all students 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Description,19,72086,DOD_A,"Military Servicemembers and Veteran's Benefits - Average amount of Department of Defense Tuition Assistance Program benefits awarded through the institution to all students 
+
+Student recipients can also include eligible spouse or dependents. Information reported is only what is known to the institution. Benefits that were not awarded/certified through the institution are not included.
+
+Military Tuition Assistance Program (TA) is a program that funds up to 100% of an eligible servicemember’s college tuition and course-specific fees. Available only to eligible servicemembers who are currently in active service as long as criteria limits are not exceeded and students are enrolled off-duty in an U.S. Department of Education accredited post-secondary institution. This military benefit is paid directly to the postsecondary institution by the individual’s Armed service."
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,72001,UGPO9_N,5709,363017,63.586792783324576,0,11926,Number receiving Post-9/11 GI Bill Benefits - undergraduate students
+Statistics,2,72006,UGPO9_T,5709,2866896859,502171.45892450516,0,49462451,Total amount of Post-9/11 GI Bill Benefits awarded - undergraduate students
+Statistics,3,72011,UGPO9_A,4224,43853018,10381.869791666666,120,54996,Average amount of Post-9/11 GI Bill Benefits awarded - undergraduate students
+Statistics,4,72016,GPO9_N,2014,75886,37.679245283018865,0,3765,Number receiving Post-9/11 GI Bill Benefits - graduate students
+Statistics,5,72021,GPO9_T,2014,815936265,405132.20705064549,0,19020593,Total amount of Post-9/11 GI Bill Benefits awarded - graduate students
+Statistics,6,72026,GPO9_A,1539,17176483,11160.80766731644,52,59466,Average amount of Post-9/11 GI Bill Benefits awarded - graduate students
+Statistics,7,72031,PO9_N,5898,438903,74.415564598168871,0,15282,Number receiving Post-9/11 GI Bill Benefits - all students
+Statistics,8,72036,PO9_T,5898,3682833124,624420.6720922346,0,61205020,Total amount of Post-9/11 GI Bill Benefits awarded - all students
+Statistics,9,72041,PO9_A,4448,46441125,10440.900404676258,120,59466,Average amount of Post-9/11 GI Bill Benefits awarded - all students
+Statistics,10,72046,UGDOD_N,5709,195944,34.32194780171659,0,49129,Number receiving Department of Defense Tuition Assistance Program benefits - undergraduate students
+Statistics,11,72051,UGDOD_T,5709,427033358,74800.027675599937,0,109481785,Total amount of Department of Defense Tuition Assistance Program benefits  awarded - undergraduate students
+Statistics,12,72056,UGDOD_A,1305,2996673,2296.3011494252873,40,4500,Average amount of Department of Defense Tuition Assistance Program benefits awarded- undergraduate students
+Statistics,13,72061,GDOD_N,2014,34058,16.910625620655413,0,8661,Number receiving Department of Defense Tuition Assistance Program benefits - graduate students
+Statistics,14,72066,GDOD_T,2014,79550685,39498.850546176764,0,19850916,Total amount of Department of Defense Tuition Assistance Program benefits awarded - graduate students
+Statistics,15,72071,GDOD_A,630,1503793,2386.9730158730158,220,4644,Average amount of Department of Defense Tuition Assistance Program benefits awarded - graduate students
+Statistics,16,72076,DOD_N,5898,230002,38.99660902000678,0,57790,Number receiving Department of Defense Tuition Assistance Program benefits - all students
+Statistics,17,72081,DOD_T,5898,506584043,85890.817734825367,0,129332701,Total amount of Department of Defense Tuition Assistance Program benefits awarded - all students
+Statistics,18,72086,DOD_A,1399,3183457,2275.5232308791992,40,4500,Average amount of Department of Defense Tuition Assistance Program benefits awarded - all students
+Statistics,19,,,,,,,
+Statistics,20,,,,,,,
+Statistics,21,,,,,,,
+Statistics,22,,,,,,,
+Statistics,23,,,,,,,
+Statistics,24,,,,,,,
+Statistics,25,,,,,,,
+Statistics,26,,,,,,,
+Statistics,27,,,,,,,
+Statistics,28,,,,,,,
+Statistics,29,,,,,,,
+Statistics,30,,,,,,,
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,72001,UGPO9_N,5709,364179,63.790331056227011,0,11926,Number receiving Post-9/11 GI Bill Benefits - undergraduate students
+StatisticsRV,2,72006,UGPO9_T,5709,2868582824,502466.7759677702,0,49462451,Total amount of Post-9/11 GI Bill Benefits awarded - undergraduate students
+StatisticsRV,3,72011,UGPO9_A,4224,43862143,10384.030066287878,120,54996,Average amount of Post-9/11 GI Bill Benefits awarded - undergraduate students
+StatisticsRV,4,72016,GPO9_N,2014,75947,37.709533267130091,0,3765,Number receiving Post-9/11 GI Bill Benefits - graduate students
+StatisticsRV,5,72021,GPO9_T,2014,816144630,405235.66534260177,0,19020593,Total amount of Post-9/11 GI Bill Benefits awarded - graduate students
+StatisticsRV,6,72026,GPO9_A,1540,17170265,11149.522727272728,52,59466,Average amount of Post-9/11 GI Bill Benefits awarded - graduate students
+StatisticsRV,7,72031,PO9_N,5898,440126,74.622923024754158,0,15282,Number receiving Post-9/11 GI Bill Benefits - all students
+StatisticsRV,8,72036,PO9_T,5898,3684727454,624741.85384876234,0,61205020,Total amount of Post-9/11 GI Bill Benefits awarded - all students
+StatisticsRV,9,72041,PO9_A,4448,46446663,10442.145458633093,120,59466,Average amount of Post-9/11 GI Bill Benefits awarded - all students
+StatisticsRV,10,72046,UGDOD_N,5709,195914,34.316692940970398,0,49129,Number receiving Department of Defense Tuition Assistance Program benefits - undergraduate students
+StatisticsRV,11,72051,UGDOD_T,5709,426100418,74636.612016114901,0,109481785,Total amount of Department of Defense Tuition Assistance Program benefits  awarded - undergraduate students
+StatisticsRV,12,72056,UGDOD_A,1302,2987078,2294.2227342549922,40,4500,Average amount of Department of Defense Tuition Assistance Program benefits awarded- undergraduate students
+StatisticsRV,13,72061,GDOD_N,2014,33999,16.881330685203576,0,8661,Number receiving Department of Defense Tuition Assistance Program benefits - graduate students
+StatisticsRV,14,72066,GDOD_T,2014,79147043,39298.432472691165,0,19850916,Total amount of Department of Defense Tuition Assistance Program benefits awarded - graduate students
+StatisticsRV,15,72071,GDOD_A,628,1501366,2390.7101910828023,220,4500,Average amount of Department of Defense Tuition Assistance Program benefits awarded - graduate students
+StatisticsRV,16,72076,DOD_N,5898,229913,38.981519159036964,0,57790,Number receiving Department of Defense Tuition Assistance Program benefits - all students
+StatisticsRV,17,72081,DOD_T,5898,505247461,85664.20159376059,0,129332701,Total amount of Department of Defense Tuition Assistance Program benefits awarded - all students
+StatisticsRV,18,72086,DOD_A,1396,3175923,2275.0164756446993,40,4500,Average amount of Department of Defense Tuition Assistance Program benefits awarded - all students
+Imputation values,0,Code values for item imputation variables Xvarname
+Imputation values,1,CodeValue,ValueLabel
+Imputation values,2,A,Not applicable
+Imputation values,3,B,Institution left item blank
+Imputation values,4,C,Analyst corrected reported value
+Imputation values,5,D,Do not know
+Imputation values,6,G,Data generated from other data values
+Imputation values,7,H,Value not derived - data not usable
+Imputation values,8,J,Logical imputation
+Imputation values,9,K,Ratio adjustment 
+Imputation values,10,L,Imputed using the Group Median procedure
+Imputation values,11,N,Imputed using Nearest Neighbor procedure
+Imputation values,12,P,Imputed using Carry Forward procedure
+Imputation values,13,R,Reported
+Imputation values,14,Z,Implied zero;

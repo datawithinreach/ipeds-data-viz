@@ -1,0 +1,1990 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,File documentation for finance data file private for-profit institutions - FASB: Fiscal year 2022,,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,,,,,,,,,,
+Introduction,3,Filename,F2122_F3
+Introduction,4,  Provisional release:,January 2024
+Introduction,5,Filename,F2122_F3_RV
+Introduction,6,  Final release:,December 2024
+Introduction,7,Overview,"This data file contains institutional finance data for private for-profit institutions that use accounting standards established by the Financial Accounting Standards Board (FASB). Finance data includes institutional revenues by source, expenditures by functional categories, expenditures by natural classification categories, scholarships and fellowships by source,  assets and liabilities. This information provides context for understanding the cost and resources of providing postsecondary education. It is used to calculate the contribution of postsecondary education to the gross national product. Beginning with fiscal year 2020, scholarships and fellowships data now contain the amount of discounts and allowances attributed to each source.  Data on financial health measures were also added in fiscal year 2020.  Beginning with fiscal year 2016 detailed expenditures by function and the natural classifications of fringe benefits, operations and maintenance of plant, depreciation and interest are no longer available. 
+",,,,,,,,
+Introduction,8,Note,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.   ",,,,,,,,
+Introduction,9,Contents of spreadsheet,,,,,,,,,
+Introduction,10,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,11,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,12,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable. (Provisional release),,,,,,,,
+Introduction,13,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Provisional release)",,,,,,,,
+Introduction,14,FrequenciesRV,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable. (Final/revised release),,,,,,,,
+Introduction,15,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Final/revised release)",,,,,,,,
+Introduction,16,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,62821,F3A01,N,12,Cont,XF3A01,Total assets
+varlist,3,66405,F3A01A,N,12,Cont,XF3A01A,Long-term investments
+varlist,4,66410,F3A01B,N,12,Cont,XF3A01B,"Property, plant, and equipment, net of accumulated depreciation"
+varlist,5,66415,F3A01C,N,12,Cont,XF3A01C,"Intangible assets, net of accumulated amortization"
+varlist,6,62826,F3A02,N,12,Cont,XF3A02,Total liabilities
+varlist,7,66420,F3A02A,N,12,Cont,XF3A02A,"Debt related to property, plant, and equipment"
+varlist,8,62831,F3A03,N,12,Cont,XF3A03,Total equity
+varlist,9,62836,F3A04,N,12,Cont,XF3A04,Total liabilities and equity
+varlist,10,66425,F3A05,N,12,Cont,XF3A05,Land and land improvements
+varlist,11,66430,F3A06,N,12,Cont,XF3A06,Buildings
+varlist,12,66435,F3A07,N,12,Cont,XF3A07,"Equipment, including art and library collections"
+varlist,13,66440,F3A08,N,12,Cont,XF3A08,Construction in Progress
+varlist,14,66445,F3A09,N,12,Cont,XF3A09,"Other plant, property and equipment"
+varlist,15,66450,F3A10,N,12,Cont,XF3A10,"Total Plant, Property, and Equipment"
+varlist,16,66455,F3A11,N,12,Cont,XF3A11,Accumulated depreciation
+varlist,17,66460,F3A12,N,12,Cont,XF3A12,"Property, Plant, and Equipment, net of accumulated depreciation (from A1b)"
+varlist,18,62841,F3B01,N,12,Cont,XF3B01,Total revenues and investment return
+varlist,19,62846,F3B02,N,12,Cont,XF3B02,Total expenses
+varlist,20,62851,F3B03,N,12,Cont,XF3B03,Sum of specific changes in equity
+varlist,21,62856,F3B04,N,12,Cont,XF3B04,Net income
+varlist,22,62861,F3B05,N,12,Cont,XF3B05,Other changes in equity
+varlist,23,62866,F3B06,N,12,Cont,XF3B06,"Equity, beginning of year"
+varlist,24,62871,F3B07,N,12,Cont,XF3B07,Adjustments to beginning net equity
+varlist,25,62876,F3B08,N,12,Cont,XF3B08,"Equity, end of year"
+varlist,26,62881,F3C01,N,12,Cont,XF3C01,Pell grants
+varlist,27,62886,F3C02,N,12,Cont,XF3C02,Other federal grants
+varlist,28,62891,F3C03,N,12,Cont,XF3C03,State and local grants
+varlist,29,66465,F3C03A,N,12,Cont,XF3C03A,State grants
+varlist,30,66470,F3C03B,N,12,Cont,XF3C03B,Local government grants
+varlist,31,62896,F3C04,N,12,Cont,XF3C04,Institutional grants
+varlist,32,62901,F3C05,N,12,Cont,XF3C05,Total student grants
+varlist,33,62906,F3C06,N,12,Cont,XF3C06,Discounts and allowances applied to tuition and fees
+varlist,34,62911,F3C07,N,12,Cont,XF3C07,Discounts and allowances applied to auxiliary enterprise revenues
+varlist,35,62913,F3C08,N,12,Cont,XF3C08,Total discounts and allowances
+varlist,36,68283,F3C12,N,12,Cont,XF3C12,"Total
+ discounts and
+ allowances from Pell grants"
+varlist,37,68285,F3C121,N,12,Cont,XF3C121,Discounts and allowances from Pell grants applied to tuition and fees
+varlist,38,68287,F3C122,N,12,Cont,XF3C122,Discounts and allowances from Pell grants applied to auxiliary enterprises
+varlist,39,68289,F3C13,N,12,Cont,XF3C13,Total discounts and allowances from other federal grants
+varlist,40,68291,F3C131,N,12,Cont,XF3C131,Discounts and allowances from other federal grants applied to tuition and fees
+varlist,41,68293,F3C132,N,12,Cont,XF3C132,Discounts and allowances from other federal grants applied to auxiliary enterprises
+varlist,42,68295,F3C14,N,12,Cont,XF3C14,Total discounts and allowances from state government grants
+varlist,43,68297,F3C141,N,12,Cont,XF3C141,Discounts and allowances from state government grants applied to tuition and fees
+varlist,44,68299,F3C142,N,12,Cont,XF3C142,Discounts and allowances from state government grants applied to auxiliary enterprises
+varlist,45,68301,F3C15,N,12,Cont,XF3C15,Total discounts and allowances from local government grants
+varlist,46,68303,F3C151,N,12,Cont,XF3C151,"Discounts and
+ allowances from local government grants applied to tuition and fees"
+varlist,47,68305,F3C152,N,12,Cont,XF3C152,Discounts and allowances from local government grants applied to auxiliary enterprises
+varlist,48,68307,F3C16,N,12,Cont,XF3C16,"Total discounts and
+ allowances from endowments and gifts"
+varlist,49,68309,F3C161,N,12,Cont,XF3C161,"Discounts and 
+allowances from endowments and gifts applied to tuition and fees"
+varlist,50,68311,F3C162,N,12,Cont,XF3C162,Discounts and allowances from endowments and gifts applied to auxiliary enterprises
+varlist,51,68313,F3C17,N,12,Cont,XF3C17,Total discounts and allowances from other institutional sources
+varlist,52,68315,F3C171,N,12,Cont,XF3C171,"Discounts and
+ allowances from other institutional sources applied to tuition and fees"
+varlist,53,68317,F3C172,N,12,Cont,XF3C172,Discounts and allowances from other institutional sources applied to auxiliary enterprises
+varlist,54,62916,F3D01,N,12,Cont,XF3D01,Tuition and fees
+varlist,55,62921,F3D02,N,12,Cont,XF3D02,"Federal appropriations, grants and contracts"
+varlist,56,66475,F3D02A,N,12,Cont,XF3D02A,Federal appropriations
+varlist,57,66480,F3D02B,N,12,Cont,XF3D02B,Federal grants and contracts
+varlist,58,62926,F3D03,N,12,Cont,XF3D03,"State and local appropriations, grants and contracts"
+varlist,59,66485,F3D03A,N,12,Cont,XF3D03A,State appropriations
+varlist,60,66490,F3D03B,N,12,Cont,XF3D03B,State grants and contracts
+varlist,61,66495,F3D03C,N,12,Cont,XF3D03C,Local government appropriations
+varlist,62,66500,F3D03D,N,12,Cont,XF3D03D,Local government and contracts
+varlist,63,62931,F3D04,N,12,Cont,XF3D04,"Private gifts, grants, and contracts"
+varlist,64,62936,F3D05,N,12,Cont,XF3D05,Investment income and investment gains (losses) included in net income
+varlist,65,62941,F3D06,N,12,Cont,XF3D06,Sales and services of educational activities
+varlist,66,62946,F3D07,N,12,Cont,XF3D07,Sales and services of auxiliary enterprises
+varlist,67,66505,F3D12,N,12,Cont,XF3D12,Hospital revenue
+varlist,68,62951,F3D08,N,12,Cont,XF3D08,Other revenue
+varlist,69,62956,F3D09,N,12,Cont,XF3D09,Total revenues and investment return
+varlist,70,62961,F3E011,N,12,Cont,XF3E011,Instruction-Total amount
+varlist,71,66515,F3E012,N,12,Cont,XF3E012,Instruction-Salaries and wages
+varlist,72,66545,F3E02A1,N,12,Cont,XF3E02A1,Research-Total amount
+varlist,73,66550,F3E02A2,N,12,Cont,XF3E02A2,Research-Salaries and wages
+varlist,74,66580,F3E02B1,N,12,Cont,XF3E02B1,Public service-Total amount
+varlist,75,66585,F3E02B2,N,12,Cont,XF3E02B2,Public service-Salaries and wages
+varlist,76,66615,F3E03A1,N,12,Cont,XF3E03A1,Academic support-Total amount
+varlist,77,66620,F3E03A2,N,12,Cont,XF3E03A2,Academic support-Salaries and wages
+varlist,78,66650,F3E03B1,N,12,Cont,XF3E03B1,Student service-Total amount
+varlist,79,66655,F3E03B2,N,12,Cont,XF3E03B2,Student service-Salaries and wages
+varlist,80,66685,F3E03C1,N,12,Cont,XF3E03C1,Institutional support-Total amount
+varlist,81,66690,F3E03C2,N,12,Cont,XF3E03C2,Institutional support-Salaries and wages
+varlist,82,62976,F3E041,N,12,Cont,XF3E041,Auxiliary enterprises-Total amount
+varlist,83,66725,F3E042,N,12,Cont,XF3E042,Auxiliary enterprises-Salaries and wages
+varlist,84,62981,F3E051,N,12,Cont,XF3E051,Net grant aid to students-Total amount
+varlist,85,66830,F3E101,N,12,Cont,XF3E101,Hospital services-Total amount
+varlist,86,66835,F3E102,N,12,Cont,XF3E102,Hospital services-Salaries and wages
+varlist,87,62986,F3E061,N,12,Cont,XF3E061,Other expenses-Total amount
+varlist,88,66770,F3E062,N,12,Cont,XF3E062,Other expenses-Salaries and wages
+varlist,89,62991,F3E071,N,12,Cont,XF3E071,Total expenses-Total amount
+varlist,90,66805,F3E072,N,12,Cont,XF3E072,Total expenses-Salaries and wages
+varlist,91,66810,F3E073,N,12,Cont,XF3E073,Total expenses-Benefits
+varlist,92,66812,F3E074,N,12,Cont,XF3E074,Total expenses-Operations and maintenance
+varlist,93,66815,F3E075,N,12,Cont,XF3E075,Total expenses-Depreciation
+varlist,94,66820,F3E076,N,12,Cont,XF3E076,Total expenses-Interest
+varlist,95,66825,F3E077,N,12,Cont,XF3E077,Total expenses-All other
+varlist,96,66900,F3F01,N,12,Cont,XF3F01,Federal income tax expenses
+varlist,97,66905,F3F02,N,12,Cont,XF3F02,State and local income tax expenses
+varlist,98,66910,F3F03,N,2,Disc,,Designee who paid the reported tax expenses for the institution
+varlist,99,68319,F3G01,N,12,Cont,XF3G01,Pretax income
+varlist,100,68321,F3G02,N,12,Cont,XF3G02,Total revenues
+varlist,101,68323,F3G03,N,12,Cont,XF3G03,Total equity
+varlist,102,68325,F3G04,N,12,Cont,XF3G04,Total assets
+varlist,103,68327,F3G05,N,12,Cont,XF3G05,Adjusted equity
+varlist,104,68329,F3G06,N,12,Cont,XF3G06,Plant-related debt
+varlist,105,68331,F3G07,N,12,Cont,XF3G07,Total expenses
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,62821,F3A01,"Total assets is the sum of the following amounts: cash, cash equivalents and temporary investments; receivables (net of allowance for uncollectible accounts); inventories, prepaid expenses, and deferred charges; amounts held by trustees for construction and debt service; long-term investments; plant, property, and equipment; and other assets."
+Description,3,66405,F3A01A,Long-term investments includes the amount for all assets held for long-term investments.
+Description,4,66410,F3A01B,"Property, plant, and equipment, net of accumulated depreciation includes end-of-year market value for categories such as land, buildings, improvements other than buildings, equipment, and library books, combined and net of accumulated depreciation (FARM para. 407)."
+Description,5,66415,F3A01C,"Intangible assets, net of accumulated amortization, are all assets consisting of certain nonmaterial rights and benefits of an institution, such as patents, copyrights, trademarks and goodwill. The amount reported should be reduced by total accumulated amortization. (FARM para. 409)"
+Description,6,62826,F3A02,"Total liabilities is the sum of the following amounts: accounts payable; deferred revenues and refundable advances; post-retirement and post-employment obligations; other accrued liabilities; bonds, notes, and capital leases payable and other long-term debt, including current portion;  government grants refundable under student loan programs; and other liabilities."
+Description,7,66420,F3A02A,"Debt related to property, plant, and equipment include amounts for all long-term debt obligations including bonds payable, mortgages payable, capital leases payable, and long-term notes payable. (FARM para. 420.3, 423) If the current portion of long-term debt is separately reported in the GPFS, include that amount."
+Description,8,62831,F3A03,"Total equity is the sum of the following amounts: stock (common, preferred, treasury, etc.) and additional paid-in-capital; retained earnings; and accumulated other comprehensive income."
+Description,9,62836,F3A04,Total liabilities and equity is the sum of total liabilities and total equity.
+Description,10,66425,F3A05,"Land and land improvements are end of year values for capital assets consisting of land and improvements such as athletic fields, golf courses, or lakes. Land is nondepreciable; some land improvements are depreciable and some nondepreciable."
+Description,11,66430,F3A06,"Buildings are end of year values for capital assets built or acquired for occupancy and use by the entity. These are structures such as classrooms, research facilities, administrative offices, and storage. It also includes built-in fixtures and equipment that are essentially part of the permanent structure. Capitalized leashold improvements should be included if the improvements are related to leased facilities."
+Description,12,66435,F3A07,"Equipment, including art and library collections, are end of year values. It includes capitalized leasehold improvements if the improvements are to leased equipment."
+Description,13,66440,F3A08,"Construction in progress includes capital assets under construction and not yet placed into service, such as building or parking lot. Capital assets are not subject to depreciation while in a construction in progress status."
+Description,14,66445,F3A09,"Other plant, property, and equipment are all other amounts for capital assets not reported as:
+-Land and land improvements
+-Buildings
+-Equipment, including art and library collections
+-Construction in progress."
+Description,15,66450,F3A10,"Total end of year values for property obtained under capital leases from the following categories:
+-Land and land improvements
+-Buildings
+-Equipment, including art and library collections
+-Construction in progress
+-Other plant, property and equipment"
+Description,16,66455,F3A11,"Accumulated depreciation is the total depreciation charged as expenses as of the reporting date (in the current year and in prior years) on the capital assets of the institution. FASB Statement No. 117 and GASB Statement No. 34 require that accumulated depreciation to date be recognized. 
+NOTE: When a capital asset is removed from the accounting records due to disposal or end of the asset's useful life, the depreciation accumulated through the years on the asset is also removed from the records."
+Description,17,66460,F3A12,"Property, plant, and equipment, net of accumulated depreciation - Includes end-of-year market value for categories such as land, buildings, improvements other than buildings, equipment, and library books, combined and net of accumulated depreciation (FARM para. 407)."
+Description,18,62841,F3B01,"Total revenues and investment return is the amount reported in Part A, line A10 (Total revenues and investment return)."
+Description,19,62846,F3B02,"Total expenses is the amount reported in Part B, line B10, column 1 (Total expenses)."
+Description,20,62851,F3B03,Sum of specific changes in equity is the sum of the following amounts: gains or (loss) on sale of plant assets; other nonoperating gains or (losses); provision for Federal and State income tax (where applicable); discontinued operations; extraordinary gain or (loss); and cumulative effect of change(s) in accounting principle.
+Description,21,62856,F3B04,Net income is the sum of the following amounts: net income before other items; discontinued operations; extraordinary gain or (loss); and cumulative effect of change(s) in accounting principle. This amount should agree with the amount reported as net income in your general purpose financial statements.
+Description,22,62861,F3B05,Other changes in equity is the sum of the following amounts: investments by owners; distributions to owners; unrealized gains (losses) on securities and other comprehensive income; and other additions to (deductions from) owners’ equity.
+Description,23,62866,F3B06,"Equity, beginning of year should correspond to the total equity at the beginning of the reporting period as found in the general purpose financial statements."
+Description,24,62871,F3B07,Adjustments to beginning net equity is any unrealized gains (losses) on investments and any other adjustments to beginning net equity not reported elsewhere. This includes adjustments for retroactive application of changes in accounting principle and prior period adjustments.
+Description,25,62876,F3B08,"Equity, end of year is the sum of the following amounts: net income; other changes in equity; equity-beginning of year; and adjustments to beginning net equity. This amount should equal the total equity reported in the general purpose financial statements."
+Description,26,62881,F3C01,Pell grants includes amounts administered by the institution under the Pell grant program.
+Description,27,62886,F3C02,"Other federal grants is the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Matching portions for any of these programs are not included."
+Description,28,62891,F3C03,The sum of state and local student grant aid awarded to the institution.
+Description,29,66465,F3C03A,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG)."
+Description,30,66470,F3C03B,Local grants includes the amount awarded to the institution under local government student aid programs. 
+Description,31,62896,F3C04,Institutional grants includes the amounts awarded to students from institutional resources.
+Description,32,62901,F3C05,"Total student aid includes Pell grants and other federal grants, state and local grants, and institutional grants."
+Description,33,62906,F3C06,Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuiton and fee revenues.
+Description,34,62911,F3C07,Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue.
+Description,35,62913,F3C08,Total discounts and allowances is the sum of discounts and allowances applied to both tuition & fees and auxiliary enterprises.
+Description,36,68283,F3C12,"Pell grants includes amounts administered by the institution under the Pell grant program.
+
+Total discounts and allowances is the sum of discounts and allowances applied to both tuition & fees and auxiliary enterprises."
+Description,37,68285,F3C121,"Pell grants includes amounts administered by the institution under the Pell grant program.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuiton and fee revenues."
+Description,38,68287,F3C122,"Pell grants includes amounts administered by the institution under the Pell grant program.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,39,68289,F3C13,"Other federal grants is the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Matching portions for any of these programs are not included.
+
+Total discounts and allowances is the sum of discounts and allowances applied to both tuition & fees and auxiliary enterprises."
+Description,40,68291,F3C131,"Other federal grants is the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Matching portions for any of these programs are not included.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuiton and fee revenues."
+Description,41,68293,F3C132,"Other federal grants is the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Matching portions for any of these programs are not included.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,42,68295,F3C14,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG).
+
+Total discounts and allowances is the sum of discounts and allowances applied to both tuition & fees and auxiliary enterprises."
+Description,43,68297,F3C141,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG).
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuiton and fee revenues."
+Description,44,68299,F3C142,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG).
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,45,68301,F3C15,"Local grants includes the amount awarded to the institution under local government student aid programs. 
+
+Total discounts and allowances is the sum of discounts and allowances applied to both tuition & fees and auxiliary enterprises."
+Description,46,68303,F3C151,"Local grants includes the amount awarded to the institution under local government student aid programs. 
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuiton and fee revenues."
+Description,47,68305,F3C152,"Local grants includes the amount awarded to the institution under local government student aid programs. 
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,48,68307,F3C16,"Endowments are funds whose principal is nonexpendable (true endowment) and that are intended to be invested to provide for institutional use. The funds also include funds for which the donor has stipulated that the principal may be expended after a stated period or on the occurrence of a certain event (term endowment) and funds established by the governing board to function line an endowment fund but which may be totally expended at any time at the discretion of the governing board.
+
+Gifts are received contributions as a nonexchange transaction. The contributions include bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution.
+
+Total discounts and allowances is the sum of discounts and allowances applied to both tuition & fees and auxiliary enterprises."
+Description,49,68309,F3C161,"Endowments are funds whose principal is nonexpendable (true endowment) and that are intended to be invested to provide for institutional use. The funds also include funds for which the donor has stipulated that the principal may be expended after a stated period or on the occurrence of a certain event (term endowment) and funds established by the governing board to function line an endowment fund but which may be totally expended at any time at the discretion of the governing board.
+
+Gifts are received contributions as a nonexchange transaction. The contributions include bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuiton and fee revenues."
+Description,50,68311,F3C162,"Endowments are funds whose principal is nonexpendable (true endowment) and that are intended to be invested to provide for institutional use. The funds also include funds for which the donor has stipulated that the principal may be expended after a stated period or on the occurrence of a certain event (term endowment) and funds established by the governing board to function line an endowment fund but which may be totally expended at any time at the discretion of the governing board.
+
+Gifts are received contributions as a nonexchange transaction. The contributions include bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,51,68313,F3C17,"Institutional grants includes the amounts awarded to students from institutional resources.
+
+Total discounts and allowances is the sum of discounts and allowances applied to both tuition & fees and auxiliary enterprises."
+Description,52,68315,F3C171,"Institutional grants includes the amounts awarded to students from institutional resources.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuiton and fee revenues."
+Description,53,68317,F3C172,"Institutional grants includes the amounts awarded to students from institutional resources.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,54,62916,F3D01,"Tuition and fees (net of amount reported in allowances applied to tuition and fees) includes the amount of tuition and educational fees, net of any allowances applied in the general purpose financial statements. Includes all fees for continuing education programs, conferences, and seminars."
+Description,55,62921,F3D02,"Federal appropriations, grants and contracts includes all amounts received from the Federal Government including a direct appropriation of Congress, and any grants or contracts. An example of a federal appropriation is a federal land-grant appropriation. Includes all revenues from federal agencies that are for specific undertakings such as research projects, training projects, and similar activities, including contributions from federal agencies."
+Description,56,66475,F3D02A,"Federal appropriations includes amounts received from the federal government through a direct appropriation of Congress, except grants and contracts. An example of a federal appropriation is a federal land grant appropriation. This value does not include Pell Grants or ARRA revenues."
+Description,57,66480,F3D02B,"Federal grants and contracts includes all revenues from federal agencies that are for specific undertakings such as research projects, training projects, and similar activities. Includes federal Pell and similar student aid grants when they are treated as student aid expenses when awarded to the student. If federal Pell and similar student aid grants are treated as agency transactions in general purpose financial statements, they are excluded from this amount."
+Description,58,62926,F3D03,"State and local appropriations, grants and contracts includes all amounts received from a state or local government through a direct appropriation of its legislative body, and any grants or contracts. An example of a state or local appropriation that should be entered is an annual state or local appropriation for operating expenses of the institution."
+Description,59,66485,F3D03A,"State appropriations include amounts received from a state government through a direct appropriation of its legislative body, except for state grants and contracts. An example of a state appropriation is an annual state appropriation for operating expenses of the institution. This value does not include ARRA revenues."
+Description,60,66490,F3D03B,"State grants and contracts include all revenues from state government agencies that are for specific undertakings such as research projects, training projects, and similar activities. Includes state grants for student aid when they are treated as student aid expenses when awarded to the student. If state grants for student aid are treated as agency transactions in general purpose financial statements, they are excluded from this amount."
+Description,61,66495,F3D03C,"Local appropriations include amounts received from a local government (i.e., city and/or county) through a direct appropriation of its legislative body, except for local grants and contracts. An example of a local appropriation is an annual local appropriation for operating expenses of the institution."
+Description,62,66500,F3D03D,"Local grants and contracts include all revenues from local government agencies that are for specific undertakings such as research projects, training projects, and similar activities. Includes local grants for student aid when they are treated as student aid expenses when awarded to the student. If local grants for student aid are treated as agency transactions in general purpose financial statements they are excluded from this amount."
+Description,63,62931,F3D04,Private grants and contracts includes revenues from private (non-governmental) entities including revenue from research or training projects and similar activities.
+Description,64,62936,F3D05,"Investment income and investment gains (losses) included in net income includes all investment income including dividends; interest; rents and royalties; gains and losses (realized and unrealized) from holding investments that are included in net income in accordance with the Statement of Financial Accounting Standards No. 115; student loan interest; and amounts distributed from irrevocable trusts held by others (collectively referred to as ""investment income""). Includes all investment income and net investment gains (losses) included in net income in the institution’s general purpose financial statements. Net investment gains (losses) included in other comprehensive income should be reported in Part B, line 03."
+Description,65,62941,F3D06,"Sales and services of educational activities includes: all revenues derived from the sales of goods or services that are incidental to the conduct of instruction; research or public service; and revenues of activities that exist to provide instructional and laboratory experience for students and that incidentally create goods and services that may be sold. Examples include film rentals, scientific and literary publications, testing services, university presses, dairies, and patient care clinics that are not part of a hospital."
+Description,66,62946,F3D07,"Sales and services of auxiliary enterprises (net of amount reported in allowances applied to auxiliary enterprise revenues in Student Aid) includes revenues generated by the auxiliary enterprise operations, net of any allowances applied in the general purpose financial statements. Auxiliary enterprises are operations that exist to furnish a service to students, faculty, or staff, and that charge a fee that is directly related to the cost of the service. Examples are residence halls, food services, student health services, intercollegiate athletics, college unions, college stores, and movie theaters."
+Description,67,66505,F3D12,Revenues from hospitals include revenues and gains of hospitals operated as a component of a reporting institution of higher education.
+Description,68,62951,F3D08,"Other revenue includes all revenue not included elsewhere in Part A, Revenues and Investment Return. Excluded from this amount are gains or other unusual or nonrecurring items that are required to be included in Part C, Summary of Changes in Equity."
+Description,69,62956,F3D09,"Total revenues and investment return is the sum of the following amounts: tuition and fees; government appropriations, grants and contracts; private grants and contracts; investment income and investment gains (losses) included in net income; sales and services of educational activities and auxiliary enterprises; and other revenue."
+Description,70,62961,F3E011,"Instruction expenses includes all expenses of the colleges, schools, departments, and other instructional divisions of the institution and expenses for departmental research and public service that are not separately budgeted. Includes general academic instruction, occupational and vocational instruction, special session instruction, community education, preparatory and adult basic education, and remedial and tutorial instruction conducted by the teaching faculty for the institutions's students. Also, includes expenses for both credit and non-credit activities. Excludes expenses for academic administration if the primary function is administration (e.g., academic deans)."
+Description,71,66515,F3E012,Instruction-salaries and wages includes salary and wage expenses incurred in instruction.
+Description,72,66545,F3E02A1," Research expense includes expenses for activities specifically organized to produce research outcomes either commissioned by an agency external to the institution or separately budgeted by an organizational unit within the institution. The category includes institutes and research centers, and individual and project research. Excludes nonresearch sponsored programs (e.g., training programs). Training programs generally are reported on line 01 (Instruction). (FARM para. 703.5)"
+Description,73,66550,F3E02A2,Research-salaries and wages includes salary and wage expenses incurred in research.
+Description,74,66580,F3E02B1,"Public service expenses include those expenses specifically for public service and for activities established primarily to provide noninstructional services beneficial to groups external to the institution. Examples are seminars and projects provided to the particular sectors of the community. Include expenses for community services, cooperative extension services, and public broadcasting services. (FARM para. 703.6)"
+Description,75,66585,F3E02B2,Public service-salaries and wages includes salary and wage expenses incurred in Public service.
+Description,76,66615,F3E03A1,"Academic support are expenses for support services that are an integral part of the institution’s primary mission of instruction, research, or public service and that are not charged directly to these primary programs. Include expenses for libraries, museums, galleries, audio/visual services, academic development, academic computing support, course and curriculum development, and academic administration. Include expenses for medical, veterinary and dental clinics if their primary purpose is to support the institutional program, that is, they are not part of a hospital. (FARM para. 703.7)"
+Description,77,66620,F3E03A2,Academic support-salaries and wages includes salary and wage expenses incurred in Academic support.
+Description,78,66650,F3E03B1,"Student service expenses are expenses for admissions, registrar activities and activities whose primary purpose is to contribute to students emotional and physical well-being and to their intellectual, cultural and social development outside the context of the formal instructional program. Examples are career guidance, counseling, financial aid administration, student records, athletics, and student health services, except when operated as a self-supporting auxiliary enterprise. (FARM para. 703.8)"
+Description,79,66655,F3E03B2,Student service-salaries and wages includes salary and wage expenses incurred in Student service.
+Description,80,66685,F3E03C1,"Institutional support expenses include expenses for the day-to-day operational support of the institution. Include expenses for general administrative services, executive direction and planning, legal and fiscal operations, administrative computing support, and public relations/development. (FARM para. 703.9)"
+Description,81,66690,F3E03C2,Institutional support-salaries and wages includes salary and wage expenses incurred in Institutional support.
+Description,82,62976,F3E041,"Auxiliary enterprises expenses include expenses of essentially self-supporting operations of the institution that exist to furnish a service to students, faculty, or staff, and that charge a fee that is directly related to, although not necessarily equal to, the cost of the service. Examples are residence halls, food services, student health services, intercollegiate athletics (only if essentially self-supporting), college unions, college stores, faculty and staff parking, and faculty housing. (FARM para. 703.11)"
+Description,83,66725,F3E042,Auxiliary enterprises-salaries and wages includes salary and wage expenses incurred in Auxiliary enterprises.
+Description,84,62981,F3E051,"Net grant aid to students expenses include student awards, made from contributed funds or grant funds, that are under the control of the institution, net of discounts and allowances applied to tuition and fees and auxiliary enterprises. If the institution treats student grant aid as passthrough agency transactions on their GPFS, then those amounts will not be included here."
+Description,85,66830,F3E101,"Hospital services includes expenses associated with a hospital operated by the postsecondary institution (but not as a component unit) and reported as a part of the institution. This classification includes nursing expenses, other professional services, general services, administrative services, and fiscal services. Also included are information technology expenses, actual or allocated costs for operation and maintenance of plant, interest and depreciation related to hospital capital assets."
+Description,86,66835,F3E102,Hospital services-salaries and wages includes salary and wage expenses incurred in Hospital services.
+Description,87,62986,F3E061,"Other expenses-Total amount is a calculated value generated by subtracting expenses from instruction, research, public service, academic support, student services, institutional support, auxiliary enterprises, net grant aid to students, hospital services, and O&M from the total expenses."
+Description,88,66770,F3E062,"Other expenses-Salaraies and wages is a calculated value generated by subtracting expenses from instruction, research, public service, academic support, student services, institutional support, auxiliary enterprises, net grant aid to students, hospital services, and O&M from the total expenses in salaries and wages."
+Description,89,62991,F3E071,Total expenses-Total amount should be the same as the amount of total expenses found in the institution's GPFS.
+Description,90,66805,F3E072,"Salaries and wages	 - Amounts paid as compensation for services to all employees - faculty, staff, part-time, full-time, regular employees, and student employees. This includes regular or periodic payment to a person for the regular or periodic performance of work or a service and payment to a person for more sporadic performance of work or a service (overtime, extra compensation, summer compensation, bonuses, sick or annual leave, etc.)."
+Description,91,66810,F3E073,"Fringe benefits	 - Cash contributions in the form of supplementary or deferred compensation other than salary. Excludes the employee's contribution. Employee fringe benefits include retirement plans, social security taxes, medical/dental plans, guaranteed disability income protection plans, tuition plans, housing plans, unemployment compensation plans, group life insurance plans, worker's compensation plans, and other benefits in-kind with cash options."
+Description,92,66812,F3E074,"Operations and maintenance - 	An expense category that includes expenses for operations established to provide service and maintenance related to campus grounds and facilities used for educational and general purposes. Specific expenses include: janitorial and utility services; repairs and ordinary or normal alterations of buildings, furniture, and equipment; care of grounds; maintenance and operation of buildings and other plant facilities; security; earthquake and disaster preparedness; safety; hazardous waste disposal; property, liability, and all other insurance relating to property; space and capital leasing; facility planning and management; and central receiving. This expense does include amounts charged to auxiliary enterprises, hospitals, and independent operations. Also includes information technology expenses related to operation and maintenance of plant activities if the institution separately budgets and expenses information technology resources (otherwise these expenses are included in institutional support)."
+Description,93,66815,F3E075,"Depreciation	 -The allocation or distribution of the cost of capital assets, less any salvage value, to expenses over the estimated useful life of the asset in a systematic and rational manner. Depreciation for the year is the amount of the allocation or distribution for the year involved."
+Description,94,66820,F3E076,Interest	 - The price paid (or received) for the use of money over a period of time. Interest income is one component of investment income. Interest paid by the institution is interest expense.
+Description,95,66825,F3E077,"Other Natural classication expense is the difference between the total expenses and the sum of all natural expense categories (Salaries and wages, benefits, operations and maintenance, depreciation and interest)."
+Description,96,66900,F3F01,Federal income tax expenses include the sum of the current federal tax expense (or benefit) and deferred federal tax expense (or benefit).
+Description,97,66905,F3F02,State and local income tax expenses include the sum of the current state and local tax expense (or benefit) and deferred state and local tax expense (or benefit).
+Description,98,66910,F3F03,"The institution designated who paid for the reported tax expenditures: 
+1-the multi-institution or multi-campus organization indicated by the institution in the IC-Header component
+2-a multi-institution or multi-campus organization that was not indicated in IC-Header
+3-the reporting institution, including those in IPEDS parent/child relationships"
+Description,99,68319,F3G01,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Pretax income Amount of income/loss, prior to taxes, from the GPFS. Typically, this is the amount of total revenue minus operating expenses."
+Description,100,68321,F3G02,"These variables are  intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Total revenues recognized in the GPFS from F3B01. Total revenues and investment return is the sum of the following amounts: tuition and fees; government appropriations, grants and contracts; private grants and contracts; investment income and investment gains (losses) included in net income; sales and services of educational activities and auxiliary enterprises; and other revenue."
+Description,101,68323,F3G03,"These variables are  intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Total equity has been carried forward from F3A03. This is calculated as the total assets minus total liabilities. 
+
+Total equity is the sum of the following amounts: stock (common, preferred, treasury, etc.) and additional paid-in-capital; retained earnings; and accumulated other comprehensive income."
+Description,102,68325,F3G04,"These variables are  intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Total assets from F3A01 is the sum of the following amounts: cash, cash equivalents and temporary investments; receivables (net of allowance for uncollectible accounts); inventories, prepaid expenses, and deferred charges; amounts held by trustees for construction and debt service; long-term investments; plant, property, and equipment; and other assets."
+Description,103,68327,F3G05,"These variables are  intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Adjusted equity is total equity (part A, line 03) minus net property, plant & equipment (part A, line 01b) and intangible assets (part A, line 01c)."
+Description,104,68329,F3G06,"These variables are  intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Debt related to property, plant, and equipment has been from F302a.
+
+Amounts for all long-term debt obligations including bonds payable, mortgages payable, capital leases payable, and long-term notes payable. (FARM para. 420.3, 423) If the current portion of long-term debt is separately reported in the GPFS, then that amount is included."
+Description,105,68331,F3G07,"These variables are  intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Total expense has been carried forward from F3B02"
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,66910,F3F03,1,Aggregate amounts paid by multi-institution or multi-campus organization indicated in IC (diretory information),86,4.0599999999999996
+Frequencies,2,66910,F3F03,2,Aggregate amounts paid by multi-institution or multi-campus organization NOT indicated in IC (diretory information),12,0.56999999999999995
+Frequencies,3,66910,F3F03,3,Amounts paid by the reporting institution,180,8.49
+Frequencies,4,66910,F3F03,-2,Not applicable,1842,86.89
+Frequencies,5,,,,,,
+Frequencies,6,,,,,,
+Frequencies,7,,,,,,
+Frequencies,8,,,,,,
+Frequencies,9,,,,,,
+Frequencies,10,,,,,,
+Frequencies,11,,,,,,
+Frequencies,12,,,,,,
+Frequencies,13,,,,,,
+Frequencies,14,,,,,,
+Frequencies,15,,,,,,
+Frequencies,16,,,,,,
+Frequencies,17,,,,,,
+Frequencies,18,,,,,,
+Frequencies,19,,,,,,
+Frequencies,20,,,,,,
+Frequencies,21,,,,,,
+Frequencies,22,,,,,,
+Frequencies,23,,,,,,
+Frequencies,24,,,,,,
+Frequencies,25,,,,,,
+Frequencies,26,,,,,,
+Frequencies,27,,,,,,
+Frequencies,28,,,,,,
+Frequencies,29,,,,,,
+Frequencies,30,,,,,,
+Frequencies,31,,,,,,
+Frequencies,32,,,,,,
+Frequencies,33,,,,,,
+Frequencies,34,,,,,,
+Frequencies,35,,,,,,
+Frequencies,36,,,,,,
+Frequencies,37,,,,,,
+Frequencies,38,,,,,,
+Frequencies,39,,,,,,
+Frequencies,40,,,,,,
+Frequencies,41,,,,,,
+Frequencies,42,,,,,,
+Frequencies,43,,,,,,
+Frequencies,44,,,,,,
+Frequencies,45,,,,,,
+Frequencies,46,,,,,,
+Frequencies,47,,,,,,
+Frequencies,48,,,,,,
+Frequencies,49,,,,,,
+Frequencies,50,,,,,,
+Frequencies,51,,,,,,
+Frequencies,52,,,,,,
+Frequencies,53,,,,,,
+Frequencies,54,,,,,,
+Frequencies,55,,,,,,
+Frequencies,56,,,,,,
+Frequencies,57,,,,,,
+Frequencies,58,,,,,,
+Frequencies,59,,,,,,
+Frequencies,60,,,,,,
+Frequencies,61,,,,,,
+Frequencies,62,,,,,,
+Frequencies,63,,,,,,
+Frequencies,64,,,,,,
+Frequencies,65,,,,,,
+Frequencies,66,,,,,,
+Frequencies,67,,,,,,
+Frequencies,68,,,,,,
+Frequencies,69,,,,,,
+Frequencies,70,,,,,,
+Frequencies,71,,,,,,
+Frequencies,72,,,,,,
+Frequencies,73,,,,,,
+Frequencies,74,,,,,,
+Frequencies,75,,,,,,
+Frequencies,76,,,,,,
+Frequencies,77,,,,,,
+Frequencies,78,,,,,,
+Frequencies,79,,,,,,
+Frequencies,80,,,,,,
+Frequencies,81,,,,,,
+Frequencies,82,,,,,,
+Frequencies,83,,,,,,
+Frequencies,84,,,,,,
+Frequencies,85,,,,,,
+Frequencies,86,,,,,,
+Frequencies,87,,,,,,
+Frequencies,88,,,,,,
+Frequencies,89,,,,,,
+Frequencies,90,,,,,,
+Frequencies,91,,,,,,
+Frequencies,92,,,,,,
+Frequencies,93,,,,,,
+Frequencies,94,,,,,,
+Frequencies,95,,,,,,
+Frequencies,96,,,,,,
+Frequencies,97,,,,,,
+Frequencies,98,,,,,,
+Frequencies,99,,,,,,
+Frequencies,100,,,,,,
+Frequencies,101,,,,,,
+Frequencies,102,,,,,,
+Frequencies,103,,,,,,
+Frequencies,104,,,,,,
+Frequencies,105,,,,,,
+Frequencies,106,,,,,,
+Frequencies,107,,,,,,
+Frequencies,108,,,,,,
+Frequencies,109,,,,,,
+Frequencies,110,,,,,,
+Frequencies,111,,,,,,
+Frequencies,112,,,,,,
+Frequencies,113,,,,,,
+Frequencies,114,,,,,,
+Frequencies,115,,,,,,
+Frequencies,116,,,,,,
+Frequencies,117,,,,,,
+Frequencies,118,,,,,,
+Frequencies,119,,,,,,
+Frequencies,120,,,,,,
+Frequencies,121,,,,,,
+Frequencies,122,,,,,,
+Frequencies,123,,,,,,
+Frequencies,124,,,,,,
+Frequencies,125,,,,,,
+Frequencies,126,,,,,,
+Frequencies,127,,,,,,
+Frequencies,128,,,,,,
+Frequencies,129,,,,,,
+Frequencies,130,,,,,,
+Frequencies,131,,,,,,
+Frequencies,132,,,,,,
+Frequencies,133,,,,,,
+Frequencies,134,,,,,,
+Frequencies,135,,,,,,
+Frequencies,136,,,,,,
+Frequencies,137,,,,,,
+Frequencies,138,,,,,,
+Frequencies,139,,,,,,
+Frequencies,140,,,,,,
+Frequencies,141,,,,,,
+Frequencies,142,,,,,,
+Frequencies,143,,,,,,
+Frequencies,144,,,,,,
+Frequencies,145,,,,,,
+Frequencies,146,,,,,,
+Frequencies,147,,,,,,
+Frequencies,148,,,,,,
+Frequencies,149,,,,,,
+Frequencies,150,,,,,,
+Frequencies,151,,,,,,
+Frequencies,152,,,,,,
+Frequencies,153,,,,,,
+Frequencies,154,,,,,,
+Frequencies,155,,,,,,
+Frequencies,156,,,,,,
+Frequencies,157,,,,,,
+Frequencies,158,,,,,,
+Frequencies,159,,,,,,
+Frequencies,160,,,,,,
+Frequencies,161,,,,,,
+Frequencies,162,,,,,,
+Frequencies,163,,,,,,
+Frequencies,164,,,,,,
+Frequencies,165,,,,,,
+Frequencies,166,,,,,,
+Frequencies,167,,,,,,
+Frequencies,168,,,,,,
+Frequencies,169,,,,,,
+Frequencies,170,,,,,,
+Frequencies,171,,,,,,
+Frequencies,172,,,,,,
+Frequencies,173,,,,,,
+Frequencies,174,,,,,,
+Frequencies,175,,,,,,
+Frequencies,176,,,,,,
+Frequencies,177,,,,,,
+Frequencies,178,,,,,,
+Frequencies,179,,,,,,
+Frequencies,180,,,,,,
+Frequencies,181,,,,,,
+Frequencies,182,,,,,,
+Frequencies,183,,,,,,
+Frequencies,184,,,,,,
+Frequencies,185,,,,,,
+Frequencies,186,,,,,,
+Frequencies,187,,,,,,
+Frequencies,188,,,,,,
+Frequencies,189,,,,,,
+Frequencies,190,,,,,,
+Frequencies,191,,,,,,
+Frequencies,192,,,,,,
+Frequencies,193,,,,,,
+Frequencies,194,,,,,,
+Frequencies,195,,,,,,
+Frequencies,196,,,,,,
+Frequencies,197,,,,,,
+Frequencies,198,,,,,,
+Frequencies,199,,,,,,
+Frequencies,200,,,,,,
+Frequencies,201,,,,,,
+Frequencies,202,,,,,,
+Frequencies,203,,,,,,
+Frequencies,204,,,,,,
+Frequencies,205,,,,,,
+Frequencies,206,,,,,,
+Frequencies,207,,,,,,
+Frequencies,208,,,,,,
+Frequencies,209,,,,,,
+Frequencies,210,,,,,,
+Frequencies,211,,,,,,
+Frequencies,212,,,,,,
+Frequencies,213,,,,,,
+Frequencies,214,,,,,,
+Frequencies,215,,,,,,
+Frequencies,216,,,,,,
+Frequencies,217,,,,,,
+Frequencies,218,,,,,,
+Frequencies,219,,,,,,
+Frequencies,220,,,,,,
+Frequencies,221,,,,,,
+Frequencies,222,,,,,,
+Frequencies,223,,,,,,
+Frequencies,224,,,,,,
+Frequencies,225,,,,,,
+Frequencies,226,,,,,,
+Frequencies,227,,,,,,
+Frequencies,228,,,,,,
+Frequencies,229,,,,,,
+Frequencies,230,,,,,,
+Frequencies,231,,,,,,
+Frequencies,232,,,,,,
+Frequencies,233,,,,,,
+Frequencies,234,,,,,,
+Frequencies,235,,,,,,
+Frequencies,236,,,,,,
+Frequencies,237,,,,,,
+Frequencies,238,,,,,,
+Frequencies,239,,,,,,
+Frequencies,240,,,,,,
+Frequencies,241,,,,,,
+Frequencies,242,,,,,,
+Frequencies,243,,,,,,
+Frequencies,244,,,,,,
+Frequencies,245,,,,,,
+Frequencies,246,,,,,,
+Frequencies,247,,,,,,
+Frequencies,248,,,,,,
+Frequencies,249,,,,,,
+Frequencies,250,,,,,,
+Frequencies,251,,,,,,
+Frequencies,252,,,,,,
+Frequencies,253,,,,,,
+Frequencies,254,,,,,,
+Frequencies,255,,,,,,
+Frequencies,256,,,,,,
+Frequencies,257,,,,,,
+Frequencies,258,,,,,,
+Frequencies,259,,,,,,
+Frequencies,260,,,,,,
+Frequencies,261,,,,,,
+Frequencies,262,,,,,,
+Frequencies,263,,,,,,
+Frequencies,264,,,,,,
+Frequencies,265,,,,,,
+Frequencies,266,,,,,,
+Frequencies,267,,,,,,
+Frequencies,268,,,,,,
+Frequencies,269,,,,,,
+Frequencies,270,,,,,,
+Frequencies,271,,,,,,
+Frequencies,272,,,,,,
+Frequencies,273,,,,,,
+Frequencies,274,,,,,,
+Frequencies,275,,,,,,
+Frequencies,276,,,,,,
+Frequencies,277,,,,,,
+Frequencies,278,,,,,,
+Frequencies,279,,,,,,
+Frequencies,280,,,,,,
+Frequencies,281,,,,,,
+Frequencies,282,,,,,,
+Frequencies,283,,,,,,
+Frequencies,284,,,,,,
+Frequencies,285,,,,,,
+Frequencies,286,,,,,,
+Frequencies,287,,,,,,
+Frequencies,288,,,,,,
+Frequencies,289,,,,,,
+Frequencies,290,,,,,,
+Frequencies,291,,,,,,
+Frequencies,292,,,,,,
+Frequencies,293,,,,,,
+Frequencies,294,,,,,,
+Frequencies,295,,,,,,
+Frequencies,296,,,,,,
+Frequencies,297,,,,,,
+Frequencies,298,,,,,,
+Frequencies,299,,,,,,
+Frequencies,300,,,,,,
+Frequencies,301,,,,,,
+Frequencies,302,,,,,,
+Frequencies,303,,,,,,
+Frequencies,304,,,,,,
+Frequencies,305,,,,,,
+Frequencies,306,,,,,,
+Frequencies,307,,,,,,
+Frequencies,308,,,,,,
+Frequencies,309,,,,,,
+Frequencies,310,,,,,,
+Frequencies,311,,,,,,
+Frequencies,312,,,,,,
+Frequencies,313,,,,,,
+Frequencies,314,,,,,,
+Frequencies,315,,,,,,
+Frequencies,316,,,,,,
+Frequencies,317,,,,,,
+Frequencies,318,,,,,,
+Frequencies,319,,,,,,
+Frequencies,320,,,,,,
+Frequencies,321,,,,,,
+Frequencies,322,,,,,,
+Frequencies,323,,,,,,
+Frequencies,324,,,,,,
+Frequencies,325,,,,,,
+Frequencies,326,,,,,,
+Frequencies,327,,,,,,
+Frequencies,328,,,,,,
+Frequencies,329,,,,,,
+Frequencies,330,,,,,,
+Frequencies,331,,,,,,
+Frequencies,332,,,,,,
+Frequencies,333,,,,,,
+Frequencies,334,,,,,,
+Frequencies,335,,,,,,
+Frequencies,336,,,,,,
+Frequencies,337,,,,,,
+Frequencies,338,,,,,,
+Frequencies,339,,,,,,
+Frequencies,340,,,,,,
+Frequencies,341,,,,,,
+Frequencies,342,,,,,,
+Frequencies,343,,,,,,
+Frequencies,344,,,,,,
+Frequencies,345,,,,,,
+Frequencies,346,,,,,,
+Frequencies,347,,,,,,
+Frequencies,348,,,,,,
+Frequencies,349,,,,,,
+Frequencies,350,,,,,,
+Frequencies,351,,,,,,
+Frequencies,352,,,,,,
+Frequencies,353,,,,,,
+Frequencies,354,,,,,,
+Frequencies,355,,,,,,
+Frequencies,356,,,,,,
+Frequencies,357,,,,,,
+Frequencies,358,,,,,,
+Frequencies,359,,,,,,
+Frequencies,360,,,,,,
+Frequencies,361,,,,,,
+Frequencies,362,,,,,,
+Frequencies,363,,,,,,
+Frequencies,364,,,,,,
+Frequencies,365,,,,,,
+Frequencies,366,,,,,,
+Frequencies,367,,,,,,
+Frequencies,368,,,,,,
+Frequencies,369,,,,,,
+Frequencies,370,,,,,,
+Frequencies,371,,,,,,
+Frequencies,372,,,,,,
+Frequencies,373,,,,,,
+Frequencies,374,,,,,,
+Frequencies,375,,,,,,
+Frequencies,376,,,,,,
+Frequencies,377,,,,,,
+Frequencies,378,,,,,,
+Frequencies,379,,,,,,
+Frequencies,380,,,,,,
+Frequencies,381,,,,,,
+Frequencies,382,,,,,,
+Frequencies,383,,,,,,
+Frequencies,384,,,,,,
+Frequencies,385,,,,,,
+Frequencies,386,,,,,,
+Frequencies,387,,,,,,
+Frequencies,388,,,,,,
+Frequencies,389,,,,,,
+Frequencies,390,,,,,,
+Frequencies,391,,,,,,
+Frequencies,392,,,,,,
+Frequencies,393,,,,,,
+Frequencies,394,,,,,,
+Frequencies,395,,,,,,
+Frequencies,396,,,,,,
+Frequencies,397,,,,,,
+Frequencies,398,,,,,,
+Frequencies,399,,,,,,
+Frequencies,400,,,,,,
+Frequencies,401,,,,,,
+Frequencies,402,,,,,,
+Frequencies,403,,,,,,
+Frequencies,404,,,,,,
+Frequencies,405,,,,,,
+Frequencies,406,,,,,,
+Frequencies,407,,,,,,
+Frequencies,408,,,,,,
+Frequencies,409,,,,,,
+Frequencies,410,,,,,,
+Frequencies,411,,,,,,
+Frequencies,412,,,,,,
+Frequencies,413,,,,,,
+Frequencies,414,,,,,,
+Frequencies,415,,,,,,
+Frequencies,416,,,,,,
+Frequencies,417,,,,,,
+Frequencies,418,,,,,,
+Frequencies,419,,,,,,
+Frequencies,420,,,,,,
+Frequencies,421,,,,,,
+Frequencies,422,,,,,,
+Frequencies,423,,,,,,
+Frequencies,424,,,,,,
+Frequencies,425,,,,,,
+Frequencies,426,,,,,,
+Frequencies,427,,,,,,
+Frequencies,428,,,,,,
+Frequencies,429,,,,,,
+Frequencies,430,,,,,,
+Frequencies,431,,,,,,
+Frequencies,432,,,,,,
+Frequencies,433,,,,,,
+Frequencies,434,,,,,,
+Frequencies,435,,,,,,
+Frequencies,436,,,,,,
+Frequencies,437,,,,,,
+Frequencies,438,,,,,,
+Frequencies,439,,,,,,
+Frequencies,440,,,,,,
+Frequencies,441,,,,,,
+Frequencies,442,,,,,,
+Frequencies,443,,,,,,
+Frequencies,444,,,,,,
+Frequencies,445,,,,,,
+Frequencies,446,,,,,,
+Frequencies,447,,,,,,
+Frequencies,448,,,,,,
+Frequencies,449,,,,,,
+Frequencies,450,,,,,,
+Frequencies,451,,,,,,
+Frequencies,452,,,,,,
+Frequencies,453,,,,,,
+Frequencies,454,,,,,,
+Frequencies,455,,,,,,
+Frequencies,456,,,,,,
+Frequencies,457,,,,,,
+Frequencies,458,,,,,,
+Frequencies,459,,,,,,
+Frequencies,460,,,,,,
+Frequencies,461,,,,,,
+Frequencies,462,,,,,,
+Frequencies,463,,,,,,
+Frequencies,464,,,,,,
+Frequencies,465,,,,,,
+Frequencies,466,,,,,,
+Frequencies,467,,,,,,
+Frequencies,468,,,,,,
+Frequencies,469,,,,,,
+Frequencies,470,,,,,,
+Frequencies,471,,,,,,
+Frequencies,472,,,,,,
+Frequencies,473,,,,,,
+Frequencies,474,,,,,,
+Frequencies,475,,,,,,
+Frequencies,476,,,,,,
+Frequencies,477,,,,,,
+Frequencies,478,,,,,,
+Frequencies,479,,,,,,
+Frequencies,480,,,,,,
+Frequencies,481,,,,,,
+Frequencies,482,,,,,,
+Frequencies,483,,,,,,
+Frequencies,484,,,,,,
+Frequencies,485,,,,,,
+Frequencies,486,,,,,,
+Frequencies,487,,,,,,
+Frequencies,488,,,,,,
+Frequencies,489,,,,,,
+Frequencies,490,,,,,,
+Frequencies,491,,,,,,
+Frequencies,492,,,,,,
+Frequencies,493,,,,,,
+Frequencies,494,,,,,,
+Frequencies,495,,,,,,
+Frequencies,496,,,,,,
+Frequencies,497,,,,,,
+Frequencies,498,,,,,,
+Frequencies,499,,,,,,
+Frequencies,500,,,,,,
+Frequencies,501,,,,,,
+Frequencies,502,,,,,,
+Frequencies,503,,,,,,
+Frequencies,504,,,,,,
+Frequencies,505,,,,,,
+Frequencies,506,,,,,,
+Frequencies,507,,,,,,
+Frequencies,508,,,,,,
+Frequencies,509,,,,,,
+Frequencies,510,,,,,,
+Frequencies,511,,,,,,
+Frequencies,512,,,,,,
+Frequencies,513,,,,,,
+Frequencies,514,,,,,,
+Frequencies,515,,,,,,
+Frequencies,516,,,,,,
+Frequencies,517,,,,,,
+Frequencies,518,,,,,,
+Frequencies,519,,,,,,
+Frequencies,520,,,,,,
+Frequencies,521,,,,,,
+Frequencies,522,,,,,,
+Frequencies,523,,,,,,
+Frequencies,524,,,,,,
+Frequencies,525,,,,,,
+Frequencies,526,,,,,,
+Frequencies,527,,,,,,
+Frequencies,528,,,,,,
+Frequencies,529,,,,,,
+Frequencies,530,,,,,,
+Frequencies,531,,,,,,
+Frequencies,532,,,,,,
+Frequencies,533,,,,,,
+Frequencies,534,,,,,,
+Frequencies,535,,,,,,
+Frequencies,536,,,,,,
+Frequencies,537,,,,,,
+Frequencies,538,,,,,,
+Frequencies,539,,,,,,
+Frequencies,540,,,,,,
+Frequencies,541,,,,,,
+Frequencies,542,,,,,,
+Frequencies,543,,,,,,
+Frequencies,544,,,,,,
+Frequencies,545,,,,,,
+Frequencies,546,,,,,,
+Frequencies,547,,,,,,
+Frequencies,548,,,,,,
+Frequencies,549,,,,,,
+Frequencies,550,,,,,,
+Frequencies,551,,,,,,
+Frequencies,552,,,,,,
+Frequencies,553,,,,,,
+Frequencies,554,,,,,,
+Frequencies,555,,,,,,
+Frequencies,556,,,,,,
+Frequencies,557,,,,,,
+Frequencies,558,,,,,,
+Frequencies,559,,,,,,
+Frequencies,560,,,,,,
+Frequencies,561,,,,,,
+Frequencies,562,,,,,,
+Frequencies,563,,,,,,
+Frequencies,564,,,,,,
+Frequencies,565,,,,,,
+Frequencies,566,,,,,,
+Frequencies,567,,,,,,
+Frequencies,568,,,,,,
+Frequencies,569,,,,,,
+Frequencies,570,,,,,,
+Frequencies,571,,,,,,
+Frequencies,572,,,,,,
+Frequencies,573,,,,,,
+Frequencies,574,,,,,,
+Frequencies,575,,,,,,
+Frequencies,576,,,,,,
+Frequencies,577,,,,,,
+Frequencies,578,,,,,,
+Frequencies,579,,,,,,
+Frequencies,580,,,,,,
+Frequencies,581,,,,,,
+Frequencies,582,,,,,,
+Frequencies,583,,,,,,
+Frequencies,584,,,,,,
+Frequencies,585,,,,,,
+Frequencies,586,,,,,,
+Frequencies,587,,,,,,
+Frequencies,588,,,,,,
+Frequencies,589,,,,,,
+Frequencies,590,,,,,,
+Frequencies,591,,,,,,
+Frequencies,592,,,,,,
+Frequencies,593,,,,,,
+Frequencies,594,,,,,,
+Frequencies,595,,,,,,
+Frequencies,596,,,,,,
+Frequencies,597,,,,,,
+Frequencies,598,,,,,,
+Frequencies,599,,,,,,
+Frequencies,600,,,,,,
+Frequencies,601,,,,,,
+Frequencies,602,,,,,,
+Frequencies,603,,,,,,
+Frequencies,604,,,,,,
+Frequencies,605,,,,,,
+Frequencies,606,,,,,,
+Frequencies,607,,,,,,
+Frequencies,608,,,,,,
+Frequencies,609,,,,,,
+Frequencies,610,,,,,,
+Frequencies,611,,,,,,
+Frequencies,612,,,,,,
+Frequencies,613,,,,,,
+Frequencies,614,,,,,,
+Frequencies,615,,,,,,
+Frequencies,616,,,,,,
+Frequencies,617,,,,,,
+Frequencies,618,,,,,,
+Frequencies,619,,,,,,
+Frequencies,620,,,,,,
+Frequencies,621,,,,,,
+Frequencies,622,,,,,,
+Frequencies,623,,,,,,
+Frequencies,624,,,,,,
+Frequencies,625,,,,,,
+Frequencies,626,,,,,,
+Frequencies,627,,,,,,
+Frequencies,628,,,,,,
+Frequencies,629,,,,,,
+Frequencies,630,,,,,,
+Frequencies,631,,,,,,
+Frequencies,632,,,,,,
+Frequencies,633,,,,,,
+Frequencies,634,,,,,,
+Frequencies,635,,,,,,
+Frequencies,636,,,,,,
+Frequencies,637,,,,,,
+Frequencies,638,,,,,,
+Frequencies,639,,,,,,
+Frequencies,640,,,,,,
+Frequencies,641,,,,,,
+Frequencies,642,,,,,,
+Frequencies,643,,,,,,
+Frequencies,644,,,,,,
+Frequencies,645,,,,,,
+Frequencies,646,,,,,,
+Frequencies,647,,,,,,
+Frequencies,648,,,,,,
+Frequencies,649,,,,,,
+Frequencies,650,,,,,,
+Frequencies,651,,,,,,
+Frequencies,652,,,,,,
+Frequencies,653,,,,,,
+Frequencies,654,,,,,,
+Frequencies,655,,,,,,
+Frequencies,656,,,,,,
+Frequencies,657,,,,,,
+Frequencies,658,,,,,,
+Frequencies,659,,,,,,
+Frequencies,660,,,,,,
+Frequencies,661,,,,,,
+Frequencies,662,,,,,,
+Frequencies,663,,,,,,
+Frequencies,664,,,,,,
+Frequencies,665,,,,,,
+Frequencies,666,,,,,,
+Frequencies,667,,,,,,
+Frequencies,668,,,,,,
+Frequencies,669,,,,,,
+Frequencies,670,,,,,,
+Frequencies,671,,,,,,
+Frequencies,672,,,,,,
+Frequencies,673,,,,,,
+Frequencies,674,,,,,,
+Frequencies,675,,,,,,
+Frequencies,676,,,,,,
+Frequencies,677,,,,,,
+Frequencies,678,,,,,,
+Frequencies,679,,,,,,
+Frequencies,680,,,,,,
+Frequencies,681,,,,,,
+Frequencies,682,,,,,,
+Frequencies,683,,,,,,
+Frequencies,684,,,,,,
+Frequencies,685,,,,,,
+Frequencies,686,,,,,,
+Frequencies,687,,,,,,
+Frequencies,688,,,,,,
+Frequencies,689,,,,,,
+Frequencies,690,,,,,,
+Frequencies,691,,,,,,
+Frequencies,692,,,,,,
+Frequencies,693,,,,,,
+Frequencies,694,,,,,,
+Frequencies,695,,,,,,
+Frequencies,696,,,,,,
+Frequencies,697,,,,,,
+Frequencies,698,,,,,,
+Frequencies,699,,,,,,
+Frequencies,700,,,,,,
+Frequencies,701,,,,,,
+Frequencies,702,,,,,,
+Frequencies,703,,,,,,
+Frequencies,704,,,,,,
+Frequencies,705,,,,,,
+Frequencies,706,,,,,,
+Frequencies,707,,,,,,
+Frequencies,708,,,,,,
+Frequencies,709,,,,,,
+Frequencies,710,,,,,,
+Frequencies,711,,,,,,
+Frequencies,712,,,,,,
+Frequencies,713,,,,,,
+Frequencies,714,,,,,,
+Frequencies,715,,,,,,
+Frequencies,716,,,,,,
+Frequencies,717,,,,,,
+Frequencies,718,,,,,,
+Frequencies,719,,,,,,
+Frequencies,720,,,,,,
+Frequencies,721,,,,,,
+Frequencies,722,,,,,,
+Frequencies,723,,,,,,
+Frequencies,724,,,,,,
+Frequencies,725,,,,,,
+Frequencies,726,,,,,,
+Frequencies,727,,,,,,
+Frequencies,728,,,,,,
+Frequencies,729,,,,,,
+Frequencies,730,,,,,,
+Frequencies,731,,,,,,
+Frequencies,732,,,,,,
+Frequencies,733,,,,,,
+Frequencies,734,,,,,,
+Frequencies,735,,,,,,
+Frequencies,736,,,,,,
+Frequencies,737,,,,,,
+Frequencies,738,,,,,,
+Frequencies,739,,,,,,
+Frequencies,740,,,,,,
+Frequencies,741,,,,,,
+Frequencies,742,,,,,,
+Frequencies,743,,,,,,
+Frequencies,744,,,,,,
+Frequencies,745,,,,,,
+Frequencies,746,,,,,,
+Frequencies,747,,,,,,
+Frequencies,748,,,,,,
+Frequencies,749,,,,,,
+Frequencies,750,,,,,,
+Frequencies,751,,,,,,
+Frequencies,752,,,,,,
+Frequencies,753,,,,,,
+Frequencies,754,,,,,,
+Frequencies,755,,,,,,
+Frequencies,756,,,,,,
+Frequencies,757,,,,,,
+Frequencies,758,,,,,,
+Frequencies,759,,,,,,
+Frequencies,760,,,,,,
+Frequencies,761,,,,,,
+Frequencies,762,,,,,,
+Frequencies,763,,,,,,
+Frequencies,764,,,,,,
+Frequencies,765,,,,,,
+Frequencies,766,,,,,,
+Frequencies,767,,,,,,
+Frequencies,768,,,,,,
+Frequencies,769,,,,,,
+Frequencies,770,,,,,,
+Frequencies,771,,,,,,
+Frequencies,772,,,,,,
+Frequencies,773,,,,,,
+Frequencies,774,,,,,,
+Frequencies,775,,,,,,
+Frequencies,776,,,,,,
+Frequencies,777,,,,,,
+Frequencies,778,,,,,,
+Frequencies,779,,,,,,
+Frequencies,780,,,,,,
+Frequencies,781,,,,,,
+Frequencies,782,,,,,,
+Frequencies,783,,,,,,
+Frequencies,784,,,,,,
+Frequencies,785,,,,,,
+Frequencies,786,,,,,,
+Frequencies,787,,,,,,
+Frequencies,788,,,,,,
+Frequencies,789,,,,,,
+Frequencies,790,,,,,,
+Frequencies,791,,,,,,
+Frequencies,792,,,,,,
+Frequencies,793,,,,,,
+Frequencies,794,,,,,,
+Frequencies,795,,,,,,
+Frequencies,796,,,,,,
+Frequencies,797,,,,,,
+Frequencies,798,,,,,,
+Frequencies,799,,,,,,
+Frequencies,800,,,,,,
+Frequencies,801,,,,,,
+Frequencies,802,,,,,,
+Frequencies,803,,,,,,
+Frequencies,804,,,,,,
+Frequencies,805,,,,,,
+Frequencies,806,,,,,,
+Frequencies,807,,,,,,
+Frequencies,808,,,,,,
+Frequencies,809,,,,,,
+Frequencies,810,,,,,,
+Frequencies,811,,,,,,
+Frequencies,812,,,,,,
+Frequencies,813,,,,,,
+Frequencies,814,,,,,,
+Frequencies,815,,,,,,
+Frequencies,816,,,,,,
+Frequencies,817,,,,,,
+Frequencies,818,,,,,,
+Frequencies,819,,,,,,
+Frequencies,820,,,,,,
+Frequencies,821,,,,,,
+Frequencies,822,,,,,,
+Frequencies,823,,,,,,
+Frequencies,824,,,,,,
+Frequencies,825,,,,,,
+Frequencies,826,,,,,,
+Frequencies,827,,,,,,
+Frequencies,828,,,,,,
+Frequencies,829,,,,,,
+Frequencies,830,,,,,,
+Frequencies,831,,,,,,
+Frequencies,832,,,,,,
+Frequencies,833,,,,,,
+Frequencies,834,,,,,,
+Frequencies,835,,,,,,
+Frequencies,836,,,,,,
+Frequencies,837,,,,,,
+Frequencies,838,,,,,,
+Frequencies,839,,,,,,
+Frequencies,840,,,,,,
+Frequencies,841,,,,,,
+Frequencies,842,,,,,,
+Frequencies,843,,,,,,
+Frequencies,844,,,,,,
+Frequencies,845,,,,,,
+Frequencies,846,,,,,,
+Frequencies,847,,,,,,
+Frequencies,848,,,,,,
+Frequencies,849,,,,,,
+Frequencies,850,,,,,,
+Frequencies,851,,,,,,
+Frequencies,852,,,,,,
+Frequencies,853,,,,,,
+Frequencies,854,,,,,,
+Frequencies,855,,,,,,
+Frequencies,856,,,,,,
+Frequencies,857,,,,,,
+Frequencies,858,,,,,,
+Frequencies,859,,,,,,
+Frequencies,860,,,,,,
+Frequencies,861,,,,,,
+Frequencies,862,,,,,,
+Frequencies,863,,,,,,
+Frequencies,864,,,,,,
+Frequencies,865,,,,,,
+Frequencies,866,,,,,,
+Frequencies,867,,,,,,
+Frequencies,868,,,,,,
+Frequencies,869,,,,,,
+Frequencies,870,,,,,,
+Frequencies,871,,,,,,
+Frequencies,872,,,,,,
+Frequencies,873,,,,,,
+Frequencies,874,,,,,,
+Frequencies,875,,,,,,
+Frequencies,876,,,,,,
+Frequencies,877,,,,,,
+Frequencies,878,,,,,,
+Frequencies,879,,,,,,
+Frequencies,880,,,,,,
+Frequencies,881,,,,,,
+Frequencies,882,,,,,,
+Frequencies,883,,,,,,
+Frequencies,884,,,,,,
+Frequencies,885,,,,,,
+Frequencies,886,,,,,,
+Frequencies,887,,,,,,
+Frequencies,888,,,,,,
+Frequencies,889,,,,,,
+Frequencies,890,,,,,,
+Frequencies,891,,,,,,
+Frequencies,892,,,,,,
+Frequencies,893,,,,,,
+Frequencies,894,,,,,,
+Frequencies,895,,,,,,
+Frequencies,896,,,,,,
+Frequencies,897,,,,,,
+Frequencies,898,,,,,,
+Frequencies,899,,,,,,
+Frequencies,900,,,,,,
+Frequencies,901,,,,,,
+Frequencies,902,,,,,,
+Frequencies,903,,,,,,
+Frequencies,904,,,,,,
+Frequencies,905,,,,,,
+Frequencies,906,,,,,,
+Frequencies,907,,,,,,
+Frequencies,908,,,,,,
+Frequencies,909,,,,,,
+Frequencies,910,,,,,,
+Frequencies,911,,,,,,
+Frequencies,912,,,,,,
+Frequencies,913,,,,,,
+Frequencies,914,,,,,,
+Frequencies,915,,,,,,
+Frequencies,916,,,,,,
+Frequencies,917,,,,,,
+Frequencies,918,,,,,,
+Frequencies,919,,,,,,
+Frequencies,920,,,,,,
+Frequencies,921,,,,,,
+Frequencies,922,,,,,,
+Frequencies,923,,,,,,
+Frequencies,924,,,,,,
+Frequencies,925,,,,,,
+Frequencies,926,,,,,,
+Frequencies,927,,,,,,
+Frequencies,928,,,,,,
+Frequencies,929,,,,,,
+Frequencies,930,,,,,,
+Frequencies,931,,,,,,
+Frequencies,932,,,,,,
+Frequencies,933,,,,,,
+Frequencies,934,,,,,,
+Frequencies,935,,,,,,
+Frequencies,936,,,,,,
+Frequencies,937,,,,,,
+Frequencies,938,,,,,,
+Frequencies,939,,,,,,
+Frequencies,940,,,,,,
+Frequencies,941,,,,,,
+Frequencies,942,,,,,,
+Frequencies,943,,,,,,
+Frequencies,944,,,,,,
+Frequencies,945,,,,,,
+Frequencies,946,,,,,,
+Frequencies,947,,,,,,
+Frequencies,948,,,,,,
+Frequencies,949,,,,,,
+Frequencies,950,,,,,,
+Frequencies,951,,,,,,
+Frequencies,952,,,,,,
+Frequencies,953,,,,,,
+Frequencies,954,,,,,,
+Frequencies,955,,,,,,
+Frequencies,956,,,,,,
+Frequencies,957,,,,,,
+Frequencies,958,,,,,,
+Frequencies,959,,,,,,
+Frequencies,960,,,,,,
+Frequencies,961,,,,,,
+Frequencies,962,,,,,,
+Frequencies,963,,,,,,
+Frequencies,964,,,,,,
+Frequencies,965,,,,,,
+Frequencies,966,,,,,,
+Frequencies,967,,,,,,
+Frequencies,968,,,,,,
+Frequencies,969,,,,,,
+Frequencies,970,,,,,,
+Frequencies,971,,,,,,
+Frequencies,972,,,,,,
+Frequencies,973,,,,,,
+Frequencies,974,,,,,,
+Frequencies,975,,,,,,
+Frequencies,976,,,,,,
+Frequencies,977,,,,,,
+Frequencies,978,,,,,,
+Frequencies,979,,,,,,
+Frequencies,980,,,,,,
+Frequencies,981,,,,,,
+Frequencies,982,,,,,,
+Frequencies,983,,,,,,
+Frequencies,984,,,,,,
+Frequencies,985,,,,,,
+Frequencies,986,,,,,,
+Frequencies,987,,,,,,
+Frequencies,988,,,,,,
+Frequencies,989,,,,,,
+Frequencies,990,,,,,,
+Frequencies,991,,,,,,
+Frequencies,992,,,,,,
+Frequencies,993,,,,,,
+Frequencies,994,,,,,,
+Frequencies,995,,,,,,
+Frequencies,996,,,,,,
+Frequencies,997,,,,,,
+Frequencies,998,,,,,,
+Frequencies,999,,,,,,
+Frequencies,1000,,,,,,
+Frequencies,1001,,,,,,
+Frequencies,1002,,,,,,
+Frequencies,1003,,,,,,
+Frequencies,1004,,,,,,
+Frequencies,1005,,,,,,
+Frequencies,1006,,,,,,
+Frequencies,1007,,,,,,
+Frequencies,1008,,,,,,
+Frequencies,1009,,,,,,
+Frequencies,1010,,,,,,
+Frequencies,1011,,,,,,
+Frequencies,1012,,,,,,
+Frequencies,1013,,,,,,
+Frequencies,1014,,,,,,
+Frequencies,1015,,,,,,
+Frequencies,1016,,,,,,
+Frequencies,1017,,,,,,
+Frequencies,1018,,,,,,
+Frequencies,1019,,,,,,
+Frequencies,1020,,,,,,
+Frequencies,1021,,,,,,
+Frequencies,1022,,,,,,
+Frequencies,1023,,,,,,
+Frequencies,1024,,,,,,
+Frequencies,1025,,,,,,
+Frequencies,1026,,,,,,
+Frequencies,1027,,,,,,
+Frequencies,1028,,,,,,
+Frequencies,1029,,,,,,
+Frequencies,1030,,,,,,
+Frequencies,1031,,,,,,
+Frequencies,1032,,,,,,
+Frequencies,1033,,,,,,
+Frequencies,1034,,,,,,
+Frequencies,1035,,,,,,
+Frequencies,1036,,,,,,
+Frequencies,1037,,,,,,
+Frequencies,1038,,,,,,
+Frequencies,1039,,,,,,
+Frequencies,1040,,,,,,
+Frequencies,1041,,,,,,
+Frequencies,1042,,,,,,
+Frequencies,1043,,,,,,
+Frequencies,1044,,,,,,
+Frequencies,1045,,,,,,
+Frequencies,1046,,,,,,
+Frequencies,1047,,,,,,
+Frequencies,1048,,,,,,
+Frequencies,1049,,,,,,
+Frequencies,1050,,,,,,
+Frequencies,1051,,,,,,
+Frequencies,1052,,,,,,
+Frequencies,1053,,,,,,
+Frequencies,1054,,,,,,
+Frequencies,1055,,,,,,
+Frequencies,1056,,,,,,
+Frequencies,1057,,,,,,
+Frequencies,1058,,,,,,
+Frequencies,1059,,,,,,
+Frequencies,1060,,,,,,
+Frequencies,1061,,,,,,
+Frequencies,1062,,,,,,
+Frequencies,1063,,,,,,
+Frequencies,1064,,,,,,
+Frequencies,1065,,,,,,
+Frequencies,1066,,,,,,
+Frequencies,1067,,,,,,
+Frequencies,1068,,,,,,
+Frequencies,1069,,,,,,
+Frequencies,1070,,,,,,
+Frequencies,1071,,,,,,
+Frequencies,1072,,,,,,
+Frequencies,1073,,,,,,
+Frequencies,1074,,,,,,
+Frequencies,1075,,,,,,
+Frequencies,1076,,,,,,
+Frequencies,1077,,,,,,
+Frequencies,1078,,,,,,
+Frequencies,1079,,,,,,
+Frequencies,1080,,,,,,
+Frequencies,1081,,,,,,
+Frequencies,1082,,,,,,
+Frequencies,1083,,,,,,
+Frequencies,1084,,,,,,
+Frequencies,1085,,,,,,
+Frequencies,1086,,,,,,
+Frequencies,1087,,,,,,
+Frequencies,1088,,,,,,
+Frequencies,1089,,,,,,
+Frequencies,1090,,,,,,
+Frequencies,1091,,,,,,
+Frequencies,1092,,,,,,
+Frequencies,1093,,,,,,
+Frequencies,1094,,,,,,
+Frequencies,1095,,,,,,
+Frequencies,1096,,,,,,
+Frequencies,1097,,,,,,
+Frequencies,1098,,,,,,
+Frequencies,1099,,,,,,
+Frequencies,1100,,,,,,
+Frequencies,1101,,,,,,
+Frequencies,1102,,,,,,
+Frequencies,1103,,,,,,
+Frequencies,1104,,,,,,
+Frequencies,1105,,,,,,
+Frequencies,1106,,,,,,
+Frequencies,1107,,,,,,
+Frequencies,1108,,,,,,
+Frequencies,1109,,,,,,
+Frequencies,1110,,,,,,
+Frequencies,1111,,,,,,
+Frequencies,1112,,,,,,
+Frequencies,1113,,,,,,
+Frequencies,1114,,,,,,
+Frequencies,1115,,,,,,
+Frequencies,1116,,,,,,
+Frequencies,1117,,,,,,
+Frequencies,1118,,,,,,
+Frequencies,1119,,,,,,
+Frequencies,1120,,,,,,
+Frequencies,1121,,,,,,
+Frequencies,1122,,,,,,
+Frequencies,1123,,,,,,
+Frequencies,1124,,,,,,
+Frequencies,1125,,,,,,
+Frequencies,1126,,,,,,
+Frequencies,1127,,,,,,
+Frequencies,1128,,,,,,
+Frequencies,1129,,,,,,
+Frequencies,1130,,,,,,
+Frequencies,1131,,,,,,
+Frequencies,1132,,,,,,
+Frequencies,1133,,,,,,
+Frequencies,1134,,,,,,
+Frequencies,1135,,,,,,
+Frequencies,1136,,,,,,
+Frequencies,1137,,,,,,
+Frequencies,1138,,,,,,
+Frequencies,1139,,,,,,
+Frequencies,1140,,,,,,
+Frequencies,1141,,,,,,
+Frequencies,1142,,,,,,
+Frequencies,1143,,,,,,
+Frequencies,1144,,,,,,
+Frequencies,1145,,,,,,
+Frequencies,1146,,,,,,
+Frequencies,1147,,,,,,
+Frequencies,1148,,,,,,
+Frequencies,1149,,,,,,
+Frequencies,1150,,,,,,
+Frequencies,1151,,,,,,
+Frequencies,1152,,,,,,
+Frequencies,1153,,,,,,
+Frequencies,1154,,,,,,
+Frequencies,1155,,,,,,
+Frequencies,1156,,,,,,
+Frequencies,1157,,,,,,
+Frequencies,1158,,,,,,
+Frequencies,1159,,,,,,
+Frequencies,1160,,,,,,
+Frequencies,1161,,,,,,
+Frequencies,1162,,,,,,
+Frequencies,1163,,,,,,
+Frequencies,1164,,,,,,
+Frequencies,1165,,,,,,
+Frequencies,1166,,,,,,
+Frequencies,1167,,,,,,
+Frequencies,1168,,,,,,
+Frequencies,1169,,,,,,
+Frequencies,1170,,,,,,
+Frequencies,1171,,,,,,
+Frequencies,1172,,,,,,
+Frequencies,1173,,,,,,
+Frequencies,1174,,,,,,
+Frequencies,1175,,,,,,
+Frequencies,1176,,,,,,
+Frequencies,1177,,,,,,
+Frequencies,1178,,,,,,
+Frequencies,1179,,,,,,
+Frequencies,1180,,,,,,
+Frequencies,1181,,,,,,
+Frequencies,1182,,,,,,
+Frequencies,1183,,,,,,
+Frequencies,1184,,,,,,
+Frequencies,1185,,,,,,
+Frequencies,1186,,,,,,
+Frequencies,1187,,,,,,
+Frequencies,1188,,,,,,
+Frequencies,1189,,,,,,
+Frequencies,1190,,,,,,
+Frequencies,1191,,,,,,
+Frequencies,1192,,,,,,
+Frequencies,1193,,,,,,
+Frequencies,1194,,,,,,
+Frequencies,1195,,,,,,
+Frequencies,1196,,,,,,
+Frequencies,1197,,,,,,
+Frequencies,1198,,,,,,
+Frequencies,1199,,,,,,
+Frequencies,1200,,,,,,
+Frequencies,1201,,,,,,
+Frequencies,1202,,,,,,
+Frequencies,1203,,,,,,
+Frequencies,1204,,,,,,
+Frequencies,1205,,,,,,
+Frequencies,1206,,,,,,
+Frequencies,1207,,,,,,
+Frequencies,1208,,,,,,
+Frequencies,1209,,,,,,
+Frequencies,1210,,,,,,
+Frequencies,1211,,,,,,
+Frequencies,1212,,,,,,
+Frequencies,1213,,,,,,
+Frequencies,1214,,,,,,
+Frequencies,1215,,,,,,
+Frequencies,1216,,,,,,
+Frequencies,1217,,,,,,
+Frequencies,1218,,,,,,
+Frequencies,1219,,,,,,
+Frequencies,1220,,,,,,
+Frequencies,1221,,,,,,
+Frequencies,1222,,,,,,
+Frequencies,1223,,,,,,
+Frequencies,1224,,,,,,
+Frequencies,1225,,,,,,
+Frequencies,1226,,,,,,
+Frequencies,1227,,,,,,
+Frequencies,1228,,,,,,
+Frequencies,1229,,,,,,
+Frequencies,1230,,,,,,
+Frequencies,1231,,,,,,
+Frequencies,1232,,,,,,
+Frequencies,1233,,,,,,
+Frequencies,1234,,,,,,
+Frequencies,1235,,,,,,
+Frequencies,1236,,,,,,
+Frequencies,1237,,,,,,
+Frequencies,1238,,,,,,
+Frequencies,1239,,,,,,
+Frequencies,1240,,,,,,
+Frequencies,1241,,,,,,
+Frequencies,1242,,,,,,
+Frequencies,1243,,,,,,
+Frequencies,1244,,,,,,
+Frequencies,1245,,,,,,
+Frequencies,1246,,,,,,
+Frequencies,1247,,,,,,
+Frequencies,1248,,,,,,
+Frequencies,1249,,,,,,
+Frequencies,1250,,,,,,
+Frequencies,1251,,,,,,
+Frequencies,1252,,,,,,
+Frequencies,1253,,,,,,
+Frequencies,1254,,,,,,
+Frequencies,1255,,,,,,
+Frequencies,1256,,,,,,
+Frequencies,1257,,,,,,
+Frequencies,1258,,,,,,
+Frequencies,1259,,,,,,
+Frequencies,1260,,,,,,
+Frequencies,1261,,,,,,
+Frequencies,1262,,,,,,
+Frequencies,1263,,,,,,
+Frequencies,1264,,,,,,
+Frequencies,1265,,,,,,
+Frequencies,1266,,,,,,
+Frequencies,1267,,,,,,
+Frequencies,1268,,,,,,
+Frequencies,1269,,,,,,
+Frequencies,1270,,,,,,
+Frequencies,1271,,,,,,
+Frequencies,1272,,,,,,
+Frequencies,1273,,,,,,
+Frequencies,1274,,,,,,
+Frequencies,1275,,,,,,
+Frequencies,1276,,,,,,
+Frequencies,1277,,,,,,
+Frequencies,1278,,,,,,
+Frequencies,1279,,,,,,
+Frequencies,1280,,,,,,
+Frequencies,1281,,,,,,
+Frequencies,1282,,,,,,
+Frequencies,1283,,,,,,
+Frequencies,1284,,,,,,
+Frequencies,1285,,,,,,
+Frequencies,1286,,,,,,
+Frequencies,1287,,,,,,
+Frequencies,1288,,,,,,
+Frequencies,1289,,,,,,
+Frequencies,1290,,,,,,
+Frequencies,1291,,,,,,
+Frequencies,1292,,,,,,
+Frequencies,1293,,,,,,
+Frequencies,1294,,,,,,
+Frequencies,1295,,,,,,
+Frequencies,1296,,,,,,
+Frequencies,1297,,,,,,
+Frequencies,1298,,,,,,
+Frequencies,1299,,,,,,
+Frequencies,1300,,,,,,
+Frequencies,1301,,,,,,
+Frequencies,1302,,,,,,
+Frequencies,1303,,,,,,
+Frequencies,1304,,,,,,
+Frequencies,1305,,,,,,
+Frequencies,1306,,,,,,
+Frequencies,1307,,,,,,
+Frequencies,1308,,,,,,
+Frequencies,1309,,,,,,
+Frequencies,1310,,,,,,
+Frequencies,1311,,,,,,
+Frequencies,1312,,,,,,
+Frequencies,1313,,,,,,
+Frequencies,1314,,,,,,
+Frequencies,1315,,,,,,
+Frequencies,1316,,,,,,
+Frequencies,1317,,,,,,
+Frequencies,1318,,,,,,
+Frequencies,1319,,,,,,
+Frequencies,1320,,,,,,
+Frequencies,1321,,,,,,
+Frequencies,1322,,,,,,
+Frequencies,1323,,,,,,
+Frequencies,1324,,,,,,
+Frequencies,1325,,,,,,
+Frequencies,1326,,,,,,
+Frequencies,1327,,,,,,
+Frequencies,1328,,,,,,
+Frequencies,1329,,,,,,
+Frequencies,1330,,,,,,
+Frequencies,1331,,,,,,
+Frequencies,1332,,,,,,
+Frequencies,1333,,,,,,
+Frequencies,1334,,,,,,
+Frequencies,1335,,,,,,
+Frequencies,1336,,,,,,
+Frequencies,1337,,,,,,
+Frequencies,1338,,,,,,
+Frequencies,1339,,,,,,
+Frequencies,1340,,,,,,
+Frequencies,1341,,,,,,
+Frequencies,1342,,,,,,
+Frequencies,1343,,,,,,
+Frequencies,1344,,,,,,
+Frequencies,1345,,,,,,
+Frequencies,1346,,,,,,
+Frequencies,1347,,,,,,
+Frequencies,1348,,,,,,
+Frequencies,1349,,,,,,
+Frequencies,1350,,,,,,
+Frequencies,1351,,,,,,
+Frequencies,1352,,,,,,
+Frequencies,1353,,,,,,
+Frequencies,1354,,,,,,
+Frequencies,1355,,,,,,
+Frequencies,1356,,,,,,
+Frequencies,1357,,,,,,
+Frequencies,1358,,,,,,
+Frequencies,1359,,,,,,
+Frequencies,1360,,,,,,
+Frequencies,1361,,,,,,
+Frequencies,1362,,,,,,
+Frequencies,1363,,,,,,
+Frequencies,1364,,,,,,
+Frequencies,1365,,,,,,
+Frequencies,1366,,,,,,
+Frequencies,1367,,,,,,
+Frequencies,1368,,,,,,
+Frequencies,1369,,,,,,
+Frequencies,1370,,,,,,
+Frequencies,1371,,,,,,
+Frequencies,1372,,,,,,
+Frequencies,1373,,,,,,
+Frequencies,1374,,,,,,
+Frequencies,1375,,,,,,
+Frequencies,1376,,,,,,
+Frequencies,1377,,,,,,
+Frequencies,1378,,,,,,
+Frequencies,1379,,,,,,
+Frequencies,1380,,,,,,
+Frequencies,1381,,,,,,
+Frequencies,1382,,,,,,
+Frequencies,1383,,,,,,
+Frequencies,1384,,,,,,
+Frequencies,1385,,,,,,
+Frequencies,1386,,,,,,
+Frequencies,1387,,,,,,
+Frequencies,1388,,,,,,
+Frequencies,1389,,,,,,
+Frequencies,1390,,,,,,
+Frequencies,1391,,,,,,
+Frequencies,1392,,,,,,
+Frequencies,1393,,,,,,
+Frequencies,1394,,,,,,
+Frequencies,1395,,,,,,
+Frequencies,1396,,,,,,
+Frequencies,1397,,,,,,
+Frequencies,1398,,,,,,
+Frequencies,1399,,,,,,
+Frequencies,1400,,,,,,
+Frequencies,1401,,,,,,
+Frequencies,1402,,,,,,
+Frequencies,1403,,,,,,
+Frequencies,1404,,,,,,
+Frequencies,1405,,,,,,
+Frequencies,1406,,,,,,
+Frequencies,1407,,,,,,
+Frequencies,1408,,,,,,
+Frequencies,1409,,,,,,
+Frequencies,1410,,,,,,
+Frequencies,1411,,,,,,
+Frequencies,1412,,,,,,
+Frequencies,1413,,,,,,
+Frequencies,1414,,,,,,
+Frequencies,1415,,,,,,
+Frequencies,1416,,,,,,
+Frequencies,1417,,,,,,
+Frequencies,1418,,,,,,
+Frequencies,1419,,,,,,
+Frequencies,1420,,,,,,
+Frequencies,1421,,,,,,
+Frequencies,1422,,,,,,
+Frequencies,1423,,,,,,
+Frequencies,1424,,,,,,
+Frequencies,1425,,,,,,
+Frequencies,1426,,,,,,
+Frequencies,1427,,,,,,
+Frequencies,1428,,,,,,
+Frequencies,1429,,,,,,
+Frequencies,1430,,,,,,
+Frequencies,1431,,,,,,
+Frequencies,1432,,,,,,
+Frequencies,1433,,,,,,
+Frequencies,1434,,,,,,
+Frequencies,1435,,,,,,
+Frequencies,1436,,,,,,
+Frequencies,1437,,,,,,
+Frequencies,1438,,,,,,
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,62821,F3A01,513,13980235591,27251921.230019495,154589,1966320000,Total assets
+Statistics,2,66405,F3A01A,513,259230073,505321.77972709551,0,28918000,Long-term investments
+Statistics,3,66410,F3A01B,513,3630782952,7077549.6140350876,0,1358437000,"Property, plant, and equipment, net of accumulated depreciation"
+Statistics,4,66415,F3A01C,513,1336196502,2604671.543859649,0,314906830,"Intangible assets, net of accumulated amortization"
+Statistics,5,62826,F3A02,513,6606593085,12878349.093567252,-34549044,1510204000,Total liabilities
+Statistics,6,66420,F3A02A,513,1972081046,3844212.5653021443,-34549044,1175601000,"Debt related to property, plant, and equipment"
+Statistics,7,62831,F3A03,513,7373642506,14373572.136452241,-10025434,1294678920,Total equity
+Statistics,8,62836,F3A04,513,13980235591,27251921.230019495,154589,1966320000,Total liabilities and equity
+Statistics,9,66425,F3A05,513,473838677,923662.13840155944,0,161482000,Land and land improvements
+Statistics,10,66430,F3A06,513,2932994780,5717338.7524366472,0,1236215000,Buildings
+Statistics,11,66435,F3A07,513,2221154587,4329736.0370370373,0,231880974,"Equipment, including art and library collections"
+Statistics,12,66440,F3A08,513,347956410,678277.60233918123,0,58799956,Construction in Progress
+Statistics,13,66445,F3A09,513,971455070,1893674.6003898636,0,131458000,"Other plant, property and equipment"
+Statistics,14,66450,F3A10,513,6947399524,13542689.130604288,0,1545988000,"Total Plant, Property, and Equipment"
+Statistics,15,66455,F3A11,513,3316616572,6465139.5165692009,0,255100464,Accumulated depreciation
+Statistics,16,66460,F3A12,513,3630782952,7077549.6140350876,0,1358437000,"Property, Plant, and Equipment, net of accumulated depreciation (from A1b)"
+Statistics,17,62841,F3B01,513,15340321650,29903161.111111112,107005,1317480000,Total revenues and investment return
+Statistics,18,62846,F3B02,513,13791789312,26884579.555555556,196930,1304517000,Total expenses
+Statistics,19,62851,F3B03,513,-24369794,-47504.471734892788,-35097988,14536327,Sum of specific changes in equity
+Statistics,20,62856,F3B04,513,1524162544,2971077.0838206629,-32554501,130170319,Net income
+Statistics,21,62861,F3B05,513,-742995130,-1448333.5867446393,-395139000,188716069,Other changes in equity
+Statistics,22,62866,F3B06,513,6529772566,12728601.493177388,-27698283,992126462,"Equity, beginning of year"
+Statistics,23,62871,F3B07,513,62702526,122227.14619883041,-25960720,228274175,Adjustments to beginning net equity
+Statistics,24,62876,F3B08,513,7373642506,14373572.136452241,-10025434,1294678920,"Equity, end of year"
+Statistics,25,62881,F3C01,2117,3752686709,1772643.6981577703,0,230933246,Pell grants
+Statistics,26,62886,F3C02,2117,346127420,163499.01747756259,0,40999518,Other federal grants
+Statistics,27,62891,F3C03,2117,189147068,89346.749173358519,0,11545230,State and local grants
+Statistics,28,66465,F3C03A,2117,170673278,80620.348606518659,0,11545230,State grants
+Statistics,29,66470,F3C03B,2117,18473790,8726.4005668398677,0,2745573,Local government grants
+Statistics,30,62896,F3C04,2117,1544541284,729589.64761454891,0,331497000,Institutional grants
+Statistics,31,62901,F3C05,2117,5832502481,2755079.1124232402,0,554934645,Total student grants
+Statistics,32,62906,F3C06,2117,1400809303,661695.46669815772,0,331497000,Discounts and allowances applied to tuition and fees
+Statistics,33,62911,F3C07,2117,6507486,3073.918752952291,0,6019706,Discounts and allowances applied to auxiliary enterprise revenues
+Statistics,34,62913,F3C08,2117,1407316789,664769.38545111008,0,331497000,Total discounts and allowances
+Statistics,35,68283,F3C12,2117,57523524,27172.18894662258,0,56049868,"Total
+ discounts and
+ allowances from Pell grants"
+Statistics,36,68285,F3C121,2117,57523524,27172.18894662258,0,56049868,Discounts and allowances from Pell grants applied to tuition and fees
+Statistics,37,68287,F3C122,2117,0,0,0,0,Discounts and allowances from Pell grants applied to auxiliary enterprises
+Statistics,38,68289,F3C13,2117,13167770,6220.0141709966938,0,3557400,Total discounts and allowances from other federal grants
+Statistics,39,68291,F3C131,2117,13159837,6216.2668871043934,0,3557400,Discounts and allowances from other federal grants applied to tuition and fees
+Statistics,40,68293,F3C132,2117,7933,3.747283892300425,0,4597,Discounts and allowances from other federal grants applied to auxiliary enterprises
+Statistics,41,68295,F3C14,2117,5688386,2687.0033065658949,0,1964461,Total discounts and allowances from state government grants
+Statistics,42,68297,F3C141,2117,5680424,2683.2423240434578,0,1964461,Discounts and allowances from state government grants applied to tuition and fees
+Statistics,43,68299,F3C142,2117,7962,3.7609825224374114,0,7742,Discounts and allowances from state government grants applied to auxiliary enterprises
+Statistics,44,68301,F3C15,2117,194597,91.921114785073215,0,59000,Total discounts and allowances from local government grants
+Statistics,45,68303,F3C151,2117,194597,91.921114785073215,0,59000,"Discounts and
+ allowances from local government grants applied to tuition and fees"
+Statistics,46,68305,F3C152,2117,0,0,0,0,Discounts and allowances from local government grants applied to auxiliary enterprises
+Statistics,47,68307,F3C16,2117,575135,271.67453944260745,0,332576,"Total discounts and
+ allowances from endowments and gifts"
+Statistics,48,68309,F3C161,2117,575135,271.67453944260745,0,332576,"Discounts and 
+allowances from endowments and gifts applied to tuition and fees"
+Statistics,49,68311,F3C162,2117,0,0,0,0,Discounts and allowances from endowments and gifts applied to auxiliary enterprises
+Statistics,50,68313,F3C17,2117,1330167377,628326.58337269723,0,331497000,Total discounts and allowances from other institutional sources
+Statistics,51,68315,F3C171,2117,1323675786,625260.17288615962,0,331497000,"Discounts and
+ allowances from other institutional sources applied to tuition and fees"
+Statistics,52,68317,F3C172,2117,6491591,3066.410486537553,0,6019706,Discounts and allowances from other institutional sources applied to auxiliary enterprises
+Statistics,53,62916,F3D01,2120,17154619356,8091801.5830188682,0,1046708059,Tuition and fees
+Statistics,54,62921,F3D02,2120,394159693,185924.38349056605,0,33655167,"Federal appropriations, grants and contracts"
+Statistics,55,66475,F3D02A,2120,27511691,12977.212735849056,0,5842573,Federal appropriations
+Statistics,56,66480,F3D02B,2120,366648002,172947.17075471699,0,33655167,Federal grants and contracts
+Statistics,57,62926,F3D03,2120,22714439,10714.358018867924,0,2745573,"State and local appropriations, grants and contracts"
+Statistics,58,66485,F3D03A,2120,1703673,803.61933962264152,0,1079603,State appropriations
+Statistics,59,66490,F3D03B,2120,15422420,7274.7264150943392,0,2191659,State grants and contracts
+Statistics,60,66495,F3D03C,2120,157578,74.329245283018864,0,80567,Local government appropriations
+Statistics,61,66500,F3D03D,2120,5430768,2561.6830188679246,0,2745573,Local government and contracts
+Statistics,62,62931,F3D04,2120,18314139,8638.7448113207556,0,12881883,"Private gifts, grants, and contracts"
+Statistics,63,62936,F3D05,2120,45269581,21353.575943396227,-2724558,8375112,Investment income and investment gains (losses) included in net income
+Statistics,64,62941,F3D06,2120,442162605,208567.26650943398,-73359,213707088,Sales and services of educational activities
+Statistics,65,62946,F3D07,639,112304991,175751.15962441315,-3219,20429848,Sales and services of auxiliary enterprises
+Statistics,66,66505,F3D12,285,244550,858.07017543859649,0,244550,Hospital revenue
+Statistics,67,62951,F3D08,2120,450374145,212440.63443396226,0,24931517,Other revenue
+Statistics,68,62956,F3D09,2120,18640163499,8792529.9523584899,0,1317480000,Total revenues and investment return
+Statistics,69,62961,F3E011,2120,4927109986,2324108.4839622644,0,245145887,Instruction-Total amount
+Statistics,70,66515,F3E012,2120,3031801053,1430094.8363207546,0,142084293,Instruction-Salaries and wages
+Statistics,71,66545,F3E02A1,2120,13290570,6269.1367924528304,0,3333806,Research-Total amount
+Statistics,72,66550,F3E02A2,2120,5671157,2675.0740566037734,0,1427561,Research-Salaries and wages
+Statistics,73,66580,F3E02B1,2120,21716985,10243.860849056604,0,8940278,Public service-Total amount
+Statistics,74,66585,F3E02B2,2120,8428162,3975.548113207547,0,4960729,Public service-Salaries and wages
+Statistics,75,66615,F3E03A1,2120,1588492956,749289.13018867921,0,123983251,Academic support-Total amount
+Statistics,76,66620,F3E03A2,2120,679772165,320647.24764150946,0,48926567,Academic support-Salaries and wages
+Statistics,77,66650,F3E03B1,2120,3118757313,1471111.9400943397,0,478845662,Student service-Total amount
+Statistics,78,66655,F3E03B2,2120,1686249429,795400.67405660381,0,315065195,Student service-Salaries and wages
+Statistics,79,66685,F3E03C1,2120,5136751580,2422996.0283018867,0,384561333,Institutional support-Total amount
+Statistics,80,66690,F3E03C2,2120,1284155531,605733.74103773583,0,65118648,Institutional support-Salaries and wages
+Statistics,81,62976,F3E041,639,219736040,343874.86697965569,0,62257889,Auxiliary enterprises-Total amount
+Statistics,82,66725,F3E042,639,29021817,45417.553990610329,0,9697287,Auxiliary enterprises-Salaries and wages
+Statistics,83,62981,F3E051,2120,19260278,9085.0367924528309,0,7536024,Net grant aid to students-Total amount
+Statistics,84,66830,F3E101,285,0,0,0,0,Hospital services-Total amount
+Statistics,85,66835,F3E102,285,0,0,0,0,Hospital services-Salaries and wages
+Statistics,86,62986,F3E061,2120,1294581848,610651.81509433966,0,145681172,Other expenses-Total amount
+Statistics,87,66770,F3E062,2120,76445946,36059.408490566035,0,23562210,Other expenses-Salaries and wages
+Statistics,88,62991,F3E071,2120,16339697556,7707404.5075471699,2000,1304517000,Total expenses-Total amount
+Statistics,89,66805,F3E072,2120,6801545260,3208276.0660377359,0,573290431,Total expenses-Salaries and wages
+Statistics,90,66810,F3E073,2120,840093645,396270.58726415096,0,73903442,Total expenses-Benefits
+Statistics,91,66812,F3E074,2120,1615039284,761810.9830188679,0,68148561,Total expenses-Operations and maintenance
+Statistics,92,66815,F3E075,2120,521324033,245907.56273584906,0,52904580,Total expenses-Depreciation
+Statistics,93,66820,F3E076,2120,126931061,59873.141981132074,0,55465083,Total expenses-Interest
+Statistics,94,66825,F3E077,2120,6434764274,3035266.1669811322,0,480804903,Total expenses-All other
+Statistics,95,66900,F3F01,278,111310342,400396.91366906476,-6367226,35097988,Federal income tax expenses
+Statistics,96,66905,F3F02,278,32135237,115594.37769784173,-1226924,3809000,State and local income tax expenses
+Statistics,97,68319,F3G01,513,2082053159,4058583.1559454193,-32838115,148934377,Pretax income
+Statistics,98,68321,F3G02,513,15340321650,29903161.111111112,107005,1317480000,Total revenues
+Statistics,99,68323,F3G03,513,7373642506,14373572.136452241,-10025434,1294678920,Total equity
+Statistics,100,68325,F3G04,513,13980235591,27251921.230019495,154589,1966320000,Total assets
+Statistics,101,68327,F3G05,513,4149835042,8089347.0604288504,-74736800,1217463111,Adjusted equity
+Statistics,102,68329,F3G06,513,2087920478,4070020.424951267,0,1250250000,Plant-related debt
+Statistics,103,68331,F3G07,513,13791789312,26884579.555555556,196930,1304517000,Total expenses
+Statistics,104,,,,,,,
+FrequenciesRV,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+FrequenciesRV,1,66910,F3F03,1,Aggregate amounts paid by multi-institution or multi-campus organization indicated in IC (diretory information),86,4.0599999999999996
+FrequenciesRV,2,66910,F3F03,2,Aggregate amounts paid by multi-institution or multi-campus organization NOT indicated in IC (diretory information),12,0.56999999999999995
+FrequenciesRV,3,66910,F3F03,3,Amounts paid by the reporting institution,180,8.49
+FrequenciesRV,4,66910,F3F03,-2,Not applicable,1842,86.89
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,62821,F3A01,513,13980199501,27251850.879142299,154589,1966320000,Total assets
+StatisticsRV,2,66405,F3A01A,513,259230073,505321.77972709551,0,28918000,Long-term investments
+StatisticsRV,3,66410,F3A01B,513,3630753305,7077491.8226120854,0,1358437000,"Property, plant, and equipment, net of accumulated depreciation"
+StatisticsRV,4,66415,F3A01C,513,1336196502,2604671.543859649,0,314906830,"Intangible assets, net of accumulated amortization"
+StatisticsRV,5,62826,F3A02,513,6606567600,12878299.415204678,-34549044,1510204000,Total liabilities
+StatisticsRV,6,66420,F3A02A,513,1972081046,3844212.5653021443,-34549044,1175601000,"Debt related to property, plant, and equipment"
+StatisticsRV,7,62831,F3A03,513,7373631901,14373551.463937622,-10025434,1294678920,Total equity
+StatisticsRV,8,62836,F3A04,513,13980199501,27251850.879142299,154589,1966320000,Total liabilities and equity
+StatisticsRV,9,66425,F3A05,513,473838677,923662.13840155944,0,161482000,Land and land improvements
+StatisticsRV,10,66430,F3A06,513,2932994780,5717338.7524366472,0,1236215000,Buildings
+StatisticsRV,11,66435,F3A07,513,2221142267,4329712.0214424953,0,231880974,"Equipment, including art and library collections"
+StatisticsRV,12,66440,F3A08,513,347956410,678277.60233918123,0,58799956,Construction in Progress
+StatisticsRV,13,66445,F3A09,513,971420023,1893606.2826510721,0,131458000,"Other plant, property and equipment"
+StatisticsRV,14,66450,F3A10,513,6947352157,13542596.797270956,0,1545988000,"Total Plant, Property, and Equipment"
+StatisticsRV,15,66455,F3A11,513,3316598852,6465104.9746588692,0,255100464,Accumulated depreciation
+StatisticsRV,16,66460,F3A12,513,3630753305,7077491.8226120854,0,1358437000,"Property, Plant, and Equipment, net of accumulated depreciation (from A1b)"
+StatisticsRV,17,62841,F3B01,513,15340237903,29902997.86159844,107005,1317480000,Total revenues and investment return
+StatisticsRV,18,62846,F3B02,513,13791811176,26884622.175438598,196930,1304517000,Total expenses
+StatisticsRV,19,62851,F3B03,513,-24277248,-47324.070175438595,-35097988,14536327,Sum of specific changes in equity
+StatisticsRV,20,62856,F3B04,513,1524149479,2971051.6159844054,-32554501,130170319,Net income
+StatisticsRV,21,62861,F3B05,513,-742985886,-1448315.567251462,-395139000,188716069,Other changes in equity
+StatisticsRV,22,62866,F3B06,513,6529772566,12728601.493177388,-27698283,992126462,"Equity, beginning of year"
+StatisticsRV,23,62871,F3B07,513,62695742,122213.92202729045,-25960720,228274175,Adjustments to beginning net equity
+StatisticsRV,24,62876,F3B08,513,7373631901,14373551.463937622,-10025434,1294678920,"Equity, end of year"
+StatisticsRV,25,62881,F3C01,2117,3782615256,1786780.9428436467,0,230933246,Pell grants
+StatisticsRV,26,62886,F3C02,2117,347534071,164163.47236655644,0,40999518,Other federal grants
+StatisticsRV,27,62891,F3C03,2117,189147068,89346.749173358519,0,11545230,State and local grants
+StatisticsRV,28,66465,F3C03A,2117,170673278,80620.348606518659,0,11545230,State grants
+StatisticsRV,29,66470,F3C03B,2117,18473790,8726.4005668398677,0,2745573,Local government grants
+StatisticsRV,30,62896,F3C04,2117,1554311360,734204.70477090217,0,331497000,Institutional grants
+StatisticsRV,31,62901,F3C05,2117,5873607755,2774495.869154464,0,554934645,Total student grants
+StatisticsRV,32,62906,F3C06,2117,1400809303,661695.46669815772,0,331497000,Discounts and allowances applied to tuition and fees
+StatisticsRV,33,62911,F3C07,2117,6507486,3073.918752952291,0,6019706,Discounts and allowances applied to auxiliary enterprise revenues
+StatisticsRV,34,62913,F3C08,2117,1407316789,664769.38545111008,0,331497000,Total discounts and allowances
+StatisticsRV,35,68283,F3C12,2117,57523524,27172.18894662258,0,56049868,"Total
+ discounts and
+ allowances from Pell grants"
+StatisticsRV,36,68285,F3C121,2117,57523524,27172.18894662258,0,56049868,Discounts and allowances from Pell grants applied to tuition and fees
+StatisticsRV,37,68287,F3C122,2117,0,0,0,0,Discounts and allowances from Pell grants applied to auxiliary enterprises
+StatisticsRV,38,68289,F3C13,2117,13167770,6220.0141709966938,0,3557400,Total discounts and allowances from other federal grants
+StatisticsRV,39,68291,F3C131,2117,13159837,6216.2668871043934,0,3557400,Discounts and allowances from other federal grants applied to tuition and fees
+StatisticsRV,40,68293,F3C132,2117,7933,3.747283892300425,0,4597,Discounts and allowances from other federal grants applied to auxiliary enterprises
+StatisticsRV,41,68295,F3C14,2117,5688386,2687.0033065658949,0,1964461,Total discounts and allowances from state government grants
+StatisticsRV,42,68297,F3C141,2117,5680424,2683.2423240434578,0,1964461,Discounts and allowances from state government grants applied to tuition and fees
+StatisticsRV,43,68299,F3C142,2117,7962,3.7609825224374114,0,7742,Discounts and allowances from state government grants applied to auxiliary enterprises
+StatisticsRV,44,68301,F3C15,2117,194597,91.921114785073215,0,59000,Total discounts and allowances from local government grants
+StatisticsRV,45,68303,F3C151,2117,194597,91.921114785073215,0,59000,"Discounts and
+ allowances from local government grants applied to tuition and fees"
+StatisticsRV,46,68305,F3C152,2117,0,0,0,0,Discounts and allowances from local government grants applied to auxiliary enterprises
+StatisticsRV,47,68307,F3C16,2117,575135,271.67453944260745,0,332576,"Total discounts and
+ allowances from endowments and gifts"
+StatisticsRV,48,68309,F3C161,2117,575135,271.67453944260745,0,332576,"Discounts and 
+allowances from endowments and gifts applied to tuition and fees"
+StatisticsRV,49,68311,F3C162,2117,0,0,0,0,Discounts and allowances from endowments and gifts applied to auxiliary enterprises
+StatisticsRV,50,68313,F3C17,2117,1330167377,628326.58337269723,0,331497000,Total discounts and allowances from other institutional sources
+StatisticsRV,51,68315,F3C171,2117,1323675786,625260.17288615962,0,331497000,"Discounts and
+ allowances from other institutional sources applied to tuition and fees"
+StatisticsRV,52,68317,F3C172,2117,6491591,3066.410486537553,0,6019706,Discounts and allowances from other institutional sources applied to auxiliary enterprises
+StatisticsRV,53,62916,F3D01,2120,17153214050,8091138.7028301889,0,1046708059,Tuition and fees
+StatisticsRV,54,62921,F3D02,2120,393936904,185819.29433962263,0,33655167,"Federal appropriations, grants and contracts"
+StatisticsRV,55,66475,F3D02A,2120,27511691,12977.212735849056,0,5842573,Federal appropriations
+StatisticsRV,56,66480,F3D02B,2120,366425213,172842.08160377358,0,33655167,Federal grants and contracts
+StatisticsRV,57,62926,F3D03,2120,22714439,10714.358018867924,0,2745573,"State and local appropriations, grants and contracts"
+StatisticsRV,58,66485,F3D03A,2120,1703673,803.61933962264152,0,1079603,State appropriations
+StatisticsRV,59,66490,F3D03B,2120,15422420,7274.7264150943392,0,2191659,State grants and contracts
+StatisticsRV,60,66495,F3D03C,2120,157578,74.329245283018864,0,80567,Local government appropriations
+StatisticsRV,61,66500,F3D03D,2120,5430768,2561.6830188679246,0,2745573,Local government and contracts
+StatisticsRV,62,62931,F3D04,2120,18314139,8638.7448113207556,0,12881883,"Private gifts, grants, and contracts"
+StatisticsRV,63,62936,F3D05,2120,45244602,21341.793396226414,-2724558,8375112,Investment income and investment gains (losses) included in net income
+StatisticsRV,64,62941,F3D06,2120,441998332,208489.77924528302,-73359,213707088,Sales and services of educational activities
+StatisticsRV,65,62946,F3D07,639,112312641,175763.13145539907,-3219,20429848,Sales and services of auxiliary enterprises
+StatisticsRV,66,66505,F3D12,285,244550,858.07017543859649,0,244550,Hospital revenue
+StatisticsRV,67,62951,F3D08,2120,450288312,212400.14716981133,0,24931517,Other revenue
+StatisticsRV,68,62956,F3D09,2120,18638267969,8791635.8344339617,0,1317480000,Total revenues and investment return
+StatisticsRV,69,62961,F3E011,2120,4926551925,2323845.2476415094,0,245145887,Instruction-Total amount
+StatisticsRV,70,66515,F3E012,2120,3031480448,1429943.6075471698,0,142084293,Instruction-Salaries and wages
+StatisticsRV,71,66545,F3E02A1,2120,13290570,6269.1367924528304,0,3333806,Research-Total amount
+StatisticsRV,72,66550,F3E02A2,2120,5671157,2675.0740566037734,0,1427561,Research-Salaries and wages
+StatisticsRV,73,66580,F3E02B1,2120,21716985,10243.860849056604,0,8940278,Public service-Total amount
+StatisticsRV,74,66585,F3E02B2,2120,8428162,3975.548113207547,0,4960729,Public service-Salaries and wages
+StatisticsRV,75,66615,F3E03A1,2120,1588352513,749222.88349056605,0,123983251,Academic support-Total amount
+StatisticsRV,76,66620,F3E03A2,2120,679650513,320589.86462264153,0,48926567,Academic support-Salaries and wages
+StatisticsRV,77,66650,F3E03B1,2120,3118615487,1471045.0410377358,0,478845662,Student service-Total amount
+StatisticsRV,78,66655,F3E03B2,2120,1686196019,795375.4806603773,0,315065195,Student service-Salaries and wages
+StatisticsRV,79,66685,F3E03C1,2120,5136403561,2422831.8683962263,0,384561333,Institutional support-Total amount
+StatisticsRV,80,66690,F3E03C2,2120,1283931797,605628.20613207552,0,65118648,Institutional support-Salaries and wages
+StatisticsRV,81,62976,F3E041,639,219736040,343874.86697965569,0,62257889,Auxiliary enterprises-Total amount
+StatisticsRV,82,66725,F3E042,639,29021817,45417.553990610329,0,9697287,Auxiliary enterprises-Salaries and wages
+StatisticsRV,83,62981,F3E051,2120,19260278,9085.0367924528309,0,7536024,Net grant aid to students-Total amount
+StatisticsRV,84,66830,F3E101,285,0,0,0,0,Hospital services-Total amount
+StatisticsRV,85,66835,F3E102,285,0,0,0,0,Hospital services-Salaries and wages
+StatisticsRV,86,62986,F3E061,2120,1294289219,610513.78254716983,0,145681172,Other expenses-Total amount
+StatisticsRV,87,66770,F3E062,2120,76445944,36059.407547169809,0,23562210,Other expenses-Salaries and wages
+StatisticsRV,88,62991,F3E071,2120,16338216578,7706705.9330188679,2000,1304517000,Total expenses-Total amount
+StatisticsRV,89,66805,F3E072,2120,6800825857,3207936.7250000001,0,573290431,Total expenses-Salaries and wages
+StatisticsRV,90,66810,F3E073,2120,839971366,396212.90849056601,0,73903442,Total expenses-Benefits
+StatisticsRV,91,66812,F3E074,2120,1614955551,761771.48632075475,0,68148561,Total expenses-Operations and maintenance
+StatisticsRV,92,66815,F3E075,2120,521296772,245894.70377358492,0,52904580,Total expenses-Depreciation
+StatisticsRV,93,66820,F3E076,2120,126924170,59869.891509433961,0,55465083,Total expenses-Interest
+StatisticsRV,94,66825,F3E077,2120,6434242863,3035020.2183962264,0,480804903,Total expenses-All other
+StatisticsRV,95,66900,F3F01,278,111310342,400396.91366906476,-6367226,35097988,Federal income tax expenses
+StatisticsRV,96,66905,F3F02,278,32135237,115594.37769784173,-1226924,3809000,State and local income tax expenses
+StatisticsRV,97,68319,F3G01,513,2082053159,4058583.1559454193,-32838115,148934377,Pretax income
+StatisticsRV,98,68321,F3G02,513,15340237903,29902997.86159844,107005,1317480000,Total revenues
+StatisticsRV,99,68323,F3G03,513,7373631901,14373551.463937622,-10025434,1294678920,Total equity
+StatisticsRV,100,68325,F3G04,513,13980199501,27251850.879142299,154589,1966320000,Total assets
+StatisticsRV,101,68327,F3G05,513,4151082475,8091778.7037037034,-74736800,1217463111,Adjusted equity
+StatisticsRV,102,68329,F3G06,513,2087963914,4070105.095516569,0,1250250000,Plant-related debt
+StatisticsRV,103,68331,F3G07,513,13791811176,26884622.175438598,196930,1304517000,Total expenses
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

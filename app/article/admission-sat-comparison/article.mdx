@@ -1,0 +1,69 @@
+export const ArticleMeta = {
+  title: 'SAT scores at five Boston-area universities (2023–24 admits)',
+  description:
+    'Where Harvard, MIT, Boston College, Northeastern, and Boston University land on SAT score percentiles for admitted first-time students.',
+  publishDate: '04-22-2026',
+  source:
+    'Source: IPEDS (Integrated Postsecondary Education Data System), National Center for Education Statistics, US Department of Education. ADM2023 final-release file (2023–24 admissions cycle).',
+  imageUrl: '/images/landing/story5.png',
+  tags: ['admissions', 'sat', 'boston', 'selectivity'],
+  category: 'Admissions',
+  href: '/article/admission-sat-comparison',
+};
+
+export const satMath75 = [
+  { label: 'Harvard', value: 800 },
+  { label: 'MIT', value: 800 },
+  { label: 'Boston College', value: 780 },
+  { label: 'Boston University', value: 780 },
+  { label: 'Northeastern', value: 780 },
+];
+
+export const satVerbalSpread = [
+  { label: 'Harvard', value: 740, group: '25th percentile' },
+  { label: 'Harvard', value: 780, group: '75th percentile' },
+  { label: 'MIT', value: 740, group: '25th percentile' },
+  { label: 'MIT', value: 780, group: '75th percentile' },
+  { label: 'Boston College', value: 710, group: '25th percentile' },
+  { label: 'Boston College', value: 760, group: '75th percentile' },
+  { label: 'Northeastern', value: 710, group: '25th percentile' },
+  { label: 'Northeastern', value: 760, group: '75th percentile' },
+  { label: 'Boston University', value: 690, group: '25th percentile' },
+  { label: 'Boston University', value: 750, group: '75th percentile' },
+];
+
+---
+
+Five large Boston-area universities admit first-time freshmen with SAT score profiles that look broadly similar at the top — but the bottom of each admitted class is where the schools quietly separate. We pulled the 25th- and 75th-percentile SAT verbal and math scores reported to IPEDS for the 2023–24 admissions cycle. Every score below comes from the same federal reporting form each school files with NCES.
+
+## A familiar ceiling
+
+The 75th-percentile **SAT math** score lands at the top of the 800-point scale at Harvard and MIT and one tick below at the other three schools. Read another way: a quarter of admitted students at each of these schools — even Boston University, the lowest-scoring of the five — has a math score above 780.
+
+<BarChart
+  data={satMath75}
+  title="SAT math, 75th percentile of admitted students (2023–24)"
+  subtitle="One in four admitted students scored at or above this number."
+  orientation="horizontal"
+/>
+
+The flatness at the top is part of the story: at this tier, math scores compress because so many admitted students score near the test's ceiling. Differences show up further down the distribution.
+
+## A different floor
+
+The wider window is **SAT verbal**. We plot both the 25th and 75th percentiles together so you can see the spread of admitted scores at each school.
+
+<BarChart
+  data={satVerbalSpread}
+  title="SAT verbal — middle 50% of admitted students"
+  subtitle="Bars show the 25th and 75th percentile scores."
+  orientation="horizontal"
+/>
+
+Harvard and MIT not only post the highest 75th-percentile score (780) but also the highest 25th-percentile score (740) — meaning even the lower-scoring quarter of their admitted class is at or above the *median* of admitted students at Boston University. The bottom of the admitted distribution, not the top, is where elite admissions distinguish themselves.
+
+## How to read these numbers
+
+These are scores reported by the schools for **admitted students** who submitted SAT scores — not all applicants and not all matriculated students. With test-optional policies still common in 2023–24, a meaningful share of admitted students at each school did not submit SAT scores at all and are not represented in these percentiles. Score percentiles are also a single-test snapshot; institutions weight them differently against GPA, essays, and other factors disclosed in their IPEDS admission considerations.
+
+For a fuller picture, the same IPEDS file also reports applications, admits, and enrolled counts — which we use to compute admit and yield rates elsewhere on the site.

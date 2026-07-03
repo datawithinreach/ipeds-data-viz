@@ -1,0 +1,643 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for the finance data file, private not-for-profit institutions and public institutions using FASB : Fiscal year 2023",,,,,,,,,
+Introduction,1,(Provisional release),,,,,,,,,
+Introduction,2,Filename,F2223_F2
+Introduction,3,Overview,"This data file contains institutional finance data for institutions that use accounting standards established by the Financial Accounting Standards Board (FASB) .  All private not-for-profit institutions are included in this file. There are some public institutions that use the FASB model and are also included. Finance data includes institutional revenues by source, expenditures by functional categories,  expenditures by natural classification categories, scholarships and fellowships by source, endowments, assets and liabilities. This information provides context for understanding the cost and resources of providing postsecondary education. It is used to calculate the contribution of postsecondary education to the gross national product.  Beginning with fiscal year 2020, scholarships and fellowships data contain the amount of discounts and allowances attributed to each source.  Data on financial health measures and more detailed data on endowments were also added in fiscal year 2020. Beginning with fiscal year 2016 detailed expenditures by function and the natural classifications of fringe benefits, operations and maintenance of plant, depreciation and interest are no longer available. 
+",,,,,,,,
+Introduction,4,Note,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.",,,,,,,,
+Introduction,5
+Introduction,6,Contents of spreadsheet,,,,,,,,,
+Introduction,7,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,8,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,9,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.,,,,,,,,
+Introduction,10,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. ",,,,,,,,
+Introduction,11,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,60606,F2A01,N,12,Cont,XF2A01,Long-term investments
+varlist,3,65121,F2A19,N,12,Cont,XF2A19,"Property, Plant, and Equipment, net of accumulated depreciation"
+varlist,4,65126,F2A20,N,12,Cont,XF2A20,"Intangible Assets, net of accumulated amortization"
+varlist,5,60611,F2A02,N,12,Cont,XF2A02,Total assets
+varlist,6,60616,F2A03,N,12,Cont,XF2A03,Total liabilities
+varlist,7,65091,F2A03A,N,12,Cont,XF2A03A,"Debt related to Property, Plant, and Equipment"
+varlist,8,60621,F2A04,N,12,Cont,XF2A04,Total unrestricted net assets
+varlist,9,60626,F2A05,N,12,Cont,XF2A05,Total restricted net assets
+varlist,10,64825,F2A05A,N,12,Cont,XF2A05A,Permanently restricted net assets included in total restricted net assets
+varlist,11,65096,F2A05B,N,12,Cont,XF2A05B,Temporarily restricted net assets
+varlist,12,60631,F2A06,N,12,Cont,XF2A06,Total net assets
+varlist,13,60636,F2A11,N,12,Cont,XF2A11,Land  improvements - End of year
+varlist,14,60641,F2A12,N,12,Cont,XF2A12,Buildings - End of year
+varlist,15,60646,F2A13,N,12,Cont,XF2A13,"Equipment, including art and library collections - End of year"
+varlist,16,65101,F2A15,N,12,Cont,XF2A15,Construction in Progress
+varlist,17,65106,F2A16,N,12,Cont,XF2A16,"Other plant, property and equipment"
+varlist,18,65111,F2A17,N,12,Cont,XF2A17,"Total Plant, Property, and Equipment"
+varlist,19,65116,F2A18,N,12,Cont,XF2A18,Accumulated depreciation
+varlist,20,60656,F2B01,N,12,Cont,XF2B01,Total revenues and investment return
+varlist,21,60661,F2B02,N,12,Cont,XF2B02,Total expenses
+varlist,22,60666,F2B03,N,12,Cont,XF2B03,Other specific changes in net assets
+varlist,23,60671,F2B04,N,12,Cont,XF2B04,Total change in net assets
+varlist,24,60676,F2B05,N,12,Cont,XF2B05,"Net assets, beginning of the year"
+varlist,25,60681,F2B06,N,12,Cont,XF2B06,Adjustments to beginning of year net assets
+varlist,26,60686,F2B07,N,12,Cont,XF2B07,"Net assets, end of the year"
+varlist,27,60691,F2C01,N,12,Cont,XF2C01,Pell grants
+varlist,28,60696,F2C02,N,12,Cont,XF2C02,Other federal grants
+varlist,29,60701,F2C03,N,12,Cont,XF2C03,State grants
+varlist,30,60706,F2C04,N,12,Cont,XF2C04,Local grants
+varlist,31,60711,F2C05,N,12,Cont,XF2C05,Institutional grants (funded)
+varlist,32,60716,F2C06,N,12,Cont,XF2C06,Institutional grants (unfunded)
+varlist,33,60721,F2C07,N,12,Cont,XF2C07,Total student grants
+varlist,34,60726,F2C08,N,12,Cont,XF2C08,Allowances applied to tuition and fees
+varlist,35,60731,F2C09,N,12,Cont,XF2C09,Allowances applied to auxiliary enterprise revenues
+varlist,36,60733,F2C10,N,12,Cont,XF2C10,Total discounts and allowances
+varlist,37,61283,F2C12,N,12,Cont,XF2C12,"Total discounts and
+ allowances from Pell grants"
+varlist,38,61285,F2C121,N,12,Cont,XF2C121,"Discounts and
+ allowances from Pell grants applied to tuition and fees"
+varlist,39,61287,F2C122,N,12,Cont,XF2C122,Discounts and allowances from Pell grants applied to auxiliary enterprises
+varlist,40,61289,F2C13,N,12,Cont,XF2C13,Total discounts and allowances from other federal grants
+varlist,41,61291,F2C131,N,12,Cont,XF2C131,Discounts and allowances from other federal grants applied to tuition and fees
+varlist,42,61293,F2C132,N,12,Cont,XF2C132,"Discounts and allowances from other federal grants applied to auxiliary
+ enterprises"
+varlist,43,61295,F2C14,N,12,Cont,XF2C14,"Total discounts and
+ allowances from state government grants"
+varlist,44,61297,F2C141,N,12,Cont,XF2C141,"Discounts and
+ allowances from state government grants applied to tuition and fees"
+varlist,45,61299,F2C142,N,12,Cont,XF2C142,Discounts and allowances from state government grants applied to auxiliary enterprises
+varlist,46,61301,F2C15,N,12,Cont,XF2C15,Discounts and allowances from local government grants
+varlist,47,61303,F2C151,N,12,Cont,XF2C151,Discounts and allowances from local government grants applied to tuition and fees
+varlist,48,61305,F2C152,N,12,Cont,XF2C152,Discounts and allowances from local government grants applied to auxiliary enterprises
+varlist,49,61307,F2C16,N,12,Cont,XF2C16,Total discounts and allowances from endowments and gifts
+varlist,50,61309,F2C161,N,12,Cont,XF2C161,Discounts and allowances from endowments and gifts applied to tuition and fees
+varlist,51,61311,F2C162,N,12,Cont,XF2C162,Discounts and allowances from endowments and gifts applied to auxiliary enterprises
+varlist,52,61313,F2C17,N,12,Cont,XF2C17,Total discounts and allowances from other institutional sources
+varlist,53,61315,F2C171,N,12,Cont,XF2C171,Discounts and allowances from other institutional sources applied to tuition and fees
+varlist,54,61317,F2C172,N,12,Cont,XF2C172,Discounts and allowances from other institutional sources applied to auxiliary enterprises
+varlist,55,60736,F2D01,N,12,Cont,XF2D01,Tuition and fees - Total
+varlist,56,65131,F2D012,N,12,Cont,XF2D012,Tuition and fees - Unrestricted
+varlist,57,65136,F2D013,N,12,Cont,XF2D013,Tuition and fees - Temporarily restricted
+varlist,58,65141,F2D014,N,12,Cont,XF2D014,Tuition and fees - Permanently restricted
+varlist,59,60741,F2D02,N,12,Cont,XF2D02,Federal appropriations - Total
+varlist,60,65146,F2D022,N,12,Cont,XF2D022,Federal appropriations - Unrestricted
+varlist,61,65151,F2D023,N,12,Cont,XF2D023,Federal appropriations - Temporarily restricted
+varlist,62,65156,F2D024,N,12,Cont,XF2D024,Federal appropriations - Permanently restricted
+varlist,63,60746,F2D03,N,12,Cont,XF2D03,State appropriations - Total
+varlist,64,65161,F2D032,N,12,Cont,XF2D032,State appropriations - Unrestricted
+varlist,65,65166,F2D033,N,12,Cont,XF2D033,State appropriations - Temporarily restricted
+varlist,66,65171,F2D034,N,12,Cont,XF2D034,State appropriations - Permanently restricted
+varlist,67,60751,F2D04,N,12,Cont,XF2D04,Local appropriations - Total
+varlist,68,65176,F2D042,N,12,Cont,XF2D042,Local appropriations - Unrestricted
+varlist,69,65181,F2D043,N,12,Cont,XF2D043,Local appropriations -  Temporarily restricted
+varlist,70,65186,F2D044,N,12,Cont,XF2D044,Local appropriations - Permanently restricted
+varlist,71,60756,F2D05,N,12,Cont,XF2D05,Federal grants and contracts - Total
+varlist,72,65191,F2D052,N,12,Cont,XF2D052,Federal grants and contracts - Unrestricted
+varlist,73,65196,F2D053,N,12,Cont,XF2D053,Federal grants and contracts  - Temporarily restricted
+varlist,74,65201,F2D054,N,12,Cont,XF2D054,Federal grants and contracts - Pemanently restricted
+varlist,75,60761,F2D06,N,12,Cont,XF2D06,State grants and contracts - Total
+varlist,76,65206,F2D062,N,12,Cont,XF2D062,State grants and contracts - Unrestricted
+varlist,77,65211,F2D063,N,12,Cont,XF2D063,State grants and contracts - Temporarily restricted
+varlist,78,65216,F2D064,N,12,Cont,XF2D064,State grants and contracts - Permanently restricted
+varlist,79,60766,F2D07,N,12,Cont,XF2D07,Local grants and contracts - Total
+varlist,80,65221,F2D072,N,12,Cont,XF2D072,Local grants and contracts - Unrestricted
+varlist,81,65226,F2D073,N,12,Cont,XF2D073,Local grants and contracts - Temporarily restricted
+varlist,82,65231,F2D074,N,12,Cont,XF2D074,Local grants and contracts  - Permanently restricted
+varlist,83,60771,F2D08,N,12,Cont,XF2D08,"Private gifts, grants, and contracts - Total"
+varlist,84,65236,F2D082,N,12,Cont,XF2D082,"Private gifts, grants, and contracts - Unrestricted"
+varlist,85,65251,F2D083,N,12,Cont,XF2D083,"Private gifts, grants and contracts - Temporarily restricted"
+varlist,86,65266,F2D084,N,12,Cont,XF2D084,"Private gifts, grants, and contracts - Permanently restricted"
+varlist,87,65281,F2D08A,N,12,Cont,XF2D08A,Private gifts - Total
+varlist,88,65241,F2D082A,N,12,Cont,XF2D082A,Private gifts - Unrestricted
+varlist,89,65256,F2D083A,N,12,Cont,XF2D083A,Private gifts - Temporarily restricted
+varlist,90,65271,F2D084A,N,12,Cont,XF2D084A,Private gifts - Permanentlly restricted
+varlist,91,65286,F2D08B,N,12,Cont,XF2D08B,Private grants and contracts - Total
+varlist,92,65246,F2D082B,N,12,Cont,XF2D082B,Private grants and contracts - Unrestricted
+varlist,93,65261,F2D083B,N,12,Cont,XF2D083B,Private grants and contracts - Temporarily restricted
+varlist,94,65276,F2D084B,N,12,Cont,XF2D084B,"Private grants, and contracts - Permanently restricted"
+varlist,95,60776,F2D09,N,12,Cont,XF2D09,Contributions from affiliated entities - Total
+varlist,96,65291,F2D092,N,12,Cont,XF2D092,Contributions from affiliated entities - Unrestricted
+varlist,97,65296,F2D093,N,12,Cont,XF2D093,Contributions from affiliated entities - Temporarily restricted
+varlist,98,65301,F2D094,N,12,Cont,XF2D094,Contributions from affiliated entities - Permanently restricted
+varlist,99,60781,F2D10,N,12,Cont,XF2D10,Investment return - Total
+varlist,100,65306,F2D102,N,12,Cont,XF2D102,Investment return - Unrestricted
+varlist,101,65311,F2D103,N,12,Cont,XF2D103,Investment return - Temporarily restricted
+varlist,102,65316,F2D104,N,12,Cont,XF2D104,Investment return - Permanently restricted
+varlist,103,60786,F2D11,N,12,Cont,XF2D11,Sales and services of educational activities - Total
+varlist,104,65321,F2D112,N,12,Cont,XF2D112,Sales and services of educational activities - Unrestricted
+varlist,105,60791,F2D12,N,12,Cont,XF2D12,Sales and services of auxiliary enterprises - Total
+varlist,106,65326,F2D122,N,12,Cont,XF2D122,Sales and services of auxiliary enterprises - Unrestricted
+varlist,107,60796,F2D13,N,12,Cont,XF2D13,Hospital revenue - Total
+varlist,108,65331,F2D132,N,12,Cont,XF2D132,Hospital revenue - Unrestricted
+varlist,109,60801,F2D14,N,12,Cont,XF2D14,Independent operations revenue - Total
+varlist,110,65336,F2D142,N,12,Cont,XF2D142,Independent operations revenue - Unrestricted
+varlist,111,65341,F2D143,N,12,Cont,XF2D143,Independent operations revenue - Temporarily restricted
+varlist,112,65346,F2D144,N,12,Cont,XF2D144,Independent operations revenue - Permanently restricted
+varlist,113,60806,F2D15,N,12,Cont,XF2D15,Other revenue - Total
+varlist,114,65351,F2D152,N,12,Cont,XF2D152,Other revenue - Unrestricted
+varlist,115,65356,F2D153,N,12,Cont,XF2D153,Other revenue - Temporarily restricted
+varlist,116,65361,F2D154,N,12,Cont,XF2D154,Other revenue - Permanently restricted
+varlist,117,60811,F2D16,N,12,Cont,XF2D16,Total revenues and investment return - Total
+varlist,118,65366,F2D162,N,12,Cont,XF2D162,Total revenues and investment return - Unrestricted
+varlist,119,65371,F2D163,N,12,Cont,XF2D163,Total revenues and investment return - Temporarily restricted
+varlist,120,65376,F2D164,N,12,Cont,XF2D164,Total revenues and investment return - Permanently restricted
+varlist,121,65380,F2D17,N,12,Cont,XF2D17,Net assets released from restriction - Total
+varlist,122,65381,F2D172,N,12,Cont,XF2D172,Net assets released from restriction - Unrestricted
+varlist,123,65386,F2D173,N,12,Cont,XF2D173,Net assets released from restriction - Temporarily restricted
+varlist,124,65387,F2D174,N,12,Cont,XF2D174,Net assets released from restriction - Permanently restricted
+varlist,125,65390,F2D18,N,12,Cont,XF2D18,"Net total revenues, after assets released from restriction - Total"
+varlist,126,65391,F2D182,N,12,Cont,XF2D182,"Net total revenues, after assets released from restriction - Unrestricted"
+varlist,127,65396,F2D183,N,12,Cont,XF2D183,"Net total revenues, after assets released from restriction - Temporarily restricted"
+varlist,128,65401,F2D184,N,12,Cont,XF2D184,"Net total revenues, after assets released from restriction - Permanently restricted"
+varlist,129,60816,F2E011,N,12,Cont,XF2E011,Instruction-Total amount
+varlist,130,60821,F2E012,N,12,Cont,XF2E012,Instruction-Salaries and wages
+varlist,131,60851,F2E021,N,12,Cont,XF2E021,Research-Total amount
+varlist,132,60856,F2E022,N,12,Cont,XF2E022,Research-Salaries and wages
+varlist,133,60886,F2E031,N,12,Cont,XF2E031,Public service-Total amount
+varlist,134,60891,F2E032,N,12,Cont,XF2E032,Public service-Salaries and wages
+varlist,135,60921,F2E041,N,12,Cont,XF2E041,Academic support-Total amount
+varlist,136,60926,F2E042,N,12,Cont,XF2E042,Academic support-Salaries and wages
+varlist,137,60956,F2E051,N,12,Cont,XF2E051,Student service-Total amount
+varlist,138,60961,F2E052,N,12,Cont,XF2E052,Student service-Salaries and wages
+varlist,139,60991,F2E061,N,12,Cont,XF2E061,Institutional support-Total amount
+varlist,140,60996,F2E062,N,12,Cont,XF2E062,Institutional support-Salaries and wages
+varlist,141,61026,F2E071,N,12,Cont,XF2E071,Auxiliary enterprises-Total amount
+varlist,142,61031,F2E072,N,12,Cont,XF2E072,Auxiliary enterprises-Salaries and wages
+varlist,143,61061,F2E081,N,12,Cont,XF2E081,Net grant aid to students-Total amount
+varlist,144,61096,F2E091,N,12,Cont,XF2E091,Hospital services-Total amount
+varlist,145,61101,F2E092,N,12,Cont,XF2E092,Hospital services-Salaries and wages
+varlist,146,61131,F2E101,N,12,Cont,XF2E101,Independent operations-Total Amount
+varlist,147,61136,F2E102,N,12,Cont,XF2E102,Independent operations-Salaries and wages
+varlist,148,61201,F2E121,N,12,Cont,XF2E121,Other expenses-Total amount
+varlist,149,61206,F2E122,N,12,Cont,XF2E122,Other expenses-Salaries and wages
+varlist,150,61236,F2E131,N,12,Cont,XF2E131,Total expenses-Total amount
+varlist,151,61241,F2E132,N,12,Cont,XF2E132,Total expenses-Salaries and wages
+varlist,152,61246,F2E133,N,12,Cont,XF2E133,Total expenses-Benefits
+varlist,153,61251,F2E134,N,12,Cont,XF2E134,Total expenses-Operation and maintenance of plant
+varlist,154,61256,F2E135,N,12,Cont,XF2E135,Total expenses-Depreciation
+varlist,155,61261,F2E136,N,12,Cont,XF2E136,Total expenses-Interest
+varlist,156,61266,F2E137,N,12,Cont,XF2E137,Total expenses-All other natural classification
+varlist,157,61281,F2FHA,N,2,Disc,,Does this institution or any of its foundations or other affiliated organizations own endowment assets ?
+varlist,158,61271,F2H01,N,12,Cont,XF2H01,Value of endowment assets at the beginning of the fiscal year
+varlist,159,61276,F2H02,N,12,Cont,XF2H02,Value of endowment assets at the end of the fiscal year
+varlist,160,61319,F2H03,N,12,Cont,XF2H03,Change in value of endowment net assets
+varlist,161,61321,F2H03A,N,12,Cont,XF2H03A,New gifts and additions
+varlist,162,61323,F2H03B,N,12,Cont,XF2H03B,Endowment net investment return
+varlist,163,61325,F2H03C,N,12,Cont,XF2H03C,Spending distribution for current use
+varlist,164,61327,F2H03D,N,12,Cont,XF2H03D,Other changes in value of endowment net assets
+varlist,165,61329,F2I01,N,12,Cont,XF2I01,Change in unrestricted net assets
+varlist,166,61331,F2I02,N,12,Cont,XF2I02,Total unrestricted operating revenues
+varlist,167,61333,F2I03,N,12,Cont,XF2I03,Change in net assets
+varlist,168,61335,F2I04,N,12,Cont,XF2I04,Total net assets
+varlist,169,61337,F2I05,N,12,Cont,XF2I05,Expendable net assets
+varlist,170,61339,F2I06,N,12,Cont,XF2I06,Plant-related debt
+varlist,171,61341,F2I07,N,12,Cont,XF2I07,Total expenses
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,60606,F2A01,Long-term investments includes the amount for all assets held for long-term investments.
+Description,3,65121,F2A19," Property, plant, and equipment, net of accumulated depreciation - Includes end-of-year market value for categories such as land, buildings, improvements other than buildings, equipment, and library books, combined and net of accumulated depreciation (FARM para. 407)."
+Description,4,65126,F2A20,"Intangible assets, net of accumulated amortization -  Assets consisting of certain nonmaterial rights and benefits of an institution, such as patents, copyrights, trademarks and goodwill. The amount reported should be reduced by total accumulated amortization."
+Description,5,60611,F2A02,"Total assets is the sum of the following amounts: cash, cash equivalents and temporary investments; receivables (net of allowance for uncollectible accounts); inventories, prepaid expenses, and defereed charges; amounts held by trustees for construction and debt service; long-term investments; plant, property, and equipment; and other assets."
+Description,6,60616,F2A03,"Total liabilities is the sum the following amounts: accounts payable; deferred revenues and refundable advances; post-retirement and post-employment obligations; other accrued liabilities; annuity and life income obligations and other amounts held for the benefit of others; bonds, notes, and capital leases payable and other long-term debt, including current portion; government grants refundable under student loan programs; and other liabilities."
+Description,7,65091,F2A03A,"Debt related to property, plant and equipment are amounts for all long-term debt obligations including bonds payable, mortgages payable, capital leases payable, and long-term notes payable. (FARM para. 421.3, 421.7)  Includes the current portion of long-term debt if it is separately reported in institutions's general purpose financial statements."
+Description,8,60621,F2A04,"Total unrestricted net assets is the sum of unrestricted (designated and undesignated)  and unrestricted (investment in plant, property, and equipment, net of related debt) net assets. Unrestricted net assets are amounts that are available for the general purposes of the institution without restriction. Includes amounts specifically designated by the governing board, such as those designated as quasi-endowments for building additions and replacement, for debt service, and for loan programs. Also, includes the unrestricted portion of net investment in plant, property, and equipment less related debt. This amount is computed as the amount of plant, property, and equipment, net of accumulated depreciation, reduced by any bonds, mortgages, notes, capital leases, or other borrowings that are clearly attributable to the acquisition, construction, or improvement of those assets."
+Description,9,60626,F2A05,"Total restricted net assets is the sum of temporarily restricted and permanently restricted net assets. Temporarily restricted includes the amount of all net assets that are subject to temporary donor/grantor restrictions that limit availabilty for expenditure. Temporary restrictions are also those that permit the institution to expend the donated assets for a specified purpose or a future date.  Permanent restrictions are those that stipulate the resourcees must be maintained permanently, but permit the organization to expend part or all of the income derived from donated assets. Net assets that are subject to a donor’s or grantor’s restriction are restricted net assets. Include long-term but temporarily restricted net assets, such as term endowments, and net assets held subject to trust agreements if those agreements permit expenditure of the resources at a future date."
+Description,10,64825,F2A05A,Permanently restricted net assets included in total restricted net assets - Net assets of FASB institutions that must be maintained in perpetuity. Permanently restricted net assets increase when institutions receive contributions for which donor-imposed restrictions limiting the institution's use of an asset or its economic benefits neither expire with the passage of time nor can be removed by the organization's meeting certain requirements. Donor-imposed restrictions on the use of the investment income on the assets may also change the amount of such net assets. Permanent endowment funds are the most common example.
+Description,11,65096,F2A05B,Assets held by the institution upon which restrictions have been placed by donors. They restrict the institution in its use of the assets and/or the period of time for which the restriction applies.  Temporarily restricted net assets includes the amount of all net assets that are subject to temporary donor/grantor restrictions that limit availability for expenditure. Temporary restrictions are also those that permit the institution to expend the donated assets for a specified purpose or a future date.
+Description,12,60631,F2A06,Total net assets is the sum of unrestricted and restricted net assets.
+Description,13,60636,F2A11,Land and land improvements-end of year includes end of year values for land and land improvements as a reconciliation of beginning of the year values with additions to and retirements of land and land improvements to obtain end of year values.
+Description,14,60641,F2A12,Buildings-end of year includes end of year values for buildings as a reconciliation of beginning of the year values with additions to and retirements of building values to obtain end of year values. Capitalized leasehold improvements should be included in this amount if the improvements are to leased facilities.
+Description,15,60646,F2A13,"Equipment, including art and library collections-end of year includes end of year values for equipment as a reconciliation of beginning of the year values with additions to and retirements of equipment values to obtain end of year values. Capitalized leasehold improvements should be included in this amount if the improvements are to leased equipment."
+Description,16,65101,F2A15,"Construction in progress - Capital assets under construction or development that have not yet been placed into service, such as a building or parking lot. Capital assets are not subject to depreciation while in a construction in progress status."
+Description,17,65106,F2A16,"Other plant, property and equipment - all other amounts for capital assets not reported as
+-Land and land improvements 
+-Buildings 
+-Equipment, including art and library collections 
+-Construction in progress -"
+Description,18,65111,F2A17,"Total end of year values for property obtained under capital leases  from  the following categories:
+-Land and land improvements 
+-Buildings 
+-Equipment, including art and library collections 
+-Construction in progress 
+-Other plant, property and equipment"
+Description,19,65116,F2A18,"Accumulated depreciation  The total depreciation charged as expenses as of the reporting date (in the current year and in prior years) on the capital assets of the institution. FASB Statement No. 117 and GASB Statement No. 34 require that accumulated depreciation to date be recognized. 
+NOTE: When a capital asset is removed from the accounting records due to disposal or end of the asset's useful life, the depreciation accumulated through the years on the asset is also removed from the records."
+Description,20,60656,F2B01,"Total revenues and investment return is the amount reported in Part A, line A17, column 1 (Total revenues and investment return)."
+Description,21,60661,F2B02,"Total expenses is the amount reported in Part B, line B12, column 1 (Total Expenses)."
+Description,22,60666,F2B03,Other specific changes in net assets includes: actuarial gain or (loss) on split-interest agreements; gain or (loss) on sale of plant assets; other gain or (loss); discontinued operations; extraordinary gain or (loss); and cumulative effect of change(s) in accounting principle.
+Description,23,60671,F2B04,"Change in net assets is the sum of total revenues and investment return, total expenses, and other changes in net assets. This amount should agree with the total change in net assets for the year reported in general purpose financial statements."
+Description,24,60676,F2B05,"Net assets, beginning of year includes the amount of net assets, end of year from the previous year's IPEDS Finance report. In all cases except when the institution reports a change in accounting principle via retroactive adjustment, this amount is also the beginning net asset balance in your general purpose financial statements."
+Description,25,60681,F2B06,Adjustments to beginning net assets are any adjustments to these asset balances reported in general purpose financial statements.  This includes adjustments for retroactive application of changes in accounting principle and prior period adjustments.
+Description,26,60686,F2B07,"Net assets, end of the year, is the sum of changes in net assets for the current year, net assets beginning of year, and adjustments to beginning net assets.  This amount should agree with the amount reported in Part D, Statement of Financial Position, total end of year net assets and also agree with the amount reported for total net assets in the general purpose financial statements at the end of the fiscal year."
+Description,27,60691,F2C01,Pell grants includes the amount administered by the institution under the Pell grant program .Private institutions generally report Pell Grants as agency transactions.
+Description,28,60696,F2C02,"Other federal grants includes the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Private not-for-profit institutions generally report these grants as allowances when applied to the student's account and as federal grant revenues when received. Matching portions for any of these programs are not included."
+Description,29,60701,F2C03,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG).  Private not-for-profit institutions generally report these grants as allowances when disbursed and as state grant revenues when received."
+Description,30,60706,F2C04,Local grants includes the amount awarded to the institution under local student aid programs. Private not-for-profit institutions generally report these grants as allowances when disbursed and as local grant revenues when received.
+Description,31,60711,F2C05,"Institutional grants (funded) includes the amounts awarded to students from institutional resources restricted for the purpose of student aid, such as scholarships and fellowships funded by gifts or endowment return restricted for that purpose."
+Description,32,60716,F2C06,Institutional grants (unfunded) includes the amount awarded to students from unrestricted institutional resources.
+Description,33,60721,F2C07,"Total student aid includes Pell grants and other federal student grants, state and local student grants, and institutional (funded and unfunded) grants."
+Description,34,60726,F2C08,Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues.
+Description,35,60731,F2C09,Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue.
+Description,36,60733,F2C10,Total discounts and allowances is the sum of discounts and allowances applied to both tuition & fees and auxiliary enterprises.
+Description,37,61283,F2C12,"Pell grants includes the amount administered by the institution under the Pell grant program .Private institutions generally report Pell Grants as agency transactions.
+
+Total discounts and allowances is the sum of discounts and allowances applied to both tuition & fees and auxiliary enterprises."
+Description,38,61285,F2C121,"Pell grants includes the amount administered by the institution under the Pell grant program. Private institutions generally report Pell Grants as agency transactions.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,39,61287,F2C122,"Pell grants includes the amount administered by the institution under the Pell grant program. Private institutions generally report Pell Grants as agency transactions.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,40,61289,F2C13,"Other federal grants includes the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Private not-for-profit institutions generally report these grants as allowances when applied to the student's account and as federal grant revenues when received. Matching portions for any of these programs are not included.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,41,61291,F2C131,"Other federal grants includes the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Private not-for-profit institutions generally report these grants as allowances when applied to the student's account and as federal grant revenues when received. Matching portions for any of these programs are not included.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,42,61293,F2C132,"Other federal grants includes the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Private not-for-profit institutions generally report these grants as allowances when applied to the student's account and as federal grant revenues when received. Matching portions for any of these programs are not included.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,43,61295,F2C14,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG).  Private not-for-profit institutions generally report these grants as allowances when disbursed and as state grant revenues when received.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,44,61297,F2C141,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG).  Private not-for-profit institutions generally report these grants as allowances when disbursed and as state grant revenues when received.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,45,61299,F2C142,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG).  Private not-for-profit institutions generally report these grants as allowances when disbursed and as state grant revenues when received.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,46,61301,F2C15,"Local grants includes the amount awarded to the institution under local student aid programs. Private not-for-profit institutions generally report these grants as allowances when disbursed and as local grant revenues when received.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,47,61303,F2C151,"Local grants includes the amount awarded to the institution under local student aid programs. Private not-for-profit institutions generally report these grants as allowances when disbursed and as local grant revenues when received.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,48,61305,F2C152,"Local grants includes the amount awarded to the institution under local student aid programs. Private not-for-profit institutions generally report these grants as allowances when disbursed and as local grant revenues when received.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,49,61307,F2C16,"Endowments are funds whose principal is nonexpendable (true endowment) and that are intended to be invested to provide for institutional use. The funds also include funds for which the donor has stipulated that the principal may be expended after a stated period or on the occurrence of a certain event (term endowment) and funds established by the governing board to function line an endowment fund but which may be totally expended at any time at the discretion of the governing board.
+
+Gifts are received contributions as a nonexchange transaction. The contributions include bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,50,61309,F2C161,"Endowments are funds whose principal is nonexpendable (true endowment) and that are intended to be invested to provide for institutional use. The funds also include funds for which the donor has stipulated that the principal may be expended after a stated period or on the occurrence of a certain event (term endowment) and funds established by the governing board to function line an endowment fund but which may be totally expended at any time at the discretion of the governing board.
+
+Gifts are received contributions as a nonexchange transaction. The contributions include bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,51,61311,F2C162,"Endowments are funds whose principal is nonexpendable (true endowment) and that are intended to be invested to provide for institutional use. The funds also include funds for which the donor has stipulated that the principal may be expended after a stated period or on the occurrence of a certain event (term endowment) and funds established by the governing board to function line an endowment fund but which may be totally expended at any time at the discretion of the governing board.
+
+Gifts are received contributions as a nonexchange transaction. The contributions include bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,52,61313,F2C17,"Institutional grants (funded) includes the amounts awarded to students from institutional resources restricted for the purpose of student aid, such as scholarships and fellowships funded by gifts or endowment return restricted for that purpose.
+Institutional grants (unfunded) includes the amount awarded to students from unrestricted institutional resources.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,53,61315,F2C171,"Institutional grants (funded) includes the amounts awarded to students from institutional resources restricted for the purpose of student aid, such as scholarships and fellowships funded by gifts or endowment return restricted for that purpose.
+Institutional grants (unfunded) includes the amount awarded to students from unrestricted institutional resources.
+
+Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues."
+Description,54,61317,F2C172,"Institutional grants (funded) includes the amounts awarded to students from institutional resources restricted for the purpose of student aid, such as scholarships and fellowships funded by gifts or endowment return restricted for that purpose.
+Institutional grants (unfunded) includes the amount awarded to students from unrestricted institutional resources.
+
+Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue."
+Description,55,60736,F2D01,"The amount of tuition and educational fees, net of any allowances applied in the general purpose financial statements. Included in this amount are fees for continuing education programs, conferences, and seminars."
+Description,56,65131,F2D012,Tuition and fees - Unrestricted are revenues from tuition and fees that are not subject to limitations by a donor-imposed restriction.
+Description,57,65136,F2D013,Tuition and fees - Temporarily restricted are revenues from tuition and fees that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,58,65141,F2D014,Tuition and fees - Permanently restricted are revenues from tuition and fees that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,59,60741,F2D02,"Federal appropriations includes amounts received from the federal government through a direct appropriation of Congress, except grants and contracts. An example of a federal appropriation is a federal land grant appropriation."
+Description,60,65146,F2D022,Federal appropriations - Unrestricted are revenues from Federal appropriations that are not subject to limitations by a donor-imposed restriction.
+Description,61,65151,F2D023,Federal appropriations - Temporarily restricted are revenues from Federal appropriations that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,62,65156,F2D024,Federal appropriations - Permanently restricted are revenues from Federal appropriations that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,63,60746,F2D03,"State appropriations includes amounts received from a state government through a direct appropriation of its legislative body, except for state grants and contracts. An example of a state appropriation is an annual state appropriation for operating expenses of the institution"
+Description,64,65161,F2D032,State approprations - Unrestricted are revenues from state appropriations that are not subject to limitations by a donor-imposed restriction.
+Description,65,65166,F2D033,State appropriations - Temporarily restricted are revenues from state approprations that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,66,65171,F2D034,State appropriations - Permanently restricted are revenues from state appropriations that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,67,60751,F2D04,"Local appropriations includes amounts received from a local government (i.e., city and/or county) through a direct appropriation of its legislative body, except for local grants and contracts. An example of a local appropriation is an annual local appropriation for operating expenses of the institution."
+Description,68,65176,F2D042,Local approprations - Unrestricted are revenues from local appropriations that are not subject to limitations by a donor-imposed restriction.
+Description,69,65181,F2D043,Local appropriations -  Temporarily restricted are revenues from local appropriations that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,70,65186,F2D044,Local appropriations - Permanently restricted are revenues from local appropriations that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,71,60756,F2D05,"Federal grants and contracts includes all revenues from federal agencies that are for specific undertakings such as research projects, training projects, and similar activities, including contributions from federal agencies. Includes federal Pell and similar student aid grants when they are treated as student aid expenses when awarded to the student. If federal Pell and similar student aid grants are treated as agency transactions in general purpose financial statements they are excluded from this amount."
+Description,72,65191,F2D052,Federal grants and contracts - Unrestricted are revenues from Federal grants and contracts that are not subject to limitations by a donor-imposed restriction.
+Description,73,65196,F2D053,Federal grants and contracts  - Temporarily restricted are revenues from Federal grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,74,65201,F2D054,Federal grants and contracts - Pemanently restricted are revenues from federal grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,75,60761,F2D06,"State grants and contracts includes all revenues from state agencies that are for specific undertakings such as research projects, training projects, and similar activities, including contributions from federal agencies. Includes state grants for student aid when they are treated as student aid expenses when awarded to the student. If state grants for student aid are treated as agency transactions in general purpose financial statements they are excluded from this amount."
+Description,76,65206,F2D062,State grants and contracts - Unrestricted are revenues from State grants and contracts that are not subject to limitations by a donor-imposed restriction.
+Description,77,65211,F2D063,State grants and contracts - Temporarily restricted are revenues from state grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,78,65216,F2D064,State grants and contracts - Permanently restricted are revenues from state grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,79,60766,F2D07,"Local grants and contracts includes all revenues from local agencies that are for specific undertakings such as research projects, training projects, and similar activities, including contributions from locall agencies. Includes local grants for student aid when they are treated as student aid expenses when awarded to the student. If local grants for student aid are treated as agency transactions in general purpose financial statements they are excluded from this amount."
+Description,80,65221,F2D072,Local grants and contracts - Unrestricted are revenues from local grants and contracts that are not subject to limitations by a donor-imposed restriction.
+Description,81,65226,F2D073,Local grants and contracts - Temporarily restricted are revenues from local grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,82,65231,F2D074,Local grants and contracts - Permanently restricted are revenues from local grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,83,60771,F2D08,"Private gifts, grants and contracts includes revenues from private (non-governmental) entities including revenue from research or training projects and similar activities and all contributions (including contributed services) except those from affiliated entities, which are included in contributions from affiliated entities."
+Description,84,65236,F2D082,"Private gifts, grants and contracts - Unrestricted are revenues from Private gifts, grants and contracts that are not subject to limitations by a donor-imposed restriction."
+Description,85,65251,F2D083,"Private gifts, grants and contracts - Temporarily restricted are revenues from private gifts, grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred)."
+Description,86,65266,F2D084,"Private gifts, grants, and contracts - Permanently restricted are revenues from private gifts, grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction."
+Description,87,65281,F2D08A,"Private gifts (Revenues)  are revenues from private (non-governmental) entities including revenues received from gift or contribution nonexchange transactions (including contributed services) except those from affiliated entities. Includes bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution."
+Description,88,65241,F2D082A,Private gifts - Unrestricted are revenues from private gifts that are not subject to limitations by a donor-imposed restriction.
+Description,89,65256,F2D083A,Private gifts - Temporarily restricted are revenues from private gifts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,90,65271,F2D084A,Private gifts - Permanentlly restricted are revenues from private gifts that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,91,65286,F2D08B,"Private grants and contracts are revenues from private (non-governmental) entities that are for specific research projects, other types of programs, or for general institutional operations (if not government appropriations). Examples are research projects, training programs, and similar activities for which amounts are received or expenses are reimbursable under the terms of a grant or contract, including amounts to cover both direct and indirect expenses Private grants and contracts (Revenues)  Revenues from private (non-governmental) entities that are for specific research projects, other types of programs, or for general institutional operations (if not government appropriations). Examples are research projects, training programs, and similar activities for which amounts are received or expenses are reimbursable under the terms of a grant or contract, including amounts to cover both direct and indirect expenses"
+Description,92,65246,F2D082B,Private grants and contracts - Unrestricted are revenues from private grants and contracts that are not subject to limitations by a donor-imposed restriction.
+Description,93,65261,F2D083B,Private grants and contracts - Temporarily restricted are revenues from private grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,94,65276,F2D084B,"Private grants, and contracts - Permanently restricted are revenues from private grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction."
+Description,95,60776,F2D09,"Contributions from affiliated entities includes all revenues received from non-consolidated affiliated entities, such as fund raising foundations, booster clubs, other institutionally-related foundations, and similar organizations created to support the institution or organizational components of the institution."
+Description,96,65291,F2D092,Contributions from affiliated entities - Unrestricted are contributions from affiliated entities that are not subject to limitations by a donor-imposed restriction.
+Description,97,65296,F2D093,Contributions from affiliated entities - Temporarily restricted are contributions from affiliated entities that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,98,65301,F2D094,Contributions from affiliated entities - Permanently restricted are contributions from affiliated entities that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,99,60781,F2D10,"Investment return includes the following amounts: all investment income (i.e., interest, dividends, rents and royalties); gains and losses (realized and unrealized) from holding investments (regardless of the nature of the investment); student loan interest; and amounts distributed from irrevocable trusts held by others (collectively referred to as ""investment return"")."
+Description,100,65306,F2D102,Investment return - Unrestricted are revenues from Investment return that are not subject to limitations by a donor-imposed restriction.
+Description,101,65311,F2D103,Investment return - Temporarily restricted  are revenues from investment return that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,102,65316,F2D104,Investment return - Permanently restricted are revenues from investment return that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,103,60786,F2D11,"Sales and services of educational activities includes all revenues derived from the sales of goods and services that are incidental to the conduct of instruction, research, or public service, and revenues of activities that exist to provide instructional and laboratory experience for students and that incidentally create goods and services that may be sold. Examples include film rentals, scientific and literary publications, testing services, university presses, dairies, and patient care clinics that are not part of a hospital."
+Description,104,65321,F2D112,Sales and services of educational activities - Unrestricted are revenues from sales and services of educational activities that are not subject to limitations by a donor-imposed restriction.
+Description,105,60791,F2D12,"Sales and services of auxiliary enterprises includes the amount of revenues generated by the auxiliary enterprise operations, net of any tuition and fee allowances applied in the general purpose financial statements. Auxiliary enterprises are operations that exist to furnish a service to students, faculty, of staff, and that charge a fee that is directly related to the cost of the service.  Examples of auxiliary enterprises are residence halls, food services, student health services, intercollegiate athletics, college unions, stores and movie theaters."
+Description,106,65326,F2D122,Sales and services of auxiliary enterprises - Unrestricted are revenues from sales and services of auxiliary enterprises that are not subject to limitations by a donor-imposed restriction.
+Description,107,60796,F2D13,"Revenues from hospitals includes revenues and gains of hospitals operated as a component of a reporting institution of higher education. Independent operations includes revenues associated with operations independent of the primary missions of the institution, such as revenues associated with major federally funded research and development centers. All other revenues not reported in the above categories (tuition and fees through sales and services of auxiliary enterprises) are included here."
+Description,108,65331,F2D132,Hospital revenue - Unrestricted are Hospital revenues that are not subject to limitations by a donor-imposed restriction.
+Description,109,60801,F2D14,"Independent operations revenue includes all revenues associated with operations independent of the primary missions of the institution. This category generally includes only those revenues associated with major federally-funded research and development centers. Excludes the profit (or loss) from operations owned and managed as investments of the institution’s endowment funds, which should be reported in investment return."
+Description,110,65336,F2D142,Independent operatations revenue - Unrestricted are revenues from independent operations that are not subject to limitations by a donor-imposed restriction.
+Description,111,65341,F2D143,Independent operations revenue - Temporarily restricted are revenues from independent operations that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,112,65346,F2D144,Independent operations revenue - Permanently restricted are revenues from independent operations that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,113,60806,F2D15,"Other revenue includes all revenue not reported elsewhere. Excludes gains or other unusual or nonrecurring items that are required to be included in Part C (Summary of Changes in Net Assets), such as gains on the sale of plant assets, actuarial gains, and extraordinary gains."
+Description,114,65351,F2D152,Other revenue - Unrestricted are revenues from other sources that are not subject to limitations by a donor-imposed restriction.
+Description,115,65356,F2D153,Other revenue - Temporarily restricted are revenues from other sources that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,116,65361,F2D154,Other revenue - Permanently restricted are revenues from other sources that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,117,60811,F2D16,"Total revenues and investment return is the sum of the following amounts: tuition and fees; government appropriations, grants and contracts; private gifts, grants, and contracts; contributions from affiliated entities; investment return (income, gains, and losses); sales and services of educational activities and auxiliary enterprises; hospital revenue; independent operations revenue; and other revenue."
+Description,118,65366,F2D162,Total revenues and investment return - Unrestricted are all revenues that are not subject to limitations by a donor-imposed restriction.
+Description,119,65371,F2D163,Total revenues and investment return - Temporarily restricted are all revenues that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,120,65376,F2D164,Total revenues and investment return - Permanently restricted are all revenues that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,121,65380,F2D17,revenues resulting from the reclassification of temporarily restricted assets or permanently restricted assets
+Description,122,65381,F2D172,Net assets released from restriction - Unrestricted are revenues resulting from the reclassification of temporarily restricted assets or permanently restricted assets
+Description,123,65386,F2D173,Net assets released from restriction - Temporarily restricted are revenues resulting from the reclassification of temporarily restricted assets or permanently restricted assets
+Description,124,65387,F2D174,Net assets released from restriction - Permanently restricted
+Description,125,65390,F2D18,"Net total revenues, after assets released from restriction - Total"
+Description,126,65391,F2D182,"Total net revenues, after assets released from restriction unrestricted is total revenue and investment return - Unrestricted minus Net assets released from restriction - Unrestricted"
+Description,127,65396,F2D183,"Total net revenues, after assets released from restriction Temporarily restricted is total revenue and investment return - Temporarily restricted minus Net assets released from restriction - Temporarily restricted"
+Description,128,65401,F2D184,"Total net revenues, after assets released from restriction Permanently restricted is total revenue and investment return - Permanently restricted minus Net assets released from restriction - Permanently restricted"
+Description,129,60816,F2E011,"Instruction expenses includes all expenses of the colleges, schools, departments, and other instructional divisions of the institution and expenses for departmental research and public service that are not separately budgeted. Includes general academic instruction, occupational and vocational instruction, special session instruction, community education, preparatory and adult basic education, and remedial and tutorial instruction conducted by the teaching faculty for the institutions's students. Also, includes expenses for both credit and non-credit activities. Excludes expenses for academic administration if the primary function is administration (e.g., academic deans)."
+Description,130,60821,F2E012,Instruction-salaries and wages includes salary and wage expenses incurred in instruction.
+Description,131,60851,F2E021,Research-Total amount
+Description,132,60856,F2E022,Research-Salaries and wages
+Description,133,60886,F2E031,Public service-Total amount
+Description,134,60891,F2E032,Public service-Salaries and wages
+Description,135,60921,F2E041,Academic support-Total amount
+Description,136,60926,F2E042,Academic support-Salaries and wages
+Description,137,60956,F2E051,Student service-Total amount
+Description,138,60961,F2E052,Student service-Salaries and wages
+Description,139,60991,F2E061,Institutional support-Total amount
+Description,140,60996,F2E062,Institutional support-Salaries and wages
+Description,141,61026,F2E071,Auxiliary enterprises-Total amount
+Description,142,61031,F2E072,Auxiliary enterprises-Salaries and wages
+Description,143,61061,F2E081,Net grant aid to students-Total amount
+Description,144,61096,F2E091,Hospital services-Total amount
+Description,145,61101,F2E092,Hospital services-Salaries and wages
+Description,146,61131,F2E101,Independent operations-Total Amount
+Description,147,61136,F2E102,Independent operations-Salaries and wages
+Description,148,61201,F2E121,Other expenses-Total amount
+Description,149,61206,F2E122,Other expenses-Salaries and wages
+Description,150,61236,F2E131,Total expenses-Total amount
+Description,151,61241,F2E132,"Salaries and wages	 - Amounts paid as compensation for services to all employees - faculty, staff, part-time, full-time, regular employees, and student employees. This includes regular or periodic payment to a person for the regular or periodic performance of work or a service and payment to a person for more sporadic performance of work or a service (overtime, extra compensation, summer compensation, bonuses, sick or annual leave, etc.)."
+Description,152,61246,F2E133,"Fringe benefits	 - Cash contributions in the form of supplementary or deferred compensation other than salary. Excludes the employee's contribution. Employee fringe benefits include retirement plans, social security taxes, medical/dental plans, guaranteed disability income protection plans, tuition plans, housing plans, unemployment compensation plans, group life insurance plans, worker's compensation plans, and other benefits in-kind with cash options."
+Description,153,61251,F2E134,"Operations and maintenance - 	An expense category that includes expenses for operations established to provide service and maintenance related to campus grounds and facilities used for educational and general purposes. Specific expenses include: janitorial and utility services; repairs and ordinary or normal alterations of buildings, furniture, and equipment; care of grounds; maintenance and operation of buildings and other plant facilities; security; earthquake and disaster preparedness; safety; hazardous waste disposal; property, liability, and all other insurance relating to property; space and capital leasing; facility planning and management; and central receiving. This expense does include amounts charged to auxiliary enterprises, hospitals, and independent operations. Also includes information technology expenses related to operation and maintenance of plant activities if the institution separately budgets and expenses information technology resources (otherwise these expenses are included in institutional support).
+
+	FASB institutions are required to allocate O&M costs to other functional categories (e.g., instruction, research, etc.) while GASB institutions can allocate O&M costs OR report it as a separate functional category.  In an effort to align FASB and GASB O&M expenses, from FY 2010 to FY 2015, O&M was reported as both a functional and natural expense category in IPEDS, causing its total to be equal to zero. However, beginning with FY 2016, both FASB and GASB institutions are required to allocate O&M to all the functions and report it as a natural expense category. 
+
+Prior to fiscal year 2017 this variable would always be equal to zero. Like other natural classification categories OM was reported for all  expense functions (survey column 4) . Unlike other natural classification categories OM also appeared as a function (line 11). Institutions would report positive values of salaries and wages, benefits, depreciation, interest and other expenses on the OM (survey line 11).  However total OM line 11 column 1 was always zero and negative values were reported in the intersection of line 11 and column 4 to balance out the total of all expenses of OM distributed to the functional categories.  
+
+For a better understanding of this, please visit the IPEDS survey form archive site for finance below:
+
+http://nces.ed.gov/ipeds/InsidePages/ArchivedSurveyMaterials?section=Finance"
+Description,154,61256,F2E135,"Depreciation	 - The allocation or distribution of the cost of capital assets, less any salvage value, to expenses over the estimated useful life of the asset in a systematic and rational manner. Depreciation for the year is the amount of the allocation or distribution for the year involved."
+Description,155,61261,F2E136,Interest - The price paid (or received) for the use of money over a period of time. Interest income is one component of investment income. Interest paid by the institution is interest expense.
+Description,156,61266,F2E137,"Other Natural classication expense is the difference between the total expenses and the sum of all natural expense categories (Salaries and wages, benefits, operations and maintenance, depreciation and interest)."
+Description,157,61281,F2FHA,"Does this institution or any of its foundations or other affiliated organizations own endowment assets ?
+ENDOWMENT ASSETS - Consists of gross investments of endowment funds, term endowment funds, and funds functioning as endowment for the institution and any of its foundations and other affiliated organizations."
+Description,158,61271,F2H01,"Value of endowment assets at the beginning Value of endowment assets at the beginning of the fiscal year  
+ENDOWMENT ASSETS - Consists of gross investments of endowment funds, term endowment funds, and funds functioning as endowment for the institution and any of its foundations and other affiliated organizations."
+Description,159,61276,F2H02,"Value of endowment assets at the end of the fiscal year
+ENDOWMENT ASSETS - Consists of gross investments of endowment funds, term endowment funds, and funds functioning as endowment for the institution and any of its foundations and other affiliated organizations."
+Description,160,61319,F2H03,Change in value of endowment net assets is the value of endowment assets at the end of the fiscal year minus the value of endowment assets at the beginning of the fiscal year
+Description,161,61321,F2H03A,"New gifts and additions – Amount of new gifts and additions to permanent endowments. Include contributions, pledge payments, and reinvested income/gains."
+Description,162,61323,F2H03B,"Endowment net investment return –  Amount of net investment return from endowments, endowment net investment return. Include realized and unrealized gains (losses) and interest and dividends, net of administrative expenses."
+Description,163,61325,F2H03C,Spending distribution for current use – Amount of withdrawals from endowments to fund the institution’s operating budget and other institutional expenses.
+Description,164,61327,F2H03D,"Other changes in value of endowment assets is generated by subracting the sum of (H03a) new gifts and additions, (H03b) net investment return, (H03c) spending distribution for current use from (H03) change in value of endowment net assets.  Other changes to the value of endowment net assets may include transfers and other adjustments."
+Description,165,61329,F2I01,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Change in unrestricted net assets is the sum of the institution’s excess or deficiency of unrestricted operating revenues over unrestricted operating expenses (e.g., change in net assets without donor restriction), available from the statement of activities or other internal financial reports."
+Description,166,61331,F2I02,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Total unrestricted operating revenues is the institution’s total unrestricted operating revenues and gains, including net assets released from restriction."
+Description,167,61333,F2I03,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Change in net assets from F2B04
+
+Change in net assets is the sum of total revenues and investment return, total expenses, and other changes in net assets. This amount should agree with the total change in net assets for the year reported in general purpose financial statements."
+Description,168,61335,F2I04,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Total net assets from F2B05
+
+Net assets, beginning of year includes the amount of net assets, end of year from the previous year's IPEDS Finance report. In all cases except when the institution reports a change in accounting principle via retroactive adjustment, this amount is also the beginning net asset balance in your general purpose financial statements."
+Description,169,61337,F2I05,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Expendable net assets is the institution’s expendable net assets. Includes net assets without donor restriction and net assets with donor restriction – subject to time or purpose restriction. Excludes net investment in plant and net assets with donor restriction – subject to time or purpose restriction that will be invested in plant."
+Description,170,61339,F2I06,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Plant-related debt from F2A03a
+
+Amounts for all long-term debt obligations including bonds payable, mortgages payable, capital leases payable, and long-term notes payable. (FARM para. 420.3, 423) If the current portion of long-term debt is separately reported in the GPFS, then that amount is included."
+Description,171,61341,F2I07,"These variables are intended to collect the numerator and denominator used to calculate financial health ratios that compose the Composite Financial Index (CFI).
+
+Total expenses from F2B02"
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,61281,F2FHA,1,Yes - (report endowment assets),1318,74.63
+Frequencies,2,61281,F2FHA,2,No,340,19.25
+Frequencies,3,61281,F2FHA,-2,not applicable,108,6.12
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,60606,F2A01,1586,701246962949,442148148.13934427,0,59640569000,Long-term investments
+Statistics,2,65121,F2A19,1586,289644863869,182626017.57187894,0,9463058000,"Property, Plant, and Equipment, net of accumulated depreciation"
+Statistics,3,65126,F2A20,1586,2318343795,1461755.2301387137,0,311708786,"Intangible Assets, net of accumulated amortization"
+Statistics,4,60611,F2A02,1586,1161220371962,732169213.09079444,32937,73009567000,Total assets
+Statistics,5,60616,F2A03,1586,288658595626,182004158.65447667,0,11940978000,Total liabilities
+Statistics,6,65091,F2A03A,1586,154973960879,97713720.604665831,0,6409159000,"Debt related to Property, Plant, and Equipment"
+Statistics,7,60621,F2A04,1586,402265970031,253635542.26418662,-115948000,27193858000,Total unrestricted net assets
+Statistics,8,60626,F2A05,1586,470295806305,296529512.17213112,0,45649674000,Total restricted net assets
+Statistics,9,64825,F2A05A,1586,197720375926,124666063.00504413,0,11972883000,Permanently restricted net assets included in total restricted net assets
+Statistics,10,65096,F2A05B,1586,272575430379,171863449.16708702,-2182481,33676791000,Temporarily restricted net assets
+Statistics,11,60631,F2A06,1586,872561776336,550165054.4363178,-46967677,61519519000,Total net assets
+Statistics,12,60636,F2A11,1586,27858136852,17565029.540983606,0,1024986000,Land  improvements - End of year
+Statistics,13,60641,F2A12,1586,390025574157,245917764.28562421,0,13526265000,Buildings - End of year
+Statistics,14,60646,F2A13,1586,87631411376,55253096.706179067,0,4065841000,"Equipment, including art and library collections - End of year"
+Statistics,15,65101,F2A15,1586,24045561135,15161135.64627995,0,1040062000,Construction in Progress
+Statistics,16,65106,F2A16,1586,4301263013,2712019.5542244641,0,1239986000,"Other plant, property and equipment"
+Statistics,17,65111,F2A17,1586,533861946533,336609045.73329133,0,17218186000,"Total Plant, Property, and Equipment"
+Statistics,18,65116,F2A18,1586,244217056345,153983011.56683481,0,7755128000,Accumulated depreciation
+Statistics,19,60656,F2B01,1586,293547127756,185086461.38461539,-18804498,14531169000,Total revenues and investment return
+Statistics,20,60661,F2B02,1586,282324135544,178010173.73518285,259507,13857148000,Total expenses
+Statistics,21,60666,F2B03,1586,2560522251,1614452.8694829762,-81940000,315464776,Other specific changes in net assets
+Statistics,22,60671,F2B04,1586,13783514463,8690740.5189155098,-1768051000,2337704000,Total change in net assets
+Statistics,23,60676,F2B05,1586,858748449807,541455516.90226984,-57934626,61246694000,"Net assets, beginning of the year"
+Statistics,24,60681,F2B06,1586,29812066,18797.015132408575,-41272797,59231000,Adjustments to beginning of year net assets
+Statistics,25,60686,F2B07,1586,872561776336,550165054.4363178,-46967677,61519519000,"Net assets, end of the year"
+Statistics,26,60691,F2C01,1764,4923069777,2790855.8826530613,0,247841316,Pell grants
+Statistics,27,60696,F2C02,1764,1493346882,846568.52721088438,0,48565597,Other federal grants
+Statistics,28,60701,F2C03,1764,2103344025,1192371.8962585034,0,27376000,State grants
+Statistics,29,60706,F2C04,1764,72406764,41046.918367346938,0,11609075,Local grants
+Statistics,30,60711,F2C05,1764,8184919000,4639976.7573696142,0,433355044,Institutional grants (funded)
+Statistics,31,60716,F2C06,1764,43047744514,24403483.284580499,0,855558000,Institutional grants (unfunded)
+Statistics,32,60721,F2C07,1764,59824830962,33914303.266439907,0,1031962925,Total student grants
+Statistics,33,60726,F2C08,1764,49478575561,28049079.11621315,0,897928000,Allowances applied to tuition and fees
+Statistics,34,60731,F2C09,1764,952462097,539944.49943310663,0,91060000,Allowances applied to auxiliary enterprise revenues
+Statistics,35,60733,F2C10,1764,50431037658,28589023.615646258,0,988988000,Total discounts and allowances
+Statistics,36,61283,F2C12,1764,1204519320,682834.08163265302,0,39101000,"Total discounts and
+ allowances from Pell grants"
+Statistics,37,61285,F2C121,1764,1190071559,674643.74092970521,0,39101000,"Discounts and
+ allowances from Pell grants applied to tuition and fees"
+Statistics,38,61287,F2C122,1764,14447761,8190.3407029478458,0,7852000,Discounts and allowances from Pell grants applied to auxiliary enterprises
+Statistics,39,61289,F2C13,1764,825537155,467991.58446712018,0,111281170,Total discounts and allowances from other federal grants
+Statistics,40,61291,F2C131,1764,810878736,459681.82312925172,0,111281170,Discounts and allowances from other federal grants applied to tuition and fees
+Statistics,41,61293,F2C132,1764,14658419,8309.76133786848,0,5547073,"Discounts and allowances from other federal grants applied to auxiliary
+ enterprises"
+Statistics,42,61295,F2C14,1764,824852359,467603.37811791385,0,27376000,"Total discounts and
+ allowances from state government grants"
+Statistics,43,61297,F2C141,1764,821139661,465498.67403628118,0,27376000,"Discounts and
+ allowances from state government grants applied to tuition and fees"
+Statistics,44,61299,F2C142,1764,3712698,2104.704081632653,0,952892,Discounts and allowances from state government grants applied to auxiliary enterprises
+Statistics,45,61301,F2C15,1764,23041024,13061.804988662132,0,4958368,Discounts and allowances from local government grants
+Statistics,46,61303,F2C151,1764,22763667,12904.573129251701,0,4958368,Discounts and allowances from local government grants applied to tuition and fees
+Statistics,47,61305,F2C152,1764,277357,157.23185941043084,0,265357,Discounts and allowances from local government grants applied to auxiliary enterprises
+Statistics,48,61307,F2C16,1764,8768632953,4970880.358843537,0,512884000,Total discounts and allowances from endowments and gifts
+Statistics,49,61309,F2C161,1764,8585195502,4866890.8741496596,0,512884000,Discounts and allowances from endowments and gifts applied to tuition and fees
+Statistics,50,61311,F2C162,1764,183437451,103989.48469387754,0,47082000,Discounts and allowances from endowments and gifts applied to auxiliary enterprises
+Statistics,51,61313,F2C17,1764,38784454847,21986652.407596372,0,845328026,Total discounts and allowances from other institutional sources
+Statistics,52,61315,F2C171,1764,38048526436,21569459.430839002,0,768570885,Discounts and allowances from other institutional sources applied to tuition and fees
+Statistics,53,61317,F2C172,1764,735928411,417192.97675736959,0,76757141,Discounts and allowances from other institutional sources applied to auxiliary enterprises
+Statistics,54,60736,F2D01,1766,87772509688,49701307.864099659,0,2511047000,Tuition and fees - Total
+Statistics,55,65131,F2D012,1766,87772509688,49701307.864099659,0,2511047000,Tuition and fees - Unrestricted
+Statistics,56,65136,F2D013,1766,0,0,0,0,Tuition and fees - Temporarily restricted
+Statistics,57,65141,F2D014,1766,0,0,0,0,Tuition and fees - Permanently restricted
+Statistics,58,60741,F2D02,1766,633368254,358645.67044167611,0,251604000,Federal appropriations - Total
+Statistics,59,65146,F2D022,1766,626757078,354902.08267270669,0,248199000,Federal appropriations - Unrestricted
+Statistics,60,65151,F2D023,1766,6611176,3743.5877689694225,0,3405000,Federal appropriations - Temporarily restricted
+Statistics,61,65156,F2D024,1766,0,0,0,0,Federal appropriations - Permanently restricted
+Statistics,62,60746,F2D03,1766,1549867771,877614.81936579838,0,395006828,State appropriations - Total
+Statistics,63,65161,F2D032,1766,1524495268,863247.60362400906,0,395006828,State appropriations - Unrestricted
+Statistics,64,65166,F2D033,1766,25372503,14367.215741789354,0,12341270,State appropriations - Temporarily restricted
+Statistics,65,65171,F2D034,1766,0,0,0,0,State appropriations - Permanently restricted
+Statistics,66,60751,F2D04,1766,4356246,2466.7304643261609,0,1546437,Local appropriations - Total
+Statistics,67,65176,F2D042,1766,4102734,2323.1789354473385,0,1546437,Local appropriations - Unrestricted
+Statistics,68,65181,F2D043,1766,253512,143.55152887882221,0,253512,Local appropriations -  Temporarily restricted
+Statistics,69,65186,F2D044,1766,0,0,0,0,Local appropriations - Permanently restricted
+Statistics,70,60756,F2D05,1766,29266706330,16572313.890147226,0,4011839000,Federal grants and contracts - Total
+Statistics,71,65191,F2D052,1766,28713246093,16258916.247451868,0,4011839000,Federal grants and contracts - Unrestricted
+Statistics,72,65196,F2D053,1766,529951001,300085.50453001133,0,39847381,Federal grants and contracts  - Temporarily restricted
+Statistics,73,65201,F2D054,1766,23509236,13312.138165345414,0,20824936,Federal grants and contracts - Pemanently restricted
+Statistics,74,60761,F2D06,1766,1782892446,1009565.3714609287,0,174837000,State grants and contracts - Total
+Statistics,75,65206,F2D062,1766,1626481478,920997.43941109849,0,174837000,State grants and contracts - Unrestricted
+Statistics,76,65211,F2D063,1766,153918555,87156.59966024915,0,17292221,State grants and contracts - Temporarily restricted
+Statistics,77,65216,F2D064,1766,2492413,1411.332389580974,0,1782825,State grants and contracts - Permanently restricted
+Statistics,78,60766,F2D07,1766,663149544,375509.36806342017,0,227619032,Local grants and contracts - Total
+Statistics,79,65221,F2D072,1766,646791270,366246.47225368064,0,227619032,Local grants and contracts - Unrestricted
+Statistics,80,65226,F2D073,1766,14783274,8371.0498301245752,0,3931295,Local grants and contracts - Temporarily restricted
+Statistics,81,65231,F2D074,1766,1575000,891.84597961494899,0,1570000,Local grants and contracts  - Permanently restricted
+Statistics,82,60771,F2D08,1766,36907277933,20898798.37655719,0,2843444000,"Private gifts, grants, and contracts - Total"
+Statistics,83,65236,F2D082,1766,16579409744,9388114.2378255948,-3265910,1180304786,"Private gifts, grants, and contracts - Unrestricted"
+Statistics,84,65251,F2D083,1766,11949962971,6766683.4490373721,-9784132,940330000,"Private gifts, grants and contracts - Temporarily restricted"
+Statistics,85,65266,F2D084,1766,8377905218,4744000.6896942239,-739000,1710717000,"Private gifts, grants, and contracts - Permanently restricted"
+Statistics,86,65281,F2D08A,1766,27808823084,15746785.438278595,0,2326344000,Private gifts - Total
+Statistics,87,65241,F2D082A,1766,8648137797,4897020.2701019254,-3265910,831543000,Private gifts - Unrestricted
+Statistics,88,65256,F2D083A,1766,10835775726,6135773.3442808604,-9903633,710886000,Private gifts - Temporarily restricted
+Statistics,89,65271,F2D084A,1766,8324909561,4713991.8238958102,-739000,1710717000,Private gifts - Permanentlly restricted
+Statistics,90,65286,F2D08B,1766,9098454849,5152012.9382785959,0,1177325229,Private grants and contracts - Total
+Statistics,91,65246,F2D082B,1766,7931271947,4491093.9677236695,-407307,1177325229,Private grants and contracts - Unrestricted
+Statistics,92,65261,F2D083B,1766,1114187245,630910.10475651186,-25000,229444000,Private grants and contracts - Temporarily restricted
+Statistics,93,65276,F2D084B,1766,52995657,30008.865798414496,-124860,14997484,"Private grants, and contracts - Permanently restricted"
+Statistics,94,60776,F2D09,1766,3027903273,1714554.5147225368,0,784706444,Contributions from affiliated entities - Total
+Statistics,95,65291,F2D092,1766,2891768444,1637467.9750849376,0,784706444,Contributions from affiliated entities - Unrestricted
+Statistics,96,65296,F2D093,1766,119638833,67745.658550396372,0,49049000,Contributions from affiliated entities - Temporarily restricted
+Statistics,97,65301,F2D094,1766,16495996,9340.8810872027188,0,5001850,Contributions from affiliated entities - Permanently restricted
+Statistics,98,60781,F2D10,1766,21296323707,12059073.446772367,-598921827,1627243000,Investment return - Total
+Statistics,99,65306,F2D102,1766,16503317382,9345026.8301245756,-509709000,1782329000,Investment return - Unrestricted
+Statistics,100,65311,F2D103,1766,4548079906,2575356.6851642127,-1445799000,1105194000,Investment return - Temporarily restricted
+Statistics,101,65316,F2D104,1766,244926419,138689.93148357872,-221299917,47498000,Investment return - Permanently restricted
+Statistics,102,60786,F2D11,1766,11560925582,6546390.4767836919,0,2074865000,Sales and services of educational activities - Total
+Statistics,103,65321,F2D112,1766,11560925582,6546390.4767836919,0,2074865000,Sales and services of educational activities - Unrestricted
+Statistics,104,60791,F2D12,1658,20378877045,12291240.678528348,0,515975000,Sales and services of auxiliary enterprises - Total
+Statistics,105,65326,F2D122,1658,20378877045,12291240.678528348,0,515975000,Sales and services of auxiliary enterprises - Unrestricted
+Statistics,106,60796,F2D13,1573,49227072052,31295023.554990463,0,8718133000,Hospital revenue - Total
+Statistics,107,65331,F2D132,1573,49227072052,31295023.554990463,0,8718133000,Hospital revenue - Unrestricted
+Statistics,108,60801,F2D14,1573,10711377363,6809521.5276541645,0,2673772000,Independent operations revenue - Total
+Statistics,109,65336,F2D142,1573,10688041373,6794686.187539733,0,2673772000,Independent operations revenue - Unrestricted
+Statistics,110,65341,F2D143,1573,17259440,10972.307692307691,0,2934920,Independent operations revenue - Temporarily restricted
+Statistics,111,65346,F2D144,1573,6076550,3863.0324221233313,0,4629969,Independent operations revenue - Permanently restricted
+Statistics,112,60806,F2D15,1766,19409285384,10990535.325028313,-405791,4895407378,Other revenue - Total
+Statistics,113,65351,F2D152,1766,19380519164,10974246.41223103,-5263603,4895407378,Other revenue - Unrestricted
+Statistics,114,65356,F2D153,1766,-231864497,-131293.59966024917,-56677000,65196000,Other revenue - Temporarily restricted
+Statistics,115,65361,F2D154,1766,260630717,147582.51245753115,-7373000,136925000,Other revenue - Permanently restricted
+Statistics,116,60811,F2D16,1766,294191892618,166586575.66138166,-18804498,14531169000,Total revenues and investment return - Total
+Statistics,117,65366,F2D162,1766,268124314395,151825772.59060022,-18804498,13904707000,Total revenues and investment return - Unrestricted
+Statistics,118,65371,F2D163,1766,17133966674,9702132.884484712,-1349355000,2045524000,Total revenues and investment return - Temporarily restricted
+Statistics,119,65376,F2D164,1766,8933611549,5058670.1862967154,-37267441,1710580000,Total revenues and investment return - Permanently restricted
+Statistics,120,65380,F2D17,1766,0,0,0,0,Net assets released from restriction - Total
+Statistics,121,65381,F2D172,1766,17166771934,9720708.9093997739,-348175000,2498564000,Net assets released from restriction - Unrestricted
+Statistics,122,65386,F2D173,1766,-16928866064,-9585994.373725934,-2498564000,348175000,Net assets released from restriction - Temporarily restricted
+Statistics,123,65387,F2D174,1766,-237905870,-134714.53567383919,-106213000,5995000,Net assets released from restriction - Permanently restricted
+Statistics,124,65390,F2D18,1766,294191892618,166586575.66138166,-18804498,14531169000,"Net total revenues, after assets released from restriction - Total"
+Statistics,125,65391,F2D182,1766,285291086329,161546481.5,-18804498,14658996000,"Net total revenues, after assets released from restriction - Unrestricted"
+Statistics,126,65396,F2D183,1766,205100610,116138.5107587769,-2388639000,646284730,"Net total revenues, after assets released from restriction - Temporarily restricted"
+Statistics,127,65401,F2D184,1766,8695705679,4923955.6506228764,-44375000,1604367000,"Net total revenues, after assets released from restriction - Permanently restricted"
+Statistics,128,60816,F2E011,1766,76024517090,43048990.424688563,0,3504073000,Instruction-Total amount
+Statistics,129,60821,F2E012,1766,42603803610,24124464.105322763,0,1937001000,Instruction-Salaries and wages
+Statistics,130,60851,F2E021,1766,31887602678,18056400.157417893,0,3949502000,Research-Total amount
+Statistics,131,60856,F2E022,1766,13289177664,7525015.664779162,0,1926202000,Research-Salaries and wages
+Statistics,132,60886,F2E031,1766,4034392351,2284480.3799546999,0,1045652420,Public service-Total amount
+Statistics,133,60891,F2E032,1766,1952873943,1105817.6347678369,0,845984899,Public service-Salaries and wages
+Statistics,134,60921,F2E041,1766,24173993937,13688558.28822197,0,1790657501,Academic support-Total amount
+Statistics,135,60926,F2E042,1766,11648579143,6596024.4297848241,0,1021106443,Academic support-Salaries and wages
+Statistics,136,60956,F2E051,1766,22825210509,12924807.762740657,0,435109321,Student service-Total amount
+Statistics,137,60961,F2E052,1766,8995718092,5093838.1041902602,0,144951324,Student service-Salaries and wages
+Statistics,138,60991,F2E061,1766,35094358921,19872230.419592299,0,1228381000,Institutional support-Total amount
+Statistics,139,60996,F2E062,1766,14319488708,8108430.7519818796,0,444238000,Institutional support-Salaries and wages
+Statistics,140,61026,F2E071,1658,20548887748,12393780.306393245,0,723539000,Auxiliary enterprises-Total amount
+Statistics,141,61031,F2E072,1658,3275227188,1975408.4366706875,0,220805000,Auxiliary enterprises-Salaries and wages
+Statistics,142,61061,F2E081,1766,1278603940,724011.29105322761,0,181295000,Net grant aid to students-Total amount
+Statistics,143,61096,F2E091,1573,49993167468,31782051.791481245,0,8946990000,Hospital services-Total amount
+Statistics,144,61101,F2E092,1573,22266236229,14155267.787031151,0,3449762000,Hospital services-Salaries and wages
+Statistics,145,61131,F2E101,1573,10085330349,6411525.9688493321,0,2673771733,Independent operations-Total Amount
+Statistics,146,61136,F2E102,1573,2241025639,1424682.5422759058,0,972293442,Independent operations-Salaries and wages
+Statistics,147,61201,F2E121,1766,7137128611,4041409.1795016988,-850477,3600012000,Other expenses-Total amount
+Statistics,148,61206,F2E122,1766,4060454773,2299238.2633069083,0,2657489000,Other expenses-Salaries and wages
+Statistics,149,61236,F2E131,1766,283083193602,160296259.1177803,0,13857148000,Total expenses-Total amount
+Statistics,150,61241,F2E132,1766,124652584989,70584702.71177803,0,6045218000,Total expenses-Salaries and wages
+Statistics,151,61246,F2E133,1766,32931572299,18647549.433182333,0,1581494000,Total expenses-Benefits
+Statistics,152,61251,F2E134,1766,17125810922,9697514.6783691961,0,559707000,Total expenses-Operation and maintenance of plant
+Statistics,153,61256,F2E135,1766,16597811551,9398534.287089467,0,650251000,Total expenses-Depreciation
+Statistics,154,61261,F2E136,1766,5900843021,3341360.7140430352,0,246849000,Total expenses-Interest
+Statistics,155,61266,F2E137,1766,85874570820,48626597.293318234,0,5243187000,Total expenses-All other natural classification
+Statistics,156,61271,F2H01,1318,611100600252,463657511.57207888,0,50877680000,Value of endowment assets at the beginning of the fiscal year
+Statistics,157,61276,F2H02,1318,615607979920,467077374.74962062,148,50748594000,Value of endowment assets at the end of the fiscal year
+Statistics,158,61319,F2H03,1318,4507432831,3419903.5136570563,-1745354000,2294393000,Change in value of endowment net assets
+Statistics,159,61321,F2H03A,1318,12973512563,9843332.7488619126,0,2491863000,New gifts and additions
+Statistics,160,61323,F2H03B,1318,16479619869,12503505.21168437,-689719000,1337648000,Endowment net investment return
+Statistics,161,61325,F2H03C,1318,-27690143914,-21009213.895295903,-2244699000,0,Spending distribution for current use
+Statistics,162,61327,F2H03D,1318,2744444313,2082279.4484066768,-201326268,743757000,Other changes in value of endowment net assets
+Statistics,163,61329,F2I01,1586,8337047891,5256650.6248423709,-601753000,1006510000,Change in unrestricted net assets
+Statistics,164,61331,F2I02,1586,283223537290,178577261.84741488,-18804498,14992873000,Total unrestricted operating revenues
+Statistics,165,61333,F2I03,1586,13783514463,8690740.5189155098,-1768051000,2337704000,Change in net assets
+Statistics,166,61335,F2I04,1586,858748449807,541455516.90226984,-57934626,61246694000,Total net assets
+Statistics,167,61337,F2I05,1586,504635499970,318181273.6254729,-47017677,43771399000,Expendable net assets
+Statistics,168,61339,F2I06,1586,154602086049,97479247.193568721,0,6409159000,Plant-related debt
+Statistics,169,61341,F2I07,1586,282324135544,178010173.73518285,259507,13857148000,Total expenses
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

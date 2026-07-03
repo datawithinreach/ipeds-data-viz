@@ -1,0 +1,3827 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for the finance data file, private not-for-profit institutions and public institutions using FASB : Fiscal year 2019",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,Filename,F1819_F2
+Introduction,3,  Provisional release:,February 2021
+Introduction,4,Filename,F1819_F2_RV
+Introduction,5,  Final/revised release:,November 2021
+Introduction,6,Overview,"This data file contains institutional finance data for institutions that use accounting standards established by the Financial Accounting Standards Board (FASB) .  All private not-for-profit institutions are included in this file. There are some public institutions that use the FASB model and are also included. Finance data includes institutional revenues by source, expenditures by functional categories, expenditures by natural classification categories, endowments, and assets and liabilities. This information provides context for understanding the cost and resources of providing postsecondary education. It is used to calculate the contribution of postsecondary education to the gross national product.  Beginning with fiscal year 2016 detailed expenditures by function and the natural classifications of fringe benefits, operations and maintenance of plant, depreciation and interest are no longer available. 
+",,,,,,,,
+Introduction,7,Note,"Provisional release data have undergone all NCES data quality control procedures. Data are imputed for nonresponding institutions. These data are used for First Look (Provisional Data) Web Tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. The final release data can be used when the most up to date data are required; however, these data may not match First Look Web Tables based on provisional data. ",,,,,,,,
+Introduction,8,Contents of spreadsheet,,,,,,,,,
+Introduction,9,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,10,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,11,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.(provisional release),,,,,,,,
+Introduction,12,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (provisional release)",,,,,,,,
+Introduction,13,FrequenciesRV,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.(final/revised release),,,,,,,,
+Introduction,14,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file.(final/revised release)",,,,,,,,
+Introduction,15,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,60606,F2A01,N,12,Cont,XF2A01,Long-term investments
+varlist,3,65121,F2A19,N,12,Cont,XF2A19,"Property, Plant, and Equipment, net of accumulated depreciation"
+varlist,4,65126,F2A20,N,12,Cont,XF2A20,"Intangible Assets, net of accumulated amortization"
+varlist,5,60611,F2A02,N,12,Cont,XF2A02,Total assets
+varlist,6,60616,F2A03,N,12,Cont,XF2A03,Total liabilities
+varlist,7,65091,F2A03A,N,12,Cont,XF2A03A,"Debt related to Property, Plant, and Equipment"
+varlist,8,60621,F2A04,N,12,Cont,XF2A04,Total unrestricted net assets
+varlist,9,60626,F2A05,N,12,Cont,XF2A05,Total restricted net assets
+varlist,10,64825,F2A05A,N,12,Cont,XF2A05A,Permanently restricted net assets included in total restricted net assets
+varlist,11,65096,F2A05B,N,12,Cont,XF2A05B,Temporarily restricted net assets
+varlist,12,60631,F2A06,N,12,Cont,XF2A06,Total net assets
+varlist,13,60636,F2A11,N,12,Cont,XF2A11,Land  improvements - End of year
+varlist,14,60641,F2A12,N,12,Cont,XF2A12,Buildings - End of year
+varlist,15,60646,F2A13,N,12,Cont,XF2A13,"Equipment, including art and library collections - End of year"
+varlist,16,65101,F2A15,N,12,Cont,XF2A15,Construction in Progress
+varlist,17,65106,F2A16,N,12,Cont,XF2A16,"Other plant, property and equipment"
+varlist,18,65111,F2A17,N,12,Cont,XF2A17,"Total Plant, Property, and Equipment"
+varlist,19,65116,F2A18,N,12,Cont,XF2A18,Accumulated depreciation
+varlist,20,60656,F2B01,N,12,Cont,XF2B01,Total revenues and investment return
+varlist,21,60661,F2B02,N,12,Cont,XF2B02,Total expenses
+varlist,22,60666,F2B03,N,12,Cont,XF2B03,Other specific changes in net assets
+varlist,23,60671,F2B04,N,12,Cont,XF2B04,Total change in net assets
+varlist,24,60676,F2B05,N,12,Cont,XF2B05,"Net assets, beginning of the year"
+varlist,25,60681,F2B06,N,12,Cont,XF2B06,Adjustments to beginning of year net assets
+varlist,26,60686,F2B07,N,12,Cont,XF2B07,"Net assets, end of the year"
+varlist,27,60691,F2C01,N,12,Cont,XF2C01,Pell grants
+varlist,28,60696,F2C02,N,12,Cont,XF2C02,Other federal grants
+varlist,29,60701,F2C03,N,12,Cont,XF2C03,State grants
+varlist,30,60706,F2C04,N,12,Cont,XF2C04,Local grants
+varlist,31,60711,F2C05,N,12,Cont,XF2C05,Institutional grants (funded)
+varlist,32,60716,F2C06,N,12,Cont,XF2C06,Institutional grants (unfunded)
+varlist,33,60721,F2C07,N,12,Cont,XF2C07,Total student grants
+varlist,34,60726,F2C08,N,12,Cont,XF2C08,Allowances applied to tuition and fees
+varlist,35,60731,F2C09,N,12,Cont,XF2C09,Allowances applied to auxiliary enterprise revenues
+varlist,36,60733,F2C10,N,12,Cont,XF2C10,Total discounts and allowances
+varlist,37,60736,F2D01,N,12,Cont,XF2D01,Tuition and fees - Total
+varlist,38,65131,F2D012,N,12,Cont,XF2D012,Tuition and fees - Unrestricted
+varlist,39,65136,F2D013,N,12,Cont,XF2D013,Tuition and fees - Temporarily restricted
+varlist,40,65141,F2D014,N,12,Cont,XF2D014,Tuition and fees - Permanently restricted
+varlist,41,60741,F2D02,N,12,Cont,XF2D02,Federal appropriations - Total
+varlist,42,65146,F2D022,N,12,Cont,XF2D022,Federal appropriations - Unrestricted
+varlist,43,65151,F2D023,N,12,Cont,XF2D023,Federal appropriations - Temporarily restricted
+varlist,44,65156,F2D024,N,12,Cont,XF2D024,Federal appropriations - Permanently restricted
+varlist,45,60746,F2D03,N,12,Cont,XF2D03,State appropriations - Total
+varlist,46,65161,F2D032,N,12,Cont,XF2D032,State appropriations - Unrestricted
+varlist,47,65166,F2D033,N,12,Cont,XF2D033,State appropriations - Temporarily restricted
+varlist,48,65171,F2D034,N,12,Cont,XF2D034,State appropriations - Permanently restricted
+varlist,49,60751,F2D04,N,12,Cont,XF2D04,Local appropriations - Total
+varlist,50,65176,F2D042,N,12,Cont,XF2D042,Local appropriations - Unrestricted
+varlist,51,65181,F2D043,N,12,Cont,XF2D043,Local appropriations -  Temporarily restricted
+varlist,52,65186,F2D044,N,12,Cont,XF2D044,Local appropriations - Permanently restricted
+varlist,53,60756,F2D05,N,12,Cont,XF2D05,Federal grants and contracts - Total
+varlist,54,65191,F2D052,N,12,Cont,XF2D052,Federal grants and contracts - Unrestricted
+varlist,55,65196,F2D053,N,12,Cont,XF2D053,Federal grants and contracts  - Temporarily restricted
+varlist,56,65201,F2D054,N,12,Cont,XF2D054,Federal grants and contracts - Pemanently restricted
+varlist,57,60761,F2D06,N,12,Cont,XF2D06,State grants and contracts - Total
+varlist,58,65206,F2D062,N,12,Cont,XF2D062,State grants and contracts - Unrestricted
+varlist,59,65211,F2D063,N,12,Cont,XF2D063,State grants and contracts - Temporarily restricted
+varlist,60,65216,F2D064,N,12,Cont,XF2D064,State grants and contracts - Permanently restricted
+varlist,61,60766,F2D07,N,12,Cont,XF2D07,Local grants and contracts - Total
+varlist,62,65221,F2D072,N,12,Cont,XF2D072,Local grants and contracts - Unrestricted
+varlist,63,65226,F2D073,N,12,Cont,XF2D073,Local grants and contracts - Temporarily restricted
+varlist,64,65231,F2D074,N,12,Cont,XF2D074,Local grants and contracts  - Permanently restricted
+varlist,65,60771,F2D08,N,12,Cont,XF2D08,"Private gifts, grants, and contracts - Total"
+varlist,66,65236,F2D082,N,12,Cont,XF2D082,"Private gifts, grants, and contracts - Unrestricted"
+varlist,67,65251,F2D083,N,12,Cont,XF2D083,"Private gifts, grants and contracts - Temporarily restricted"
+varlist,68,65266,F2D084,N,12,Cont,XF2D084,"Private gifts, grants, and contracts - Permanently restricted"
+varlist,69,65281,F2D08A,N,12,Cont,XF2D08A,Private gifts - Total
+varlist,70,65241,F2D082A,N,12,Cont,XF2D082A,Private gifts - Unrestricted
+varlist,71,65256,F2D083A,N,12,Cont,XF2D083A,Private gifts - Temporarily restricted
+varlist,72,65271,F2D084A,N,12,Cont,XF2D084A,Private gifts - Permanentlly restricted
+varlist,73,65286,F2D08B,N,12,Cont,XF2D08B,Private grants and contracts - Total
+varlist,74,65246,F2D082B,N,12,Cont,XF2D082B,Private grants and contracts - Unrestricted
+varlist,75,65261,F2D083B,N,12,Cont,XF2D083B,Private grants and contracts - Temporarily restricted
+varlist,76,65276,F2D084B,N,12,Cont,XF2D084B,"Private grants, and contracts - Permanently restricted"
+varlist,77,60776,F2D09,N,12,Cont,XF2D09,Contributions from affiliated entities - Total
+varlist,78,65291,F2D092,N,12,Cont,XF2D092,Contributions from affiliated entities - Unrestricted
+varlist,79,65296,F2D093,N,12,Cont,XF2D093,Contributions from affiliated entities - Temporarily restricted
+varlist,80,65301,F2D094,N,12,Cont,XF2D094,Contributions from affiliated entities - Permanently restricted
+varlist,81,60781,F2D10,N,12,Cont,XF2D10,Investment return - Total
+varlist,82,65306,F2D102,N,12,Cont,XF2D102,Investment return - Unrestricted
+varlist,83,65311,F2D103,N,12,Cont,XF2D103,Investment return - Temporarily restricted
+varlist,84,65316,F2D104,N,12,Cont,XF2D104,Investment return - Permanently restricted
+varlist,85,60786,F2D11,N,12,Cont,XF2D11,Sales and services of educational activities - Total
+varlist,86,65321,F2D112,N,12,Cont,XF2D112,Sales and services of educational activities - Unrestricted
+varlist,87,60791,F2D12,N,12,Cont,XF2D12,Sales and services of auxiliary enterprises - Total
+varlist,88,65326,F2D122,N,12,Cont,XF2D122,Sales and services of auxiliary enterprises - Unrestricted
+varlist,89,60796,F2D13,N,12,Cont,XF2D13,Hospital revenue - Total
+varlist,90,65331,F2D132,N,12,Cont,XF2D132,Hospital revenue - Unrestricted
+varlist,91,60801,F2D14,N,12,Cont,XF2D14,Independent operations revenue - Total
+varlist,92,65336,F2D142,N,12,Cont,XF2D142,Independent operations revenue - Unrestricted
+varlist,93,65341,F2D143,N,12,Cont,XF2D143,Independent operations revenue - Temporarily restricted
+varlist,94,65346,F2D144,N,12,Cont,XF2D144,Independent operations revenue - Permanently restricted
+varlist,95,60806,F2D15,N,12,Cont,XF2D15,Other revenue - Total
+varlist,96,65351,F2D152,N,12,Cont,XF2D152,Other revenue - Unrestricted
+varlist,97,65356,F2D153,N,12,Cont,XF2D153,Other revenue - Temporarily restricted
+varlist,98,65361,F2D154,N,12,Cont,XF2D154,Other revenue - Permanently restricted
+varlist,99,60811,F2D16,N,12,Cont,XF2D16,Total revenues and investment return - Total
+varlist,100,65366,F2D162,N,12,Cont,XF2D162,Total revenues and investment return - Unrestricted
+varlist,101,65371,F2D163,N,12,Cont,XF2D163,Total revenues and investment return - Temporarily restricted
+varlist,102,65376,F2D164,N,12,Cont,XF2D164,Total revenues and investment return - Permanently restricted
+varlist,103,65380,F2D17,N,12,Cont,XF2D17,Net assets released from restriction - Total
+varlist,104,65381,F2D172,N,12,Cont,XF2D172,Net assets released from restriction - Unrestricted
+varlist,105,65386,F2D173,N,12,Cont,XF2D173,Net assets released from restriction - Temporarily restricted
+varlist,106,65387,F2D174,N,12,Cont,XF2D174,Net assets released from restriction - Permanently restricted
+varlist,107,65390,F2D18,N,12,Cont,XF2D18,"Net total revenues, after assets released from restriction - Total"
+varlist,108,65391,F2D182,N,12,Cont,XF2D182,"Net total revenues, after assets released from restriction - Unrestricted"
+varlist,109,65396,F2D183,N,12,Cont,XF2D183,"Net total revenues, after assets released from restriction - Temporarily restricted"
+varlist,110,65401,F2D184,N,12,Cont,XF2D184,"Net total revenues, after assets released from restriction - Permanently restricted"
+varlist,111,60816,F2E011,N,12,Cont,XF2E011,Instruction-Total amount
+varlist,112,60821,F2E012,N,12,Cont,XF2E012,Instruction-Salaries and wages
+varlist,113,60851,F2E021,N,12,Cont,XF2E021,Research-Total amount
+varlist,114,60856,F2E022,N,12,Cont,XF2E022,Research-Salaries and wages
+varlist,115,60886,F2E031,N,12,Cont,XF2E031,Public service-Total amount
+varlist,116,60891,F2E032,N,12,Cont,XF2E032,Public service-Salaries and wages
+varlist,117,60921,F2E041,N,12,Cont,XF2E041,Academic support-Total amount
+varlist,118,60926,F2E042,N,12,Cont,XF2E042,Academic support-Salaries and wages
+varlist,119,60956,F2E051,N,12,Cont,XF2E051,Student service-Total amount
+varlist,120,60961,F2E052,N,12,Cont,XF2E052,Student service-Salaries and wages
+varlist,121,60991,F2E061,N,12,Cont,XF2E061,Institutional support-Total amount
+varlist,122,60996,F2E062,N,12,Cont,XF2E062,Institutional support-Salaries and wages
+varlist,123,61026,F2E071,N,12,Cont,XF2E071,Auxiliary enterprises-Total amount
+varlist,124,61031,F2E072,N,12,Cont,XF2E072,Auxiliary enterprises-Salaries and wages
+varlist,125,61061,F2E081,N,12,Cont,XF2E081,Net grant aid to students-Total amount
+varlist,126,61096,F2E091,N,12,Cont,XF2E091,Hospital services-Total amount
+varlist,127,61101,F2E092,N,12,Cont,XF2E092,Hospital services-Salaries and wages
+varlist,128,61131,F2E101,N,12,Cont,XF2E101,Independent operations-Total Amount
+varlist,129,61136,F2E102,N,12,Cont,XF2E102,Independent operations-Salaries and wages
+varlist,130,61201,F2E121,N,12,Cont,XF2E121,Other expenses-Total amount
+varlist,131,61206,F2E122,N,12,Cont,XF2E122,Other expenses-Salaries and wages
+varlist,132,61236,F2E131,N,12,Cont,XF2E131,Total expenses-Total amount
+varlist,133,61241,F2E132,N,12,Cont,XF2E132,Total expenses-Salaries and wages
+varlist,134,61246,F2E133,N,12,Cont,XF2E133,Total expenses-Benefits
+varlist,135,61251,F2E134,N,12,Cont,XF2E134,Total expenses-Operation and maintenance of plant
+varlist,136,61256,F2E135,N,12,Cont,XF2E135,Total expenses-Depreciation
+varlist,137,61261,F2E136,N,12,Cont,XF2E136,Total expenses-Interest
+varlist,138,61266,F2E137,N,12,Cont,XF2E137,Total expenses-All other natural classification
+varlist,139,61281,F2FHA,N,2,Disc,,Does this institution or any of its foundations or other affiliated organizations own endowment assets ?
+varlist,140,61271,F2H01,N,12,Cont,XF2H01,Value of endowment assets at the beginning of the fiscal year
+varlist,141,61276,F2H02,N,12,Cont,XF2H02,Value of endowment assets at the end of the fiscal year
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,60606,F2A01,Long-term investments includes the amount for all assets held for long-term investments.
+Description,3,65121,F2A19," Property, plant, and equipment, net of accumulated depreciation - Includes end-of-year market value for categories such as land, buildings, improvements other than buildings, equipment, and library books, combined and net of accumulated depreciation (FARM para. 407)."
+Description,4,65126,F2A20,"Intangible assets, net of accumulated amortization -  Assets consisting of certain nonmaterial rights and benefits of an institution, such as patents, copyrights, trademarks and goodwill. The amount reported should be reduced by total accumulated amortization."
+Description,5,60611,F2A02,"Total assets is the sum of the following amounts: cash, cash equivalents and temporary investments; receivables (net of allowance for uncollectible accounts); inventories, prepaid expenses, and defereed charges; amounts held by trustees for construction and debt service; long-term investments; plant, property, and equipment; and other assets."
+Description,6,60616,F2A03,"Total liabilities is the sum the following amounts: accounts payable; deferred revenues and refundable advances; post-retirement and post-employment obligations; other accrued liabilities; annuity and life income obligations and other amounts held for the benefit of others; bonds, notes, and capital leases payable and other long-term debt, including current portion; government grants refundable under student loan programs; and other liabilities."
+Description,7,65091,F2A03A,"Debt related to property, plant and equipment are amounts for all long-term debt obligations including bonds payable, mortgages payable, capital leases payable, and long-term notes payable. (FARM para. 421.3, 421.7)  Includes the current portion of long-term debt if it is separately reported in institutions's general purpose financial statements."
+Description,8,60621,F2A04,"Total unrestricted net assets is the sum of unrestricted (designated and undesignated)  and unrestricted (investment in plant, property, and equipment, net of related debt) net assets. Unrestricted net assets are amounts that are available for the general purposes of the institution without restriction. Includes amounts specifically designated by the governing board, such as those designated as quasi-endowments for building additions and replacement, for debt service, and for loan programs. Also, includes the unrestricted portion of net investment in plant, property, and equipment less related debt. This amount is computed as the amount of plant, property, and equipment, net of accumulated depreciation, reduced by any bonds, mortgages, notes, capital leases, or other borrowings that are clearly attributable to the acquisition, construction, or improvement of those assets."
+Description,9,60626,F2A05,"Total restricted net assets is the sum of temporarily restricted and permanently restricted net assets. Temporarily restricted includes the amount of all net assets that are subject to temporary donor/grantor restrictions that limit availabilty for expenditure. Temporary restrictions are also those that permit the institution to expend the donated assets for a specified purpose or a future date.  Permanent restrictions are those that stipulate the resourcees must be maintained permanently, but permit the organization to expend part or all of the income derived from donated assets. Net assets that are subject to a donor’s or grantor’s restriction are restricted net assets. Include long-term but temporarily restricted net assets, such as term endowments, and net assets held subject to trust agreements if those agreements permit expenditure of the resources at a future date."
+Description,10,64825,F2A05A,Permanently restricted net assets included in total restricted net assets - Net assets of FASB institutions that must be maintained in perpetuity. Permanently restricted net assets increase when institutions receive contributions for which donor-imposed restrictions limiting the institution's use of an asset or its economic benefits neither expire with the passage of time nor can be removed by the organization's meeting certain requirements. Donor-imposed restrictions on the use of the investment income on the assets may also change the amount of such net assets. Permanent endowment funds are the most common example.
+Description,11,65096,F2A05B,Assets held by the institution upon which restrictions have been placed by donors. They restrict the institution in its use of the assets and/or the period of time for which the restriction applies.  Temporarily restricted net assets includes the amount of all net assets that are subject to temporary donor/grantor restrictions that limit availability for expenditure. Temporary restrictions are also those that permit the institution to expend the donated assets for a specified purpose or a future date.
+Description,12,60631,F2A06,Total net assets is the sum of unrestricted and restricted net assets.
+Description,13,60636,F2A11,Land and land improvements-end of year includes end of year values for land and land improvements as a reconciliation of beginning of the year values with additions to and retirements of land and land improvements to obtain end of year values.
+Description,14,60641,F2A12,Buildings-end of year includes end of year values for buildings as a reconciliation of beginning of the year values with additions to and retirements of building values to obtain end of year values. Capitalized leasehold improvements should be included in this amount if the improvements are to leased facilities.
+Description,15,60646,F2A13,"Equipment, including art and library collections-end of year includes end of year values for equipment as a reconciliation of beginning of the year values with additions to and retirements of equipment values to obtain end of year values. Capitalized leasehold improvements should be included in this amount if the improvements are to leased equipment."
+Description,16,65101,F2A15,"Construction in progress - Capital assets under construction or development that have not yet been placed into service, such as a building or parking lot. Capital assets are not subject to depreciation while in a construction in progress status."
+Description,17,65106,F2A16,"Other plant, property and equipment - all other amounts for capital assets not reported as
+-Land and land improvements 
+-Buildings 
+-Equipment, including art and library collections 
+-Construction in progress -"
+Description,18,65111,F2A17,"Total end of year values for property obtained under capital leases  from  the following categories:
+-Land and land improvements 
+-Buildings 
+-Equipment, including art and library collections 
+-Construction in progress 
+-Other plant, property and equipment"
+Description,19,65116,F2A18,"Accumulated depreciation  The total depreciation charged as expenses as of the reporting date (in the current year and in prior years) on the capital assets of the institution. FASB Statement No. 117 and GASB Statement No. 34 require that accumulated depreciation to date be recognized. 
+NOTE: When a capital asset is removed from the accounting records due to disposal or end of the asset's useful life, the depreciation accumulated through the years on the asset is also removed from the records."
+Description,20,60656,F2B01,"Total revenues and investment return is the amount reported in Part A, line A17, column 1 (Total revenues and investment return)."
+Description,21,60661,F2B02,"Total expenses is the amount reported in Part B, line B12, column 1 (Total Expenses)."
+Description,22,60666,F2B03,Other specific changes in net assets includes: actuarial gain or (loss) on split-interest agreements; gain or (loss) on sale of plant assets; other gain or (loss); discontinued operations; extraordinary gain or (loss); and cumulative effect of change(s) in accounting principle.
+Description,23,60671,F2B04,"Change in net assets is the sum of total revenues and investment return, total expenses, and other changes in net assets. This amount should agree with the total change in net assets for the year reported in general purpose financial statements."
+Description,24,60676,F2B05,"Net assets, beginning of year includes the amount of net assets, end of year from the previous year's IPEDS Finance report. In all cases except when the institution reports a change in accounting principle via retroactive adjustment, this amount is also the beginning net asset balance in your general purpose financial statements."
+Description,25,60681,F2B06,Adjustments to beginning net assets are any adjustments to these asset balances reported in general purpose financial statements.  This includes adjustments for retroactive application of changes in accounting principle and prior period adjustments.
+Description,26,60686,F2B07,"Net assets, end of the year, is the sum of changes in net assets for the current year, net assets beginning of year, and adjustments to beginning net assets.  This amount should agree with the amount reported in Part D, Statement of Financial Position, total end of year net assets and also agree with the amount reported for total net assets in the general purpose financial statements at the end of the fiscal year."
+Description,27,60691,F2C01,Pell grants includes the amount administered by the institution under the Pell grant program.
+Description,28,60696,F2C02,"Other federal grants includes the amount awarded to the institution under other federal student aid programs, such as Supplemental Education Opportunity Grants (SEOG), DHHS training grants (aid portion only), DOD grants, Department of Veterans Affairs grants, and the federal portion of the College Work Study Program (FWS) and the Leveraging Educational Assistance Partnership (LEAP) Program. Private not-for-profit institutions generally report these grants as allowances when applied to the student's account and as federal grant revenues when received. Matching portions for any of these programs are not included."
+Description,29,60701,F2C03,"State grants includes the amount awarded to the institution under state student aid programs, including the state portion of State Student Incentive Grants (SSIG).  Private not-for-profit institutions generally report these grants as allowances when disbursed and as state grant revenues when received."
+Description,30,60706,F2C04,Local grants includes the amount awarded to the institution under local student aid programs. Private not-for-profit institutions generally report these grants as allowances when disbursed and as local grant revenues when received.
+Description,31,60711,F2C05,"Institutional grants (funded) includes the amounts awarded to students from institutional resources restricted for the purpose of student aid, such as scholarships and fellowships funded by gifts or endowment return restricted for that purpose."
+Description,32,60716,F2C06,Institutional grants (unfunded) includes the amount awarded to students from unrestricted institutional resources.
+Description,33,60721,F2C07,"Total student aid includes Pell grants and other federal student grants, state and local student grants, and institutional (funded and unfunded) grants."
+Description,34,60726,F2C08,Allowance applied to tuition and fees is the portion of total student aid that is applied to tuition and fees. This amount plus tuition and fees revenues equals gross tuition and fee revenues.
+Description,35,60731,F2C09,Allowance applied to auxiliary enterprise revenues is the portion of total student aid that is applied to auxiliary enterprise revenues. This amount plus sales and services of auxiliary enterprise (net) revenues equals gross auxiliary enterprise revenue.
+Description,36,60733,F2C10,Total discounts and allowances is the sum of discounts and allowances applied to both tuition & fees and auxiliary enterprises.
+Description,37,60736,F2D01,"The amount of tuition and educational fees, net of any allowances applied in the general purpose financial statements. Included in this amount are fees for continuing education programs, conferences, and seminars."
+Description,38,65131,F2D012,Tuition and fees - Unrestricted are revenues from tuition and fees that are not subject to limitations by a donor-imposed restriction.
+Description,39,65136,F2D013,Tuition and fees - Temporarily restricted are revenues from tuition and fees that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,40,65141,F2D014,Tuition and fees - Permanently restricted are revenues from tuition and fees that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,41,60741,F2D02,"Federal appropriations includes amounts received from the federal government through a direct appropriation of Congress, except grants and contracts. An example of a federal appropriation is a federal land grant appropriation."
+Description,42,65146,F2D022,Federal appropriations - Unrestricted are revenues from Federal appropriations that are not subject to limitations by a donor-imposed restriction.
+Description,43,65151,F2D023,Federal appropriations - Temporarily restricted are revenues from Federal appropriations that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,44,65156,F2D024,Federal appropriations - Permanently restricted are revenues from Federal appropriations that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,45,60746,F2D03,"State appropriations includes amounts received from a state government through a direct appropriation of its legislative body, except for state grants and contracts. An example of a state appropriation is an annual state appropriation for operating expenses of the institution"
+Description,46,65161,F2D032,State approprations - Unrestricted are revenues from state appropriations that are not subject to limitations by a donor-imposed restriction.
+Description,47,65166,F2D033,State appropriations - Temporarily restricted are revenues from state approprations that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,48,65171,F2D034,State appropriations - Permanently restricted are revenues from state appropriations that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,49,60751,F2D04,"Local appropriations includes amounts received from a local government (i.e., city and/or county) through a direct appropriation of its legislative body, except for local grants and contracts. An example of a local appropriation is an annual local appropriation for operating expenses of the institution."
+Description,50,65176,F2D042,Local approprations - Unrestricted are revenues from local appropriations that are not subject to limitations by a donor-imposed restriction.
+Description,51,65181,F2D043,Local appropriations -  Temporarily restricted are revenues from local appropriations that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,52,65186,F2D044,Local appropriations - Permanently restricted are revenues from local appropriations that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,53,60756,F2D05,"Federal grants and contracts includes all revenues from federal agencies that are for specific undertakings such as research projects, training projects, and similar activities, including contributions from federal agencies. Includes federal Pell and similar student aid grants when they are treated as student aid expenses when awarded to the student. If federal Pell and similar student aid grants are treated as agency transactions in general purpose financial statements they are excluded from this amount."
+Description,54,65191,F2D052,Federal grants and contracts - Unrestricted are revenues from Federal grants and contracts that are not subject to limitations by a donor-imposed restriction.
+Description,55,65196,F2D053,Federal grants and contracts  - Temporarily restricted are revenues from Federal grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,56,65201,F2D054,Federal grants and contracts - Pemanently restricted are revenues from federal grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,57,60761,F2D06,"State grants and contracts includes all revenues from state agencies that are for specific undertakings such as research projects, training projects, and similar activities, including contributions from federal agencies. Includes state grants for student aid when they are treated as student aid expenses when awarded to the student. If state grants for student aid are treated as agency transactions in general purpose financial statements they are excluded from this amount."
+Description,58,65206,F2D062,State grants and contracts - Unrestricted are revenues from State grants and contracts that are not subject to limitations by a donor-imposed restriction.
+Description,59,65211,F2D063,State grants and contracts - Temporarily restricted are revenues from state grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,60,65216,F2D064,State grants and contracts - Permanently restricted are revenues from state grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,61,60766,F2D07,"Local grants and contracts includes all revenues from local agencies that are for specific undertakings such as research projects, training projects, and similar activities, including contributions from locall agencies. Includes local grants for student aid when they are treated as student aid expenses when awarded to the student. If local grants for student aid are treated as agency transactions in general purpose financial statements they are excluded from this amount."
+Description,62,65221,F2D072,Local grants and contracts - Unrestricted are revenues from local grants and contracts that are not subject to limitations by a donor-imposed restriction.
+Description,63,65226,F2D073,Local grants and contracts - Temporarily restricted are revenues from local grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,64,65231,F2D074,Local grants and contracts - Permanently restricted are revenues from local grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,65,60771,F2D08,"Private gifts, grants and contracts includes revenues from private (non-governmental) entities including revenue from research or training projects and similar activities and all contributions (including contributed services) except those from affiliated entities, which are included in contributions from affiliated entities."
+Description,66,65236,F2D082,"Private gifts, grants and contracts - Unrestricted are revenues from Private gifts, grants and contracts that are not subject to limitations by a donor-imposed restriction."
+Description,67,65251,F2D083,"Private gifts, grants and contracts - Temporarily restricted are revenues from private gifts, grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred)."
+Description,68,65266,F2D084,"Private gifts, grants, and contracts - Permanently restricted are revenues from private gifts, grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction."
+Description,69,65281,F2D08A,"Private gifts (Revenues)  are revenues from private (non-governmental) entities including revenues received from gift or contribution nonexchange transactions (including contributed services) except those from affiliated entities. Includes bequests, promises to give (pledges), gifts from an affiliated organization or a component unit not blended or consolidated, and income from funds held in irrevocable trusts or distributable at the direction of the trustees of the trusts. Includes any contributed services recognized (recorded) by the institution."
+Description,70,65241,F2D082A,Private gifts - Unrestricted are revenues from private gifts that are not subject to limitations by a donor-imposed restriction.
+Description,71,65256,F2D083A,Private gifts - Temporarily restricted are revenues from private gifts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,72,65271,F2D084A,Private gifts - Permanentlly restricted are revenues from private gifts that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,73,65286,F2D08B,"Private grants and contracts are revenues from private (non-governmental) entities that are for specific research projects, other types of programs, or for general institutional operations (if not government appropriations). Examples are research projects, training programs, and similar activities for which amounts are received or expenses are reimbursable under the terms of a grant or contract, including amounts to cover both direct and indirect expenses Private grants and contracts (Revenues)  Revenues from private (non-governmental) entities that are for specific research projects, other types of programs, or for general institutional operations (if not government appropriations). Examples are research projects, training programs, and similar activities for which amounts are received or expenses are reimbursable under the terms of a grant or contract, including amounts to cover both direct and indirect expenses"
+Description,74,65246,F2D082B,Private grants and contracts - Unrestricted are revenues from private grants and contracts that are not subject to limitations by a donor-imposed restriction.
+Description,75,65261,F2D083B,Private grants and contracts - Temporarily restricted are revenues from private grants and contracts that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,76,65276,F2D084B,"Private grants, and contracts - Permanently restricted are revenues from private grants and contracts that must be maintained in perpetuity due to a donor-imposed restriction."
+Description,77,60776,F2D09,"Contributions from affiliated entities includes all revenues received from non-consolidated affiliated entities, such as fund raising foundations, booster clubs, other institutionally-related foundations, and similar organizations created to support the institution or organizational components of the institution."
+Description,78,65291,F2D092,Contributions from affiliated entities - Unrestricted are contributions from affiliated entities that are not subject to limitations by a donor-imposed restriction.
+Description,79,65296,F2D093,Contributions from affiliated entities - Temporarily restricted are contributions from affiliated entities that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,80,65301,F2D094,Contributions from affiliated entities - Permanently restricted are contributions from affiliated entities that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,81,60781,F2D10,"Investment return includes the following amounts: all investment income (i.e., interest, dividends, rents and royalties); gains and losses (realized and unrealized) from holding investments (regardless of the nature of the investment); student loan interest; and amounts distributed from irrevocable trusts held by others (collectively referred to as ""investment return"")."
+Description,82,65306,F2D102,Investment return - Unrestricted are revenues from Investment return that are not subject to limitations by a donor-imposed restriction.
+Description,83,65311,F2D103,Investment return - Temporarily restricted  are revenues from investment return that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,84,65316,F2D104,Investment return - Permanently restricted are revenues from investment return that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,85,60786,F2D11,"Sales and services of educational activities includes all revenues derived from the sales of goods and services that are incidental to the conduct of instruction, research, or public service, and revenues of activities that exist to provide instructional and laboratory experience for students and that incidentally create goods and services that may be sold. Examples include film rentals, scientific and literary publications, testing services, university presses, dairies, and patient care clinics that are not part of a hospital."
+Description,86,65321,F2D112,Sales and services of educational activities - Unrestricted are revenues from sales and services of educational activities that are not subject to limitations by a donor-imposed restriction.
+Description,87,60791,F2D12,"Sales and services of auxiliary enterprises includes the amount of revenues generated by the auxiliary enterprise operations, net of any tuition and fee allowances applied in the general purpose financial statements. Auxiliary enterprises are operations that exist to furnish a service to students, faculty, of staff, and that charge a fee that is directly related to the cost of the service.  Examples of auxiliary enterprises are residence halls, food services, student health services, intercollegiate athletics, college unions, stores and movie theaters."
+Description,88,65326,F2D122,Sales and services of auxiliary enterprises - Unrestricted are revenues from sales and services of auxiliary enterprises that are not subject to limitations by a donor-imposed restriction.
+Description,89,60796,F2D13,"Revenues from hospitals includes revenues and gains of hospitals operated as a component of a reporting institution of higher education. Independent operations includes revenues associated with operations independent of the primary missions of the institution, such as revenues associated with major federally funded research and development centers. All other revenues not reported in the above categories (tuition and fees through sales and services of auxiliary enterprises) are included here."
+Description,90,65331,F2D132,Hospital revenue - Unrestricted are Hospital revenues that are not subject to limitations by a donor-imposed restriction.
+Description,91,60801,F2D14,"Independent operations revenue includes all revenues associated with operations independent of the primary missions of the institution. This category generally includes only those revenues associated with major federally-funded research and development centers. Excludes the profit (or loss) from operations owned and managed as investments of the institution’s endowment funds, which should be reported in investment return."
+Description,92,65336,F2D142,Independent operatations revenue - Unrestricted are revenues from independent operations that are not subject to limitations by a donor-imposed restriction.
+Description,93,65341,F2D143,Independent operations revenue - Temporarily restricted are revenues from independent operations that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,94,65346,F2D144,Independent operations revenue - Permanently restricted are revenues from independent operations that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,95,60806,F2D15,"Other revenue includes all revenue not reported elsewhere. Excludes gains or other unusual or nonrecurring items that are required to be included in Part C (Summary of Changes in Net Assets), such as gains on the sale of plant assets, actuarial gains, and extraordinary gains."
+Description,96,65351,F2D152,Other revenue - Unrestricted are revenues from other sources that are not subject to limitations by a donor-imposed restriction.
+Description,97,65356,F2D153,Other revenue - Temporarily restricted are revenues from other sources that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,98,65361,F2D154,Other revenue - Permanently restricted are revenues from other sources that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,99,60811,F2D16,"Total revenues and investment return is the sum of the following amounts: tuition and fees; government appropriations, grants and contracts; private gifts, grants, and contracts; contributions from affiliated entities; investment return (income, gains, and losses); sales and services of educational activities and auxiliary enterprises; hospital revenue; independent operations revenue; and other revenue."
+Description,100,65366,F2D162,Total revenues and investment return - Unrestricted are all revenues that are not subject to limitations by a donor-imposed restriction.
+Description,101,65371,F2D163,Total revenues and investment return - Temporarily restricted are all revenues that are subject to limitation by donor specification as to use or the time when use may occur (such as a later period of time or after specified events have occurred).
+Description,102,65376,F2D164,Total revenues and investment return - Permanently restricted are all revenues that must be maintained in perpetuity due to a donor-imposed restriction.
+Description,103,65380,F2D17,revenues resulting from the reclassification of temporarily restricted assets or permanently restricted assets
+Description,104,65381,F2D172,Net assets released from restriction - Unrestricted are revenues resulting from the reclassification of temporarily restricted assets or permanently restricted assets
+Description,105,65386,F2D173,Net assets released from restriction - Temporarily restricted are revenues resulting from the reclassification of temporarily restricted assets or permanently restricted assets
+Description,106,65387,F2D174,Net assets released from restriction - Permanently restricted
+Description,107,65390,F2D18,"Net total revenues, after assets released from restriction - Total"
+Description,108,65391,F2D182,"Total net revenues, after assets released from restriction unrestricted is total revenue and investment return - Unrestricted minus Net assets released from restriction - Unrestricted"
+Description,109,65396,F2D183,"Total net revenues, after assets released from restriction Temporarily restricted is total revenue and investment return - Temporarily restricted minus Net assets released from restriction - Temporarily restricted"
+Description,110,65401,F2D184,"Total net revenues, after assets released from restriction Permanently restricted is total revenue and investment return - Permanently restricted minus Net assets released from restriction - Permanently restricted"
+Description,111,60816,F2E011,"Instruction expenses includes all expenses of the colleges, schools, departments, and other instructional divisions of the institution and expenses for departmental research and public service that are not separately budgeted. Includes general academic instruction, occupational and vocational instruction, special session instruction, community education, preparatory and adult basic education, and remedial and tutorial instruction conducted by the teaching faculty for the institutions's students. Also, includes expenses for both credit and non-credit activities. Excludes expenses for academic administration if the primary function is administration (e.g., academic deans)."
+Description,112,60821,F2E012,Instruction-salaries and wages includes salary and wage expenses incurred in instruction.
+Description,113,60851,F2E021,Research-Total amount
+Description,114,60856,F2E022,Research-Salaries and wages
+Description,115,60886,F2E031,Public service-Total amount
+Description,116,60891,F2E032,Public service-Salaries and wages
+Description,117,60921,F2E041,Academic support-Total amount
+Description,118,60926,F2E042,Academic support-Salaries and wages
+Description,119,60956,F2E051,Student service-Total amount
+Description,120,60961,F2E052,Student service-Salaries and wages
+Description,121,60991,F2E061,Institutional support-Total amount
+Description,122,60996,F2E062,Institutional support-Salaries and wages
+Description,123,61026,F2E071,Auxiliary enterprises-Total amount
+Description,124,61031,F2E072,Auxiliary enterprises-Salaries and wages
+Description,125,61061,F2E081,Net grant aid to students-Total amount
+Description,126,61096,F2E091,Hospital services-Total amount
+Description,127,61101,F2E092,Hospital services-Salaries and wages
+Description,128,61131,F2E101,Independent operations-Total Amount
+Description,129,61136,F2E102,Independent operations-Salaries and wages
+Description,130,61201,F2E121,Other expenses-Total amount
+Description,131,61206,F2E122,Other expenses-Salaries and wages
+Description,132,61236,F2E131,Total expenses-Total amount
+Description,133,61241,F2E132,"Salaries and wages	 - Amounts paid as compensation for services to all employees - faculty, staff, part-time, full-time, regular employees, and student employees. This includes regular or periodic payment to a person for the regular or periodic performance of work or a service and payment to a person for more sporadic performance of work or a service (overtime, extra compensation, summer compensation, bonuses, sick or annual leave, etc.)."
+Description,134,61246,F2E133,"Fringe benefits	 - Cash contributions in the form of supplementary or deferred compensation other than salary. Excludes the employee's contribution. Employee fringe benefits include retirement plans, social security taxes, medical/dental plans, guaranteed disability income protection plans, tuition plans, housing plans, unemployment compensation plans, group life insurance plans, worker's compensation plans, and other benefits in-kind with cash options."
+Description,135,61251,F2E134,"Operations and maintenance - 	An expense category that includes expenses for operations established to provide service and maintenance related to campus grounds and facilities used for educational and general purposes. Specific expenses include: janitorial and utility services; repairs and ordinary or normal alterations of buildings, furniture, and equipment; care of grounds; maintenance and operation of buildings and other plant facilities; security; earthquake and disaster preparedness; safety; hazardous waste disposal; property, liability, and all other insurance relating to property; space and capital leasing; facility planning and management; and central receiving. This expense does include amounts charged to auxiliary enterprises, hospitals, and independent operations. Also includes information technology expenses related to operation and maintenance of plant activities if the institution separately budgets and expenses information technology resources (otherwise these expenses are included in institutional support).
+
+	FASB institutions are required to allocate O&M costs to other functional categories (e.g., instruction, research, etc.) while GASB institutions can allocate O&M costs OR report it as a separate functional category.  In an effort to align FASB and GASB O&M expenses, from FY 2010 to FY 2015, O&M was reported as both a functional and natural expense category in IPEDS, causing its total to be equal to zero. However, beginning with FY 2016, both FASB and GASB institutions are required to allocate O&M to all the functions and report it as a natural expense category. 
+
+Prior to fiscal year 2017 this variable would always be equal to zero. Like other natural classification categories OM was reported for all  expense functions (survey column 4) . Unlike other natural classification categories OM also appeared as a function (line 11). Institutions would report positive values of salaries and wages, benefits, depreciation, interest and other expenses on the OM (survey line 11).  However total OM line 11 column 1 was always zero and negative values were reported in the intersection of line 11 and column 4 to balance out the total of all expenses of OM distributed to the functional categories.  
+
+For a better understanding of this, please visit the IPEDS survey form archive site for finance below:
+
+http://nces.ed.gov/ipeds/InsidePages/ArchivedSurveyMaterials?section=Finance"
+Description,136,61256,F2E135,"Depreciation	 - The allocation or distribution of the cost of capital assets, less any salvage value, to expenses over the estimated useful life of the asset in a systematic and rational manner. Depreciation for the year is the amount of the allocation or distribution for the year involved."
+Description,137,61261,F2E136,Interest - The price paid (or received) for the use of money over a period of time. Interest income is one component of investment income. Interest paid by the institution is interest expense.
+Description,138,61266,F2E137,"Other Natural classication expense is the difference between the total expenses and the sum of all natural expense categories (Salaries and wages, benefits, operations and maintenance, depreciation and interest)."
+Description,139,61281,F2FHA,"Does this institution or any of its foundations or other affiliated organizations own endowment assets ?
+ENDOWMENT ASSETS - Consists of gross investments of endowment funds, term endowment funds, and funds functioning as endowment for the institution and any of its foundations and other affiliated organizations."
+Description,140,61271,F2H01,"Value of endowment assets at the beginning Value of endowment assets at the beginning of the fiscal year  
+ENDOWMENT ASSETS - Consists of gross investments of endowment funds, term endowment funds, and funds functioning as endowment for the institution and any of its foundations and other affiliated organizations."
+Description,141,61276,F2H02,"Value of endowment assets at the end of the fiscal year
+ENDOWMENT ASSETS - Consists of gross investments of endowment funds, term endowment funds, and funds functioning as endowment for the institution and any of its foundations and other affiliated organizations."
+Description,142,,,
+Description,143,,,
+Description,144,,,
+Description,145,,,
+Description,146,,,
+Description,147,,,
+Description,148,,,
+Description,149,,,
+Description,150,,,
+Description,151,,,
+Description,152,,,
+Description,153,,,
+Description,154,,,
+Description,155,,,
+Description,156,,,
+Description,157,,,
+Description,158,,,
+Description,159,,,
+Description,160,,,
+Description,161,,,
+Description,162,,,
+Description,163,,,
+Description,164,,,
+Description,165,,,
+Description,166,,,
+Description,167,,,
+Description,168,,,
+Description,169,,,
+Description,170,,,
+Description,171,,,
+Description,172,,,
+Description,173,,,
+Description,174,,,
+Description,175,,,
+Description,176,,,
+Description,177,,,
+Description,178,,,
+Description,179,,,
+Description,180,,,
+Description,181,,,
+Description,182,,,
+Description,183,,,
+Description,184,,,
+Description,185,,,
+Description,186,,,
+Description,187,,,
+Description,188,,,
+Description,189,,,
+Description,190,,,
+Description,191,,,
+Description,192,,,
+Description,193,,,
+Description,194,,,
+Description,195,,,
+Description,196,,,
+Description,197,,,
+Description,198,,,
+Description,199,,,
+Description,200,,,
+Description,201,,,
+Description,202,,,
+Description,203,,,
+Description,204,,,
+Description,205,,,
+Description,206,,,
+Description,207,,,
+Description,208,,,
+Description,209,,,
+Description,210,,,
+Description,211,,,
+Description,212,,,
+Description,213,,,
+Description,214,,,
+Description,215,,,
+Description,216,,,
+Description,217,,,
+Description,218,,,
+Description,219,,,
+Description,220,,,
+Description,221,,,
+Description,222,,,
+Description,223,,,
+Description,224,,,
+Description,225,,,
+Description,226,,,
+Description,227,,,
+Description,228,,,
+Description,229,,,
+Description,230,,,
+Description,231,,,
+Description,232,,,
+Description,233,,,
+Description,234,,,
+Description,235,,,
+Description,236,,,
+Description,237,,,
+Description,238,,,
+Description,239,,,
+Description,240,,,
+Description,241,,,
+Description,242,,,
+Description,243,,,
+Description,244,,,
+Description,245,,,
+Description,246,,,
+Description,247,,,
+Description,248,,,
+Description,249,,,
+Description,250,,,
+Description,251,,,
+Description,252,,,
+Description,253,,,
+Description,254,,,
+Description,255,,,
+Description,256,,,
+Description,257,,,
+Description,258,,,
+Description,259,,,
+Description,260,,,
+Description,261,,,
+Description,262,,,
+Description,263,,,
+Description,264,,,
+Description,265,,,
+Description,266,,,
+Description,267,,,
+Description,268,,,
+Description,269,,,
+Description,270,,,
+Description,271,,,
+Description,272,,,
+Description,273,,,
+Description,274,,,
+Description,275,,,
+Description,276,,,
+Description,277,,,
+Description,278,,,
+Description,279,,,
+Description,280,,,
+Description,281,,,
+Description,282,,,
+Description,283,,,
+Description,284,,,
+Description,285,,,
+Description,286,,,
+Description,287,,,
+Description,288,,,
+Description,289,,,
+Description,290,,,
+Description,291,,,
+Description,292,,,
+Description,293,,,
+Description,294,,,
+Description,295,,,
+Description,296,,,
+Description,297,,,
+Description,298,,,
+Description,299,,,
+Description,300,,,
+Description,301,,,
+Description,302,,,
+Description,303,,,
+Description,304,,,
+Description,305,,,
+Description,306,,,
+Description,307,,,
+Description,308,,,
+Description,309,,,
+Description,310,,,
+Description,311,,,
+Description,312,,,
+Description,313,,,
+Description,314,,,
+Description,315,,,
+Description,316,,,
+Description,317,,,
+Description,318,,,
+Description,319,,,
+Description,320,,,
+Description,321,,,
+Description,322,,,
+Description,323,,,
+Description,324,,,
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,61281,F2FHA,1,Yes - (report endowment assets),1360,74.069999999999993
+Frequencies,2,61281,F2FHA,2,No,356,19.39
+Frequencies,3,61281,F2FHA,-2,not applicable,120,6.54
+Frequencies,4,,,,
+Frequencies,5,,,,
+Frequencies,6
+Frequencies,7
+Frequencies,8
+Frequencies,9
+Frequencies,10
+Frequencies,11
+Frequencies,12
+Frequencies,13
+Frequencies,14
+Frequencies,15
+Frequencies,16
+Frequencies,17
+Frequencies,18
+Frequencies,19
+Frequencies,20
+Frequencies,21
+Frequencies,22
+Frequencies,23
+Frequencies,24
+Frequencies,25
+Frequencies,26
+Frequencies,27
+Frequencies,28
+Frequencies,29
+Frequencies,30
+Frequencies,31
+Frequencies,32
+Frequencies,33
+Frequencies,34
+Frequencies,35
+Frequencies,36
+Frequencies,37
+Frequencies,38
+Frequencies,39
+Frequencies,40
+Frequencies,41
+Frequencies,42
+Frequencies,43
+Frequencies,44
+Frequencies,45
+Frequencies,46
+Frequencies,47
+Frequencies,48
+Frequencies,49
+Frequencies,50
+Frequencies,51
+Frequencies,52
+Frequencies,53
+Frequencies,54,,,,,
+Frequencies,55,,,,,
+Frequencies,56,,,,,
+Frequencies,57,,,,,
+Frequencies,58,,,,,
+Frequencies,59,,,,,
+Frequencies,60,,,,,
+Frequencies,61,,,,,
+Frequencies,62,,,,,
+Frequencies,63,,,,,
+Frequencies,64,,,,,
+Frequencies,65,,,,,
+Frequencies,66,,,,,
+Frequencies,67,,,,,
+Frequencies,68,,,,,
+Frequencies,69,,,,,
+Frequencies,70,,,,,
+Frequencies,71,,,,,
+Frequencies,72,,,,,
+Frequencies,73,,,,,
+Frequencies,74,,,,,
+Frequencies,75,,,,,
+Frequencies,76,,,,,
+Frequencies,77,,,,,
+Frequencies,78,,,,,
+Frequencies,79,,,,,
+Frequencies,80,,,,,
+Frequencies,81,,,,,
+Frequencies,82,,,,,
+Frequencies,83,,,,,
+Frequencies,84,,,,,
+Frequencies,85,,,,,
+Frequencies,86,,,,,
+Frequencies,87,,,,,
+Frequencies,88,,,,,
+Frequencies,89,,,,,
+Frequencies,90,,,,,
+Frequencies,91,,,,,
+Frequencies,92,,,,,
+Frequencies,93,,,,,
+Frequencies,94,,,,,
+Frequencies,95,,,,,
+Frequencies,96,,,,,
+Frequencies,97,,,,,
+Frequencies,98,,,,,
+Frequencies,99,,,,,
+Frequencies,100,,,,,
+Frequencies,101,,,,,
+Frequencies,102,,,,,
+Frequencies,103,,,,,
+Frequencies,104,,,,,
+Frequencies,105,,,,,
+Frequencies,106,,,,,
+Frequencies,107,,,,,
+Frequencies,108,,,,,
+Frequencies,109,,,,,
+Frequencies,110,,,,,
+Frequencies,111,,,,,
+Frequencies,112,,,,,
+Frequencies,113,,,,,
+Frequencies,114,,,,,
+Frequencies,115,,,,,
+Frequencies,116,,,,,
+Frequencies,117,,,,,
+Frequencies,118,,,,,
+Frequencies,119,,,,,
+Frequencies,120,,,,,
+Frequencies,121,,,,,
+Frequencies,122,,,,,
+Frequencies,123,,,,,
+Frequencies,124,,,,,
+Frequencies,125,,,,,
+Frequencies,126,,,,,
+Frequencies,127,,,,,
+Frequencies,128,,,,,
+Frequencies,129,,,,,
+Frequencies,130,,,,,
+Frequencies,131,,,,,
+Frequencies,132,,,,,
+Frequencies,133,,,,,
+Frequencies,134,,,,,
+Frequencies,135,,,,,
+Frequencies,136,,,,,
+Frequencies,137,,,,,
+Frequencies,138,,,,,
+Frequencies,139,,,,,
+Frequencies,140,,,,,
+Frequencies,141,,,,,
+Frequencies,142,,,,,
+Frequencies,143,,,,,
+Frequencies,144,,,,,
+Frequencies,145,,,,,
+Frequencies,146,,,,,
+Frequencies,147,,,,,
+Frequencies,148,,,,,
+Frequencies,149,,,,,
+Frequencies,150,,,,,
+Frequencies,151,,,,,
+Frequencies,152,,,,,
+Frequencies,153,,,,,
+Frequencies,154,,,,,
+Frequencies,155,,,,,
+Frequencies,156,,,,,
+Frequencies,157,,,,,
+Frequencies,158,,,,,
+Frequencies,159,,,,,
+Frequencies,160,,,,,
+Frequencies,161,,,,,
+Frequencies,162,,,,,
+Frequencies,163,,,,,
+Frequencies,164,,,,,
+Frequencies,165,,,,,
+Frequencies,166,,,,,
+Frequencies,167,,,,,
+Frequencies,168,,,,,
+Frequencies,169,,,,,
+Frequencies,170,,,,,
+Frequencies,171,,,,,
+Frequencies,172,,,,,
+Frequencies,173,,,,,
+Frequencies,174,,,,,
+Frequencies,175,,,,,
+Frequencies,176,,,,,
+Frequencies,177,,,,,
+Frequencies,178,,,,,
+Frequencies,179,,,,,
+Frequencies,180,,,,,
+Frequencies,181,,,,,
+Frequencies,182,,,,,
+Frequencies,183,,,,,
+Frequencies,184,,,,,
+Frequencies,185,,,,,
+Frequencies,186,,,,,
+Frequencies,187,,,,,
+Frequencies,188,,,,,
+Frequencies,189,,,,,
+Frequencies,190,,,,,
+Frequencies,191,,,,,
+Frequencies,192,,,,,
+Frequencies,193,,,,,
+Frequencies,194,,,,,
+Frequencies,195,,,,,
+Frequencies,196,,,,,
+Frequencies,197,,,,,
+Frequencies,198,,,,,
+Frequencies,199,,,,,
+Frequencies,200,,,,,
+Frequencies,201,,,,,
+Frequencies,202,,,,,
+Frequencies,203,,,,,
+Frequencies,204,,,,,
+Frequencies,205,,,,,
+Frequencies,206,,,,,
+Frequencies,207,,,,,
+Frequencies,208,,,,,
+Frequencies,209,,,,,
+Frequencies,210,,,,,
+Frequencies,211,,,,,
+Frequencies,212,,,,,
+Frequencies,213,,,,,
+Frequencies,214,,,,,
+Frequencies,215,,,,,
+Frequencies,216,,,,,
+Frequencies,217,,,,,
+Frequencies,218,,,,,
+Frequencies,219,,,,,
+Frequencies,220,,,,,
+Frequencies,221,,,,,
+Frequencies,222,,,,,
+Frequencies,223,,,,,
+Frequencies,224,,,,,
+Frequencies,225,,,,,
+Frequencies,226,,,,,
+Frequencies,227,,,,,
+Frequencies,228,,,,,
+Frequencies,229,,,,,
+Frequencies,230,,,,,
+Frequencies,231,,,,,
+Frequencies,232,,,,,
+Frequencies,233,,,,,
+Frequencies,234,,,,,
+Frequencies,235,,,,,
+Frequencies,236,,,,,
+Frequencies,237,,,,,
+Frequencies,238,,,,,
+Frequencies,239,,,,,
+Frequencies,240,,,,,
+Frequencies,241,,,,,
+Frequencies,242,,,,,
+Frequencies,243,,,,,
+Frequencies,244,,,,,
+Frequencies,245,,,,,
+Frequencies,246,,,,,
+Frequencies,247,,,,,
+Frequencies,248,,,,,
+Frequencies,249,,,,,
+Frequencies,250,,,,,
+Frequencies,251,,,,,
+Frequencies,252,,,,,
+Frequencies,253,,,,,
+Frequencies,254,,,,,
+Frequencies,255,,,,,
+Frequencies,256,,,,,
+Frequencies,257,,,,,
+Frequencies,258,,,,,
+Frequencies,259,,,,,
+Frequencies,260,,,,,
+Frequencies,261,,,,,
+Frequencies,262,,,,,
+Frequencies,263,,,,,
+Frequencies,264,,,,,
+Frequencies,265,,,,,
+Frequencies,266,,,,,
+Frequencies,267,,,,,
+Frequencies,268,,,,,
+Frequencies,269,,,,,
+Frequencies,270,,,,,
+Frequencies,271,,,,,
+Frequencies,272,,,,,
+Frequencies,273,,,,,
+Frequencies,274,,,,,
+Frequencies,275,,,,,
+Frequencies,276,,,,,
+Frequencies,277,,,,,
+Frequencies,278,,,,,
+Frequencies,279,,,,,
+Frequencies,280,,,,,
+Frequencies,281,,,,,
+Frequencies,282,,,,,
+Frequencies,283,,,,,
+Frequencies,284,,,,,
+Frequencies,285,,,,,
+Frequencies,286,,,,,
+Frequencies,287,,,,,
+Frequencies,288,,,,,
+Frequencies,289,,,,,
+Frequencies,290,,,,,
+Frequencies,291,,,,,
+Frequencies,292,,,,,
+Frequencies,293,,,,,
+Frequencies,294,,,,,
+Frequencies,295,,,,,
+Frequencies,296,,,,,
+Frequencies,297,,,,,
+Frequencies,298
+Frequencies,299
+Frequencies,300
+Frequencies,301
+Frequencies,302
+Frequencies,303
+Frequencies,304
+Frequencies,305
+Frequencies,306
+Frequencies,307
+Frequencies,308
+Frequencies,309
+Frequencies,310
+Frequencies,311
+Frequencies,312
+Frequencies,313
+Frequencies,314
+Frequencies,315
+Frequencies,316
+Frequencies,317
+Frequencies,318
+Frequencies,319
+Frequencies,320
+Frequencies,321
+Frequencies,322
+Frequencies,323
+Frequencies,324
+Frequencies,325
+Frequencies,326
+Frequencies,327
+Frequencies,328
+Frequencies,329
+Frequencies,330
+Frequencies,331
+Frequencies,332
+Frequencies,333
+Frequencies,334
+Frequencies,335
+Frequencies,336
+Frequencies,337
+Frequencies,338
+Frequencies,339
+Frequencies,340
+Frequencies,341
+Frequencies,342
+Frequencies,343
+Frequencies,344
+Frequencies,345
+Frequencies,346
+Frequencies,347
+Frequencies,348
+Frequencies,349
+Frequencies,350
+Frequencies,351
+Frequencies,352
+Frequencies,353
+Frequencies,354
+Frequencies,355
+Frequencies,356
+Frequencies,357
+Frequencies,358
+Frequencies,359
+Frequencies,360
+Frequencies,361
+Frequencies,362
+Frequencies,363
+Frequencies,364
+Frequencies,365
+Frequencies,366
+Frequencies,367
+Frequencies,368
+Frequencies,369
+Frequencies,370
+Frequencies,371
+Frequencies,372
+Frequencies,373
+Frequencies,374
+Frequencies,375
+Frequencies,376
+Frequencies,377,,,,
+Frequencies,378,,,,
+Frequencies,379,,,,
+Frequencies,380
+Frequencies,381
+Frequencies,382
+Frequencies,383
+Frequencies,384
+Frequencies,385
+Frequencies,386
+Frequencies,387
+Frequencies,388
+Frequencies,389
+Frequencies,390
+Frequencies,391
+Frequencies,392
+Frequencies,393
+Frequencies,394
+Frequencies,395
+Frequencies,396
+Frequencies,397
+Frequencies,398
+Frequencies,399
+Frequencies,400
+Frequencies,401
+Frequencies,402
+Frequencies,403
+Frequencies,404
+Frequencies,405
+Frequencies,406
+Frequencies,407
+Frequencies,408
+Frequencies,409
+Frequencies,410
+Frequencies,411
+Frequencies,412
+Frequencies,413
+Frequencies,414
+Frequencies,415
+Frequencies,416
+Frequencies,417
+Frequencies,418
+Frequencies,419
+Frequencies,420
+Frequencies,421
+Frequencies,422
+Frequencies,423
+Frequencies,424
+Frequencies,425
+Frequencies,426
+Frequencies,427
+Frequencies,428
+Frequencies,429
+Frequencies,430
+Frequencies,431
+Frequencies,432
+Frequencies,433
+Frequencies,434
+Frequencies,435
+Frequencies,436
+Frequencies,437
+Frequencies,438
+Frequencies,439
+Frequencies,440
+Frequencies,441
+Frequencies,442
+Frequencies,443
+Frequencies,444
+Frequencies,445
+Frequencies,446
+Frequencies,447
+Frequencies,448
+Frequencies,449
+Frequencies,450
+Frequencies,451
+Frequencies,452
+Frequencies,453
+Frequencies,454
+Frequencies,455
+Frequencies,456
+Frequencies,457
+Frequencies,458
+Frequencies,459
+Frequencies,460
+Frequencies,461
+Frequencies,462
+Frequencies,463
+Frequencies,464
+Frequencies,465
+Frequencies,466
+Frequencies,467
+Frequencies,468
+Frequencies,469
+Frequencies,470
+Frequencies,471
+Frequencies,472
+Frequencies,473
+Frequencies,474
+Frequencies,475
+Frequencies,476
+Frequencies,477
+Frequencies,478
+Frequencies,479
+Frequencies,480
+Frequencies,481
+Frequencies,482
+Frequencies,483
+Frequencies,484
+Frequencies,485
+Frequencies,486
+Frequencies,487
+Frequencies,488
+Frequencies,489
+Frequencies,490
+Frequencies,491
+Frequencies,492
+Frequencies,493
+Frequencies,494
+Frequencies,495
+Frequencies,496
+Frequencies,497
+Frequencies,498
+Frequencies,499
+Frequencies,500
+Frequencies,501
+Frequencies,502
+Frequencies,503
+Frequencies,504
+Frequencies,505
+Frequencies,506
+Frequencies,507
+Frequencies,508,,,,
+Frequencies,509,,,,
+Frequencies,510,,,,
+Frequencies,511
+Frequencies,512
+Frequencies,513
+Frequencies,514
+Frequencies,515
+Frequencies,516
+Frequencies,517
+Frequencies,518
+Frequencies,519
+Frequencies,520
+Frequencies,521
+Frequencies,522
+Frequencies,523
+Frequencies,524
+Frequencies,525
+Frequencies,526
+Frequencies,527
+Frequencies,528
+Frequencies,529
+Frequencies,530
+Frequencies,531
+Frequencies,532
+Frequencies,533
+Frequencies,534
+Frequencies,535
+Frequencies,536
+Frequencies,537
+Frequencies,538
+Frequencies,539
+Frequencies,540
+Frequencies,541
+Frequencies,542
+Frequencies,543
+Frequencies,544
+Frequencies,545
+Frequencies,546
+Frequencies,547
+Frequencies,548
+Frequencies,549
+Frequencies,550
+Frequencies,551
+Frequencies,552
+Frequencies,553
+Frequencies,554
+Frequencies,555
+Frequencies,556
+Frequencies,557
+Frequencies,558
+Frequencies,559
+Frequencies,560
+Frequencies,561
+Frequencies,562
+Frequencies,563
+Frequencies,564
+Frequencies,565
+Frequencies,566
+Frequencies,567
+Frequencies,568
+Frequencies,569
+Frequencies,570
+Frequencies,571
+Frequencies,572
+Frequencies,573
+Frequencies,574
+Frequencies,575
+Frequencies,576
+Frequencies,577
+Frequencies,578
+Frequencies,579
+Frequencies,580
+Frequencies,581
+Frequencies,582
+Frequencies,583
+Frequencies,584
+Frequencies,585
+Frequencies,586
+Frequencies,587
+Frequencies,588
+Frequencies,589
+Frequencies,590
+Frequencies,591
+Frequencies,592
+Frequencies,593
+Frequencies,594
+Frequencies,595
+Frequencies,596
+Frequencies,597
+Frequencies,598
+Frequencies,599
+Frequencies,600
+Frequencies,601
+Frequencies,602
+Frequencies,603
+Frequencies,604
+Frequencies,605
+Frequencies,606
+Frequencies,607
+Frequencies,608
+Frequencies,609
+Frequencies,610
+Frequencies,611
+Frequencies,612
+Frequencies,613
+Frequencies,614
+Frequencies,615
+Frequencies,616
+Frequencies,617
+Frequencies,618
+Frequencies,619
+Frequencies,620
+Frequencies,621
+Frequencies,622
+Frequencies,623
+Frequencies,624
+Frequencies,625
+Frequencies,626
+Frequencies,627
+Frequencies,628
+Frequencies,629
+Frequencies,630
+Frequencies,631
+Frequencies,632
+Frequencies,633
+Frequencies,634
+Frequencies,635
+Frequencies,636
+Frequencies,637
+Frequencies,638
+Frequencies,639,,,,
+Frequencies,640,,,,
+Frequencies,641,,,,
+Frequencies,642,,,,
+Frequencies,643
+Frequencies,644
+Frequencies,645
+Frequencies,646
+Frequencies,647
+Frequencies,648
+Frequencies,649
+Frequencies,650
+Frequencies,651
+Frequencies,652
+Frequencies,653
+Frequencies,654
+Frequencies,655
+Frequencies,656
+Frequencies,657
+Frequencies,658
+Frequencies,659
+Frequencies,660
+Frequencies,661
+Frequencies,662
+Frequencies,663
+Frequencies,664
+Frequencies,665
+Frequencies,666
+Frequencies,667
+Frequencies,668
+Frequencies,669
+Frequencies,670
+Frequencies,671
+Frequencies,672
+Frequencies,673
+Frequencies,674
+Frequencies,675
+Frequencies,676
+Frequencies,677
+Frequencies,678
+Frequencies,679
+Frequencies,680
+Frequencies,681
+Frequencies,682
+Frequencies,683
+Frequencies,684
+Frequencies,685
+Frequencies,686
+Frequencies,687
+Frequencies,688
+Frequencies,689
+Frequencies,690
+Frequencies,691
+Frequencies,692
+Frequencies,693
+Frequencies,694
+Frequencies,695
+Frequencies,696
+Frequencies,697
+Frequencies,698
+Frequencies,699
+Frequencies,700
+Frequencies,701
+Frequencies,702
+Frequencies,703
+Frequencies,704
+Frequencies,705
+Frequencies,706
+Frequencies,707
+Frequencies,708
+Frequencies,709
+Frequencies,710
+Frequencies,711
+Frequencies,712
+Frequencies,713
+Frequencies,714
+Frequencies,715
+Frequencies,716
+Frequencies,717
+Frequencies,718
+Frequencies,719
+Frequencies,720
+Frequencies,721
+Frequencies,722
+Frequencies,723
+Frequencies,724
+Frequencies,725
+Frequencies,726
+Frequencies,727
+Frequencies,728
+Frequencies,729
+Frequencies,730
+Frequencies,731
+Frequencies,732
+Frequencies,733
+Frequencies,734
+Frequencies,735
+Frequencies,736
+Frequencies,737
+Frequencies,738
+Frequencies,739
+Frequencies,740
+Frequencies,741
+Frequencies,742
+Frequencies,743
+Frequencies,744
+Frequencies,745
+Frequencies,746
+Frequencies,747
+Frequencies,748
+Frequencies,749
+Frequencies,750
+Frequencies,751
+Frequencies,752
+Frequencies,753
+Frequencies,754
+Frequencies,755
+Frequencies,756
+Frequencies,757
+Frequencies,758
+Frequencies,759
+Frequencies,760
+Frequencies,761
+Frequencies,762
+Frequencies,763
+Frequencies,764
+Frequencies,765
+Frequencies,766
+Frequencies,767
+Frequencies,768
+Frequencies,769
+Frequencies,770
+Frequencies,771
+Frequencies,772
+Frequencies,773
+Frequencies,774
+Frequencies,775
+Frequencies,776
+Frequencies,777
+Frequencies,778
+Frequencies,779
+Frequencies,780
+Frequencies,781
+Frequencies,782
+Frequencies,783
+Frequencies,784
+Frequencies,785
+Frequencies,786
+Frequencies,787
+Frequencies,788
+Frequencies,789
+Frequencies,790
+Frequencies,791
+Frequencies,792
+Frequencies,793
+Frequencies,794
+Frequencies,795
+Frequencies,796
+Frequencies,797
+Frequencies,798
+Frequencies,799
+Frequencies,800
+Frequencies,801
+Frequencies,802
+Frequencies,803,,,,
+Frequencies,804,,,,
+Frequencies,805,,,,
+Frequencies,806,,,,
+Frequencies,807,,,,
+Frequencies,808,,,,
+Frequencies,809,,,,
+Frequencies,810,,,,
+Frequencies,811,,,,
+Frequencies,812,,,,
+Frequencies,813,,,,
+Frequencies,814,,,,
+Frequencies,815,,,,
+Frequencies,816,,,,
+Frequencies,817,,,,
+Frequencies,818,,,,
+Frequencies,819,,,,
+Frequencies,820,,,,
+Frequencies,821,,,,
+Frequencies,822,,,,
+Frequencies,823,,,,
+Frequencies,824,,,,
+Frequencies,825,,,,
+Frequencies,826,,,,
+Frequencies,827,,,,
+Frequencies,828,,,,
+Frequencies,829,,,,
+Frequencies,830,,,,
+Frequencies,831,,,,
+Frequencies,832,,,,
+Frequencies,833,,,,
+Frequencies,834,,,,
+Frequencies,835,,,,
+Frequencies,836,,,,
+Frequencies,837,,,,
+Frequencies,838,,,,
+Frequencies,839,,,,
+Frequencies,840,,,,
+Frequencies,841,,,,
+Frequencies,842,,,,
+Frequencies,843,,,,
+Frequencies,844,,,,
+Frequencies,845,,,,
+Frequencies,846,,,,
+Frequencies,847,,,,
+Frequencies,848,,,,
+Frequencies,849,,,,
+Frequencies,850,,,,
+Frequencies,851,,,,
+Frequencies,852,,,,
+Frequencies,853,,,,
+Frequencies,854
+Frequencies,855
+Frequencies,856
+Frequencies,857
+Frequencies,858
+Frequencies,859
+Frequencies,860
+Frequencies,861
+Frequencies,862
+Frequencies,863
+Frequencies,864
+Frequencies,865
+Frequencies,866
+Frequencies,867
+Frequencies,868
+Frequencies,869
+Frequencies,870
+Frequencies,871
+Frequencies,872
+Frequencies,873
+Frequencies,874
+Frequencies,875
+Frequencies,876
+Frequencies,877
+Frequencies,878
+Frequencies,879
+Frequencies,880
+Frequencies,881
+Frequencies,882
+Frequencies,883
+Frequencies,884
+Frequencies,885
+Frequencies,886
+Frequencies,887
+Frequencies,888
+Frequencies,889
+Frequencies,890
+Frequencies,891
+Frequencies,892
+Frequencies,893
+Frequencies,894
+Frequencies,895
+Frequencies,896
+Frequencies,897
+Frequencies,898
+Frequencies,899
+Frequencies,900
+Frequencies,901
+Frequencies,902
+Frequencies,903
+Frequencies,904
+Frequencies,905
+Frequencies,906
+Frequencies,907
+Frequencies,908
+Frequencies,909
+Frequencies,910
+Frequencies,911
+Frequencies,912
+Frequencies,913
+Frequencies,914
+Frequencies,915
+Frequencies,916
+Frequencies,917
+Frequencies,918
+Frequencies,919
+Frequencies,920
+Frequencies,921
+Frequencies,922
+Frequencies,923
+Frequencies,924
+Frequencies,925
+Frequencies,926
+Frequencies,927
+Frequencies,928
+Frequencies,929
+Frequencies,930
+Frequencies,931
+Frequencies,932
+Frequencies,933
+Frequencies,934
+Frequencies,935
+Frequencies,936
+Frequencies,937
+Frequencies,938
+Frequencies,939
+Frequencies,940
+Frequencies,941
+Frequencies,942
+Frequencies,943
+Frequencies,944
+Frequencies,945
+Frequencies,946
+Frequencies,947
+Frequencies,948
+Frequencies,949
+Frequencies,950
+Frequencies,951
+Frequencies,952
+Frequencies,953
+Frequencies,954
+Frequencies,955
+Frequencies,956
+Frequencies,957
+Frequencies,958
+Frequencies,959
+Frequencies,960
+Frequencies,961
+Frequencies,962
+Frequencies,963
+Frequencies,964
+Frequencies,965
+Frequencies,966
+Frequencies,967
+Frequencies,968
+Frequencies,969
+Frequencies,970
+Frequencies,971
+Frequencies,972
+Frequencies,973
+Frequencies,974
+Frequencies,975
+Frequencies,976
+Frequencies,977
+Frequencies,978
+Frequencies,979
+Frequencies,980
+Frequencies,981
+Frequencies,982
+Frequencies,983
+Frequencies,984
+Frequencies,985
+Frequencies,986
+Frequencies,987
+Frequencies,988
+Frequencies,989
+Frequencies,990
+Frequencies,991
+Frequencies,992
+Frequencies,993
+Frequencies,994
+Frequencies,995
+Frequencies,996
+Frequencies,997
+Frequencies,998
+Frequencies,999
+Frequencies,1000
+Frequencies,1001
+Frequencies,1002
+Frequencies,1003
+Frequencies,1004
+Frequencies,1005
+Frequencies,1006
+Frequencies,1007
+Frequencies,1008
+Frequencies,1009
+Frequencies,1010
+Frequencies,1011
+Frequencies,1012
+Frequencies,1013
+Frequencies,1014
+Frequencies,1015
+Frequencies,1016
+Frequencies,1017
+Frequencies,1018
+Frequencies,1019
+Frequencies,1020
+Frequencies,1021
+Frequencies,1022
+Frequencies,1023
+Frequencies,1024
+Frequencies,1025
+Frequencies,1026
+Frequencies,1027
+Frequencies,1028
+Frequencies,1029
+Frequencies,1030
+Frequencies,1031
+Frequencies,1032
+Frequencies,1033
+Frequencies,1034
+Frequencies,1035
+Frequencies,1036
+Frequencies,1037
+Frequencies,1038
+Frequencies,1039
+Frequencies,1040
+Frequencies,1041
+Frequencies,1042
+Frequencies,1043
+Frequencies,1044
+Frequencies,1045
+Frequencies,1046
+Frequencies,1047
+Frequencies,1048
+Frequencies,1049
+Frequencies,1050
+Frequencies,1051
+Frequencies,1052
+Frequencies,1053
+Frequencies,1054
+Frequencies,1055
+Frequencies,1056
+Frequencies,1057
+Frequencies,1058
+Frequencies,1059
+Frequencies,1060
+Frequencies,1061
+Frequencies,1062
+Frequencies,1063
+Frequencies,1064
+Frequencies,1065
+Frequencies,1066
+Frequencies,1067
+Frequencies,1068
+Frequencies,1069
+Frequencies,1070
+Frequencies,1071
+Frequencies,1072
+Frequencies,1073
+Frequencies,1074
+Frequencies,1075
+Frequencies,1076
+Frequencies,1077
+Frequencies,1078
+Frequencies,1079
+Frequencies,1080
+Frequencies,1081
+Frequencies,1082
+Frequencies,1083
+Frequencies,1084
+Frequencies,1085
+Frequencies,1086
+Frequencies,1087
+Frequencies,1088
+Frequencies,1089
+Frequencies,1090
+Frequencies,1091
+Frequencies,1092
+Frequencies,1093
+Frequencies,1094
+Frequencies,1095
+Frequencies,1096
+Frequencies,1097
+Frequencies,1098
+Frequencies,1099
+Frequencies,1100
+Frequencies,1101
+Frequencies,1102
+Frequencies,1103
+Frequencies,1104
+Frequencies,1105
+Frequencies,1106
+Frequencies,1107
+Frequencies,1108
+Frequencies,1109
+Frequencies,1110
+Frequencies,1111
+Frequencies,1112
+Frequencies,1113
+Frequencies,1114
+Frequencies,1115
+Frequencies,1116
+Frequencies,1117
+Frequencies,1118
+Frequencies,1119
+Frequencies,1120
+Frequencies,1121
+Frequencies,1122
+Frequencies,1123
+Frequencies,1124
+Frequencies,1125
+Frequencies,1126
+Frequencies,1127
+Frequencies,1128
+Frequencies,1129
+Frequencies,1130
+Frequencies,1131
+Frequencies,1132
+Frequencies,1133
+Frequencies,1134
+Frequencies,1135
+Frequencies,1136
+Frequencies,1137
+Frequencies,1138
+Frequencies,1139
+Frequencies,1140
+Frequencies,1141
+Frequencies,1142
+Frequencies,1143
+Frequencies,1144
+Frequencies,1145
+Frequencies,1146
+Frequencies,1147
+Frequencies,1148
+Frequencies,1149
+Frequencies,1150
+Frequencies,1151
+Frequencies,1152
+Frequencies,1153
+Frequencies,1154
+Frequencies,1155
+Frequencies,1156
+Frequencies,1157
+Frequencies,1158
+Frequencies,1159
+Frequencies,1160
+Frequencies,1161
+Frequencies,1162
+Frequencies,1163
+Frequencies,1164
+Frequencies,1165
+Frequencies,1166
+Frequencies,1167
+Frequencies,1168
+Frequencies,1169
+Frequencies,1170
+Frequencies,1171
+Frequencies,1172
+Frequencies,1173
+Frequencies,1174
+Frequencies,1175
+Frequencies,1176
+Frequencies,1177
+Frequencies,1178
+Frequencies,1179
+Frequencies,1180
+Frequencies,1181
+Frequencies,1182
+Frequencies,1183
+Frequencies,1184
+Frequencies,1185
+Frequencies,1186
+Frequencies,1187
+Frequencies,1188
+Frequencies,1189
+Frequencies,1190
+Frequencies,1191
+Frequencies,1192
+Frequencies,1193
+Frequencies,1194
+Frequencies,1195
+Frequencies,1196
+Frequencies,1197
+Frequencies,1198
+Frequencies,1199
+Frequencies,1200
+Frequencies,1201
+Frequencies,1202
+Frequencies,1203
+Frequencies,1204
+Frequencies,1205
+Frequencies,1206
+Frequencies,1207
+Frequencies,1208
+Frequencies,1209
+Frequencies,1210
+Frequencies,1211
+Frequencies,1212
+Frequencies,1213
+Frequencies,1214
+Frequencies,1215
+Frequencies,1216
+Frequencies,1217
+Frequencies,1218
+Frequencies,1219
+Frequencies,1220
+Frequencies,1221
+Frequencies,1222
+Frequencies,1223
+Frequencies,1224
+Frequencies,1225
+Frequencies,1226
+Frequencies,1227
+Frequencies,1228
+Frequencies,1229
+Frequencies,1230
+Frequencies,1231
+Frequencies,1232
+Frequencies,1233
+Frequencies,1234
+Frequencies,1235
+Frequencies,1236
+Frequencies,1237
+Frequencies,1238
+Frequencies,1239
+Frequencies,1240
+Frequencies,1241
+Frequencies,1242
+Frequencies,1243
+Frequencies,1244
+Frequencies,1245
+Frequencies,1246
+Frequencies,1247
+Frequencies,1248
+Frequencies,1249
+Frequencies,1250
+Frequencies,1251
+Frequencies,1252
+Frequencies,1253
+Frequencies,1254
+Frequencies,1255
+Frequencies,1256
+Frequencies,1257
+Frequencies,1258
+Frequencies,1259
+Frequencies,1260
+Frequencies,1261
+Frequencies,1262
+Frequencies,1263
+Frequencies,1264
+Frequencies,1265
+Frequencies,1266
+Frequencies,1267
+Frequencies,1268
+Frequencies,1269
+Frequencies,1270
+Frequencies,1271
+Frequencies,1272
+Frequencies,1273
+Frequencies,1274
+Frequencies,1275
+Frequencies,1276
+Frequencies,1277
+Frequencies,1278
+Frequencies,1279
+Frequencies,1280
+Frequencies,1281
+Frequencies,1282
+Frequencies,1283
+Frequencies,1284
+Frequencies,1285
+Frequencies,1286
+Frequencies,1287
+Frequencies,1288
+Frequencies,1289
+Frequencies,1290
+Frequencies,1291
+Frequencies,1292
+Frequencies,1293
+Frequencies,1294
+Frequencies,1295
+Frequencies,1296
+Frequencies,1297
+Frequencies,1298
+Frequencies,1299
+Frequencies,1300
+Frequencies,1301
+Frequencies,1302
+Frequencies,1303
+Frequencies,1304
+Frequencies,1305
+Frequencies,1306
+Frequencies,1307
+Frequencies,1308
+Frequencies,1309
+Frequencies,1310
+Frequencies,1311
+Frequencies,1312
+Frequencies,1313
+Frequencies,1314
+Frequencies,1315
+Frequencies,1316
+Frequencies,1317
+Frequencies,1318
+Frequencies,1319
+Frequencies,1320
+Frequencies,1321
+Frequencies,1322
+Frequencies,1323
+Frequencies,1324
+Frequencies,1325
+Frequencies,1326
+Frequencies,1327
+Frequencies,1328
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,60606,F2A01,1637,540326304798,330071047.5247404,0,47194312000,Long-term investments
+Statistics,2,65121,F2A19,1637,254488147355,155460077.79780087,0,8271711000,"Property, Plant, and Equipment, net of accumulated depreciation"
+Statistics,3,65126,F2A20,1637,1733429399,1058906.1692119732,0,315368451,"Intangible Assets, net of accumulated amortization"
+Statistics,4,60611,F2A02,1637,913481489767,558021679.75992668,32988,59327153000,Total assets
+Statistics,5,60616,F2A03,1637,244074643239,149098743.57910812,0,12186374000,Total liabilities
+Statistics,6,65091,F2A03A,1637,132169999909,80739156.938912645,0,5474162000,"Debt related to Property, Plant, and Equipment"
+Statistics,7,60621,F2A04,1637,308467646770,188434726.18814906,-172666000,21653055000,Total unrestricted net assets
+Statistics,8,60626,F2A05,1637,360939199758,220488209.99266952,0,37294784000,Total restricted net assets
+Statistics,9,64825,F2A05A,1637,155837842224,95197215.775198534,0,9408535000,Permanently restricted net assets included in total restricted net assets
+Statistics,10,65096,F2A05B,1637,205101357534,125290994.21747099,0,27886249000,Temporarily restricted net assets
+Statistics,11,60631,F2A06,1637,669406846528,408922936.18081856,-54796850,49276486000,Total net assets
+Statistics,12,60636,F2A11,1637,24143577081,14748672.6212584,0,1023726000,Land  improvements - End of year
+Statistics,13,60641,F2A12,1637,323891995864,197857053.06291997,0,10032085000,Buildings - End of year
+Statistics,14,60646,F2A13,1637,75496482016,46118803.919364691,0,3138477000,"Equipment, including art and library collections - End of year"
+Statistics,15,65101,F2A15,1637,21099920209,12889383.145387905,0,1567663000,Construction in Progress
+Statistics,16,65106,F2A16,1637,3361533335,2053471.7990226024,0,1043855000,"Other plant, property and equipment"
+Statistics,17,65111,F2A17,1637,447993508505,273667384.54795355,0,13838838000,"Total Plant, Property, and Equipment"
+Statistics,18,65116,F2A18,1637,193505361150,118207306.75015272,0,5809846000,Accumulated depreciation
+Statistics,19,60656,F2B01,1637,258211498394,157734574.46182039,-3432671,11776340000,Total revenues and investment return
+Statistics,20,60661,F2B02,1637,233741212279,142786323.93341479,50000,10498938000,Total expenses
+Statistics,21,60666,F2B03,1637,-2726483735,-1665536.7959682345,-664536049,91258118,Other specific changes in net assets
+Statistics,22,60671,F2B04,1637,21743802380,13282713.732437385,-216377000,2312302000,Total change in net assets
+Statistics,23,60676,F2B05,1637,647813324438,395732024.70250458,-48440301,46964184000,"Net assets, beginning of the year"
+Statistics,24,60681,F2B06,1637,-150280290,-91802.254123396458,-51587127,92163241,Adjustments to beginning of year net assets
+Statistics,25,60686,F2B07,1637,669406846528,408922936.18081856,-54796850,49276486000,"Net assets, end of the year"
+Statistics,26,60691,F2C01,1834,4998250470,2725327.4100327152,0,161689426,Pell grants
+Statistics,27,60696,F2C02,1834,1172324443,639217.25354416575,0,82424020,Other federal grants
+Statistics,28,60701,F2C03,1834,1945317572,1060696.6041439476,0,27707430,State grants
+Statistics,29,60706,F2C04,1834,44495581,24261.494547437294,0,8870799,Local grants
+Statistics,30,60711,F2C05,1834,7088725777,3865172.1793893129,0,396320893,Institutional grants (funded)
+Statistics,31,60716,F2C06,1834,36321671214,19804618.982551798,0,622937000,Institutional grants (unfunded)
+Statistics,32,60721,F2C07,1834,51570785057,28119293.924209379,0,759645836,Total student grants
+Statistics,33,60726,F2C08,1834,41671267424,22721519.860414393,0,673610000,Allowances applied to tuition and fees
+Statistics,34,60731,F2C09,1834,621549156,338903.57470010908,0,59928000,Allowances applied to auxiliary enterprise revenues
+Statistics,35,60733,F2C10,1834,42292816580,23060423.435114503,0,733538000,Total discounts and allowances
+Statistics,36,60736,F2D01,1836,83240911360,45338187.015250541,0,2021700000,Tuition and fees - Total
+Statistics,37,65131,F2D012,1836,83240756346,45338102.584967323,0,2021700000,Tuition and fees - Unrestricted
+Statistics,38,65136,F2D013,1836,155014,84.430283224400867,0,129634,Tuition and fees - Temporarily restricted
+Statistics,39,65141,F2D014,1836,0,0,0,0,Tuition and fees - Permanently restricted
+Statistics,40,60741,F2D02,1836,508401878,276907.34095860564,0,235456000,Federal appropriations - Total
+Statistics,41,65146,F2D022,1836,503413746,274190.49346405227,0,232051000,Federal appropriations - Unrestricted
+Statistics,42,65151,F2D023,1836,4988132,2716.8474945533767,0,3405000,Federal appropriations - Temporarily restricted
+Statistics,43,65156,F2D024,1836,0,0,0,0,Federal appropriations - Permanently restricted
+Statistics,44,60746,F2D03,1836,1402720872,764009.18954248365,0,377546663,State appropriations - Total
+Statistics,45,65161,F2D032,1836,1376894300,749942.42919389973,0,377546663,State appropriations - Unrestricted
+Statistics,46,65166,F2D033,1836,25826572,14066.760348583877,0,20559541,State appropriations - Temporarily restricted
+Statistics,47,65171,F2D034,1836,0,0,0,0,State appropriations - Permanently restricted
+Statistics,48,60751,F2D04,1836,4364510,2377.1840958605662,0,1386108,Local appropriations - Total
+Statistics,49,65176,F2D042,1836,3257710,1774.351851851852,0,1386108,Local appropriations - Unrestricted
+Statistics,50,65181,F2D043,1836,1106800,602.83224400871461,0,620175,Local appropriations -  Temporarily restricted
+Statistics,51,65186,F2D044,1836,0,0,0,0,Local appropriations - Permanently restricted
+Statistics,52,60756,F2D05,1836,21548212836,11736499.366013072,0,3085344000,Federal grants and contracts - Total
+Statistics,53,65191,F2D052,1836,21244091695,11570856.043028323,0,3085344000,Federal grants and contracts - Unrestricted
+Statistics,54,65196,F2D053,1836,290444980,158194.43355119825,0,19577440,Federal grants and contracts  - Temporarily restricted
+Statistics,55,65201,F2D054,1836,13676161,7448.8894335511986,0,13179976,Federal grants and contracts - Pemanently restricted
+Statistics,56,60761,F2D06,1836,1358141952,739728.73202614381,0,77359000,State grants and contracts - Total
+Statistics,57,65206,F2D062,1836,1216476675,662568.99509803916,0,77359000,State grants and contracts - Unrestricted
+Statistics,58,65211,F2D063,1836,140645009,76604.035403050104,0,49412000,State grants and contracts - Temporarily restricted
+Statistics,59,65216,F2D064,1836,1020268,555.70152505446629,0,1000000,State grants and contracts - Permanently restricted
+Statistics,60,60766,F2D07,1836,614221078,334543.07080610021,0,178095365,Local grants and contracts - Total
+Statistics,61,65221,F2D072,1836,603977821,328963.9547930283,0,178095365,Local grants and contracts - Unrestricted
+Statistics,62,65226,F2D073,1836,10240265,5577.4863834422658,0,3006000,Local grants and contracts - Temporarily restricted
+Statistics,63,65231,F2D074,1836,2992,1.6296296296296295,0,2992,Local grants and contracts  - Permanently restricted
+Statistics,64,60771,F2D08,1836,32150240665,17511024.327342048,-2816437,2679583000,"Private gifts, grants, and contracts - Total"
+Statistics,65,65236,F2D082,1836,13726131577,7476106.5234204791,0,1008075903,"Private gifts, grants, and contracts - Unrestricted"
+Statistics,66,65251,F2D083,1836,10823092848,5894930.7450980395,-4898274,1567418000,"Private gifts, grants and contracts - Temporarily restricted"
+Statistics,67,65266,F2D084,1836,7601016240,4139987.0588235296,-2309518,1961724000,"Private gifts, grants, and contracts - Permanently restricted"
+Statistics,68,65281,F2D08A,1836,24624812608,13412207.302832244,-2816437,2215137000,Private gifts - Total
+Statistics,69,65241,F2D082A,1836,6939529518,3779700.1732026143,-984,386434000,Private gifts - Unrestricted
+Statistics,70,65256,F2D083A,1836,10137605637,5521571.6977124186,-5070041,1370960000,Private gifts - Temporarily restricted
+Statistics,71,65271,F2D084A,1836,7547677453,4110935.4319172115,-2309518,1961724000,Private gifts - Permanentlly restricted
+Statistics,72,65286,F2D08B,1836,7525428056,4098817.0239651417,0,993318375,Private grants and contracts - Total
+Statistics,73,65246,F2D082B,1836,6786602058,3696406.3496732027,-22104,993318375,Private grants and contracts - Unrestricted
+Statistics,74,65261,F2D083B,1836,685487211,373359.04738562094,-188742,196458000,Private grants and contracts - Temporarily restricted
+Statistics,75,65276,F2D084B,1836,53338787,29051.626906318084,0,11387000,"Private grants, and contracts - Permanently restricted"
+Statistics,76,60776,F2D09,1836,2602206265,1417323.6737472767,0,662369612,Contributions from affiliated entities - Total
+Statistics,77,65291,F2D092,1836,2570498627,1400053.718409586,0,662369612,Contributions from affiliated entities - Unrestricted
+Statistics,78,65296,F2D093,1836,20625259,11233.801198257081,0,3573130,Contributions from affiliated entities - Temporarily restricted
+Statistics,79,65301,F2D094,1836,11082379,6036.1541394335509,0,4851000,Contributions from affiliated entities - Permanently restricted
+Statistics,80,60781,F2D10,1836,29163213224,15884103.063180828,-100553500,2727061000,Investment return - Total
+Statistics,81,65306,F2D102,1836,18230896767,9929682.3349673208,-75978060,2605012000,Investment return - Unrestricted
+Statistics,82,65311,F2D103,1836,9956538815,5422951.4242919385,-51607000,1924783000,Investment return - Temporarily restricted
+Statistics,83,65316,F2D104,1836,975777642,531469.30392156867,-9906096,195836000,Investment return - Permanently restricted
+Statistics,84,60786,F2D11,1836,8979567871,4890832.1737472769,0,1540789000,Sales and services of educational activities - Total
+Statistics,85,65321,F2D112,1836,8979567871,4890832.1737472769,0,1540789000,Sales and services of educational activities - Unrestricted
+Statistics,86,60791,F2D12,1716,19470572705,11346487.590326341,0,462117000,Sales and services of auxiliary enterprises - Total
+Statistics,87,65326,F2D122,1716,19470572705,11346487.590326341,0,462117000,Sales and services of auxiliary enterprises - Unrestricted
+Statistics,88,60796,F2D13,1614,37144192491,23013749.994423792,0,6932160000,Hospital revenue - Total
+Statistics,89,65331,F2D132,1614,37144192491,23013749.994423792,0,6932160000,Hospital revenue - Unrestricted
+Statistics,90,60801,F2D14,1614,7430892230,4604022.4473358113,0,2744953000,Independent operations revenue - Total
+Statistics,91,65336,F2D142,1614,7417010563,4595421.662329616,0,2744953000,Independent operations revenue - Unrestricted
+Statistics,92,65341,F2D143,1614,11918227,7384.2794299876086,0,4957615,Independent operations revenue - Temporarily restricted
+Statistics,93,65346,F2D144,1614,1963440,1216.5055762081784,0,1787000,Independent operations revenue - Permanently restricted
+Statistics,94,60806,F2D15,1836,13299335935,7243647.0234204791,-11443000,3218771577,Other revenue - Total
+Statistics,95,65351,F2D152,1836,14269196263,7771893.3894335516,-19534214,3217685005,Other revenue - Unrestricted
+Statistics,96,65356,F2D153,1836,-855160840,-465773.87799564272,-434878000,24341407,Other revenue - Temporarily restricted
+Statistics,97,65361,F2D154,1836,-114699488,-62472.488017429197,-173423000,15732000,Other revenue - Permanently restricted
+Statistics,98,60811,F2D16,1836,258917195872,141022437.83877996,-3432671,11776340000,Total revenues and investment return - Total
+Statistics,99,65366,F2D162,1836,229996935157,125270661.85021786,-3432671,10712963000,Total revenues and investment return - Unrestricted
+Statistics,100,65371,F2D163,1836,20430421081,11127680.327342048,-29955684,3492201000,Total revenues and investment return - Temporarily restricted
+Statistics,101,65376,F2D164,1836,8489839634,4624095.6612200439,-2639018,1971437000,Total revenues and investment return - Permanently restricted
+Statistics,102,65380,F2D17,1836,0,0,0,0,Net assets released from restriction - Total
+Statistics,103,65381,F2D172,1836,13309411761,7249134.9460784318,-192452000,2254261000,Net assets released from restriction - Unrestricted
+Statistics,104,65386,F2D173,1836,-13166055949,-7171054.4384531593,-2254261000,192452000,Net assets released from restriction - Temporarily restricted
+Statistics,105,65387,F2D174,1836,-143355812,-78080.507625272337,-44823931,19380065,Net assets released from restriction - Permanently restricted
+Statistics,106,65390,F2D18,1836,258917195872,141022437.83877996,-3432671,11776340000,"Net total revenues, after assets released from restriction - Total"
+Statistics,107,65391,F2D182,1836,243306083713,132519653.43845315,-12289691,11164733000,"Net total revenues, after assets released from restriction - Unrestricted"
+Statistics,108,65396,F2D183,1836,7264365132,3956625.888888889,-598732000,1237940000,"Net total revenues, after assets released from restriction - Temporarily restricted"
+Statistics,109,65401,F2D184,1836,8346483822,4546015.1535947714,-35052530,1971437000,"Net total revenues, after assets released from restriction - Permanently restricted"
+Statistics,110,60816,F2E011,1836,69997042557,38124750.848039217,0,2933539000,Instruction-Total amount
+Statistics,111,60821,F2E012,1836,38768686697,21115842.427559912,0,1601278000,Instruction-Salaries and wages
+Statistics,112,60851,F2E021,1836,24948233820,13588362.647058824,0,3221889000,Research-Total amount
+Statistics,113,60856,F2E022,1836,10113523617,5508455.1290849671,0,1534157000,Research-Salaries and wages
+Statistics,114,60886,F2E031,1836,3424472674,1865181.1949891069,0,891437519,Public service-Total amount
+Statistics,115,60891,F2E032,1836,1678612037,914276.70860566443,0,697141502,Public service-Salaries and wages
+Statistics,116,60921,F2E041,1836,20232636627,11019954.589869281,0,1516921954,Academic support-Total amount
+Statistics,117,60926,F2E042,1836,9423809198,5132793.6808278868,0,797175807,Academic support-Salaries and wages
+Statistics,118,60956,F2E051,1836,19097015577,10401424.60620915,0,366238430,Student service-Total amount
+Statistics,119,60961,F2E052,1836,7655132860,4169462.3420479302,0,107549000,Student service-Salaries and wages
+Statistics,120,60991,F2E061,1836,28927030356,15755463.156862745,0,956788000,Institutional support-Total amount
+Statistics,121,60996,F2E062,1836,12232547217,6662607.416666667,0,361005000,Institutional support-Salaries and wages
+Statistics,122,61026,F2E071,1716,18391513777,10717665.371212121,0,595268000,Auxiliary enterprises-Total amount
+Statistics,123,61031,F2E072,1716,3028369135,1764783.8782051282,0,197747000,Auxiliary enterprises-Salaries and wages
+Statistics,124,61061,F2E081,1836,1026571910,559135.02723311551,0,191706000,Net grant aid to students-Total amount
+Statistics,125,61096,F2E091,1614,35107908284,21752111.700123917,0,6445223000,Hospital services-Total amount
+Statistics,126,61101,F2E092,1614,16118804599,9986867.7812887244,0,2547412000,Hospital services-Salaries and wages
+Statistics,127,61131,F2E101,1614,7027778303,4354261.6499380423,0,2744953336,Independent operations-Total Amount
+Statistics,128,61136,F2E102,1614,1468910571,910105.68215613381,0,791597697,Independent operations-Salaries and wages
+Statistics,129,61201,F2E121,1836,6285299908,3423365.9629629632,-1154849,2824891000,Other expenses-Total amount
+Statistics,130,61206,F2E122,1836,2943363293,1603139.0484749456,0,1849687000,Other expenses-Salaries and wages
+Statistics,131,61236,F2E131,1836,234465503793,127704522.76307189,27831,10498938000,Total expenses-Total amount
+Statistics,132,61241,F2E132,1836,103431759224,56335380.840958603,1000,4649327000,Total expenses-Salaries and wages
+Statistics,133,61246,F2E133,1836,28371916394,15453113.504357299,0,1234253000,Total expenses-Benefits
+Statistics,134,61251,F2E134,1836,14202824005,7735742.9221132901,0,415662000,Total expenses-Operation and maintenance of plant
+Statistics,135,61256,F2E135,1836,14433567334,7861420.1165577341,0,540235000,Total expenses-Depreciation
+Statistics,136,61261,F2E136,1836,5130513222,2794397.1797385621,0,211655000,Total expenses-Interest
+Statistics,137,61266,F2E137,1836,68894923614,37524468.199346408,-68902,3811973000,Total expenses-All other natural classification
+Statistics,138,61271,F2H01,1359,451322300112,332098822.74613684,0,39233736000,Value of endowment assets at the beginning of the fiscal year
+Statistics,139,61276,F2H02,1359,469807592249,345700950.88226634,1,40929700000,Value of endowment assets at the end of the fiscal year
+Statistics,140,,,,
+Statistics,141,,,,
+Statistics,142,,,,
+Statistics,143,,,,
+Statistics,144
+Statistics,145
+Statistics,146
+Statistics,147
+Statistics,148
+Statistics,149
+Statistics,150
+Statistics,151
+Statistics,152
+Statistics,153
+Statistics,154
+Statistics,155
+Statistics,156
+Statistics,157
+Statistics,158
+Statistics,159
+Statistics,160
+Statistics,161
+Statistics,162
+Statistics,163
+Statistics,164
+Statistics,165
+Statistics,166
+Statistics,167
+Statistics,168
+Statistics,169
+Statistics,170
+Statistics,171
+Statistics,172
+Statistics,173
+Statistics,174
+Statistics,175
+Statistics,176
+Statistics,177
+Statistics,178
+Statistics,179
+Statistics,180
+Statistics,181
+Statistics,182
+Statistics,183
+Statistics,184
+Statistics,185
+Statistics,186
+Statistics,187
+Statistics,188
+Statistics,189
+Statistics,190
+Statistics,191
+Statistics,192
+Statistics,193
+Statistics,194
+Statistics,195
+Statistics,196
+Statistics,197
+Statistics,198
+Statistics,199
+Statistics,200
+Statistics,201
+Statistics,202
+Statistics,203
+Statistics,204
+Statistics,205
+Statistics,206
+Statistics,207
+Statistics,208
+Statistics,209
+Statistics,210
+Statistics,211
+Statistics,212
+Statistics,213
+Statistics,214
+Statistics,215
+Statistics,216
+Statistics,217
+Statistics,218
+Statistics,219
+Statistics,220
+Statistics,221
+Statistics,222
+Statistics,223
+Statistics,224
+Statistics,225
+Statistics,226
+Statistics,227
+Statistics,228
+Statistics,229
+Statistics,230
+Statistics,231
+Statistics,232
+Statistics,233
+Statistics,234
+Statistics,235
+Statistics,236
+Statistics,237
+Statistics,238
+Statistics,239
+Statistics,240
+Statistics,241
+Statistics,242
+Statistics,243
+Statistics,244
+Statistics,245
+Statistics,246
+Statistics,247
+Statistics,248
+Statistics,249
+Statistics,250
+Statistics,251
+Statistics,252
+Statistics,253
+Statistics,254
+Statistics,255
+Statistics,256
+Statistics,257
+Statistics,258
+Statistics,259
+Statistics,260
+Statistics,261
+Statistics,262
+Statistics,263
+Statistics,264
+Statistics,265
+Statistics,266
+Statistics,267
+Statistics,268
+Statistics,269
+Statistics,270
+Statistics,271
+Statistics,272
+Statistics,273
+Statistics,274
+Statistics,275
+Statistics,276
+Statistics,277
+Statistics,278
+Statistics,279
+Statistics,280
+Statistics,281
+Statistics,282
+Statistics,283
+Statistics,284
+Statistics,285
+Statistics,286
+Statistics,287
+Statistics,288
+Statistics,289
+Statistics,290
+Statistics,291
+Statistics,292
+Statistics,293
+Statistics,294
+Statistics,295
+Statistics,296
+Statistics,297
+Statistics,298
+Statistics,299
+Statistics,300
+Statistics,301
+Statistics,302
+Statistics,303
+Statistics,304
+Statistics,305
+Statistics,306
+Statistics,307
+Statistics,308
+Statistics,309
+Statistics,310
+Statistics,311
+Statistics,312
+Statistics,313
+Statistics,314
+Statistics,315
+Statistics,316
+Statistics,317
+Statistics,318
+Statistics,319
+Statistics,320
+Statistics,321
+Statistics,322
+Statistics,323
+FrequenciesRV,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+FrequenciesRV,1,61281,F2FHA,1,Yes - (report endowment assets),1361,74.13
+FrequenciesRV,2,61281,F2FHA,2,No,355,19.34
+FrequenciesRV,3,61281,F2FHA,-2,not applicable,120,6.54
+FrequenciesRV,4,,,,
+FrequenciesRV,5,,,,
+FrequenciesRV,6
+FrequenciesRV,7
+FrequenciesRV,8
+FrequenciesRV,9
+FrequenciesRV,10
+FrequenciesRV,11
+FrequenciesRV,12
+FrequenciesRV,13
+FrequenciesRV,14
+FrequenciesRV,15
+FrequenciesRV,16
+FrequenciesRV,17
+FrequenciesRV,18
+FrequenciesRV,19
+FrequenciesRV,20
+FrequenciesRV,21
+FrequenciesRV,22
+FrequenciesRV,23
+FrequenciesRV,24
+FrequenciesRV,25
+FrequenciesRV,26
+FrequenciesRV,27
+FrequenciesRV,28
+FrequenciesRV,29
+FrequenciesRV,30
+FrequenciesRV,31
+FrequenciesRV,32
+FrequenciesRV,33
+FrequenciesRV,34
+FrequenciesRV,35
+FrequenciesRV,36
+FrequenciesRV,37
+FrequenciesRV,38
+FrequenciesRV,39
+FrequenciesRV,40
+FrequenciesRV,41
+FrequenciesRV,42
+FrequenciesRV,43
+FrequenciesRV,44
+FrequenciesRV,45
+FrequenciesRV,46
+FrequenciesRV,47
+FrequenciesRV,48
+FrequenciesRV,49
+FrequenciesRV,50
+FrequenciesRV,51
+FrequenciesRV,52
+FrequenciesRV,53
+FrequenciesRV,54,,,,,
+FrequenciesRV,55,,,,,
+FrequenciesRV,56,,,,,
+FrequenciesRV,57,,,,,
+FrequenciesRV,58,,,,,
+FrequenciesRV,59,,,,,
+FrequenciesRV,60,,,,,
+FrequenciesRV,61,,,,,
+FrequenciesRV,62,,,,,
+FrequenciesRV,63,,,,,
+FrequenciesRV,64,,,,,
+FrequenciesRV,65,,,,,
+FrequenciesRV,66,,,,,
+FrequenciesRV,67,,,,,
+FrequenciesRV,68,,,,,
+FrequenciesRV,69,,,,,
+FrequenciesRV,70,,,,,
+FrequenciesRV,71,,,,,
+FrequenciesRV,72,,,,,
+FrequenciesRV,73,,,,,
+FrequenciesRV,74,,,,,
+FrequenciesRV,75,,,,,
+FrequenciesRV,76,,,,,
+FrequenciesRV,77,,,,,
+FrequenciesRV,78,,,,,
+FrequenciesRV,79,,,,,
+FrequenciesRV,80,,,,,
+FrequenciesRV,81,,,,,
+FrequenciesRV,82,,,,,
+FrequenciesRV,83,,,,,
+FrequenciesRV,84,,,,,
+FrequenciesRV,85,,,,,
+FrequenciesRV,86,,,,,
+FrequenciesRV,87,,,,,
+FrequenciesRV,88,,,,,
+FrequenciesRV,89,,,,,
+FrequenciesRV,90,,,,,
+FrequenciesRV,91,,,,,
+FrequenciesRV,92,,,,,
+FrequenciesRV,93,,,,,
+FrequenciesRV,94,,,,,
+FrequenciesRV,95,,,,,
+FrequenciesRV,96,,,,,
+FrequenciesRV,97,,,,,
+FrequenciesRV,98,,,,,
+FrequenciesRV,99,,,,,
+FrequenciesRV,100,,,,,
+FrequenciesRV,101,,,,,
+FrequenciesRV,102,,,,,
+FrequenciesRV,103,,,,,
+FrequenciesRV,104,,,,,
+FrequenciesRV,105,,,,,
+FrequenciesRV,106,,,,,
+FrequenciesRV,107,,,,,
+FrequenciesRV,108,,,,,
+FrequenciesRV,109,,,,,
+FrequenciesRV,110,,,,,
+FrequenciesRV,111,,,,,
+FrequenciesRV,112,,,,,
+FrequenciesRV,113,,,,,
+FrequenciesRV,114,,,,,
+FrequenciesRV,115,,,,,
+FrequenciesRV,116,,,,,
+FrequenciesRV,117,,,,,
+FrequenciesRV,118,,,,,
+FrequenciesRV,119,,,,,
+FrequenciesRV,120,,,,,
+FrequenciesRV,121,,,,,
+FrequenciesRV,122,,,,,
+FrequenciesRV,123,,,,,
+FrequenciesRV,124,,,,,
+FrequenciesRV,125,,,,,
+FrequenciesRV,126,,,,,
+FrequenciesRV,127,,,,,
+FrequenciesRV,128,,,,,
+FrequenciesRV,129,,,,,
+FrequenciesRV,130,,,,,
+FrequenciesRV,131,,,,,
+FrequenciesRV,132,,,,,
+FrequenciesRV,133,,,,,
+FrequenciesRV,134,,,,,
+FrequenciesRV,135,,,,,
+FrequenciesRV,136,,,,,
+FrequenciesRV,137,,,,,
+FrequenciesRV,138,,,,,
+FrequenciesRV,139,,,,,
+FrequenciesRV,140,,,,,
+FrequenciesRV,141,,,,,
+FrequenciesRV,142,,,,,
+FrequenciesRV,143,,,,,
+FrequenciesRV,144,,,,,
+FrequenciesRV,145,,,,,
+FrequenciesRV,146,,,,,
+FrequenciesRV,147,,,,,
+FrequenciesRV,148,,,,,
+FrequenciesRV,149,,,,,
+FrequenciesRV,150,,,,,
+FrequenciesRV,151,,,,,
+FrequenciesRV,152,,,,,
+FrequenciesRV,153,,,,,
+FrequenciesRV,154,,,,,
+FrequenciesRV,155,,,,,
+FrequenciesRV,156,,,,,
+FrequenciesRV,157,,,,,
+FrequenciesRV,158,,,,,
+FrequenciesRV,159,,,,,
+FrequenciesRV,160,,,,,
+FrequenciesRV,161,,,,,
+FrequenciesRV,162,,,,,
+FrequenciesRV,163,,,,,
+FrequenciesRV,164,,,,,
+FrequenciesRV,165,,,,,
+FrequenciesRV,166,,,,,
+FrequenciesRV,167,,,,,
+FrequenciesRV,168,,,,,
+FrequenciesRV,169,,,,,
+FrequenciesRV,170,,,,,
+FrequenciesRV,171,,,,,
+FrequenciesRV,172,,,,,
+FrequenciesRV,173,,,,,
+FrequenciesRV,174,,,,,
+FrequenciesRV,175,,,,,
+FrequenciesRV,176,,,,,
+FrequenciesRV,177,,,,,
+FrequenciesRV,178,,,,,
+FrequenciesRV,179,,,,,
+FrequenciesRV,180,,,,,
+FrequenciesRV,181,,,,,
+FrequenciesRV,182,,,,,
+FrequenciesRV,183,,,,,
+FrequenciesRV,184,,,,,
+FrequenciesRV,185,,,,,
+FrequenciesRV,186,,,,,
+FrequenciesRV,187,,,,,
+FrequenciesRV,188,,,,,
+FrequenciesRV,189,,,,,
+FrequenciesRV,190,,,,,
+FrequenciesRV,191,,,,,
+FrequenciesRV,192,,,,,
+FrequenciesRV,193,,,,,
+FrequenciesRV,194,,,,,
+FrequenciesRV,195,,,,,
+FrequenciesRV,196,,,,,
+FrequenciesRV,197,,,,,
+FrequenciesRV,198,,,,,
+FrequenciesRV,199,,,,,
+FrequenciesRV,200,,,,,
+FrequenciesRV,201,,,,,
+FrequenciesRV,202,,,,,
+FrequenciesRV,203,,,,,
+FrequenciesRV,204,,,,,
+FrequenciesRV,205,,,,,
+FrequenciesRV,206,,,,,
+FrequenciesRV,207,,,,,
+FrequenciesRV,208,,,,,
+FrequenciesRV,209,,,,,
+FrequenciesRV,210,,,,,
+FrequenciesRV,211,,,,,
+FrequenciesRV,212,,,,,
+FrequenciesRV,213,,,,,
+FrequenciesRV,214,,,,,
+FrequenciesRV,215,,,,,
+FrequenciesRV,216,,,,,
+FrequenciesRV,217,,,,,
+FrequenciesRV,218,,,,,
+FrequenciesRV,219,,,,,
+FrequenciesRV,220,,,,,
+FrequenciesRV,221,,,,,
+FrequenciesRV,222,,,,,
+FrequenciesRV,223,,,,,
+FrequenciesRV,224,,,,,
+FrequenciesRV,225,,,,,
+FrequenciesRV,226,,,,,
+FrequenciesRV,227,,,,,
+FrequenciesRV,228,,,,,
+FrequenciesRV,229,,,,,
+FrequenciesRV,230,,,,,
+FrequenciesRV,231,,,,,
+FrequenciesRV,232,,,,,
+FrequenciesRV,233,,,,,
+FrequenciesRV,234,,,,,
+FrequenciesRV,235,,,,,
+FrequenciesRV,236,,,,,
+FrequenciesRV,237,,,,,
+FrequenciesRV,238,,,,,
+FrequenciesRV,239,,,,,
+FrequenciesRV,240,,,,,
+FrequenciesRV,241,,,,,
+FrequenciesRV,242,,,,,
+FrequenciesRV,243,,,,,
+FrequenciesRV,244,,,,,
+FrequenciesRV,245,,,,,
+FrequenciesRV,246,,,,,
+FrequenciesRV,247,,,,,
+FrequenciesRV,248,,,,,
+FrequenciesRV,249,,,,,
+FrequenciesRV,250,,,,,
+FrequenciesRV,251,,,,,
+FrequenciesRV,252,,,,,
+FrequenciesRV,253,,,,,
+FrequenciesRV,254,,,,,
+FrequenciesRV,255,,,,,
+FrequenciesRV,256,,,,,
+FrequenciesRV,257,,,,,
+FrequenciesRV,258,,,,,
+FrequenciesRV,259,,,,,
+FrequenciesRV,260,,,,,
+FrequenciesRV,261,,,,,
+FrequenciesRV,262,,,,,
+FrequenciesRV,263,,,,,
+FrequenciesRV,264,,,,,
+FrequenciesRV,265,,,,,
+FrequenciesRV,266,,,,,
+FrequenciesRV,267,,,,,
+FrequenciesRV,268,,,,,
+FrequenciesRV,269,,,,,
+FrequenciesRV,270,,,,,
+FrequenciesRV,271,,,,,
+FrequenciesRV,272,,,,,
+FrequenciesRV,273,,,,,
+FrequenciesRV,274,,,,,
+FrequenciesRV,275,,,,,
+FrequenciesRV,276,,,,,
+FrequenciesRV,277,,,,,
+FrequenciesRV,278,,,,,
+FrequenciesRV,279,,,,,
+FrequenciesRV,280,,,,,
+FrequenciesRV,281,,,,,
+FrequenciesRV,282,,,,,
+FrequenciesRV,283,,,,,
+FrequenciesRV,284,,,,,
+FrequenciesRV,285,,,,,
+FrequenciesRV,286,,,,,
+FrequenciesRV,287,,,,,
+FrequenciesRV,288,,,,,
+FrequenciesRV,289,,,,,
+FrequenciesRV,290,,,,,
+FrequenciesRV,291,,,,,
+FrequenciesRV,292,,,,,
+FrequenciesRV,293,,,,,
+FrequenciesRV,294,,,,,
+FrequenciesRV,295,,,,,
+FrequenciesRV,296,,,,,
+FrequenciesRV,297,,,,,
+FrequenciesRV,298
+FrequenciesRV,299
+FrequenciesRV,300
+FrequenciesRV,301
+FrequenciesRV,302
+FrequenciesRV,303
+FrequenciesRV,304
+FrequenciesRV,305
+FrequenciesRV,306
+FrequenciesRV,307
+FrequenciesRV,308
+FrequenciesRV,309
+FrequenciesRV,310
+FrequenciesRV,311
+FrequenciesRV,312
+FrequenciesRV,313
+FrequenciesRV,314
+FrequenciesRV,315
+FrequenciesRV,316
+FrequenciesRV,317
+FrequenciesRV,318
+FrequenciesRV,319
+FrequenciesRV,320
+FrequenciesRV,321
+FrequenciesRV,322
+FrequenciesRV,323
+FrequenciesRV,324
+FrequenciesRV,325
+FrequenciesRV,326
+FrequenciesRV,327
+FrequenciesRV,328
+FrequenciesRV,329
+FrequenciesRV,330
+FrequenciesRV,331
+FrequenciesRV,332
+FrequenciesRV,333
+FrequenciesRV,334
+FrequenciesRV,335
+FrequenciesRV,336
+FrequenciesRV,337
+FrequenciesRV,338
+FrequenciesRV,339
+FrequenciesRV,340
+FrequenciesRV,341
+FrequenciesRV,342
+FrequenciesRV,343
+FrequenciesRV,344
+FrequenciesRV,345
+FrequenciesRV,346
+FrequenciesRV,347
+FrequenciesRV,348
+FrequenciesRV,349
+FrequenciesRV,350
+FrequenciesRV,351
+FrequenciesRV,352
+FrequenciesRV,353
+FrequenciesRV,354
+FrequenciesRV,355
+FrequenciesRV,356
+FrequenciesRV,357
+FrequenciesRV,358
+FrequenciesRV,359
+FrequenciesRV,360
+FrequenciesRV,361
+FrequenciesRV,362
+FrequenciesRV,363
+FrequenciesRV,364
+FrequenciesRV,365
+FrequenciesRV,366
+FrequenciesRV,367
+FrequenciesRV,368
+FrequenciesRV,369
+FrequenciesRV,370
+FrequenciesRV,371
+FrequenciesRV,372
+FrequenciesRV,373
+FrequenciesRV,374
+FrequenciesRV,375
+FrequenciesRV,376
+FrequenciesRV,377,,,,
+FrequenciesRV,378,,,,
+FrequenciesRV,379,,,,
+FrequenciesRV,380
+FrequenciesRV,381
+FrequenciesRV,382
+FrequenciesRV,383
+FrequenciesRV,384
+FrequenciesRV,385
+FrequenciesRV,386
+FrequenciesRV,387
+FrequenciesRV,388
+FrequenciesRV,389
+FrequenciesRV,390
+FrequenciesRV,391
+FrequenciesRV,392
+FrequenciesRV,393
+FrequenciesRV,394
+FrequenciesRV,395
+FrequenciesRV,396
+FrequenciesRV,397
+FrequenciesRV,398
+FrequenciesRV,399
+FrequenciesRV,400
+FrequenciesRV,401
+FrequenciesRV,402
+FrequenciesRV,403
+FrequenciesRV,404
+FrequenciesRV,405
+FrequenciesRV,406
+FrequenciesRV,407
+FrequenciesRV,408
+FrequenciesRV,409
+FrequenciesRV,410
+FrequenciesRV,411
+FrequenciesRV,412
+FrequenciesRV,413
+FrequenciesRV,414
+FrequenciesRV,415
+FrequenciesRV,416
+FrequenciesRV,417
+FrequenciesRV,418
+FrequenciesRV,419
+FrequenciesRV,420
+FrequenciesRV,421
+FrequenciesRV,422
+FrequenciesRV,423
+FrequenciesRV,424
+FrequenciesRV,425
+FrequenciesRV,426
+FrequenciesRV,427
+FrequenciesRV,428
+FrequenciesRV,429
+FrequenciesRV,430
+FrequenciesRV,431
+FrequenciesRV,432
+FrequenciesRV,433
+FrequenciesRV,434
+FrequenciesRV,435
+FrequenciesRV,436
+FrequenciesRV,437
+FrequenciesRV,438
+FrequenciesRV,439
+FrequenciesRV,440
+FrequenciesRV,441
+FrequenciesRV,442
+FrequenciesRV,443
+FrequenciesRV,444
+FrequenciesRV,445
+FrequenciesRV,446
+FrequenciesRV,447
+FrequenciesRV,448
+FrequenciesRV,449
+FrequenciesRV,450
+FrequenciesRV,451
+FrequenciesRV,452
+FrequenciesRV,453
+FrequenciesRV,454
+FrequenciesRV,455
+FrequenciesRV,456
+FrequenciesRV,457
+FrequenciesRV,458
+FrequenciesRV,459
+FrequenciesRV,460
+FrequenciesRV,461
+FrequenciesRV,462
+FrequenciesRV,463
+FrequenciesRV,464
+FrequenciesRV,465
+FrequenciesRV,466
+FrequenciesRV,467
+FrequenciesRV,468
+FrequenciesRV,469
+FrequenciesRV,470
+FrequenciesRV,471
+FrequenciesRV,472
+FrequenciesRV,473
+FrequenciesRV,474
+FrequenciesRV,475
+FrequenciesRV,476
+FrequenciesRV,477
+FrequenciesRV,478
+FrequenciesRV,479
+FrequenciesRV,480
+FrequenciesRV,481
+FrequenciesRV,482
+FrequenciesRV,483
+FrequenciesRV,484
+FrequenciesRV,485
+FrequenciesRV,486
+FrequenciesRV,487
+FrequenciesRV,488
+FrequenciesRV,489
+FrequenciesRV,490
+FrequenciesRV,491
+FrequenciesRV,492
+FrequenciesRV,493
+FrequenciesRV,494
+FrequenciesRV,495
+FrequenciesRV,496
+FrequenciesRV,497
+FrequenciesRV,498
+FrequenciesRV,499
+FrequenciesRV,500
+FrequenciesRV,501
+FrequenciesRV,502
+FrequenciesRV,503
+FrequenciesRV,504
+FrequenciesRV,505
+FrequenciesRV,506
+FrequenciesRV,507
+FrequenciesRV,508,,,,
+FrequenciesRV,509,,,,
+FrequenciesRV,510,,,,
+FrequenciesRV,511
+FrequenciesRV,512
+FrequenciesRV,513
+FrequenciesRV,514
+FrequenciesRV,515
+FrequenciesRV,516
+FrequenciesRV,517
+FrequenciesRV,518
+FrequenciesRV,519
+FrequenciesRV,520
+FrequenciesRV,521
+FrequenciesRV,522
+FrequenciesRV,523
+FrequenciesRV,524
+FrequenciesRV,525
+FrequenciesRV,526
+FrequenciesRV,527
+FrequenciesRV,528
+FrequenciesRV,529
+FrequenciesRV,530
+FrequenciesRV,531
+FrequenciesRV,532
+FrequenciesRV,533
+FrequenciesRV,534
+FrequenciesRV,535
+FrequenciesRV,536
+FrequenciesRV,537
+FrequenciesRV,538
+FrequenciesRV,539
+FrequenciesRV,540
+FrequenciesRV,541
+FrequenciesRV,542
+FrequenciesRV,543
+FrequenciesRV,544
+FrequenciesRV,545
+FrequenciesRV,546
+FrequenciesRV,547
+FrequenciesRV,548
+FrequenciesRV,549
+FrequenciesRV,550
+FrequenciesRV,551
+FrequenciesRV,552
+FrequenciesRV,553
+FrequenciesRV,554
+FrequenciesRV,555
+FrequenciesRV,556
+FrequenciesRV,557
+FrequenciesRV,558
+FrequenciesRV,559
+FrequenciesRV,560
+FrequenciesRV,561
+FrequenciesRV,562
+FrequenciesRV,563
+FrequenciesRV,564
+FrequenciesRV,565
+FrequenciesRV,566
+FrequenciesRV,567
+FrequenciesRV,568
+FrequenciesRV,569
+FrequenciesRV,570
+FrequenciesRV,571
+FrequenciesRV,572
+FrequenciesRV,573
+FrequenciesRV,574
+FrequenciesRV,575
+FrequenciesRV,576
+FrequenciesRV,577
+FrequenciesRV,578
+FrequenciesRV,579
+FrequenciesRV,580
+FrequenciesRV,581
+FrequenciesRV,582
+FrequenciesRV,583
+FrequenciesRV,584
+FrequenciesRV,585
+FrequenciesRV,586
+FrequenciesRV,587
+FrequenciesRV,588
+FrequenciesRV,589
+FrequenciesRV,590
+FrequenciesRV,591
+FrequenciesRV,592
+FrequenciesRV,593
+FrequenciesRV,594
+FrequenciesRV,595
+FrequenciesRV,596
+FrequenciesRV,597
+FrequenciesRV,598
+FrequenciesRV,599
+FrequenciesRV,600
+FrequenciesRV,601
+FrequenciesRV,602
+FrequenciesRV,603
+FrequenciesRV,604
+FrequenciesRV,605
+FrequenciesRV,606
+FrequenciesRV,607
+FrequenciesRV,608
+FrequenciesRV,609
+FrequenciesRV,610
+FrequenciesRV,611
+FrequenciesRV,612
+FrequenciesRV,613
+FrequenciesRV,614
+FrequenciesRV,615
+FrequenciesRV,616
+FrequenciesRV,617
+FrequenciesRV,618
+FrequenciesRV,619
+FrequenciesRV,620
+FrequenciesRV,621
+FrequenciesRV,622
+FrequenciesRV,623
+FrequenciesRV,624
+FrequenciesRV,625
+FrequenciesRV,626
+FrequenciesRV,627
+FrequenciesRV,628
+FrequenciesRV,629
+FrequenciesRV,630
+FrequenciesRV,631
+FrequenciesRV,632
+FrequenciesRV,633
+FrequenciesRV,634
+FrequenciesRV,635
+FrequenciesRV,636
+FrequenciesRV,637
+FrequenciesRV,638
+FrequenciesRV,639,,,,
+FrequenciesRV,640,,,,
+FrequenciesRV,641,,,,
+FrequenciesRV,642,,,,
+FrequenciesRV,643
+FrequenciesRV,644
+FrequenciesRV,645
+FrequenciesRV,646
+FrequenciesRV,647
+FrequenciesRV,648
+FrequenciesRV,649
+FrequenciesRV,650
+FrequenciesRV,651
+FrequenciesRV,652
+FrequenciesRV,653
+FrequenciesRV,654
+FrequenciesRV,655
+FrequenciesRV,656
+FrequenciesRV,657
+FrequenciesRV,658
+FrequenciesRV,659
+FrequenciesRV,660
+FrequenciesRV,661
+FrequenciesRV,662
+FrequenciesRV,663
+FrequenciesRV,664
+FrequenciesRV,665
+FrequenciesRV,666
+FrequenciesRV,667
+FrequenciesRV,668
+FrequenciesRV,669
+FrequenciesRV,670
+FrequenciesRV,671
+FrequenciesRV,672
+FrequenciesRV,673
+FrequenciesRV,674
+FrequenciesRV,675
+FrequenciesRV,676
+FrequenciesRV,677
+FrequenciesRV,678
+FrequenciesRV,679
+FrequenciesRV,680
+FrequenciesRV,681
+FrequenciesRV,682
+FrequenciesRV,683
+FrequenciesRV,684
+FrequenciesRV,685
+FrequenciesRV,686
+FrequenciesRV,687
+FrequenciesRV,688
+FrequenciesRV,689
+FrequenciesRV,690
+FrequenciesRV,691
+FrequenciesRV,692
+FrequenciesRV,693
+FrequenciesRV,694
+FrequenciesRV,695
+FrequenciesRV,696
+FrequenciesRV,697
+FrequenciesRV,698
+FrequenciesRV,699
+FrequenciesRV,700
+FrequenciesRV,701
+FrequenciesRV,702
+FrequenciesRV,703
+FrequenciesRV,704
+FrequenciesRV,705
+FrequenciesRV,706
+FrequenciesRV,707
+FrequenciesRV,708
+FrequenciesRV,709
+FrequenciesRV,710
+FrequenciesRV,711
+FrequenciesRV,712
+FrequenciesRV,713
+FrequenciesRV,714
+FrequenciesRV,715
+FrequenciesRV,716
+FrequenciesRV,717
+FrequenciesRV,718
+FrequenciesRV,719
+FrequenciesRV,720
+FrequenciesRV,721
+FrequenciesRV,722
+FrequenciesRV,723
+FrequenciesRV,724
+FrequenciesRV,725
+FrequenciesRV,726
+FrequenciesRV,727
+FrequenciesRV,728
+FrequenciesRV,729
+FrequenciesRV,730
+FrequenciesRV,731
+FrequenciesRV,732
+FrequenciesRV,733
+FrequenciesRV,734
+FrequenciesRV,735
+FrequenciesRV,736
+FrequenciesRV,737
+FrequenciesRV,738
+FrequenciesRV,739
+FrequenciesRV,740
+FrequenciesRV,741
+FrequenciesRV,742
+FrequenciesRV,743
+FrequenciesRV,744
+FrequenciesRV,745
+FrequenciesRV,746
+FrequenciesRV,747
+FrequenciesRV,748
+FrequenciesRV,749
+FrequenciesRV,750
+FrequenciesRV,751
+FrequenciesRV,752
+FrequenciesRV,753
+FrequenciesRV,754
+FrequenciesRV,755
+FrequenciesRV,756
+FrequenciesRV,757
+FrequenciesRV,758
+FrequenciesRV,759
+FrequenciesRV,760
+FrequenciesRV,761
+FrequenciesRV,762
+FrequenciesRV,763
+FrequenciesRV,764
+FrequenciesRV,765
+FrequenciesRV,766
+FrequenciesRV,767
+FrequenciesRV,768
+FrequenciesRV,769
+FrequenciesRV,770
+FrequenciesRV,771
+FrequenciesRV,772
+FrequenciesRV,773
+FrequenciesRV,774
+FrequenciesRV,775
+FrequenciesRV,776
+FrequenciesRV,777
+FrequenciesRV,778
+FrequenciesRV,779
+FrequenciesRV,780
+FrequenciesRV,781
+FrequenciesRV,782
+FrequenciesRV,783
+FrequenciesRV,784
+FrequenciesRV,785
+FrequenciesRV,786
+FrequenciesRV,787
+FrequenciesRV,788
+FrequenciesRV,789
+FrequenciesRV,790
+FrequenciesRV,791
+FrequenciesRV,792
+FrequenciesRV,793
+FrequenciesRV,794
+FrequenciesRV,795
+FrequenciesRV,796
+FrequenciesRV,797
+FrequenciesRV,798
+FrequenciesRV,799
+FrequenciesRV,800
+FrequenciesRV,801
+FrequenciesRV,802
+FrequenciesRV,803,,,,
+FrequenciesRV,804,,,,
+FrequenciesRV,805,,,,
+FrequenciesRV,806,,,,
+FrequenciesRV,807,,,,
+FrequenciesRV,808,,,,
+FrequenciesRV,809,,,,
+FrequenciesRV,810,,,,
+FrequenciesRV,811,,,,
+FrequenciesRV,812,,,,
+FrequenciesRV,813,,,,
+FrequenciesRV,814,,,,
+FrequenciesRV,815,,,,
+FrequenciesRV,816,,,,
+FrequenciesRV,817,,,,
+FrequenciesRV,818,,,,
+FrequenciesRV,819,,,,
+FrequenciesRV,820,,,,
+FrequenciesRV,821,,,,
+FrequenciesRV,822,,,,
+FrequenciesRV,823,,,,
+FrequenciesRV,824,,,,
+FrequenciesRV,825,,,,
+FrequenciesRV,826,,,,
+FrequenciesRV,827,,,,
+FrequenciesRV,828,,,,
+FrequenciesRV,829,,,,
+FrequenciesRV,830,,,,
+FrequenciesRV,831,,,,
+FrequenciesRV,832,,,,
+FrequenciesRV,833,,,,
+FrequenciesRV,834,,,,
+FrequenciesRV,835,,,,
+FrequenciesRV,836,,,,
+FrequenciesRV,837,,,,
+FrequenciesRV,838,,,,
+FrequenciesRV,839,,,,
+FrequenciesRV,840,,,,
+FrequenciesRV,841,,,,
+FrequenciesRV,842,,,,
+FrequenciesRV,843,,,,
+FrequenciesRV,844,,,,
+FrequenciesRV,845,,,,
+FrequenciesRV,846,,,,
+FrequenciesRV,847,,,,
+FrequenciesRV,848,,,,
+FrequenciesRV,849,,,,
+FrequenciesRV,850,,,,
+FrequenciesRV,851,,,,
+FrequenciesRV,852,,,,
+FrequenciesRV,853,,,,
+FrequenciesRV,854
+FrequenciesRV,855
+FrequenciesRV,856
+FrequenciesRV,857
+FrequenciesRV,858
+FrequenciesRV,859
+FrequenciesRV,860
+FrequenciesRV,861
+FrequenciesRV,862
+FrequenciesRV,863
+FrequenciesRV,864
+FrequenciesRV,865
+FrequenciesRV,866
+FrequenciesRV,867
+FrequenciesRV,868
+FrequenciesRV,869
+FrequenciesRV,870
+FrequenciesRV,871
+FrequenciesRV,872
+FrequenciesRV,873
+FrequenciesRV,874
+FrequenciesRV,875
+FrequenciesRV,876
+FrequenciesRV,877
+FrequenciesRV,878
+FrequenciesRV,879
+FrequenciesRV,880
+FrequenciesRV,881
+FrequenciesRV,882
+FrequenciesRV,883
+FrequenciesRV,884
+FrequenciesRV,885
+FrequenciesRV,886
+FrequenciesRV,887
+FrequenciesRV,888
+FrequenciesRV,889
+FrequenciesRV,890
+FrequenciesRV,891
+FrequenciesRV,892
+FrequenciesRV,893
+FrequenciesRV,894
+FrequenciesRV,895
+FrequenciesRV,896
+FrequenciesRV,897
+FrequenciesRV,898
+FrequenciesRV,899
+FrequenciesRV,900
+FrequenciesRV,901
+FrequenciesRV,902
+FrequenciesRV,903
+FrequenciesRV,904
+FrequenciesRV,905
+FrequenciesRV,906
+FrequenciesRV,907
+FrequenciesRV,908
+FrequenciesRV,909
+FrequenciesRV,910
+FrequenciesRV,911
+FrequenciesRV,912
+FrequenciesRV,913
+FrequenciesRV,914
+FrequenciesRV,915
+FrequenciesRV,916
+FrequenciesRV,917
+FrequenciesRV,918
+FrequenciesRV,919
+FrequenciesRV,920
+FrequenciesRV,921
+FrequenciesRV,922
+FrequenciesRV,923
+FrequenciesRV,924
+FrequenciesRV,925
+FrequenciesRV,926
+FrequenciesRV,927
+FrequenciesRV,928
+FrequenciesRV,929
+FrequenciesRV,930
+FrequenciesRV,931
+FrequenciesRV,932
+FrequenciesRV,933
+FrequenciesRV,934
+FrequenciesRV,935
+FrequenciesRV,936
+FrequenciesRV,937
+FrequenciesRV,938
+FrequenciesRV,939
+FrequenciesRV,940
+FrequenciesRV,941
+FrequenciesRV,942
+FrequenciesRV,943
+FrequenciesRV,944
+FrequenciesRV,945
+FrequenciesRV,946
+FrequenciesRV,947
+FrequenciesRV,948
+FrequenciesRV,949
+FrequenciesRV,950
+FrequenciesRV,951
+FrequenciesRV,952
+FrequenciesRV,953
+FrequenciesRV,954
+FrequenciesRV,955
+FrequenciesRV,956
+FrequenciesRV,957
+FrequenciesRV,958
+FrequenciesRV,959
+FrequenciesRV,960
+FrequenciesRV,961
+FrequenciesRV,962
+FrequenciesRV,963
+FrequenciesRV,964
+FrequenciesRV,965
+FrequenciesRV,966
+FrequenciesRV,967
+FrequenciesRV,968
+FrequenciesRV,969
+FrequenciesRV,970
+FrequenciesRV,971
+FrequenciesRV,972
+FrequenciesRV,973
+FrequenciesRV,974
+FrequenciesRV,975
+FrequenciesRV,976
+FrequenciesRV,977
+FrequenciesRV,978
+FrequenciesRV,979
+FrequenciesRV,980
+FrequenciesRV,981
+FrequenciesRV,982
+FrequenciesRV,983
+FrequenciesRV,984
+FrequenciesRV,985
+FrequenciesRV,986
+FrequenciesRV,987
+FrequenciesRV,988
+FrequenciesRV,989
+FrequenciesRV,990
+FrequenciesRV,991
+FrequenciesRV,992
+FrequenciesRV,993
+FrequenciesRV,994
+FrequenciesRV,995
+FrequenciesRV,996
+FrequenciesRV,997
+FrequenciesRV,998
+FrequenciesRV,999
+FrequenciesRV,1000
+FrequenciesRV,1001
+FrequenciesRV,1002
+FrequenciesRV,1003
+FrequenciesRV,1004
+FrequenciesRV,1005
+FrequenciesRV,1006
+FrequenciesRV,1007
+FrequenciesRV,1008
+FrequenciesRV,1009
+FrequenciesRV,1010
+FrequenciesRV,1011
+FrequenciesRV,1012
+FrequenciesRV,1013
+FrequenciesRV,1014
+FrequenciesRV,1015
+FrequenciesRV,1016
+FrequenciesRV,1017
+FrequenciesRV,1018
+FrequenciesRV,1019
+FrequenciesRV,1020
+FrequenciesRV,1021
+FrequenciesRV,1022
+FrequenciesRV,1023
+FrequenciesRV,1024
+FrequenciesRV,1025
+FrequenciesRV,1026
+FrequenciesRV,1027
+FrequenciesRV,1028
+FrequenciesRV,1029
+FrequenciesRV,1030
+FrequenciesRV,1031
+FrequenciesRV,1032
+FrequenciesRV,1033
+FrequenciesRV,1034
+FrequenciesRV,1035
+FrequenciesRV,1036
+FrequenciesRV,1037
+FrequenciesRV,1038
+FrequenciesRV,1039
+FrequenciesRV,1040
+FrequenciesRV,1041
+FrequenciesRV,1042
+FrequenciesRV,1043
+FrequenciesRV,1044
+FrequenciesRV,1045
+FrequenciesRV,1046
+FrequenciesRV,1047
+FrequenciesRV,1048
+FrequenciesRV,1049
+FrequenciesRV,1050
+FrequenciesRV,1051
+FrequenciesRV,1052
+FrequenciesRV,1053
+FrequenciesRV,1054
+FrequenciesRV,1055
+FrequenciesRV,1056
+FrequenciesRV,1057
+FrequenciesRV,1058
+FrequenciesRV,1059
+FrequenciesRV,1060
+FrequenciesRV,1061
+FrequenciesRV,1062
+FrequenciesRV,1063
+FrequenciesRV,1064
+FrequenciesRV,1065
+FrequenciesRV,1066
+FrequenciesRV,1067
+FrequenciesRV,1068
+FrequenciesRV,1069
+FrequenciesRV,1070
+FrequenciesRV,1071
+FrequenciesRV,1072
+FrequenciesRV,1073
+FrequenciesRV,1074
+FrequenciesRV,1075
+FrequenciesRV,1076
+FrequenciesRV,1077
+FrequenciesRV,1078
+FrequenciesRV,1079
+FrequenciesRV,1080
+FrequenciesRV,1081
+FrequenciesRV,1082
+FrequenciesRV,1083
+FrequenciesRV,1084
+FrequenciesRV,1085
+FrequenciesRV,1086
+FrequenciesRV,1087
+FrequenciesRV,1088
+FrequenciesRV,1089
+FrequenciesRV,1090
+FrequenciesRV,1091
+FrequenciesRV,1092
+FrequenciesRV,1093
+FrequenciesRV,1094
+FrequenciesRV,1095
+FrequenciesRV,1096
+FrequenciesRV,1097
+FrequenciesRV,1098
+FrequenciesRV,1099
+FrequenciesRV,1100
+FrequenciesRV,1101
+FrequenciesRV,1102
+FrequenciesRV,1103
+FrequenciesRV,1104
+FrequenciesRV,1105
+FrequenciesRV,1106
+FrequenciesRV,1107
+FrequenciesRV,1108
+FrequenciesRV,1109
+FrequenciesRV,1110
+FrequenciesRV,1111
+FrequenciesRV,1112
+FrequenciesRV,1113
+FrequenciesRV,1114
+FrequenciesRV,1115
+FrequenciesRV,1116
+FrequenciesRV,1117
+FrequenciesRV,1118
+FrequenciesRV,1119
+FrequenciesRV,1120
+FrequenciesRV,1121
+FrequenciesRV,1122
+FrequenciesRV,1123
+FrequenciesRV,1124
+FrequenciesRV,1125
+FrequenciesRV,1126
+FrequenciesRV,1127
+FrequenciesRV,1128
+FrequenciesRV,1129
+FrequenciesRV,1130
+FrequenciesRV,1131
+FrequenciesRV,1132
+FrequenciesRV,1133
+FrequenciesRV,1134
+FrequenciesRV,1135
+FrequenciesRV,1136
+FrequenciesRV,1137
+FrequenciesRV,1138
+FrequenciesRV,1139
+FrequenciesRV,1140
+FrequenciesRV,1141
+FrequenciesRV,1142
+FrequenciesRV,1143
+FrequenciesRV,1144
+FrequenciesRV,1145
+FrequenciesRV,1146
+FrequenciesRV,1147
+FrequenciesRV,1148
+FrequenciesRV,1149
+FrequenciesRV,1150
+FrequenciesRV,1151
+FrequenciesRV,1152
+FrequenciesRV,1153
+FrequenciesRV,1154
+FrequenciesRV,1155
+FrequenciesRV,1156
+FrequenciesRV,1157
+FrequenciesRV,1158
+FrequenciesRV,1159
+FrequenciesRV,1160
+FrequenciesRV,1161
+FrequenciesRV,1162
+FrequenciesRV,1163
+FrequenciesRV,1164
+FrequenciesRV,1165
+FrequenciesRV,1166
+FrequenciesRV,1167
+FrequenciesRV,1168
+FrequenciesRV,1169
+FrequenciesRV,1170
+FrequenciesRV,1171
+FrequenciesRV,1172
+FrequenciesRV,1173
+FrequenciesRV,1174
+FrequenciesRV,1175
+FrequenciesRV,1176
+FrequenciesRV,1177
+FrequenciesRV,1178
+FrequenciesRV,1179
+FrequenciesRV,1180
+FrequenciesRV,1181
+FrequenciesRV,1182
+FrequenciesRV,1183
+FrequenciesRV,1184
+FrequenciesRV,1185
+FrequenciesRV,1186
+FrequenciesRV,1187
+FrequenciesRV,1188
+FrequenciesRV,1189
+FrequenciesRV,1190
+FrequenciesRV,1191
+FrequenciesRV,1192
+FrequenciesRV,1193
+FrequenciesRV,1194
+FrequenciesRV,1195
+FrequenciesRV,1196
+FrequenciesRV,1197
+FrequenciesRV,1198
+FrequenciesRV,1199
+FrequenciesRV,1200
+FrequenciesRV,1201
+FrequenciesRV,1202
+FrequenciesRV,1203
+FrequenciesRV,1204
+FrequenciesRV,1205
+FrequenciesRV,1206
+FrequenciesRV,1207
+FrequenciesRV,1208
+FrequenciesRV,1209
+FrequenciesRV,1210
+FrequenciesRV,1211
+FrequenciesRV,1212
+FrequenciesRV,1213
+FrequenciesRV,1214
+FrequenciesRV,1215
+FrequenciesRV,1216
+FrequenciesRV,1217
+FrequenciesRV,1218
+FrequenciesRV,1219
+FrequenciesRV,1220
+FrequenciesRV,1221
+FrequenciesRV,1222
+FrequenciesRV,1223
+FrequenciesRV,1224
+FrequenciesRV,1225
+FrequenciesRV,1226
+FrequenciesRV,1227
+FrequenciesRV,1228
+FrequenciesRV,1229
+FrequenciesRV,1230
+FrequenciesRV,1231
+FrequenciesRV,1232
+FrequenciesRV,1233
+FrequenciesRV,1234
+FrequenciesRV,1235
+FrequenciesRV,1236
+FrequenciesRV,1237
+FrequenciesRV,1238
+FrequenciesRV,1239
+FrequenciesRV,1240
+FrequenciesRV,1241
+FrequenciesRV,1242
+FrequenciesRV,1243
+FrequenciesRV,1244
+FrequenciesRV,1245
+FrequenciesRV,1246
+FrequenciesRV,1247
+FrequenciesRV,1248
+FrequenciesRV,1249
+FrequenciesRV,1250
+FrequenciesRV,1251
+FrequenciesRV,1252
+FrequenciesRV,1253
+FrequenciesRV,1254
+FrequenciesRV,1255
+FrequenciesRV,1256
+FrequenciesRV,1257
+FrequenciesRV,1258
+FrequenciesRV,1259
+FrequenciesRV,1260
+FrequenciesRV,1261
+FrequenciesRV,1262
+FrequenciesRV,1263
+FrequenciesRV,1264
+FrequenciesRV,1265
+FrequenciesRV,1266
+FrequenciesRV,1267
+FrequenciesRV,1268
+FrequenciesRV,1269
+FrequenciesRV,1270
+FrequenciesRV,1271
+FrequenciesRV,1272
+FrequenciesRV,1273
+FrequenciesRV,1274
+FrequenciesRV,1275
+FrequenciesRV,1276
+FrequenciesRV,1277
+FrequenciesRV,1278
+FrequenciesRV,1279
+FrequenciesRV,1280
+FrequenciesRV,1281
+FrequenciesRV,1282
+FrequenciesRV,1283
+FrequenciesRV,1284
+FrequenciesRV,1285
+FrequenciesRV,1286
+FrequenciesRV,1287
+FrequenciesRV,1288
+FrequenciesRV,1289
+FrequenciesRV,1290
+FrequenciesRV,1291
+FrequenciesRV,1292
+FrequenciesRV,1293
+FrequenciesRV,1294
+FrequenciesRV,1295
+FrequenciesRV,1296
+FrequenciesRV,1297
+FrequenciesRV,1298
+FrequenciesRV,1299
+FrequenciesRV,1300
+FrequenciesRV,1301
+FrequenciesRV,1302
+FrequenciesRV,1303
+FrequenciesRV,1304
+FrequenciesRV,1305
+FrequenciesRV,1306
+FrequenciesRV,1307
+FrequenciesRV,1308
+FrequenciesRV,1309
+FrequenciesRV,1310
+FrequenciesRV,1311
+FrequenciesRV,1312
+FrequenciesRV,1313
+FrequenciesRV,1314
+FrequenciesRV,1315
+FrequenciesRV,1316
+FrequenciesRV,1317
+FrequenciesRV,1318
+FrequenciesRV,1319
+FrequenciesRV,1320
+FrequenciesRV,1321
+FrequenciesRV,1322
+FrequenciesRV,1323
+FrequenciesRV,1324
+FrequenciesRV,1325
+FrequenciesRV,1326
+FrequenciesRV,1327
+FrequenciesRV,1328
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,60606,F2A01,1637,540336584222,330077326.95296276,0,47194312000,Long-term investments
+StatisticsRV,2,65121,F2A19,1637,254384898905,155397006.05070251,0,8271711000,"Property, Plant, and Equipment, net of accumulated depreciation"
+StatisticsRV,3,65126,F2A20,1637,1733429399,1058906.1692119732,0,315368451,"Intangible Assets, net of accumulated amortization"
+StatisticsRV,4,60611,F2A02,1637,913492468073,558028386.11667681,32988,59327153000,Total assets
+StatisticsRV,5,60616,F2A03,1637,244077050612,149100214.17959681,0,12186374000,Total liabilities
+StatisticsRV,6,65091,F2A03A,1637,132185067012,80748361.03359805,0,5474162000,"Debt related to Property, Plant, and Equipment"
+StatisticsRV,7,60621,F2A04,1637,308477147917,188440530.18753818,-172666000,21653055000,Total unrestricted net assets
+StatisticsRV,8,60626,F2A05,1637,360938269544,220487641.74954185,0,37294784000,Total restricted net assets
+StatisticsRV,9,64825,F2A05A,1637,159422416974,97386937.675015271,0,9408535000,Permanently restricted net assets included in total restricted net assets
+StatisticsRV,10,65096,F2A05B,1637,201515852570,123100704.07452658,0,27886249000,Temporarily restricted net assets
+StatisticsRV,11,60631,F2A06,1637,669415417461,408928171.93708003,-54796850,49276486000,Total net assets
+StatisticsRV,12,60636,F2A11,1637,24124386988,14736949.901038485,0,1023726000,Land  improvements - End of year
+StatisticsRV,13,60641,F2A12,1637,323917642979,197872720.20708615,0,10032085000,Buildings - End of year
+StatisticsRV,14,60646,F2A13,1637,75498722440,46120172.535125226,0,3138477000,"Equipment, including art and library collections - End of year"
+StatisticsRV,15,65101,F2A15,1637,21094332729,12885969.901649358,0,1567663000,Construction in Progress
+StatisticsRV,16,65106,F2A16,1637,3229098148,1972570.6463042151,0,1043855000,"Other plant, property and equipment"
+StatisticsRV,17,65111,F2A17,1637,447864183284,273588383.19120342,0,13838838000,"Total Plant, Property, and Equipment"
+StatisticsRV,18,65116,F2A18,1637,193479284379,118191377.14050092,0,5809846000,Accumulated depreciation
+StatisticsRV,19,60656,F2B01,1637,258246234403,157755793.77092242,-3432671,11776340000,Total revenues and investment return
+StatisticsRV,20,60661,F2B02,1637,233783174814,142811957.73610264,50000,10498938000,Total expenses
+StatisticsRV,21,60666,F2B03,1637,-2721766587,-1662655.2150274892,-660455372,91258118,Other specific changes in net assets
+StatisticsRV,22,60671,F2B04,1637,21741293002,13281180.819792302,-216377000,2312302000,Total change in net assets
+StatisticsRV,23,60676,F2B05,1637,647822491202,395737624.43616372,-48440301,46964184000,"Net assets, beginning of the year"
+StatisticsRV,24,60681,F2B06,1637,-148366743,-90633.318875992671,-51587127,92163241,Adjustments to beginning of year net assets
+StatisticsRV,25,60686,F2B07,1637,669415417461,408928171.93708003,-54796850,49276486000,"Net assets, end of the year"
+StatisticsRV,26,60691,F2C01,1834,4998270629,2725338.4018538715,0,161689426,Pell grants
+StatisticsRV,27,60696,F2C02,1834,1170384079,638159.25790621596,0,82424020,Other federal grants
+StatisticsRV,28,60701,F2C03,1834,1945316572,1060696.0588876773,0,27707430,State grants
+StatisticsRV,29,60706,F2C04,1834,44495581,24261.494547437294,0,8870799,Local grants
+StatisticsRV,30,60711,F2C05,1834,6825635712,3721720.6717557251,0,358714000,Institutional grants (funded)
+StatisticsRV,31,60716,F2C06,1834,36513207661,19909055.431297708,0,622937000,Institutional grants (unfunded)
+StatisticsRV,32,60721,F2C07,1834,51497310234,28079231.316248637,0,759645836,Total student grants
+StatisticsRV,33,60726,F2C08,1834,42020459950,22911919.274809159,0,673610000,Allowances applied to tuition and fees
+StatisticsRV,34,60731,F2C09,1834,621635156,338950.46673936752,0,59928000,Allowances applied to auxiliary enterprise revenues
+StatisticsRV,35,60733,F2C10,1834,42642095106,23250869.741548527,0,733538000,Total discounts and allowances
+StatisticsRV,36,60736,F2D01,1836,83215625415,45324414.71405229,0,2021700000,Tuition and fees - Total
+StatisticsRV,37,65131,F2D012,1836,83215470401,45324330.283769064,0,2021700000,Tuition and fees - Unrestricted
+StatisticsRV,38,65136,F2D013,1836,155014,84.430283224400867,0,129634,Tuition and fees - Temporarily restricted
+StatisticsRV,39,65141,F2D014,1836,0,0,0,0,Tuition and fees - Permanently restricted
+StatisticsRV,40,60741,F2D02,1836,508401878,276907.34095860564,0,235456000,Federal appropriations - Total
+StatisticsRV,41,65146,F2D022,1836,503413746,274190.49346405227,0,232051000,Federal appropriations - Unrestricted
+StatisticsRV,42,65151,F2D023,1836,4988132,2716.8474945533767,0,3405000,Federal appropriations - Temporarily restricted
+StatisticsRV,43,65156,F2D024,1836,0,0,0,0,Federal appropriations - Permanently restricted
+StatisticsRV,44,60746,F2D03,1836,1402720872,764009.18954248365,0,377546663,State appropriations - Total
+StatisticsRV,45,65161,F2D032,1836,1376894300,749942.42919389973,0,377546663,State appropriations - Unrestricted
+StatisticsRV,46,65166,F2D033,1836,25826572,14066.760348583877,0,20559541,State appropriations - Temporarily restricted
+StatisticsRV,47,65171,F2D034,1836,0,0,0,0,State appropriations - Permanently restricted
+StatisticsRV,48,60751,F2D04,1836,4364510,2377.1840958605662,0,1386108,Local appropriations - Total
+StatisticsRV,49,65176,F2D042,1836,3257710,1774.351851851852,0,1386108,Local appropriations - Unrestricted
+StatisticsRV,50,65181,F2D043,1836,1106800,602.83224400871461,0,620175,Local appropriations -  Temporarily restricted
+StatisticsRV,51,65186,F2D044,1836,0,0,0,0,Local appropriations - Permanently restricted
+StatisticsRV,52,60756,F2D05,1836,21548203999,11736494.552832244,0,3085344000,Federal grants and contracts - Total
+StatisticsRV,53,65191,F2D052,1836,21244091695,11570856.043028323,0,3085344000,Federal grants and contracts - Unrestricted
+StatisticsRV,54,65196,F2D053,1836,290436143,158189.62037037036,0,19577440,Federal grants and contracts  - Temporarily restricted
+StatisticsRV,55,65201,F2D054,1836,13676161,7448.8894335511986,0,13179976,Federal grants and contracts - Pemanently restricted
+StatisticsRV,56,60761,F2D06,1836,1358170532,739744.29847494548,0,77359000,State grants and contracts - Total
+StatisticsRV,57,65206,F2D062,1836,1216410675,662533.04738562088,0,77359000,State grants and contracts - Unrestricted
+StatisticsRV,58,65211,F2D063,1836,140739589,76655.549564270157,0,49412000,State grants and contracts - Temporarily restricted
+StatisticsRV,59,65216,F2D064,1836,1020268,555.70152505446629,0,1000000,State grants and contracts - Permanently restricted
+StatisticsRV,60,60766,F2D07,1836,614221093,334543.07897603489,0,178095365,Local grants and contracts - Total
+StatisticsRV,61,65221,F2D072,1836,603977836,328963.96296296298,0,178095365,Local grants and contracts - Unrestricted
+StatisticsRV,62,65226,F2D073,1836,10240265,5577.4863834422658,0,3006000,Local grants and contracts - Temporarily restricted
+StatisticsRV,63,65231,F2D074,1836,2992,1.6296296296296295,0,2992,Local grants and contracts  - Permanently restricted
+StatisticsRV,64,60771,F2D08,1836,32150136454,17510967.567538127,-2816437,2679583000,"Private gifts, grants, and contracts - Total"
+StatisticsRV,65,65236,F2D082,1836,13726927496,7476540.0305010891,0,1008075903,"Private gifts, grants, and contracts - Unrestricted"
+StatisticsRV,66,65251,F2D083,1836,10822192718,5894440.4782135077,-4898274,1567418000,"Private gifts, grants and contracts - Temporarily restricted"
+StatisticsRV,67,65266,F2D084,1836,7601016240,4139987.0588235296,-2309518,1961724000,"Private gifts, grants, and contracts - Permanently restricted"
+StatisticsRV,68,65281,F2D08A,1836,24631863330,13416047.565359477,-2816437,2215137000,Private gifts - Total
+StatisticsRV,69,65241,F2D082A,1836,6942990370,3781585.1688453159,-984,386434000,Private gifts - Unrestricted
+StatisticsRV,70,65256,F2D083A,1836,10138978507,5522319.4482570803,-5070041,1370960000,Private gifts - Temporarily restricted
+StatisticsRV,71,65271,F2D084A,1836,7549894453,4112142.9482570807,-2309518,1961724000,Private gifts - Permanentlly restricted
+StatisticsRV,72,65286,F2D08B,1836,7518273124,4094920.0021786494,0,993318375,Private grants and contracts - Total
+StatisticsRV,73,65246,F2D082B,1836,6783937126,3694954.8616557736,-22104,993318375,Private grants and contracts - Unrestricted
+StatisticsRV,74,65261,F2D083B,1836,683214211,372121.029956427,-188742,196458000,Private grants and contracts - Temporarily restricted
+StatisticsRV,75,65276,F2D084B,1836,51121787,27844.110566448802,0,11387000,"Private grants, and contracts - Permanently restricted"
+StatisticsRV,76,60776,F2D09,1836,2602206265,1417323.6737472767,0,662369612,Contributions from affiliated entities - Total
+StatisticsRV,77,65291,F2D092,1836,2570498627,1400053.718409586,0,662369612,Contributions from affiliated entities - Unrestricted
+StatisticsRV,78,65296,F2D093,1836,20625259,11233.801198257081,0,3573130,Contributions from affiliated entities - Temporarily restricted
+StatisticsRV,79,65301,F2D094,1836,11082379,6036.1541394335509,0,4851000,Contributions from affiliated entities - Permanently restricted
+StatisticsRV,80,60781,F2D10,1836,29188460555,15897854.33278867,-100553500,2727061000,Investment return - Total
+StatisticsRV,81,65306,F2D102,1836,18256786389,9943783.4362745099,-75978060,2605012000,Investment return - Unrestricted
+StatisticsRV,82,65311,F2D103,1836,9955904281,5422605.8175381264,-51607000,1924783000,Investment return - Temporarily restricted
+StatisticsRV,83,65316,F2D104,1836,975769885,531465.07897603489,-9906096,195836000,Investment return - Permanently restricted
+StatisticsRV,84,60786,F2D11,1836,8979557184,4890826.3529411769,0,1540789000,Sales and services of educational activities - Total
+StatisticsRV,85,65321,F2D112,1836,8979557184,4890826.3529411769,0,1540789000,Sales and services of educational activities - Unrestricted
+StatisticsRV,86,60791,F2D12,1716,19496281813,11361469.587995337,0,462117000,Sales and services of auxiliary enterprises - Total
+StatisticsRV,87,65326,F2D122,1716,19496281813,11361469.587995337,0,462117000,Sales and services of auxiliary enterprises - Unrestricted
+StatisticsRV,88,60796,F2D13,1614,37144192491,23013749.994423792,0,6932160000,Hospital revenue - Total
+StatisticsRV,89,65331,F2D132,1614,37144192491,23013749.994423792,0,6932160000,Hospital revenue - Unrestricted
+StatisticsRV,90,60801,F2D14,1614,7430284563,4603645.9498141268,0,2744953000,Independent operations revenue - Total
+StatisticsRV,91,65336,F2D142,1614,7416402896,4595045.1648079306,0,2744953000,Independent operations revenue - Unrestricted
+StatisticsRV,92,65341,F2D143,1614,11918227,7384.2794299876086,0,4957615,Independent operations revenue - Temporarily restricted
+StatisticsRV,93,65346,F2D144,1614,1963440,1216.5055762081784,0,1787000,Independent operations revenue - Permanently restricted
+StatisticsRV,94,60806,F2D15,1836,13309035384,7248929.9477124186,-11443000,3218771577,Other revenue - Total
+StatisticsRV,95,65351,F2D152,1836,13165401057,7170697.7434640527,-669484593,3217685005,Other revenue - Unrestricted
+StatisticsRV,96,65356,F2D153,1836,258333815,140704.69226579519,-434878000,929032893,Other revenue - Temporarily restricted
+StatisticsRV,97,65361,F2D154,1836,-114699488,-62472.488017429197,-173423000,15732000,Other revenue - Permanently restricted
+StatisticsRV,98,60811,F2D16,1836,258951863008,141041319.7211329,-3432671,11776340000,Total revenues and investment return - Total
+StatisticsRV,99,65366,F2D162,1836,228919564316,124683858.55991286,-3432671,10712963000,Total revenues and investment return - Unrestricted
+StatisticsRV,100,65371,F2D163,1836,21542466815,11733369.724945534,-29955684,3492201000,Total revenues and investment return - Temporarily restricted
+StatisticsRV,101,65376,F2D164,1836,8489831877,4624091.4362745099,-2639018,1971437000,Total revenues and investment return - Permanently restricted
+StatisticsRV,102,65380,F2D17,1836,0,0,0,0,Net assets released from restriction - Total
+StatisticsRV,103,65381,F2D172,1836,13305910978,7247228.2015250549,-192452000,2254261000,Net assets released from restriction - Unrestricted
+StatisticsRV,104,65386,F2D173,1836,-13162555166,-7169147.6938997824,-2254261000,192452000,Net assets released from restriction - Temporarily restricted
+StatisticsRV,105,65387,F2D174,1836,-143355812,-78080.507625272337,-44823931,19380065,Net assets released from restriction - Permanently restricted
+StatisticsRV,106,65390,F2D18,1836,258951863008,141041319.7211329,-3432671,11776340000,"Net total revenues, after assets released from restriction - Total"
+StatisticsRV,107,65391,F2D182,1836,242225212089,131930943.40359478,-12289691,11164733000,"Net total revenues, after assets released from restriction - Unrestricted"
+StatisticsRV,108,65396,F2D183,1836,8379911649,4564222.0310457516,-598732000,1621546440,"Net total revenues, after assets released from restriction - Temporarily restricted"
+StatisticsRV,109,65401,F2D184,1836,8346476065,4546010.9286492374,-35052530,1971437000,"Net total revenues, after assets released from restriction - Permanently restricted"
+StatisticsRV,110,60816,F2E011,1836,69987684059,38119653.62690632,0,2933539000,Instruction-Total amount
+StatisticsRV,111,60821,F2E012,1836,38684833785,21070170.906862747,0,1601278000,Instruction-Salaries and wages
+StatisticsRV,112,60851,F2E021,1836,24991683611,13612028.110566448,0,3221889000,Research-Total amount
+StatisticsRV,113,60856,F2E022,1836,10329706643,5626201.8752723308,0,1534157000,Research-Salaries and wages
+StatisticsRV,114,60886,F2E031,1836,3425074805,1865509.153050109,0,891437519,Public service-Total amount
+StatisticsRV,115,60891,F2E032,1836,1678880596,914422.98257080605,0,697141502,Public service-Salaries and wages
+StatisticsRV,116,60921,F2E041,1836,20260570220,11035168.965141613,0,1525346182,Academic support-Total amount
+StatisticsRV,117,60926,F2E042,1836,9435978159,5139421.6552287582,0,797175807,Academic support-Salaries and wages
+StatisticsRV,118,60956,F2E051,1836,19119421505,10413628.270697167,0,377321254,Student service-Total amount
+StatisticsRV,119,60961,F2E052,1836,7649119935,4166187.3284313725,0,107549000,Student service-Salaries and wages
+StatisticsRV,120,60991,F2E061,1836,28943448121,15764405.29466231,0,956788000,Institutional support-Total amount
+StatisticsRV,121,60996,F2E062,1836,12235545480,6664240.4575163396,0,361005000,Institutional support-Salaries and wages
+StatisticsRV,122,61026,F2E071,1716,18408367866,10727487.101398602,0,595268000,Auxiliary enterprises-Total amount
+StatisticsRV,123,61031,F2E072,1716,3029914316,1765684.3333333333,0,197747000,Auxiliary enterprises-Salaries and wages
+StatisticsRV,124,61061,F2E081,1836,954273910,519757.03159041394,0,155874000,Net grant aid to students-Total amount
+StatisticsRV,125,61096,F2E091,1614,35108429284,21752434.500619579,0,6445223000,Hospital services-Total amount
+StatisticsRV,126,61101,F2E092,1614,16118804599,9986867.7812887244,0,2547412000,Hospital services-Salaries and wages
+StatisticsRV,127,61131,F2E101,1614,7027839086,4354299.3097893428,0,2744953336,Independent operations-Total Amount
+StatisticsRV,128,61136,F2E102,1614,1468910571,910105.68215613381,0,791597697,Independent operations-Salaries and wages
+StatisticsRV,129,61201,F2E121,1836,6282260944,3421710.7538126362,-1154849,2825232000,Other expenses-Total amount
+StatisticsRV,130,61206,F2E122,1836,2941607691,1602182.8382352942,0,1849401000,Other expenses-Salaries and wages
+StatisticsRV,131,61236,F2E131,1836,234509053411,127728242.59858388,27831,10498938000,Total expenses-Total amount
+StatisticsRV,132,61241,F2E132,1836,103573301775,56412473.733660132,1000,4649327000,Total expenses-Salaries and wages
+StatisticsRV,133,61246,F2E133,1836,28224944007,15373063.184640523,0,1234253000,Total expenses-Benefits
+StatisticsRV,134,61251,F2E134,1836,14504656730,7900139.8311546845,0,507733000,Total expenses-Operation and maintenance of plant
+StatisticsRV,135,61256,F2E135,1836,14434517907,7861937.8578431373,0,540235000,Total expenses-Depreciation
+StatisticsRV,136,61261,F2E136,1836,5157517417,2809105.3469498912,0,211655000,Total expenses-Interest
+StatisticsRV,137,61266,F2E137,1836,68614115575,37371522.644335508,-68902,3811973000,Total expenses-All other natural classification
+StatisticsRV,138,61271,F2H01,1360,451317140370,331850838.50735295,0,39233736000,Value of endowment assets at the beginning of the fiscal year
+StatisticsRV,139,61276,F2H02,1360,469830524856,345463621.21764708,1,40929700000,Value of endowment assets at the end of the fiscal year
+StatisticsRV,140,,,,
+StatisticsRV,141,,,,
+StatisticsRV,142,,,,
+StatisticsRV,143,,,,
+StatisticsRV,144
+StatisticsRV,145
+StatisticsRV,146
+StatisticsRV,147
+StatisticsRV,148
+StatisticsRV,149
+StatisticsRV,150
+StatisticsRV,151
+StatisticsRV,152
+StatisticsRV,153
+StatisticsRV,154
+StatisticsRV,155
+StatisticsRV,156
+StatisticsRV,157
+StatisticsRV,158
+StatisticsRV,159
+StatisticsRV,160
+StatisticsRV,161
+StatisticsRV,162
+StatisticsRV,163
+StatisticsRV,164
+StatisticsRV,165
+StatisticsRV,166
+StatisticsRV,167
+StatisticsRV,168
+StatisticsRV,169
+StatisticsRV,170
+StatisticsRV,171
+StatisticsRV,172
+StatisticsRV,173
+StatisticsRV,174
+StatisticsRV,175
+StatisticsRV,176
+StatisticsRV,177
+StatisticsRV,178
+StatisticsRV,179
+StatisticsRV,180
+StatisticsRV,181
+StatisticsRV,182
+StatisticsRV,183
+StatisticsRV,184
+StatisticsRV,185
+StatisticsRV,186
+StatisticsRV,187
+StatisticsRV,188
+StatisticsRV,189
+StatisticsRV,190
+StatisticsRV,191
+StatisticsRV,192
+StatisticsRV,193
+StatisticsRV,194
+StatisticsRV,195
+StatisticsRV,196
+StatisticsRV,197
+StatisticsRV,198
+StatisticsRV,199
+StatisticsRV,200
+StatisticsRV,201
+StatisticsRV,202
+StatisticsRV,203
+StatisticsRV,204
+StatisticsRV,205
+StatisticsRV,206
+StatisticsRV,207
+StatisticsRV,208
+StatisticsRV,209
+StatisticsRV,210
+StatisticsRV,211
+StatisticsRV,212
+StatisticsRV,213
+StatisticsRV,214
+StatisticsRV,215
+StatisticsRV,216
+StatisticsRV,217
+StatisticsRV,218
+StatisticsRV,219
+StatisticsRV,220
+StatisticsRV,221
+StatisticsRV,222
+StatisticsRV,223
+StatisticsRV,224
+StatisticsRV,225
+StatisticsRV,226
+StatisticsRV,227
+StatisticsRV,228
+StatisticsRV,229
+StatisticsRV,230
+StatisticsRV,231
+StatisticsRV,232
+StatisticsRV,233
+StatisticsRV,234
+StatisticsRV,235
+StatisticsRV,236
+StatisticsRV,237
+StatisticsRV,238
+StatisticsRV,239
+StatisticsRV,240
+StatisticsRV,241
+StatisticsRV,242
+StatisticsRV,243
+StatisticsRV,244
+StatisticsRV,245
+StatisticsRV,246
+StatisticsRV,247
+StatisticsRV,248
+StatisticsRV,249
+StatisticsRV,250
+StatisticsRV,251
+StatisticsRV,252
+StatisticsRV,253
+StatisticsRV,254
+StatisticsRV,255
+StatisticsRV,256
+StatisticsRV,257
+StatisticsRV,258
+StatisticsRV,259
+StatisticsRV,260
+StatisticsRV,261
+StatisticsRV,262
+StatisticsRV,263
+StatisticsRV,264
+StatisticsRV,265
+StatisticsRV,266
+StatisticsRV,267
+StatisticsRV,268
+StatisticsRV,269
+StatisticsRV,270
+StatisticsRV,271
+StatisticsRV,272
+StatisticsRV,273
+StatisticsRV,274
+StatisticsRV,275
+StatisticsRV,276
+StatisticsRV,277
+StatisticsRV,278
+StatisticsRV,279
+StatisticsRV,280
+StatisticsRV,281
+StatisticsRV,282
+StatisticsRV,283
+StatisticsRV,284
+StatisticsRV,285
+StatisticsRV,286
+StatisticsRV,287
+StatisticsRV,288
+StatisticsRV,289
+StatisticsRV,290
+StatisticsRV,291
+StatisticsRV,292
+StatisticsRV,293
+StatisticsRV,294
+StatisticsRV,295
+StatisticsRV,296
+StatisticsRV,297
+StatisticsRV,298
+StatisticsRV,299
+StatisticsRV,300
+StatisticsRV,301
+StatisticsRV,302
+StatisticsRV,303
+StatisticsRV,304
+StatisticsRV,305
+StatisticsRV,306
+StatisticsRV,307
+StatisticsRV,308
+StatisticsRV,309
+StatisticsRV,310
+StatisticsRV,311
+StatisticsRV,312
+StatisticsRV,313
+StatisticsRV,314
+StatisticsRV,315
+StatisticsRV,316
+StatisticsRV,317
+StatisticsRV,318
+StatisticsRV,319
+StatisticsRV,320
+StatisticsRV,321
+StatisticsRV,322
+StatisticsRV,323
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

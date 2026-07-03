@@ -1,51 +1,46 @@
-import Image from 'next/image';
+import Link from 'next/link';
 import { StoryCard } from '@/components/layout/StoryCard';
-import { StoryCardData } from '@/components/layout/StoryCardData';
+import {
+  StoryCardData,
+  getCommunityStoryCards,
+} from '@/components/layout/StoryCardData';
 import './page.scss';
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const communityCards = await getCommunityStoryCards();
+  const allCards = [...StoryCardData, ...communityCards];
+
   return (
     <div className="landing">
       <section className="landing__hero">
-        <header className="landing__title">
-          INSIDE COLLEGE DATA
-        </header>
-        <header className="landing__subtitle">
-          Understading Higher Education Through Data
-        </header>
-      </section>
-      <section className="landing__toolbar">
-        <div className="landing__search">
-          <Image src="/icons/search.png" alt="Search" width={24} height={24} />
-          <input
-            type="text"
-            width={50}
-            placeholder="Find an article..."
-            className="landing__searchInput"
-          />
-        </div>
-        <div className="landing__filters">
-          <Image src="/icons/filter.png" alt="Filter" width={24} height={24} />
-          <button className="landing__filterBtn">
-            Topic
-          </button>
-          <button className="landing__filterBtn">
-            Chart Type
-          </button>
-          <button className="landing__filterBtn">
-            Data Interaction
-          </button>
+        <p className="landing__eyebrow">Inside College Data</p>
+        <h1 className="landing__title">Higher education, by the numbers.</h1>
+        <p className="landing__subtitle">
+          Short data stories about US colleges and universities — sourced directly from IPEDS,
+          edited by humans, drafted with an AI co-writer.
+        </p>
+        <div className="landing__heroCtas">
+          <Link href="/generate" className="landing__heroBtn landing__heroBtn--primary">
+            Generate a story
+          </Link>
+          <Link href="/about" className="landing__heroBtn">
+            How this works
+          </Link>
         </div>
       </section>
+
+      <section className="landing__sectionHeader">
+        <h2 className="landing__sectionTitle">Latest stories</h2>
+        <p className="landing__sectionMeta">
+          {allCards.length} {allCards.length === 1 ? 'story' : 'stories'} · sourced from IPEDS{' '}
+          {new Date().getFullYear() - 1}–{new Date().getFullYear()}
+        </p>
+      </section>
+
       <section className="landing__grid">
-        {StoryCardData.map((story) => (
+        {allCards.map((story) => (
           <StoryCard key={story.href} {...story} />
         ))}
-      </section>
-      <section className="landing__more">
-        <button className="landing__moreBtn">
-          See More Articles
-        </button>
       </section>
     </div>
   );

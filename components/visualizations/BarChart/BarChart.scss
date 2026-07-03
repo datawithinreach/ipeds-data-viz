@@ -1,5 +1,29 @@
 @use '../../../styles/variables' as *;
 
+.article__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.1rem;
+  margin: 0.4rem 0 0.6rem;
+  font-size: 0.85rem;
+  align-items: center;
+}
+
+.article__legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #501315;
+}
+
+.article__legendSwatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
 .barChart {
   position: relative;
   width: 100%;

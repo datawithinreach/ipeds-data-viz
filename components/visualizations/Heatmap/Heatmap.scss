@@ -1,0 +1,28 @@
+.heatmap {
+  position: relative;
+  width: 100%;
+
+  svg { overflow: visible; }
+
+  &__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.9rem;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #501315;
+  }
+
+  &__legendItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  &__legendSwatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+  }
+}

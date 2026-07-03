@@ -1,0 +1,142 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for graduation rate data, 150% of normal time to complete - cohort year 2020 (less than 2-year institutions): 2022",,,,,,,,,
+Introduction,1,(Provisional release),,,,,,,,,
+Introduction,2,,,,,,,,,,,
+Introduction,3,Filename,GR2023_L2,,,,,,,,
+Introduction,4,Overview,"This file contains the graduation rate status as of August 31, 2023 for the cohort of full-time, first-time degree/certificate-seeking undergraduates enrolled in 2020 for less-than-2-year institutions. Included are the number of students enrolled in 2020 and the number of those students that completed their program in 100 or 150 percent of normal time, or had transferred out. Beginning with 2016, graduation rate data are now available for the subcohorts of Pell grant recipients,  Subsidized Stafford Loan recipients not receiving Pell Grants, and students not receiving Pell grants or subsidized Stafford loans. The number who completed in 150 percent of normal time are included for the subcohorts.
+",,,,,,,,
+Introduction,5,Note,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.",,,,,,,,
+Introduction,6,Contents of spreadsheet,,,,,,,,,
+Introduction,7,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,8,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,9,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. ",,,,,,,,,
+Introduction,10,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,80906,LINE_10,N,6,Cont,XLINE_10,Revised Cohort
+varlist,3,80907,LINE_45,N,6,Cont,XLINE_45,Exclusions
+varlist,4,80915,LINE_50,N,6,Cont,XLINE_50,Adjusted cohort (revised cohort minus exclusions)
+varlist,5,81401,LINE_55,N,6,Cont,XLINE_55,Completers within 100% of normal time
+varlist,6,80916,LINE_11,N,6,Cont,XLINE_11,Completers within 150% of normal time
+varlist,7,80917,LINE_30,N,6,Cont,XLINE_30,Transfer-out students
+varlist,8,80908,LINE_51,N,6,Cont,XLINE_51,Still enrolled
+varlist,9,80909,LINE_52,N,6,Cont,XLINE_52,No longer enrolled
+varlist,10,81626,PGLIN10,N,6,Cont,XPGLIN10,Pell Grant recipients - revised cohort
+varlist,11,81631,PGLIN45,N,6,Cont,XPGLIN45,Pell Grant recipients - exclusions
+varlist,12,81636,PGLIN50,N,6,Cont,XPGLIN50,Pell Grant recipients - adjusted  cohort (revised minus exclusions)
+varlist,13,81641,PGLIN11,N,6,Cont,XPGLIN11,Pell Grant  recipients - total number that completed an award  within 150% of normal time to completion
+varlist,14,81646,SSLIN10,N,6,Cont,XSSLIN10,Direct Subsidized Loan recipients not receiving Pell Grants - revised cohort
+varlist,15,81651,SSLIN45,N,6,Cont,XSSLIN45,Direct Subsidized Loan recipients not receiving Pell Grants - exclusions
+varlist,16,81656,SSLIN50,N,6,Cont,XSSLIN50,Direct Subsidized  Loan recipients not receiving Pell Grants - adjusted cohort (revised minus exclusions)
+varlist,17,81661,SSLIN11,N,6,Cont,XSSLIN11,Direct Subsidized  Loan recipients not receiving Pell Grants - total number completed an award within 150% of normal time to completion
+varlist,18,81666,NRLIN10,N,6,Cont,XNRLIN10,Did not receive Pell grant or Direct Subsidized  loan - revised cohort
+varlist,19,81671,NRLIN45,N,6,Cont,XNRLIN45,Did not receive Pell grant or Direct Subsidized loan - exclusions
+varlist,20,81676,NRLIN50,N,6,Cont,XNRLIN50,Did not receive Pell grant or Direct Subsidized  loan - adjusted cohort
+varlist,21,81681,NRLIN11,N,6,Cont,XNRLIN11,Did not receive Pell grant or Direct Subsidized  loan -  total number completed an award within 150% of normal time to completion
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,80906,LINE_10,REVISED COHORT - Initial cohort after revisions are made. This is the number from which graduation and transfer-out rates are calculated. Cohorts may be revised if an institution discovers that incorrect data were reported in an earlier year.
+Description,3,80907,LINE_45,"EXCLUSIONS  - Those students who may be removed (deleted) from a cohort (or subcohort). For the Graduation Rates data collection students maybe removed from a cohort if they left the institution for one of the following reasons: died or were totally and permanently disabled; to serve in the armed forces; to serve with a foreign aid service of the federal government, such as the Peace Corps; or to serve on official church missions."
+Description,4,80915,LINE_50,"Adjusted cohort (revised cohort minus exclusions)
+
+REVISED COHORT - Initial cohort after revisions are made. This is the number from which graduation and transfer-out rates are calculated. Cohorts may be revised if an institution discovers that incorrect data were reported in an earlier year. 
+EXCLUSIONS  - Those students who may be removed (deleted) from a cohort (or subcohort). For the Graduation Rates data collection students maybe removed from a cohort if they left the institution for one of the following reasons: died or were totally and permanently disabled; to serve in the armed forces; to serve with a foreign aid service of the federal government, such as the Peace Corps; or to serve on official church missions."
+Description,5,81401,LINE_55,NORMAL TIME TO COMPLETION - The amount of time necessary for a student to complete all requirements for a degree or certificate according to the institution's catalog.
+Description,6,80916,LINE_11,NORMAL TIME TO COMPLETION - The amount of time necessary for a student to complete all requirements for a degree or certificate according to the institution's catalog.
+Description,7,80917,LINE_30,Transfer-out student	  - A student that leaves the reporting institution and enrolls at another institution.
+Description,8,80908,LINE_51,Still enrolled - the number of students who are still enrolled at your institution as of the fall census date for the fall term following 150% of normal time to completion of their program.
+Description,9,80909,LINE_52,"No longer enrolled - Adjusted cohort minus the sum of number of completers in 150 percent of normal time, number of transfer-outs and the number still enrolled"
+Description,10,81626,PGLIN10,"Number of students in the cohort/subcohort who were recipients of a Pell Grant in the cohort year. 
+
+Recipients are defined as those students receiving and using their Pell Grant.  These students must receive the award upon entry into the institution.  Students that are recipients of an award at a later point after entry, are not included."
+Description,11,81631,PGLIN45,"Exclusions from the Pell grant cohort within 150% percent of normal time
+
+Exclusions who left institution within 150% of normal time and have neither graduated nor transferred to another institution) because of one of the following documented reasons:
+
+The student is deceased or is totally and permanently disabled and thus unable to return to school. 
+
+The student left school to serve in the armed forces or was called to active duty. ( students already in the military who transfer to another duty station are not included.) 
+
+The student left school to serve with a foreign aid service of the Federal Government, such as the Peace Corps. 
+
+The student left school to serve on an official church mission. 
+
+NOTE: Students who leave the institution for one of the above reasons, but return prior to the 150 percent status date of August 31, may still be reported as exclusions."
+Description,12,81636,PGLIN50,This is the number of Pell grant recipients in the revised cohort minus the number of exclusions.
+Description,13,81641,PGLIN11,"This is the number of students in the adjusted Pell grant recipient cohort that completed an award in 150 percent of normal time to complete. 
+
+150 percent of normal time to complete - Students who completed their program within 150% of the normal (or expected) time for completion.  Normal time is the amount of time necessary for a student to complete all requirements for a degree or certificate according to the institution's catalog. This is typically 4 years (8 semesters or trimesters, or 12 quarters, excluding summer terms) for a bachelor's degree in a standard term-based institution; 2 years (4 semesters or trimesters, or 6 quarters, excluding summer terms) for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Description,14,81646,SSLIN10,"Number of students in the cohort/subcohort who were recipients of a Direct Subsidized loan and who did not receive a Pell grant in the cohort year. 
+
+Recipients are defined as those students receiving and using their Direct Subsidized loan.  These students must receive the award upon entry into the institution.  Students that are recipients of an award at a later point after entry, are not included.  Students receiving a Pell grant are not included"
+Description,15,81651,SSLIN45,"Exclusions from the Direct Subsidized loan who did not receive a Pell grant cohort within 150% percent of normal time
+
+Exclusions who left institution within 150% of normal time and have neither graduated nor transferred to another institution) because of one of the following documented reasons:
+
+The student is deceased or is totally and permanently disabled and thus unable to return to school. 
+
+The student left school to serve in the armed forces or was called to active duty. ( students already in the military who transfer to another duty station are not included.) 
+
+The student left school to serve with a foreign aid service of the Federal Government, such as the Peace Corps. 
+
+The student left school to serve on an official church mission. 
+
+NOTE: Students who leave the institution for one of the above reasons, but return prior to the 150 percent status date of August 31, may still be reported as exclusions."
+Description,16,81656,SSLIN50,This is the number of Direct Subsidized loan recipients who did not receive a Pell Grant in the revised cohort minus the number of exclusions.
+Description,17,81661,SSLIN11,"This is the number of students in the adjusted cohort of Direct Subsidized loan recipients who did not receive a Pell grant, that completed an award in 150 percent of normal time to complete. 
+
+150 percent of normal time to complete - Students who completed their program within 150% of the normal (or expected) time for completion.  Normal time is the amount of time necessary for a student to complete all requirements for a degree or certificate according to the institution's catalog. This is typically 4 years (8 semesters or trimesters, or 12 quarters, excluding summer terms) for a bachelor's degree in a standard term-based institution; 2 years (4 semesters or trimesters, or 6 quarters, excluding summer terms) for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Description,18,81666,NRLIN10,This is the total number of students of the revised cohort who did not receive a Pell grant or a Direct Subsidized loan
+Description,19,81671,NRLIN45,"Exclusions from the revised cohort of students who did not receive a Pell grant or a Direct Subsidized loan within 150% percent of normal time
+
+Exclusions who left institution within 150% of normal time and have neither graduated nor transferred to another institution) because of one of the following documented reasons:
+
+The student is deceased or is totally and permanently disabled and thus unable to return to school. 
+
+The student left school to serve in the armed forces or was called to active duty. ( students already in the military who transfer to another duty station are not included.) 
+
+The student left school to serve with a foreign aid service of the Federal Government, such as the Peace Corps. 
+
+The student left school to serve on an official church mission. 
+
+NOTE: Students who leave the institution for one of the above reasons, but return prior to the 150 percent status date of August 31, may still be reported as exclusions."
+Description,20,81676,NRLIN50,This is the number cohort of students who did not receive a Pell grant of Direct Subsidized loan minus the number of exclusions.
+Description,21,81681,NRLIN11,"This is the number of students in the adjusted cohort of students not receiving a Pell grant or Direct Subsidized loan, that completed an award in 150 percent of normal time to complete. 
+
+150 percent of normal time to complete - Students who completed their program within 150% of the normal (or expected) time for completion.  Normal time is the amount of time necessary for a student to complete all requirements for a degree or certificate according to the institution's catalog. This is typically 4 years (8 semesters or trimesters, or 12 quarters, excluding summer terms) for a bachelor's degree in a standard term-based institution; 2 years (4 semesters or trimesters, or 6 quarters, excluding summer terms) for an associate's degree in a standard term-based institution; and the various scheduled times for certificate programs."
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,80906,LINE_10,1546,139666,90.340232858990944,1,1556,Revised Cohort
+Statistics,2,80907,LINE_45,1546,269,0.17399741267787838,0,32,Exclusions
+Statistics,3,80915,LINE_50,1546,139397,90.166235446313067,1,1556,Adjusted cohort (revised cohort minus exclusions)
+Statistics,4,81401,LINE_55,1546,56958,36.842173350582151,0,1170,Completers within 100% of normal time
+Statistics,5,80916,LINE_11,1546,95062,61.489003880983184,0,1170,Completers within 150% of normal time
+Statistics,6,80917,LINE_30,1546,569,0.36804657179818889,0,29,Transfer-out students
+Statistics,7,80908,LINE_51,1546,3549,2.2956015523932729,0,343,Still enrolled
+Statistics,8,80909,LINE_52,1546,40217,26.013583441138422,0,509,No longer enrolled
+Statistics,9,81626,PGLIN10,1546,93840,60.698576972833116,0,1101,Pell Grant recipients - revised cohort
+Statistics,10,81631,PGLIN45,1546,154,9.9611901681759374E-2,0,32,Pell Grant recipients - exclusions
+Statistics,11,81636,PGLIN50,1546,93686,60.598965071151362,0,1096,Pell Grant recipients - adjusted  cohort (revised minus exclusions)
+Statistics,12,81641,PGLIN11,1546,63123,40.829883570504528,0,1020,Pell Grant  recipients - total number that completed an award  within 150% of normal time to completion
+Statistics,13,81646,SSLIN10,1546,11800,7.6326002587322126,0,536,Direct Subsidized Loan recipients not receiving Pell Grants - revised cohort
+Statistics,14,81651,SSLIN45,1546,20,1.2936610608020699E-2,0,5,Direct Subsidized Loan recipients not receiving Pell Grants - exclusions
+Statistics,15,81656,SSLIN50,1546,11780,7.6196636481241917,0,536,Direct Subsidized  Loan recipients not receiving Pell Grants - adjusted cohort (revised minus exclusions)
+Statistics,16,81661,SSLIN11,1546,9081,5.8738680465717978,0,246,Direct Subsidized  Loan recipients not receiving Pell Grants - total number completed an award within 150% of normal time to completion
+Statistics,17,81666,NRLIN10,1546,34026,22.009055627425614,0,647,Did not receive Pell grant or Direct Subsidized  loan - revised cohort
+Statistics,18,81671,NRLIN45,1546,95,6.1448900388098318E-2,0,10,Did not receive Pell grant or Direct Subsidized loan - exclusions
+Statistics,19,81676,NRLIN50,1546,33931,21.947606727037517,0,647,Did not receive Pell grant or Direct Subsidized  loan - adjusted cohort
+Statistics,20,81681,NRLIN11,1546,22858,14.785252263906857,0,399,Did not receive Pell grant or Direct Subsidized  loan -  total number completed an award within 150% of normal time to completion
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

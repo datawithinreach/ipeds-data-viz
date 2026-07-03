@@ -1,0 +1,43 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /articles/{articleId} {
+      // Anyone can read approved articles
+      allow read: if resource.data.status == 'approved';
+      // Authors can read their own articles at any status
+      allow read: if request.auth != null
+                  && resource.data.authorUid == request.auth.uid;
+      // Admins can read any article
+      allow read: if request.auth != null
+                  && request.auth.token.admin == true;
+
+      // Authenticated users can create draft or pending articles
+      allow create: if request.auth != null
+                    && (request.resource.data.status == 'draft'
+                        || request.resource.data.status == 'pending')
+                    && request.resource.data.authorUid == request.auth.uid;
+
+      // Authors can edit their own articles only when status is 'draft' (or 'rejected', which they can flip back to draft and edit).
+      // The only allowed status transitions for authors are:
+      //   draft → draft (saving an edit)
+      //   draft → pending (submitting for review)
+      //   rejected → draft (re-opening for revisions)
+      allow update: if request.auth != null
+                    && resource.data.authorUid == request.auth.uid
+                    && (resource.data.status == 'draft' || resource.data.status == 'rejected')
+                    && (request.resource.data.status == 'draft'
+                        || request.resource.data.status == 'pending');
+
+      // Admins can update any field at any status
+      allow update: if request.auth != null
+                    && request.auth.token.admin == true;
+    }
+
+    match /users/{userId} {
+      allow read, write: if request.auth != null
+                         && request.auth.uid == userId;
+    }
+  }
+}

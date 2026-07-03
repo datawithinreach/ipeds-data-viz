@@ -1,0 +1,2056 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for enrollment in selected major fields of study, by race/ethnicity, gender, attendance status, and level of student: Fall 2022",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,,,,,,,,,,
+Introduction,3,Filename,EF2022CP,,,,,,,,
+Introduction,4,  Provisional release:,January 2024,,,,,,,,
+Introduction,5,Filename,EF2022CP_RV,,,,,,,,
+Introduction,6,  Final release:,December 2024,,,,,,,,
+Introduction,7,,
+Introduction,8,Overview,"This file contains the number of students enrolled in the fall, by race/ethnicity, gender, attendance (full- or part-time) status and level of student for selected major fields of study.  Major field of studies included are Education, Engineering, Biological Sciences/Life Sciences, Mathematics, Physical Sciences, Business Management and Administrative Services, Law, Dentistry, and Medicine. This data file contains enrollment data for 4-year institutions only.  Institutions with traditional academic year calendar systems (semester, quarter, trimester or  4-1-4) report their enrollment as of October 15 or the official fall reporting date of the institution. Institutions with calendar systems that differ by program or allow continuous enrollment report students that are enrolled at any time between August 1 and October 31. This file has multiple records per institution.  Records are uniquely defined by the variables IPEDS ID (UNITID), and the major field of study, attendance status and level of student (EFCIPLEV).   Each record will contain the total enrollment,  enrollment for men and women, and the total enrollment and enrollment for men and women for all nine race/ethnicity categories. 
+",,,,,,,,
+Introduction,9,Note:,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.  ",,,,,,,,
+Introduction,10,Contents of spreadsheet,,,,,,,,,
+Introduction,11,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,12,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,13,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.(Provisional release),,,,,,,,
+Introduction,14,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Provisional release)",,,,,,,,
+Introduction,15,FrequenciesRV,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.(Final/revised release),,,,,,,,
+Introduction,16,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Final/revised release)",,,,,,,,
+Introduction,17,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,24544,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,21126,EFCIPLEV,N,3,Disc,,Major field of study
+varlist,3,21994,CIPCODE,A,7,Disc,,CIP Code for major field of study
+varlist,4,21995,LINE,N,2,Disc,,Level of student (original line number on survey form)
+varlist,5,21996,SECTION,N,1,Disc,,Attendance status of student
+varlist,6,21997,LSTUDY,N,1,Disc,,Level of student
+varlist,7,21246,EFTOTLT,N,6,Cont,XEFTOTLT,Grand total
+varlist,8,21201,EFTOTLM,N,6,Cont,XEFTOTLM,Total men
+varlist,9,21206,EFTOTLW,N,6,Cont,XEFTOTLW,Total women
+varlist,10,24504,EFAIANT,N,6,Cont,XEFAIANT,American Indian or Alaska Native total
+varlist,11,24506,EFAIANM,N,6,Cont,XEFAIANM,American Indian or Alaska Native men
+varlist,12,24508,EFAIANW,N,6,Cont,XEFAIANW,American Indian or Alaska Native women
+varlist,13,24510,EFASIAT,N,6,Cont,XEFASIAT,Asian total
+varlist,14,24512,EFASIAM,N,6,Cont,XEFASIAM,Asian men
+varlist,15,24514,EFASIAW,N,6,Cont,XEFASIAW,Asian women
+varlist,16,24516,EFBKAAT,N,6,Cont,XEFBKAAT,Black or African American total
+varlist,17,24518,EFBKAAM,N,6,Cont,XEFBKAAM,Black or African American men
+varlist,18,24520,EFBKAAW,N,6,Cont,XEFBKAAW,Black or African American women
+varlist,19,24522,EFHISPT,N,6,Cont,XEFHISPT,Hispanic total
+varlist,20,24524,EFHISPM,N,6,Cont,XEFHISPM,Hispanic men
+varlist,21,24526,EFHISPW,N,6,Cont,XEFHISPW,Hispanic women
+varlist,22,24528,EFNHPIT,N,6,Cont,XEFNHPIT,Native Hawaiian or Other Pacific Islander total
+varlist,23,24530,EFNHPIM,N,6,Cont,XEFNHPIM,Native Hawaiian or Other Pacific Islander men
+varlist,24,24532,EFNHPIW,N,6,Cont,XEFNHPIW,Native Hawaiian or Other Pacific Islander women
+varlist,25,24534,EFWHITT,N,6,Cont,XEFWHITT,White total
+varlist,26,24536,EFWHITM,N,6,Cont,XEFWHITM,White men
+varlist,27,24538,EFWHITW,N,6,Cont,XEFWHITW,White women
+varlist,28,24540,EF2MORT,N,6,Cont,XEF2MORT,Two or more races total
+varlist,29,24542,EF2MORM,N,6,Cont,XEF2MORM,Two or more races men
+varlist,30,24544,EF2MORW,N,6,Cont,XEF2MORW,Two or more races women
+varlist,31,21241,EFUNKNT,N,6,Cont,XEFUNKNT,Race/ethnicity unknown total
+varlist,32,21191,EFUNKNM,N,6,Cont,XEFUNKNM,Race/ethnicity unknown men
+varlist,33,21196,EFUNKNW,N,6,Cont,XEFUNKNW,Race/ethnicity unknown women
+varlist,34,21211,EFNRALT,N,6,Cont,XEFNRALT,U.S. Nonresident total
+varlist,35,21131,EFNRALM,N,6,Cont,XEFNRALM,U.S. Nonresident men
+varlist,36,21136,EFNRALW,N,6,Cont,XEFNRALW,U.S. Nonresident women
+Description,0,varnumber,varname,longDescription
+Description,1,24544,UNITID,Unique identification number of the institution
+Description,2,21126,EFCIPLEV,"Fall enrollment by race/ethnicity - Major field of study
+Identifies enrollment byr major field of study for the selected programs/fields..
+Note: these are the only fields of study required from 4-year institutions for the Office for Civil Rights. 
+ 13.0000 Education 
+ 14.0000 Engineering 
+ 22.0101 Law (LL.B., J.D.) 
+ 26.0000 Biological Sciences/Life Sciences 
+ 27.0000 Mathematics 
+ 40.0000 Physical Sciences 
+ 51.0401 Dentistry (D.D.S., D.M.D.) 
+ 51.1201 Medicine (M.D.) 
+ 52.0000 Business Management & Admin. Services 
+ Classification of instructional program (CIP code) 
+Related glossary links
+CIP CODE -  A six-digit code in the form xx.xxxx that identifies instructional program 
+specialties within educational institutions."
+Description,3,21994,CIPCODE,CIP Code for major field of study
+Description,4,21995,LINE,Level of student (original line number on survey form)
+Description,5,21996,SECTION,Attendance status of student - Defines full and part-time status of student
+Description,6,21997,LSTUDY,Level of student
+Description,7,21246,EFTOTLT,"Grand total men and women enrolled for credit during the fall.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award.
+NOTE: Enrollment reported is of the institution's official fall reporting date or October 15.
+Applicable to four-year institutions"
+Description,8,21201,EFTOTLM,"Grand total men enrolled for credit during the fall.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award.
+NOTE: Enrollment reported is of the institution's official fall reporting date or October 15.
+Applicable to four-year institutions"
+Description,9,21206,EFTOTLW,"Grand total women enrolled for credit durning the fall.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award.
+NOTE: Enrollment reported is of the institution's official fall reporting date or October 15.
+Applicable to four-year institutions"
+Description,10,24504,EFAIANT,"American Indian or Alaska Native men and women enrolled for credit during the fall.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,11,24506,EFAIANM,"American Indian or Alaska Native men enrolled for credit during the fall.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,12,24508,EFAIANW,"American Indian or Alaska Native women enrolled for credit during the fall.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,13,24510,EFASIAT,"Asian men and women enrolled for credit during the fall.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,14,24512,EFASIAM,"Asian men enrolled for credit during the fall.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,15,24514,EFASIAW,"Asian women enrolled for credit during the fall.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,16,24516,EFBKAAT,"Black or African American men and women enrolled for credit during the fall.
+
+Black or African American - A person having origins in any of the black racial groups of Africa.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,17,24518,EFBKAAM,"Black or African American men enrolled for credit during the fall.
+
+Black or African American - A person having origins in any of the black racial groups of Africa.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,18,24520,EFBKAAW,"Black or African American women enrolled for credit during the fall.
+
+Black or African American - A person having origins in any of the black racial groups of Africa.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,19,24522,EFHISPT,"Hispanic or Latino men and women enrolled for credit during the fall.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,20,24524,EFHISPM,"Hispanic or Latino men enrolled for credit during the fall.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,21,24526,EFHISPW,"Hispanic or Latino women enrolled for credit during the fall
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,22,24528,EFNHPIT,"Native Hawaiian or Other Pacific Islanders men and women enrolled for credit during the fall.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,23,24530,EFNHPIM,"Native Hawaiian or Other Pacific Islanders men enrolled for credit during the fall.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,24,24532,EFNHPIW,"Native Hawaiian or Other Pacific Islanders women enrolled for credit during the fall.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,25,24534,EFWHITT,"White men and women enrolled for credit during the fall.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,26,24536,EFWHITM,"White men enrolled for credit during the fall.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,27,24538,EFWHITW,"White women enrolled for credit during the fall.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,28,24540,EF2MORT,"Men and women of two or more races enrolled for credit during the fall.  
+
+Two or more races - Category used by institutions to report persons who selected more than one race.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,29,24542,EF2MORM,"Men of two or more races enrolled for credit during the fall.  
+
+Two or more races - Category used by institutions to report persons who selected more than one race.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,30,24544,EF2MORW,"Women of two or more races enrolled for credit during the 12-month period.  
+
+Two or more races - Category used by institutions to report persons who selected more than one race.
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award. 
+
+NOTE: Enrollment reported is of the institution^s official fall reporting date or October 15."
+Description,31,21241,EFUNKNT,"Race/ethnicity unknown men and women enrolled for credit during the fall.
+
+Race/ethnicity unknown - This category is used ONLY if the student did not select a racial/ethnic designation, AND the postsecondary institution finds it impossible to place the student in one of the aforementioned racial/ethnic categories during established enrollment procedures or in any post-enrollment identification or verification process.
+Applicable to four-year institutions
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award.
+NOTE: Enrollment reported is of the institution's official fall reporting date or October 15.
+Applicable to four-year institutions"
+Description,32,21191,EFUNKNM,"Race/ethnicity unknown men enrolled for credit during the fall.
+
+Race/ethnicity unknown - This category is used ONLY if the student did not select a racial/ethnic designation, AND the postsecondary institution finds it impossible to place the student in one of the aforementioned racial/ethnic categories during established enrollment procedures or in any post-enrollment identification or verification process.
+Applicable to four-year institutions
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award.
+NOTE: Enrollment reported is of the institution's official fall reporting date or October 15.
+Applicable to four-year institutions"
+Description,33,21196,EFUNKNW,"Race/ethnicity unknown women enrolled for credit during the fall.
+
+Race/ethnicity unknown - This category is used ONLY if the student did not select a racial/ethnic designation, AND the postsecondary institution finds it impossible to place the student in one of the aforementioned racial/ethnic categories during established enrollment procedures or in any post-enrollment identification or verification process.
+Applicable to four-year institutions
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award.
+NOTE: Enrollment reported is of the institution's official fall reporting date or October 15.
+Applicable to four-year institutions"
+Description,34,21211,EFNRALT,"U.S. Nonresident men and women enrolled for credit during the fall.
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.
+NOTE - U.S. Nonresidents are included here, rather than in any of the five racial/ethnic categories described below. Resident and other eligible (for financial aid purposes) non-citizens who are not citizens or nationals of the United States and who have been admitted as legal immigrants for the purpose of obtaining permanent resident status (and who hold either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian) are to be reported in the appropriate racial/ethnic categories along with United States citizens.
+Applicable to four-year institutions
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award.
+NOTE: Enrollment reported is of the institution's official fall reporting date or October 15.
+Applicable to four-year institutions"
+Description,35,21131,EFNRALM,"Fall enrollment by race/ethnicity - Major field of study
+U.S. Nonresident men enrolled for credit
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.
+NOTE - U.S. Nonresidents are included here, rather than in any of the five racial/ethnic categories described below. Resident and other eligible (for financial aid purposes) non-citizens who are not citizens or nationals of the United States and who have been admitted as legal immigrants for the purpose of obtaining permanent resident status (and who hold either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian) are to be reported in the appropriate racial/ethnic categories along with United States citizens.
+Applicable to four-year institutions
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award.
+NOTE: Enrollment reported is of the institution's official fall reporting date or October 15.
+Applicable to four-year institutions"
+Description,36,21136,EFNRALW,"Fall enrollment by race/ethnicity - Major field of study
+U.S. Nonresident women enrolled for credit
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.
+NOTE - U.S. Nonresidents are included here, rather than in any of the five racial/ethnic categories described below. Resident and other eligible (for financial aid purposes) non-citizens who are not citizens or nationals of the United States and who have been admitted as legal immigrants for the purpose of obtaining permanent resident status (and who hold either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian) are to be reported in the appropriate racial/ethnic categories along with United States citizens.
+Applicable to four-year institutions
+
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award.
+NOTE: Enrollment reported is of the institution's official fall reporting date or October 15.
+Applicable to four-year institutions"
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,21126,EFCIPLEV,101,"13.0000-Education, All students total",1700,1.02
+Frequencies,2,21126,EFCIPLEV,102,"13.0000-Education, Undergraduate total",1533,0.92
+Frequencies,3,21126,EFCIPLEV,103,"13.0000-Education, Undergraduate, Degree/certificate-seeking total",1528,0.92
+Frequencies,4,21126,EFCIPLEV,104,"13.0000-Education, Undergraduate, Degree/certificate-seeking, First-time",1326,0.8
+Frequencies,5,21126,EFCIPLEV,105,"13.0000-Education, Undergraduate, Other degree/certificate-seeking, Total",1526,0.92
+Frequencies,6,21126,EFCIPLEV,119,"13.0000-Education, Undergraduate, Other degree/certificate-seeking, Transfer-ins",1307,0.79
+Frequencies,7,21126,EFCIPLEV,120,"13.0000-Education, Undergraduate, Other degree/certificate-seeking, Continuing",1522,0.92
+Frequencies,8,21126,EFCIPLEV,111,"13.0000-Education, Undergraduate, Non-degree/certificate-seeking",277,0.17
+Frequencies,9,21126,EFCIPLEV,112,"13.0000-Education, Graduate",1229,0.74
+Frequencies,10,21126,EFCIPLEV,121,"13.0000-Education, Full-time students total",1669,1.01
+Frequencies,11,21126,EFCIPLEV,122,"13.0000-Education, Full-time students, Undergraduate total",1511,0.91
+Frequencies,12,21126,EFCIPLEV,123,"13.0000-Education, Full-time students, Undergraduate, Degree/certificate-seeking total",1509,0.91
+Frequencies,13,21126,EFCIPLEV,124,"13.0000-Education, Full-time students, Undergraduate, Degree/certificate-seeking, First-time",1300,0.78
+Frequencies,14,21126,EFCIPLEV,125,"13.0000-Education, Full-time students, Undergraduate, Other degree/certificate-seeking, Total",1505,0.91
+Frequencies,15,21126,EFCIPLEV,139,"13.0000-Education, Full-time students, Undergraduate, Other degree/certificate-seeking, Transfer-ins",1262,0.76
+Frequencies,16,21126,EFCIPLEV,140,"13.0000-Education, Full-time students, Undergraduate, Other degree/certificate-seeking, Continuing",1500,0.9
+Frequencies,17,21126,EFCIPLEV,131,"13.0000-Education, Full-time students, Undergraduate, Non-degree/certificate-seeking",160,0.1
+Frequencies,18,21126,EFCIPLEV,132,"13.0000-Education, Full-time students, Graduate",1146,0.69
+Frequencies,19,21126,EFCIPLEV,141,"13.0000-Education, Part-time students total",1548,0.93
+Frequencies,20,21126,EFCIPLEV,142,"13.0000-Education, Part-time students, Undergraduate total",1297,0.78
+Frequencies,21,21126,EFCIPLEV,143,"13.0000-Education, Part-time students, Undergraduate, Degree/certificate-seeking total",1279,0.77
+Frequencies,22,21126,EFCIPLEV,144,"13.0000-Education, Part-time students, Undergraduate, Degree/certificate-seeking, First-time",535,0.32
+Frequencies,23,21126,EFCIPLEV,145,"13.0000-Education, Part-time students, Undergraduate, Other degree/certificate-seeking, Total",1273,0.77
+Frequencies,24,21126,EFCIPLEV,159,"13.0000-Education, Part-time students, Undergraduate, Other degree/certificate-seeking, Transfer-ins",784,0.47
+Frequencies,25,21126,EFCIPLEV,160,"13.0000-Education, Part-time students, Undergraduate, Other degree/certificate-seeking, Continuing",1252,0.75
+Frequencies,26,21126,EFCIPLEV,151,"13.0000-Education, Part-time students, Undergraduate, Non-degree/certificate-seeking",222,0.13
+Frequencies,27,21126,EFCIPLEV,152,"13.0000-Education, Part-time students, Graduate",1173,0.71
+Frequencies,28,21126,EFCIPLEV,201,"14.0000-Engineering, All students total",871,0.52
+Frequencies,29,21126,EFCIPLEV,202,"14.0000-Engineering, Undergraduate total",843,0.51
+Frequencies,30,21126,EFCIPLEV,203,"14.0000-Engineering, Undergraduate, Degree/certificate-seeking total",842,0.51
+Frequencies,31,21126,EFCIPLEV,204,"14.0000-Engineering, Undergraduate, Degree/certificate-seeking, First-time",756,0.46
+Frequencies,32,21126,EFCIPLEV,205,"14.0000-Engineering, Undergraduate, Other degree/certificate-seeking, Total",839,0.51
+Frequencies,33,21126,EFCIPLEV,219,"14.0000-Engineering, Undergraduate, Other degree/certificate-seeking, Transfer-ins",699,0.42
+Frequencies,34,21126,EFCIPLEV,220,"14.0000-Engineering, Undergraduate, Other degree/certificate-seeking, Continuing",834,0.5
+Frequencies,35,21126,EFCIPLEV,211,"14.0000-Engineering, Undergraduate, Non-degree/certificate-seeking",120,7.0000000000000007E-2
+Frequencies,36,21126,EFCIPLEV,212,"14.0000-Engineering, Graduate",377,0.23
+Frequencies,37,21126,EFCIPLEV,221,"14.0000-Engineering, Full-time students total",863,0.52
+Frequencies,38,21126,EFCIPLEV,222,"14.0000-Engineering, Full-time students, Undergraduate total",838,0.51
+Frequencies,39,21126,EFCIPLEV,223,"14.0000-Engineering, Full-time students, Undergraduate, Degree/certificate-seeking total",837,0.5
+Frequencies,40,21126,EFCIPLEV,224,"14.0000-Engineering, Full-time students, Undergraduate, Degree/certificate-seeking, First-time",747,0.45
+Frequencies,41,21126,EFCIPLEV,225,"14.0000-Engineering, Full-time students, Undergraduate, Other degree/certificate-seeking, Total",834,0.5
+Frequencies,42,21126,EFCIPLEV,239,"14.0000-Engineering, Full-time students, Undergraduate, Other degree/certificate-seeking, Transfer-i",686,0.41
+Frequencies,43,21126,EFCIPLEV,240,"14.0000-Engineering, Full-time students, Undergraduate, Other degree/certificate-seeking, Continuing",827,0.5
+Frequencies,44,21126,EFCIPLEV,231,"14.0000-Engineering, Full-time students, Undergraduate, Non-degree/certificate-seeking",88,0.05
+Frequencies,45,21126,EFCIPLEV,232,"14.0000-Engineering, Full-time students, Graduate",366,0.22
+Frequencies,46,21126,EFCIPLEV,241,"14.0000-Engineering, Part-time students total",717,0.43
+Frequencies,47,21126,EFCIPLEV,242,"14.0000-Engineering, Part-time students, Undergraduate total",677,0.41
+Frequencies,48,21126,EFCIPLEV,243,"14.0000-Engineering, Part-time students, Undergraduate, Degree/certificate-seeking total",671,0.4
+Frequencies,49,21126,EFCIPLEV,244,"14.0000-Engineering, Part-time students, Undergraduate, Degree/certificate-seeking, First-time",354,0.21
+Frequencies,50,21126,EFCIPLEV,245,"14.0000-Engineering, Part-time students, Undergraduate, Other degree/certificate-seeking, Total",664,0.4
+Frequencies,51,21126,EFCIPLEV,259,"14.0000-Engineering, Part-time students, Undergraduate, Other degree/certificate-seeking, Transfer-i",380,0.23
+Frequencies,52,21126,EFCIPLEV,260,"14.0000-Engineering, Part-time students, Undergraduate, Other degree/certificate-seeking, Continuing",654,0.39
+Frequencies,53,21126,EFCIPLEV,251,"14.0000-Engineering, Part-time students, Undergraduate, Non-degree/certificate-seeking",82,0.05
+Frequencies,54,21126,EFCIPLEV,252,"14.0000-Engineering, Part-time students, Graduate",363,0.22
+Frequencies,55,21126,EFCIPLEV,301,"26.0000-Biological Sciences/Life Sciences, All students total",1568,0.95
+Frequencies,56,21126,EFCIPLEV,302,"26.0000-Biological Sciences/Life Sciences, Undergraduate total",1501,0.9
+Frequencies,57,21126,EFCIPLEV,303,"26.0000-Biological Sciences/Life Sciences, Undergraduate, Degree/certificate-seeking total",1501,0.9
+Frequencies,58,21126,EFCIPLEV,304,"26.0000-Biological Sciences/Life Sciences, Undergraduate, Degree/certificate-seeking, First-time",1289,0.78
+Frequencies,59,21126,EFCIPLEV,305,"26.0000-Biological Sciences/Life Sciences, Undergraduate, Other degree/certificate-seeking, Total",1500,0.9
+Frequencies,60,21126,EFCIPLEV,319,"26.0000-Biological Sciences/Life Sciences, Undergraduate, Other degree/certificate-seeking, Transfer",1289,0.78
+Frequencies,61,21126,EFCIPLEV,320,"26.0000-Biological Sciences/Life Sciences, Undergraduate, Other degree/certificate-seeking, Continui",1497,0.9
+Frequencies,62,21126,EFCIPLEV,311,"26.0000-Biological Sciences/Life Sciences, Undergraduate, Non-degree/certificate-seeking",153,0.09
+Frequencies,63,21126,EFCIPLEV,312,"26.0000-Biological Sciences/Life Sciences, Graduate",602,0.36
+Frequencies,64,21126,EFCIPLEV,321,"26.0000-Biological Sciences/Life Sciences, Full-time students total",1559,0.94
+Frequencies,65,21126,EFCIPLEV,322,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate total",1492,0.9
+Frequencies,66,21126,EFCIPLEV,323,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate, Degree/certificate-see",1492,0.9
+Frequencies,67,21126,EFCIPLEV,324,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate, Degree/certificate-see",1284,0.77
+Frequencies,68,21126,EFCIPLEV,325,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate, Other degree/certifica",1491,0.9
+Frequencies,69,21126,EFCIPLEV,339,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate, Other degree/certifica",1275,0.77
+Frequencies,70,21126,EFCIPLEV,340,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate, Other degree/certifica",1488,0.9
+Frequencies,71,21126,EFCIPLEV,331,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate, Non-degree/certificate",94,0.06
+Frequencies,72,21126,EFCIPLEV,332,"26.0000-Biological Sciences/Life Sciences, Full-time students, Graduate",578,0.35
+Frequencies,73,21126,EFCIPLEV,341,"26.0000-Biological Sciences/Life Sciences, Part-time students total",1310,0.79
+Frequencies,74,21126,EFCIPLEV,342,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate total",1244,0.75
+Frequencies,75,21126,EFCIPLEV,343,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate, Degree/certificate-see",1240,0.75
+Frequencies,76,21126,EFCIPLEV,344,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate, Degree/certificate-see",524,0.32
+Frequencies,77,21126,EFCIPLEV,345,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate, Other degree/certifica",1228,0.74
+Frequencies,78,21126,EFCIPLEV,359,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate, Other degree/certifica",623,0.38
+Frequencies,79,21126,EFCIPLEV,360,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate, Other degree/certifica",1217,0.73
+Frequencies,80,21126,EFCIPLEV,351,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate, Non-degree/certificate",116,7.0000000000000007E-2
+Frequencies,81,21126,EFCIPLEV,352,"26.0000-Biological Sciences/Life Sciences, Part-time students, Graduate",544,0.33
+Frequencies,82,21126,EFCIPLEV,401,"27.0000-Mathematics, All students total",1308,0.79
+Frequencies,83,21126,EFCIPLEV,402,"27.0000-Mathematics, Undergraduate total",1300,0.78
+Frequencies,84,21126,EFCIPLEV,403,"27.0000-Mathematics, Undergraduate, Degree/certificate-seeking total",1296,0.78
+Frequencies,85,21126,EFCIPLEV,404,"27.0000-Mathematics, Undergraduate, Degree/certificate-seeking, First-time",978,0.59
+Frequencies,86,21126,EFCIPLEV,405,"27.0000-Mathematics, Undergraduate, Other degree/certificate-seeking, Total",1290,0.78
+Frequencies,87,21126,EFCIPLEV,419,"27.0000-Mathematics, Undergraduate, Other degree/certificate-seeking, Transfer-ins",700,0.42
+Frequencies,88,21126,EFCIPLEV,420,"27.0000-Mathematics, Undergraduate, Other degree/certificate-seeking, Continuing",1283,0.77
+Frequencies,89,21126,EFCIPLEV,411,"27.0000-Mathematics, Undergraduate, Non-degree/certificate-seeking",76,0.05
+Frequencies,90,21126,EFCIPLEV,412,"27.0000-Mathematics, Graduate",402,0.24
+Frequencies,91,21126,EFCIPLEV,421,"27.0000-Mathematics, Full-time students total",1300,0.78
+Frequencies,92,21126,EFCIPLEV,422,"27.0000-Mathematics, Full-time students, Undergraduate total",1291,0.78
+Frequencies,93,21126,EFCIPLEV,423,"27.0000-Mathematics, Full-time students, Undergraduate, Degree/certificate-seeking total",1290,0.78
+Frequencies,94,21126,EFCIPLEV,424,"27.0000-Mathematics, Full-time students, Undergraduate, Degree/certificate-seeking, First-time",971,0.59
+Frequencies,95,21126,EFCIPLEV,425,"27.0000-Mathematics, Full-time students, Undergraduate, Other degree/certificate-seeking, Total",1280,0.77
+Frequencies,96,21126,EFCIPLEV,439,"27.0000-Mathematics, Full-time students, Undergraduate, Other degree/certificate-seeking, Transfer-i",668,0.4
+Frequencies,97,21126,EFCIPLEV,440,"27.0000-Mathematics, Full-time students, Undergraduate, Other degree/certificate-seeking, Continuing",1272,0.77
+Frequencies,98,21126,EFCIPLEV,431,"27.0000-Mathematics, Full-time students, Undergraduate, Non-degree/certificate-seeking",33,0.02
+Frequencies,99,21126,EFCIPLEV,432,"27.0000-Mathematics, Full-time students, Graduate",372,0.22
+Frequencies,100,21126,EFCIPLEV,441,"27.0000-Mathematics, Part-time students total",832,0.5
+Frequencies,101,21126,EFCIPLEV,442,"27.0000-Mathematics, Part-time students, Undergraduate total",789,0.48
+Frequencies,102,21126,EFCIPLEV,443,"27.0000-Mathematics, Part-time students, Undergraduate, Degree/certificate-seeking total",780,0.47
+Frequencies,103,21126,EFCIPLEV,444,"27.0000-Mathematics, Part-time students, Undergraduate, Degree/certificate-seeking, First-time",139,0.08
+Frequencies,104,21126,EFCIPLEV,445,"27.0000-Mathematics, Part-time students, Undergraduate, Other degree/certificate-seeking, Total",768,0.46
+Frequencies,105,21126,EFCIPLEV,459,"27.0000-Mathematics, Part-time students, Undergraduate, Other degree/certificate-seeking, Transfer-i",245,0.15
+Frequencies,106,21126,EFCIPLEV,460,"27.0000-Mathematics, Part-time students, Undergraduate, Other degree/certificate-seeking, Continuing",759,0.46
+Frequencies,107,21126,EFCIPLEV,451,"27.0000-Mathematics, Part-time students, Undergraduate, Non-degree/certificate-seeking",60,0.04
+Frequencies,108,21126,EFCIPLEV,452,"27.0000-Mathematics, Part-time students, Graduate",367,0.22
+Frequencies,109,21126,EFCIPLEV,501,"40.0000-Physical Sciences, All students total",1266,0.76
+Frequencies,110,21126,EFCIPLEV,502,"40.0000-Physical Sciences, Undergraduate total",1259,0.76
+Frequencies,111,21126,EFCIPLEV,503,"40.0000-Physical Sciences, Undergraduate, Degree/certificate-seeking total",1259,0.76
+Frequencies,112,21126,EFCIPLEV,504,"40.0000-Physical Sciences, Undergraduate, Degree/certificate-seeking, First-time",1014,0.61
+Frequencies,113,21126,EFCIPLEV,505,"40.0000-Physical Sciences, Undergraduate, Other degree/certificate-seeking, Total",1252,0.75
+Frequencies,114,21126,EFCIPLEV,519,"40.0000-Physical Sciences, Undergraduate, Other degree/certificate-seeking, Transfer-ins",777,0.47
+Frequencies,115,21126,EFCIPLEV,520,"40.0000-Physical Sciences, Undergraduate, Other degree/certificate-seeking, Continuing",1251,0.75
+Frequencies,116,21126,EFCIPLEV,511,"40.0000-Physical Sciences, Undergraduate, Non-degree/certificate-seeking",82,0.05
+Frequencies,117,21126,EFCIPLEV,512,"40.0000-Physical Sciences, Graduate",365,0.22
+Frequencies,118,21126,EFCIPLEV,521,"40.0000-Physical Sciences, Full-time students total",1258,0.76
+Frequencies,119,21126,EFCIPLEV,522,"40.0000-Physical Sciences, Full-time students, Undergraduate total",1253,0.76
+Frequencies,120,21126,EFCIPLEV,523,"40.0000-Physical Sciences, Full-time students, Undergraduate, Degree/certificate-seeking total",1253,0.76
+Frequencies,121,21126,EFCIPLEV,524,"40.0000-Physical Sciences, Full-time students, Undergraduate, Degree/certificate-seeking, First-time",1011,0.61
+Frequencies,122,21126,EFCIPLEV,525,"40.0000-Physical Sciences, Full-time students, Undergraduate, Other degree/certificate-seeking, Tota",1243,0.75
+Frequencies,123,21126,EFCIPLEV,539,"40.0000-Physical Sciences, Full-time students, Undergraduate, Other degree/certificate-seeking, Tran",742,0.45
+Frequencies,124,21126,EFCIPLEV,540,"40.0000-Physical Sciences, Full-time students, Undergraduate, Other degree/certificate-seeking, Cont",1241,0.75
+Frequencies,125,21126,EFCIPLEV,531,"40.0000-Physical Sciences, Full-time students, Undergraduate, Non-degree/certificate-seeking",50,0.03
+Frequencies,126,21126,EFCIPLEV,532,"40.0000-Physical Sciences, Full-time students, Graduate",348,0.21
+Frequencies,127,21126,EFCIPLEV,541,"40.0000-Physical Sciences, Part-time students total",873,0.53
+Frequencies,128,21126,EFCIPLEV,542,"40.0000-Physical Sciences, Part-time students, Undergraduate total",842,0.51
+Frequencies,129,21126,EFCIPLEV,543,"40.0000-Physical Sciences, Part-time students, Undergraduate, Degree/certificate-seeking total",838,0.51
+Frequencies,130,21126,EFCIPLEV,544,"40.0000-Physical Sciences, Part-time students, Undergraduate, Degree/certificate-seeking, First-time",237,0.14000000000000001
+Frequencies,131,21126,EFCIPLEV,545,"40.0000-Physical Sciences, Part-time students, Undergraduate, Other degree/certificate-seeking, Tota",829,0.5
+Frequencies,132,21126,EFCIPLEV,559,"40.0000-Physical Sciences, Part-time students, Undergraduate, Other degree/certificate-seeking, Tran",364,0.22
+Frequencies,133,21126,EFCIPLEV,560,"40.0000-Physical Sciences, Part-time students, Undergraduate, Other degree/certificate-seeking, Cont",815,0.49
+Frequencies,134,21126,EFCIPLEV,551,"40.0000-Physical Sciences, Part-time students, Undergraduate, Non-degree/certificate-seeking",58,0.03
+Frequencies,135,21126,EFCIPLEV,552,"40.0000-Physical Sciences, Part-time students, Graduate",332,0.2
+Frequencies,136,21126,EFCIPLEV,601,"52.0000-Business Management and Administrative Services, All students total",1953,1.18
+Frequencies,137,21126,EFCIPLEV,602,"52.0000-Business Management and Administrative Services, Undergraduate total",1904,1.1499999999999999
+Frequencies,138,21126,EFCIPLEV,603,"52.0000-Business Management and Administrative Services, Undergraduate, Degree/certificate-seeking t",1904,1.1499999999999999
+Frequencies,139,21126,EFCIPLEV,604,"52.0000-Business Management and Administrative Services, Undergraduate, Degree/certificate-seeking,",1703,1.03
+Frequencies,140,21126,EFCIPLEV,605,"52.0000-Business Management and Administrative Services, Undergraduate, Other degree/certificate-see",1903,1.1499999999999999
+Frequencies,141,21126,EFCIPLEV,619,"52.0000-Business Management and Administrative Services, Undergraduate, Other degree/certificate-see",1754,1.06
+Frequencies,142,21126,EFCIPLEV,620,"52.0000-Business Management and Administrative Services, Undergraduate, Other degree/certificate-see",1899,1.1399999999999999
+Frequencies,143,21126,EFCIPLEV,611,"52.0000-Business Management and Administrative Services, Undergraduate, Non-degree/certificate-seeki",298,0.18
+Frequencies,144,21126,EFCIPLEV,612,"52.0000-Business Management and Administrative Services, Graduate",1309,0.79
+Frequencies,145,21126,EFCIPLEV,621,"52.0000-Business Management and Administrative Services, Full-time students total",1935,1.17
+Frequencies,146,21126,EFCIPLEV,622,"52.0000-Business Management and Administrative Services, Full-time undergraduate total",1894,1.1399999999999999
+Frequencies,147,21126,EFCIPLEV,623,"52.0000-Business Management and Administrative Services, Full-time undergraduate, Degree/certificate",1894,1.1399999999999999
+Frequencies,148,21126,EFCIPLEV,624,"52.0000-Business Management and Administrative Services, Full-time undergraduate, Degree/certificate",1674,1.01
+Frequencies,149,21126,EFCIPLEV,625,"52.0000-Business Management and Administrative Services, Full-time undergraduate, Other degree/certi",1890,1.1399999999999999
+Frequencies,150,21126,EFCIPLEV,639,"52.0000-Business Management and Administrative Services, Full-time undergraduate, Other degree/certi",1724,1.04
+Frequencies,151,21126,EFCIPLEV,640,"52.0000-Business Management and Administrative Services, Full-time undergraduate, Other degree/certi",1884,1.1399999999999999
+Frequencies,152,21126,EFCIPLEV,631,"52.0000-Business Management and Administrative Services, Full-time undergraduate, Non-degree/certifi",196,0.12
+Frequencies,153,21126,EFCIPLEV,632,"52.0000-Business Management and Administrative Services, Full-time students, Graduate",1253,0.76
+Frequencies,154,21126,EFCIPLEV,641,"52.0000-Business Management and Administrative Services, Part-time students total",1817,1.1000000000000001
+Frequencies,155,21126,EFCIPLEV,642,"52.0000-Business Management and Administrative Services, Part-time, undergraduate total",1750,1.05
+Frequencies,156,21126,EFCIPLEV,643,"52.0000-Business Management and Administrative Services, Part-time undergraduate, Degree/certificate",1748,1.05
+Frequencies,157,21126,EFCIPLEV,644,"52.0000-Business Management and Administrative Services, Part-time undergraduate, Degree/certificate",992,0.6
+Frequencies,158,21126,EFCIPLEV,645,"52.0000-Business Management and Administrative Services, Part-time undergraduate, Other degree/certi",1747,1.05
+Frequencies,159,21126,EFCIPLEV,659,"52.0000-Business Management and Administrative Services, Part-time undergraduate, Other degree/certi",1221,0.74
+Frequencies,160,21126,EFCIPLEV,660,"52.0000-Business Management and Administrative Services, Part-time undergraduate, Other degree/certi",1738,1.05
+Frequencies,161,21126,EFCIPLEV,651,"52.0000-Business Management and Administrative Services, Part-time undergraduate, Non-degree/certifi",217,0.13
+Frequencies,162,21126,EFCIPLEV,652,"52.0000-Business Management and Administrative Services, Part-time students, Graduate",1233,0.74
+Frequencies,163,21126,EFCIPLEV,716,"22.0101-Law (first professional), All students",212,0.13
+Frequencies,164,21126,EFCIPLEV,736,"22.0101-Law (first professional), Full time",211,0.13
+Frequencies,165,21126,EFCIPLEV,756,"22.0101-Law (first professional), Part time",180,0.11
+Frequencies,166,21126,EFCIPLEV,816,"51.0401-Dentistry (first professional), All students",68,0.04
+Frequencies,167,21126,EFCIPLEV,836,"51.0401-Dentistry (first professional), Full time",68,0.04
+Frequencies,168,21126,EFCIPLEV,856,"51.0401-Dentistry (first professional), Part time",17,0.01
+Frequencies,169,21126,EFCIPLEV,916,"51.1201-Medicine (first professional), All students",154,0.09
+Frequencies,170,21126,EFCIPLEV,936,"51.1201-Medicine (first professional), Full time",153,0.09
+Frequencies,171,21126,EFCIPLEV,956,"51.1201-Medicine (first professional), Part time",55,0.03
+Frequencies,172,21994,CIPCODE,13.0000,Education,32873,19.809999999999999
+Frequencies,173,21994,CIPCODE,14.0000,Engineering,16829,10.14
+Frequencies,174,21994,CIPCODE,26.0000,Biological Sciences/Life Sciences,29699,17.899999999999999
+Frequencies,175,21994,CIPCODE,27.0000,Mathematics,21849,13.17
+Frequencies,176,21994,CIPCODE,40.0000,Physical Sciences,22112,13.33
+Frequencies,177,21994,CIPCODE,51.0401,Dentistry,153,0.09
+Frequencies,178,21994,CIPCODE,51.1201,Medicine,362,0.22
+Frequencies,179,21994,CIPCODE,52.0000,Business Management and Administrative Services,41434,24.97
+Frequencies,180,21994,CIPCODE,22.0101,Law,603,0.36
+Frequencies,181,21995,LINE,1,"Full-time, first-time, first-year, degree-seeking undergraduates",6987,4.21
+Frequencies,182,21995,LINE,2,"Full-time degree-seeking undergraduates, transfer-ins",6357,3.83
+Frequencies,183,21995,LINE,3,"Full-time degree-seeking undergraduates, continuing",8212,4.95
+Frequencies,184,21995,LINE,6,Total full-time degree-seeking undergraduates,8275,4.99
+Frequencies,185,21995,LINE,7,Full-time nondegree-seeking undergraduates,621,0.37
+Frequencies,186,21995,LINE,8,Total  full-time undergraduates,8279,4.99
+Frequencies,187,21995,LINE,9,Full-time first-professional,432,0.26
+Frequencies,188,21995,LINE,11,Full-time graduates,4063,2.4500000000000002
+Frequencies,189,21995,LINE,14,Total full-time students,8584,5.17
+Frequencies,190,21995,LINE,15,"Part-time, first-time, first-year, degree-seeking undergraduates",2781,1.68
+Frequencies,191,21995,LINE,16,"Part-time degree-seeking undergraduates, transfer-ins",3617,2.1800000000000002
+Frequencies,192,21995,LINE,17,"Part-time degree-seeking undergraduates, continuing",6435,3.88
+Frequencies,193,21995,LINE,20,Total part-time degree-seeking undergraduates,6556,3.95
+Frequencies,194,21995,LINE,21,Part-time nondegree-seeking undergraduates,755,0.46
+Frequencies,195,21995,LINE,22,Total part-time undergraduates,6599,3.98
+Frequencies,196,21995,LINE,23,Part-time first-professional,252,0.15
+Frequencies,197,21995,LINE,25,Part-time graduates,4012,2.42
+Frequencies,198,21995,LINE,28,Total part-time,7097,4.28
+Frequencies,199,21995,LINE,29,Total enrollment,8666,5.22
+Frequencies,200,21995,LINE,99,Generated record origial line number not on survey form,67334,40.58
+Frequencies,201,21996,SECTION,1,Full-time,60053,36.200000000000003
+Frequencies,202,21996,SECTION,2,Part-time,44613,26.89
+Frequencies,203,21996,SECTION,3,All students,61248,36.92
+Frequencies,204,21997,LSTUDY,1,All students total,8666,5.22
+Frequencies,205,21997,LSTUDY,2,"All students, Undergraduate total",8340,5.03
+Frequencies,206,21997,LSTUDY,3,"All students, Undergraduate, Degree/certificate-seeking total",8330,5.0199999999999996
+Frequencies,207,21997,LSTUDY,4,"All students, Undergraduate, Degree/certificate-seeking, First-time",7066,4.26
+Frequencies,208,21997,LSTUDY,5,"All students, Undergraduate, Degree/certificate-seeking, Other degree/certificate-seeking",8310,5.01
+Frequencies,209,21997,LSTUDY,19,"All students, Undergraduate, Other degree/certificatee-seeking, Transfer-ins",6526,3.93
+Frequencies,210,21997,LSTUDY,20,"All students, Undergraduate, Other degree/certificatee-seeking, Continuing",8286,4.99
+Frequencies,211,21997,LSTUDY,11,"All students, Undergraduate, Non-degree/certificate-seeking",1006,0.61
+Frequencies,212,21997,LSTUDY,12,"All students, Graduate",4284,2.58
+Frequencies,213,21997,LSTUDY,16,"All students, First professional",434,0.26
+Frequencies,214,21997,LSTUDY,21,Full-time students total,8584,5.17
+Frequencies,215,21997,LSTUDY,22,"Full-time students, Undergraduate total",8279,4.99
+Frequencies,216,21997,LSTUDY,23,"Full-time students, Undergraduate, Degree/certificate-seeking total",8275,4.99
+Frequencies,217,21997,LSTUDY,24,"Full-time students, Undergraduate, Degree/certificate-seeking, First-time",6987,4.21
+Frequencies,218,21997,LSTUDY,25,"Full-time students, Undergraduate, Degree/certificate-seeking, Other degree/certificate-seeking",8243,4.97
+Frequencies,219,21997,LSTUDY,39,"Full-time students, Undergraduate, Other degree/certificatee-seeking, Transfer-ins",6357,3.83
+Frequencies,220,21997,LSTUDY,40,"Full-time students, Undergraduate, Other degree/certificatee-seeking, Continuing",8212,4.95
+Frequencies,221,21997,LSTUDY,31,"Full-time students, Undergraduate, Non-degree/certificate-seeking",621,0.37
+Frequencies,222,21997,LSTUDY,32,"Full-time students, Graduate",4063,2.4500000000000002
+Frequencies,223,21997,LSTUDY,36,"Full-time students, First professional",432,0.26
+Frequencies,224,21997,LSTUDY,41,Part-time students total,7097,4.28
+Frequencies,225,21997,LSTUDY,42,"Part-time students, Undergraduate total",6599,3.98
+Frequencies,226,21997,LSTUDY,43,"Part-time students, Undergraduate, Degree/certificate-seeking total",6556,3.95
+Frequencies,227,21997,LSTUDY,44,"Part-time students, Undergraduate, Degree/certificate-seeking, First-time",2781,1.68
+Frequencies,228,21997,LSTUDY,45,"Part-time students, Undergraduate, Degree/certificate-seeking, Other degree/certificate-seeking",6509,3.92
+Frequencies,229,21997,LSTUDY,59,"Part-time students, Undergraduate, Other degree/certificatee-seeking, Transfer-ins",3617,2.1800000000000002
+Frequencies,230,21997,LSTUDY,60,"Part-time students, Undergraduate, Other degree/certificatee-seeking, Continuing",6435,3.88
+Frequencies,231,21997,LSTUDY,51,"Part-time students, Undergraduate, Non-degree/certificate-seeking",755,0.46
+Frequencies,232,21997,LSTUDY,52,"Part-time students, Graduate",4012,2.42
+Frequencies,233,21997,LSTUDY,56,"Part-time students, First professional",252,0.15
+Frequencies,234,,,,,,
+Frequencies,235,,,,,,
+Frequencies,236,,,,,,
+Frequencies,237,,,,,,
+Frequencies,238,,,,,,
+Frequencies,239,,,,,,
+Frequencies,240,,,,,,
+Frequencies,241,,,,,,
+Frequencies,242,,,,,,
+Frequencies,243,,,,,,
+Frequencies,244,,,,,,
+Frequencies,245,,,,,,
+Frequencies,246,,,,,,
+Frequencies,247,,,,,,
+Frequencies,248,,,,,,
+Frequencies,249,,,,,,
+Frequencies,250,,,,,,
+Frequencies,251,,,,,,
+Frequencies,252,,,,,,
+Frequencies,253,,,,,,
+Frequencies,254,,,,,,
+Frequencies,255,,,,,,
+Frequencies,256,,,,,,
+Frequencies,257,,,,,,
+Frequencies,258,,,,,,
+Frequencies,259,,,,,,
+Frequencies,260,,,,,,
+Frequencies,261,,,,,,
+Frequencies,262,,,,,,
+Frequencies,263,,,,,,
+Frequencies,264,,,,,,
+Frequencies,265,,,,,,
+Frequencies,266,,,,,,
+Frequencies,267,,,,,,
+Frequencies,268,,,,,,
+Frequencies,269,,,,,,
+Frequencies,270,,,,,,
+Frequencies,271,,,,,,
+Frequencies,272,,,,,,
+Frequencies,273,,,,,,
+Frequencies,274,,,,,,
+Frequencies,275,,,,,,
+Frequencies,276,,,,,,
+Frequencies,277,,,,,,
+Frequencies,278,,,,,,
+Frequencies,279,,,,,,
+Frequencies,280,,,,,,
+Frequencies,281,,,,,,
+Frequencies,282,,,,,,
+Frequencies,283,,,,,,
+Frequencies,284,,,,,,
+Frequencies,285,,,,,,
+Frequencies,286,,,,,,
+Frequencies,287,,,,,,
+Frequencies,288,,,,,,
+Frequencies,289,,,,,,
+Frequencies,290,,,,,,
+Frequencies,291,,,,,,
+Frequencies,292,,,,,,
+Frequencies,293,,,,,,
+Frequencies,294,,,,,,
+Frequencies,295,,,,,,
+Frequencies,296,,,,,,
+Frequencies,297,,,,,,
+Frequencies,298,,,,,,
+Frequencies,299,,,,,,
+Frequencies,300,,,,,,
+Frequencies,301,,,,,,
+Frequencies,302,,,,,,
+Frequencies,303,,,,,,
+Frequencies,304,,,,,,
+Frequencies,305,,,,,,
+Frequencies,306,,,,,,
+Frequencies,307,,,,,,
+Frequencies,308,,,,,,
+Frequencies,309,,,,,,
+Frequencies,310,,,,,,
+Frequencies,311,,,,,,
+Frequencies,312,,,,,,
+Frequencies,313,,,,,,
+Frequencies,314,,,,,,
+Frequencies,315,,,,,,
+Frequencies,316,,,,,,
+Frequencies,317,,,,,,
+Frequencies,318,,,,,,
+Frequencies,319,,,,,,
+Frequencies,320,,,,,,
+Frequencies,321,,,,,,
+Frequencies,322,,,,,,
+Frequencies,323,,,,,,
+Frequencies,324,,,,,,
+Frequencies,325,,,,,,
+Frequencies,326,,,,,,
+Frequencies,327,,,,,,
+Frequencies,328,,,,,,
+Frequencies,329,,,,,,
+Frequencies,330,,,,,,
+Frequencies,331,,,,,,
+Frequencies,332,,,,,,
+Frequencies,333,,,,,,
+Frequencies,334,,,,,,
+Frequencies,335,,,,,,
+Frequencies,336,,,,,,
+Frequencies,337,,,,,,
+Frequencies,338,,,,,,
+Frequencies,339,,,,,,
+Frequencies,340,,,,,,
+Frequencies,341,,,,,,
+Frequencies,342,,,,,,
+Frequencies,343,,,,,,
+Frequencies,344,,,,,,
+Frequencies,345,,,,,,
+Frequencies,346,,,,,,
+Frequencies,347,,,,,,
+Frequencies,348,,,,,,
+Frequencies,349,,,,,,
+Frequencies,350,,,,,,
+Frequencies,351,,,,,,
+Frequencies,352,,,,,,
+Frequencies,353,,,,,,
+Frequencies,354,,,,,,
+Frequencies,355,,,,,,
+Frequencies,356,,,,,,
+Frequencies,357,,,,,,
+Frequencies,358,,,,,,
+Frequencies,359,,,,,,
+Frequencies,360,,,,,,
+Frequencies,361,,,,,,
+Frequencies,362,,,,,,
+Frequencies,363,,,,,,
+Frequencies,364,,,,,,
+Frequencies,365,,,,,,
+Frequencies,366,,,,,,
+Frequencies,367,,,,,,
+Frequencies,368,,,,,,
+Frequencies,369,,,,,,
+Frequencies,370,,,,,,
+Frequencies,371,,,,,,
+Frequencies,372,,,,,,
+Frequencies,373,,,,,,
+Frequencies,374,,,,,,
+Frequencies,375,,,,,,
+Frequencies,376,,,,,,
+Frequencies,377,,,,,,
+Frequencies,378,,,,,,
+Frequencies,379,,,,,,
+Frequencies,380,,,,,,
+Frequencies,381,,,,,,
+Frequencies,382,,,,,,
+Frequencies,383,,,,,,
+Frequencies,384,,,,,,
+Frequencies,385,,,,,,
+Frequencies,386,,,,,,
+Frequencies,387,,,,,,
+Frequencies,388,,,,,,
+Frequencies,389,,,,,,
+Frequencies,390,,,,,,
+Frequencies,391,,,,,,
+Frequencies,392,,,,,,
+Frequencies,393,,,,,,
+Frequencies,394,,,,,,
+Frequencies,395,,,,,,
+Frequencies,396,,,,,,
+Frequencies,397,,,,,,
+Frequencies,398,,,,,,
+Frequencies,399,,,,,,
+Frequencies,400,,,,,,
+Frequencies,401,,,,,,
+Frequencies,402,,,,,,
+Frequencies,403,,,,,,
+Frequencies,404,,,,,,
+Frequencies,405,,,,,,
+Frequencies,406,,,,,,
+Frequencies,407,,,,,,
+Frequencies,408,,,,,,
+Frequencies,409,,,,,,
+Frequencies,410,,,,,,
+Frequencies,411,,,,,,
+Frequencies,412,,,,,,
+Frequencies,413,,,,,,
+Frequencies,414,,,,,,
+Frequencies,415,,,,,,
+Frequencies,416,,,,,,
+Frequencies,417,,,,,,
+Frequencies,418,,,,,,
+Frequencies,419,,,,,,
+Frequencies,420,,,,,,
+Frequencies,421,,,,,,
+Frequencies,422,,,,,,
+Frequencies,423,,,,,,
+Frequencies,424,,,,,,
+Frequencies,425,,,,,,
+Frequencies,426,,,,,,
+Frequencies,427,,,,,,
+Frequencies,428,,,,,,
+Frequencies,429,,,,,,
+Frequencies,430,,,,,,
+Frequencies,431,,,,,,
+Frequencies,432,,,,,,
+Frequencies,433,,,,,,
+Frequencies,434,,,,,,
+Frequencies,435,,,,,,
+Frequencies,436,,,,,,
+Frequencies,437,,,,,,
+Frequencies,438,,,,,,
+Frequencies,439,,,,,,
+Frequencies,440,,,,,,
+Frequencies,441,,,,,,
+Frequencies,442,,,,,,
+Frequencies,443,,,,,,
+Frequencies,444,,,,,,
+Frequencies,445,,,,,,
+Frequencies,446,,,,,,
+Frequencies,447,,,,,,
+Frequencies,448,,,,,,
+Frequencies,449,,,,,,
+Frequencies,450,,,,,,
+Frequencies,451,,,,,,
+Frequencies,452,,,,,,
+Frequencies,453,,,,,,
+Frequencies,454,,,,,,
+Frequencies,455,,,,,,
+Frequencies,456,,,,,,
+Frequencies,457,,,,,,
+Frequencies,458,,,,,,
+Frequencies,459,,,,,,
+Frequencies,460,,,,,,
+Frequencies,461,,,,,,
+Frequencies,462,,,,,,
+Frequencies,463,,,,,,
+Frequencies,464,,,,,,
+Frequencies,465,,,,,,
+Frequencies,466,,,,,,
+Frequencies,467,,,,,,
+Frequencies,468,,,,,,
+Frequencies,469,,,,,,
+Frequencies,470,,,,,,
+Frequencies,471,,,,,,
+Frequencies,472,,,,,,
+Frequencies,473,,,,,,
+Frequencies,474,,,,,,
+Frequencies,475,,,,,,
+Frequencies,476,,,,,,
+Frequencies,477,,,,,,
+Frequencies,478,,,,,,
+Frequencies,479,,,,,,
+Frequencies,480,,,,,,
+Frequencies,481,,,,,,
+Frequencies,482,,,,,,
+Frequencies,483,,,,,,
+Frequencies,484,,,,,,
+Frequencies,485,,,,,,
+Frequencies,486,,,,,,
+Frequencies,487,,,,,,
+Frequencies,488,,,,,,
+Frequencies,489,,,,,,
+Frequencies,490,,,,,,
+Frequencies,491,,,,,,
+Frequencies,492,,,,,,
+Frequencies,493,,,,,,
+Frequencies,494,,,,,,
+Frequencies,495,,,,,,
+Frequencies,496,,,,,,
+Frequencies,497,,,,,,
+Frequencies,498,,,,,,
+Frequencies,499,,,,,,
+Frequencies,500,,,,,,
+Frequencies,501,,,,,,
+Frequencies,502,,,,,,
+Frequencies,503,,,,,,
+Frequencies,504,,,,,,
+Frequencies,505,,,,,,
+Frequencies,506,,,,,,
+Frequencies,507,,,,,,
+Frequencies,508,,,,,,
+Frequencies,509,,,,,,
+Frequencies,510,,,,,,
+Frequencies,511,,,,,,
+Frequencies,512,,,,,,
+Frequencies,513,,,,,,
+Frequencies,514,,,,,,
+Frequencies,515,,,,,,
+Frequencies,516,,,,,,
+Frequencies,517,,,,,,
+Frequencies,518,,,,,,
+Frequencies,519,,,,,,
+Frequencies,520,,,,,,
+Frequencies,521,,,,,,
+Frequencies,522,,,,,,
+Frequencies,523,,,,,,
+Frequencies,524,,,,,,
+Frequencies,525,,,,,,
+Frequencies,526,,,,,,
+Frequencies,527,,,,,,
+Frequencies,528,,,,,,
+Frequencies,529,,,,,,
+Frequencies,530,,,,,,
+Frequencies,531,,,,,,
+Frequencies,532,,,,,,
+Frequencies,533,,,,,,
+Frequencies,534,,,,,,
+Frequencies,535,,,,,,
+Frequencies,536,,,,,,
+Frequencies,537,,,,,,
+Frequencies,538,,,,,,
+Frequencies,539,,,,,,
+Frequencies,540,,,,,,
+Frequencies,541,,,,,,
+Frequencies,542,,,,,,
+Frequencies,543,,,,,,
+Frequencies,544,,,,,,
+Frequencies,545,,,,,,
+Frequencies,546,,,,,,
+Frequencies,547,,,,,,
+Frequencies,548,,,,,,
+Frequencies,549,,,,,,
+Frequencies,550,,,,,,
+Frequencies,551,,,,,,
+Frequencies,552,,,,,,
+Frequencies,553,,,,,,
+Frequencies,554,,,,,,
+Frequencies,555,,,,,,
+Frequencies,556,,,,,,
+Frequencies,557,,,,,,
+Frequencies,558,,,,,,
+Frequencies,559,,,,,,
+Frequencies,560,,,,,,
+Frequencies,561,,,,,,
+Frequencies,562,,,,,,
+Frequencies,563,,,,,,
+Frequencies,564,,,,,,
+Frequencies,565,,,,,,
+Frequencies,566,,,,,,
+Frequencies,567,,,,,,
+Frequencies,568,,,,,,
+Frequencies,569,,,,,,
+Frequencies,570,,,,,,
+Frequencies,571,,,,,,
+Frequencies,572,,,,,,
+Frequencies,573,,,,,,
+Frequencies,574,,,,,,
+Frequencies,575,,,,,,
+Frequencies,576,,,,,,
+Frequencies,577,,,,,,
+Frequencies,578,,,,,,
+Frequencies,579,,,,,,
+Frequencies,580,,,,,,
+Frequencies,581,,,,,,
+Frequencies,582,,,,,,
+Frequencies,583,,,,,,
+Frequencies,584,,,,,,
+Frequencies,585,,,,,,
+Frequencies,586,,,,,,
+Frequencies,587,,,,,,
+Frequencies,588,,,,,,
+Frequencies,589,,,,,,
+Frequencies,590,,,,,,
+Frequencies,591,,,,,,
+Frequencies,592,,,,,,
+Frequencies,593,,,,,,
+Frequencies,594,,,,,,
+Frequencies,595,,,,,,
+Frequencies,596,,,,,,
+Frequencies,597,,,,,,
+Frequencies,598,,,,,,
+Frequencies,599,,,,,,
+Frequencies,600,,,,,,
+Frequencies,601,,,,,,
+Frequencies,602,,,,,,
+Frequencies,603,,,,,,
+Frequencies,604,,,,,,
+Frequencies,605,,,,,,
+Frequencies,606,,,,,,
+Frequencies,607,,,,,,
+Frequencies,608,,,,,,
+Frequencies,609,,,,,,
+Frequencies,610,,,,,,
+Frequencies,611,,,,,,
+Frequencies,612,,,,,,
+Frequencies,613,,,,,,
+Frequencies,614,,,,,,
+Frequencies,615,,,,,,
+Frequencies,616,,,,,,
+Frequencies,617,,,,,,
+Frequencies,618,,,,,,
+Frequencies,619,,,,,,
+Frequencies,620,,,,,,
+Frequencies,621,,,,,,
+Frequencies,622,,,,,,
+Frequencies,623,,,,,,
+Frequencies,624,,,,,,
+Frequencies,625,,,,,,
+Frequencies,626,,,,,,
+Frequencies,627,,,,,,
+Frequencies,628,,,,,,
+Frequencies,629,,,,,,
+Frequencies,630,,,,,,
+Frequencies,631,,,,,,
+Frequencies,632,,,,,,
+Frequencies,633,,,,,,
+Frequencies,634,,,,,,
+Frequencies,635,,,,,,
+Frequencies,636,,,,,,
+Frequencies,637,,,,,,
+Frequencies,638,,,,,,
+Frequencies,639,,,,,,
+Frequencies,640,,,,,,
+Frequencies,641,,,,,,
+Frequencies,642,,,,,,
+Frequencies,643,,,,,,
+Frequencies,644,,,,,,
+Frequencies,645,,,,,,
+Frequencies,646,,,,,,
+Frequencies,647,,,,,,
+Frequencies,648,,,,,,
+Frequencies,649,,,,,,
+Frequencies,650,,,,,,
+Frequencies,651,,,,,,
+Frequencies,652,,,,,,
+Frequencies,653,,,,,,
+Frequencies,654,,,,,,
+Frequencies,655,,,,,,
+Frequencies,656,,,,,,
+Frequencies,657,,,,,,
+Frequencies,658,,,,,,
+Frequencies,659,,,,,,
+Frequencies,660,,,,,,
+Frequencies,661,,,,,,
+Frequencies,662,,,,,,
+Frequencies,663,,,,,,
+Frequencies,664,,,,,,
+Frequencies,665,,,,,,
+Frequencies,666,,,,,,
+Frequencies,667,,,,,,
+Frequencies,668,,,,,,
+Frequencies,669,,,,,,
+Frequencies,670,,,,,,
+Frequencies,671,,,,,,
+Frequencies,672,,,,,,
+Frequencies,673,,,,,,
+Frequencies,674,,,,,,
+Frequencies,675,,,,,,
+Frequencies,676,,,,,,
+Frequencies,677,,,,,,
+Frequencies,678,,,,,,
+Frequencies,679,,,,,,
+Frequencies,680,,,,,,
+Frequencies,681,,,,,,
+Frequencies,682,,,,,,
+Frequencies,683,,,,,,
+Frequencies,684,,,,,,
+Frequencies,685,,,,,,
+Frequencies,686,,,,,,
+Frequencies,687,,,,,,
+Frequencies,688,,,,,,
+Frequencies,689,,,,,,
+Frequencies,690,,,,,,
+Frequencies,691,,,,,,
+Frequencies,692,,,,,,
+Frequencies,693,,,,,,
+Frequencies,694,,,,,,
+Frequencies,695,,,,,,
+Frequencies,696,,,,,,
+Frequencies,697,,,,,,
+Frequencies,698,,,,,,
+Frequencies,699,,,,,,
+Frequencies,700,,,,,,
+Frequencies,701,,,,,,
+Frequencies,702,,,,,,
+Frequencies,703,,,,,,
+Frequencies,704,,,,,,
+Frequencies,705,,,,,,
+Frequencies,706,,,,,,
+Frequencies,707,,,,,,
+Frequencies,708,,,,,,
+Frequencies,709,,,,,,
+Frequencies,710,,,,,,
+Frequencies,711,,,,,,
+Frequencies,712,,,,,,
+Frequencies,713,,,,,,
+Frequencies,714,,,,,,
+Frequencies,715,,,,,,
+Frequencies,716,,,,,,
+Frequencies,717,,,,,,
+Frequencies,718,,,,,,
+Frequencies,719,,,,,,
+Frequencies,720,,,,,,
+Frequencies,721,,,,,,
+Frequencies,722,,,,,,
+Frequencies,723,,,,,,
+Frequencies,724,,,,,,
+Frequencies,725,,,,,,
+Frequencies,726,,,,,,
+Frequencies,727,,,,,,
+Frequencies,728,,,,,,
+Frequencies,729,,,,,,
+Frequencies,730,,,,,,
+Frequencies,731,,,,,,
+Frequencies,732,,,,,,
+Frequencies,733,,,,,,
+Frequencies,734,,,,,,
+Frequencies,735,,,,,,
+Frequencies,736,,,,,,
+Frequencies,737,,,,,,
+Frequencies,738,,,,,,
+Frequencies,739,,,,,,
+Frequencies,740,,,,,,
+Frequencies,741,,,,,,
+Frequencies,742,,,,,,
+Frequencies,743,,,,,,
+Frequencies,744,,,,,,
+Frequencies,745,,,,,,
+Frequencies,746,,,,,,
+Frequencies,747,,,,,,
+Frequencies,748,,,,,,
+Frequencies,749,,,,,,
+Frequencies,750,,,,,,
+Frequencies,751,,,,,,
+Frequencies,752,,,,,,
+Frequencies,753,,,,,,
+Frequencies,754,,,,,,
+Frequencies,755,,,,,,
+Frequencies,756,,,,,,
+Frequencies,757,,,,,,
+Frequencies,758,,,,,,
+Frequencies,759,,,,,,
+Frequencies,760,,,,,,
+Frequencies,761,,,,,,
+Frequencies,762,,,,,,
+Frequencies,763,,,,,,
+Frequencies,764,,,,,,
+Frequencies,765,,,,,,
+Frequencies,766,,,,,,
+Frequencies,767,,,,,,
+Frequencies,768,,,,,,
+Frequencies,769,,,,,,
+Frequencies,770,,,,,,
+Frequencies,771,,,,,,
+Frequencies,772,,,,,,
+Frequencies,773,,,,,,
+Frequencies,774,,,,,,
+Frequencies,775,,,,,,
+Frequencies,776,,,,,,
+Frequencies,777,,,,,,
+Frequencies,778,,,,,,
+Frequencies,779,,,,,,
+Frequencies,780,,,,,,
+Frequencies,781,,,,,,
+Frequencies,782,,,,,,
+Frequencies,783,,,,,,
+Frequencies,784,,,,,,
+Frequencies,785,,,,,,
+Frequencies,786,,,,,,
+Frequencies,787,,,,,,
+Frequencies,788,,,,,,
+Frequencies,789,,,,,,
+Frequencies,790,,,,,,
+Frequencies,791,,,,,,
+Frequencies,792,,,,,,
+Frequencies,793,,,,,,
+Frequencies,794,,,,,,
+Frequencies,795,,,,,,
+Frequencies,796,,,,,,
+Frequencies,797,,,,,,
+Frequencies,798,,,,,,
+Frequencies,799,,,,,,
+Frequencies,800,,,,,,
+Frequencies,801,,,,,,
+Frequencies,802,,,,,,
+Frequencies,803,,,,,,
+Frequencies,804,,,,,,
+Frequencies,805,,,,,,
+Frequencies,806,,,,,,
+Frequencies,807,,,,,,
+Frequencies,808,,,,,,
+Frequencies,809,,,,,,
+Frequencies,810,,,,,,
+Frequencies,811,,,,,,
+Frequencies,812,,,,,,
+Frequencies,813,,,,,,
+Frequencies,814,,,,,,
+Frequencies,815,,,,,,
+Frequencies,816,,,,,,
+Frequencies,817,,,,,,
+Frequencies,818,,,,,,
+Frequencies,819,,,,,,
+Frequencies,820,,,,,,
+Frequencies,821,,,,,,
+Frequencies,822,,,,,,
+Frequencies,823,,,,,,
+Frequencies,824,,,,,,
+Frequencies,825,,,,,,
+Frequencies,826,,,,,,
+Frequencies,827,,,,,,
+Frequencies,828,,,,,,
+Frequencies,829,,,,,,
+Frequencies,830,,,,,,
+Frequencies,831,,,,,,
+Frequencies,832,,,,,,
+Frequencies,833,,,,,,
+Frequencies,834,,,,,,
+Frequencies,835,,,,,,
+Frequencies,836,,,,,,
+Frequencies,837,,,,,,
+Frequencies,838,,,,,,
+Frequencies,839,,,,,,
+Frequencies,840,,,,,,
+Frequencies,841,,,,,,
+Frequencies,842,,,,,,
+Frequencies,843,,,,,,
+Frequencies,844,,,,,,
+Frequencies,845,,,,,,
+Frequencies,846,,,,,,
+Frequencies,847,,,,,,
+Frequencies,848,,,,,,
+Frequencies,849,,,,,,
+Frequencies,850,,,,,,
+Frequencies,851,,,,,,
+Frequencies,852,,,,,,
+Frequencies,853,,,,,,
+Frequencies,854,,,,,,
+Frequencies,855,,,,,,
+Frequencies,856,,,,,,
+Frequencies,857,,,,,,
+Frequencies,858,,,,,,
+Frequencies,859,,,,,,
+Frequencies,860,,,,,,
+Frequencies,861,,,,,,
+Frequencies,862,,,,,,
+Frequencies,863,,,,,,
+Frequencies,864,,,,,,
+Frequencies,865,,,,,,
+Frequencies,866,,,,,,
+Frequencies,867,,,,,,
+Frequencies,868,,,,,,
+Frequencies,869,,,,,,
+Frequencies,870,,,,,,
+Frequencies,871,,,,,,
+Frequencies,872,,,,,,
+Frequencies,873,,,,,,
+Frequencies,874,,,,,,
+Frequencies,875,,,,,,
+Frequencies,876,,,,,,
+Frequencies,877,,,,,,
+Frequencies,878,,,,,,
+Frequencies,879,,,,,,
+Frequencies,880,,,,,,
+Frequencies,881,,,,,,
+Frequencies,882,,,,,,
+Frequencies,883,,,,,,
+Frequencies,884,,,,,,
+Frequencies,885,,,,,,
+Frequencies,886,,,,,,
+Frequencies,887,,,,,,
+Frequencies,888,,,,,,
+Frequencies,889,,,,,,
+Frequencies,890,,,,,,
+Frequencies,891,,,,,,
+Frequencies,892,,,,,,
+Frequencies,893,,,,,,
+Frequencies,894,,,,,,
+Frequencies,895,,,,,,
+Frequencies,896,,,,,,
+Frequencies,897,,,,,,
+Frequencies,898,,,,,,
+Frequencies,899,,,,,,
+Frequencies,900,,,,,,
+Frequencies,901,,,,,,
+Frequencies,902,,,,,,
+Frequencies,903,,,,,,
+Frequencies,904,,,,,,
+Frequencies,905,,,,,,
+Frequencies,906,,,,,,
+Frequencies,907,,,,,,
+Frequencies,908,,,,,,
+Frequencies,909,,,,,,
+Frequencies,910,,,,,,
+Frequencies,911,,,,,,
+Frequencies,912,,,,,,
+Frequencies,913,,,,,,
+Frequencies,914,,,,,,
+Frequencies,915,,,,,,
+Frequencies,916,,,,,,
+Frequencies,917,,,,,,
+Frequencies,918,,,,,,
+Frequencies,919,,,,,,
+Frequencies,920,,,,,,
+Frequencies,921,,,,,,
+Frequencies,922,,,,,,
+Frequencies,923,,,,,,
+Frequencies,924,,,,,,
+Frequencies,925,,,,,,
+Frequencies,926,,,,,,
+Frequencies,927,,,,,,
+Frequencies,928,,,,,,
+Frequencies,929,,,,,,
+Frequencies,930,,,,,,
+Frequencies,931,,,,,,
+Frequencies,932,,,,,,
+Frequencies,933,,,,,,
+Frequencies,934,,,,,,
+Frequencies,935,,,,,,
+Frequencies,936,,,,,,
+Frequencies,937,,,,,,
+Frequencies,938,,,,,,
+Frequencies,939,,,,,,
+Frequencies,940,,,,,,
+Frequencies,941,,,,,,
+Frequencies,942,,,,,,
+Frequencies,943,,,,,,
+Frequencies,944,,,,,,
+Frequencies,945,,,,,,
+Frequencies,946,,,,,,
+Frequencies,947,,,,,,
+Frequencies,948,,,,,,
+Frequencies,949,,,,,,
+Frequencies,950,,,,,,
+Frequencies,951,,,,,,
+Frequencies,952,,,,,,
+Frequencies,953,,,,,,
+Frequencies,954,,,,,,
+Frequencies,955,,,,,,
+Frequencies,956,,,,,,
+Frequencies,957,,,,,,
+Frequencies,958,,,,,,
+Frequencies,959,,,,,,
+Frequencies,960,,,,,,
+Frequencies,961,,,,,,
+Frequencies,962,,,,,,
+Frequencies,963,,,,,,
+Frequencies,964,,,,,,
+Frequencies,965,,,,,,
+Frequencies,966,,,,,,
+Frequencies,967,,,,,,
+Frequencies,968,,,,,,
+Frequencies,969,,,,,,
+Frequencies,970,,,,,,
+Frequencies,971,,,,,,
+Frequencies,972,,,,,,
+Frequencies,973,,,,,,
+Frequencies,974,,,,,,
+Frequencies,975,,,,,,
+Frequencies,976,,,,,,
+Frequencies,977,,,,,,
+Frequencies,978,,,,,,
+Frequencies,979,,,,,,
+Frequencies,980,,,,,,
+Frequencies,981,,,,,,
+Frequencies,982,,,,,,
+Frequencies,983,,,,,,
+Frequencies,984,,,,,,
+Frequencies,985,,,,,,
+Frequencies,986,,,,,,
+Frequencies,987,,,,,,
+Frequencies,988,,,,,,
+Frequencies,989,,,,,,
+Frequencies,990,,,,,,
+Frequencies,991,,,,,,
+Frequencies,992,,,,,,
+Frequencies,993,,,,,,
+Frequencies,994,,,,,,
+Frequencies,995,,,,,,
+Frequencies,996,,,,,,
+Frequencies,997,,,,,,
+Frequencies,998,,,,,,
+Frequencies,999,,,,,,
+Frequencies,1000,,,,,,
+Frequencies,1001,,,,,,
+Frequencies,1002,,,,,,
+Frequencies,1003,,,,,,
+Frequencies,1004,,,,,,
+Frequencies,1005,,,,,,
+Frequencies,1006,,,,,,
+Frequencies,1007,,,,,,
+Frequencies,1008,,,,,,
+Frequencies,1009,,,,,,
+Frequencies,1010,,,,,,
+Frequencies,1011,,,,,,
+Frequencies,1012,,,,,,
+Frequencies,1013,,,,,,
+Frequencies,1014,,,,,,
+Frequencies,1015,,,,,,
+Frequencies,1016,,,,,,
+Frequencies,1017,,,,,,
+Frequencies,1018,,,,,,
+Frequencies,1019,,,,,,
+Frequencies,1020,,,,,,
+Frequencies,1021,,,,,,
+Frequencies,1022,,,,,,
+Frequencies,1023,,,,,,
+Frequencies,1024,,,,,,
+Frequencies,1025,,,,,,
+Frequencies,1026,,,,,,
+Frequencies,1027,,,,,,
+Frequencies,1028,,,,,,
+Frequencies,1029,,,,,,
+Frequencies,1030,,,,,,
+Frequencies,1031,,,,,,
+Frequencies,1032,,,,,,
+Frequencies,1033,,,,,,
+Frequencies,1034,,,,,,
+Frequencies,1035,,,,,,
+Frequencies,1036,,,,,,
+Frequencies,1037,,,,,,
+Frequencies,1038,,,,,,
+Frequencies,1039,,,,,,
+Frequencies,1040,,,,,,
+Frequencies,1041,,,,,,
+Frequencies,1042,,,,,,
+Frequencies,1043,,,,,,
+Frequencies,1044,,,,,,
+Frequencies,1045,,,,,,
+Frequencies,1046,,,,,,
+Frequencies,1047,,,,,,
+Frequencies,1048,,,,,,
+Frequencies,1049,,,,,,
+Frequencies,1050,,,,,,
+Frequencies,1051,,,,,,
+Frequencies,1052,,,,,,
+Frequencies,1053,,,,,,
+Frequencies,1054,,,,,,
+Frequencies,1055,,,,,,
+Frequencies,1056,,,,,,
+Frequencies,1057,,,,,,
+Frequencies,1058,,,,,,
+Frequencies,1059,,,,,,
+Frequencies,1060,,,,,,
+Frequencies,1061,,,,,,
+Frequencies,1062,,,,,,
+Frequencies,1063,,,,,,
+Frequencies,1064,,,,,,
+Frequencies,1065,,,,,,
+Frequencies,1066,,,,,,
+Frequencies,1067,,,,,,
+Frequencies,1068,,,,,,
+Frequencies,1069,,,,,,
+Frequencies,1070,,,,,,
+Frequencies,1071,,,,,,
+Frequencies,1072,,,,,,
+Frequencies,1073,,,,,,
+Frequencies,1074,,,,,,
+Frequencies,1075,,,,,,
+Frequencies,1076,,,,,,
+Frequencies,1077,,,,,,
+Frequencies,1078,,,,,,
+Frequencies,1079,,,,,,
+Frequencies,1080,,,,,,
+Frequencies,1081,,,,,,
+Frequencies,1082,,,,,,
+Frequencies,1083,,,,,,
+Frequencies,1084,,,,,,
+Frequencies,1085,,,,,,
+Frequencies,1086,,,,,,
+Frequencies,1087,,,,,,
+Frequencies,1088,,,,,,
+Frequencies,1089,,,,,,
+Frequencies,1090,,,,,,
+Frequencies,1091,,,,,,
+Frequencies,1092,,,,,,
+Frequencies,1093,,,,,,
+Frequencies,1094,,,,,,
+Frequencies,1095,,,,,,
+Frequencies,1096,,,,,,
+Frequencies,1097,,,,,,
+Frequencies,1098,,,,,,
+Frequencies,1099,,,,,,
+Frequencies,1100,,,,,,
+Frequencies,1101,,,,,,
+Frequencies,1102,,,,,,
+Frequencies,1103,,,,,,
+Frequencies,1104,,,,,,
+Frequencies,1105,,,,,,
+Frequencies,1106,,,,,,
+Frequencies,1107,,,,,,
+Frequencies,1108,,,,,,
+Frequencies,1109,,,,,,
+Frequencies,1110,,,,,,
+Frequencies,1111,,,,,,
+Frequencies,1112,,,,,,
+Frequencies,1113,,,,,,
+Frequencies,1114,,,,,,
+Frequencies,1115,,,,,,
+Frequencies,1116,,,,,,
+Frequencies,1117,,,,,,
+Frequencies,1118,,,,,,
+Frequencies,1119,,,,,,
+Frequencies,1120,,,,,,
+Frequencies,1121,,,,,,
+Frequencies,1122,,,,,,
+Frequencies,1123,,,,,,
+Frequencies,1124,,,,,,
+Frequencies,1125,,,,,,
+Frequencies,1126,,,,,,
+Frequencies,1127,,,,,,
+Frequencies,1128,,,,,,
+Frequencies,1129,,,,,,
+Frequencies,1130,,,,,,
+Frequencies,1131,,,,,,
+Frequencies,1132,,,,,,
+Frequencies,1133,,,,,,
+Frequencies,1134,,,,,,
+Frequencies,1135,,,,,,
+Frequencies,1136,,,,,,
+Frequencies,1137,,,,,,
+Frequencies,1138,,,,,,
+Frequencies,1139,,,,,,
+Frequencies,1140,,,,,,
+Frequencies,1141,,,,,,
+Frequencies,1142,,,,,,
+Frequencies,1143,,,,,,
+Frequencies,1144,,,,,,
+Frequencies,1145,,,,,,
+Frequencies,1146,,,,,,
+Frequencies,1147,,,,,,
+Frequencies,1148,,,,,,
+Frequencies,1149,,,,,,
+Frequencies,1150,,,,,,
+Frequencies,1151,,,,,,
+Frequencies,1152,,,,,,
+Frequencies,1153,,,,,,
+Frequencies,1154,,,,,,
+Frequencies,1155,,,,,,
+Frequencies,1156,,,,,,
+Frequencies,1157,,,,,,
+Frequencies,1158,,,,,,
+Frequencies,1159,,,,,,
+Frequencies,1160,,,,,,
+Frequencies,1161,,,,,,
+Frequencies,1162,,,,,,
+Frequencies,1163,,,,,,
+Frequencies,1164,,,,,,
+Frequencies,1165,,,,,,
+Frequencies,1166,,,,,,
+Frequencies,1167,,,,,,
+Frequencies,1168,,,,,,
+Frequencies,1169,,,,,,
+Frequencies,1170,,,,,,
+Frequencies,1171,,,,,,
+Frequencies,1172,,,,,,
+Frequencies,1173,,,,,,
+Frequencies,1174,,,,,,
+Frequencies,1175,,,,,,
+Frequencies,1176,,,,,,
+Frequencies,1177,,,,,,
+Frequencies,1178,,,,,,
+Frequencies,1179,,,,,,
+Frequencies,1180,,,,,,
+Frequencies,1181,,,,,,
+Frequencies,1182,,,,,,
+Frequencies,1183,,,,,,
+Frequencies,1184,,,,,,
+Frequencies,1185,,,,,,
+Frequencies,1186,,,,,,
+Frequencies,1187,,,,,,
+Frequencies,1188,,,,,,
+Frequencies,1189,,,,,,
+Frequencies,1190,,,,,,
+Frequencies,1191,,,,,,
+Frequencies,1192,,,,,,
+Frequencies,1193,,,,,,
+Frequencies,1194,,,,,,
+Frequencies,1195,,,,,,
+Frequencies,1196,,,,,,
+Frequencies,1197,,,,,,
+Frequencies,1198,,,,,,
+Frequencies,1199,,,,,,
+Frequencies,1200,,,,,,
+Frequencies,1201,,,,,,
+Frequencies,1202,,,,,,
+Frequencies,1203,,,,,,
+Frequencies,1204,,,,,,
+Frequencies,1205,,,,,,
+Frequencies,1206,,,,,,
+Frequencies,1207,,,,,,
+Frequencies,1208,,,,,,
+Frequencies,1209,,,,,,
+Frequencies,1210,,,,,,
+Frequencies,1211,,,,,,
+Frequencies,1212,,,,,,
+Frequencies,1213,,,,,,
+Frequencies,1214,,,,,,
+Frequencies,1215,,,,,,
+Frequencies,1216,,,,,,
+Frequencies,1217,,,,,,
+Frequencies,1218,,,,,,
+Frequencies,1219,,,,,,
+Frequencies,1220,,,,,,
+Frequencies,1221,,,,,,
+Frequencies,1222,,,,,,
+Frequencies,1223,,,,,,
+Frequencies,1224,,,,,,
+Frequencies,1225,,,,,,
+Frequencies,1226,,,,,,
+Frequencies,1227,,,,,,
+Frequencies,1228,,,,,,
+Frequencies,1229,,,,,,
+Frequencies,1230,,,,,,
+Frequencies,1231,,,,,,
+Frequencies,1232,,,,,,
+Frequencies,1233,,,,,,
+Frequencies,1234,,,,,,
+Frequencies,1235,,,,,,
+Frequencies,1236,,,,,,
+Frequencies,1237,,,,,,
+Frequencies,1238,,,,,,
+Frequencies,1239,,,,,,
+Frequencies,1240,,,,,,
+Frequencies,1241,,,,,,
+Frequencies,1242,,,,,,
+Frequencies,1243,,,,,,
+Frequencies,1244,,,,,,
+Frequencies,1245,,,,,,
+Frequencies,1246,,,,,,
+Frequencies,1247,,,,,,
+Frequencies,1248,,,,,,
+Frequencies,1249,,,,,,
+Frequencies,1250,,,,,,
+Frequencies,1251,,,,,,
+Frequencies,1252,,,,,,
+Frequencies,1253,,,,,,
+Frequencies,1254,,,,,,
+Frequencies,1255,,,,,,
+Frequencies,1256,,,,,,
+Frequencies,1257,,,,,,
+Frequencies,1258,,,,,,
+Frequencies,1259,,,,,,
+Frequencies,1260,,,,,,
+Frequencies,1261,,,,,,
+Frequencies,1262,,,,,,
+Frequencies,1263,,,,,,
+Frequencies,1264,,,,,,
+Frequencies,1265,,,,,,
+Frequencies,1266,,,,,,
+Frequencies,1267,,,,,,
+Frequencies,1268,,,,,,
+Frequencies,1269,,,,,,
+Frequencies,1270,,,,,,
+Frequencies,1271,,,,,,
+Frequencies,1272,,,,,,
+Frequencies,1273,,,,,,
+Frequencies,1274,,,,,,
+Frequencies,1275,,,,,,
+Frequencies,1276,,,,,,
+Frequencies,1277,,,,,,
+Frequencies,1278,,,,,,
+Frequencies,1279,,,,,,
+Frequencies,1280,,,,,,
+Frequencies,1281,,,,,,
+Frequencies,1282,,,,,,
+Frequencies,1283,,,,,,
+Frequencies,1284,,,,,,
+Frequencies,1285,,,,,,
+Frequencies,1286,,,,,,
+Frequencies,1287,,,,,,
+Frequencies,1288,,,,,,
+Frequencies,1289,,,,,,
+Frequencies,1290,,,,,,
+Frequencies,1291,,,,,,
+Frequencies,1292,,,,,,
+Frequencies,1293,,,,,,
+Frequencies,1294,,,,,,
+Frequencies,1295,,,,,,
+Frequencies,1296,,,,,,
+Frequencies,1297,,,,,,
+Frequencies,1298,,,,,,
+Frequencies,1299,,,,,,
+Frequencies,1300,,,,,,
+Frequencies,1301,,,,,,
+Frequencies,1302,,,,,,
+Frequencies,1303,,,,,,
+Frequencies,1304,,,,,,
+Frequencies,1305,,,,,,
+Frequencies,1306,,,,,,
+Frequencies,1307,,,,,,
+Frequencies,1308,,,,,,
+Frequencies,1309,,,,,,
+Frequencies,1310,,,,,,
+Frequencies,1311,,,,,,
+Frequencies,1312,,,,,,
+Frequencies,1313,,,,,,
+Frequencies,1314,,,,,,
+Frequencies,1315,,,,,,
+Frequencies,1316,,,,,,
+Frequencies,1317,,,,,,
+Frequencies,1318,,,,,,
+Frequencies,1319,,,,,,
+Frequencies,1320,,,,,,
+Frequencies,1321,,,,,,
+Frequencies,1322,,,,,,
+Frequencies,1323,,,,,,
+Frequencies,1324,,,,,,
+Frequencies,1325,,,,,,
+Frequencies,1326,,,,,,
+Frequencies,1327,,,,,,
+Frequencies,1328,,,,,,
+Frequencies,1329,,,,,,
+Frequencies,1330,,,,,,
+Frequencies,1331,,,,,,
+Frequencies,1332,,,,,,
+Frequencies,1333,,,,,,
+Frequencies,1334,,,,,,
+Frequencies,1335,,,,,,
+Frequencies,1336,,,,,,
+Frequencies,1337,,,,,,
+Frequencies,1338,,,,,,
+Frequencies,1339,,,,,,
+Frequencies,1340,,,,,,
+Frequencies,1341,,,,,,
+Frequencies,1342,,,,,,
+Frequencies,1343,,,,,,
+Frequencies,1344,,,,,,
+Frequencies,1345,,,,,,
+Frequencies,1346,,,,,,
+Frequencies,1347,,,,,,
+Frequencies,1348,,,,,,
+Frequencies,1349,,,,,,
+Frequencies,1350,,,,,,
+Frequencies,1351,,,,,,
+Frequencies,1352,,,,,,
+Frequencies,1353,,,,,,
+Frequencies,1354,,,,,,
+Frequencies,1355,,,,,,
+Frequencies,1356,,,,,,
+Frequencies,1357,,,,,,
+Frequencies,1358,,,,,,
+Frequencies,1359,,,,,,
+Frequencies,1360,,,,,,
+Frequencies,1361,,,,,,
+Frequencies,1362,,,,,,
+Frequencies,1363,,,,,,
+Frequencies,1364,,,,,,
+Frequencies,1365,,,,,,
+Frequencies,1366,,,,,,
+Frequencies,1367,,,,,,
+Frequencies,1368,,,,,,
+Frequencies,1369,,,,,,
+Frequencies,1370,,,,,,
+Frequencies,1371,,,,,,
+Frequencies,1372,,,,,,
+Frequencies,1373,,,,,,
+Frequencies,1374,,,,,,
+Frequencies,1375,,,,,,
+Frequencies,1376,,,,,,
+Frequencies,1377,,,,,,
+Frequencies,1378,,,,,,
+Frequencies,1379,,,,,,
+Frequencies,1380,,,,,,
+Frequencies,1381,,,,,,
+Frequencies,1382,,,,,,
+Frequencies,1383,,,,,,
+Frequencies,1384,,,,,,
+Frequencies,1385,,,,,,
+Frequencies,1386,,,,,,
+Frequencies,1387,,,,,,
+Frequencies,1388,,,,,,
+Frequencies,1389,,,,,,
+Frequencies,1390,,,,,,
+Frequencies,1391,,,,,,
+Frequencies,1392,,,,,,
+Frequencies,1393,,,,,,
+Frequencies,1394,,,,,,
+Frequencies,1395,,,,,,
+Frequencies,1396,,,,,,
+Frequencies,1397,,,,,,
+Frequencies,1398,,,,,,
+Frequencies,1399,,,,,,
+Frequencies,1400,,,,,,
+Frequencies,1401,,,,,,
+Frequencies,1402,,,,,,
+Frequencies,1403,,,,,,
+Frequencies,1404,,,,,,
+Frequencies,1405,,,,,,
+Frequencies,1406,,,,,,
+Frequencies,1407,,,,,,
+Frequencies,1408,,,,,,
+Frequencies,1409,,,,,,
+Frequencies,1410,,,,,,
+Frequencies,1411,,,,,,
+Frequencies,1412,,,,,,
+Frequencies,1413,,,,,,
+Frequencies,1414,,,,,,
+Frequencies,1415,,,,,,
+Frequencies,1416,,,,,,
+Frequencies,1417,,,,,,
+Frequencies,1418,,,,,,
+Frequencies,1419,,,,,,
+Frequencies,1420,,,,,,
+Frequencies,1421,,,,,,
+Frequencies,1422,,,,,,
+Frequencies,1423,,,,,,
+Frequencies,1424,,,,,,
+Frequencies,1425,,,,,,
+Frequencies,1426,,,,,,
+Frequencies,1427,,,,,,
+Frequencies,1428,,,,,,
+Frequencies,1429,,,,,,
+Frequencies,1430,,,,,,
+Frequencies,1431,,,,,,
+Frequencies,1432,,,,,,
+Frequencies,1433,,,,,,
+Frequencies,1434,,,,,,
+Frequencies,1435,,,,,,
+Frequencies,1436,,,,,,
+Frequencies,1437,,,,,,
+Frequencies,1438,,,,,,
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,21246,EFTOTLT,165914,39977132,240.95092638354811,1,57695,Grand total
+Statistics,2,21201,EFTOTLM,165914,19311216,116.39292645587473,0,20844,Total men
+Statistics,3,21206,EFTOTLW,165914,20665916,124.55799992767338,0,36851,Total women
+Statistics,4,24504,EFAIANT,165914,212284,1.2794821413503381,0,603,American Indian or Alaska Native total
+Statistics,5,24506,EFAIANM,165914,78340,0.47217233024337912,0,177,American Indian or Alaska Native men
+Statistics,6,24508,EFAIANW,165914,133944,0.80730981110695899,0,603,American Indian or Alaska Native women
+Statistics,7,24510,EFASIAT,165914,3270062,19.709379558084308,0,5005,Asian total
+Statistics,8,24512,EFASIAM,165914,1647552,9.9301565871475592,0,2471,Asian men
+Statistics,9,24514,EFASIAW,165914,1622510,9.7792229709367504,0,2534,Asian women
+Statistics,10,24516,EFBKAAT,165914,4024012,24.253601263305086,0,9612,Black or African American total
+Statistics,11,24518,EFBKAAM,165914,1611096,9.7104282941765003,0,2767,Black or African American men
+Statistics,12,24520,EFBKAAW,165914,2412916,14.543172969128584,0,6845,Black or African American women
+Statistics,13,24522,EFHISPT,165914,6806478,41.024132984558264,0,7164,Hispanic total
+Statistics,14,24524,EFHISPM,165914,3091542,18.63340043637065,0,2963,Hispanic men
+Statistics,15,24526,EFHISPW,165914,3714936,22.390732548187614,0,4677,Hispanic women
+Statistics,16,24528,EFNHPIT,165914,98598,0.59427173113781839,0,413,Native Hawaiian or Other Pacific Islander total
+Statistics,17,24530,EFNHPIM,165914,42152,0.25405933194305486,0,163,Native Hawaiian or Other Pacific Islander men
+Statistics,18,24532,EFNHPIW,165914,56446,0.34021239919476354,0,260,Native Hawaiian or Other Pacific Islander women
+Statistics,19,24534,EFWHITT,165914,19928030,120.11059946719385,0,30903,White total
+Statistics,20,24536,EFWHITM,165914,9887250,59.592620273153564,0,11122,White men
+Statistics,21,24538,EFWHITW,165914,10040780,60.517979194040286,0,26018,White women
+Statistics,22,24540,EF2MORT,165914,1529946,9.221319478766107,0,1586,Two or more races total
+Statistics,23,24542,EF2MORM,165914,735510,4.4330797883240711,0,520,Two or more races men
+Statistics,24,24544,EF2MORW,165914,794436,4.7882396904420359,0,1111,Two or more races women
+Statistics,25,21241,EFUNKNT,165914,1653096,9.963571488843618,0,15991,Race/ethnicity unknown total
+Statistics,26,21191,EFUNKNM,165914,764712,4.6090866352447657,0,8191,Race/ethnicity unknown men
+Statistics,27,21196,EFUNKNW,165914,888384,5.3544848535988523,0,8436,Race/ethnicity unknown women
+Statistics,28,21211,EFNRALT,165914,2454626,14.794568270308714,0,4800,U.S. Nonresident total
+Statistics,29,21131,EFNRALM,165914,1453062,8.7579227792711887,0,3039,U.S. Nonresident men
+Statistics,30,21136,EFNRALW,165914,1001564,6.0366454910375253,0,1779,U.S. Nonresident women
+Statistics,31,
+Statistics,32,
+Statistics,33,
+Statistics,34,
+Statistics,35,
+Statistics,36,
+Statistics,37,
+Statistics,38,
+Statistics,39,
+Statistics,40,
+Statistics,41,
+Statistics,42,
+Statistics,43,
+Statistics,44,
+FrequenciesRV,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+FrequenciesRV,1,21126,EFCIPLEV,101,"13.0000-Education, All students total",1700,1.02
+FrequenciesRV,2,21126,EFCIPLEV,102,"13.0000-Education, Undergraduate total",1533,0.92
+FrequenciesRV,3,21126,EFCIPLEV,103,"13.0000-Education, Undergraduate, Degree/certificate-seeking total",1528,0.92
+FrequenciesRV,4,21126,EFCIPLEV,104,"13.0000-Education, Undergraduate, Degree/certificate-seeking, First-time",1326,0.8
+FrequenciesRV,5,21126,EFCIPLEV,105,"13.0000-Education, Undergraduate, Other degree/certificate-seeking, Total",1526,0.92
+FrequenciesRV,6,21126,EFCIPLEV,119,"13.0000-Education, Undergraduate, Other degree/certificate-seeking, Transfer-ins",1309,0.79
+FrequenciesRV,7,21126,EFCIPLEV,120,"13.0000-Education, Undergraduate, Other degree/certificate-seeking, Continuing",1522,0.92
+FrequenciesRV,8,21126,EFCIPLEV,111,"13.0000-Education, Undergraduate, Non-degree/certificate-seeking",274,0.17
+FrequenciesRV,9,21126,EFCIPLEV,112,"13.0000-Education, Graduate",1229,0.74
+FrequenciesRV,10,21126,EFCIPLEV,121,"13.0000-Education, Full-time students total",1669,1.01
+FrequenciesRV,11,21126,EFCIPLEV,122,"13.0000-Education, Full-time students, Undergraduate total",1511,0.91
+FrequenciesRV,12,21126,EFCIPLEV,123,"13.0000-Education, Full-time students, Undergraduate, Degree/certificate-seeking total",1509,0.91
+FrequenciesRV,13,21126,EFCIPLEV,124,"13.0000-Education, Full-time students, Undergraduate, Degree/certificate-seeking, First-time",1300,0.78
+FrequenciesRV,14,21126,EFCIPLEV,125,"13.0000-Education, Full-time students, Undergraduate, Other degree/certificate-seeking, Total",1505,0.91
+FrequenciesRV,15,21126,EFCIPLEV,139,"13.0000-Education, Full-time students, Undergraduate, Other degree/certificate-seeking, Transfer-ins",1262,0.76
+FrequenciesRV,16,21126,EFCIPLEV,140,"13.0000-Education, Full-time students, Undergraduate, Other degree/certificate-seeking, Continuing",1500,0.9
+FrequenciesRV,17,21126,EFCIPLEV,131,"13.0000-Education, Full-time students, Undergraduate, Non-degree/certificate-seeking",159,0.1
+FrequenciesRV,18,21126,EFCIPLEV,132,"13.0000-Education, Full-time students, Graduate",1146,0.69
+FrequenciesRV,19,21126,EFCIPLEV,141,"13.0000-Education, Part-time students total",1545,0.93
+FrequenciesRV,20,21126,EFCIPLEV,142,"13.0000-Education, Part-time students, Undergraduate total",1295,0.78
+FrequenciesRV,21,21126,EFCIPLEV,143,"13.0000-Education, Part-time students, Undergraduate, Degree/certificate-seeking total",1277,0.77
+FrequenciesRV,22,21126,EFCIPLEV,144,"13.0000-Education, Part-time students, Undergraduate, Degree/certificate-seeking, First-time",536,0.32
+FrequenciesRV,23,21126,EFCIPLEV,145,"13.0000-Education, Part-time students, Undergraduate, Other degree/certificate-seeking, Total",1271,0.77
+FrequenciesRV,24,21126,EFCIPLEV,159,"13.0000-Education, Part-time students, Undergraduate, Other degree/certificate-seeking, Transfer-ins",787,0.47
+FrequenciesRV,25,21126,EFCIPLEV,160,"13.0000-Education, Part-time students, Undergraduate, Other degree/certificate-seeking, Continuing",1250,0.75
+FrequenciesRV,26,21126,EFCIPLEV,151,"13.0000-Education, Part-time students, Undergraduate, Non-degree/certificate-seeking",221,0.13
+FrequenciesRV,27,21126,EFCIPLEV,152,"13.0000-Education, Part-time students, Graduate",1172,0.71
+FrequenciesRV,28,21126,EFCIPLEV,201,"14.0000-Engineering, All students total",871,0.53
+FrequenciesRV,29,21126,EFCIPLEV,202,"14.0000-Engineering, Undergraduate total",843,0.51
+FrequenciesRV,30,21126,EFCIPLEV,203,"14.0000-Engineering, Undergraduate, Degree/certificate-seeking total",842,0.51
+FrequenciesRV,31,21126,EFCIPLEV,204,"14.0000-Engineering, Undergraduate, Degree/certificate-seeking, First-time",756,0.46
+FrequenciesRV,32,21126,EFCIPLEV,205,"14.0000-Engineering, Undergraduate, Other degree/certificate-seeking, Total",839,0.51
+FrequenciesRV,33,21126,EFCIPLEV,219,"14.0000-Engineering, Undergraduate, Other degree/certificate-seeking, Transfer-ins",698,0.42
+FrequenciesRV,34,21126,EFCIPLEV,220,"14.0000-Engineering, Undergraduate, Other degree/certificate-seeking, Continuing",834,0.5
+FrequenciesRV,35,21126,EFCIPLEV,211,"14.0000-Engineering, Undergraduate, Non-degree/certificate-seeking",120,7.0000000000000007E-2
+FrequenciesRV,36,21126,EFCIPLEV,212,"14.0000-Engineering, Graduate",377,0.23
+FrequenciesRV,37,21126,EFCIPLEV,221,"14.0000-Engineering, Full-time students total",863,0.52
+FrequenciesRV,38,21126,EFCIPLEV,222,"14.0000-Engineering, Full-time students, Undergraduate total",838,0.51
+FrequenciesRV,39,21126,EFCIPLEV,223,"14.0000-Engineering, Full-time students, Undergraduate, Degree/certificate-seeking total",837,0.5
+FrequenciesRV,40,21126,EFCIPLEV,224,"14.0000-Engineering, Full-time students, Undergraduate, Degree/certificate-seeking, First-time",747,0.45
+FrequenciesRV,41,21126,EFCIPLEV,225,"14.0000-Engineering, Full-time students, Undergraduate, Other degree/certificate-seeking, Total",834,0.5
+FrequenciesRV,42,21126,EFCIPLEV,239,"14.0000-Engineering, Full-time students, Undergraduate, Other degree/certificate-seeking, Transfer-i",685,0.41
+FrequenciesRV,43,21126,EFCIPLEV,240,"14.0000-Engineering, Full-time students, Undergraduate, Other degree/certificate-seeking, Continuing",827,0.5
+FrequenciesRV,44,21126,EFCIPLEV,231,"14.0000-Engineering, Full-time students, Undergraduate, Non-degree/certificate-seeking",88,0.05
+FrequenciesRV,45,21126,EFCIPLEV,232,"14.0000-Engineering, Full-time students, Graduate",366,0.22
+FrequenciesRV,46,21126,EFCIPLEV,241,"14.0000-Engineering, Part-time students total",717,0.43
+FrequenciesRV,47,21126,EFCIPLEV,242,"14.0000-Engineering, Part-time students, Undergraduate total",678,0.41
+FrequenciesRV,48,21126,EFCIPLEV,243,"14.0000-Engineering, Part-time students, Undergraduate, Degree/certificate-seeking total",672,0.41
+FrequenciesRV,49,21126,EFCIPLEV,244,"14.0000-Engineering, Part-time students, Undergraduate, Degree/certificate-seeking, First-time",352,0.21
+FrequenciesRV,50,21126,EFCIPLEV,245,"14.0000-Engineering, Part-time students, Undergraduate, Other degree/certificate-seeking, Total",666,0.4
+FrequenciesRV,51,21126,EFCIPLEV,259,"14.0000-Engineering, Part-time students, Undergraduate, Other degree/certificate-seeking, Transfer-i",379,0.23
+FrequenciesRV,52,21126,EFCIPLEV,260,"14.0000-Engineering, Part-time students, Undergraduate, Other degree/certificate-seeking, Continuing",656,0.4
+FrequenciesRV,53,21126,EFCIPLEV,251,"14.0000-Engineering, Part-time students, Undergraduate, Non-degree/certificate-seeking",82,0.05
+FrequenciesRV,54,21126,EFCIPLEV,252,"14.0000-Engineering, Part-time students, Graduate",363,0.22
+FrequenciesRV,55,21126,EFCIPLEV,301,"26.0000-Biological Sciences/Life Sciences, All students total",1568,0.95
+FrequenciesRV,56,21126,EFCIPLEV,302,"26.0000-Biological Sciences/Life Sciences, Undergraduate total",1501,0.9
+FrequenciesRV,57,21126,EFCIPLEV,303,"26.0000-Biological Sciences/Life Sciences, Undergraduate, Degree/certificate-seeking total",1501,0.9
+FrequenciesRV,58,21126,EFCIPLEV,304,"26.0000-Biological Sciences/Life Sciences, Undergraduate, Degree/certificate-seeking, First-time",1289,0.78
+FrequenciesRV,59,21126,EFCIPLEV,305,"26.0000-Biological Sciences/Life Sciences, Undergraduate, Other degree/certificate-seeking, Total",1500,0.9
+FrequenciesRV,60,21126,EFCIPLEV,319,"26.0000-Biological Sciences/Life Sciences, Undergraduate, Other degree/certificate-seeking, Transfer",1291,0.78
+FrequenciesRV,61,21126,EFCIPLEV,320,"26.0000-Biological Sciences/Life Sciences, Undergraduate, Other degree/certificate-seeking, Continui",1497,0.9
+FrequenciesRV,62,21126,EFCIPLEV,311,"26.0000-Biological Sciences/Life Sciences, Undergraduate, Non-degree/certificate-seeking",154,0.09
+FrequenciesRV,63,21126,EFCIPLEV,312,"26.0000-Biological Sciences/Life Sciences, Graduate",602,0.36
+FrequenciesRV,64,21126,EFCIPLEV,321,"26.0000-Biological Sciences/Life Sciences, Full-time students total",1559,0.94
+FrequenciesRV,65,21126,EFCIPLEV,322,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate total",1492,0.9
+FrequenciesRV,66,21126,EFCIPLEV,323,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate, Degree/certificate-see",1492,0.9
+FrequenciesRV,67,21126,EFCIPLEV,324,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate, Degree/certificate-see",1284,0.77
+FrequenciesRV,68,21126,EFCIPLEV,325,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate, Other degree/certifica",1491,0.9
+FrequenciesRV,69,21126,EFCIPLEV,339,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate, Other degree/certifica",1276,0.77
+FrequenciesRV,70,21126,EFCIPLEV,340,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate, Other degree/certifica",1488,0.9
+FrequenciesRV,71,21126,EFCIPLEV,331,"26.0000-Biological Sciences/Life Sciences, Full-time students, Undergraduate, Non-degree/certificate",94,0.06
+FrequenciesRV,72,21126,EFCIPLEV,332,"26.0000-Biological Sciences/Life Sciences, Full-time students, Graduate",578,0.35
+FrequenciesRV,73,21126,EFCIPLEV,341,"26.0000-Biological Sciences/Life Sciences, Part-time students total",1310,0.79
+FrequenciesRV,74,21126,EFCIPLEV,342,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate total",1244,0.75
+FrequenciesRV,75,21126,EFCIPLEV,343,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate, Degree/certificate-see",1240,0.75
+FrequenciesRV,76,21126,EFCIPLEV,344,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate, Degree/certificate-see",524,0.32
+FrequenciesRV,77,21126,EFCIPLEV,345,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate, Other degree/certifica",1228,0.74
+FrequenciesRV,78,21126,EFCIPLEV,359,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate, Other degree/certifica",623,0.38
+FrequenciesRV,79,21126,EFCIPLEV,360,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate, Other degree/certifica",1218,0.73
+FrequenciesRV,80,21126,EFCIPLEV,351,"26.0000-Biological Sciences/Life Sciences, Part-time students, Undergraduate, Non-degree/certificate",116,7.0000000000000007E-2
+FrequenciesRV,81,21126,EFCIPLEV,352,"26.0000-Biological Sciences/Life Sciences, Part-time students, Graduate",543,0.33
+FrequenciesRV,82,21126,EFCIPLEV,401,"27.0000-Mathematics, All students total",1308,0.79
+FrequenciesRV,83,21126,EFCIPLEV,402,"27.0000-Mathematics, Undergraduate total",1300,0.78
+FrequenciesRV,84,21126,EFCIPLEV,403,"27.0000-Mathematics, Undergraduate, Degree/certificate-seeking total",1296,0.78
+FrequenciesRV,85,21126,EFCIPLEV,404,"27.0000-Mathematics, Undergraduate, Degree/certificate-seeking, First-time",978,0.59
+FrequenciesRV,86,21126,EFCIPLEV,405,"27.0000-Mathematics, Undergraduate, Other degree/certificate-seeking, Total",1289,0.78
+FrequenciesRV,87,21126,EFCIPLEV,419,"27.0000-Mathematics, Undergraduate, Other degree/certificate-seeking, Transfer-ins",698,0.42
+FrequenciesRV,88,21126,EFCIPLEV,420,"27.0000-Mathematics, Undergraduate, Other degree/certificate-seeking, Continuing",1282,0.77
+FrequenciesRV,89,21126,EFCIPLEV,411,"27.0000-Mathematics, Undergraduate, Non-degree/certificate-seeking",75,0.05
+FrequenciesRV,90,21126,EFCIPLEV,412,"27.0000-Mathematics, Graduate",402,0.24
+FrequenciesRV,91,21126,EFCIPLEV,421,"27.0000-Mathematics, Full-time students total",1300,0.78
+FrequenciesRV,92,21126,EFCIPLEV,422,"27.0000-Mathematics, Full-time students, Undergraduate total",1291,0.78
+FrequenciesRV,93,21126,EFCIPLEV,423,"27.0000-Mathematics, Full-time students, Undergraduate, Degree/certificate-seeking total",1291,0.78
+FrequenciesRV,94,21126,EFCIPLEV,424,"27.0000-Mathematics, Full-time students, Undergraduate, Degree/certificate-seeking, First-time",971,0.59
+FrequenciesRV,95,21126,EFCIPLEV,425,"27.0000-Mathematics, Full-time students, Undergraduate, Other degree/certificate-seeking, Total",1280,0.77
+FrequenciesRV,96,21126,EFCIPLEV,439,"27.0000-Mathematics, Full-time students, Undergraduate, Other degree/certificate-seeking, Transfer-i",666,0.4
+FrequenciesRV,97,21126,EFCIPLEV,440,"27.0000-Mathematics, Full-time students, Undergraduate, Other degree/certificate-seeking, Continuing",1272,0.77
+FrequenciesRV,98,21126,EFCIPLEV,431,"27.0000-Mathematics, Full-time students, Undergraduate, Non-degree/certificate-seeking",31,0.02
+FrequenciesRV,99,21126,EFCIPLEV,432,"27.0000-Mathematics, Full-time students, Graduate",372,0.22
+FrequenciesRV,100,21126,EFCIPLEV,441,"27.0000-Mathematics, Part-time students total",830,0.5
+FrequenciesRV,101,21126,EFCIPLEV,442,"27.0000-Mathematics, Part-time students, Undergraduate total",787,0.47
+FrequenciesRV,102,21126,EFCIPLEV,443,"27.0000-Mathematics, Part-time students, Undergraduate, Degree/certificate-seeking total",778,0.47
+FrequenciesRV,103,21126,EFCIPLEV,444,"27.0000-Mathematics, Part-time students, Undergraduate, Degree/certificate-seeking, First-time",140,0.08
+FrequenciesRV,104,21126,EFCIPLEV,445,"27.0000-Mathematics, Part-time students, Undergraduate, Other degree/certificate-seeking, Total",766,0.46
+FrequenciesRV,105,21126,EFCIPLEV,459,"27.0000-Mathematics, Part-time students, Undergraduate, Other degree/certificate-seeking, Transfer-i",244,0.15
+FrequenciesRV,106,21126,EFCIPLEV,460,"27.0000-Mathematics, Part-time students, Undergraduate, Other degree/certificate-seeking, Continuing",757,0.46
+FrequenciesRV,107,21126,EFCIPLEV,451,"27.0000-Mathematics, Part-time students, Undergraduate, Non-degree/certificate-seeking",60,0.04
+FrequenciesRV,108,21126,EFCIPLEV,452,"27.0000-Mathematics, Part-time students, Graduate",367,0.22
+FrequenciesRV,109,21126,EFCIPLEV,501,"40.0000-Physical Sciences, All students total",1265,0.76
+FrequenciesRV,110,21126,EFCIPLEV,502,"40.0000-Physical Sciences, Undergraduate total",1258,0.76
+FrequenciesRV,111,21126,EFCIPLEV,503,"40.0000-Physical Sciences, Undergraduate, Degree/certificate-seeking total",1258,0.76
+FrequenciesRV,112,21126,EFCIPLEV,504,"40.0000-Physical Sciences, Undergraduate, Degree/certificate-seeking, First-time",1012,0.61
+FrequenciesRV,113,21126,EFCIPLEV,505,"40.0000-Physical Sciences, Undergraduate, Other degree/certificate-seeking, Total",1251,0.75
+FrequenciesRV,114,21126,EFCIPLEV,519,"40.0000-Physical Sciences, Undergraduate, Other degree/certificate-seeking, Transfer-ins",777,0.47
+FrequenciesRV,115,21126,EFCIPLEV,520,"40.0000-Physical Sciences, Undergraduate, Other degree/certificate-seeking, Continuing",1249,0.75
+FrequenciesRV,116,21126,EFCIPLEV,511,"40.0000-Physical Sciences, Undergraduate, Non-degree/certificate-seeking",82,0.05
+FrequenciesRV,117,21126,EFCIPLEV,512,"40.0000-Physical Sciences, Graduate",365,0.22
+FrequenciesRV,118,21126,EFCIPLEV,521,"40.0000-Physical Sciences, Full-time students total",1257,0.76
+FrequenciesRV,119,21126,EFCIPLEV,522,"40.0000-Physical Sciences, Full-time students, Undergraduate total",1252,0.75
+FrequenciesRV,120,21126,EFCIPLEV,523,"40.0000-Physical Sciences, Full-time students, Undergraduate, Degree/certificate-seeking total",1252,0.75
+FrequenciesRV,121,21126,EFCIPLEV,524,"40.0000-Physical Sciences, Full-time students, Undergraduate, Degree/certificate-seeking, First-time",1009,0.61
+FrequenciesRV,122,21126,EFCIPLEV,525,"40.0000-Physical Sciences, Full-time students, Undergraduate, Other degree/certificate-seeking, Tota",1242,0.75
+FrequenciesRV,123,21126,EFCIPLEV,539,"40.0000-Physical Sciences, Full-time students, Undergraduate, Other degree/certificate-seeking, Tran",742,0.45
+FrequenciesRV,124,21126,EFCIPLEV,540,"40.0000-Physical Sciences, Full-time students, Undergraduate, Other degree/certificate-seeking, Cont",1239,0.75
+FrequenciesRV,125,21126,EFCIPLEV,531,"40.0000-Physical Sciences, Full-time students, Undergraduate, Non-degree/certificate-seeking",50,0.03
+FrequenciesRV,126,21126,EFCIPLEV,532,"40.0000-Physical Sciences, Full-time students, Graduate",348,0.21
+FrequenciesRV,127,21126,EFCIPLEV,541,"40.0000-Physical Sciences, Part-time students total",872,0.53
+FrequenciesRV,128,21126,EFCIPLEV,542,"40.0000-Physical Sciences, Part-time students, Undergraduate total",841,0.51
+FrequenciesRV,129,21126,EFCIPLEV,543,"40.0000-Physical Sciences, Part-time students, Undergraduate, Degree/certificate-seeking total",837,0.5
+FrequenciesRV,130,21126,EFCIPLEV,544,"40.0000-Physical Sciences, Part-time students, Undergraduate, Degree/certificate-seeking, First-time",238,0.14000000000000001
+FrequenciesRV,131,21126,EFCIPLEV,545,"40.0000-Physical Sciences, Part-time students, Undergraduate, Other degree/certificate-seeking, Tota",828,0.5
+FrequenciesRV,132,21126,EFCIPLEV,559,"40.0000-Physical Sciences, Part-time students, Undergraduate, Other degree/certificate-seeking, Tran",365,0.22
+FrequenciesRV,133,21126,EFCIPLEV,560,"40.0000-Physical Sciences, Part-time students, Undergraduate, Other degree/certificate-seeking, Cont",813,0.49
+FrequenciesRV,134,21126,EFCIPLEV,551,"40.0000-Physical Sciences, Part-time students, Undergraduate, Non-degree/certificate-seeking",58,0.03
+FrequenciesRV,135,21126,EFCIPLEV,552,"40.0000-Physical Sciences, Part-time students, Graduate",332,0.2
+FrequenciesRV,136,21126,EFCIPLEV,601,"52.0000-Business Management and Administrative Services, All students total",1952,1.18
+FrequenciesRV,137,21126,EFCIPLEV,602,"52.0000-Business Management and Administrative Services, Undergraduate total",1904,1.1499999999999999
+FrequenciesRV,138,21126,EFCIPLEV,603,"52.0000-Business Management and Administrative Services, Undergraduate, Degree/certificate-seeking t",1904,1.1499999999999999
+FrequenciesRV,139,21126,EFCIPLEV,604,"52.0000-Business Management and Administrative Services, Undergraduate, Degree/certificate-seeking,",1703,1.03
+FrequenciesRV,140,21126,EFCIPLEV,605,"52.0000-Business Management and Administrative Services, Undergraduate, Other degree/certificate-see",1903,1.1499999999999999
+FrequenciesRV,141,21126,EFCIPLEV,619,"52.0000-Business Management and Administrative Services, Undergraduate, Other degree/certificate-see",1753,1.06
+FrequenciesRV,142,21126,EFCIPLEV,620,"52.0000-Business Management and Administrative Services, Undergraduate, Other degree/certificate-see",1899,1.1399999999999999
+FrequenciesRV,143,21126,EFCIPLEV,611,"52.0000-Business Management and Administrative Services, Undergraduate, Non-degree/certificate-seeki",299,0.18
+FrequenciesRV,144,21126,EFCIPLEV,612,"52.0000-Business Management and Administrative Services, Graduate",1308,0.79
+FrequenciesRV,145,21126,EFCIPLEV,621,"52.0000-Business Management and Administrative Services, Full-time students total",1934,1.17
+FrequenciesRV,146,21126,EFCIPLEV,622,"52.0000-Business Management and Administrative Services, Full-time undergraduate total",1894,1.1399999999999999
+FrequenciesRV,147,21126,EFCIPLEV,623,"52.0000-Business Management and Administrative Services, Full-time undergraduate, Degree/certificate",1894,1.1399999999999999
+FrequenciesRV,148,21126,EFCIPLEV,624,"52.0000-Business Management and Administrative Services, Full-time undergraduate, Degree/certificate",1674,1.01
+FrequenciesRV,149,21126,EFCIPLEV,625,"52.0000-Business Management and Administrative Services, Full-time undergraduate, Other degree/certi",1890,1.1399999999999999
+FrequenciesRV,150,21126,EFCIPLEV,639,"52.0000-Business Management and Administrative Services, Full-time undergraduate, Other degree/certi",1722,1.04
+FrequenciesRV,151,21126,EFCIPLEV,640,"52.0000-Business Management and Administrative Services, Full-time undergraduate, Other degree/certi",1884,1.1399999999999999
+FrequenciesRV,152,21126,EFCIPLEV,631,"52.0000-Business Management and Administrative Services, Full-time undergraduate, Non-degree/certifi",197,0.12
+FrequenciesRV,153,21126,EFCIPLEV,632,"52.0000-Business Management and Administrative Services, Full-time students, Graduate",1252,0.75
+FrequenciesRV,154,21126,EFCIPLEV,641,"52.0000-Business Management and Administrative Services, Part-time students total",1817,1.1000000000000001
+FrequenciesRV,155,21126,EFCIPLEV,642,"52.0000-Business Management and Administrative Services, Part-time, undergraduate total",1750,1.06
+FrequenciesRV,156,21126,EFCIPLEV,643,"52.0000-Business Management and Administrative Services, Part-time undergraduate, Degree/certificate",1748,1.05
+FrequenciesRV,157,21126,EFCIPLEV,644,"52.0000-Business Management and Administrative Services, Part-time undergraduate, Degree/certificate",993,0.6
+FrequenciesRV,158,21126,EFCIPLEV,645,"52.0000-Business Management and Administrative Services, Part-time undergraduate, Other degree/certi",1746,1.05
+FrequenciesRV,159,21126,EFCIPLEV,659,"52.0000-Business Management and Administrative Services, Part-time undergraduate, Other degree/certi",1221,0.74
+FrequenciesRV,160,21126,EFCIPLEV,660,"52.0000-Business Management and Administrative Services, Part-time undergraduate, Other degree/certi",1737,1.05
+FrequenciesRV,161,21126,EFCIPLEV,651,"52.0000-Business Management and Administrative Services, Part-time undergraduate, Non-degree/certifi",217,0.13
+FrequenciesRV,162,21126,EFCIPLEV,652,"52.0000-Business Management and Administrative Services, Part-time students, Graduate",1233,0.74
+FrequenciesRV,163,21126,EFCIPLEV,716,"22.0101-Law (graduate), All students",212,0.13
+FrequenciesRV,164,21126,EFCIPLEV,736,"22.0101-Law (graduate), Full time",211,0.13
+FrequenciesRV,165,21126,EFCIPLEV,756,"22.0101-Law (first professional), Part time",180,0.11
+FrequenciesRV,166,21126,EFCIPLEV,816,"51.0401-Dentistry (graduate), All students",68,0.04
+FrequenciesRV,167,21126,EFCIPLEV,836,"51.0401-Dentistry (graduate), Full time",68,0.04
+FrequenciesRV,168,21126,EFCIPLEV,856,"51.0401-Dentistry (graduate), Part time",17,0.01
+FrequenciesRV,169,21126,EFCIPLEV,916,"51.1201-Medicine (graduate, All students",154,0.09
+FrequenciesRV,170,21126,EFCIPLEV,936,"51.1201-Medicine (graduate), Full time",153,0.09
+FrequenciesRV,171,21126,EFCIPLEV,956,"51.1201-Medicine (graduate), Part time",55,0.03
+FrequenciesRV,172,21994,CIPCODE,13.0000,Education,32862,19.809999999999999
+FrequenciesRV,173,21994,CIPCODE,14.0000,Engineering,16830,10.15
+FrequenciesRV,174,21994,CIPCODE,26.0000,Biological Sciences/Life Sciences,29703,17.91
+FrequenciesRV,175,21994,CIPCODE,27.0000,Mathematics,21831,13.16
+FrequenciesRV,176,21994,CIPCODE,40.0000,Physical Sciences,22092,13.32
+FrequenciesRV,177,21994,CIPCODE,51.0401,Dentistry,153,0.09
+FrequenciesRV,178,21994,CIPCODE,51.1201,Medicine,362,0.22
+FrequenciesRV,179,21994,CIPCODE,52.0000,Business Management and Administrative Services,41428,24.98
+FrequenciesRV,180,21994,CIPCODE,22.0101,Law,603,0.36
+FrequenciesRV,181,21995,LINE,1,"Full-time, first-time, first-year, degree-seeking undergraduates",6985,4.21
+FrequenciesRV,182,21995,LINE,2,"Full-time degree-seeking undergraduates, transfer-ins",6353,3.83
+FrequenciesRV,183,21995,LINE,3,"Full-time degree-seeking undergraduates, continuing",8210,4.95
+FrequenciesRV,184,21995,LINE,6,Total full-time degree-seeking undergraduates,8275,4.99
+FrequenciesRV,185,21995,LINE,7,Full-time nondegree-seeking undergraduates,619,0.37
+FrequenciesRV,186,21995,LINE,8,Total  full-time undergraduates,8278,4.99
+FrequenciesRV,187,21995,LINE,9,Full-time first-professional,432,0.26
+FrequenciesRV,188,21995,LINE,11,Full-time graduates,4062,2.4500000000000002
+FrequenciesRV,189,21995,LINE,14,Total full-time students,8582,5.17
+FrequenciesRV,190,21995,LINE,15,"Part-time, first-time, first-year, degree-seeking undergraduates",2783,1.68
+FrequenciesRV,191,21995,LINE,16,"Part-time degree-seeking undergraduates, transfer-ins",3619,2.1800000000000002
+FrequenciesRV,192,21995,LINE,17,"Part-time degree-seeking undergraduates, continuing",6431,3.88
+FrequenciesRV,193,21995,LINE,20,Total part-time degree-seeking undergraduates,6552,3.95
+FrequenciesRV,194,21995,LINE,21,Part-time nondegree-seeking undergraduates,754,0.45
+FrequenciesRV,195,21995,LINE,22,Total part-time undergraduates,6595,3.98
+FrequenciesRV,196,21995,LINE,23,Part-time first-professional,252,0.15
+FrequenciesRV,197,21995,LINE,25,Part-time graduates,4010,2.42
+FrequenciesRV,198,21995,LINE,28,Total part-time,7091,4.28
+FrequenciesRV,199,21995,LINE,29,Total enrollment,8664,5.22
+FrequenciesRV,200,21995,LINE,99,Generated record origial line number not on survey form,67317,40.590000000000003
+FrequenciesRV,201,21996,SECTION,1,Full-time,60038,36.200000000000003
+FrequenciesRV,202,21996,SECTION,2,Part-time,44592,26.88
+FrequenciesRV,203,21996,SECTION,3,All students,61234,36.92
+FrequenciesRV,204,21997,LSTUDY,1,All students total,8664,5.22
+FrequenciesRV,205,21997,LSTUDY,2,"All students, Undergraduate total",8339,5.03
+FrequenciesRV,206,21997,LSTUDY,3,"All students, Undergraduate, Degree/certificate-seeking total",8329,5.0199999999999996
+FrequenciesRV,207,21997,LSTUDY,4,"All students, Undergraduate, Degree/certificate-seeking, First-time",7064,4.26
+FrequenciesRV,208,21997,LSTUDY,5,"All students, Undergraduate, Degree/certificate-seeking, Other degree/certificate-seeking",8308,5.01
+FrequenciesRV,209,21997,LSTUDY,19,"All students, Undergraduate, Other degree/certificatee-seeking, Transfer-ins",6526,3.93
+FrequenciesRV,210,21997,LSTUDY,20,"All students, Undergraduate, Other degree/certificatee-seeking, Continuing",8283,4.99
+FrequenciesRV,211,21997,LSTUDY,11,"All students, Undergraduate, Non-degree/certificate-seeking",1004,0.61
+FrequenciesRV,212,21997,LSTUDY,12,"All students, Graduate",4283,2.58
+FrequenciesRV,213,21997,LSTUDY,16,"All students, First professional",434,0.26
+FrequenciesRV,214,21997,LSTUDY,21,Full-time students total,8582,5.17
+FrequenciesRV,215,21997,LSTUDY,22,"Full-time students, Undergraduate total",8278,4.99
+FrequenciesRV,216,21997,LSTUDY,23,"Full-time students, Undergraduate, Degree/certificate-seeking total",8275,4.99
+FrequenciesRV,217,21997,LSTUDY,24,"Full-time students, Undergraduate, Degree/certificate-seeking, First-time",6985,4.21
+FrequenciesRV,218,21997,LSTUDY,25,"Full-time students, Undergraduate, Degree/certificate-seeking, Other degree/certificate-seeking",8242,4.97
+FrequenciesRV,219,21997,LSTUDY,39,"Full-time students, Undergraduate, Other degree/certificatee-seeking, Transfer-ins",6353,3.83
+FrequenciesRV,220,21997,LSTUDY,40,"Full-time students, Undergraduate, Other degree/certificatee-seeking, Continuing",8210,4.95
+FrequenciesRV,221,21997,LSTUDY,31,"Full-time students, Undergraduate, Non-degree/certificate-seeking",619,0.37
+FrequenciesRV,222,21997,LSTUDY,32,"Full-time students, Graduate",4062,2.4500000000000002
+FrequenciesRV,223,21997,LSTUDY,36,"Full-time students, First professional",432,0.26
+FrequenciesRV,224,21997,LSTUDY,41,Part-time students total,7091,4.28
+FrequenciesRV,225,21997,LSTUDY,42,"Part-time students, Undergraduate total",6595,3.98
+FrequenciesRV,226,21997,LSTUDY,43,"Part-time students, Undergraduate, Degree/certificate-seeking total",6552,3.95
+FrequenciesRV,227,21997,LSTUDY,44,"Part-time students, Undergraduate, Degree/certificate-seeking, First-time",2783,1.68
+FrequenciesRV,228,21997,LSTUDY,45,"Part-time students, Undergraduate, Degree/certificate-seeking, Other degree/certificate-seeking",6505,3.92
+FrequenciesRV,229,21997,LSTUDY,59,"Part-time students, Undergraduate, Other degree/certificatee-seeking, Transfer-ins",3619,2.1800000000000002
+FrequenciesRV,230,21997,LSTUDY,60,"Part-time students, Undergraduate, Other degree/certificatee-seeking, Continuing",6431,3.88
+FrequenciesRV,231,21997,LSTUDY,51,"Part-time students, Undergraduate, Non-degree/certificate-seeking",754,0.45
+FrequenciesRV,232,21997,LSTUDY,52,"Part-time students, Graduate",4010,2.42
+FrequenciesRV,233,21997,LSTUDY,56,"Part-time students, First professional",252,0.15
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,21246,EFTOTLT,165864,40003680,241.18362031543916,1,57695,Grand total
+StatisticsRV,2,21201,EFTOTLM,165864,19322912,116.49852891525587,0,20844,Total men
+StatisticsRV,3,21206,EFTOTLW,165864,20680768,124.68509140018328,0,36884,Total women
+StatisticsRV,4,24504,EFAIANT,165864,212402,1.2805792697631795,0,603,American Indian or Alaska Native total
+StatisticsRV,5,24506,EFAIANM,165864,78454,0.47300197752375439,0,187,American Indian or Alaska Native men
+StatisticsRV,6,24508,EFAIANW,165864,133948,0.80757729223942509,0,603,American Indian or Alaska Native women
+StatisticsRV,7,24510,EFASIAT,165864,3269332,19.71091978970723,0,5005,Asian total
+StatisticsRV,8,24512,EFASIAM,165864,1647048,9.9301114165822604,0,2471,Asian men
+StatisticsRV,9,24514,EFASIAW,165864,1622284,9.7808083731249695,0,2534,Asian women
+StatisticsRV,10,24516,EFBKAAT,165864,4024096,24.2614189938745,0,9612,Black or African American total
+StatisticsRV,11,24518,EFBKAAM,165864,1610756,9.7113056480007725,0,2767,Black or African American men
+StatisticsRV,12,24520,EFBKAAW,165864,2413340,14.550113345873728,0,6845,Black or African American women
+StatisticsRV,13,24522,EFHISPT,165864,6817890,41.105303139921865,0,7164,Hispanic total
+StatisticsRV,14,24524,EFHISPM,165864,3096168,18.666907828100129,0,2963,Hispanic men
+StatisticsRV,15,24526,EFHISPW,165864,3721722,22.438395311821733,0,4677,Hispanic women
+StatisticsRV,16,24528,EFNHPIT,165864,98630,0.59464380456277433,0,413,Native Hawaiian or Other Pacific Islander total
+StatisticsRV,17,24530,EFNHPIM,165864,42166,0.25422032508561232,0,163,Native Hawaiian or Other Pacific Islander men
+StatisticsRV,18,24532,EFNHPIW,165864,56464,0.34042347947716201,0,260,Native Hawaiian or Other Pacific Islander women
+StatisticsRV,19,24534,EFWHITT,165864,19938984,120.21284908117494,0,31024,White total
+StatisticsRV,20,24536,EFWHITM,165864,9891366,59.635400086818116,0,11122,White men
+StatisticsRV,21,24538,EFWHITW,165864,10047618,60.577448994356821,0,26099,White women
+StatisticsRV,22,24540,EF2MORT,165864,1531816,9.2353735590604344,0,1586,Two or more races total
+StatisticsRV,23,24542,EF2MORM,165864,735960,4.4371292142960499,0,521,Two or more races men
+StatisticsRV,24,24544,EF2MORW,165864,795856,4.7982443447643854,0,1111,Two or more races women
+StatisticsRV,25,21241,EFUNKNT,165864,1655346,9.9801403559542763,0,15991,Race/ethnicity unknown total
+StatisticsRV,26,21191,EFUNKNM,165864,766254,4.6197728259296778,0,8191,Race/ethnicity unknown men
+StatisticsRV,27,21196,EFUNKNW,165864,889092,5.3603675300245985,0,8436,Race/ethnicity unknown women
+StatisticsRV,28,21211,EFNRALT,165864,2455184,14.802392321419958,0,4800,U.S. Nonresident total
+StatisticsRV,29,21131,EFNRALM,165864,1454740,8.7706795929194996,0,3039,U.S. Nonresident men
+StatisticsRV,30,21136,EFNRALW,165864,1000444,6.0317127285004579,0,1779,U.S. Nonresident women
+Imputation code values,0,Code values for item imputation variables Xvarname,
+Imputation code values,1,CodeValue,ValueLabel
+Imputation code values,2,A,Not applicable
+Imputation code values,3,B,Institution left item blank
+Imputation code values,4,C,Analyst corrected reported value
+Imputation code values,5,D,Do not know
+Imputation code values,6,G,Data generated from other data values
+Imputation code values,7,H,Value not derived - data not usable
+Imputation code values,8,J,Logical imputation
+Imputation code values,9,K,Ratio adjustment 
+Imputation code values,10,L,Imputed using the Group Median procedure
+Imputation code values,11,N,Imputed using Nearest Neighbor procedure
+Imputation code values,12,P,Imputed using Carry Forward procedure
+Imputation code values,13,R,Reported
+Imputation code values,14,Z,Implied zero;

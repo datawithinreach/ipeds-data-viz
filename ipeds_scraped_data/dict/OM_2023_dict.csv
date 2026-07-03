@@ -1,0 +1,193 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for Outcome Measures of entering degree/certificate-seeking undergraduate cohorts from 2015-16 at degree-granting institutions, by Pell status:  August 31, 2023",,,,,,,,,
+Introduction,1,(Provisional release),,,,,,,,,
+Introduction,2,Filename,OM2023
+Introduction,3,Overview,"This table contains award and enrollment data from degree-granting institutions on four cohorts and eight subcohorts of undergraduates who entered an institution in 2015-16 at three points in time: four-year (August 31, 2019) six-year (August 31, 2021) and eight-year (August 31, 2023).  The cohorts of degree/certificate-seeking undergraduates are:
+
+(1) First-time full-time entering;
+  (a) Pell-recipient
+  (b) Non-Pell recipient
+(2) First-time part-time entering
+  (a) Pell-recipient
+  (b) Non-Pell recipient
+(3) Non-first-time full-time entering
+  (a) Pell-recipient
+  (b) Non-Pell recipient
+(4) Non-first-time part-time entering
+  (a) Pell-recipient
+  (b) Non-Pell recipient
+
+All degree/certificate-seeking undergraduate students entering the institution during the 12-month period July 1, 2015 and June 30, 2016 are reported in one of the subcohorts. 
+
+This table has multiple records per institution.  Records are uniquely defined by the variables IPEDS ID (UNITID), and the cohort (OMCHRT) described above.  Each record (cohort) will contain the revised and adjusted size of the cohorts, the number and percent that completed and the number and percent still enrolled. See detailed information in the spreadsheets below.",,,,,,,,
+Introduction,4,Note,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.",,,,,,,,
+Introduction,5,Contents of spreadsheet,,,,,,,,,
+Introduction,6,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,7,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,8,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.,,,,,,,,
+Introduction,9,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file.",,,,,,,,
+Introduction,10,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle,
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution,
+varlist,2,83001,OMCHRT,N,2,Disc,,Cohort category,
+varlist,3,83002,OMRCHRT,N,6,Cont,XOMRCHRT,2015-16 cohort,
+varlist,4,83003,OMEXCLS,N,6,Cont,XOMEXCLS,Exclusions to 2015-16 cohort,
+varlist,5,83004,OMACHRT,N,6,Cont,XOMACHRT,Adjusted 2015-16 cohort,
+varlist,6,83011,OMCERT4,N,6,Cont,XOMCERT4,"Number of adjusted cohort receiving a certificate at 4 years (August 31, 2019)",
+varlist,7,83012,OMASSC4,N,6,Cont,XOMASSC4,"Number of adjusted cohort receiving an Associate's degree at 4 years (August 31, 2019)",
+varlist,8,83013,OMBACH4,N,6,Cont,XOMBACH4,"Number of adjusted cohort receiving a Bachelor's degree at 4 years (August 31, 2019)",
+varlist,9,83014,OMAWDN4,N,6,Cont,XOMAWDN4,"Number of adjusted cohort receiving an award at 4 years (August 31, 2019)",
+varlist,10,83015,OMAWDP4,N,3,Cont,XOMAWDP4,"Percent of adjusted cohort receiving an award at 4 years (August 31, 2019)",
+varlist,11,83021,OMCERT6,N,6,Cont,XOMCERT6,"Number of adjusted cohort receiving a certificate at 6 years (August 31, 2021)",
+varlist,12,83022,OMASSC6,N,6,Cont,XOMASSC6,"Number of adjusted cohort receiving an Associate's degree at 6 years (August 31, 2021)",
+varlist,13,83023,OMBACH6,N,6,Cont,XOMBACH6,"Number of adjusted cohort receiving a Bachelor's degree at 6 years (August 31, 2021)",
+varlist,14,83024,OMAWDN6,N,6,Cont,XOMAWDN6,"Number of adjusted cohort receiving an award at 6 years (August 31, 2021)",
+varlist,15,83025,OMAWDP6,N,3,Cont,XOMAWDP6,"Percent of adjusted cohort receiving an award at 6 years (August 31, 2021)",
+varlist,16,83031,OMCERT8,N,6,Cont,XOMCERT8,"Number of adjusted cohort receiving a certificate at 8 years (August 31, 2023)",
+varlist,17,83032,OMASSC8,N,6,Cont,XOMASSC8,"Number of adjusted cohort receiving an Associate's degree at 8 years (August 31, 2023)",
+varlist,18,83033,OMBACH8,N,6,Cont,XOMBACH8,"Number of adjusted cohort receiving a Bachelor's degree at 8 years (August 31, 2023)",
+varlist,19,83034,OMAWDN8,N,6,Cont,XOMAWDN8,"Number of adjusted cohort receiving an award at 8 years (August 31, 2023)",
+varlist,20,83051,OMENRYI,N,6,Cont,XOMENRYI,"Number of adjusted cohort still enrolled at your institution at 8 years (August 31, 2023)",
+varlist,21,83056,OMENRAI,N,6,Cont,XOMENRAI,"Number of adjusted cohort who enrolled subsequently at another institution at 8 years (August 31, 2023)",
+varlist,22,83061,OMENRUN,N,6,Cont,XOMENRUN,"Number of adjusted cohort whose subsequent enrollment status is unknown at 8 years (August 31, 2023)",
+varlist,23,83066,OMNOAWD,N,6,Cont,XOMNOAWD,"Number of adjusted cohort who did not receive an award from your institution at 8 years (August 31, 2023)",
+varlist,24,83035,OMAWDP8,N,3,Cont,XOMAWDP8,"Percent of adjusted cohort receiving an award at 8 years (August 31, 2023)",
+varlist,25,83076,OMENRTP,N,3,Cont,XOMENRTP,"Percent of adjusted cohort still or subsequently enrolled at 8 years (August 31, 2023)",
+varlist,26,83081,OMENRYP,N,3,Cont,XOMENRYP,"Percent of adjusted cohort still enrolled at your institution at 8 years (August 31, 2023)",
+varlist,27,83086,OMENRAP,N,3,Cont,XOMENRAP,"Percent of adjusted cohort  enrolled subsequently at another institution at 8 years (August 31, 2023)",
+varlist,28,83091,OMENRUP,N,3,Cont,XOMENRUP,"Percent of adjusted cohort  enrollment status unknown at 8 years (August 31, 2023)",
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,83001,OMCHRT,"At three status points (4-, 6-, and 8-years after entry), the OM component collects award and enrollment data from degree-granting institutions on four cohorts and eight subcohorts of undergraduates:
+
+(1) First-time full-time entering;
+  (a) Pell-recipient
+  (b) Non-Pell recipient
+(2) First-time part-time entering
+  (a) Pell-recipient
+  (b) Non-Pell recipient
+(3) Non-first-time full-time entering
+  (a) Pell-recipient
+  (b) Non-Pell recipient
+(4) Non-first-time part-time entering
+  (a) Pell-recipient
+  (b) Non-Pell recipient
+
+Entering students (undergraduate) - Students at the undergraduate level, both full-time and part-time, coming into the institution for the first time using a full-year cohort. Entering students are identified as those students who entered the institution between July 1 of one year and June 30 of the following year.  This includes all first-time undergraduate students, students, who transfer into the institution at the undergraduate level for the first time, and non- degree/certificate seeking undergraduates.
+
+First-time entering (undergraduate) - A student who has no prior postsecondary experience (except as noted below) attending any institution for the first time at the undergraduate level. This includes students enrolled in academic or occupational programs. It also includes students enrolled in the fall term, who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school).
+
+Non-first-time entering (undergraduate) - A student who has prior postsecondary experience before attending the reporting IPEDS institution.
+
+Full-time (undergraduate) - A student enrolled for 12 or more semester credits, or 12 or more quarter credits, or 24 or more clock hours a week each term.
+
+Part-time (undergraduate) - A student enrolled for either less than 12 semester or quarter credits, or less than 24 clock hours a week each term."
+Description,3,83002,OMRCHRT,"All degree/certificate-seeking undergraduate students entering the institution during the 12-month period July 1, 2015 and June 30, 2016 are reported in one of the subcohorts.  All institutions  report using a full-year cohort, which counts all students who entered the institution between July 1, 2015 and June 30, 2016  Academic reporting institutions reported students who were enrolled through the term's Census Date for enrollment purposes. Program/hybrid reporting institutions reported students who were enrolled for at least 15 days in a program of up to, and including, one year in length, or 30 days in a program of greater than one year in length."
+Description,4,83003,OMEXCLS,"The total number of students who left institution after the point of entry through August 31, 2023 for one of the following allowable reasons:
+
+(a) The student is deceased or is totally and permanently disabled and thus unable to return to school.
+(b) The student left school to serve in the armed forces or was called to active duty. (DO NOT include students already in the military who transfer to another duty station).
+(c) The student left school to serve with a foreign aid service of the Federal Government, such as the Peace Corps.
+(d) The student left school to serve on an official church mission.
+
+Students who leave the institution for one of the reasons noted in b, c, or d above, but return prior to the 8-year status point, may be subtracted from the cohort."
+Description,5,83004,OMACHRT,Adjusted cohort is the revised cohort minus exclusions
+Description,6,83011,OMCERT4,"The number of students from the adjusted cohort, who earned a certificate by the status point (August 31, 2019; 4 years after entry). For students earning multiple awards, only the highest award conferred to the student by the status point is reported.
+
+Certificate	 - A formal award certifying the satisfactory completion of a postsecondary education program."
+Description,7,83012,OMASSC4,"The number of students from the adjusted cohort, who earned an associate's degree by the status point (August 31, 2019; 4 years after entry). For students earning multiple awards, only the highest award conferred to the student by the status point is reported.
+
+Associate's degree	 - An award that normally requires at least 2 but less than 4 years of full-time equivalent college work."
+Description,8,83013,OMBACH4,"The number of students from the adjusted cohort, who earned a bachelor's degree by the status point (August 31, 2019; 4 years after entry). For students earning multiple awards, only the highest award conferred to the student by the status point is reported.
+
+Bachelor's degree	 - An award (baccalaureate or equivalent degree, as determined by the Secretary, U.S. Department of Education) that normally requires at least 4 but not more than 5 years of full-time equivalent college-level work. This includes all bachelor's degrees conferred in a 5-year cooperative (work-study) program. A cooperative plan provides for alternate class attendance and employment in business, industry, or government; thus, it allows students to combine actual work experience with their college studies. Also includes bachelor's degrees in which the normal 4 years of work are completed in 3 years."
+Description,9,83014,OMAWDN4,"The number of students from the adjusted cohort who have received an award (degree or certificate) from reporting institution by the status point (August 31, 2019; 4 years after entry). For students who have earned multiple awards at the reporting institution, students are counted once based on the highest award conferred."
+Description,10,83015,OMAWDP4,"This variable is the proportion of students from the adjusted cohort who received an award (degree or certificate) from the reporting institution for each entering cohort and subcohort. Number of students receiving an award from the reporting institution through August 31, 2019 (OMAWDN4) divided by the adjusted cohort (OMACHRT)."
+Description,11,83021,OMCERT6,"The number of students from the adjusted cohort, who earned a certificate by the status point (August 31, 2021; 6 years after entry). For students earning multiple awards, only the highest award conferred to the student by the status point is reported.
+
+Certificate	 - A formal award certifying the satisfactory completion of a postsecondary education program."
+Description,12,83022,OMASSC6,"The number of students from the adjusted cohort, who earned an associate's degree by the status point (August 31, 2021; 6 years after entry). For students earning multiple awards, only the highest award conferred to the student by the status point is reported.
+
+Associate's degree	 - An award that normally requires at least 2 but less than 4 years of full-time equivalent college work."
+Description,13,83023,OMBACH6,"The number of students from the adjusted cohort, who earned a bachelor's degree by the status point (August 31, 2021; 6 years after entry). For students earning multiple awards, only the highest award conferred to the student by the status point is reported.
+
+Bachelor's degree	 - An award (baccalaureate or equivalent degree, as determined by the Secretary, U.S. Department of Education) that normally requires at least 4 but not more than 5 years of full-time equivalent college-level work. This includes all bachelor's degrees conferred in a 5-year cooperative (work-study) program. A cooperative plan provides for alternate class attendance and employment in business, industry, or government; thus, it allows students to combine actual work experience with their college studies. Also includes bachelor's degrees in which the normal 4 years of work are completed in 3 years."
+Description,14,83024,OMAWDN6,"The number of students from the adjusted cohort who have received an award (degree or certificate) from reporting institution by the status point (August 31, 2021; 6 years after entry). For students who have earned multiple awards at the reporting institution, students are counted once based on the highest award conferred."
+Description,15,83025,OMAWDP6,"This variable is the proportion of students from the adjusted cohort who received an award (degree or certificate) from the reporting institution for each entering cohort and subcohort. Number of students receiving an award from the reporting institution through August 31, 2021 (OMAWDN6) divided by the adjusted cohort (OMACHRT)."
+Description,16,83031,OMCERT8,"The number of students from the adjusted cohort, who earned a certificate by status point (August 31, 2023; 8 years after entry). For students earning multiple awards, only the highest award conferred to the student by the status point is reported.
+
+Certificate	 - A formal award certifying the satisfactory completion of a postsecondary education program."
+Description,17,83032,OMASSC8,"The number of students from the adjusted cohort, who earned an associate's degree by status point (August 31, 2023; 8 years after entry). For students earning multiple awards, only the highest award conferred to the student by the status point is reported.
+
+Associate's degree	 - An award that normally requires at least 2 but less than 4 years of full-time equivalent college work."
+Description,18,83033,OMBACH8,"The number of students from the adjusted cohort, who earned a bachelor's degree by status point (August 31, 2023; 8 years after entry). For students earning multiple awards, only the highest award conferred to the student by the status point is reported.
+
+Bachelor's degree	 - An award (baccalaureate or equivalent degree, as determined by the Secretary, U.S. Department of Education) that normally requires at least 4 but not more than 5 years of full-time equivalent college-level work. This includes all bachelor's degrees conferred in a 5-year cooperative (work-study) program. A cooperative plan provides for alternate class attendance and employment in business, industry, or government; thus, it allows students to combine actual work experience with their college studies. Also includes bachelor's degrees in which the normal 4 years of work are completed in 3 years."
+Description,19,83034,OMAWDN8,"The number of entering students from the adjusted cohort who have received an award (degree or certificate) from reporting institution by the status point (August 31, 2023; 8 years after entry). For students who have earned multiple awards at the reporting institution, students are counted once based on the highest award conferred."
+Description,20,83051,OMENRYI,"The number of entering students from the adjusted cohort who have not earned an award and still enrolled at the reporting institution through August 31, 2023. Included are students who immediately enroll in the next term following August 31, 2021 at the reporting institution."
+Description,21,83056,OMENRAI,"The number of entering students from the adjusted cohort, who did not earn an award, transferred out of the reporting institution, and subsequently enrolled in another institution anytime between time of entry through August 31, 2023. This only includes students for whom the reporting institution can confirm subsequent enrollment."
+Description,22,83061,OMENRUN,"This variable is calculated by subtracting the sum of the number still enrolled at reporting institution (OMENRYI), number who subsequently enrolled at another institution (OMENRAI), and the number awarded by the reporting institution (OMAWDN8) from the adjusted cohort (OMACHRT)."
+Description,23,83066,OMNOAWD,"The total number of entering students who did not receive an award (degree or certificate) from reporting institution by the status point (August 31, 2023; 8 years after entry) is calculated by summing three columns: number still enrolled at the reported institution (OMENRYI), number who subsequently enrolled at another institution (OMENRAI), and number of students whose subsequent enrollment status is unknown (OMENRUN). For students who have earned multiple awards at the reporting institution, students are counted once based on the highest award conferred."
+Description,24,83035,OMAWDP8,"This variable is the proportion of students who received an award (degree or certificate) from the reporting institution for each entering cohort and subcohort. Number of students receiving an award from the reporting institution through August 31, 2023 (OMAWDN8) is divided by the adjusted cohort (OMACHRT)."
+Description,25,83076,OMENRTP,"This variable is the proportion of entering students who did not receive an award (degree or certificate) from reporting institution and are still enrolled by the status point (August 31, 2023; 8 years after entry) either at the reporting institution or at another institution. The sum of data from the number still enrolled at the reporting institution (OMENRYI) and number who subsequently enrolled at another institution (OMENRAI) are divided by the adjusted cohort (OMACHRT)."
+Description,26,83081,OMENRYP,"This variable is the proportion of entering students who did not receive an award (degree or certificate) and are still enrolled by the status point (August 31, 2023; 8 years after entry) at the reporting institution. Number still enrolled at the reporting institution (OMENRYI) is divided by the adjusted cohort (OMACHRT)."
+Description,27,83086,OMENRAP,"This variable is the proportion of students who left the reporting institution and subsequently enrolled at another institution. These students are still enrolled through August 31, 2023 at another institution. The number who subsequently enrolled at another institution (OMENRAI) is divided by the adjusted cohort  (OMACHRT)."
+Description,28,83091,OMENRUP,"This variable is the proportion of adjusted cohort who did not receive an award (degree or certificate) from reporting institution and whose enrollment status is unknown by the status point (August 31, 2023; 8 years after entry). Enrollment unknown (OMENRUN) is calculated by subtracting the sum of the number still enrolled at reporting institution (OMENRYI), number who subsequently enrolled at another institution (OMENRAI), and the number awarded by the reporting institution (OMAWDN8) from the adjusted cohort (OMACHRT). The enrollment unknown (OMENRUN is divided by the adjusted cohort (OMACHRT)."
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,83001,OMCHRT,50,"Total entering, Total",3626,7.66
+Frequencies,2,83001,OMCHRT,51,"Total entering, Pell Grant recipients",3487,7.37
+Frequencies,3,83001,OMCHRT,52,"Total entering, Non-Pell Grant recipients",3618,7.64
+Frequencies,4,83001,OMCHRT,10,"First-time, full-time entering, Total",3492,7.38
+Frequencies,5,83001,OMCHRT,11,"First-time, full-time entering, Pell Grant recipients",3358,7.09
+Frequencies,6,83001,OMCHRT,12,"First-time, full-time entering, Non-Pell Grant recipients",3466,7.32
+Frequencies,7,83001,OMCHRT,20,"First-time, part-time entering, Total",2632,5.56
+Frequencies,8,83001,OMCHRT,21,"First-time, part-time entering, Pell Grant recipients",2297,4.8499999999999996
+Frequencies,9,83001,OMCHRT,22,"First-time, part-time entering, Non-Pell Grant recipients",2534,5.35
+Frequencies,10,83001,OMCHRT,30,"Non-first-time, full-time entering, Total",3527,7.45
+Frequencies,11,83001,OMCHRT,31,"Non-first-time, full-time entering, Pell Grant recipients",3369,7.12
+Frequencies,12,83001,OMCHRT,32,"Non-first-time, full-time entering, Non-Pell Grant recipients",3482,7.35
+Frequencies,13,83001,OMCHRT,40,"Non-first-time, part-time entering, Total",2916,6.16
+Frequencies,14,83001,OMCHRT,41,"Non-first-time, part-time entering, Pell Grant recipients",2703,5.71
+Frequencies,15,83001,OMCHRT,42,"Non-first-time, part-time entering, Non-Pell Grant recipients",2835,5.99
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,83002,OMRCHRT,47342,25537036,539.4160787461451,1,40786,2015-16 cohort
+Statistics,2,83003,OMEXCLS,47342,41896,0.88496472476870436,0,790,Exclusions to 2015-16 cohort
+Statistics,3,83004,OMACHRT,47342,25495140,538.53111402137631,0,40746,Adjusted 2015-16 cohort
+Statistics,4,83011,OMCERT4,47342,1058024,22.348527734358498,0,5867,"Number of adjusted cohort receiving a certificate at 4 years (August 31, 2019)"
+Statistics,5,83012,OMASSC4,47342,2749248,58.072071310886741,0,6244,"Number of adjusted cohort receiving an Associate's degree at 4 years (August 31, 2019)"
+Statistics,6,83013,OMBACH4,31323,5673496,181.12875522778788,0,11394,"Number of adjusted cohort receiving a Bachelor's degree at 4 years (August 31, 2019)"
+Statistics,7,83014,OMAWDN4,47342,9480768,200.26124794051793,0,11394,"Number of adjusted cohort receiving an award at 4 years (August 31, 2019)"
+Statistics,8,83015,OMAWDP4,47329,1866678,39.440469902174144,0,100,"Percent of adjusted cohort receiving an award at 4 years (August 31, 2019)"
+Statistics,9,83021,OMCERT6,47342,1073604,22.677622407164886,0,5867,"Number of adjusted cohort receiving a certificate at 6 years (August 31, 2021)"
+Statistics,10,83022,OMASSC6,47342,3135024,66.220776477546366,0,6903,"Number of adjusted cohort receiving an Associate's degree at 6 years (August 31, 2021)"
+Statistics,11,83023,OMBACH6,31323,7170864,228.93286083708458,0,13973,"Number of adjusted cohort receiving a Bachelor's degree at 6 years (August 31, 2021)"
+Statistics,12,83024,OMAWDN6,47342,11379492,240.36779181276668,0,13973,"Number of adjusted cohort receiving an award at 6 years (August 31, 2021)"
+Statistics,13,83025,OMAWDP6,47329,2151398,45.456231908555012,0,100,"Percent of adjusted cohort receiving an award at 6 years (August 31, 2021)"
+Statistics,14,83031,OMCERT8,47342,1082812,22.872122005829919,0,5867,"Number of adjusted cohort receiving a certificate at 8 years (August 31, 2023)"
+Statistics,15,83032,OMASSC8,47342,3278480,69.2509822145241,0,7042,"Number of adjusted cohort receiving an Associate's degree at 8 years (August 31, 2023)"
+Statistics,16,83033,OMBACH8,31323,7379984,235.60910513041534,0,14636,"Number of adjusted cohort receiving a Bachelor's degree at 8 years (August 31, 2023)"
+Statistics,17,83034,OMAWDN8,47342,11741276,248.00971653077605,0,14636,"Number of adjusted cohort receiving an award at 8 years (August 31, 2023)"
+Statistics,18,83051,OMENRYI,47342,303576,6.4124033627645645,0,3762,"Number of adjusted cohort still enrolled at your institution at 8 years (August 31, 2023)"
+Statistics,19,83056,OMENRAI,47342,5754164,121.54459042710489,0,11060,"Number of adjusted cohort who enrolled subsequently at another institution at 8 years (August 31, 2023)"
+Statistics,20,83061,OMENRUN,47342,7696124,162.56440370073085,0,18306,"Number of adjusted cohort whose subsequent enrollment status is unknown at 8 years (August 31, 2023)"
+Statistics,21,83066,OMNOAWD,47342,13753864,290.52139749060029,0,29970,"Number of adjusted cohort who did not receive an award from your institution at 8 years (August 31, 2023)"
+Statistics,22,83035,OMAWDP8,47329,2217940,46.862177523294385,0,100,"Percent of adjusted cohort receiving an award at 8 years (August 31, 2023)"
+Statistics,23,83076,OMENRTP,47329,1009873,21.337298485072576,0,100,"Percent of adjusted cohort still or subsequently enrolled at 8 years (August 31, 2023)"
+Statistics,24,83081,OMENRYP,47329,45928,0.97039869847239535,0,100,"Percent of adjusted cohort still enrolled at your institution at 8 years (August 31, 2023)"
+Statistics,25,83086,OMENRAP,47329,963547,20.358490566037737,0,100,"Percent of adjusted cohort  enrolled subsequently at another institution at 8 years (August 31, 2023)"
+Statistics,26,83091,OMENRUP,47329,1505945,31.818652411840521,0,100,"Percent of adjusted cohort  enrollment status unknown at 8 years (August 31, 2023)"
+Imputation values,0,Code values for item imputation variables Xvarname,
+Imputation values,1,CodeValue,ValueLabel
+Imputation values,2,A,Not applicable
+Imputation values,3,B,Institution left item blank
+Imputation values,4,C,Analyst corrected reported value
+Imputation values,5,D,Do not know
+Imputation values,6,G,Data generated from other data values
+Imputation values,7,H,Value not derived - data not usable
+Imputation values,8,J,Logical imputation
+Imputation values,9,K,Ratio adjustment 
+Imputation values,10,L,Imputed using the Group Median procedure
+Imputation values,11,N,Imputed using Nearest Neighbor procedure
+Imputation values,12,P,Imputed using Carry Forward procedure
+Imputation values,13,R,Reported
+Imputation values,14,Z,Implied zero;

@@ -1,0 +1,425 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File Documentation for number of full- and part-time staff by tenure status, medical school status, and occupational category, 2023",,,,,,,,,
+Introduction,1,(Provisional release),,,,,,,,,
+Introduction,2,Filename,EAP2023
+Introduction,3,Overview,"This file contains the number of staff classified by full- and part-time status, medical school status, occupational category and faculty and tenure status for applicable occupations.  Faculty and tenure status categories include tenured, on-tenured-track, not-on-tenure track/no tenure system and without faculty status. Staff that are not on tenure track are further disaggregated by contract length (multi-year, indefinite, annual and less-than-annual). The multi-year and indefinite contracts were new categories beginning in 2016. From 2012 through 2015 the multi-year and indefinite contract lengths were combined as one category and often referred to as multi-year in past documentation. This data file has multiple records for each institution.   Each record is uniquely defined by the variables IPEDS ID (UNITID), and the variable EAPCAT which defines occupational category and tenure status of staff.
+",,,,,,,,
+Introduction,4,,,,,,,,,,
+Introduction,5,Note,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.",,,,,,,,
+Introduction,6,Contents of spreadsheet,,,,,,,,,
+Introduction,7,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont.) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,8,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,9,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.,,,,,,,,
+Introduction,10,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. ",,,,,,,,
+Introduction,11,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,90171,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,90101,EAPCAT,N,5,Disc,,Occupation and faculty/tenure status
+varlist,3,90106,OCCUPCAT,N,3,Disc,,Occupation
+varlist,4,90111,FACSTAT,N,2,Disc,,Faculty and tenure status
+varlist,5,90141,EAPTOT,N,6,Cont,XEAPTOT,Total employees
+varlist,6,90131,EAPTYP,N,6,Cont,XEAPTYP,Institution employees (excluding medical school)
+varlist,7,90136,EAPMED,N,6,Cont,XEAPMED,Medical school employees
+varlist,8,90146,EAPFT,N,6,Cont,XEAPFT,Full-time employees
+varlist,9,90151,EAPFTTYP,N,6,Cont,XEAPFTTY,Full-time employees (excluding medical schools)
+varlist,10,90156,EAPFTMED,N,6,Cont,XEAPFTMD,Full-time employees (medical school)
+varlist,11,90161,EAPPT,N,6,Cont,XEAPPT,Part-time employees
+varlist,12,90166,EAPPTTYP,N,6,Cont,XEAPPTTY,Part-time employees (excluding medical schools)
+varlist,13,90171,EAPPTMED,N,6,Cont,XEAPPTMD,Part-time employees (medical school)
+Description,0,varnumber,varname,longDescription
+Description,1,90171,UNITID,Unique identification number of the institution
+Description,2,90101,EAPCAT,"This variable identifies employees/staff by human resource occupation categories and faculty/tenure status
+
+Occupation code -  This variable identifies postsecondary staff by IPEDS Human Resource occupation categories 
+
+The IPEDS HR survey component uses the Standard Occupational Classification (SOC) system to assist institutions in classifying employees for IPEDS reporting purposes. The SOC is a system used by Federal statistical agencies to classify workers and jobs into occupational categories for the purpose of collecting, calculating, analyzing, or disseminating data. In 2018, an updated version of the SOC system (http://www.bls.gov/soc/) was released. Consequently, the IPEDS HR survey was revised to incorporate the 2018 SOC information. The new IPEDS occupational categories are effective with 2018-19 Human Resources reporting.
+
+Faculty and tenure status
+
+Faculty Persons identified by the institution as such and typically those whose initial assignments are made for the purpose of conducting instruction, research or public service as a principal activity (or activities). They may hold academic rank titles of professor, associate professor, assistant professor, instructor, lecturer or the equivalent of any of those academic ranks. Faculty may also include the chancellor/president, provost, vice provosts, deans, directors or the equivalent, as well as associate deans, assistant deans and executive officers of academic departments (chairpersons, heads or the equivalent) if their principal activity is instruction combined with research and/or public service. The designation as ""faculty"" is separate from the activities to which they may be currently assigned. For example, a newly appointed president of an institution may also be appointed as a faculty member. Graduate, instruction, and research assistants are not included in this category 
+
+Tenure-Status of a personnel position with respect to permanence of the position.  
+Tenure track - Personnel positions that lead to consideration for tenure.  
+Not on tenure track - Personnel positions that are considered non-tenure earning positions 
+
+Multi-year contract - a contract or employment agreement that is in effect for more than one year (e.g., more than 365 days) where subsequent years of the contract may be contingent upon other factors such as the appropriation of funds. The renewal period of a multi-year contract is not on an annual basis (e.g., a 5-year multi-year contract is renewed every 5 years NOT annually). 
+Annual contract - An annually-renewable contract or employment agreement that is in effect for a stated annual period within one year of execution, and may be equal to a period of 365 days, or a standard academic year, or the equivalent. Does not include contracts for partial year periods such as a single semester, quarter, term, block, or course.
+Less-than-annual-contract - A contract or employment agreement that is in effect for a partial year period of less than 365 days, or less than a standard academic year or the equivalent. Includes contracts for partial year periods such as a single semester, quarter, term, block, or course."
+Description,3,90106,OCCUPCAT,"Occupation code -  This variable identifies postsecondary staff by IPEDS Human Resource occupation categories 
+
+The IPEDS HR survey component uses the Standard Occupational Classification (SOC) system to assist institutions in classifying employees for IPEDS reporting purposes. The SOC is a system used by Federal statistical agencies to classify workers and jobs into occupational categories for the purpose of collecting, calculating, analyzing, or disseminating data. In 2018, an updated version of the SOC system (http://www.bls.gov/soc/) was released. Consequently, the IPEDS HR survey was revised to incorporate the 2018 SOC information. The new IPEDS occupational categories are effective with 2018-19 Human Resources reporting."
+Description,4,90111,FACSTAT,"Faculty and tenure status
+
+Faculty Persons identified by the institution as such and typically those whose initial assignments are made for the purpose of conducting instruction, research or public service as a principal activity (or activities). They may hold academic rank titles of professor, associate professor, assistant professor, instructor, lecturer or the equivalent of any of those academic ranks. Faculty may also include the chancellor/president, provost, vice provosts, deans, directors or the equivalent, as well as associate deans, assistant deans and executive officers of academic departments (chairpersons, heads or the equivalent) if their principal activity is instruction combined with research and/or public service. The designation as ""faculty"" is separate from the activities to which they may be currently assigned. For example, a newly appointed president of an institution may also be appointed as a faculty member. Graduate, instruction, and research assistants are not included in this category 
+
+Tenure-Status of a personnel position with respect to permanence of the position.  
+Tenure track - Personnel positions that lead to consideration for tenure.  
+Not on tenure track - Personnel positions that are considered non-tenure earning positions 
+
+Multi-year contract - a contract or employment agreement that is in effect for more than one year (e.g., more than 365 days) where subsequent years of the contract may be contingent upon other factors such as the appropriation of funds. The renewal period of a multi-year contract is not on an annual basis (e.g., a 5-year multi-year contract is renewed every 5 years NOT annually). 
+Annual contract - An annually-renewable contract or employment agreement that is in effect for a stated annual period within one year of execution, and may be equal to a period of 365 days, or a standard academic year, or the equivalent. Does not include contracts for partial year periods such as a single semester, quarter, term, block, or course.
+Less-than-annual-contract - A contract or employment agreement that is in effect for a partial year period of less than 365 days, or less than a standard academic year or the equivalent. Includes contracts for partial year periods such as a single semester, quarter, term, block, or course."
+Description,5,90141,EAPTOT,Total number of employees/staff on the institution’s payroll as of November 1 of the reporting year
+Description,6,90131,EAPTYP,"Number of typical employees(excluding medical if available)
+
+Institution’s staff (not in medical schools) -  All staff employed by or employees working in a postsecondary institution, except those employed by or working in the medical school component of the institution. Includes staff employed by or employees working in the postsecondary component of a hospital or medical center that offers postsecondary education as one of its primary missions; also includes those working in first-professional schools (e.g., law schools, dental schools, schools optometry) except medical schools."
+Description,7,90136,EAPMED,"Number of medical school employees/staff
+
+Medical school staff - Staff employed by or employees working in the medical school component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene."
+Description,8,90146,EAPFT,"Total number of full-time employees/staff on the institution’s payroll as of November 1 of the reporting year
+
+Full-time staff (employees)  As defined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time."
+Description,9,90151,EAPFTTYP,"Total number of full-time employees/staff (excluding medical schools) on the institution’s payroll as of November 1 of the reporting year
+
+Full-time staff (employees)  As defined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time.  
+
+Medical school staff  - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,10,90156,EAPFTMED,"Total number of full-time employees/staff (medical school) on the institution’s payroll as of November 1 of the reporting year
+
+Full-time staff (employees)  As defined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time.  
+
+Medical school staff  - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,11,90161,EAPPT,"Total number of part-time employees/staff on the institution’s payroll as of November 1 of the reporting year
+
+Part-time staff (employees)  As determined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time. Casual employees (hired on an ad-hoc basis or occasional basis to meet short-term needs) and students in the College Work-Study Program (CWS) are not considered part-time staff."
+Description,12,90166,EAPPTTYP,"Total number of part-time employees/staff (excluding medical schools) on the institution’s payroll as of November 1 of the reporting year
+
+Part-time staff (employees)  As determined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time. Casual employees (hired on an ad-hoc basis or occasional basis to meet short-term needs) and students in the College Work-Study Program (CWS) are not considered part-time staff.
+
+Medical school staff  - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,13,90171,EAPPTMED,"Total number of part-time employees/staff (medical school) on the institution’s payroll as of November 1 of the reporting year
+
+Part-time staff (employees)  As determined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time. Casual employees (hired on an ad-hoc basis or occasional basis to meet short-term needs) and students in the College Work-Study Program (CWS) are not considered part-time staff.
+
+Medical school staff  - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,90101,EAPCAT,10000,All staff,5924,2.06
+Frequencies,2,90101,EAPCAT,10010,"All staff, With faculty status",3499,1.21
+Frequencies,3,90101,EAPCAT,10020,"All staff, Tenured",2043,0.71
+Frequencies,4,90101,EAPCAT,10030,"All staff, On Tenure Track",1938,0.67
+Frequencies,5,90101,EAPCAT,10040,"All staff, Not on Tenure Track/No Tenure system",3430,1.19
+Frequencies,6,90101,EAPCAT,10042,"All staff, Annual contract",2423,0.84
+Frequencies,7,90101,EAPCAT,10043,"All staff, Less-than-annual contract",2087,0.72
+Frequencies,8,90101,EAPCAT,10041,"All staff, Multi-year and indefinite contract",1883,0.65
+Frequencies,9,90101,EAPCAT,10044,"All staff, multi-year contract",1043,0.36
+Frequencies,10,90101,EAPCAT,10045,"All staff, indefinite contract",1116,0.39
+Frequencies,11,90101,EAPCAT,10050,"All staff, Without faculty status",3499,1.21
+Frequencies,12,90101,EAPCAT,10060,"All staff, faculty/tenure status not applicable nondegree-granting institutions",5893,2.04
+Frequencies,13,90101,EAPCAT,20000,"Instructional, research and public service",5858,2.0299999999999998
+Frequencies,14,90101,EAPCAT,20010,"Instructional, research and public service, With faculty status",3482,1.21
+Frequencies,15,90101,EAPCAT,20020,"Instructional, research and public service, Tenured",2033,0.71
+Frequencies,16,90101,EAPCAT,20030,"Instructional, research and public service, On Tenure Track",1935,0.67
+Frequencies,17,90101,EAPCAT,20040,"Instructional, research and public service, Not on Tenure Track/No Tenure system",3412,1.18
+Frequencies,18,90101,EAPCAT,20042,"Instructional, research and public service, Annual contract",2389,0.83
+Frequencies,19,90101,EAPCAT,20043,"Instructional, research and public service, Less-than-annual contract",2076,0.72
+Frequencies,20,90101,EAPCAT,20041,"Instructional, research and public service, Multi-year and indefinite contract",1739,0.6
+Frequencies,21,90101,EAPCAT,20044,"Instructional, research and public service, Multi-year  contract",999,0.35
+Frequencies,22,90101,EAPCAT,20045,"Instructional, research and public service, Indefinite contract",921,0.32
+Frequencies,23,90101,EAPCAT,20050,"Instructional, research and public service, Without faculty status",1511,0.52
+Frequencies,24,90101,EAPCAT,20060,"Instructional, research and public service, Faculty/tenure status not applicable, nondegree-granting institutions",2269,0.79
+Frequencies,25,90101,EAPCAT,21000,"Instructional staff, total",5848,2.0299999999999998
+Frequencies,26,90101,EAPCAT,21010,"Instructional staff, With faculty status",3479,1.21
+Frequencies,27,90101,EAPCAT,21020,"Instructional staff, Tenured",2031,0.7
+Frequencies,28,90101,EAPCAT,21030,"Instructional staff, On Tenure Track",1934,0.67
+Frequencies,29,90101,EAPCAT,21040,"Instructional staff, Not on Tenure Track/No Tenure system",3408,1.18
+Frequencies,30,90101,EAPCAT,21042,"Instructional staff, Annual contract",2381,0.83
+Frequencies,31,90101,EAPCAT,21043,"Instructional staff, Less-than-annual contract",2075,0.72
+Frequencies,32,90101,EAPCAT,21041,"Instructional staff, Multi-year and indefinite contract",1727,0.6
+Frequencies,33,90101,EAPCAT,21044,"Instructional staff, Multi-year contract",995,0.35
+Frequencies,34,90101,EAPCAT,21045,"Instructional staff, Indefinite contract",906,0.31
+Frequencies,35,90101,EAPCAT,21050,"Instructional staff, Without faculty status",1156,0.4
+Frequencies,36,90101,EAPCAT,21060,"Instructional staff, Faculty/tenure status not applicable, nondegree-granting institutions",2269,0.79
+Frequencies,37,90101,EAPCAT,21100,"Instructional staff, primarily instruction",5680,1.97
+Frequencies,38,90101,EAPCAT,21110,"Instructional staff, primarily instruction, With faculty status",3311,1.1499999999999999
+Frequencies,39,90101,EAPCAT,21120,"Instructional staff, primarily instruction, Tenured",1746,0.61
+Frequencies,40,90101,EAPCAT,21130,"Instructional staff, primarily instruction, On Tenure Track",1648,0.56999999999999995
+Frequencies,41,90101,EAPCAT,21140,"Instructional staff, primarily instruction, Not on Tenure Track/No Tenure system",3236,1.1200000000000001
+Frequencies,42,90101,EAPCAT,21142,"Instructional staff, primarily instruction, Annual contract",2237,0.78
+Frequencies,43,90101,EAPCAT,21143,"Instructional staff, primarily instruction, Less-than-annual contract",1943,0.67
+Frequencies,44,90101,EAPCAT,21141,"Instructional staff, primarily instruction, Multi-year and indefinite contract",1606,0.56000000000000005
+Frequencies,45,90101,EAPCAT,21144,"Instructional staff, primarily instruction, Multi-year contract",912,0.32
+Frequencies,46,90101,EAPCAT,21145,"Instructional staff, primarily instruction, Indefinite contract",839,0.28999999999999998
+Frequencies,47,90101,EAPCAT,21150,"Instructional staff, primarily instruction, Without faculty status",1018,0.35
+Frequencies,48,90101,EAPCAT,21160,"Instructional staff, primarily instruction, Faculty/tenure status not applicable, nondegree-granting institutions",2269,0.79
+Frequencies,49,90101,EAPCAT,21200,"Instructional staff, primarily instruction, exclusively credit",5476,1.9
+Frequencies,50,90101,EAPCAT,21210,"Instructional staff, primarily instruction, exclusively credit With faculty status",3118,1.08
+Frequencies,51,90101,EAPCAT,21220,"Instructional staff, primarily instruction, exclusively credit Tenured",1646,0.56999999999999995
+Frequencies,52,90101,EAPCAT,21230,"Instructional staff, primarily instruction, exclusively credit On Tenure Track",1558,0.54
+Frequencies,53,90101,EAPCAT,21240,"Instructional staff, primarily instruction, exclusively credit Not on Tenure Track/No Tenure system",3045,1.06
+Frequencies,54,90101,EAPCAT,21242,"Instructional staff, primarily instruction, exclusively credit Annual contract",2098,0.73
+Frequencies,55,90101,EAPCAT,21243,"Instructional staff, primarily instruction, exclusively credit Less-than-annual contract",1852,0.64
+Frequencies,56,90101,EAPCAT,21241,"Instructional staff, primarily instruction, exclusively credit Multi-year and indefinite contract",1472,0.51
+Frequencies,57,90101,EAPCAT,21244,"Instructional staff, primarily instruction, exclusively credit Multi-year contract",851,0.3
+Frequencies,58,90101,EAPCAT,21245,"Instructional staff, primarily instruction, exclusively credit Indefinite contract",745,0.26
+Frequencies,59,90101,EAPCAT,21250,"Instructional staff, primarily instruction, exclusively credit Without faculty status",857,0.3
+Frequencies,60,90101,EAPCAT,21260,"Instructional staff, primarily instruction, exclusively credit, Faculty/tenure status not applicable, nondegree-granting institutions",2269,0.79
+Frequencies,61,90101,EAPCAT,21300,"Instructional staff, primarily instruction, exclusively not-for-credit",708,0.25
+Frequencies,62,90101,EAPCAT,21310,"Instructional staff, primarily instruction, exclusively not-for-credit With faculty status",562,0.2
+Frequencies,63,90101,EAPCAT,21320,"Instructional staff, primarily instruction, exclusively not-for-credit Tenured",106,0.04
+Frequencies,64,90101,EAPCAT,21330,"Instructional staff, primarily instruction, exclusively not-for-credit On Tenure Track",54,0.02
+Frequencies,65,90101,EAPCAT,21340,"Instructional staff, primarily instruction, exclusively not-for-credit Not on Tenure Track/No Tenure system",545,0.19
+Frequencies,66,90101,EAPCAT,21342,"Instructional staff, primarily instruction, exclusively not-for-credit Annual contract",209,7.0000000000000007E-2
+Frequencies,67,90101,EAPCAT,21343,"Instructional staff, primarily instruction, exclusively not-for-credit Less-than-annual contract",405,0.14000000000000001
+Frequencies,68,90101,EAPCAT,21341,"Instructional staff, primarily instruction, exclusively not-for-credit Multi-year and indefinite contract",101,0.04
+Frequencies,69,90101,EAPCAT,21344,"Instructional staff, primarily instruction, exclusively not-for-credit Multi-year contract",53,0.02
+Frequencies,70,90101,EAPCAT,21345,"Instructional staff, primarily instruction, exclusively not-for-credit Indefinite contract",51,0.02
+Frequencies,71,90101,EAPCAT,21350,"Instructional staff, primarily instruction, exclusively not-for-credit Without faculty status",206,7.0000000000000007E-2
+Frequencies,72,90101,EAPCAT,21400,"Instructional staff, primarily instruction, combined credit/not-for-credit",798,0.28000000000000003
+Frequencies,73,90101,EAPCAT,21410,"Instructional staff, primarily instruction, combined credit/not-for-credit With faculty status",749,0.26
+Frequencies,74,90101,EAPCAT,21420,"Instructional staff, primarily instruction, combined credit/not-for-credit Tenured",325,0.11
+Frequencies,75,90101,EAPCAT,21430,"Instructional staff, primarily instruction, combined credit/not-for-credit On Tenure Track",257,0.09
+Frequencies,76,90101,EAPCAT,21440,"Instructional staff, primarily instruction, combined credit/not-for-credit Not on Tenure Track/No Tenure system",704,0.24
+Frequencies,77,90101,EAPCAT,21442,"Instructional staff, primarily instruction, combined credit/not-for-credit Annual contract",400,0.14000000000000001
+Frequencies,78,90101,EAPCAT,21443,"Instructional staff, primarily instruction, combined credit/not-for-credit Less-than-annual contract",438,0.15
+Frequencies,79,90101,EAPCAT,21441,"Instructional staff, primarily instruction, combined credit/not-for-credit Multi-year and indefinite contract",223,0.08
+Frequencies,80,90101,EAPCAT,21444,"Instructional staff, primarily instruction, combined credit/not-for-credit Multi-year contract",121,0.04
+Frequencies,81,90101,EAPCAT,21445,"Instructional staff, primarily instruction, combined credit/not-for-credit Indefinite contract",125,0.04
+Frequencies,82,90101,EAPCAT,21450,"Instructional staff, primarily instruction, combined credit/not-for-credit Without faculty status",172,0.06
+Frequencies,83,90101,EAPCAT,21500,Instructional staff - Instruction/research/public service,919,0.32
+Frequencies,84,90101,EAPCAT,21510,Instructional staff - Instruction/research/public service With faculty status,820,0.28000000000000003
+Frequencies,85,90101,EAPCAT,21520,Instructional staff - Instruction/research/public service Tenured,575,0.2
+Frequencies,86,90101,EAPCAT,21530,Instructional staff - Instruction/research/public service On Tenure Track,524,0.18
+Frequencies,87,90101,EAPCAT,21540,Instructional staff - Instruction/research/public service Not on Tenure Track/No Tenure system,685,0.24
+Frequencies,88,90101,EAPCAT,21542,Instructional staff - Instruction/research/public service Annual contract,424,0.15
+Frequencies,89,90101,EAPCAT,21543,Instructional staff - Instruction/research/public service Less-than-annual contract,343,0.12
+Frequencies,90,90101,EAPCAT,21541,Instructional staff - Instruction/research/public service Multi-year and indefinite contract,285,0.1
+Frequencies,91,90101,EAPCAT,21544,Instructional staff - Instruction/research/public service Multi-year contract,202,7.0000000000000007E-2
+Frequencies,92,90101,EAPCAT,21545,Instructional staff - Instruction/research/public service Indefinite contract,116,0.04
+Frequencies,93,90101,EAPCAT,21550,Instructional staff - Instruction/research/public service Without faculty status,211,7.0000000000000007E-2
+Frequencies,94,90101,EAPCAT,22000,Research,674,0.23
+Frequencies,95,90101,EAPCAT,22010,Research With faculty status,315,0.11
+Frequencies,96,90101,EAPCAT,22020,Research Tenured,114,0.04
+Frequencies,97,90101,EAPCAT,22030,Research On Tenure Track,78,0.03
+Frequencies,98,90101,EAPCAT,22040,Research Not on Tenure Track/No Tenure system,297,0.1
+Frequencies,99,90101,EAPCAT,22042,Research Annual contract,225,0.08
+Frequencies,100,90101,EAPCAT,22043,Research Less-than-annual contract,92,0.03
+Frequencies,101,90101,EAPCAT,22041,Research Multi-year and indefinite contract,144,0.05
+Frequencies,102,90101,EAPCAT,22044,Research Multi-year contract,107,0.04
+Frequencies,103,90101,EAPCAT,22045,Research Indefinite contract,55,0.02
+Frequencies,104,90101,EAPCAT,22050,Research Without faculty status,513,0.18
+Frequencies,105,90101,EAPCAT,22060,Research Faculty/tenure status not applicable nondegree-granting institutions,10,0
+Frequencies,106,90101,EAPCAT,23000,Public service,378,0.13
+Frequencies,107,90101,EAPCAT,23010,Public service With faculty status,167,0.06
+Frequencies,108,90101,EAPCAT,23020,Public service Tenured,68,0.02
+Frequencies,109,90101,EAPCAT,23030,Public service On Tenure Track,51,0.02
+Frequencies,110,90101,EAPCAT,23040,Public service Not on Tenure Track/No Tenure system,153,0.05
+Frequencies,111,90101,EAPCAT,23042,Public service Annual contract,111,0.04
+Frequencies,112,90101,EAPCAT,23043,Public service Less-than-annual contract,51,0.02
+Frequencies,113,90101,EAPCAT,23041,Public service Multi-year and indefinite contract,67,0.02
+Frequencies,114,90101,EAPCAT,23044,Public service Multi-year contract,50,0.02
+Frequencies,115,90101,EAPCAT,23045,Public service Indefinite contract,25,0.01
+Frequencies,116,90101,EAPCAT,23050,Public service Without faculty status,261,0.09
+Frequencies,117,90101,EAPCAT,23060,Public service Faculty/tenure status not applicable nondegree-granting institutions,8,0
+Frequencies,118,90101,EAPCAT,25000,"Library/Archivists,Curators, and Museum/Student and Acacemic Affairs and Other Education Services",4540,1.58
+Frequencies,119,90101,EAPCAT,25010,"Library/Archivists,Curators, and Museum/Student and Acacemic Affairs and Other Education ServicesWith faculty status",1350,0.47
+Frequencies,120,90101,EAPCAT,25020,"Library/Archivists,Curators, and Museum/Student and Acacemic Affairs and Other Education ServicesTenured",531,0.18
+Frequencies,121,90101,EAPCAT,25030,"Library/Archivists,Curators, and Museum/Student and Acacemic Affairs and Other Education Services On Tenure Track",324,0.11
+Frequencies,122,90101,EAPCAT,25040,"Library/Archivists,Curators, and Museum/ Sudent and Acacemic Affairs and Other Education Services Not on Tenure Track/No Tenure system",1068,0.37
+Frequencies,123,90101,EAPCAT,25042,"Library/Archivists,Curators, and Museum/ Sudent and Acacemic Affairs and Other Education Services  Annual contract",516,0.18
+Frequencies,124,90101,EAPCAT,25043,"Library/Archivists,Curators, and Museum/ Sudent and Acacemic Affairs and Other Education Services  Less-than-annual contract",287,0.1
+Frequencies,125,90101,EAPCAT,25041,"Library/Archivists,Curators, and Museum/ Sudent and Acacemic Affairs and Other Education Services  Multi-year and indefinite contract",465,0.16
+Frequencies,126,90101,EAPCAT,25044,"Library/Archivists,Curators, and Museum/ Sudent and Acacemic Affairs and Other Education Services  Multi-year contract",134,0.05
+Frequencies,127,90101,EAPCAT,25045,"Library/Archivists,Curators, and Museum/ Sudent and Acacemic Affairs and Other Education Services  Indefinite contract",343,0.12
+Frequencies,128,90101,EAPCAT,25050,"Librarians, Curators, Archivists and other teaching Instructional support Without faculty status",3339,1.1599999999999999
+Frequencies,129,90101,EAPCAT,25060,"Library/Archivists,Curators, and Museum/Student and Acacemic Affairs and Other Education Services  Faculty status not applicable nondegree-granting institutions",1046,0.36
+Frequencies,130,90101,EAPCAT,26000,"Librarians/Library Technicians/Archivists, Curators, and Museum Technicians",3257,1.1299999999999999
+Frequencies,131,90101,EAPCAT,26010,"Librarians/Library Technicians/Archivists, Curators, and Museum Technicians With faculty status",1019,0.35
+Frequencies,132,90101,EAPCAT,26020,"Librarians/Library Technicians/Archivists, Curators, and Museum Technicians Tenured",446,0.15
+Frequencies,133,90101,EAPCAT,26030,"Librarians/Library Technicians/Archivists, Curators, and Museum Technicians On Tenure Track",271,0.09
+Frequencies,134,90101,EAPCAT,26040,"Librarians/Library Technicians/Archivists, Curators, and Museum Technicians Not on Tenure Track/No Tenure system",695,0.24
+Frequencies,135,90101,EAPCAT,26042,"Librarians/Library Technicians/Archivists, Curators, and Museum Technicians Annual contract",355,0.12
+Frequencies,136,90101,EAPCAT,26043,"Librarians/Library Technicians/Archivists, Curators, and Museum Technicians Less-than-annual contract",90,0.03
+Frequencies,137,90101,EAPCAT,26041,"Librarians/Library Technicians/Archivists, Curators, and Museum Technicians Multi-year and indefinite contract",308,0.11
+Frequencies,138,90101,EAPCAT,26044,"Librarians/Library Technicians/Archivists, Curators, and Museum Technicians Multi-year contract",96,0.03
+Frequencies,139,90101,EAPCAT,26045,"Librarians/Library Technicians/Archivists, Curators, and Museum Technicians Indefinite contract",217,0.08
+Frequencies,140,90101,EAPCAT,26050,"Librarians/Library Technicians/Archivists, Curators, and Museum Technicians Without faculty status",2796,0.97
+Frequencies,141,90101,EAPCAT,26060,"Librarians/Library Technicians/Archivists, Curators, and Museum Technicians not applicable, nondegree-granting institutions",221,0.08
+Frequencies,142,90101,EAPCAT,26100,"Archivists, Curators, and Museum Technicians",803,0.28000000000000003
+Frequencies,143,90101,EAPCAT,26110,"Archivists, Curators, and Museum Technicians With faculty status",103,0.04
+Frequencies,144,90101,EAPCAT,26120,"Archivists, Curators, and Museum Technicians Tenured",27,0.01
+Frequencies,145,90101,EAPCAT,26130,"Archivists, Curators, and Museum Technicians On Tenure Track",8,0
+Frequencies,146,90101,EAPCAT,26140,"Archivists, Curators, and Museum Technicians Not on Tenure Track/No Tenure system",73,0.03
+Frequencies,147,90101,EAPCAT,26142,"Archivists, Curators, and Museum Technicians Annual contract",37,0.01
+Frequencies,148,90101,EAPCAT,26143,"Archivists, Curators, and Museum Technicians Less-than-annual contract",9,0
+Frequencies,149,90101,EAPCAT,26141,"Archivists, Curators, and Museum Technicians Multi-year and indefinite contract",30,0.01
+Frequencies,150,90101,EAPCAT,26144,"Archivists, Curators, and Museum Technicians Multi-year contract",8,0
+Frequencies,151,90101,EAPCAT,26145,"Archivists, Curators, and Museum Technicians Indefinite contract",22,0.01
+Frequencies,152,90101,EAPCAT,26150,"Archivists, Curators, and Museum Technicians Without faculty status",756,0.26
+Frequencies,153,90101,EAPCAT,26200,Librarians,2794,0.97
+Frequencies,154,90101,EAPCAT,26210,Librarians With faculty status,956,0.33
+Frequencies,155,90101,EAPCAT,26220,Librarians Tenured,432,0.15
+Frequencies,156,90101,EAPCAT,26230,Librarians On Tenure Track,265,0.09
+Frequencies,157,90101,EAPCAT,26240,Librarians Not on Tenure Track/No Tenure system,633,0.22
+Frequencies,158,90101,EAPCAT,26242,Librarians Annual contract,330,0.11
+Frequencies,159,90101,EAPCAT,26243,Librarians Less-than-annual contract,78,0.03
+Frequencies,160,90101,EAPCAT,26241,Librarians Multi-year and indefinite contract,272,0.09
+Frequencies,161,90101,EAPCAT,26244,Librarians Multi-year contract,91,0.03
+Frequencies,162,90101,EAPCAT,26245,Librarians Indefinite contract,185,0.06
+Frequencies,163,90101,EAPCAT,26250,Librarians Without faculty status,2237,0.78
+Frequencies,164,90101,EAPCAT,26300,Library Technicians,1880,0.65
+Frequencies,165,90101,EAPCAT,26310,Library Technicians With faculty status,116,0.04
+Frequencies,166,90101,EAPCAT,26320,Library Technicians Tenured,15,0.01
+Frequencies,167,90101,EAPCAT,26330,Library Technicians On Tenure Track,9,0
+Frequencies,168,90101,EAPCAT,26340,Library Technicians Not on Tenure Track/No Tenure system,97,0.03
+Frequencies,169,90101,EAPCAT,26342,Library Technicians Annual contract,35,0.01
+Frequencies,170,90101,EAPCAT,26343,Library Technicians Less-than-annual contract,14,0
+Frequencies,171,90101,EAPCAT,26341,Library Technicians Multi-year and indefinite contract,53,0.02
+Frequencies,172,90101,EAPCAT,26344,Library Technicians Multi-year contract,13,0
+Frequencies,173,90101,EAPCAT,26345,Library Technicians Indefinite contract,40,0.01
+Frequencies,174,90101,EAPCAT,26350,Library Technicians Without faculty status,1811,0.63
+Frequencies,175,90101,EAPCAT,26400,Detailed library occupations not available for non-degree-granting institutions,221,0.08
+Frequencies,176,90101,EAPCAT,26460,"Detailed library occupations and faculty/tenure status not applicable, nondegree-granting institutions",221,0.08
+Frequencies,177,90101,EAPCAT,27000,Student and Academic Affairs and Other Education Services,4220,1.46
+Frequencies,178,90101,EAPCAT,27010,Student and Academic Affairs and Other Education Services  With faculty status,779,0.27
+Frequencies,179,90101,EAPCAT,27020,Student and Academic Affairs and Other Education Services Tenured,198,7.0000000000000007E-2
+Frequencies,180,90101,EAPCAT,27030,Student and Academic Affairs and Other Education Services On Tenure Track,94,0.03
+Frequencies,181,90101,EAPCAT,27040,Student and Academic Affairs and Other Education Services  Not on Tenure Track/No Tenure system,684,0.24
+Frequencies,182,90101,EAPCAT,27042,Student and Academic Affairs and Other Education Services  Annual contract,288,0.1
+Frequencies,183,90101,EAPCAT,27043,Student and Academic Affairs and Other Education Services  Less-than-annual contract,249,0.09
+Frequencies,184,90101,EAPCAT,27041,Student and Academic Affairs and Other Education Services  Multi-year and indefinite contract,272,0.09
+Frequencies,185,90101,EAPCAT,27044,Student and Academic Affairs and Other Education Services  Multi-year contract,65,0.02
+Frequencies,186,90101,EAPCAT,27045,Student and Academic Affairs and Other Education Services  Indefinite contract,211,7.0000000000000007E-2
+Frequencies,187,90101,EAPCAT,27050,Student and Academic Affairs and Other Education Services  Without faculty status,3115,1.08
+Frequencies,188,90101,EAPCAT,27060,Student and Academic Affairs and Other Education Services  Faculty/tenure status not applicable,973,0.34
+Frequencies,189,90101,EAPCAT,30000,Management,5650,1.96
+Frequencies,190,90101,EAPCAT,30010,Management With faculty status,1492,0.52
+Frequencies,191,90101,EAPCAT,30020,Management Tenured,944,0.33
+Frequencies,192,90101,EAPCAT,30030,Management On Tenure Track,248,0.09
+Frequencies,193,90101,EAPCAT,30040,Management Not on Tenure Track/No Tenure system,978,0.34
+Frequencies,194,90101,EAPCAT,30042,Management Annual contract,444,0.15
+Frequencies,195,90101,EAPCAT,30043,Management Less-than-annual contract,118,0.04
+Frequencies,196,90101,EAPCAT,30041,Management Multi-year and indefinite contract,574,0.2
+Frequencies,197,90101,EAPCAT,30044,Management Multi-year contract,228,0.08
+Frequencies,198,90101,EAPCAT,30045,Management Indefinite contract,389,0.13
+Frequencies,199,90101,EAPCAT,30050,Management Without faculty status,3443,1.19
+Frequencies,200,90101,EAPCAT,30060,Management Faculty/tenure status not applicble non degree-granting institutions,2030,0.7
+Frequencies,201,90101,EAPCAT,31000,Business and Financial Operations,4685,1.63
+Frequencies,202,90101,EAPCAT,31010,Business and Financial Operations  With faculty status,358,0.12
+Frequencies,203,90101,EAPCAT,31020,Business and Financial Operations  Tenured,64,0.02
+Frequencies,204,90101,EAPCAT,31030,Business and Financial Operations  On Tenure Track,20,0.01
+Frequencies,205,90101,EAPCAT,31040,Business and Financial Operations  Not on Tenure Track/No Tenure system,304,0.11
+Frequencies,206,90101,EAPCAT,31042,Business and Financial Operations  Annual contract,131,0.05
+Frequencies,207,90101,EAPCAT,31043,Business and Financial Operations  Less-than-annual contract,70,0.02
+Frequencies,208,90101,EAPCAT,31041,Business and Financial Operations  Multi-year and indefinite contract,135,0.05
+Frequencies,209,90101,EAPCAT,31044,Business and Financial Operations  Multi-year contract,34,0.01
+Frequencies,210,90101,EAPCAT,31045,Business and Financial Operations  Indefinite contract,102,0.04
+Frequencies,211,90101,EAPCAT,31050,Business and Financial Operations  Without faculty status,3263,1.1299999999999999
+Frequencies,212,90101,EAPCAT,31060,Business and Financial Operations Faculty/tenure status not applicble non degree-granting institutions,1313,0.46
+Frequencies,213,90101,EAPCAT,32000,"Computer, Engineering, and Science",3379,1.17
+Frequencies,214,90101,EAPCAT,32010,"Computer, Engineering, and Science With faculty status",306,0.11
+Frequencies,215,90101,EAPCAT,32020,"Computer, Engineering, and Science Tenured",41,0.01
+Frequencies,216,90101,EAPCAT,32030,"Computer, Engineering, and Science On Tenure Track",23,0.01
+Frequencies,217,90101,EAPCAT,32040,"Computer, Engineering, and Science Not on Tenure Track/No Tenure system",274,0.1
+Frequencies,218,90101,EAPCAT,32042,"Computer, Engineering, and Science Annual contract",113,0.04
+Frequencies,219,90101,EAPCAT,32043,"Computer, Engineering, and Science Less-than-annual contract",66,0.02
+Frequencies,220,90101,EAPCAT,32041,"Computer, Engineering, and Science Multi-year and indefinite contract",121,0.04
+Frequencies,221,90101,EAPCAT,32044,"Computer, Engineering, and Science Multi-year contract",32,0.01
+Frequencies,222,90101,EAPCAT,32045,"Computer, Engineering, and Science Indefinite contract",91,0.03
+Frequencies,223,90101,EAPCAT,32050,"Computer, Engineering, and Science Without faculty status",3036,1.05
+Frequencies,224,90101,EAPCAT,32060,"Computer, Engineering, and Science Faculty/tenure status not applicble non degree-granting institutions",270,0.09
+Frequencies,225,90101,EAPCAT,33000,"Community, Social Service, Legal, Arts, Design, Entertainment, Sports and Media",3222,1.1200000000000001
+Frequencies,226,90101,EAPCAT,33010,"Community, Social Service, Legal, Arts, Design, Entertainment, Sports and Media With faculty status",486,0.17
+Frequencies,227,90101,EAPCAT,33020,"Community, Social Service, Legal, Arts, Design, Entertainment, Sports and Media Tenured",125,0.04
+Frequencies,228,90101,EAPCAT,33030,"Community, Social Service, Legal, Arts, Design, Entertainment, Sports and Media On Tenure Track",79,0.03
+Frequencies,229,90101,EAPCAT,33040,"Community, Social Service, Legal, Arts, Design, Entertainment, Sports and Media Not on Tenure Track/No Tenure system",406,0.14000000000000001
+Frequencies,230,90101,EAPCAT,33042,"Community, Social Service, Legal, Arts, Design, Entertainment, Sports and Media Annual contract",198,7.0000000000000007E-2
+Frequencies,231,90101,EAPCAT,33043,"Community, Social Service, Legal, Arts, Design, Entertainment, Sports and MediaLess-than-annual contract",140,0.05
+Frequencies,232,90101,EAPCAT,33041,"Community, Social Service, Legal, Arts, Design, Entertainment, Sports and Media Multi-year and indefinite contract",144,0.05
+Frequencies,233,90101,EAPCAT,33044,"Community, Social Service, Legal, Arts, Design, Entertainment, Sports and Media Multi-year contract",59,0.02
+Frequencies,234,90101,EAPCAT,33045,"Community, Social Service, Legal, Arts, Design, Entertainment, Sports and Media Indefinite contract",88,0.03
+Frequencies,235,90101,EAPCAT,33050,"Community, Social Service, Legal, Arts, Design, Entertainment, Sports and Media Without faculty status",2944,1.02
+Frequencies,236,90101,EAPCAT,33060,"Community Service, Legal, Arts, and Media Faculty/tenure status not applicble non degree-granting institutions",230,0.08
+Frequencies,237,90101,EAPCAT,34000,Healthcare Practioners and Technical,1867,0.65
+Frequencies,238,90101,EAPCAT,34010,Healthcare Practioners and Technical With faculty status,177,0.06
+Frequencies,239,90101,EAPCAT,34020,Healthcare Practioners and Technical Tenured,26,0.01
+Frequencies,240,90101,EAPCAT,34030,Healthcare Practioners and Technical On Tenure Track,14,0
+Frequencies,241,90101,EAPCAT,34040,Healthcare Practioners and Technical Not on Tenure Track/No Tenure system,152,0.05
+Frequencies,242,90101,EAPCAT,34042,Healthcare Practioners and Technical Annual contract,73,0.03
+Frequencies,243,90101,EAPCAT,34043,Healthcare Practioners and Technical Less-than-annual contract,44,0.02
+Frequencies,244,90101,EAPCAT,34041,Healthcare Practioners and Technical Multi-year and indefinite contract,53,0.02
+Frequencies,245,90101,EAPCAT,34044,Healthcare Practioners and Technical Multi-year contract,21,0.01
+Frequencies,246,90101,EAPCAT,34045,Healthcare Practioners and Technical Indefinite contract,34,0.01
+Frequencies,247,90101,EAPCAT,34050,Healthcare Practioners and Technical Without faculty status,1743,0.6
+Frequencies,248,90101,EAPCAT,34060,Healthcare Practioners and Technical Faculty/tenure status not applicble non degree-granting institutions,83,0.03
+Frequencies,249,90101,EAPCAT,35000,Service Occupations,3554,1.23
+Frequencies,250,90101,EAPCAT,35060,Service Occupations Faculty/tenure status not applicble non degree-granting institutions,3554,1.23
+Frequencies,251,90101,EAPCAT,36000,Sales and Related Occupations,1901,0.66
+Frequencies,252,90101,EAPCAT,36060,Sales and Related Occupations Faculty/tenure status not applicble non degree-granting institutions,1901,0.66
+Frequencies,253,90101,EAPCAT,37000,Office and Administrative Support,5253,1.82
+Frequencies,254,90101,EAPCAT,37060,Office and Administrative Support Faculty/tenure status not applicble non degree-granting institutions,5253,1.82
+Frequencies,255,90101,EAPCAT,38000,"Natural Resources, Construction, and Maintenance",2539,0.88
+Frequencies,256,90101,EAPCAT,38060,"Natural Resources, Construction, and Maintenance Faculty/tenure status not applicble non degree-granting institutions",2539,0.88
+Frequencies,257,90101,EAPCAT,39000,"Production, Transportation, and Material Moving",1298,0.45
+Frequencies,258,90101,EAPCAT,39060,"Production, Transportation, and Material Moving Faculty/tenure status not applicble non degree-granting institutions",1298,0.45
+Frequencies,259,90101,EAPCAT,40000,Graduate Assistants,1046,0.36
+Frequencies,260,90101,EAPCAT,41000,Graduate Assistants Teaching,635,0.22
+Frequencies,261,90101,EAPCAT,42000,Graduate Assistants Research,494,0.17
+Frequencies,262,90101,EAPCAT,49000,Graduate Assistants Other,741,0.26
+Frequencies,263,90106,OCCUPCAT,100,All staff,34778,12.07
+Frequencies,264,90106,OCCUPCAT,200,"Instructional, research and public service staff",28624,9.93
+Frequencies,265,90106,OCCUPCAT,210,"Instructional staff, total",28209,9.7899999999999991
+Frequencies,266,90106,OCCUPCAT,211,"Instructional staff, primarily instruction",26445,9.18
+Frequencies,267,90106,OCCUPCAT,212,"Instructional staff, primarily instruction, exclusively credit",24987,8.67
+Frequencies,268,90106,OCCUPCAT,213,"Instructional staff, primarily instruction, exclusively not-for-credit",3000,1.04
+Frequencies,269,90106,OCCUPCAT,214,"Instructional staff, primarily instruction, combined credit/not-for-credit",4312,1.5
+Frequencies,270,90106,OCCUPCAT,215,Instructional staff - Instruction/research/public service,5104,1.77
+Frequencies,271,90106,OCCUPCAT,220,Research,2624,0.91
+Frequencies,272,90106,OCCUPCAT,230,Public service,1390,0.48
+Frequencies,273,90106,OCCUPCAT,250,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",13943,4.84
+Frequencies,274,90106,OCCUPCAT,260,"Librarians, Curators, and Archivists",9771,3.39
+Frequencies,275,90106,OCCUPCAT,261,"Archivists, Curators, and Museum Technicians",1876,0.65
+Frequencies,276,90106,OCCUPCAT,262,Librarians,8273,2.87
+Frequencies,277,90106,OCCUPCAT,263,Library Technicians,4083,1.42
+Frequencies,278,90106,OCCUPCAT,264,Detailed library occupations not available for non-degree-granting institutions,442,0.15
+Frequencies,279,90106,OCCUPCAT,270,Student and Academic Affairs and Other Education Services,11148,3.87
+Frequencies,280,90106,OCCUPCAT,300,Management,16538,5.74
+Frequencies,281,90106,OCCUPCAT,310,Business and Financial Operations,10479,3.64
+Frequencies,282,90106,OCCUPCAT,320,"Computer, Engineering, and Science",7752,2.69
+Frequencies,283,90106,OCCUPCAT,330,"Community Social Service, Legal, Arts, Design, Entertainment, Sports and Media",8121,2.82
+Frequencies,284,90106,OCCUPCAT,340,Healthcare Practioners and Technical,4287,1.49
+Frequencies,285,90106,OCCUPCAT,350,Service Occupations,7108,2.4700000000000002
+Frequencies,286,90106,OCCUPCAT,360,Sales and Related Occupations,3802,1.32
+Frequencies,287,90106,OCCUPCAT,370,Office and Administrative Support,10506,3.65
+Frequencies,288,90106,OCCUPCAT,380,"Natural Resources, Construction, and Maintenance",5078,1.76
+Frequencies,289,90106,OCCUPCAT,390,"Production, Transportation, and Material Moving",2596,0.9
+Frequencies,290,90106,OCCUPCAT,400,Graduate Assistants Total,1046,0.36
+Frequencies,291,90106,OCCUPCAT,410,Graduate Assistants Teaching,635,0.22
+Frequencies,292,90106,OCCUPCAT,420,Graduate Assistants Research,494,0.17
+Frequencies,293,90106,OCCUPCAT,490,Graduate Assistants Other,741,0.26
+Frequencies,294,90111,FACSTAT,0,All staff,86242,29.93
+Frequencies,295,90111,FACSTAT,10,"With faculty status, total",26644,9.25
+Frequencies,296,90111,FACSTAT,20,"With faculty status, tenured",13536,4.7
+Frequencies,297,90111,FACSTAT,30,"With faculty status, on tenure track",11332,3.93
+Frequencies,298,90111,FACSTAT,40,"With faculty status not on tenure track/No tenure system, total",24279,8.42
+Frequencies,299,90111,FACSTAT,41,"With faculty status not on tenure track/No tenure system, multi-year and indefinite contract",11674,4.05
+Frequencies,300,90111,FACSTAT,44,"With faculty status not on tenure track/No tenure system, multi-year contract",6114,2.12
+Frequencies,301,90111,FACSTAT,45,"With faculty status not on tenure track/No tenure system, indefinite contract",6621,2.2999999999999998
+Frequencies,302,90111,FACSTAT,42,"With faculty status not on tenure track/No tenure system, annual contract",15417,5.35
+Frequencies,303,90111,FACSTAT,43,"With faculty status not on tenure track/No tenure system, less-than-annual contract",12527,4.3499999999999996
+Frequencies,304,90111,FACSTAT,50,Without faculty status,37887,13.15
+Frequencies,305,90111,FACSTAT,60,"Faculty/tenure status not applicable, nondegree-granting institutions",35919,12.46
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,90141,EAPTOT,288192,36957099,128.23776857095271,1,318020,Total employees
+Statistics,2,90131,EAPTYP,286366,32839381,114.67625695787908,1,318020,Institution employees (excluding medical school)
+Statistics,3,90136,EAPMED,13417,4117718,306.90303346500707,1,22136,Medical school employees
+Statistics,4,90146,EAPFT,259537,21558993,83.067127230414158,0,33271,Full-time employees
+Statistics,5,90151,EAPFTTYP,257801,18183334,70.532441689520212,0,17084,Full-time employees (excluding medical schools)
+Statistics,6,90156,EAPFTMED,12155,3375659,277.71772932949403,1,20134,Full-time employees (medical school)
+Statistics,7,90161,EAPPT,164195,15398106,93.779384268704888,0,318012,Part-time employees
+Statistics,8,90166,EAPPTTYP,162674,14656047,90.09458794890395,0,318012,Part-time employees (excluding medical schools)
+Statistics,9,90171,EAPPTMED,8736,742059,84.942651098901095,1,4236,Part-time employees (medical school)
+Imputation values,0,Code values for item imputation variables Xvarname
+Imputation values,1,CodeValue,ValueLabel
+Imputation values,2,A,Not applicable
+Imputation values,3,B,Institution left item blank
+Imputation values,4,C,Analyst corrected reported value
+Imputation values,5,D,Do not know
+Imputation values,6,G,Data generated from other data values
+Imputation values,7,H,Value not derived - data not usable
+Imputation values,8,J,Logical imputation
+Imputation values,9,K,Ratio adjustment 
+Imputation values,10,L,Imputed using the Group Median procedure
+Imputation values,11,N,Imputed using Nearest Neighbor procedure
+Imputation values,12,P,Imputed using Carry Forward procedure
+Imputation values,13,R,Reported
+Imputation values,14,Z,Implied zero;

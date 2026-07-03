@@ -1,0 +1,291 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for new hires by occupational category, race/ethnicity, and gender (Degree-granting institutions with 15 or more full-time employees): Fall 2023",,,,,,,,,
+Introduction,1,(Provisional release),,,,,,,,,
+Introduction,2,,,,,,,,,,
+Introduction,3,Filename,S2023_NH
+Introduction,4,Overview,"This file contains the number of full-time new hires by primary occupation, race/ethnicity and gender.  New hires include persons who were hired for full-time permanent employment for the first time, or after a break in service, between November 1, 2022 - October 31, 2023. All new hire data prior to the Fall 2018 data file, used the four month period of July 1st - October 31st to define a new hire.  
+
+New hires for instructional staff occupation are also reported by faculty/tenure status. Beginning with 2016, instructional staff that are not on tenure track are further disaggregated by contract length (multi-year, indefinite, annual and less-than-annual).  From 2012 through 2015 the multi-year and indefinite contract lengths were combined as one category and often referred to as multi-year in past documentation This file has multiple records per institution.  Each record is uniquely defined by the variables IPEDS ID (UNITID), and the variable SNHCAT which defines the primary occupation and faculty/tenure status for instructional staff. These data are applicable to degree-granting institutions with 15 or more full-time employees and related administrative offices. ",,,,,,,,
+Introduction,5,Note,"Prior to the IPEDS Web-based data collection in 2001, human resource data reported by race/ethnicity and gender was only available in odd-numbered years.  Beginning with 2001, human resource data reported by race/ethnicity and gender was mandatory in odd-numbered years and optional in even-numbered years.  Beginning with 2016 reporting human resource data by race/ethnicity and gender is mandatory annually.",,,,,,,,
+Introduction,6,,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.",,,,,,,,
+Introduction,7,,,,,,,,,,
+Introduction,8,Contents of spreadsheet,,,,,,,,,
+Introduction,9,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,10,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,11,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.,,,,,,,,
+Introduction,12,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. ",,,,,,,,
+Introduction,13,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,53036,SNHCAT,N,3,Disc,,Staff category
+varlist,3,53041,OCCUPCAT,N,3,Disc,,Occupation
+varlist,4,53046,FACSTAT,N,3,Disc,,Faculty and tenure status
+varlist,5,50581,SGTYPE,N,2,Disc,,Old new hire categories that are consitent with new codes
+varlist,6,50701,HRTOTLT,N,6,Cont,XHRTOTLT,Grand total
+varlist,7,50656,HRTOTLM,N,6,Cont,XHRTOTLM,Grand total men
+varlist,8,50661,HRTOTLW,N,6,Cont,XHRTOTLW,Grand total women
+varlist,9,52232,HRAIANT,N,6,Cont,XHRAIANT,American Indian or Alaska Native total
+varlist,10,52234,HRAIANM,N,6,Cont,XHRAIANM,American Indian or Alaska Native men
+varlist,11,52236,HRAIANW,N,6,Cont,XHRAIANW,American Indian or Alaska Native women
+varlist,12,52238,HRASIAT,N,6,Cont,XHRASIAT,Asian total
+varlist,13,52240,HRASIAM,N,6,Cont,XHRASIAM,Asian men
+varlist,14,52242,HRASIAW,N,6,Cont,XHRASIAW,Asian women
+varlist,15,52244,HRBKAAT,N,6,Cont,XHRBKAAT,Black or African American total
+varlist,16,52246,HRBKAAM,N,6,Cont,XHRBKAAM,Black or African American men
+varlist,17,52248,HRBKAAW,N,6,Cont,XHRBKAAW,Black or African American women
+varlist,18,52250,HRHISPT,N,6,Cont,XHRHISPT,Hispanic or Latino total
+varlist,19,52252,HRHISPM,N,6,Cont,XHRHISPM,Hispanic or Latino men
+varlist,20,52254,HRHISPW,N,6,Cont,XHRHISPW,Hispanic or Latino women
+varlist,21,52256,HRNHPIT,N,6,Cont,XHRNHPIT,Native Hawaiian or Other Pacific Islander total
+varlist,22,52258,HRNHPIM,N,6,Cont,XHRNHPIM,Native Hawaiian or Other Pacific Islander men
+varlist,23,52260,HRNHPIW,N,6,Cont,XHRNHPIW,Native Hawaiian or Other Pacific Islander women
+varlist,24,52262,HRWHITT,N,6,Cont,XHRWHITT,White total
+varlist,25,52264,HRWHITM,N,6,Cont,XHRWHITM,White men
+varlist,26,52266,HRWHITW,N,6,Cont,XHRWHITW,White women
+varlist,27,52268,HR2MORT,N,6,Cont,XHR2MORT,Two or more races total
+varlist,28,52270,HR2MORM,N,6,Cont,XHR2MORM,Two or more races men
+varlist,29,52272,HR2MORW,N,6,Cont,XHR2MORW,Two or more races women
+varlist,30,50696,HRUNKNT,N,6,Cont,XHRUNKNT,Race/ethnicity unknown total
+varlist,31,50646,HRUNKNM,N,6,Cont,XHRUNKNM,Race/ethnicity unknown men
+varlist,32,50651,HRUNKNW,N,6,Cont,XHRUNKNW,Race/ethnicity unknown women
+varlist,33,50666,HRNRALT,N,6,Cont,XHRNRALT,U.S. Nonresident total
+varlist,34,50586,HRNRALM,N,6,Cont,XHRNRALM,U.S. Nonresident men
+varlist,35,50591,HRNRALW,N,6,Cont,XHRNRALW,U.S. Nonresident women
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,53036,SNHCAT,"This variable classifies Full-time new hires by occupational category.  Instructional staff  are also classified by faculty and tenure status. 
+
+NEW HIRES - Persons who were hired for full-time permanent employment for the first time, or after a break in service, between July 1 and September 30 of the survey year. These do not include persons who have returned from sabbatical leave. PRIMARY OCCUPATIONAL ACTIVITY - The principal activity of a staff member as determined by the institution. If an individual participates in two or more activities, the primary activity is normally determined by the amount of time spent in each activity. 
+
+
+FULL-TIME STAFF (EMPLOYEES) 
+As defined by the institution. The type of appointment at the snapshot date determines whether an employee is full time or part time. The employee's term of contract is not considered in making the determination of full or part time. 
+
+Occupation - IPEDS Human Resource occupation categories 
+
+The IPEDS HR survey component uses the Standard Occupational Classification (SOC) system to assist institutions in classifying employees for IPEDS reporting purposes. The SOC is a system used by Federal statistical agencies to classify workers and jobs into occupational categories for the purpose of collecting, calculating, analyzing, or disseminating data. In 2010, an updated version of the SOC system (http://www.bls.gov/soc/) was released. Consequently, the IPEDS HR survey was revised to incorporate the 2010 SOC information. The new IPEDS occupational categories are effective with 2012-13 Human Resources reporting.
+
+FACULTY 
+Persons identified by the institution as such and typically those whose initial assignments are made for the purpose of conducting instruction, research or public service as a principal activity (or activities). They may hold academic rank titles of professor, associate professor, assistant professor, instructor, lecturer or the equivalent of any of those academic ranks. Faculty may also include the chancellor/president, provost, vice provosts, deans, directors or the equivalent, as well as associate deans, assistant deans and executive officers of academic departments (chairpersons, heads or the equivalent) if their principal activity is instruction combined with research and/or public service. The designation as ""faculty"" is separate from the activities to which they may be currently assigned. For example, a newly appointed president of an institution may also be appointed as a faculty member. Graduate, instruction, and research assistants are not included in this category
+
+Tenure-Status of a personnel position with respect to permanence of the position.  
+Tenure track - Personnel positions that lead to consideration for tenure.  
+Not on tenure track - Personnel positions that are considered non-tenure earning positions 
+
+Multi-year contract - a contract or employment agreement that is in effect for more than one year (e.g., more than 365 days) where subsequent years of the contract may be contingent upon other factors such as the appropriation of funds. The renewal period of a multi-year contract is not on an annual basis (e.g., a 5-year multi-year contract is renewed every 5 years NOT annually). 
+Annual contract - An annually-renewable contract or employment agreement that is in effect for a stated annual period within one year of execution, and may be equal to a period of 365 days, or a standard academic year, or the equivalent. Does not include contracts for partial year periods such as a single semester, quarter, term, block, or course.
+Less-than-annual-contract - A contract or employment agreement that is in effect for a partial year period of less than 365 days, or less than a standard academic year or the equivalent. Includes contracts for partial year periods such as a single semester, quarter, term, block, or course."
+Description,3,53041,OCCUPCAT,"Occupation - This variable identifies postsecondary staff by IPEDS Human Resource occupation categories 
+
+The IPEDS HR survey component uses the Standard Occupational Classification (SOC) system to assist institutions in classifying employees for IPEDS reporting purposes. The SOC is a system used by Federal statistical agencies to classify workers and jobs into occupational categories for the purpose of collecting, calculating, analyzing, or disseminating data. In 2018, an updated version of the SOC system (http://www.bls.gov/soc/) was released. Consequently, the IPEDS HR survey was revised to incorporate the 2018 SOC information. The new IPEDS occupational categories are effective with 2018-19 Human Resources reporting."
+Description,4,53046,FACSTAT,"Faculty and tenure status
+
+Faculty Persons identified by the institution as such and typically those whose initial assignments are made for the purpose of conducting instruction, research or public service as a principal activity (or activities). They may hold academic rank titles of professor, associate professor, assistant professor, instructor, lecturer or the equivalent of any of those academic ranks. Faculty may also include the chancellor/president, provost, vice provosts, deans, directors or the equivalent, as well as associate deans, assistant deans and executive officers of academic departments (chairpersons, heads or the equivalent) if their principal activity is instruction combined with research and/or public service. The designation as ""faculty"" is separate from the activities to which they may be currently assigned. For example, a newly appointed president of an institution may also be appointed as a faculty member. Graduate, instruction, and research assistants are not included in this category 
+
+Tenure-Status of a personnel position with respect to permanence of the position.  
+Tenure track - Personnel positions that lead to consideration for tenure.  
+Not on tenure track - Personnel positions that are considered non-tenure earning positions 
+
+Multi-year contract - a contract or employment agreement that is in effect for more than one year (e.g., more than 365 days) where subsequent years of the contract may be contingent upon other factors such as the appropriation of funds. The renewal period of a multi-year contract is not on an annual basis (e.g., a 5-year multi-year contract is renewed every 5 years NOT annually). 
+Annual contract - An annually-renewable contract or employment agreement that is in effect for a stated annual period within one year of execution, and may be equal to a period of 365 days, or a standard academic year, or the equivalent. Does not include contracts for partial year periods such as a single semester, quarter, term, block, or course.
+Less-than-annual-contract - A contract or employment agreement that is in effect for a partial year period of less than 365 days, or less than a standard academic year or the equivalent. Includes contracts for partial year periods such as a single semester, quarter, term, block, or course."
+Description,5,50581,SGTYPE,Original function code on survey form
+Description,6,50701,HRTOTLT,Grand total across all race/ethnicities and both genders
+Description,7,50656,HRTOTLM,Grand total men
+Description,8,50661,HRTOTLW,Grand total women
+Description,9,52232,HRAIANT,"American Indian or Alaska Native men and women.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,10,52234,HRAIANM,"American Indian or Alaska Native men.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,11,52236,HRAIANW,"American Indian or Alaska Native women.
+
+American Indian or Alaska Native - A person having origins in any of the original peoples of North and South America (including Central America) who maintains cultural identification through tribal affiliation or community attachment."
+Description,12,52238,HRASIAT,"Asian men and women.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,13,52240,HRASIAM,"Asian men.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,14,52242,HRASIAW,"Asian women.
+
+Asian - A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam."
+Description,15,52244,HRBKAAT,"Black or African American men and women.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,16,52246,HRBKAAM,"Black or African American men.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,17,52248,HRBKAAW,"Black or African American women.
+
+Black or African American - A person having origins in any of the black racial groups of Africa"
+Description,18,52250,HRHISPT,"Hispanic or Latino men and women.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,19,52252,HRHISPM,"Hispanic or Latino men.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,20,52254,HRHISPW,"Hispanic or Latino women.
+
+Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+Description,21,52256,HRNHPIT,"Native Hawaiian or Other Pacific Islanders men and women.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,22,52258,HRNHPIM,"Native Hawaiian or Other Pacific Islanders men.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,23,52260,HRNHPIW,"Native Hawaiian or Other Pacific Islanders women.
+
+Native Hawaiian or Other Pacific Islanders - A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
+Description,24,52262,HRWHITT,"White men and women.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,25,52264,HRWHITM,"White men.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,26,52266,HRWHITW,"White women.
+
+White - A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+Description,27,52268,HR2MORT,"Two or more races men and women.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,28,52270,HR2MORM,"Two or more races men.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,29,52272,HR2MORW,"Two or more races women.
+
+Two or more races - Category used by institutions to report persons who selected more than one race."
+Description,30,50696,HRUNKNT,"Race/ethnicity unknown total
+
+RACE/ETHNICITY UNKNOWN -Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories.
+
+RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,31,50646,HRUNKNM,"Race/ethnicity unknown men. 
+
+RACE/ETHNICITY UNKNOWN - Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories. 
+
+RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,32,50651,HRUNKNW,"Race/ethnicity unknown women. 
+
+RACE/ETHNICITY UNKNOWN - Category used to classify students or employees whose race/ethnicity is not known and institutions are unable to place them in one of the specified racial/ethnic categories. 
+
+RACE/ETHNICITY - Categories used to describe groups to which individuals belong, identify with, or belong in the eyes of the community. The categories do not denote scientific definitions of anthropological origins. A person may be counted in only one group."
+Description,33,50666,HRNRALT,"U.S. Nonresident total
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely. 
+
+Resident (and other eligible non-citizens) - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident status (and who holds either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Description,34,50586,HRNRALM,"U.S. Nonresident men.  
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.  
+
+Resident (and other eligible non-citizens) - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident status (and who holds either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Description,35,50591,HRNRALW,"U.S. Nonresident women. 
+
+U.S. Nonresident - A person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis and does not have the right to remain indefinitely.  
+
+Resident (and other eligible non-citizens) - A person who is not a citizen or national of the United States and who has been admitted as a legal immigrant for the purpose of obtaining permanent resident status (and who holds either a registration card (Form I-551 or I-151), a Temporary Resident Card (Form I-688), or an Arrival-Departure Record (Form I-94) with a notation that conveys legal immigrant status such as Section 207 Refugee, Section 208 Asylee, Conditional Entrant Parolee or Cuban-Haitian)."
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,53036,SNHCAT,10000,All full-time new hires,3324,8.08
+Frequencies,2,53036,SNHCAT,20000,"Instructional, research and public service",2998,7.29
+Frequencies,3,53036,SNHCAT,21000,Instructional staff,2984,7.25
+Frequencies,4,53036,SNHCAT,21010,"Instructional staff with faculty status, total",2900,7.05
+Frequencies,5,53036,SNHCAT,21020,"Instructional staff with faculty status, Tenured",539,1.31
+Frequencies,6,53036,SNHCAT,21030,"Instructional staff with faculty status, On Tenure Track",1588,3.86
+Frequencies,7,53036,SNHCAT,21040,"Instructional staff with faculty status, Not on Tenure Track/No Tenure system",2488,6.05
+Frequencies,8,53036,SNHCAT,21042,"Instructional staff with faculty status, Not on Track/No Tenure sys, annual contract",1763,4.29
+Frequencies,9,53036,SNHCAT,21043,"Instructional staff with faculty status, Not on Track/No Tenure sys, less-than-annual contract",347,0.84
+Frequencies,10,53036,SNHCAT,21041,"Instructional staff with faculty status, Not on Track/No Tenure sys, multi-year and indefinite contracts",937,2.2799999999999998
+Frequencies,11,53036,SNHCAT,21044,"Instructional staff with faculty status, not on Tenure/No Tenure sys, multi-year contract",480,1.17
+Frequencies,12,53036,SNHCAT,21045,"Instructional staff with faculty status, not on Tenure/No Tenure sys, indefinite contract",482,1.17
+Frequencies,13,53036,SNHCAT,21050,Instructional staff without faculty status,236,0.56999999999999995
+Frequencies,14,53036,SNHCAT,22000,Research,341,0.83
+Frequencies,15,53036,SNHCAT,23000,Public service,128,0.31
+Frequencies,16,53036,SNHCAT,25000,Library and Student and Academic Affairs and Other Education Services,2417,5.87
+Frequencies,17,53036,SNHCAT,30000,Management Occupations,2629,6.39
+Frequencies,18,53036,SNHCAT,31000,Business and Financial Operations,2291,5.57
+Frequencies,19,53036,SNHCAT,32000,"Computer, Engineering, and Science",1889,4.59
+Frequencies,20,53036,SNHCAT,33000,"Community, Social Service, Legal, Arts,Design, Entertainment, Sports and Media",2315,5.63
+Frequencies,21,53036,SNHCAT,34000,Healthcare Practioners and Technical,869,2.11
+Frequencies,22,53036,SNHCAT,35000,Service occupations,2218,5.39
+Frequencies,23,53036,SNHCAT,36000,Sales and related occupations,485,1.18
+Frequencies,24,53036,SNHCAT,37000,Office and Administrative Support,2773,6.74
+Frequencies,25,53036,SNHCAT,38000,"Natural Resources, Construction, and Maintenance",1272,3.09
+Frequencies,26,53036,SNHCAT,39000,"Production, Transportation, and Material Moving",448,1.0900000000000001
+Frequencies,27,53041,OCCUPCAT,100,All full-time new hires,3324,8.08
+Frequencies,28,53041,OCCUPCAT,200,"Instructional, research and public service staff",2998,7.29
+Frequencies,29,53041,OCCUPCAT,210,Instructional staff,14744,35.840000000000003
+Frequencies,30,53041,OCCUPCAT,220,Research,341,0.83
+Frequencies,31,53041,OCCUPCAT,230,Public service,128,0.31
+Frequencies,32,53041,OCCUPCAT,250,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",2417,5.87
+Frequencies,33,53041,OCCUPCAT,300,Management,2629,6.39
+Frequencies,34,53041,OCCUPCAT,310,Business and Financial Operations,2291,5.57
+Frequencies,35,53041,OCCUPCAT,320,"Computer, Engineering, and Science",1889,4.59
+Frequencies,36,53041,OCCUPCAT,330,"Community, Social Service, Legal, Arts,Design, Entertainment, Sports and Media",2315,5.63
+Frequencies,37,53041,OCCUPCAT,340,Healthcare Practioners and Technical,869,2.11
+Frequencies,38,53041,OCCUPCAT,350,Service Occupations,2218,5.39
+Frequencies,39,53041,OCCUPCAT,360,Sales and Related Occupations,485,1.18
+Frequencies,40,53041,OCCUPCAT,370,Office and Administrative Support,2773,6.74
+Frequencies,41,53041,OCCUPCAT,380,"Natural Resources, Construction, and Maintenance",1272,3.09
+Frequencies,42,53041,OCCUPCAT,390,"Production, Transportation, and Material Moving",448,1.0900000000000001
+Frequencies,43,53046,FACSTAT,0,All full-time new hires,29381,71.42
+Frequencies,44,53046,FACSTAT,10,"With faculty status, total",2900,7.05
+Frequencies,45,53046,FACSTAT,20,"With faculty status, tenured",539,1.31
+Frequencies,46,53046,FACSTAT,30,"With faculty status, on tenure track",1588,3.86
+Frequencies,47,53046,FACSTAT,40,"With faculty status not on tenure track/No tenure system, total",2488,6.05
+Frequencies,48,53046,FACSTAT,41,"With faculty status not on tenure track/No tenure system, multi-year and indefinite contract",937,2.2799999999999998
+Frequencies,49,53046,FACSTAT,44,"With faculty status not on tenure track/No tenure system, multi-year contract",480,1.17
+Frequencies,50,53046,FACSTAT,45,"With faculty status not on tenure track/No tenure system, indefinite contract",482,1.17
+Frequencies,51,53046,FACSTAT,42,"With faculty status not on tenure track/No tenure system, annual contract",1763,4.29
+Frequencies,52,53046,FACSTAT,43,"With faculty status not on tenure track/No tenure system, less-than-annual contract",347,0.84
+Frequencies,53,53046,FACSTAT,50,Without faculty status,236,0.56999999999999995
+Frequencies,54,50581,SGTYPE,1,Full-time new hires (New hire code prior to 2012),3324,8.08
+Frequencies,55,50581,SGTYPE,2,Full-time postecondary teachers (occupation code prior to 2012),2998,7.29
+Frequencies,56,50581,SGTYPE,-2,"Not applicable, current occupation does not map to occupations prior to 2012",34819,84.63
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,50701,HRTOTLT,41141,973056,23.651734279672347,1,4398,Grand total
+Statistics,2,50656,HRTOTLM,41141,411578,10.004083517658783,0,1643,Grand total men
+Statistics,3,50661,HRTOTLW,41141,561478,13.647650762013564,0,2856,Grand total women
+Statistics,4,52232,HRAIANT,41141,5279,0.12831481976617001,0,54,American Indian or Alaska Native total
+Statistics,5,52234,HRAIANM,41141,2151,5.2283610024063586E-2,0,28,American Indian or Alaska Native men
+Statistics,6,52236,HRAIANW,41141,3128,7.603120974210642E-2,0,33,American Indian or Alaska Native women
+Statistics,7,52238,HRASIAT,41141,80126,1.9475948567122821,0,762,Asian total
+Statistics,8,52240,HRASIAM,41141,34725,0.84404851607885079,0,285,Asian men
+Statistics,9,52242,HRASIAW,41141,45401,1.1035463406334314,0,477,Asian women
+Statistics,10,52244,HRBKAAT,41141,112130,2.7255049707104835,0,730,Black or African American total
+Statistics,11,52246,HRBKAAM,41141,40712,0.98957244597846428,0,244,Black or African American men
+Statistics,12,52248,HRBKAAW,41141,71418,1.7359325247320192,0,528,Black or African American women
+Statistics,13,52250,HRHISPT,41141,104667,2.5441044213801316,0,1379,Hispanic or Latino total
+Statistics,14,52252,HRHISPM,41141,40155,0.9760336404073795,0,437,Hispanic or Latino men
+Statistics,15,52254,HRHISPW,41141,64512,1.5680707809727523,0,942,Hispanic or Latino women
+Statistics,16,52256,HRNHPIT,41141,2160,5.2502369898641259E-2,0,31,Native Hawaiian or Other Pacific Islander total
+Statistics,17,52258,HRNHPIM,41141,1019,2.4768479132738632E-2,0,20,Native Hawaiian or Other Pacific Islander men
+Statistics,18,52260,HRNHPIW,41141,1141,2.7733890765902627E-2,0,18,Native Hawaiian or Other Pacific Islander women
+Statistics,19,52262,HRWHITT,41141,500053,12.154614618020952,0,2617,White total
+Statistics,20,52264,HRWHITM,41141,208616,5.0707566660995118,0,811,White men
+Statistics,21,52266,HRWHITW,41141,291437,7.0838579519214413,0,1806,White women
+Statistics,22,52268,HR2MORT,41141,22600,0.54933035171726496,0,138,Two or more races total
+Statistics,23,52270,HR2MORM,41141,8198,0.19926593908752827,0,52,Two or more races men
+Statistics,24,52272,HR2MORW,41141,14402,0.35006441262973675,0,94,Two or more races women
+Statistics,25,50696,HRUNKNT,41141,62067,1.508641015045818,0,1406,Race/ethnicity unknown total
+Statistics,26,50646,HRUNKNM,41141,28625,0.69577793442065095,0,567,Race/ethnicity unknown men
+Statistics,27,50651,HRUNKNW,41141,33442,0.8128630806251671,0,839,Race/ethnicity unknown women
+Statistics,28,50666,HRNRALT,41141,83974,2.0411268564206022,0,603,U.S. Nonresident total
+Statistics,29,50586,HRNRALM,41141,47377,1.1515762864295958,0,364,U.S. Nonresident men
+Statistics,30,50591,HRNRALW,41141,36597,0.88955056999100657,0,280,U.S. Nonresident women
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

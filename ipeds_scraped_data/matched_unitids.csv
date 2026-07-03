@@ -1,0 +1,103 @@
+us_news_name,unitid,matched_instnm,method
+Princeton University,186131,Princeton University,fuzzy
+Massachusetts Institute of Technology,166683,Massachusetts Institute of Technology,fuzzy
+Harvard University,166027,Harvard University,fuzzy
+Stanford University,243744,Stanford University,fuzzy
+Yale University,130794,Yale University,fuzzy
+University of Chicago,144050,University of Chicago,fuzzy
+Duke University,198419,Duke University,fuzzy
+Johns Hopkins University,162928,Johns Hopkins University,fuzzy
+Northwestern University,147767,Northwestern University,fuzzy
+University of Pennsylvania,215062,University of Pennsylvania,fuzzy
+California Institute of Technology,110404,California Institute of Technology,fuzzy
+Cornell University,190415,Cornell University,fuzzy
+Brown University,217156,Brown University,fuzzy
+Dartmouth College,182670,Dartmouth College,fuzzy
+Columbia University,217925,Columbia International University,fuzzy
+"University of California, Berkeley",110635,University of California-Berkeley,override
+Rice University,227757,Rice University,fuzzy
+"University of California, Los Angeles",110662,University of California-Los Angeles,override
+Vanderbilt University,221999,Vanderbilt University,fuzzy
+Carnegie Mellon University,211440,Carnegie Mellon University,fuzzy
+University of Michigan--Ann Arbor,170976,University of Michigan-Ann Arbor,override
+University of Notre Dame,152080,University of Notre Dame,fuzzy
+Washington University in St. Louis,179867,Washington University in St Louis,fuzzy
+Emory University,139658,Emory University,fuzzy
+Georgetown University,131496,Georgetown University,fuzzy
+University of North Carolina--Chapel Hill,199120,University of North Carolina at Chapel Hill,override
+University of Virginia,234076,University of Virginia-Main Campus,fuzzy
+University of Southern California,123961,University of Southern California,fuzzy
+University of California San Diego,110680,University of California-San Diego,override
+University of Florida,134130,University of Florida,fuzzy
+The University of Texas--Austin,228778,The University of Texas at Austin,override
+Georgia Institute of Technology,139755,Georgia Institute of Technology-Main Campus,fuzzy
+New York University,193900,New York University,fuzzy
+"University of California, Davis",110644,University of California-Davis,override
+"University of California, Irvine",110653,University of California-Irvine,override
+Boston College,164924,Boston College,fuzzy
+Tufts University,168148,Tufts University,fuzzy
+University of Illinois Urbana-Champaign,145637,University of Illinois Urbana-Champaign,override
+University of Wisconsin--Madison,240444,University of Wisconsin-Madison,override
+"University of California, Santa Barbara",110705,University of California-Santa Barbara,override
+The Ohio State University,204796,Ohio State University-Main Campus,override
+Boston University,164988,Boston University,fuzzy
+Rutgers University--New Brunswick,186380,Rutgers University-New Brunswick,override
+"University of Maryland, College Park",163286,University of Maryland-College Park,override
+University of Washington,236948,University of Washington-Seattle Campus,fuzzy
+Lehigh University,213543,Lehigh University,fuzzy
+Northeastern University,167358,Northeastern University,fuzzy
+Purdue University--Main Campus,243780,Purdue University-Main Campus,override
+University of Georgia,139959,University of Georgia,fuzzy
+University of Rochester,195030,University of Rochester,fuzzy
+Case Western Reserve University,201645,Case Western Reserve University,fuzzy
+Florida State University,134097,Florida State University,fuzzy
+Texas A&M University,228723,Texas A & M University-College Station,override
+Virginia Tech,160472,LaSalle Tech,fuzzy
+Wake Forest University,199847,Wake Forest University,fuzzy
+William & Mary,231624,William & Mary,fuzzy
+"University of California, Merced",445188,University of California-Merced,override
+Villanova University,216597,Villanova University,fuzzy
+George Washington University,131469,George Washington University,fuzzy
+The Pennsylvania State University--University Park,214777,Pennsylvania State University-Main Campus,override
+Santa Clara University,122931,Santa Clara University,fuzzy
+Stony Brook University--SUNY,196097,Stony Brook University,override
+University of Minnesota--Twin Cities,174066,University of Minnesota-Twin Cities,override
+Michigan State University,171100,Michigan State University,fuzzy
+North Carolina State University,199193,North Carolina State University at Raleigh,fuzzy
+Rensselaer Polytechnic Institute,194824,Rensselaer Polytechnic Institute,fuzzy
+University of Massachusetts--Amherst,166629,University of Massachusetts-Amherst,override
+University of Miami,135726,University of Miami,fuzzy
+Brandeis University,165015,Brandeis University,fuzzy
+Tulane University of Louisiana,160755,Tulane University of Louisiana,override
+University of Connecticut,129020,University of Connecticut,fuzzy
+University of Pittsburgh,215293,University of Pittsburgh-Pittsburgh Campus,override
+Binghamton University--SUNY,196079,Binghamton University,override
+Indiana University--Bloomington,151351,Indiana University-Bloomington,override
+Clemson University,217882,Clemson University,fuzzy
+Rutgers University--Newark,186399,Rutgers University-Newark,override
+Syracuse University,196413,Syracuse University,fuzzy
+University at Buffalo--SUNY,196088,University at Buffalo,override
+"University of California, Riverside",110671,University of California-Riverside,override
+Colorado School of Mines,126775,Colorado School of Mines,fuzzy
+Drexel University,212054,Drexel University,fuzzy
+New Jersey Institute of Technology,185828,New Jersey Institute of Technology,fuzzy
+Stevens Institute of Technology,186867,Stevens Institute of Technology,fuzzy
+Pepperdine University,121150,Pepperdine University,fuzzy
+University of Illinois Chicago,145600,University of Illinois Chicago,override
+Worcester Polytechnic Institute,168421,Worcester Polytechnic Institute,fuzzy
+Yeshiva University,197708,Yeshiva University,fuzzy
+American University,131159,American University,fuzzy
+Baylor University,223232,Baylor University,fuzzy
+Howard University,131520,Howard University,fuzzy
+Marquette University,239105,Marquette University,fuzzy
+Rochester Institute of Technology,195003,Rochester Institute of Technology,fuzzy
+Southern Methodist University,228246,Southern Methodist University,fuzzy
+"University of California, Santa Cruz",110714,University of California-Santa Cruz,override
+University of Delaware,130943,University of Delaware,fuzzy
+University of South Florida,137351,University of South Florida,fuzzy
+Florida International University,133951,Florida International University,fuzzy
+Fordham University,191241,Fordham University,fuzzy
+Rutgers University--Camden,186371,Rutgers University-Camden,override
+Texas Christian University,228875,Texas Christian University,fuzzy
+University of Colorado Boulder,126614,University of Colorado Boulder,fuzzy
+Auburn University,100858,Auburn University,fuzzy

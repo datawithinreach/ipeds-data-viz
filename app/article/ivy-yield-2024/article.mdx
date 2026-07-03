@@ -1,0 +1,98 @@
+export const ArticleMeta = {
+  title: 'Yield is the new selectivity: Ivy League conversion rates, 2023–24',
+  description:
+    'Every Ivy admits under 9% of applicants. The more telling number — what share of admits actually enroll — separates Harvard from Cornell.',
+  publishDate: '04-30-2026',
+  source:
+    'Source: IPEDS (Integrated Postsecondary Education Data System), National Center for Education Statistics, US Department of Education. ADM2023 final-release file (2023–24 admissions cycle). Admit rate computed as ADMSSN ÷ APPLCN; yield computed as ENRLT ÷ ADMSSN.',
+  imageUrl: '/images/landing/story8.png',
+  tags: ['admissions', 'ivy-league', 'yield', 'selectivity'],
+  category: 'Admissions',
+  href: '/article/ivy-yield-2024',
+};
+
+export const admitRates = [
+  { label: 'Harvard', value: 3.6 },
+  { label: 'Yale', value: 3.9 },
+  { label: 'Columbia', value: 4.0 },
+  { label: 'Princeton', value: 4.6 },
+  { label: 'Brown', value: 5.4 },
+  { label: 'Penn', value: 5.4 },
+  { label: 'Dartmouth', value: 5.4 },
+  { label: 'Cornell', value: 8.8 },
+];
+
+export const yieldRates = [
+  { label: 'Harvard', value: 83.6 },
+  { label: 'Princeton', value: 75.5 },
+  { label: 'Dartmouth', value: 69.1 },
+  { label: 'Yale', value: 69.8 },
+  { label: 'Penn', value: 68.0 },
+  { label: 'Brown', value: 65.2 },
+  { label: 'Columbia', value: 64.9 },
+  { label: 'Cornell', value: 63.9 },
+];
+
+export const funnel = [
+  { label: 'Harvard', value: 54008, group: 'Applicants' },
+  { label: 'Harvard', value: 1970, group: 'Admitted' },
+  { label: 'Harvard', value: 1647, group: 'Enrolled' },
+  { label: 'Yale', value: 57517, group: 'Applicants' },
+  { label: 'Yale', value: 2227, group: 'Admitted' },
+  { label: 'Yale', value: 1554, group: 'Enrolled' },
+  { label: 'Princeton', value: 40468, group: 'Applicants' },
+  { label: 'Princeton', value: 1868, group: 'Admitted' },
+  { label: 'Princeton', value: 1410, group: 'Enrolled' },
+  { label: 'Cornell', value: 62993, group: 'Applicants' },
+  { label: 'Cornell', value: 5516, group: 'Admitted' },
+  { label: 'Cornell', value: 3525, group: 'Enrolled' },
+];
+
+---
+
+Coverage of Ivy League admissions almost always leads with one number: the admit rate. It&rsquo;s easy to read, easy to compare, and trends in the same direction year after year — down. But the admit rate has stopped being a useful way to tell the eight Ivies apart. Seven of them now admit between 3.6% and 5.4% of applicants. Cornell&rsquo;s 8.8% is the outlier, and even there the absolute number of admits is large because Cornell is large.
+
+<BarChart
+  data={admitRates}
+  title="Admit rate, 2023–24 (% of applicants admitted)"
+  subtitle="Computed as ADMSSN ÷ APPLCN from the IPEDS ADM2023 file."
+  orientation="horizontal"
+/>
+
+The number that still moves is **yield** — the share of admitted students who actually enroll. Yield is harder to game. A school can drive its admit rate down by recruiting more applicants, but it can&rsquo;t drive its yield up without losing cross-admit battles to peer institutions.
+
+<BarChart
+  data={yieldRates}
+  title="Yield, 2023–24 (% of admitted students who enrolled)"
+  subtitle="Computed as ENRLT ÷ ADMSSN from the IPEDS ADM2023 file."
+  orientation="horizontal"
+/>
+
+## A 20-point gap among schools that admit similar shares
+
+Brown, Penn, and Dartmouth all admitted 5.4% of applicants this cycle — a three-way tie at the third decimal place. Their yields are 65%, 68%, and 69%. Modest spread.
+
+But compare Harvard and Cornell. Harvard admitted 3.6% of applicants and Cornell admitted 8.8% — a 5-point gap on the most-cited number. The yield gap is 20 points: Harvard converts 84% of admits to matriculants, Cornell converts 64%. Harvard is sending out half as many admission letters as Cornell, and a much higher fraction of them stick.
+
+## The funnel tells the truer story
+
+Selectivity is really three numbers stacked: applicants, admitted, enrolled. Looking at all three together makes Cornell&rsquo;s situation specific. Cornell receives the most applications of any Ivy (62,993), admits the most students (5,516), and matriculates the largest first-year class (3,525). It&rsquo;s simultaneously the largest and the least selective Ivy on every step of the funnel.
+
+<BarChart
+  data={funnel}
+  title="The Ivy admissions funnel — four schools, three stages"
+  subtitle="Bars compare applicants, admitted, and enrolled counts at four Ivies."
+  orientation="horizontal"
+/>
+
+Harvard&rsquo;s funnel shape is the inverse: big at the top (54,000 applicants) and narrow at the bottom (1,647 enrolled), with very little leakage between admitted and enrolled.
+
+## What yield is actually measuring
+
+Yield is partly a measure of brand strength — how many cross-admits choose your offer over a peer&rsquo;s. It&rsquo;s also a measure of how strongly admissions offices recruit known matchmaking signals: early-decision applicants, recruited athletes, legacy applicants, and similar populations all yield close to 100%. Schools that lean heavily on early-decision can post higher yields without necessarily winning more cross-admit battles.
+
+A more honest read is to look at admit rate and yield side by side. The schools that come out ahead on both — Harvard, MIT (not an Ivy, but in the same conversation, with 4.5% / 86%), and Stanford (3.6% / 82%) — are the ones with the strongest combined position: they admit the smallest share *and* keep the highest fraction of those admits. Everyone else has to pick which number to optimize.
+
+## Methodology
+
+All numbers above come from a single IPEDS file: ADM2023 (final release), which collects the 2023–24 admissions cycle. We use three reported variables — applicants total (`APPLCN`), admissions total (`ADMSSN`), and enrolled total (`ENRLT`) — and derive admit rate (admits ÷ applicants) and yield (enrolled ÷ admits). Schools self-report these counts to NCES; we don&rsquo;t adjust them. The same data is publicly available on the [IPEDS website](https://nces.ed.gov/ipeds/use-the-data) and updates each fall.

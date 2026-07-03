@@ -1,0 +1,172 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File documentation for total entering class, retention rates, and student-to-faculty ratio: Fall 2022",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,,,,,,,,,,
+Introduction,3,Filename,EF2022D
+Introduction,4,  Provisional release:,January 2024
+Introduction,5,Filename,EF2022D_RV
+Introduction,6,  Final release:,December 2024
+Introduction,7,Overview,"This file contains data on the total entering class, first-year retention rates and the student-to-faculty ratio. The total entering class is the number of incoming students (students enrolling for the first time in a postsecondary institution versus students transferring in from another postsecondary institution) at an institution. This measure permits the calculation of the graduation rate cohort as a proportion of the total entering student body.
+
+The first-year retention rate data measure the percentage of first-year students who had persisted in or completed their educational program a year later (began in fall 2021 and persisted or completed in fall 2022). Institutions can exclude the number of students from the first-time cohort who left the institution for any of the following reasons: died or were totally and permanently disabled; to serve in the armed forces (including those called to active duty); to serve with a foreign aid service of the Federal Government (e.g. Peace Corps); or to serve on official church missions. Beginning with the fall 2016 data, instititions can include first-time bachelor’s-seeking (or equivalent) study abroad students who were excluded from the first-time cohort  but who have re-enrolled at the institution their second year.
+
+Student-to-faculty ratio is defined as  total FTE students (not in graduate or professional programs) divided by total FTE instructional staff (not teaching in graduate or professional programs). All data on this file is applicable only to institutions with undergraduate students.
+
+Institutions with traditional academic year calendar systems (semester, quarter, trimester or  4-1-4) report their enrollment as of October 15 or the official fall reporting date of the institution (academic year). Institutions with calendar systems that differ by program or allow continuous enrollment report students that are enrolled at any time between August 1 and October 31 (program year).  Only academic year institutions report entering class data. Institutions with short programs (less-than-one-year) will not have data on retention.
+",,,,,,,,
+Introduction,8,,,,,,,,,,
+Introduction,9,Note,"IPEDS data, including provisional release data and final release data, adhere to rigorous quality control procedures established by NCES. Data are imputed for nonresponding institutions. Provisional release data are used for First Look  web tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. While the final release data offer  the most up to date data, these data may not match tables from the First Look web tables based on provisional release data.  ",,,,,,,,
+Introduction,10,Contents of spreadsheet,,,,,,,,,
+Introduction,11,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,12,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,13,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Provisional release)",,,,,,,,
+Introduction,14,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (Final/revised release)",,,,,,,,
+Introduction,15,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,21001,GRCOHRT,N,6,Cont,XGRCOHRT,Full-time first-time degree/certificate-seeking undergraduate (current year GRS cohort)
+varlist,3,21006,UGENTERN,N,6,Cont,XUGENTER,"Total entering students at the undergraduate level, fall 2022"
+varlist,4,21011,PGRCOHRT,N,3,Cont,XPGRCOHR,Current year GRS cohort as a percent of entering class
+varlist,5,21026,RRFTCT,N,6,Cont,XRRFTCT,Full-time fall 2021 cohort
+varlist,6,21031,RRFTEX,N,6,Cont,XRRFTEX,Exclusions from full-time fall 2021 cohort
+varlist,7,21033,RRFTIN,N,6,Cont,XRRFTIN,Inclusions to the full-time fall 2021 cohort
+varlist,8,21036,RRFTCTA,N,6,Cont,XRRFTCTA,Full-time adjusted fall 2021 cohort
+varlist,9,21041,RET_NMF,N,6,Cont,XRET_NMF,Students from the full-time adjusted fall 2021 cohort enrolled in fall 2022
+varlist,10,21016,RET_PCF,N,3,Cont,XRET_PCF,"Full-time retention rate, 2022"
+varlist,11,21046,RRPTCT,N,6,Cont,XRRPTCT,Part-time fall 2021 cohort
+varlist,12,21051,RRPTEX,N,6,Cont,XRRPTEX,Exclusions from part-time fall 2021 cohort
+varlist,13,21053,RRPTIN,N,6,Cont,XRRPTIN,Inclusions to the part-time fall 2021 cohort
+varlist,14,21056,RRPTCTA,N,6,Cont,XRRPTCTA,Part-time adjusted fall 2021 cohort
+varlist,15,21061,RET_NMP,N,6,Cont,XRET_NMP,Students from the part-time adjusted fall 2021 cohort enrolled in fall 2022
+varlist,16,21021,RET_PCP,N,3,Cont,XRET_PCP,"Part-time retention rate, 2022"
+varlist,17,24301,STUFACR,N,6,Cont,XSTUFACR,Student-to-faculty ratio
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,21001,GRCOHRT,"Full-time first-time degree/certificate-seeking undergraduates enrolled for credit.
+CREDIT - Recognition of attendance or performance in an instructional activity (course or program) that can be applied by a recipient toward the requirements for a degree, diploma, certificate, or other formal award.
+NOTE: Enrollment reported is of the institution's official fall reporting date or October 15.
+
+Full-time first-time degree/certificate-seeking undergraduates enrolled for credit.
+
+First-time student (undergraduate) - A student attending any institution for the first time at the undergraduate level. Includes students enrolled in academic or occupational programs . Also includes students enrolled in the fall term who attended college for the first time in the prior summer term, and students who entered with advanced standing (college credits earned before graduation from high school). 
+
+Full-time undergraduate -   A student enrolled for 12 or more semester credits , or 12 or more quarter credits, or 24 or more clock hours a week each term. 
+
+Undergraduate  A student enrolled in a 4- or 5-year bachelor's degree program, an associate's degree program, or a vocational or technical program below the baccalaureate."
+Description,3,21006,UGENTERN,"Total entering students at the undergraduate level
+In addition to the students in the GRS cohort, this would include:
+ * part -time undergraduate students
+ * non-degree/certificate-seeking undergraduates
+ * students who initially attended the prior summer term and returned again in the fall
+(other than those included in the GRS cohort)
+
+ * students transferring into your institution at any undergraduate level for the first time"
+Description,4,21011,PGRCOHRT,Percent of entering class represented by your current year GRS cohort
+Description,5,21026,RRFTCT,"Full-time cohort includes full-time first-time degree/certificate seeking students enrolled at the institution in the fall of the prior year (including those enrolled for the first time the preceding summer term and those whose intent was not known upon entry to the institution).  The full-time cohort for 4-year institutions should only include bachelor degree-seeking students.  The time period used for reporting cohort numbers should be the official fall reporting date of the institution or October 15 for institutions that have standard academic calendar systems (semester, quarter, trimester or 4-1-4 plan).  For institutions that enroll students continuously during the year and use a full-year cohort, the cohort is based on any student enrolled during the period August 1 through October 31. The student status (full- or part-time) should be based on the prior year's fall status, even if this has changed by the current year (e.g., if a student has gone from part-time to full-time, report them as part of the part-time cohort)."
+Description,6,21031,RRFTEX,"Exclusions are the number of students from the prior year cohort, who left the institution for any of the following reasons: Died or were totally and permanently disabled; Serve in the armed forces (including those called to active duty); Serve with a foreign aid service of the Federal Government (e.g., Peace Corps); or Serve on official church missions."
+Description,7,21033,RRFTIN,"Inclusions are the number of first-time degree seeking  study abroad students who were excluded from the prior year first-time full-time cohort but who have re-enrolled at the institution their second year.
+
+Study abroad	 - Arrangement by which a student completes part of the college program studying in another country. Can be at a campus abroad or through a cooperative agreement with some other U.S. college or an institution of another country."
+Description,8,21036,RRFTCTA,"Full-time adjusted cohort from prior year:  Full-time cohort from prior year minus number of exclusions plus the number of Inclusions.
+
+Inclusions were added to the retention rate calculation beginning Fall 2016."
+Description,9,21041,RET_NMF,Number of students from the full-time cohort in the prior year who are still enrolled in the current year (include students that re-enrolled and students with continuous enrollment).
+Description,10,21016,RET_PCF,The full-time retention rate is the percent of the (fall full-time cohort from the prior year minus exclusions from the fall full-time cohort) that re-enrolled at the institution as either full- or part-time in the current year
+Description,11,21046,RRPTCT,"Part-time cohort includes part-time first-time degree/certificate seeking students enrolled at the institution in the fall of the prior year (including those enrolled for the first time the preceding summer term and those whose intent was not known upon entry to the institution).  The part-time cohort for 4-year institutions should only include bachelor degree-seeking students.  The time period used for reporting cohort numbers should be the official fall reporting date of the institution or October 15 for institutions that have standard academic calendar systems (semester, quarter, trimester or 4-1-4 plan).  For institutions that enroll students continuously during the year and use a full-year cohort, the cohort is based on any student enrolled during the period August 1 through October 31. The student status (full- or part-time) should be based on the prior year's fall status, even if this has changed by the current year (e.g., if a student has gone from part-time to full-time, report them as part of the part-time cohort)."
+Description,12,21051,RRPTEX,"Exclusions are the number of students from the prior year cohort, who left the institution for any of the following reasons: Died or were totally and permanently disabled; Serve in the armed forces (including those called to active duty); Serve with a foreign aid service of the Federal Government (e.g., Peace Corps); or Serve on official church missions."
+Description,13,21053,RRPTIN,"Inclusions are the number of first-time degree seeking  study abroad students who were excluded from the prior year first-time part-time cohort but who have re-enrolled at the institution their second year.
+
+Study abroad	 - Arrangement by which a student completes part of the college program studying in another country. Can be at a campus abroad or through a cooperative agreement with some other U.S. college or an institution of another country."
+Description,14,21056,RRPTCTA,"Part-time adjusted cohort from prior year:  part-time cohort from prior year minus number of exclusions plus the number of inclusions
+
+Inclusions were added to the retention rate calculation beginning Fall 2016."
+Description,15,21061,RET_NMP,Number of students from the part-time cohort in the prior year who are still enrolled in the current year (include students that re-enrolled and students with continuous enrollment).
+Description,16,21021,RET_PCP,The part-time retention rate is the percent of the (fall part-time cohort from the prior year minus exclusions from the fall part-time cohort) that re-enrolled at the institution as either full- or part-time in the current year
+Description,17,24301,STUFACR,"Student-to-faculty ratio - Total FTE students not in graduate or professional programs divided by total FTE instructional staff not teaching in graduate or professional programs. 
+
+Total FTE students is equal to the number of full-time students plus 1/3 the number of part-time students (Fall enrollment component).
+
+Graduate or first-professional students enrolled in graduate or professional programs such as medicine, law, veterinary, dentistry, social work, or public health, in which faculty teach virtually only graduate-level students (often referred to as ""stand-alone"" or ""independent"" programs) are excluded from both full-time and part-time counts.
+
+Total FTE instructional staff is equal to the number of full-time instructional staff to 1/3 the number of part-time instructional staff (Human Resource Component, EAP section).
+
+Instructional staff include employees whose primary function/occupational activity is primarily instruction or instruction/research/public service and are not medical school employees.
+
+Instructional staff teaching in graduate or professional programs such as medicine, law, veterinary, dentistry, social work, or public health, in which faculty teach virtually only graduate-level students (often referred to as ""stand-alone"" or ""independent"" programs) are excluded from both full-time and part-time counts."
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,21001,GRCOHRT,3151,2242594,711.70866391621712,1,14980,Full-time first-time degree/certificate-seeking undergraduate (current year GRS cohort)
+Statistics,2,21006,UGENTERN,3151,4725821,1499.7845128530626,1,38321,"Total entering students at the undergraduate level, fall 2022"
+Statistics,3,21011,PGRCOHRT,3151,165110,52.399238337035861,0,100,Current year GRS cohort as a percent of entering class
+Statistics,4,21026,RRFTCT,5406,2138057,395.49704032556417,0,14097,Full-time fall 2021 cohort
+Statistics,5,21031,RRFTEX,5406,6441,1.1914539400665927,0,2317,Exclusions from full-time fall 2021 cohort
+Statistics,6,21033,RRFTIN,5406,207,3.8290788013318533E-2,0,95,Inclusions to the full-time fall 2021 cohort
+Statistics,7,21036,RRFTCTA,5406,2131823,394.34387717351092,0,13931,Full-time adjusted fall 2021 cohort
+Statistics,8,21041,RET_NMF,5406,1631131,301.72604513503512,0,11892,Students from the full-time adjusted fall 2021 cohort enrolled in fall 2022
+Statistics,9,21016,RET_PCF,5069,361229,71.26237916748866,0,100,"Full-time retention rate, 2022"
+Statistics,10,21046,RRPTCT,3726,370122,99.334943639291467,0,6795,Part-time fall 2021 cohort
+Statistics,11,21051,RRPTEX,3726,1109,0.29763821792807299,0,108,Exclusions from part-time fall 2021 cohort
+Statistics,12,21053,RRPTIN,3726,18,4.830917874396135E-3,0,6,Inclusions to the part-time fall 2021 cohort
+Statistics,13,21056,RRPTCTA,3726,369031,99.042136339237786,0,6791,Part-time adjusted fall 2021 cohort
+Statistics,14,21061,RET_NMP,3726,169328,45.444981213097158,0,3014,Students from the part-time adjusted fall 2021 cohort enrolled in fall 2022
+Statistics,15,21021,RET_PCP,3032,153954,50.776385224274406,0,100,"Part-time retention rate, 2022"
+Statistics,16,24301,STUFACR,5703,85558,15.002279502016483,1,134,Student-to-faculty ratio
+Statistics,17,,,,,,,
+Statistics,18,,,,,,,
+Statistics,19,,,,,,,
+Statistics,20,,,,,,,
+Statistics,21,,,,,,,
+Statistics,22,,,,,,,
+Statistics,23,,,,,,,
+Statistics,24,,,,,,,
+Statistics,25,,,,,,,
+Statistics,26,,,,,,,
+Statistics,27,,,,,,,
+Statistics,28,,,,,,,
+Statistics,29,,,,,,,
+Statistics,30,,,,,,,
+Statistics,31,
+Statistics,32,
+Statistics,33,
+Statistics,34,
+Statistics,35,
+Statistics,36,
+Statistics,37,
+Statistics,38,
+Statistics,39,
+Statistics,40,
+Statistics,41,
+Statistics,42,
+Statistics,43,
+Statistics,44,
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,21001,GRCOHRT,3148,2245290,713.24332909783993,1,14980,Full-time first-time degree/certificate-seeking undergraduate (current year GRS cohort)
+StatisticsRV,2,21006,UGENTERN,3148,4743818,1506.930749682338,2,38321,"Total entering students at the undergraduate level, fall 2022"
+StatisticsRV,3,21011,PGRCOHRT,3148,164874,52.374205844980942,0,100,Current year GRS cohort as a percent of entering class
+StatisticsRV,4,21026,RRFTCT,5406,2133448,394.64446910839808,0,14097,Full-time fall 2021 cohort
+StatisticsRV,5,21031,RRFTEX,5406,6428,1.1890492045874954,0,2317,Exclusions from full-time fall 2021 cohort
+StatisticsRV,6,21033,RRFTIN,5406,207,3.8290788013318533E-2,0,95,Inclusions to the full-time fall 2021 cohort
+StatisticsRV,7,21036,RRFTCTA,5406,2127227,393.49371069182388,0,13931,Full-time adjusted fall 2021 cohort
+StatisticsRV,8,21041,RET_NMF,5406,1629568,301.43692193858675,0,11892,Students from the full-time adjusted fall 2021 cohort enrolled in fall 2022
+StatisticsRV,9,21016,RET_PCF,5068,361407,71.31156274664562,0,100,"Full-time retention rate, 2022"
+StatisticsRV,10,21046,RRPTCT,3729,369542,99.099490480021458,0,6795,Part-time fall 2021 cohort
+StatisticsRV,11,21051,RRPTEX,3729,1109,0.2973987664253151,0,108,Exclusions from part-time fall 2021 cohort
+StatisticsRV,12,21053,RRPTIN,3729,18,4.8270313757039418E-3,0,6,Inclusions to the part-time fall 2021 cohort
+StatisticsRV,13,21056,RRPTCTA,3729,368451,98.806918744971838,0,6791,Part-time adjusted fall 2021 cohort
+StatisticsRV,14,21061,RET_NMP,3729,168885,45.289621882542235,0,3014,Students from the part-time adjusted fall 2021 cohort enrolled in fall 2022
+StatisticsRV,15,21021,RET_PCP,3033,154021,50.781734256511704,0,100,"Part-time retention rate, 2022"
+StatisticsRV,16,24301,STUFACR,5703,85585,15.007013852358408,1,134,Student-to-faculty ratio
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

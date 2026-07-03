@@ -1,0 +1,3677 @@
+sheet,row_idx,col_1,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,col_10,col_11,col_12,col_13,col_14,col_15,col_16,col_17,col_18,col_19,col_20,col_21,col_22,col_23,col_24,col_25,col_26,col_27,col_28,col_29,col_30,col_31,col_32,col_33,col_34,col_35,col_36,col_37,col_38,col_39,col_40,col_41,col_42,col_43,col_44,col_45,col_46,col_47,col_48,col_49,col_50
+Introduction,0,"File Documentation for Salary Outlays for Full-time, Nonmedical, Instructional Staff by Academic Rank and Gender, Academic year 2020-21",,,,,,,,,
+Introduction,1,(Final/revised release),,,,,,,,,
+Introduction,2,,,,,,,,,
+Introduction,3,Filename,SAL2020_IS
+Introduction,4,  Provisional release:,December 2021
+Introduction,5,Filename,SAL2020_IS_RV
+Introduction,6,  Final/revised release:,November 2022
+Introduction,7,Overview,"This file contains the number of staff,  total salary outlays and average salaries of full-time, nonmedical, instructional staff by academic rank, number of months worked, and gender. The categories for number of months worked are 9-, 10-, 11- and 12-months. Number of staff working less than 9 months are also available, but salary data are not available for this group. Equated 9-month salary outlays and equated 9-month average salaries are also available by academic rank and gender. For details see the variables listed in the description tab. This data file has multiple records for each institution. Each record is uniquely defined by the variables IPEDS ID (UNITID), and the variable academic rank (ARANK) of full-time instructional staff.
+
+Between 2012 and 2015 salary information were not available by number of months worked. Equated 9-month average salaries were available, but because of the lack of detailed salary data by the number of months worked, it is not consistent with equated 9-month salary data beginning with 2016. 
+
+Prior to 2012, number of staff and salary information were available for 9/10 months worked and 11/12 months worked. Equated 9-month average salaries and equated 9-month salary outlays were available and is more consistent with equated salaries beginning with 2016.
+
+Prior to 2016 the number of months worked were referred to as contract lengths.  Beginning with 2016, the salary survey collection screens used the  ""number of months worked"" terminology. 
+.
+ ",,,,,,,,
+Introduction,8,,,,,,,,,,
+Introduction,9,Note,"Preliminary release data have been edited but are subject to further NCES quality control procedures. Imputed data for nonresponding institutions are not included. These data are used for First Look (Preliminary Data) Web Tables. Provisional release data have undergone all NCES data quality control procedures. Data are imputed for nonresponding institutions. These data are used for First Look (Provisional Data) Web Tables. Final release data include revisions to the provisional release data that have been made by institutions during the subsequent data collection year. The final release data can be used when the most up to date data are required; however, these data may not match First Look Web Tables based on provisional data. ",,,,,,,,
+Introduction,10
+Introduction,11,Contents of spreadsheet,,,,,,,,,
+Introduction,12,Varlist,"Variable list: Lists all variables in the table. Includes the variable name, variable label and the Data type, format and maximum field width of each variable.  The data type describes a variable as either a numeric (N) or Alphanumeric (A) and the format of a variable defines a variable as either continuous (Cont) or categorical (Disc).  It all also lists the variable name of all imputation flag variables for each continuous variable. Imputation flag variable describes whether a value for the corresponding variable was reported, imputed or not applicable.",,,,,,,,
+Introduction,13,Description,Long description or glossary definition of a variable. ,,,,,,,,
+Introduction,14,Frequencies,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.(provisional release),,,,,,,,
+Introduction,15,Statistics,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file. (provisional release)",,,,,,,,
+Introduction,16,FrequenciesRV,This worksheet contains the code values for of all categorical variables in the data file. It also lists the frequency and percent distribution for each code value by variable.(final/revised release),,,,,,,,
+Introduction,17,StatisticsRV,"This worksheet lists the sum, mean, minimum and maximum values of all continuous variables in the data file.(final/revised release)",,,,,,,,
+Introduction,18,Imputation code values,This worksheet lists the code values for all imputation flag variables.,,,,,,,,
+varlist,0,varnumber,varname,DataType,Fieldwidth,format,imputationvar,varTitle
+varlist,1,1,UNITID,N,6,Cont,,Unique identification number of the institution
+varlist,2,40106,ARANK,N,2,Disc,,Academic rank
+varlist,3,40481,SAINSTT,N,6,Cont,XSAINSTT,Instructional staff - total
+varlist,4,40482,SAINSTM,N,6,Cont,XSAINSTM,Instructional staff - men
+varlist,5,40483,SAINSTW,N,6,Cont,XSAINSTW,Instructional staff - women
+varlist,6,40491,SA_9MCT,N,6,Cont,XSA_9MCT,Instructional staff on less than 9-month contract-total
+varlist,7,40492,SA_9MCM,N,6,Cont,XSA_9MCM,Instructional staff on less than 9-month contract-men
+varlist,8,40493,SA_9MCW,N,6,Cont,XSA_9MCW,Instructional staff on less than 9-month contract-women
+varlist,9,40113,SATOTLT,N,6,Cont,XSATOTLT,"Instructional staff on 9, 10, 11 or 12 month contract-total"
+varlist,10,40107,SATOTLM,N,6,Cont,XSATOTLM,"Instructional staff on 9, 10, 11 or 12 month contract-men"
+varlist,11,40110,SATOTLW,N,6,Cont,XSATOTLW,"Instructional staff on 9, 10, 11 or 12 month contract-women"
+varlist,12,40501,SA09MCT,N,6,Cont,XSA09MCT,Instructional staff on 9-month contract-total
+varlist,13,40506,SA09MCM,N,6,Cont,XSA09MCM,Instructional staff on 9-month contract-men
+varlist,14,40511,SA09MCW,N,6,Cont,XSA09MCW,Instructional staff on 9-month contract-women
+varlist,15,40516,SA10MCT,N,6,Cont,XSA10MCT,Instructional staff on 10-month contract-total
+varlist,16,40521,SA10MCM,N,6,Cont,XSA10MCM,Instructional staff on 10-month contract-men
+varlist,17,40526,SA10MCW,N,6,Cont,XSA10MCW,Instructional staff on 10-month contract-women
+varlist,18,40531,SA11MCT,N,6,Cont,XSA11MCT,Instructional staff on 11-month contract-total
+varlist,19,40536,SA11MCM,N,6,Cont,XSA11MCM,Instructional staff on 11-month contract-men
+varlist,20,40541,SA11MCW,N,6,Cont,XSA11MCW,Instructional staff on 11-month contract-women
+varlist,21,40546,SA12MCT,N,6,Cont,XSA12MCT,Instructional staff on 12-month contract total
+varlist,22,40551,SA12MCM,N,6,Cont,XSA12MCM,Instructional staff on 12-month contract men
+varlist,23,40556,SA12MCW,N,6,Cont,XSA12MCW,Instructional staff on 12--month contract women
+varlist,24,40576,SAOUTLT,N,10,Cont,XSAOUTLT,Salary outlays - total
+varlist,25,40581,SAOUTLM,N,10,Cont,XSAOUTLM,Salary outlays - men
+varlist,26,40586,SAOUTLW,N,10,Cont,XSAOUTLW,Salary outlays - women
+varlist,27,40901,SA09MOT,N,10,Cont,XSA09MOT,Salary outlays for instructional staff on 9-month contract-total
+varlist,28,40906,SA09MOM,N,10,Cont,XSA09MOM,Salary outlays for instructional staff on 9-month contract-men
+varlist,29,40911,SA09MOW,N,10,Cont,XSA09MOW,Salary outlays for instructional staff on 9-month contract-women
+varlist,30,40916,SA10MOT,N,10,Cont,XSA10MOT,Salary outlays for instructional staff on 10-month contract-total
+varlist,31,40921,SA10MOM,N,10,Cont,XSA10MOM,Salary outlays for instructional staff on 10-month contract-men
+varlist,32,40926,SA10MOW,N,10,Cont,XSA10MOW,Salary outlays for instructional staff on 10-month contract-women
+varlist,33,40931,SA11MOT,N,10,Cont,XSA11MOT,Salary outlays for instructional staff on 11-month contract-total
+varlist,34,40936,SA11MOM,N,10,Cont,XSA11MOM,Salary outlays for instructional staff on 11-month contract-men
+varlist,35,40941,SA11MOW,N,10,Cont,XSA11MOW,Salary outlays for instructional staff on 11-month contract-women
+varlist,36,40946,SA12MOT,N,10,Cont,XSA12MOT,Salary outlays for instructional staff on 12-month contract-total
+varlist,37,40951,SA12MOM,N,10,Cont,XSA12MOM,Salary outlays for instructional staff on 12-month contract-men
+varlist,38,40956,SA12MOW,N,10,Cont,XSA12MOW,Salary outlays for instructional staff on 12-month contract-women
+varlist,39,40961,SAEQ9OT,N,10,Cont,XSAEQ9OT,Salary outlays for instructional staff equated to a 9-month contract-total
+varlist,40,40963,SAEQ9OM,N,10,Cont,XSAEQ9OM,Salary outlays for instructional staff equated to a 9-month contract-men
+varlist,41,40965,SAEQ9OW,N,10,Cont,XSAEQ9OW,Salary outlays for instructional staff equated to a 9-month contract-women
+varlist,42,40967,SAEQ9AT,N,6,Cont,XSAEQ9AT,Average salary for instructional staff equated to a 9-month contract-total
+varlist,43,40969,SAEQ9AM,N,6,Cont,XSAEQ9AM,Average salary for instructional staff equated to a 9-month contract-men
+varlist,44,40971,SAEQ9AW,N,6,Cont,XSAEQ9AW,Average salary for instructional staff equated to a 9-month contract-women
+varlist,45,40976,SA09MAT,N,6,Cont,XSA09MAT,Average salary for instructional staff on 9-month contract-total
+varlist,46,40981,SA09MAM,N,6,Cont,XSA09MAM,Average salary for instructional staff on 9-month contract-men
+varlist,47,40986,SA09MAW,N,6,Cont,XSA09MAW,Average salary for instructional staff on 9-month contract-women
+varlist,48,40991,SA10MAT,N,6,Cont,XSA10MAT,Average salary for instructional staff on 10-month contract-total
+varlist,49,40996,SA10MAM,N,6,Cont,XSA10MAM,Average salary for instructional staff on 10-month contract-men
+varlist,50,41001,SA10MAW,N,6,Cont,XSA10MAW,Average salary for instructional staff on 10-month contract-women
+varlist,51,41006,SA11MAT,N,6,Cont,XSA11MAT,Average salary for instructional staff on 11-month contract-total
+varlist,52,41011,SA11MAM,N,6,Cont,XSA11MAM,Average salary for instructional staff on 11-month contract-men
+varlist,53,41016,SA11MAW,N,6,Cont,XSA11MAW,Average salary for instructional staff on 11-month contract-women
+varlist,54,41021,SA12MAT,N,6,Cont,XSA12MAT,Average salary for instructional staff on 12-month contract-total
+varlist,55,41026,SA12MAM,N,6,Cont,XSA12MAM,Average salary for instructional staff on 12-month contract-men
+varlist,56,41031,SA12MAW,N,6,Cont,XSA12MAW,Average salary for instructional staff on 12-month contract-women
+varlist,57,,,,,,,
+varlist,58,,,,,,,
+varlist,59,,,,,,,
+varlist,60,,,,,,,
+varlist,61,,,,,,,
+varlist,62,,,,,,,
+varlist,63,,,,,,,
+varlist,64,,,,,,,
+varlist,65,,,,,,,
+varlist,66,,,,,,,
+varlist,67,,,,,,,
+varlist,68,,,,,,,
+varlist,69,,,,,,,
+varlist,70,,,,,,,
+varlist,71,,,,,,,
+varlist,72,,,,,,,
+varlist,73,,,,,,,
+varlist,74,,,,,,,
+varlist,75,,,,,,,
+varlist,76,,,,,,,
+varlist,77,,,,,,,
+varlist,78,,,,,,,
+varlist,79,,,,,,,
+varlist,80,,,,,,,
+varlist,81,,,,,,,
+varlist,82,,,,,,,
+varlist,83,,,,,,,
+varlist,84,,,,,,,
+varlist,85,,,,,,,
+varlist,86,,,,,,,
+varlist,87,,,,,,,
+varlist,88,,,,,,,
+varlist,89,,,,,,,
+varlist,90,,,,,,,
+varlist,91,,,,,,,
+varlist,92,,,,,,,
+varlist,93,,,,,,,
+varlist,94,,,,,,,
+varlist,95,,,,,,,
+varlist,96,,,,,,,
+varlist,97,,,,,,,
+varlist,98,,,,,,,
+varlist,99,,,,,,,
+varlist,100,,,,,,,
+varlist,101,,,,,,,
+varlist,102,,,,,,,
+varlist,103,,,,,,,
+varlist,104,,,,,,,
+varlist,105,,,,,,,
+varlist,106,,,,,,,
+varlist,107,,,,,,,
+varlist,108,,,,,,,
+varlist,109,,,,,,,
+varlist,110,,,,,,,
+varlist,111,,,,,,,
+varlist,112,,,,,,,
+varlist,113,,,,,,,
+varlist,114,,,,,,,
+varlist,115,,,,,,,
+varlist,116,,,,,,,
+varlist,117,,,,,,,
+varlist,118,,,,,,,
+varlist,119,,,,,,,
+varlist,120,,,,,,,
+varlist,121,,,,,,,
+varlist,122,,,,,,,
+varlist,123,,,,,,,
+varlist,124,,,,,,,
+varlist,125,,,,,,,
+varlist,126,,,,,,,
+varlist,127,,,,,,,
+varlist,128,,,,,,,
+varlist,129,,,,,,,
+varlist,130,,,,,,,
+varlist,131,,,,,,,
+varlist,132,,,,,,,
+varlist,133,,,,,,,
+varlist,134,,,,,,,
+varlist,135,,,,,,,
+varlist,136,,,,,,,
+varlist,137,,,,,,,
+Description,0,varnumber,varname,longDescription
+Description,1,1,UNITID,Unique identification number of the institution
+Description,2,40106,ARANK,"Academic rank is usually assigned by institution and includes Professors, Associate professors, Assistant professors, Instructors, Lecturers, and No academic rank."
+Description,3,40481,SAINSTT,"Number of full-time, non-medical, instructional staff - total as of November 1, on 9, 10, 11 or 12 month contract and less less-than 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,4,40482,SAINSTM,"Number of full-time, non-medical, instructional staff -men as of November 1, on 9, 10, 11 or 12 month contract and less less-than 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,5,40483,SAINSTW,"Number of full-time, non-medical, instructional staff - women as of November 1, on 9, 10, 11 or 12 month contract and less less-than 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,6,40491,SA_9MCT,"Number of full-time, non-medical, instructional staff - total as of November 1, on less less-than 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,7,40492,SA_9MCM,"Number of full-time, non-medical, instructional staff - men as of November 1, on less than 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,8,40493,SA_9MCW,"Number of full-time, non-medical, instructional staff - women as of November 1, on less less-than 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,9,40113,SATOTLT,"Number of full-time, non-medical, instructional staff - total as of November 1, on 9, 10, 11 or 12 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,10,40107,SATOTLM,"Number of full-time, non-medical, instructional staff - men as of November 1, on 9, 10, 11 or 12 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,11,40110,SATOTLW,"Number of full-time, non-medical, instructional staff - women as of November 1, on 9, 10, 11 or 12 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,12,40501,SA09MCT,"Number of full-time, non-medical, instructional staff - total as of November 1, on 9 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,13,40506,SA09MCM,"Number of full-time, non-medical, instructional staff - men of November 1, on 9 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,14,40511,SA09MCW,"Number of full-time, non-medical, instructional staff - women as of November 1, on 9 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,15,40516,SA10MCT,"Number of full-time, non-medical, instructional staff - total as of November 1, on 10 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,16,40521,SA10MCM,"Number of full-time, non-medical, instructional staff - men as of November 1, on 10 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,17,40526,SA10MCW,"Number of full-time, non-medical, instructional staff - women as of November 1, on 10 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,18,40531,SA11MCT,"Number of full-time, non-medical, instructional staff - total as of November 1, on 11 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,19,40536,SA11MCM,"Number of full-time, non-medical, instructional staff - men as of November 1, on 11 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,20,40541,SA11MCW,"Number of full-time, non-medical, instructional staff - women as of November 1, on 11 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,21,40546,SA12MCT,"Number of full-time, non-medical, instructional staff - total as of November 1, on 12 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,22,40551,SA12MCM,"Number of full-time, non-medical, instructional staff - men as of November 1, on 12 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,23,40556,SA12MCW,"Number of full-time, non-medical, instructional staff - women as of November 1, on 12 month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,24,40576,SAOUTLT,"Total salary outlays of full-time, non-medical, instructional staff  as of November 1.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,25,40581,SAOUTLM,"Total salary outlays of full-time, non-medical, instructional staff - men as of November 1.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,26,40586,SAOUTLW,"Total salary outlays of full-time, non-medical, instructional staff - women as of November 1.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,27,40901,SA09MOT,"Total salary outlays of full-time, non-medical, instructional staff -total  as of November 1 on 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,28,40906,SA09MOM,"Total salary outlays of full-time, non-medical, instructional staff - men  as of November 1 on 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,29,40911,SA09MOW,"Total salary outlays of full-time, non-medical, instructional staff - women  as of November 1 on 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,30,40916,SA10MOT,"Total salary outlays of full-time, non-medical, instructional staff -total  as of November 1 on 10-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,31,40921,SA10MOM,"Total salary outlays of full-time, non-medical, instructional staff - men  as of November 1 on 10-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,32,40926,SA10MOW,"Total salary outlays of full-time, non-medical, instructional staff - men as of November 1 on 10-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,33,40931,SA11MOT,"Total salary outlays of full-time, non-medical, instructional staff - total  as of November 1 on 11-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,34,40936,SA11MOM,"Total salary outlays of full-time, non-medical, instructional staff - men  as of November 1 on 11-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,35,40941,SA11MOW,"Total salary outlays of full-time, non-medical, instructional staff - women  as of November 1 on 11-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,36,40946,SA12MOT,"Total salary outlays of full-time, non-medical, instructional staff - total  as of November 1 on 12-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,37,40951,SA12MOM,"Total salary outlays of full-time, non-medical, instructional staff - men  as of November 1 on 12-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,38,40956,SA12MOW,"Total salary outlays of full-time, non-medical, instructional staff -women as of November 1 on 12-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,39,40961,SAEQ9OT,"Total salary outlays of full-time, non-medical, instructional staff - total  equated to month contract.
+
+This is  calculated by adjusting the salary outlays at 10-, 11- 12-month contracts to a 9-month contract as follows:
+
+(salary outlays at 9-months SA09MOT)+
+(.90 * salary outlays at 10 months SA10MOT)+
+(.818 *salary outlays at 11 months SA11MOT) +
+(.75 * salary outlays at 12 months SA12MOT)
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,40,40963,SAEQ9OM,"Total salary outlays of full-time, non-medical, instructional staff - men  equated to month contract.
+
+This is  calculated by adjusting the salary outlays at 10-, 11- 12-month contracts to a 9-month contract as follows:
+
+(salary outlays at 9-months SA09MOM)+
+(.90 * salary outlays at 10 months SA10MOM)+
+(.818 *salary outlays at 11 months SA11MOM) +
+(.75 * salary outlays at 12 months SA12MOM)
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,41,40965,SAEQ9OW,"Total salary outlays of full-time, non-medical, instructional staff - women  equated to month contract.
+
+This is  calculated by adjusting the salary outlays at 10-, 11- 12-month contracts to a 9-month contract as follows:
+
+(salary outlays at 9-months SA09MOW)+
+(.90 * salary outlays at 10 months SA10MOW)+
+(.818 *salary outlays at 11 months SA11MOW) +
+(.75 * salary outlays at 12 months SA12MOW)
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,42,40967,SAEQ9AT,"Average salary for instructional staff equated to a 9-month contract-total
+
+This is  calculated by dividing  the total salary outlays of full-time, non-medical, instructional staff - total  equated to month contract (SAEQ9OT) by the number of full-time, non-medical, instructional staff (SATOTLT)"
+Description,43,40969,SAEQ9AM,"Average salary for instructional staff equated to a 9-month contract - men
+
+This is  calculated by dividing  the total salary outlays of full-time, non-medical, instructional staff - men  equated to month contract (SAEQ9OM) by the number of full-time, non-medical, instructional staff (SATOTLM)"
+Description,44,40971,SAEQ9AW,"Average salary for instructional staff equated to a 9-month contract - women
+
+This is  calculated by dividing  the total salary outlays of full-time, non-medical, instructional staff - women  equated to month contract (SAEQ9OW) by the number of full-time, non-medical, instructional staff (SATOTLW)"
+Description,45,40976,SA09MAT,"Average salary of full-time, non-medical, instructional staff - total  as of November 1 on 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,46,40981,SA09MAM,"Average salary of full-time, non-medical, instructional staff - men  as of November 1 on 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,47,40986,SA09MAW,"Average salary of full-time, non-medical, instructional staff - women  as of November 1 on 9-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,48,40991,SA10MAT,"Average salary of full-time, non-medical, instructional staff - total  as of November 1 on 10-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,49,40996,SA10MAM,"Average salary of full-time, non-medical, instructional staff - men  as of November 1 on 10-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,50,41001,SA10MAW,"Average salary of full-time, non-medical, instructional staff - women as of November 1 on 10-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,51,41006,SA11MAT,"Average salary of full-time, non-medical, instructional staff - total  as of November 1 on 11-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,52,41011,SA11MAM,"Average salary of full-time, non-medical, instructional staff - men as of November 1 on 11-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,53,41016,SA11MAW,"Average salary of full-time, non-medical, instructional staff - women as of November 1 on 11-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,54,41021,SA12MAT,"Average salary of full-time, non-medical, instructional staff - total  as of November 1 on 12-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,55,41026,SA12MAM,"Average salary of full-time, non-medical, instructional staff - men as of November 1 on 12-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,56,41031,SA12MAW,"Average salary of full-time, non-medical, instructional staff - women as of November 1 on 12-month contract.
+
+Instructional Staff- An occupational category that consists of the following two functions: 1) ""Instruction"" only and 2) ""Instruction combined with research and/or public service
+
+Annual salary outlays (combined salaries of all staff)  include base salaries only – no supplements, overloads or bonuses. Additional stipends for administrative, managerial or other responsibilities are NOT included in the salary outlays data for instructional staff.
+
+Contract length - The contracted teaching period. The number of months should correspond with the number of months worked (which may differ from the number of months over which staff are paid).
+
+Excludes medical staff   - Staff employed by or staff working in the medical school (Doctor of Medicine [M.D.] and/or Doctor of Osteopathic Medicine [D.O.]) component of a postsecondary institution or in a free standing medical school. Does not include staff employed by or employees working strictly in a hospital associated with a medical school or those who work in health or allied health schools or departments such as dentistry, veterinary medicine, nursing or dental hygiene unless the health or allied health schools or departments are affiliated with (housed in or under the authority of) the medical school"
+Description,57,,,
+Description,58,,,
+Description,59,,,
+Description,60,,,
+Description,61,,,
+Description,62,,,
+Description,63,,,
+Description,64,,,
+Description,65,,,
+Description,66,,,
+Description,67,,,
+Description,68,,,
+Description,69,,,
+Description,70,,,
+Description,71,,,
+Description,72,,,
+Description,73,,,
+Description,74,,,
+Description,75,,,
+Description,76,,,
+Description,77,,,
+Description,78,,,
+Description,79,,,
+Description,80,,,
+Description,81,,,
+Description,82,,,
+Description,83,,,
+Description,84,,,
+Description,85,,,
+Description,86,,,
+Description,87,,,
+Description,88,,,
+Description,89,,,
+Description,90,,,
+Description,91,,,
+Description,92,,,
+Description,93,,,
+Description,94,,,
+Description,95,,,
+Description,96,,,
+Description,97,,,
+Description,98,,,
+Description,99,,,
+Description,100,,,
+Description,101,,,
+Description,102,,,
+Description,103,,,
+Description,104,,,
+Description,105,,,
+Description,106,,,
+Description,107,,,
+Description,108,,,
+Description,109,,,
+Description,110,,,
+Description,111,,,
+Description,112,,,
+Description,113,,,
+Description,114,,,
+Description,115,,,
+Description,116,,,
+Description,117,,,
+Description,118,,,
+Description,119,,,
+Description,120,,,
+Description,121,,,
+Description,122,,,
+Description,123,,,
+Description,124,,,
+Description,125,,,
+Description,126,,,
+Description,127,,,
+Description,128,,,
+Description,129,,,
+Description,130,,,
+Description,131,,,
+Description,132,,,
+Description,133,,,
+Description,134,,,
+Description,135,,,
+Description,136,,,
+Description,137,,,
+Description,138,,,
+Description,139,,,
+Description,140,,,
+Description,141,,,
+Description,142,,,
+Description,143,,,
+Description,144,,,
+Description,145,,,
+Description,146,,,
+Description,147,,,
+Description,148,,,
+Description,149,,,
+Description,150,,,
+Description,151,,,
+Description,152,,,
+Description,153,,,
+Description,154,,,
+Description,155,,,
+Description,156,,,
+Description,157,,,
+Description,158,,,
+Description,159,,,
+Description,160,,,
+Description,161,,,
+Description,162,,,
+Description,163,,,
+Description,164,,,
+Description,165,,,
+Description,166,,,
+Description,167,,,
+Description,168,,,
+Description,169,,,
+Description,170,,,
+Description,171,,,
+Description,172,,,
+Description,173,,,
+Description,174,,,
+Description,175,,,
+Description,176,,,
+Description,177,,,
+Description,178,,,
+Description,179,,,
+Description,180,,,
+Description,181,,,
+Description,182,,,
+Description,183,,,
+Description,184,,,
+Description,185,,,
+Description,186,,,
+Description,187,,,
+Description,188,,,
+Description,189,,,
+Description,190,,,
+Description,191,,,
+Description,192,,,
+Description,193,,,
+Description,194,,,
+Description,195,,,
+Description,196,,,
+Description,197,,,
+Description,198,,,
+Description,199,,,
+Description,200,,,
+Description,201,,,
+Description,202,,,
+Description,203,,,
+Description,204,,,
+Description,205,,,
+Description,206,,,
+Description,207,,,
+Description,208,,,
+Description,209,,,
+Description,210,,,
+Description,211,,,
+Description,212,,,
+Description,213,,,
+Description,214,,,
+Description,215,,,
+Description,216,,,
+Description,217,,,
+Description,218,,,
+Description,219,,,
+Description,220,,,
+Description,221,,,
+Description,222,,,
+Description,223,,,
+Description,224,,,
+Description,225,,,
+Description,226,,,
+Description,227,,,
+Description,228,,,
+Description,229,,,
+Description,230,,,
+Description,231,,,
+Description,232,,,
+Description,233,,,
+Description,234,,,
+Description,235,,,
+Description,236,,,
+Description,237,,,
+Description,238,,,
+Description,239,,,
+Description,240,,,
+Description,241,,,
+Description,242,,,
+Description,243,,,
+Description,244,,,
+Description,245,,,
+Description,246,,,
+Description,247,,,
+Description,248,,,
+Description,249,,,
+Description,250,,,
+Description,251,,,
+Description,252,,,
+Description,253,,,
+Description,254,,,
+Description,255,,,
+Description,256,,,
+Description,257,,,
+Description,258,,,
+Description,259,,,
+Description,260,,,
+Description,261,,,
+Description,262,,,
+Description,263,,,
+Description,264,,,
+Description,265,,,
+Description,266,,,
+Description,267,,,
+Description,268,,,
+Description,269,,,
+Description,270,,,
+Description,271,,,
+Description,272,,,
+Description,273,,,
+Description,274,,,
+Description,275,,,
+Description,276,,,
+Description,277,,,
+Description,278,,,
+Description,279,,,
+Description,280,,,
+Description,281,,,
+Description,282,,,
+Description,283,,,
+Description,284,,,
+Description,285,,,
+Description,286,,,
+Description,287,,,
+Description,288,,,
+Description,289,,,
+Description,290,,,
+Description,291,,,
+Description,292,,,
+Description,293,,,
+Description,294,,,
+Description,295,,,
+Description,296,,,
+Description,297,,,
+Description,298,,,
+Description,299,,,
+Description,300,,,
+Description,301,,,
+Description,302,,,
+Description,303,,,
+Description,304,,,
+Description,305,,,
+Description,306,,,
+Description,307,,,
+Description,308,,,
+Description,309,,,
+Description,310,,,
+Description,311,,,
+Description,312,,,
+Description,313,,,
+Description,314,,,
+Description,315,,,
+Description,316,,,
+Description,317,,,
+Description,318,,,
+Description,319,,,
+Description,320,,,
+Description,321,,,
+Description,322,,,
+Description,323,,,
+Description,324,,,
+Frequencies,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+Frequencies,1,40106,ARANK,7,All instructional staff total,3887,25.14
+Frequencies,2,40106,ARANK,1,Professor,2466,15.95
+Frequencies,3,40106,ARANK,2,Associate professor,2331,15.07
+Frequencies,4,40106,ARANK,3,Assistant professor,2301,14.88
+Frequencies,5,40106,ARANK,4,Instructor,2716,17.559999999999999
+Frequencies,6,40106,ARANK,5,Lecturer,777,5.0199999999999996
+Frequencies,7,40106,ARANK,6,No academic rank,986,6.38
+Frequencies,8,,,,,,
+Frequencies,9,,,,,,
+Frequencies,10,,,,,,
+Frequencies,11,,,,,,
+Frequencies,12,,,,,,
+Frequencies,13,,,,,,
+Frequencies,14,,,,,,
+Frequencies,15,,,,,,
+Frequencies,16,,,,,,
+Frequencies,17,,,,,,
+Frequencies,18,,,,,,
+Frequencies,19,,,,,,
+Frequencies,20,,,,,,
+Frequencies,21,,,,,,
+Frequencies,22,,,,,,
+Frequencies,23,,,,,,
+Frequencies,24,,,,,,
+Frequencies,25,,,,,,
+Frequencies,26,,,,,,
+Frequencies,27,,,,,,
+Frequencies,28,,,,,,
+Frequencies,29,,,,,,
+Frequencies,30,,,,,,
+Frequencies,31,,,,,,
+Frequencies,32,,,,,,
+Frequencies,33,,,,,,
+Frequencies,34,,,,,,
+Frequencies,35,,,,,,
+Frequencies,36,,,,,,
+Frequencies,37,,,,,,
+Frequencies,38,,,,,,
+Frequencies,39,,,,,,
+Frequencies,40,,,,,,
+Frequencies,41,,,,,,
+Frequencies,42,,,,,,
+Frequencies,43,,,,,,
+Frequencies,44,,,,,,
+Frequencies,45,,,,,,
+Frequencies,46,,,,,,
+Frequencies,47,,,,,,
+Frequencies,48,,,,,,
+Frequencies,49,,,,,,
+Frequencies,50,,,,,,
+Frequencies,51,,,,,,
+Frequencies,52,,,,,,
+Frequencies,53,,,,,,
+Frequencies,54,,,,,,
+Frequencies,55,,,,,,
+Frequencies,56,,,,,,
+Frequencies,57,,,,,,
+Frequencies,58,,,,,,
+Frequencies,59,,,,,,
+Frequencies,60,,,,,,
+Frequencies,61,,,,,,
+Frequencies,62,,,,,,
+Frequencies,63,,,,,,
+Frequencies,64,,,,,,
+Frequencies,65,,,,,,
+Frequencies,66,,,,,,
+Frequencies,67,,,,,,
+Frequencies,68,,,,,,
+Frequencies,69,,,,,,
+Frequencies,70,,,,,,
+Frequencies,71,,,,,,
+Frequencies,72,,,,,,
+Frequencies,73,,,,,,
+Frequencies,74,,,,,,
+Frequencies,75,,,,,,
+Frequencies,76,,,,,,
+Frequencies,77,,,,,,
+Frequencies,78,,,,,,
+Frequencies,79,,,,,,
+Frequencies,80,,,,,,
+Frequencies,81,,,,,,
+Frequencies,82,,,,,,
+Frequencies,83,,,,,,
+Frequencies,84,,,,,,
+Frequencies,85,,,,,,
+Frequencies,86,,,,,,
+Frequencies,87,,,,,,
+Frequencies,88,,,,,,
+Frequencies,89,,,,,,
+Frequencies,90,,,,,,
+Frequencies,91,,,,,,
+Frequencies,92,,,,,,
+Frequencies,93,,,,,,
+Frequencies,94,,,,,,
+Frequencies,95,,,,,,
+Frequencies,96,,,,,,
+Frequencies,97,,,,,,
+Frequencies,98,,,,,,
+Frequencies,99,,,,,,
+Frequencies,100,,,,,,
+Frequencies,101,,,,,,
+Frequencies,102,,,,,,
+Frequencies,103,,,,,,
+Frequencies,104,,,,,,
+Frequencies,105,,,,,,
+Frequencies,106,,,,,,
+Frequencies,107,,,,,,
+Frequencies,108,,,,,,
+Frequencies,109,,,,,,
+Frequencies,110,,,,,,
+Frequencies,111,,,,,,
+Frequencies,112,,,,,,
+Frequencies,113,,,,,,
+Frequencies,114,,,,,,
+Frequencies,115,,,,,,
+Frequencies,116,,,,,,
+Frequencies,117,,,,,,
+Frequencies,118,,,,,,
+Frequencies,119,,,,,,
+Frequencies,120,,,,,,
+Frequencies,121,,,,,,
+Frequencies,122,,,,,,
+Frequencies,123,,,,,,
+Frequencies,124,,,,,,
+Frequencies,125,,,,,,
+Frequencies,126,,,,,,
+Frequencies,127,,,,,,
+Frequencies,128,,,,,,
+Frequencies,129,,,,,,
+Frequencies,130,,,,,,
+Frequencies,131,,,,,,
+Frequencies,132,,,,,,
+Frequencies,133,,,,,,
+Frequencies,134,,,,,,
+Frequencies,135,,,,,,
+Frequencies,136,,,,,,
+Frequencies,137,,,,,,
+Frequencies,138,,,,,,
+Frequencies,139,,,,,,
+Frequencies,140,,,,,,
+Frequencies,141,,,,,,
+Frequencies,142,,,,,,
+Frequencies,143,,,,,,
+Frequencies,144,,,,,,
+Frequencies,145,,,,,,
+Frequencies,146,,,,,,
+Frequencies,147,,,,,,
+Frequencies,148,,,,,,
+Frequencies,149,,,,,,
+Frequencies,150,,,,,,
+Frequencies,151,,,,,,
+Frequencies,152,,,,,,
+Frequencies,153,,,,,,
+Frequencies,154,,,,,,
+Frequencies,155,,,,,,
+Frequencies,156,,,,,,
+Frequencies,157,,,,,,
+Frequencies,158,,,,,,
+Frequencies,159,,,,,,
+Frequencies,160,,,,,,
+Frequencies,161,,,,,,
+Frequencies,162,,,,,,
+Frequencies,163,,,,,,
+Frequencies,164,,,,,,
+Frequencies,165,,,,,,
+Frequencies,166,,,,,,
+Frequencies,167,,,,,,
+Frequencies,168,,,,,,
+Frequencies,169,,,,,,
+Frequencies,170,,,,,,
+Frequencies,171,,,,,,
+Frequencies,172,,,,,,
+Frequencies,173,,,,,,
+Frequencies,174,,,,,,
+Frequencies,175,,,,,,
+Frequencies,176,,,,,,
+Frequencies,177,,,,,,
+Frequencies,178,,,,,,
+Frequencies,179,,,,,,
+Frequencies,180,,,,,,
+Frequencies,181,,,,,,
+Frequencies,182,,,,,,
+Frequencies,183,,,,,,
+Frequencies,184,,,,,,
+Frequencies,185,,,,,,
+Frequencies,186,,,,,,
+Frequencies,187,,,,,,
+Frequencies,188,,,,,,
+Frequencies,189,,,,,,
+Frequencies,190,,,,,,
+Frequencies,191,,,,,,
+Frequencies,192,,,,,,
+Frequencies,193,,,,,,
+Frequencies,194,,,,,,
+Frequencies,195,,,,,,
+Frequencies,196,,,,,,
+Frequencies,197,,,,,,
+Frequencies,198,,,,,,
+Frequencies,199,,,,,,
+Frequencies,200,,,,,,
+Frequencies,201,,,,,,
+Frequencies,202,,,,,,
+Frequencies,203,,,,,,
+Frequencies,204,,,,,,
+Frequencies,205,,,,,,
+Frequencies,206,,,,,,
+Frequencies,207,,,,,,
+Frequencies,208,,,,,,
+Frequencies,209,,,,,,
+Frequencies,210,,,,,,
+Frequencies,211,,,,,,
+Frequencies,212,,,,,,
+Frequencies,213,,,,,,
+Frequencies,214,,,,,,
+Frequencies,215,,,,,,
+Frequencies,216,,,,,,
+Frequencies,217,,,,,,
+Frequencies,218,,,,,,
+Frequencies,219,,,,,,
+Frequencies,220,,,,,,
+Frequencies,221,,,,,,
+Frequencies,222,,,,,,
+Frequencies,223,,,,,,
+Frequencies,224,,,,,,
+Frequencies,225,,,,,,
+Frequencies,226,,,,,,
+Frequencies,227,,,,,,
+Frequencies,228,,,,,,
+Frequencies,229,,,,,,
+Frequencies,230,,,,,,
+Frequencies,231,,,,,,
+Frequencies,232,,,,,,
+Frequencies,233,,,,,,
+Frequencies,234,,,,,,
+Frequencies,235,,,,,,
+Frequencies,236,,,,,,
+Frequencies,237,,,,,,
+Frequencies,238,,,,,,
+Frequencies,239,,,,,,
+Frequencies,240,,,,,,
+Frequencies,241,,,,,,
+Frequencies,242,,,,,,
+Frequencies,243,,,,,,
+Frequencies,244,,,,,,
+Frequencies,245,,,,,,
+Frequencies,246,,,,,,
+Frequencies,247,,,,,,
+Frequencies,248,,,,,,
+Frequencies,249,,,,,,
+Frequencies,250,,,,,,
+Frequencies,251,,,,,,
+Frequencies,252,,,,,,
+Frequencies,253,,,,,,
+Frequencies,254,,,,,,
+Frequencies,255,,,,,,
+Frequencies,256,,,,,,
+Frequencies,257,,,,,,
+Frequencies,258,,,,,,
+Frequencies,259,,,,,,
+Frequencies,260,,,,,,
+Frequencies,261,,,,,,
+Frequencies,262,,,,,,
+Frequencies,263,,,,,,
+Frequencies,264,,,,,,
+Frequencies,265,,,,,,
+Frequencies,266,,,,,,
+Frequencies,267,,,,,,
+Frequencies,268,,,,,,
+Frequencies,269,,,,,,
+Frequencies,270,,,,,,
+Frequencies,271,,,,,,
+Frequencies,272,,,,,,
+Frequencies,273,,,,,,
+Frequencies,274,,,,,,
+Frequencies,275,,,,,,
+Frequencies,276,,,,,,
+Frequencies,277,,,,,,
+Frequencies,278,,,,,,
+Frequencies,279,,,,,,
+Frequencies,280,,,,,,
+Frequencies,281,,,,,,
+Frequencies,282,,,,,,
+Frequencies,283,,,,,,
+Frequencies,284,,,,,,
+Frequencies,285,,,,,,
+Frequencies,286,,,,,,
+Frequencies,287,,,,,,
+Frequencies,288,,,,,,
+Frequencies,289,,,,,,
+Frequencies,290,,,,,,
+Frequencies,291,,,,,,
+Frequencies,292,,,,,,
+Frequencies,293,,,,,,
+Frequencies,294,,,,,,
+Frequencies,295,,,,,,
+Frequencies,296,,,,,,
+Frequencies,297,,,,,,
+Frequencies,298,,,,,,
+Frequencies,299,,,,,,
+Frequencies,300,,,,,,
+Frequencies,301,,,,,,
+Frequencies,302,,,,,,
+Frequencies,303,,,,,,
+Frequencies,304,,,,,,
+Frequencies,305,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Frequencies,306
+Frequencies,307
+Frequencies,308
+Frequencies,309
+Frequencies,310
+Frequencies,311
+Frequencies,312
+Frequencies,313
+Frequencies,314
+Frequencies,315
+Frequencies,316
+Frequencies,317
+Frequencies,318
+Frequencies,319
+Frequencies,320
+Frequencies,321
+Frequencies,322
+Frequencies,323
+Frequencies,324
+Frequencies,325
+Frequencies,326
+Frequencies,327
+Frequencies,328
+Frequencies,329
+Frequencies,330
+Frequencies,331
+Frequencies,332
+Frequencies,333
+Frequencies,334
+Frequencies,335
+Frequencies,336
+Frequencies,337
+Frequencies,338
+Frequencies,339
+Frequencies,340
+Frequencies,341
+Frequencies,342
+Frequencies,343
+Frequencies,344
+Frequencies,345
+Frequencies,346
+Frequencies,347
+Frequencies,348
+Frequencies,349
+Frequencies,350
+Frequencies,351
+Frequencies,352
+Frequencies,353
+Frequencies,354
+Frequencies,355
+Frequencies,356
+Frequencies,357
+Frequencies,358
+Frequencies,359
+Frequencies,360
+Frequencies,361
+Frequencies,362
+Frequencies,363
+Frequencies,364
+Frequencies,365
+Frequencies,366
+Frequencies,367
+Frequencies,368
+Frequencies,369
+Frequencies,370
+Frequencies,371
+Frequencies,372
+Frequencies,373
+Frequencies,374
+Frequencies,375
+Frequencies,376
+Frequencies,377
+Frequencies,378
+Frequencies,379
+Frequencies,380
+Frequencies,381
+Frequencies,382
+Frequencies,383
+Frequencies,384
+Frequencies,385,,,,,,
+Frequencies,386,,,,,,
+Frequencies,387,,,,,,
+Frequencies,388,,,,,,
+Frequencies,389
+Frequencies,390
+Frequencies,391
+Frequencies,392
+Frequencies,393
+Frequencies,394
+Frequencies,395
+Frequencies,396
+Frequencies,397
+Frequencies,398
+Frequencies,399
+Frequencies,400
+Frequencies,401
+Frequencies,402
+Frequencies,403
+Frequencies,404
+Frequencies,405
+Frequencies,406
+Frequencies,407
+Frequencies,408
+Frequencies,409
+Frequencies,410
+Frequencies,411
+Frequencies,412
+Frequencies,413
+Frequencies,414
+Frequencies,415
+Frequencies,416
+Frequencies,417
+Frequencies,418
+Frequencies,419
+Frequencies,420
+Frequencies,421
+Frequencies,422
+Frequencies,423
+Frequencies,424
+Frequencies,425
+Frequencies,426
+Frequencies,427
+Frequencies,428
+Frequencies,429
+Frequencies,430
+Frequencies,431
+Frequencies,432
+Frequencies,433
+Frequencies,434
+Frequencies,435
+Frequencies,436
+Frequencies,437
+Frequencies,438
+Frequencies,439
+Frequencies,440
+Frequencies,441
+Frequencies,442
+Frequencies,443
+Frequencies,444
+Frequencies,445
+Frequencies,446
+Frequencies,447
+Frequencies,448
+Frequencies,449
+Frequencies,450
+Frequencies,451
+Frequencies,452
+Frequencies,453
+Frequencies,454
+Frequencies,455
+Frequencies,456
+Frequencies,457
+Frequencies,458
+Frequencies,459
+Frequencies,460
+Frequencies,461
+Frequencies,462
+Frequencies,463
+Frequencies,464
+Frequencies,465
+Frequencies,466
+Frequencies,467
+Frequencies,468
+Frequencies,469
+Frequencies,470
+Frequencies,471
+Frequencies,472
+Frequencies,473
+Frequencies,474
+Frequencies,475
+Frequencies,476
+Frequencies,477
+Frequencies,478
+Frequencies,479
+Frequencies,480
+Frequencies,481
+Frequencies,482
+Frequencies,483
+Frequencies,484
+Frequencies,485
+Frequencies,486
+Frequencies,487
+Frequencies,488
+Frequencies,489
+Frequencies,490
+Frequencies,491
+Frequencies,492
+Frequencies,493
+Frequencies,494
+Frequencies,495
+Frequencies,496
+Frequencies,497
+Frequencies,498
+Frequencies,499
+Frequencies,500
+Frequencies,501
+Frequencies,502
+Frequencies,503
+Frequencies,504
+Frequencies,505
+Frequencies,506
+Frequencies,507
+Frequencies,508
+Frequencies,509
+Frequencies,510
+Frequencies,511
+Frequencies,512
+Frequencies,513
+Frequencies,514
+Frequencies,515
+Frequencies,516,,,,,,
+Frequencies,517,,,,,,
+Frequencies,518,,,,,,
+Frequencies,519,,,,,,
+Frequencies,520
+Frequencies,521
+Frequencies,522
+Frequencies,523
+Frequencies,524
+Frequencies,525
+Frequencies,526
+Frequencies,527
+Frequencies,528
+Frequencies,529
+Frequencies,530
+Frequencies,531
+Frequencies,532
+Frequencies,533
+Frequencies,534
+Frequencies,535
+Frequencies,536
+Frequencies,537
+Frequencies,538
+Frequencies,539
+Frequencies,540
+Frequencies,541
+Frequencies,542
+Frequencies,543
+Frequencies,544
+Frequencies,545
+Frequencies,546
+Frequencies,547
+Frequencies,548
+Frequencies,549
+Frequencies,550
+Frequencies,551
+Frequencies,552
+Frequencies,553
+Frequencies,554
+Frequencies,555
+Frequencies,556
+Frequencies,557
+Frequencies,558
+Frequencies,559
+Frequencies,560
+Frequencies,561
+Frequencies,562
+Frequencies,563
+Frequencies,564
+Frequencies,565
+Frequencies,566
+Frequencies,567
+Frequencies,568
+Frequencies,569
+Frequencies,570
+Frequencies,571
+Frequencies,572
+Frequencies,573
+Frequencies,574
+Frequencies,575
+Frequencies,576
+Frequencies,577
+Frequencies,578
+Frequencies,579
+Frequencies,580
+Frequencies,581
+Frequencies,582
+Frequencies,583
+Frequencies,584
+Frequencies,585
+Frequencies,586
+Frequencies,587
+Frequencies,588
+Frequencies,589
+Frequencies,590
+Frequencies,591
+Frequencies,592
+Frequencies,593
+Frequencies,594
+Frequencies,595
+Frequencies,596
+Frequencies,597
+Frequencies,598
+Frequencies,599
+Frequencies,600
+Frequencies,601
+Frequencies,602
+Frequencies,603
+Frequencies,604
+Frequencies,605
+Frequencies,606
+Frequencies,607
+Frequencies,608
+Frequencies,609
+Frequencies,610
+Frequencies,611
+Frequencies,612
+Frequencies,613
+Frequencies,614
+Frequencies,615
+Frequencies,616
+Frequencies,617
+Frequencies,618
+Frequencies,619
+Frequencies,620
+Frequencies,621
+Frequencies,622
+Frequencies,623
+Frequencies,624
+Frequencies,625
+Frequencies,626
+Frequencies,627
+Frequencies,628
+Frequencies,629
+Frequencies,630
+Frequencies,631
+Frequencies,632
+Frequencies,633
+Frequencies,634
+Frequencies,635
+Frequencies,636
+Frequencies,637
+Frequencies,638
+Frequencies,639
+Frequencies,640
+Frequencies,641
+Frequencies,642
+Frequencies,643
+Frequencies,644
+Frequencies,645
+Frequencies,646
+Frequencies,647,,,,,,
+Frequencies,648,,,,,,
+Frequencies,649,,,,,,
+Frequencies,650,,,,,,
+Frequencies,651,,,,,,
+Frequencies,652
+Frequencies,653
+Frequencies,654
+Frequencies,655
+Frequencies,656
+Frequencies,657
+Frequencies,658
+Frequencies,659
+Frequencies,660
+Frequencies,661
+Frequencies,662
+Frequencies,663
+Frequencies,664
+Frequencies,665
+Frequencies,666
+Frequencies,667
+Frequencies,668
+Frequencies,669
+Frequencies,670
+Frequencies,671
+Frequencies,672
+Frequencies,673
+Frequencies,674
+Frequencies,675
+Frequencies,676
+Frequencies,677
+Frequencies,678
+Frequencies,679
+Frequencies,680
+Frequencies,681
+Frequencies,682
+Frequencies,683
+Frequencies,684
+Frequencies,685
+Frequencies,686
+Frequencies,687
+Frequencies,688
+Frequencies,689
+Frequencies,690
+Frequencies,691
+Frequencies,692
+Frequencies,693
+Frequencies,694
+Frequencies,695
+Frequencies,696
+Frequencies,697
+Frequencies,698
+Frequencies,699
+Frequencies,700
+Frequencies,701
+Frequencies,702
+Frequencies,703
+Frequencies,704
+Frequencies,705
+Frequencies,706
+Frequencies,707
+Frequencies,708
+Frequencies,709
+Frequencies,710
+Frequencies,711
+Frequencies,712
+Frequencies,713
+Frequencies,714
+Frequencies,715
+Frequencies,716
+Frequencies,717
+Frequencies,718
+Frequencies,719
+Frequencies,720
+Frequencies,721
+Frequencies,722
+Frequencies,723
+Frequencies,724
+Frequencies,725
+Frequencies,726
+Frequencies,727
+Frequencies,728
+Frequencies,729
+Frequencies,730
+Frequencies,731
+Frequencies,732
+Frequencies,733
+Frequencies,734
+Frequencies,735
+Frequencies,736
+Frequencies,737
+Frequencies,738
+Frequencies,739
+Frequencies,740
+Frequencies,741
+Frequencies,742
+Frequencies,743
+Frequencies,744
+Frequencies,745
+Frequencies,746
+Frequencies,747
+Frequencies,748
+Frequencies,749
+Frequencies,750
+Frequencies,751
+Frequencies,752
+Frequencies,753
+Frequencies,754
+Frequencies,755
+Frequencies,756
+Frequencies,757
+Frequencies,758
+Frequencies,759
+Frequencies,760
+Frequencies,761
+Frequencies,762
+Frequencies,763
+Frequencies,764
+Frequencies,765
+Frequencies,766
+Frequencies,767
+Frequencies,768
+Frequencies,769
+Frequencies,770
+Frequencies,771
+Frequencies,772
+Frequencies,773
+Frequencies,774
+Frequencies,775
+Frequencies,776
+Frequencies,777
+Frequencies,778
+Frequencies,779
+Frequencies,780
+Frequencies,781
+Frequencies,782
+Frequencies,783
+Frequencies,784
+Frequencies,785
+Frequencies,786
+Frequencies,787
+Frequencies,788
+Frequencies,789
+Frequencies,790
+Frequencies,791
+Frequencies,792
+Frequencies,793
+Frequencies,794
+Frequencies,795
+Frequencies,796
+Frequencies,797
+Frequencies,798
+Frequencies,799
+Frequencies,800
+Frequencies,801
+Frequencies,802
+Frequencies,803
+Frequencies,804
+Frequencies,805
+Frequencies,806
+Frequencies,807
+Frequencies,808
+Frequencies,809
+Frequencies,810
+Frequencies,811,,,,,,
+Frequencies,812,,,,,,
+Frequencies,813,,,,,,
+Frequencies,814,,,,,,
+Frequencies,815,,,,,,
+Frequencies,816,,,,,,
+Frequencies,817,,,,,,
+Frequencies,818,,,,,,
+Frequencies,819,,,,,,
+Frequencies,820,,,,,,
+Frequencies,821,,,,,,
+Frequencies,822,,,,,,
+Frequencies,823,,,,,,
+Frequencies,824,,,,,,
+Frequencies,825,,,,,,
+Frequencies,826,,,,,,
+Frequencies,827,,,,,,
+Frequencies,828,,,,,,
+Frequencies,829,,,,,,
+Frequencies,830,,,,,,
+Frequencies,831,,,,,,
+Frequencies,832,,,,,,
+Frequencies,833,,,,,,
+Frequencies,834,,,,,,
+Frequencies,835,,,,,,
+Frequencies,836,,,,,,
+Frequencies,837,,,,,,
+Frequencies,838,,,,,,
+Frequencies,839,,,,,,
+Frequencies,840,,,,,,
+Frequencies,841,,,,,,
+Frequencies,842,,,,,,
+Frequencies,843,,,,,,
+Frequencies,844,,,,,,
+Frequencies,845,,,,,,
+Frequencies,846,,,,,,
+Frequencies,847,,,,,,
+Frequencies,848,,,,,,
+Frequencies,849,,,,,,
+Frequencies,850,,,,,,
+Frequencies,851,,,,,,
+Frequencies,852,,,,,,
+Frequencies,853,,,,,,
+Frequencies,854,,,,,,
+Frequencies,855,,,,,,
+Frequencies,856,,,,,,
+Frequencies,857,,,,,,
+Frequencies,858,,,,,,
+Frequencies,859,,,,,,
+Frequencies,860,,,,,,
+Frequencies,861,,,,,,
+Frequencies,862,,,,,,
+Frequencies,863
+Frequencies,864
+Frequencies,865
+Frequencies,866
+Frequencies,867
+Frequencies,868
+Frequencies,869
+Frequencies,870
+Frequencies,871
+Frequencies,872
+Frequencies,873
+Frequencies,874
+Frequencies,875
+Frequencies,876
+Frequencies,877
+Frequencies,878
+Frequencies,879
+Frequencies,880
+Frequencies,881
+Frequencies,882
+Frequencies,883
+Frequencies,884
+Frequencies,885
+Frequencies,886
+Frequencies,887
+Frequencies,888
+Frequencies,889
+Frequencies,890
+Frequencies,891
+Frequencies,892
+Frequencies,893
+Frequencies,894
+Frequencies,895
+Frequencies,896
+Frequencies,897
+Frequencies,898
+Frequencies,899
+Frequencies,900
+Frequencies,901
+Frequencies,902
+Frequencies,903
+Frequencies,904
+Frequencies,905
+Frequencies,906
+Frequencies,907
+Frequencies,908
+Frequencies,909
+Frequencies,910
+Frequencies,911
+Frequencies,912
+Frequencies,913
+Frequencies,914
+Frequencies,915
+Frequencies,916
+Frequencies,917
+Frequencies,918
+Frequencies,919
+Frequencies,920
+Frequencies,921
+Frequencies,922
+Frequencies,923
+Frequencies,924
+Frequencies,925
+Frequencies,926
+Frequencies,927
+Frequencies,928
+Frequencies,929
+Frequencies,930
+Frequencies,931
+Frequencies,932
+Frequencies,933
+Frequencies,934
+Frequencies,935
+Frequencies,936
+Frequencies,937
+Frequencies,938
+Frequencies,939
+Frequencies,940
+Frequencies,941
+Frequencies,942
+Frequencies,943
+Frequencies,944
+Frequencies,945
+Frequencies,946
+Frequencies,947
+Frequencies,948
+Frequencies,949
+Frequencies,950
+Frequencies,951
+Frequencies,952
+Frequencies,953
+Frequencies,954
+Frequencies,955
+Frequencies,956
+Frequencies,957
+Frequencies,958
+Frequencies,959
+Frequencies,960
+Frequencies,961
+Frequencies,962
+Frequencies,963
+Frequencies,964
+Frequencies,965
+Frequencies,966
+Frequencies,967
+Frequencies,968
+Frequencies,969
+Frequencies,970
+Frequencies,971
+Frequencies,972
+Frequencies,973
+Frequencies,974
+Frequencies,975
+Frequencies,976
+Frequencies,977
+Frequencies,978
+Frequencies,979
+Frequencies,980
+Frequencies,981
+Frequencies,982
+Frequencies,983
+Frequencies,984
+Frequencies,985
+Frequencies,986
+Frequencies,987
+Frequencies,988
+Frequencies,989
+Frequencies,990
+Frequencies,991
+Frequencies,992
+Frequencies,993
+Frequencies,994
+Frequencies,995
+Frequencies,996
+Frequencies,997
+Frequencies,998
+Frequencies,999
+Frequencies,1000
+Frequencies,1001
+Frequencies,1002
+Frequencies,1003
+Frequencies,1004
+Frequencies,1005
+Frequencies,1006
+Frequencies,1007
+Frequencies,1008
+Frequencies,1009
+Frequencies,1010
+Frequencies,1011
+Frequencies,1012
+Frequencies,1013
+Frequencies,1014
+Frequencies,1015
+Frequencies,1016
+Frequencies,1017
+Frequencies,1018
+Frequencies,1019
+Frequencies,1020
+Frequencies,1021
+Frequencies,1022
+Frequencies,1023
+Frequencies,1024
+Frequencies,1025
+Frequencies,1026
+Frequencies,1027
+Frequencies,1028
+Frequencies,1029
+Frequencies,1030
+Frequencies,1031
+Frequencies,1032
+Frequencies,1033
+Frequencies,1034
+Frequencies,1035
+Frequencies,1036
+Frequencies,1037
+Frequencies,1038
+Frequencies,1039
+Frequencies,1040
+Frequencies,1041
+Frequencies,1042
+Frequencies,1043
+Frequencies,1044
+Frequencies,1045
+Frequencies,1046
+Frequencies,1047
+Frequencies,1048
+Frequencies,1049
+Frequencies,1050
+Frequencies,1051
+Frequencies,1052
+Frequencies,1053
+Frequencies,1054
+Frequencies,1055
+Frequencies,1056
+Frequencies,1057
+Frequencies,1058
+Frequencies,1059
+Frequencies,1060
+Frequencies,1061
+Frequencies,1062
+Frequencies,1063
+Frequencies,1064
+Frequencies,1065
+Frequencies,1066
+Frequencies,1067
+Frequencies,1068
+Frequencies,1069
+Frequencies,1070
+Frequencies,1071
+Frequencies,1072
+Frequencies,1073
+Frequencies,1074
+Frequencies,1075
+Frequencies,1076
+Frequencies,1077
+Frequencies,1078
+Frequencies,1079
+Frequencies,1080
+Frequencies,1081
+Frequencies,1082
+Frequencies,1083
+Frequencies,1084
+Frequencies,1085
+Frequencies,1086
+Frequencies,1087
+Frequencies,1088
+Frequencies,1089
+Frequencies,1090
+Frequencies,1091
+Frequencies,1092
+Frequencies,1093
+Frequencies,1094
+Frequencies,1095
+Frequencies,1096
+Frequencies,1097
+Frequencies,1098
+Frequencies,1099
+Frequencies,1100
+Frequencies,1101
+Frequencies,1102
+Frequencies,1103
+Frequencies,1104
+Frequencies,1105
+Frequencies,1106
+Frequencies,1107
+Frequencies,1108
+Frequencies,1109
+Frequencies,1110
+Frequencies,1111
+Frequencies,1112
+Frequencies,1113
+Frequencies,1114
+Frequencies,1115
+Frequencies,1116
+Frequencies,1117
+Frequencies,1118
+Frequencies,1119
+Frequencies,1120
+Frequencies,1121
+Frequencies,1122
+Frequencies,1123
+Frequencies,1124
+Frequencies,1125
+Frequencies,1126
+Frequencies,1127
+Frequencies,1128
+Frequencies,1129
+Frequencies,1130
+Frequencies,1131
+Frequencies,1132
+Frequencies,1133
+Frequencies,1134
+Frequencies,1135
+Frequencies,1136
+Frequencies,1137
+Frequencies,1138
+Frequencies,1139
+Frequencies,1140
+Frequencies,1141
+Frequencies,1142
+Frequencies,1143
+Frequencies,1144
+Frequencies,1145
+Frequencies,1146
+Frequencies,1147
+Frequencies,1148
+Frequencies,1149
+Frequencies,1150
+Frequencies,1151
+Frequencies,1152
+Frequencies,1153
+Frequencies,1154
+Frequencies,1155
+Frequencies,1156
+Frequencies,1157
+Frequencies,1158
+Frequencies,1159
+Frequencies,1160
+Frequencies,1161
+Frequencies,1162
+Frequencies,1163
+Frequencies,1164
+Frequencies,1165
+Frequencies,1166
+Frequencies,1167
+Frequencies,1168
+Frequencies,1169
+Frequencies,1170
+Frequencies,1171
+Frequencies,1172
+Frequencies,1173
+Frequencies,1174
+Frequencies,1175
+Frequencies,1176
+Frequencies,1177
+Frequencies,1178
+Frequencies,1179
+Frequencies,1180
+Frequencies,1181
+Frequencies,1182
+Frequencies,1183
+Frequencies,1184
+Frequencies,1185
+Frequencies,1186
+Frequencies,1187
+Frequencies,1188
+Frequencies,1189
+Frequencies,1190
+Frequencies,1191
+Frequencies,1192
+Frequencies,1193
+Frequencies,1194
+Frequencies,1195
+Frequencies,1196
+Frequencies,1197
+Frequencies,1198
+Frequencies,1199
+Frequencies,1200
+Frequencies,1201
+Frequencies,1202
+Frequencies,1203
+Frequencies,1204
+Frequencies,1205
+Frequencies,1206
+Frequencies,1207
+Frequencies,1208
+Frequencies,1209
+Frequencies,1210
+Frequencies,1211
+Frequencies,1212
+Frequencies,1213
+Frequencies,1214
+Frequencies,1215
+Frequencies,1216
+Frequencies,1217
+Frequencies,1218
+Frequencies,1219
+Frequencies,1220
+Frequencies,1221
+Frequencies,1222
+Frequencies,1223
+Frequencies,1224
+Frequencies,1225
+Frequencies,1226
+Frequencies,1227
+Frequencies,1228
+Frequencies,1229
+Frequencies,1230
+Frequencies,1231
+Frequencies,1232
+Frequencies,1233
+Frequencies,1234
+Frequencies,1235
+Frequencies,1236
+Frequencies,1237
+Frequencies,1238
+Frequencies,1239
+Frequencies,1240
+Frequencies,1241
+Frequencies,1242
+Frequencies,1243
+Frequencies,1244
+Frequencies,1245
+Frequencies,1246
+Frequencies,1247
+Frequencies,1248
+Frequencies,1249
+Frequencies,1250
+Frequencies,1251
+Frequencies,1252
+Frequencies,1253
+Frequencies,1254
+Frequencies,1255
+Frequencies,1256
+Frequencies,1257
+Frequencies,1258
+Frequencies,1259
+Frequencies,1260
+Frequencies,1261
+Frequencies,1262
+Frequencies,1263
+Frequencies,1264
+Frequencies,1265
+Frequencies,1266
+Frequencies,1267
+Frequencies,1268
+Frequencies,1269
+Frequencies,1270
+Frequencies,1271
+Frequencies,1272
+Frequencies,1273
+Frequencies,1274
+Frequencies,1275
+Frequencies,1276
+Frequencies,1277
+Frequencies,1278
+Frequencies,1279
+Frequencies,1280
+Frequencies,1281
+Frequencies,1282
+Frequencies,1283
+Frequencies,1284
+Frequencies,1285
+Frequencies,1286
+Frequencies,1287
+Frequencies,1288
+Frequencies,1289
+Frequencies,1290
+Frequencies,1291
+Frequencies,1292
+Frequencies,1293
+Frequencies,1294
+Frequencies,1295
+Frequencies,1296
+Frequencies,1297
+Frequencies,1298
+Frequencies,1299
+Frequencies,1300
+Frequencies,1301
+Frequencies,1302
+Frequencies,1303
+Frequencies,1304
+Frequencies,1305
+Frequencies,1306
+Frequencies,1307
+Frequencies,1308
+Frequencies,1309
+Frequencies,1310
+Frequencies,1311,,,,,,
+Frequencies,1312,,,,,,
+Frequencies,1313,,,,,,
+Frequencies,1314,,,,,,
+Frequencies,1315,,,,,,
+Frequencies,1316,,,,,,
+Frequencies,1317,,,,,,
+Frequencies,1318,,,,,,
+Frequencies,1319,,,,,,
+Frequencies,1320
+Frequencies,1321
+Frequencies,1322
+Frequencies,1323
+Frequencies,1324
+Frequencies,1325
+Frequencies,1326
+Frequencies,1327
+Frequencies,1328
+Frequencies,1329
+Frequencies,1330
+Frequencies,1331
+Frequencies,1332
+Frequencies,1333
+Frequencies,1334
+Frequencies,1335
+Frequencies,1336
+Statistics,0,varnumber,varname,n,sum,mean,min,max,varTitle
+Statistics,1,40481,SAINSTT,15464,1263778,81.723874806001035,1,4704,Instructional staff - total
+Statistics,2,40482,SAINSTM,15464,649960,42.030522503879979,0,2636,Instructional staff - men
+Statistics,3,40483,SAINSTW,15464,613818,39.693352302121056,0,2285,Instructional staff - women
+Statistics,4,40491,SA_9MCT,15464,5722,0.37002069322296949,0,205,Instructional staff on less than 9-month contract-total
+Statistics,5,40492,SA_9MCM,15464,2616,0.16916709777547853,0,95,Instructional staff on less than 9-month contract-men
+Statistics,6,40493,SA_9MCW,15464,3106,0.20085359544749096,0,110,Instructional staff on less than 9-month contract-women
+Statistics,7,40113,SATOTLT,15464,1258056,81.353854112778066,0,4699,"Instructional staff on 9, 10, 11 or 12 month contract-total"
+Statistics,8,40107,SATOTLM,15464,647344,41.861355406104501,0,2636,"Instructional staff on 9, 10, 11 or 12 month contract-men"
+Statistics,9,40110,SATOTLW,15464,610712,39.492498706673565,0,2285,"Instructional staff on 9, 10, 11 or 12 month contract-women"
+Statistics,10,40501,SA09MCT,15464,849264,54.918779099844798,0,4092,Instructional staff on 9-month contract-total
+Statistics,11,40506,SA09MCM,15464,452518,29.262674599068806,0,2359,Instructional staff on 9-month contract-men
+Statistics,12,40511,SA09MCW,15464,396746,25.656104500775996,0,1733,Instructional staff on 9-month contract-women
+Statistics,13,40516,SA10MCT,15464,167720,10.845835488877393,0,1943,Instructional staff on 10-month contract-total
+Statistics,14,40521,SA10MCM,15464,82434,5.3307035695809626,0,1176,Instructional staff on 10-month contract-men
+Statistics,15,40526,SA10MCW,15464,85286,5.5151319192964303,0,767,Instructional staff on 10-month contract-women
+Statistics,16,40531,SA11MCT,15464,22466,1.4527935851008795,0,1107,Instructional staff on 11-month contract-total
+Statistics,17,40536,SA11MCM,15464,11592,0.74961200206932233,0,877,Instructional staff on 11-month contract-men
+Statistics,18,40541,SA11MCW,15464,10874,0.7031815830315572,0,266,Instructional staff on 11-month contract-women
+Statistics,19,40546,SA12MCT,15464,218606,14.136445938954992,0,3093,Instructional staff on 12-month contract total
+Statistics,20,40551,SA12MCM,15464,100800,6.5183652353854109,0,808,Instructional staff on 12-month contract men
+Statistics,21,40556,SA12MCW,15464,117806,7.6180807035695812,0,2285,Instructional staff on 12--month contract women
+Statistics,22,40576,SAOUTLT,15464,116565158868,7537840.0716502843,0,476088855,Salary outlays - total
+Statistics,23,40581,SAOUTLM,15464,64943694894,4199669.8715726845,0,292992038,Salary outlays - men
+Statistics,24,40586,SAOUTLW,15464,51621463974,3338170.2000775994,0,183096817,Salary outlays - women
+Statistics,25,40901,SA09MOT,15464,78628874516,5084640.1006207969,0,418376643,Salary outlays for instructional staff on 9-month contract-total
+Statistics,26,40906,SA09MOM,15464,45672852018,2953495.3451888259,0,263747392,Salary outlays for instructional staff on 9-month contract-men
+Statistics,27,40911,SA09MOW,15464,32956022498,2131144.755431971,0,154629251,Salary outlays for instructional staff on 9-month contract-women
+Statistics,28,40916,SA10MOT,15464,14668242046,948541.2600879462,0,209171914,Salary outlays for instructional staff on 10-month contract-total
+Statistics,29,40921,SA10MOM,15464,7589070628,490757.28323848941,0,137152418,Salary outlays for instructional staff on 10-month contract-men
+Statistics,30,40926,SA10MOW,15464,7079171418,457783.97684945678,0,76242499,Salary outlays for instructional staff on 10-month contract-women
+Statistics,31,40931,SA11MOT,15464,2310820370,149432.25362131401,0,141671774,Salary outlays for instructional staff on 11-month contract-total
+Statistics,32,40936,SA11MOM,15464,1316932016,85161.149508535949,0,116998613,Salary outlays for instructional staff on 11-month contract-men
+Statistics,33,40941,SA11MOW,15464,993888354,64271.104112778063,0,30143384,Salary outlays for instructional staff on 11-month contract-women
+Statistics,34,40946,SA12MOT,15464,20957221936,1355226.4573202275,0,206101050,Salary outlays for instructional staff on 12-month contract-total
+Statistics,35,40951,SA12MOM,15464,10364840232,670256.09363683395,0,78236347,Salary outlays for instructional staff on 12-month contract-men
+Statistics,36,40956,SA12MOW,15464,10592381704,684970.36368339369,0,151857111,Salary outlays for instructional staff on 12-month contract-women
+Statistics,37,40961,SAEQ9OT,15464,109438460689,7076982.7139808591,0,462697461,Salary outlays for instructional staff equated to a 9-month contract-total
+Statistics,38,40963,SAEQ9OM,15464,61353896869,3967530.8373642005,0,286289650,Salary outlays for instructional staff equated to a 9-month contract-men
+Statistics,39,40965,SAEQ9OW,15464,48084564418,3109451.9152871184,0,176407812,Salary outlays for instructional staff equated to a 9-month contract-women
+Statistics,40,40967,SAEQ9AT,15430,1009989811,65456.241801685028,4920,263565,Average salary for instructional staff equated to a 9-month contract-total
+Statistics,41,40969,SAEQ9AM,14472,976572589,67480.14020176894,4050,263186,Average salary for instructional staff equated to a 9-month contract-men
+Statistics,42,40971,SAEQ9AW,14408,938835745,65160.726332593003,1200,266529,Average salary for instructional staff equated to a 9-month contract-women
+Statistics,43,40976,SA09MAT,9384,667971110,71181.917092924123,7500,273250,Average salary for instructional staff on 9-month contract-total
+Statistics,44,40981,SA09MAM,8955,656159997,73273.031490787267,7500,275536,Average salary for instructional staff on 9-month contract-men
+Statistics,45,40986,SA09MAW,9072,633498831,69830.118055555562,9000,249209,Average salary for instructional staff on 9-month contract-women
+Statistics,46,40991,SA10MAT,4107,291250791,70915.702702702707,4500,222310,Average salary for instructional staff on 10-month contract-total
+Statistics,47,40996,SA10MAM,3461,252228171,72877.252528171055,4500,213961,Average salary for instructional staff on 10-month contract-men
+Statistics,48,41001,SA10MAW,3661,259330281,70835.913957934987,5844,259878,Average salary for instructional staff on 10-month contract-women
+Statistics,49,41006,SA11MAT,1669,132250031,79239.083882564417,7883,353507,Average salary for instructional staff on 11-month contract-total
+Statistics,50,41011,SA11MAM,1272,104106602,81844.812893081762,9361,255062,Average salary for instructional staff on 11-month contract-men
+Statistics,51,41016,SA11MAW,1312,102568647,78177.32240853658,4189,353507,Average salary for instructional staff on 11-month contract-women
+Statistics,52,41021,SA12MAT,8760,720109819,82204.317237442927,8900,452719,Average salary for instructional staff on 12-month contract-total
+Statistics,53,41026,SA12MAM,7408,629156946,84929.393358531321,8127,535854,Average salary for instructional staff on 12-month contract-men
+Statistics,54,41031,SA12MAW,7563,619317803,81887.849133941563,1600,390367,Average salary for instructional staff on 12-month contract-women
+FrequenciesRV,0,varnumber,varname,codevalue,valuelabel,frequency,percent
+FrequenciesRV,1,40106,ARANK,7,All instructional staff total,3887,25.14
+FrequenciesRV,2,40106,ARANK,1,Professor,2466,15.95
+FrequenciesRV,3,40106,ARANK,2,Associate professor,2331,15.07
+FrequenciesRV,4,40106,ARANK,3,Assistant professor,2301,14.88
+FrequenciesRV,5,40106,ARANK,4,Instructor,2715,17.559999999999999
+FrequenciesRV,6,40106,ARANK,5,Lecturer,777,5.0199999999999996
+FrequenciesRV,7,40106,ARANK,6,No academic rank,987,6.38
+FrequenciesRV,8,,,,,,
+FrequenciesRV,9,,,,,,
+FrequenciesRV,10,,,,,,
+FrequenciesRV,11,,,,,,
+FrequenciesRV,12,,,,,,
+FrequenciesRV,13,,,,,,
+FrequenciesRV,14,,,,,,
+FrequenciesRV,15,,,,,,
+FrequenciesRV,16,,,,,,
+FrequenciesRV,17,,,,,,
+FrequenciesRV,18,,,,,,
+FrequenciesRV,19,,,,,,
+FrequenciesRV,20,,,,,,
+FrequenciesRV,21,,,,,,
+FrequenciesRV,22,,,,,,
+FrequenciesRV,23,,,,,,
+FrequenciesRV,24,,,,,,
+FrequenciesRV,25,,,,,,
+FrequenciesRV,26,,,,,,
+FrequenciesRV,27,,,,,,
+FrequenciesRV,28,,,,,,
+FrequenciesRV,29,,,,,,
+FrequenciesRV,30,,,,,,
+FrequenciesRV,31,,,,,,
+FrequenciesRV,32,,,,,,
+FrequenciesRV,33,,,,,,
+FrequenciesRV,34,,,,,,
+FrequenciesRV,35,,,,,,
+FrequenciesRV,36,,,,,,
+FrequenciesRV,37,,,,,,
+FrequenciesRV,38,,,,,,
+FrequenciesRV,39,,,,,,
+FrequenciesRV,40,,,,,,
+FrequenciesRV,41,,,,,,
+FrequenciesRV,42,,,,,,
+FrequenciesRV,43,,,,,,
+FrequenciesRV,44,,,,,,
+FrequenciesRV,45,,,,,,
+FrequenciesRV,46,,,,,,
+FrequenciesRV,47,,,,,,
+FrequenciesRV,48,,,,,,
+FrequenciesRV,49,,,,,,
+FrequenciesRV,50,,,,,,
+FrequenciesRV,51,,,,,,
+FrequenciesRV,52,,,,,,
+FrequenciesRV,53,,,,,,
+FrequenciesRV,54,,,,,,
+FrequenciesRV,55,,,,,,
+FrequenciesRV,56,,,,,,
+FrequenciesRV,57,,,,,,
+FrequenciesRV,58,,,,,,
+FrequenciesRV,59,,,,,,
+FrequenciesRV,60,,,,,,
+FrequenciesRV,61,,,,,,
+FrequenciesRV,62,,,,,,
+FrequenciesRV,63,,,,,,
+FrequenciesRV,64,,,,,,
+FrequenciesRV,65,,,,,,
+FrequenciesRV,66,,,,,,
+FrequenciesRV,67,,,,,,
+FrequenciesRV,68,,,,,,
+FrequenciesRV,69,,,,,,
+FrequenciesRV,70,,,,,,
+FrequenciesRV,71,,,,,,
+FrequenciesRV,72,,,,,,
+FrequenciesRV,73,,,,,,
+FrequenciesRV,74,,,,,,
+FrequenciesRV,75,,,,,,
+FrequenciesRV,76,,,,,,
+FrequenciesRV,77,,,,,,
+FrequenciesRV,78,,,,,,
+FrequenciesRV,79,,,,,,
+FrequenciesRV,80,,,,,,
+FrequenciesRV,81,,,,,,
+FrequenciesRV,82,,,,,,
+FrequenciesRV,83,,,,,,
+FrequenciesRV,84,,,,,,
+FrequenciesRV,85,,,,,,
+FrequenciesRV,86,,,,,,
+FrequenciesRV,87,,,,,,
+FrequenciesRV,88,,,,,,
+FrequenciesRV,89,,,,,,
+FrequenciesRV,90,,,,,,
+FrequenciesRV,91,,,,,,
+FrequenciesRV,92,,,,,,
+FrequenciesRV,93,,,,,,
+FrequenciesRV,94,,,,,,
+FrequenciesRV,95,,,,,,
+FrequenciesRV,96,,,,,,
+FrequenciesRV,97,,,,,,
+FrequenciesRV,98,,,,,,
+FrequenciesRV,99,,,,,,
+FrequenciesRV,100,,,,,,
+FrequenciesRV,101,,,,,,
+FrequenciesRV,102,,,,,,
+FrequenciesRV,103,,,,,,
+FrequenciesRV,104,,,,,,
+FrequenciesRV,105,,,,,,
+FrequenciesRV,106,,,,,,
+FrequenciesRV,107,,,,,,
+FrequenciesRV,108,,,,,,
+FrequenciesRV,109,,,,,,
+FrequenciesRV,110,,,,,,
+FrequenciesRV,111,,,,,,
+FrequenciesRV,112,,,,,,
+FrequenciesRV,113,,,,,,
+FrequenciesRV,114,,,,,,
+FrequenciesRV,115,,,,,,
+FrequenciesRV,116,,,,,,
+FrequenciesRV,117,,,,,,
+FrequenciesRV,118,,,,,,
+FrequenciesRV,119,,,,,,
+FrequenciesRV,120,,,,,,
+FrequenciesRV,121,,,,,,
+FrequenciesRV,122,,,,,,
+FrequenciesRV,123,,,,,,
+FrequenciesRV,124,,,,,,
+FrequenciesRV,125,,,,,,
+FrequenciesRV,126,,,,,,
+FrequenciesRV,127,,,,,,
+FrequenciesRV,128,,,,,,
+FrequenciesRV,129,,,,,,
+FrequenciesRV,130,,,,,,
+FrequenciesRV,131,,,,,,
+FrequenciesRV,132,,,,,,
+FrequenciesRV,133,,,,,,
+FrequenciesRV,134,,,,,,
+FrequenciesRV,135,,,,,,
+FrequenciesRV,136,,,,,,
+FrequenciesRV,137,,,,,,
+FrequenciesRV,138,,,,,,
+FrequenciesRV,139,,,,,,
+FrequenciesRV,140,,,,,,
+FrequenciesRV,141,,,,,,
+FrequenciesRV,142,,,,,,
+FrequenciesRV,143,,,,,,
+FrequenciesRV,144,,,,,,
+FrequenciesRV,145,,,,,,
+FrequenciesRV,146,,,,,,
+FrequenciesRV,147,,,,,,
+FrequenciesRV,148,,,,,,
+FrequenciesRV,149,,,,,,
+FrequenciesRV,150,,,,,,
+FrequenciesRV,151,,,,,,
+FrequenciesRV,152,,,,,,
+FrequenciesRV,153,,,,,,
+FrequenciesRV,154,,,,,,
+FrequenciesRV,155,,,,,,
+FrequenciesRV,156,,,,,,
+FrequenciesRV,157,,,,,,
+FrequenciesRV,158,,,,,,
+FrequenciesRV,159,,,,,,
+FrequenciesRV,160,,,,,,
+FrequenciesRV,161,,,,,,
+FrequenciesRV,162,,,,,,
+FrequenciesRV,163,,,,,,
+FrequenciesRV,164,,,,,,
+FrequenciesRV,165,,,,,,
+FrequenciesRV,166,,,,,,
+FrequenciesRV,167,,,,,,
+FrequenciesRV,168,,,,,,
+FrequenciesRV,169,,,,,,
+FrequenciesRV,170,,,,,,
+FrequenciesRV,171,,,,,,
+FrequenciesRV,172,,,,,,
+FrequenciesRV,173,,,,,,
+FrequenciesRV,174,,,,,,
+FrequenciesRV,175,,,,,,
+FrequenciesRV,176,,,,,,
+FrequenciesRV,177,,,,,,
+FrequenciesRV,178,,,,,,
+FrequenciesRV,179,,,,,,
+FrequenciesRV,180,,,,,,
+FrequenciesRV,181,,,,,,
+FrequenciesRV,182,,,,,,
+FrequenciesRV,183,,,,,,
+FrequenciesRV,184,,,,,,
+FrequenciesRV,185,,,,,,
+FrequenciesRV,186,,,,,,
+FrequenciesRV,187,,,,,,
+FrequenciesRV,188,,,,,,
+FrequenciesRV,189,,,,,,
+FrequenciesRV,190,,,,,,
+FrequenciesRV,191,,,,,,
+FrequenciesRV,192,,,,,,
+FrequenciesRV,193,,,,,,
+FrequenciesRV,194,,,,,,
+FrequenciesRV,195,,,,,,
+FrequenciesRV,196,,,,,,
+FrequenciesRV,197,,,,,,
+FrequenciesRV,198,,,,,,
+FrequenciesRV,199,,,,,,
+FrequenciesRV,200,,,,,,
+FrequenciesRV,201,,,,,,
+FrequenciesRV,202,,,,,,
+FrequenciesRV,203,,,,,,
+FrequenciesRV,204,,,,,,
+FrequenciesRV,205,,,,,,
+FrequenciesRV,206,,,,,,
+FrequenciesRV,207,,,,,,
+FrequenciesRV,208,,,,,,
+FrequenciesRV,209,,,,,,
+FrequenciesRV,210,,,,,,
+FrequenciesRV,211,,,,,,
+FrequenciesRV,212,,,,,,
+FrequenciesRV,213,,,,,,
+FrequenciesRV,214,,,,,,
+FrequenciesRV,215,,,,,,
+FrequenciesRV,216,,,,,,
+FrequenciesRV,217,,,,,,
+FrequenciesRV,218,,,,,,
+FrequenciesRV,219,,,,,,
+FrequenciesRV,220,,,,,,
+FrequenciesRV,221,,,,,,
+FrequenciesRV,222,,,,,,
+FrequenciesRV,223,,,,,,
+FrequenciesRV,224,,,,,,
+FrequenciesRV,225,,,,,,
+FrequenciesRV,226,,,,,,
+FrequenciesRV,227,,,,,,
+FrequenciesRV,228,,,,,,
+FrequenciesRV,229,,,,,,
+FrequenciesRV,230,,,,,,
+FrequenciesRV,231,,,,,,
+FrequenciesRV,232,,,,,,
+FrequenciesRV,233,,,,,,
+FrequenciesRV,234,,,,,,
+FrequenciesRV,235,,,,,,
+FrequenciesRV,236,,,,,,
+FrequenciesRV,237,,,,,,
+FrequenciesRV,238,,,,,,
+FrequenciesRV,239,,,,,,
+FrequenciesRV,240,,,,,,
+FrequenciesRV,241,,,,,,
+FrequenciesRV,242,,,,,,
+FrequenciesRV,243,,,,,,
+FrequenciesRV,244,,,,,,
+FrequenciesRV,245,,,,,,
+FrequenciesRV,246,,,,,,
+FrequenciesRV,247,,,,,,
+FrequenciesRV,248,,,,,,
+FrequenciesRV,249,,,,,,
+FrequenciesRV,250,,,,,,
+FrequenciesRV,251,,,,,,
+FrequenciesRV,252,,,,,,
+FrequenciesRV,253,,,,,,
+FrequenciesRV,254,,,,,,
+FrequenciesRV,255,,,,,,
+FrequenciesRV,256,,,,,,
+FrequenciesRV,257,,,,,,
+FrequenciesRV,258,,,,,,
+FrequenciesRV,259,,,,,,
+FrequenciesRV,260,,,,,,
+FrequenciesRV,261,,,,,,
+FrequenciesRV,262,,,,,,
+FrequenciesRV,263,,,,,,
+FrequenciesRV,264,,,,,,
+FrequenciesRV,265,,,,,,
+FrequenciesRV,266,,,,,,
+FrequenciesRV,267,,,,,,
+FrequenciesRV,268,,,,,,
+FrequenciesRV,269,,,,,,
+FrequenciesRV,270,,,,,,
+FrequenciesRV,271,,,,,,
+FrequenciesRV,272,,,,,,
+FrequenciesRV,273,,,,,,
+FrequenciesRV,274,,,,,,
+FrequenciesRV,275,,,,,,
+FrequenciesRV,276,,,,,,
+FrequenciesRV,277,,,,,,
+FrequenciesRV,278,,,,,,
+FrequenciesRV,279,,,,,,
+FrequenciesRV,280,,,,,,
+FrequenciesRV,281,,,,,,
+FrequenciesRV,282,,,,,,
+FrequenciesRV,283,,,,,,
+FrequenciesRV,284,,,,,,
+FrequenciesRV,285,,,,,,
+FrequenciesRV,286,,,,,,
+FrequenciesRV,287,,,,,,
+FrequenciesRV,288,,,,,,
+FrequenciesRV,289,,,,,,
+FrequenciesRV,290,,,,,,
+FrequenciesRV,291,,,,,,
+FrequenciesRV,292,,,,,,
+FrequenciesRV,293,,,,,,
+FrequenciesRV,294,,,,,,
+FrequenciesRV,295,,,,,,
+FrequenciesRV,296,,,,,,
+FrequenciesRV,297,,,,,,
+FrequenciesRV,298,,,,,,
+FrequenciesRV,299,,,,,,
+FrequenciesRV,300,,,,,,
+FrequenciesRV,301,,,,,,
+FrequenciesRV,302,,,,,,
+FrequenciesRV,303,,,,,,
+FrequenciesRV,304,,,,,,
+FrequenciesRV,305,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+FrequenciesRV,306
+FrequenciesRV,307
+FrequenciesRV,308
+FrequenciesRV,309
+FrequenciesRV,310
+FrequenciesRV,311
+FrequenciesRV,312
+FrequenciesRV,313
+FrequenciesRV,314
+FrequenciesRV,315
+FrequenciesRV,316
+FrequenciesRV,317
+FrequenciesRV,318
+FrequenciesRV,319
+FrequenciesRV,320
+FrequenciesRV,321
+FrequenciesRV,322
+FrequenciesRV,323
+FrequenciesRV,324
+FrequenciesRV,325
+FrequenciesRV,326
+FrequenciesRV,327
+FrequenciesRV,328
+FrequenciesRV,329
+FrequenciesRV,330
+FrequenciesRV,331
+FrequenciesRV,332
+FrequenciesRV,333
+FrequenciesRV,334
+FrequenciesRV,335
+FrequenciesRV,336
+FrequenciesRV,337
+FrequenciesRV,338
+FrequenciesRV,339
+FrequenciesRV,340
+FrequenciesRV,341
+FrequenciesRV,342
+FrequenciesRV,343
+FrequenciesRV,344
+FrequenciesRV,345
+FrequenciesRV,346
+FrequenciesRV,347
+FrequenciesRV,348
+FrequenciesRV,349
+FrequenciesRV,350
+FrequenciesRV,351
+FrequenciesRV,352
+FrequenciesRV,353
+FrequenciesRV,354
+FrequenciesRV,355
+FrequenciesRV,356
+FrequenciesRV,357
+FrequenciesRV,358
+FrequenciesRV,359
+FrequenciesRV,360
+FrequenciesRV,361
+FrequenciesRV,362
+FrequenciesRV,363
+FrequenciesRV,364
+FrequenciesRV,365
+FrequenciesRV,366
+FrequenciesRV,367
+FrequenciesRV,368
+FrequenciesRV,369
+FrequenciesRV,370
+FrequenciesRV,371
+FrequenciesRV,372
+FrequenciesRV,373
+FrequenciesRV,374
+FrequenciesRV,375
+FrequenciesRV,376
+FrequenciesRV,377
+FrequenciesRV,378
+FrequenciesRV,379
+FrequenciesRV,380
+FrequenciesRV,381
+FrequenciesRV,382
+FrequenciesRV,383
+FrequenciesRV,384
+FrequenciesRV,385,,,,,,
+FrequenciesRV,386,,,,,,
+FrequenciesRV,387,,,,,,
+FrequenciesRV,388,,,,,,
+FrequenciesRV,389
+FrequenciesRV,390
+FrequenciesRV,391
+FrequenciesRV,392
+FrequenciesRV,393
+FrequenciesRV,394
+FrequenciesRV,395
+FrequenciesRV,396
+FrequenciesRV,397
+FrequenciesRV,398
+FrequenciesRV,399
+FrequenciesRV,400
+FrequenciesRV,401
+FrequenciesRV,402
+FrequenciesRV,403
+FrequenciesRV,404
+FrequenciesRV,405
+FrequenciesRV,406
+FrequenciesRV,407
+FrequenciesRV,408
+FrequenciesRV,409
+FrequenciesRV,410
+FrequenciesRV,411
+FrequenciesRV,412
+FrequenciesRV,413
+FrequenciesRV,414
+FrequenciesRV,415
+FrequenciesRV,416
+FrequenciesRV,417
+FrequenciesRV,418
+FrequenciesRV,419
+FrequenciesRV,420
+FrequenciesRV,421
+FrequenciesRV,422
+FrequenciesRV,423
+FrequenciesRV,424
+FrequenciesRV,425
+FrequenciesRV,426
+FrequenciesRV,427
+FrequenciesRV,428
+FrequenciesRV,429
+FrequenciesRV,430
+FrequenciesRV,431
+FrequenciesRV,432
+FrequenciesRV,433
+FrequenciesRV,434
+FrequenciesRV,435
+FrequenciesRV,436
+FrequenciesRV,437
+FrequenciesRV,438
+FrequenciesRV,439
+FrequenciesRV,440
+FrequenciesRV,441
+FrequenciesRV,442
+FrequenciesRV,443
+FrequenciesRV,444
+FrequenciesRV,445
+FrequenciesRV,446
+FrequenciesRV,447
+FrequenciesRV,448
+FrequenciesRV,449
+FrequenciesRV,450
+FrequenciesRV,451
+FrequenciesRV,452
+FrequenciesRV,453
+FrequenciesRV,454
+FrequenciesRV,455
+FrequenciesRV,456
+FrequenciesRV,457
+FrequenciesRV,458
+FrequenciesRV,459
+FrequenciesRV,460
+FrequenciesRV,461
+FrequenciesRV,462
+FrequenciesRV,463
+FrequenciesRV,464
+FrequenciesRV,465
+FrequenciesRV,466
+FrequenciesRV,467
+FrequenciesRV,468
+FrequenciesRV,469
+FrequenciesRV,470
+FrequenciesRV,471
+FrequenciesRV,472
+FrequenciesRV,473
+FrequenciesRV,474
+FrequenciesRV,475
+FrequenciesRV,476
+FrequenciesRV,477
+FrequenciesRV,478
+FrequenciesRV,479
+FrequenciesRV,480
+FrequenciesRV,481
+FrequenciesRV,482
+FrequenciesRV,483
+FrequenciesRV,484
+FrequenciesRV,485
+FrequenciesRV,486
+FrequenciesRV,487
+FrequenciesRV,488
+FrequenciesRV,489
+FrequenciesRV,490
+FrequenciesRV,491
+FrequenciesRV,492
+FrequenciesRV,493
+FrequenciesRV,494
+FrequenciesRV,495
+FrequenciesRV,496
+FrequenciesRV,497
+FrequenciesRV,498
+FrequenciesRV,499
+FrequenciesRV,500
+FrequenciesRV,501
+FrequenciesRV,502
+FrequenciesRV,503
+FrequenciesRV,504
+FrequenciesRV,505
+FrequenciesRV,506
+FrequenciesRV,507
+FrequenciesRV,508
+FrequenciesRV,509
+FrequenciesRV,510
+FrequenciesRV,511
+FrequenciesRV,512
+FrequenciesRV,513
+FrequenciesRV,514
+FrequenciesRV,515
+FrequenciesRV,516,,,,,,
+FrequenciesRV,517,,,,,,
+FrequenciesRV,518,,,,,,
+FrequenciesRV,519,,,,,,
+FrequenciesRV,520
+FrequenciesRV,521
+FrequenciesRV,522
+FrequenciesRV,523
+FrequenciesRV,524
+FrequenciesRV,525
+FrequenciesRV,526
+FrequenciesRV,527
+FrequenciesRV,528
+FrequenciesRV,529
+FrequenciesRV,530
+FrequenciesRV,531
+FrequenciesRV,532
+FrequenciesRV,533
+FrequenciesRV,534
+FrequenciesRV,535
+FrequenciesRV,536
+FrequenciesRV,537
+FrequenciesRV,538
+FrequenciesRV,539
+FrequenciesRV,540
+FrequenciesRV,541
+FrequenciesRV,542
+FrequenciesRV,543
+FrequenciesRV,544
+FrequenciesRV,545
+FrequenciesRV,546
+FrequenciesRV,547
+FrequenciesRV,548
+FrequenciesRV,549
+FrequenciesRV,550
+FrequenciesRV,551
+FrequenciesRV,552
+FrequenciesRV,553
+FrequenciesRV,554
+FrequenciesRV,555
+FrequenciesRV,556
+FrequenciesRV,557
+FrequenciesRV,558
+FrequenciesRV,559
+FrequenciesRV,560
+FrequenciesRV,561
+FrequenciesRV,562
+FrequenciesRV,563
+FrequenciesRV,564
+FrequenciesRV,565
+FrequenciesRV,566
+FrequenciesRV,567
+FrequenciesRV,568
+FrequenciesRV,569
+FrequenciesRV,570
+FrequenciesRV,571
+FrequenciesRV,572
+FrequenciesRV,573
+FrequenciesRV,574
+FrequenciesRV,575
+FrequenciesRV,576
+FrequenciesRV,577
+FrequenciesRV,578
+FrequenciesRV,579
+FrequenciesRV,580
+FrequenciesRV,581
+FrequenciesRV,582
+FrequenciesRV,583
+FrequenciesRV,584
+FrequenciesRV,585
+FrequenciesRV,586
+FrequenciesRV,587
+FrequenciesRV,588
+FrequenciesRV,589
+FrequenciesRV,590
+FrequenciesRV,591
+FrequenciesRV,592
+FrequenciesRV,593
+FrequenciesRV,594
+FrequenciesRV,595
+FrequenciesRV,596
+FrequenciesRV,597
+FrequenciesRV,598
+FrequenciesRV,599
+FrequenciesRV,600
+FrequenciesRV,601
+FrequenciesRV,602
+FrequenciesRV,603
+FrequenciesRV,604
+FrequenciesRV,605
+FrequenciesRV,606
+FrequenciesRV,607
+FrequenciesRV,608
+FrequenciesRV,609
+FrequenciesRV,610
+FrequenciesRV,611
+FrequenciesRV,612
+FrequenciesRV,613
+FrequenciesRV,614
+FrequenciesRV,615
+FrequenciesRV,616
+FrequenciesRV,617
+FrequenciesRV,618
+FrequenciesRV,619
+FrequenciesRV,620
+FrequenciesRV,621
+FrequenciesRV,622
+FrequenciesRV,623
+FrequenciesRV,624
+FrequenciesRV,625
+FrequenciesRV,626
+FrequenciesRV,627
+FrequenciesRV,628
+FrequenciesRV,629
+FrequenciesRV,630
+FrequenciesRV,631
+FrequenciesRV,632
+FrequenciesRV,633
+FrequenciesRV,634
+FrequenciesRV,635
+FrequenciesRV,636
+FrequenciesRV,637
+FrequenciesRV,638
+FrequenciesRV,639
+FrequenciesRV,640
+FrequenciesRV,641
+FrequenciesRV,642
+FrequenciesRV,643
+FrequenciesRV,644
+FrequenciesRV,645
+FrequenciesRV,646
+FrequenciesRV,647,,,,,,
+FrequenciesRV,648,,,,,,
+FrequenciesRV,649,,,,,,
+FrequenciesRV,650,,,,,,
+FrequenciesRV,651,,,,,,
+FrequenciesRV,652
+FrequenciesRV,653
+FrequenciesRV,654
+FrequenciesRV,655
+FrequenciesRV,656
+FrequenciesRV,657
+FrequenciesRV,658
+FrequenciesRV,659
+FrequenciesRV,660
+FrequenciesRV,661
+FrequenciesRV,662
+FrequenciesRV,663
+FrequenciesRV,664
+FrequenciesRV,665
+FrequenciesRV,666
+FrequenciesRV,667
+FrequenciesRV,668
+FrequenciesRV,669
+FrequenciesRV,670
+FrequenciesRV,671
+FrequenciesRV,672
+FrequenciesRV,673
+FrequenciesRV,674
+FrequenciesRV,675
+FrequenciesRV,676
+FrequenciesRV,677
+FrequenciesRV,678
+FrequenciesRV,679
+FrequenciesRV,680
+FrequenciesRV,681
+FrequenciesRV,682
+FrequenciesRV,683
+FrequenciesRV,684
+FrequenciesRV,685
+FrequenciesRV,686
+FrequenciesRV,687
+FrequenciesRV,688
+FrequenciesRV,689
+FrequenciesRV,690
+FrequenciesRV,691
+FrequenciesRV,692
+FrequenciesRV,693
+FrequenciesRV,694
+FrequenciesRV,695
+FrequenciesRV,696
+FrequenciesRV,697
+FrequenciesRV,698
+FrequenciesRV,699
+FrequenciesRV,700
+FrequenciesRV,701
+FrequenciesRV,702
+FrequenciesRV,703
+FrequenciesRV,704
+FrequenciesRV,705
+FrequenciesRV,706
+FrequenciesRV,707
+FrequenciesRV,708
+FrequenciesRV,709
+FrequenciesRV,710
+FrequenciesRV,711
+FrequenciesRV,712
+FrequenciesRV,713
+FrequenciesRV,714
+FrequenciesRV,715
+FrequenciesRV,716
+FrequenciesRV,717
+FrequenciesRV,718
+FrequenciesRV,719
+FrequenciesRV,720
+FrequenciesRV,721
+FrequenciesRV,722
+FrequenciesRV,723
+FrequenciesRV,724
+FrequenciesRV,725
+FrequenciesRV,726
+FrequenciesRV,727
+FrequenciesRV,728
+FrequenciesRV,729
+FrequenciesRV,730
+FrequenciesRV,731
+FrequenciesRV,732
+FrequenciesRV,733
+FrequenciesRV,734
+FrequenciesRV,735
+FrequenciesRV,736
+FrequenciesRV,737
+FrequenciesRV,738
+FrequenciesRV,739
+FrequenciesRV,740
+FrequenciesRV,741
+FrequenciesRV,742
+FrequenciesRV,743
+FrequenciesRV,744
+FrequenciesRV,745
+FrequenciesRV,746
+FrequenciesRV,747
+FrequenciesRV,748
+FrequenciesRV,749
+FrequenciesRV,750
+FrequenciesRV,751
+FrequenciesRV,752
+FrequenciesRV,753
+FrequenciesRV,754
+FrequenciesRV,755
+FrequenciesRV,756
+FrequenciesRV,757
+FrequenciesRV,758
+FrequenciesRV,759
+FrequenciesRV,760
+FrequenciesRV,761
+FrequenciesRV,762
+FrequenciesRV,763
+FrequenciesRV,764
+FrequenciesRV,765
+FrequenciesRV,766
+FrequenciesRV,767
+FrequenciesRV,768
+FrequenciesRV,769
+FrequenciesRV,770
+FrequenciesRV,771
+FrequenciesRV,772
+FrequenciesRV,773
+FrequenciesRV,774
+FrequenciesRV,775
+FrequenciesRV,776
+FrequenciesRV,777
+FrequenciesRV,778
+FrequenciesRV,779
+FrequenciesRV,780
+FrequenciesRV,781
+FrequenciesRV,782
+FrequenciesRV,783
+FrequenciesRV,784
+FrequenciesRV,785
+FrequenciesRV,786
+FrequenciesRV,787
+FrequenciesRV,788
+FrequenciesRV,789
+FrequenciesRV,790
+FrequenciesRV,791
+FrequenciesRV,792
+FrequenciesRV,793
+FrequenciesRV,794
+FrequenciesRV,795
+FrequenciesRV,796
+FrequenciesRV,797
+FrequenciesRV,798
+FrequenciesRV,799
+FrequenciesRV,800
+FrequenciesRV,801
+FrequenciesRV,802
+FrequenciesRV,803
+FrequenciesRV,804
+FrequenciesRV,805
+FrequenciesRV,806
+FrequenciesRV,807
+FrequenciesRV,808
+FrequenciesRV,809
+FrequenciesRV,810
+FrequenciesRV,811,,,,,,
+FrequenciesRV,812,,,,,,
+FrequenciesRV,813,,,,,,
+FrequenciesRV,814,,,,,,
+FrequenciesRV,815,,,,,,
+FrequenciesRV,816,,,,,,
+FrequenciesRV,817,,,,,,
+FrequenciesRV,818,,,,,,
+FrequenciesRV,819,,,,,,
+FrequenciesRV,820,,,,,,
+FrequenciesRV,821,,,,,,
+FrequenciesRV,822,,,,,,
+FrequenciesRV,823,,,,,,
+FrequenciesRV,824,,,,,,
+FrequenciesRV,825,,,,,,
+FrequenciesRV,826,,,,,,
+FrequenciesRV,827,,,,,,
+FrequenciesRV,828,,,,,,
+FrequenciesRV,829,,,,,,
+FrequenciesRV,830,,,,,,
+FrequenciesRV,831,,,,,,
+FrequenciesRV,832,,,,,,
+FrequenciesRV,833,,,,,,
+FrequenciesRV,834,,,,,,
+FrequenciesRV,835,,,,,,
+FrequenciesRV,836,,,,,,
+FrequenciesRV,837,,,,,,
+FrequenciesRV,838,,,,,,
+FrequenciesRV,839,,,,,,
+FrequenciesRV,840,,,,,,
+FrequenciesRV,841,,,,,,
+FrequenciesRV,842,,,,,,
+FrequenciesRV,843,,,,,,
+FrequenciesRV,844,,,,,,
+FrequenciesRV,845,,,,,,
+FrequenciesRV,846,,,,,,
+FrequenciesRV,847,,,,,,
+FrequenciesRV,848,,,,,,
+FrequenciesRV,849,,,,,,
+FrequenciesRV,850,,,,,,
+FrequenciesRV,851,,,,,,
+FrequenciesRV,852,,,,,,
+FrequenciesRV,853,,,,,,
+FrequenciesRV,854,,,,,,
+FrequenciesRV,855,,,,,,
+FrequenciesRV,856,,,,,,
+FrequenciesRV,857,,,,,,
+FrequenciesRV,858,,,,,,
+FrequenciesRV,859,,,,,,
+FrequenciesRV,860,,,,,,
+FrequenciesRV,861,,,,,,
+FrequenciesRV,862,,,,,,
+FrequenciesRV,863
+FrequenciesRV,864
+FrequenciesRV,865
+FrequenciesRV,866
+FrequenciesRV,867
+FrequenciesRV,868
+FrequenciesRV,869
+FrequenciesRV,870
+FrequenciesRV,871
+FrequenciesRV,872
+FrequenciesRV,873
+FrequenciesRV,874
+FrequenciesRV,875
+FrequenciesRV,876
+FrequenciesRV,877
+FrequenciesRV,878
+FrequenciesRV,879
+FrequenciesRV,880
+FrequenciesRV,881
+FrequenciesRV,882
+FrequenciesRV,883
+FrequenciesRV,884
+FrequenciesRV,885
+FrequenciesRV,886
+FrequenciesRV,887
+FrequenciesRV,888
+FrequenciesRV,889
+FrequenciesRV,890
+FrequenciesRV,891
+FrequenciesRV,892
+FrequenciesRV,893
+FrequenciesRV,894
+FrequenciesRV,895
+FrequenciesRV,896
+FrequenciesRV,897
+FrequenciesRV,898
+FrequenciesRV,899
+FrequenciesRV,900
+FrequenciesRV,901
+FrequenciesRV,902
+FrequenciesRV,903
+FrequenciesRV,904
+FrequenciesRV,905
+FrequenciesRV,906
+FrequenciesRV,907
+FrequenciesRV,908
+FrequenciesRV,909
+FrequenciesRV,910
+FrequenciesRV,911
+FrequenciesRV,912
+FrequenciesRV,913
+FrequenciesRV,914
+FrequenciesRV,915
+FrequenciesRV,916
+FrequenciesRV,917
+FrequenciesRV,918
+FrequenciesRV,919
+FrequenciesRV,920
+FrequenciesRV,921
+FrequenciesRV,922
+FrequenciesRV,923
+FrequenciesRV,924
+FrequenciesRV,925
+FrequenciesRV,926
+FrequenciesRV,927
+FrequenciesRV,928
+FrequenciesRV,929
+FrequenciesRV,930
+FrequenciesRV,931
+FrequenciesRV,932
+FrequenciesRV,933
+FrequenciesRV,934
+FrequenciesRV,935
+FrequenciesRV,936
+FrequenciesRV,937
+FrequenciesRV,938
+FrequenciesRV,939
+FrequenciesRV,940
+FrequenciesRV,941
+FrequenciesRV,942
+FrequenciesRV,943
+FrequenciesRV,944
+FrequenciesRV,945
+FrequenciesRV,946
+FrequenciesRV,947
+FrequenciesRV,948
+FrequenciesRV,949
+FrequenciesRV,950
+FrequenciesRV,951
+FrequenciesRV,952
+FrequenciesRV,953
+FrequenciesRV,954
+FrequenciesRV,955
+FrequenciesRV,956
+FrequenciesRV,957
+FrequenciesRV,958
+FrequenciesRV,959
+FrequenciesRV,960
+FrequenciesRV,961
+FrequenciesRV,962
+FrequenciesRV,963
+FrequenciesRV,964
+FrequenciesRV,965
+FrequenciesRV,966
+FrequenciesRV,967
+FrequenciesRV,968
+FrequenciesRV,969
+FrequenciesRV,970
+FrequenciesRV,971
+FrequenciesRV,972
+FrequenciesRV,973
+FrequenciesRV,974
+FrequenciesRV,975
+FrequenciesRV,976
+FrequenciesRV,977
+FrequenciesRV,978
+FrequenciesRV,979
+FrequenciesRV,980
+FrequenciesRV,981
+FrequenciesRV,982
+FrequenciesRV,983
+FrequenciesRV,984
+FrequenciesRV,985
+FrequenciesRV,986
+FrequenciesRV,987
+FrequenciesRV,988
+FrequenciesRV,989
+FrequenciesRV,990
+FrequenciesRV,991
+FrequenciesRV,992
+FrequenciesRV,993
+FrequenciesRV,994
+FrequenciesRV,995
+FrequenciesRV,996
+FrequenciesRV,997
+FrequenciesRV,998
+FrequenciesRV,999
+FrequenciesRV,1000
+FrequenciesRV,1001
+FrequenciesRV,1002
+FrequenciesRV,1003
+FrequenciesRV,1004
+FrequenciesRV,1005
+FrequenciesRV,1006
+FrequenciesRV,1007
+FrequenciesRV,1008
+FrequenciesRV,1009
+FrequenciesRV,1010
+FrequenciesRV,1011
+FrequenciesRV,1012
+FrequenciesRV,1013
+FrequenciesRV,1014
+FrequenciesRV,1015
+FrequenciesRV,1016
+FrequenciesRV,1017
+FrequenciesRV,1018
+FrequenciesRV,1019
+FrequenciesRV,1020
+FrequenciesRV,1021
+FrequenciesRV,1022
+FrequenciesRV,1023
+FrequenciesRV,1024
+FrequenciesRV,1025
+FrequenciesRV,1026
+FrequenciesRV,1027
+FrequenciesRV,1028
+FrequenciesRV,1029
+FrequenciesRV,1030
+FrequenciesRV,1031
+FrequenciesRV,1032
+FrequenciesRV,1033
+FrequenciesRV,1034
+FrequenciesRV,1035
+FrequenciesRV,1036
+FrequenciesRV,1037
+FrequenciesRV,1038
+FrequenciesRV,1039
+FrequenciesRV,1040
+FrequenciesRV,1041
+FrequenciesRV,1042
+FrequenciesRV,1043
+FrequenciesRV,1044
+FrequenciesRV,1045
+FrequenciesRV,1046
+FrequenciesRV,1047
+FrequenciesRV,1048
+FrequenciesRV,1049
+FrequenciesRV,1050
+FrequenciesRV,1051
+FrequenciesRV,1052
+FrequenciesRV,1053
+FrequenciesRV,1054
+FrequenciesRV,1055
+FrequenciesRV,1056
+FrequenciesRV,1057
+FrequenciesRV,1058
+FrequenciesRV,1059
+FrequenciesRV,1060
+FrequenciesRV,1061
+FrequenciesRV,1062
+FrequenciesRV,1063
+FrequenciesRV,1064
+FrequenciesRV,1065
+FrequenciesRV,1066
+FrequenciesRV,1067
+FrequenciesRV,1068
+FrequenciesRV,1069
+FrequenciesRV,1070
+FrequenciesRV,1071
+FrequenciesRV,1072
+FrequenciesRV,1073
+FrequenciesRV,1074
+FrequenciesRV,1075
+FrequenciesRV,1076
+FrequenciesRV,1077
+FrequenciesRV,1078
+FrequenciesRV,1079
+FrequenciesRV,1080
+FrequenciesRV,1081
+FrequenciesRV,1082
+FrequenciesRV,1083
+FrequenciesRV,1084
+FrequenciesRV,1085
+FrequenciesRV,1086
+FrequenciesRV,1087
+FrequenciesRV,1088
+FrequenciesRV,1089
+FrequenciesRV,1090
+FrequenciesRV,1091
+FrequenciesRV,1092
+FrequenciesRV,1093
+FrequenciesRV,1094
+FrequenciesRV,1095
+FrequenciesRV,1096
+FrequenciesRV,1097
+FrequenciesRV,1098
+FrequenciesRV,1099
+FrequenciesRV,1100
+FrequenciesRV,1101
+FrequenciesRV,1102
+FrequenciesRV,1103
+FrequenciesRV,1104
+FrequenciesRV,1105
+FrequenciesRV,1106
+FrequenciesRV,1107
+FrequenciesRV,1108
+FrequenciesRV,1109
+FrequenciesRV,1110
+FrequenciesRV,1111
+FrequenciesRV,1112
+FrequenciesRV,1113
+FrequenciesRV,1114
+FrequenciesRV,1115
+FrequenciesRV,1116
+FrequenciesRV,1117
+FrequenciesRV,1118
+FrequenciesRV,1119
+FrequenciesRV,1120
+FrequenciesRV,1121
+FrequenciesRV,1122
+FrequenciesRV,1123
+FrequenciesRV,1124
+FrequenciesRV,1125
+FrequenciesRV,1126
+FrequenciesRV,1127
+FrequenciesRV,1128
+FrequenciesRV,1129
+FrequenciesRV,1130
+FrequenciesRV,1131
+FrequenciesRV,1132
+FrequenciesRV,1133
+FrequenciesRV,1134
+FrequenciesRV,1135
+FrequenciesRV,1136
+FrequenciesRV,1137
+FrequenciesRV,1138
+FrequenciesRV,1139
+FrequenciesRV,1140
+FrequenciesRV,1141
+FrequenciesRV,1142
+FrequenciesRV,1143
+FrequenciesRV,1144
+FrequenciesRV,1145
+FrequenciesRV,1146
+FrequenciesRV,1147
+FrequenciesRV,1148
+FrequenciesRV,1149
+FrequenciesRV,1150
+FrequenciesRV,1151
+FrequenciesRV,1152
+FrequenciesRV,1153
+FrequenciesRV,1154
+FrequenciesRV,1155
+FrequenciesRV,1156
+FrequenciesRV,1157
+FrequenciesRV,1158
+FrequenciesRV,1159
+FrequenciesRV,1160
+FrequenciesRV,1161
+FrequenciesRV,1162
+FrequenciesRV,1163
+FrequenciesRV,1164
+FrequenciesRV,1165
+FrequenciesRV,1166
+FrequenciesRV,1167
+FrequenciesRV,1168
+FrequenciesRV,1169
+FrequenciesRV,1170
+FrequenciesRV,1171
+FrequenciesRV,1172
+FrequenciesRV,1173
+FrequenciesRV,1174
+FrequenciesRV,1175
+FrequenciesRV,1176
+FrequenciesRV,1177
+FrequenciesRV,1178
+FrequenciesRV,1179
+FrequenciesRV,1180
+FrequenciesRV,1181
+FrequenciesRV,1182
+FrequenciesRV,1183
+FrequenciesRV,1184
+FrequenciesRV,1185
+FrequenciesRV,1186
+FrequenciesRV,1187
+FrequenciesRV,1188
+FrequenciesRV,1189
+FrequenciesRV,1190
+FrequenciesRV,1191
+FrequenciesRV,1192
+FrequenciesRV,1193
+FrequenciesRV,1194
+FrequenciesRV,1195
+FrequenciesRV,1196
+FrequenciesRV,1197
+FrequenciesRV,1198
+FrequenciesRV,1199
+FrequenciesRV,1200
+FrequenciesRV,1201
+FrequenciesRV,1202
+FrequenciesRV,1203
+FrequenciesRV,1204
+FrequenciesRV,1205
+FrequenciesRV,1206
+FrequenciesRV,1207
+FrequenciesRV,1208
+FrequenciesRV,1209
+FrequenciesRV,1210
+FrequenciesRV,1211
+FrequenciesRV,1212
+FrequenciesRV,1213
+FrequenciesRV,1214
+FrequenciesRV,1215
+FrequenciesRV,1216
+FrequenciesRV,1217
+FrequenciesRV,1218
+FrequenciesRV,1219
+FrequenciesRV,1220
+FrequenciesRV,1221
+FrequenciesRV,1222
+FrequenciesRV,1223
+FrequenciesRV,1224
+FrequenciesRV,1225
+FrequenciesRV,1226
+FrequenciesRV,1227
+FrequenciesRV,1228
+FrequenciesRV,1229
+FrequenciesRV,1230
+FrequenciesRV,1231
+FrequenciesRV,1232
+FrequenciesRV,1233
+FrequenciesRV,1234
+FrequenciesRV,1235
+FrequenciesRV,1236
+FrequenciesRV,1237
+FrequenciesRV,1238
+FrequenciesRV,1239
+FrequenciesRV,1240
+FrequenciesRV,1241
+FrequenciesRV,1242
+FrequenciesRV,1243
+FrequenciesRV,1244
+FrequenciesRV,1245
+FrequenciesRV,1246
+FrequenciesRV,1247
+FrequenciesRV,1248
+FrequenciesRV,1249
+FrequenciesRV,1250
+FrequenciesRV,1251
+FrequenciesRV,1252
+FrequenciesRV,1253
+FrequenciesRV,1254
+FrequenciesRV,1255
+FrequenciesRV,1256
+FrequenciesRV,1257
+FrequenciesRV,1258
+FrequenciesRV,1259
+FrequenciesRV,1260
+FrequenciesRV,1261
+FrequenciesRV,1262
+FrequenciesRV,1263
+FrequenciesRV,1264
+FrequenciesRV,1265
+FrequenciesRV,1266
+FrequenciesRV,1267
+FrequenciesRV,1268
+FrequenciesRV,1269
+FrequenciesRV,1270
+FrequenciesRV,1271
+FrequenciesRV,1272
+FrequenciesRV,1273
+FrequenciesRV,1274
+FrequenciesRV,1275
+FrequenciesRV,1276
+FrequenciesRV,1277
+FrequenciesRV,1278
+FrequenciesRV,1279
+FrequenciesRV,1280
+FrequenciesRV,1281
+FrequenciesRV,1282
+FrequenciesRV,1283
+FrequenciesRV,1284
+FrequenciesRV,1285
+FrequenciesRV,1286
+FrequenciesRV,1287
+FrequenciesRV,1288
+FrequenciesRV,1289
+FrequenciesRV,1290
+FrequenciesRV,1291
+FrequenciesRV,1292
+FrequenciesRV,1293
+FrequenciesRV,1294
+FrequenciesRV,1295
+FrequenciesRV,1296
+FrequenciesRV,1297
+FrequenciesRV,1298
+FrequenciesRV,1299
+FrequenciesRV,1300
+FrequenciesRV,1301
+FrequenciesRV,1302
+FrequenciesRV,1303
+FrequenciesRV,1304
+FrequenciesRV,1305
+FrequenciesRV,1306
+FrequenciesRV,1307
+FrequenciesRV,1308
+FrequenciesRV,1309
+FrequenciesRV,1310
+FrequenciesRV,1311,,,,,,
+FrequenciesRV,1312,,,,,,
+FrequenciesRV,1313,,,,,,
+FrequenciesRV,1314,,,,,,
+FrequenciesRV,1315,,,,,,
+FrequenciesRV,1316,,,,,,
+FrequenciesRV,1317,,,,,,
+FrequenciesRV,1318,,,,,,
+FrequenciesRV,1319,,,,,,
+FrequenciesRV,1320
+FrequenciesRV,1321
+FrequenciesRV,1322
+FrequenciesRV,1323
+FrequenciesRV,1324
+FrequenciesRV,1325
+FrequenciesRV,1326
+FrequenciesRV,1327
+FrequenciesRV,1328
+FrequenciesRV,1329
+FrequenciesRV,1330
+FrequenciesRV,1331
+FrequenciesRV,1332
+FrequenciesRV,1333
+FrequenciesRV,1334
+FrequenciesRV,1335
+FrequenciesRV,1336
+StatisticsRV,0,varnumber,varname,n,sum,mean,min,max,varTitle
+StatisticsRV,1,40481,SAINSTT,15464,1263618,81.7135281945163,1,4704,Instructional staff - total
+StatisticsRV,2,40482,SAINSTM,15464,649906,42.027030522503878,0,2636,Instructional staff - men
+StatisticsRV,3,40483,SAINSTW,15464,613712,39.686497672012415,0,2285,Instructional staff - women
+StatisticsRV,4,40491,SA_9MCT,15464,5766,0.37286601138127262,0,205,Instructional staff on less than 9-month contract-total
+StatisticsRV,5,40492,SA_9MCM,15464,2624,0.16968442834971548,0,95,Instructional staff on less than 9-month contract-men
+StatisticsRV,6,40493,SA_9MCW,15464,3142,0.20318158303155717,0,110,Instructional staff on less than 9-month contract-women
+StatisticsRV,7,40113,SATOTLT,15464,1257852,81.340662183135024,0,4699,"Instructional staff on 9, 10, 11 or 12 month contract-total"
+StatisticsRV,8,40107,SATOTLM,15464,647282,41.857346094154167,0,2636,"Instructional staff on 9, 10, 11 or 12 month contract-men"
+StatisticsRV,9,40110,SATOTLW,15464,610570,39.483316088980857,0,2285,"Instructional staff on 9, 10, 11 or 12 month contract-women"
+StatisticsRV,10,40501,SA09MCT,15464,850600,55.005173305742368,0,4092,Instructional staff on 9-month contract-total
+StatisticsRV,11,40506,SA09MCM,15464,453218,29.307941024314538,0,2359,Instructional staff on 9-month contract-men
+StatisticsRV,12,40511,SA09MCW,15464,397382,25.697232281427834,0,1733,Instructional staff on 9-month contract-women
+StatisticsRV,13,40516,SA10MCT,15464,167280,10.817382307294361,0,1943,Instructional staff on 10-month contract-total
+StatisticsRV,14,40521,SA10MCM,15464,82184,5.3145369891360579,0,1176,Instructional staff on 10-month contract-men
+StatisticsRV,15,40526,SA10MCW,15464,85096,5.502845318158303,0,767,Instructional staff on 10-month contract-women
+StatisticsRV,16,40531,SA11MCT,15464,22464,1.4526642524573203,0,1107,Instructional staff on 11-month contract-total
+StatisticsRV,17,40536,SA11MCM,15464,11590,0.74948266942576303,0,877,Instructional staff on 11-month contract-men
+StatisticsRV,18,40541,SA11MCW,15464,10874,0.7031815830315572,0,266,Instructional staff on 11-month contract-women
+StatisticsRV,19,40546,SA12MCT,15464,217508,14.065442317640972,0,3093,Instructional staff on 12-month contract total
+StatisticsRV,20,40551,SA12MCM,15464,100290,6.4853854112778064,0,808,Instructional staff on 12-month contract men
+StatisticsRV,21,40556,SA12MCW,15464,117218,7.5800569063631658,0,2285,Instructional staff on 12--month contract women
+StatisticsRV,22,40576,SAOUTLT,15464,116589479580,7539412.8026383864,0,476088855,Salary outlays - total
+StatisticsRV,23,40581,SAOUTLM,15464,64963239812,4200933.769529229,0,292992038,Salary outlays - men
+StatisticsRV,24,40586,SAOUTLW,15464,51626239768,3338479.0331091569,0,183096817,Salary outlays - women
+StatisticsRV,25,40901,SA09MOT,15464,78756616072,5092900.6771857217,0,418376643,Salary outlays for instructional staff on 9-month contract-total
+StatisticsRV,26,40906,SA09MOM,15464,45747184718,2958302.1674857736,0,263747392,Salary outlays for instructional staff on 9-month contract-men
+StatisticsRV,27,40911,SA09MOW,15464,33009431354,2134598.5096999481,0,154629251,Salary outlays for instructional staff on 9-month contract-women
+StatisticsRV,28,40916,SA10MOT,15464,14637650000,946562.98499741335,0,209171914,Salary outlays for instructional staff on 10-month contract-total
+StatisticsRV,29,40921,SA10MOM,15464,7571412642,489615.4062338334,0,137152418,Salary outlays for instructional staff on 10-month contract-men
+StatisticsRV,30,40926,SA10MOW,15464,7066237358,456947.57876357995,0,76242499,Salary outlays for instructional staff on 10-month contract-women
+StatisticsRV,31,40931,SA11MOT,15464,2310719430,149425.72620279359,0,141671774,Salary outlays for instructional staff on 11-month contract-total
+StatisticsRV,32,40936,SA11MOM,15464,1316831076,85154.622090015517,0,116998613,Salary outlays for instructional staff on 11-month contract-men
+StatisticsRV,33,40941,SA11MOW,15464,993888354,64271.104112778063,0,30143384,Salary outlays for instructional staff on 11-month contract-women
+StatisticsRV,34,40946,SA12MOT,15464,20884494078,1350523.4142524572,0,206101050,Salary outlays for instructional staff on 12-month contract-total
+StatisticsRV,35,40951,SA12MOM,15464,10327811376,667861.57371960685,0,78236347,Salary outlays for instructional staff on 12-month contract-men
+StatisticsRV,36,40956,SA12MOW,15464,10556682702,682661.84053285047,0,151857111,Salary outlays for instructional staff on 12-month contract-women
+StatisticsRV,37,40961,SAEQ9OT,15464,109484040941,7079930.2212234866,0,462697461,Salary outlays for instructional staff equated to a 9-month contract-total
+StatisticsRV,38,40963,SAEQ9OM,15464,61384483172,3969508.7410760475,0,286289650,Salary outlays for instructional staff equated to a 9-month contract-men
+StatisticsRV,39,40965,SAEQ9OW,15464,48099558365,3110421.518688567,0,176407812,Salary outlays for instructional staff equated to a 9-month contract-women
+StatisticsRV,40,40967,SAEQ9AT,15430,1010513340,65490.171095268954,4920,263565,Average salary for instructional staff equated to a 9-month contract-total
+StatisticsRV,41,40969,SAEQ9AM,14472,977136741,67519.122512437811,4750,263186,Average salary for instructional staff equated to a 9-month contract-men
+StatisticsRV,42,40971,SAEQ9AW,14408,939288676,65192.162409772347,1200,266529,Average salary for instructional staff equated to a 9-month contract-women
+StatisticsRV,43,40976,SA09MAT,9406,669770482,71206.727833297889,7500,273250,Average salary for instructional staff on 9-month contract-total
+StatisticsRV,44,40981,SA09MAM,8977,658054245,73304.471983959011,7500,275536,Average salary for instructional staff on 9-month contract-men
+StatisticsRV,45,40986,SA09MAW,9094,635137619,69841.392016714322,9000,249209,Average salary for instructional staff on 9-month contract-women
+StatisticsRV,46,40991,SA10MAT,4098,290688265,70934.178867740367,5467,222310,Average salary for instructional staff on 10-month contract-total
+StatisticsRV,47,40996,SA10MAM,3451,251562975,72895.67516661837,5278,213961,Average salary for instructional staff on 10-month contract-men
+StatisticsRV,48,41001,SA10MAW,3657,259153485,70865.049220672678,5844,259878,Average salary for instructional staff on 10-month contract-women
+StatisticsRV,49,41006,SA11MAT,1666,132026972,79247.882352941175,7883,353507,Average salary for instructional staff on 11-month contract-total
+StatisticsRV,50,41011,SA11MAM,1271,104082298,81890.084972462631,9361,255062,Average salary for instructional staff on 11-month contract-men
+StatisticsRV,51,41016,SA11MAW,1311,102448640,78145.415713196038,4189,353507,Average salary for instructional staff on 11-month contract-women
+StatisticsRV,52,41021,SA12MAT,8747,719412414,82246.760489310618,8900,452719,Average salary for instructional staff on 12-month contract-total
+StatisticsRV,53,41026,SA12MAM,7398,628425602,84945.336847796701,8127,535854,Average salary for instructional staff on 12-month contract-men
+StatisticsRV,54,41031,SA12MAW,7547,618609438,81967.594805883127,1600,390367,Average salary for instructional staff on 12-month contract-women
+imputation values,0,Code values for item imputation variables Xvarname
+imputation values,1,CodeValue,ValueLabel
+imputation values,2,A,Not applicable
+imputation values,3,B,Institution left item blank
+imputation values,4,C,Analyst corrected reported value
+imputation values,5,D,Do not know
+imputation values,6,G,Data generated from other data values
+imputation values,7,H,Value not derived - data not usable
+imputation values,8,J,Logical imputation
+imputation values,9,K,Ratio adjustment 
+imputation values,10,L,Imputed using the Group Median procedure
+imputation values,11,N,Imputed using Nearest Neighbor procedure
+imputation values,12,P,Imputed using Carry Forward procedure
+imputation values,13,R,Reported
+imputation values,14,Z,Implied zero;

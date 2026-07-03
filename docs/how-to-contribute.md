@@ -64,6 +64,23 @@ Articles live under `app/article/<slug>/` and use **two files**:
 
 Edit **primarily** `app/article/<slug>/article.mdx`.
 
+### Finding Data Variables
+
+To find the specific data you want to include in your article:
+
+1.  **Identify the Variable**: Open `data/2024/admissions/adm_variables2024.json`. This file lists all available IPEDS variable codes and their descriptions (e.g., `APPLCN` for total applicants).
+2.  **Find the Institution ID**: Open `data/institution_ids.json` and search for the university name to get its `UNITID`.
+3.  **Retrieve the Value**: Open `data/2024/admissions/adm2024.json`, search for the `UNITID`, and find the value for your chosen variable code.
+
+### Available Chart Components
+
+You can use the following components directly in your `article.mdx` without any imports:
+
+-   `<BarChart data={chartData} title="..." subtitle="..." />`: For categorical comparisons.
+-   `<LineChart data={chartData} title="..." subtitle="..." />`: For trends over time.
+-   `<Banner value="..." label="..." />`: To highlight a single key statistic.
+-   `<SectionDivider />`: To add a visual break between sections.
+
 #### Required: `ArticleMeta`
 
 Your MDX file must export a constant named `ArticleMeta` with these required fields:
